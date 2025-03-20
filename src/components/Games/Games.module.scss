@@ -1,0 +1,40 @@
+.games {
+	width: 100%;
+	height: 100dvh;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	display: grid;
+	align-items: center;
+	grid-template-columns: repeat(3, 1fr); // Максимум 3 карточки в строку
+	gap: 2rem;
+
+	@media (max-width: 1024px) {
+		grid-template-columns: repeat(2, 1fr); // 2 карточки для планшетов
+		gap: 1.5rem;
+		padding: 1.5rem;
+	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr; // 1 карточка для мобильных
+		gap: 1rem;
+		padding: 1rem;
+	}
+}
+
+.gameCard {
+	width: 100%;
+	min-width: 280px; // Минимальная ширина карточки
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
