@@ -41,7 +41,7 @@ const CardMatch: React.FC<CardMatchProps> = ({
 
 			{ticketLink && ticketLink !== '' && (
 				<Link href={ticketLink} className={styles.button}>
-					Купить билет
+					Купить билеты
 				</Link>
 			)}
 		</div>

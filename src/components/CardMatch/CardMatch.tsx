@@ -40,7 +40,7 @@ const CardMatch: React.FC<CardMatchProps> = ({
 			</div>
 
 			<Link href={ticketLink} className={styles.button}>
-				Купить билет
+				Купить билеты
 			</Link>
 		</div>
 	)
