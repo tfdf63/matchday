@@ -1,0 +1,118 @@
+.sliderContainer {
+	width: 100%;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 2rem 0;
+	position: relative;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 100px;
+		height: 100%;
+		z-index: 2;
+	}
+
+	&::before {
+		left: 0;
+		background: linear-gradient(to right, var(--background), transparent);
+	}
+
+	&::after {
+		right: 0;
+		background: linear-gradient(to left, var(--background), transparent);
+	}
+}
+
+.slider {
+	display: flex;
+	animation: slide var(--duration) linear infinite;
+	gap: 4rem;
+	padding: 0 1rem;
+}
+
+.slide {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	width: 200px;
+
+	&:nth-child(even) .imageWrapper {
+		transform: rotate(12deg);
+		transition: transform 0.3s ease;
+		animation: pulse 2s ease-in-out infinite;
+
+		&:hover {
+			transform: rotate(12deg) scale(1.05);
+		}
+	}
+
+	&:nth-child(odd) .imageWrapper {
+		transform: rotate(-12deg);
+		transition: transform 0.3s ease;
+		animation: pulse 2s ease-in-out infinite;
+		animation-delay: 1s;
+
+		&:hover {
+			transform: rotate(-12deg) scale(1.05);
+		}
+	}
+}
+
+.imageWrapper {
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.description {
+	font-family: 'Akademia', sans-serif;
+	color: white;
+	text-align: center;
+	font-size: 1.1rem;
+	max-width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@keyframes slide {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-50% - 1rem));
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: rotate(var(--rotation)) scale(1);
+	}
+	50% {
+		transform: rotate(var(--rotation)) scale(1.03);
+	}
+	100% {
+		transform: rotate(var(--rotation)) scale(1);
+	}
+}
+
+.slide:nth-child(even) .imageWrapper {
+	--rotation: 12deg;
+}
+
+.slide:nth-child(odd) .imageWrapper {
+	--rotation: -12deg;
+}
