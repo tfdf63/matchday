@@ -4,7 +4,8 @@ import GamesMatch from '../GamesMatch/GamesMatch'
 import games from '@/data/games'
 
 const Games = () => {
-	const remainingGames = games.slice(1) // Берем матчи начиная со второго индекса
+	const remainingGames = games.slice(1, 4) // Берем 3 матча, начиная со второго (индексы 1, 2, 3)
+
 	return (
 		<div className={styles.games}>
 			{remainingGames.map((game, index) => (

@@ -8,6 +8,8 @@
 	align-items: center;
 	grid-template-columns: repeat(3, 1fr); // Максимум 3 карточки в строку
 	gap: 2rem;
+	color: white;
+	background-color: #020b12; // Добавляем темный фон
 
 	@media (max-width: 1024px) {
 		grid-template-columns: repeat(2, 1fr); // 2 карточки для планшетов

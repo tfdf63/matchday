@@ -38,4 +38,9 @@
 	justify-content: center;
 	text-decoration: none;
 	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: #020b12;
+		border-color: #990517;
+	}
 }

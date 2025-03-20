@@ -25,7 +25,7 @@ const games: Game[] = [
 		date: '17 апреля',
 		time: '18:30',
 		stadium: 'Газпром Арена',
-		ticketLink: '/tickets/zenit-dinamo',
+		ticketLink: ' ',
 	},
 	{
 		id: '3',
