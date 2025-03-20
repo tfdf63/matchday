@@ -13,7 +13,7 @@
 	display: flex;
 	justify-content: space-between;
 	gap: 12px;
-	font-size: 3rem;
+	font-size: 5rem;
 }
 
 .info {
@@ -42,5 +42,14 @@
 	&:hover {
 		background-color: #020b12;
 		border-color: #990517;
+	}
+}
+
+@media (max-width: 768px) {
+	.teams {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+		font-size: 3rem;
 	}
 }

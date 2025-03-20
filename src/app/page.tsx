@@ -6,11 +6,9 @@ import Marquee from '@/components/Marquee/Marquee'
 const MatchesPage = () => {
 	return (
 		<>
-			<div className={styles.container}>
-				<Main />
-			</div>
+			<Main />
 			<Marquee
-				text='БУДУЩИЕ МАТЧИ × БИЛЕТЫ ЗА 10 ДНЕЙ ДО МАТЧА ВЫГОДНЕЕ × БУДУЩИЕ МАТЧИ × '
+				text='БИЛЕТЫ ЗА 10 ДНЕЙ ДО МАТЧА ВЫГОДНЕЕ × БИЛЕТЫ ЗА 10 ДНЕЙ ДО МАТЧА ВЫГОДНЕЕ × БИЛЕТЫ ЗА 10 ДНЕЙ ДО МАТЧА ВЫГОДНЕЕ × '
 				duration={24}
 			/>
 			<Games />
