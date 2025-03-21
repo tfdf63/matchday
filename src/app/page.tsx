@@ -3,6 +3,7 @@ import Main from '@/components/Main/Main'
 import Games from '@/components/Games/Games'
 import Marquee from '@/components/Marquee/Marquee'
 import Slider from '@/components/Slider/Slider'
+import FanCard from '@/components/FanCard/FanCard'
 
 const MatchesPage = () => {
 	return (
@@ -18,6 +19,7 @@ const MatchesPage = () => {
 				duration={48}
 			/>
 			<Slider />
+			<FanCard />
 		</>
 	)
 }
