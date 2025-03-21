@@ -4,11 +4,10 @@ import CardMatch from '../CardMatch/CardMatch'
 import games from '@/data/games'
 
 interface MainProps {
-	children?: React.ReactNode
 	matchIndex?: number
 }
 
-const Main: React.FC<MainProps> = ({ children, matchIndex = 0 }) => {
+const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	// Проверяем, что индекс в пределах массива
 	const selectedIndex =
 		matchIndex >= 0 && matchIndex < games.length ? matchIndex : 0

@@ -42,17 +42,13 @@ const Merch: React.FC<MerchProps> = ({
 	className = '',
 }) => {
 	const [displayItems, setDisplayItems] = useState<MerchItem[]>([])
-	const [isMobile, setIsMobile] = useState(false)
 
 	// Определение количества отображаемых элементов в зависимости от размера экрана
 	useEffect(() => {
 		const handleResize = () => {
-			const mobile = window.innerWidth <= 768
-			setIsMobile(mobile)
-
 			// Выбираем случайные элементы из массива
 			const shuffled = [...items].sort(() => Math.random() - 0.5)
-			const selectedItems = shuffled.slice(0, mobile ? 3 : 5)
+			const selectedItems = shuffled.slice(0, 5)
 			setDisplayItems(selectedItems)
 		}
 
