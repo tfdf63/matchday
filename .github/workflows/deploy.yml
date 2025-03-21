@@ -24,9 +24,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Export static site
-        run: npm run export
-
       - name: Deploy to Beget
         env:
           SSH_KEY: ${{ secrets.BEGET_SSH_KEY }}
