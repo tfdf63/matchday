@@ -29,8 +29,8 @@ const games: Game[] = [
 	},
 	{
 		id: '3',
-		homeTeam: 'Факел',
-		awayTeam: 'Акрон',
+		homeTeam: 'Акрон',
+		awayTeam: 'Факел',
 		date: '13 апреля',
 		time: '15:30',
 		stadium: 'Самара Солидарность Арена',
@@ -38,11 +38,11 @@ const games: Game[] = [
 	},
 	{
 		id: '4',
-		homeTeam: 'Краснодар',
-		awayTeam: 'Сочи',
-		date: '22 апреля',
+		homeTeam: 'Акрон',
+		awayTeam: 'Спартак',
+		date: '20 апреля',
 		time: '19:30',
-		stadium: 'Краснодар Арена',
+		stadium: 'Cамара Солидарность Арена',
 		ticketLink: ' ',
 	},
 	{

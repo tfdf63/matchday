@@ -1,4 +1,6 @@
-import React, { useMemo } from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from './Slider.module.scss'
 
@@ -10,7 +12,6 @@ interface SlideItem {
 
 interface SliderProps {
 	items?: SlideItem[]
-	duration?: number // в секундах
 	className?: string
 }
 
@@ -18,105 +19,131 @@ const defaultItems: SlideItem[] = [
 	{
 		id: 1,
 		image: `/images/slider1.jpg`,
-		description: 'Описание 1',
+		description: 'Яркий аквагримм',
 	},
 	{
 		id: 2,
 		image: `/images/slider2.jpg`,
-		description: 'Описание 2',
+		description: 'Настольный футбол',
 	},
 	{
 		id: 3,
 		image: `/images/slider3.jpg`,
-		description: 'Описание 3',
+		description: 'Сидячий футбол',
 	},
 	{
 		id: 4,
 		image: `/images/slider4.jpg`,
-		description: 'Описание 4',
-	},
-	{
-		id: 6,
-		image: `/images/slider5.jpg`,
-		description: 'Описание 5',
-	},
-	{
-		id: 7,
-		image: `/images/slider1.jpg`,
-		description: 'Описание 6',
-	},
-	{
-		id: 8,
-		image: `/images/slider2.jpg`,
-		description: 'Описание 7',
-	},
-	{
-		id: 9,
-		image: `/images/slider3.jpg`,
-		description: 'Описание 8',
-	},
-	{
-		id: 10,
-		image: `/images/slider4.jpg`,
-		description: 'Описание 9',
-	},
-	{
-		id: 11,
-		image: `/images/slider5.jpg`,
-		description: 'Описание 10',
-	},
-	{
-		id: 12,
-		image: `/images/slider1.jpg`,
-		description: 'Описание 11',
-	},
-	{
-		id: 13,
-		image: `/images/slider2.jpg`,
-		description: 'Описание 12',
-	},
-	{
-		id: 14,
-		image: `/images/slider3.jpg`,
-		description: 'Описание 13',
-	},
-	{
-		id: 15,
-		image: `/images/slider4.jpg`,
-		description: 'Описание 14',
+		description: 'DJ и музыка',
 	},
 	{
 		id: 5,
 		image: `/images/slider5.jpg`,
-		description: 'Описание 15',
+		description: 'Сыграй в приставку PS5',
+	},
+	{
+		id: 6,
+		image: `/images/slider6.jpg`,
+		description: 'Мягкая детская площадка',
+	},
+	{
+		id: 7,
+		image: `/images/slider7.jpg`,
+		description: 'Лектории и мастер-классы',
+	},
+	{
+		id: 8,
+		image: `/images/slider8.jpg`,
+		description: 'Встреча с маскотом',
+	},
+	{
+		id: 9,
+		image: `/images/slider9.jpg`,
+		description: 'Энергичные ведущие',
+	},
+	{
+		id: 10,
+		image: `/images/slider10.jpg`,
+		description: 'Настольный теннис',
+	},
+	{
+		id: 11,
+		image: `/images/slider11.jpg`,
+		description: 'Магазин атрибутики',
+	},
+	{
+		id: 12,
+		image: `/images/slider12.jpg`,
+		description: 'Площадки от партнёров',
+	},
+	{
+		id: 13,
+		image: `/images/slider13.jpg`,
+		description: 'Автограф сессии с игроком',
+	},
+	{
+		id: 14,
+		image: `/images/slider14.jpg`,
+		description: 'Посети тёплую зону',
+	},
+	{
+		id: 15,
+		image: `/images/slider15.jpg`,
+		description: 'Нарисуй плакат поддержки',
 	},
 ]
 
-// Функция для получения случайных элементов из массива
-const getRandomItems = (array: SlideItem[], count: number): SlideItem[] => {
-	const shuffled = [...array].sort(() => Math.random() - 0.5)
-	return shuffled.slice(0, count)
-}
+const MOBILE_BREAKPOINT = 768
+const MOBILE_DURATION = 30
+const DESKTOP_DURATION = 30
 
 const Slider: React.FC<SliderProps> = ({
 	items = defaultItems,
-	duration = 20,
 	className = '',
 }) => {
-	// Используем useMemo для кэширования случайных элементов
-	const randomItems = useMemo(() => {
-		const selectedItems = getRandomItems(items, 7)
-		return [...selectedItems, ...selectedItems] // Дублируем для бесконечной анимации
+	const [animationDuration, setAnimationDuration] = useState(DESKTOP_DURATION)
+	const [displayItems, setDisplayItems] = useState<
+		(SlideItem & { uniqueId: string })[]
+	>([])
+
+	useEffect(() => {
+		// Генерируем случайные элементы только на клиенте
+		const randomItems = [...items].sort(() => Math.random() - 0.5).slice(0, 7)
+
+		const tripleItems = [...randomItems, ...randomItems, ...randomItems].map(
+			(item, index) => ({
+				...item,
+				uniqueId: `slide-${item.id}-${index}`,
+			})
+		)
+
+		setDisplayItems(tripleItems)
 	}, [items])
+
+	useEffect(() => {
+		const handleResize = () => {
+			const isMobile = window.innerWidth <= MOBILE_BREAKPOINT
+			setAnimationDuration(isMobile ? MOBILE_DURATION : DESKTOP_DURATION)
+		}
+
+		handleResize()
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
+	// Показываем пустой контейнер, пока не сгенерированы элементы
+	if (displayItems.length === 0) {
+		return <div className={styles.sliderContainer} />
+	}
 
 	return (
 		<div
 			className={`${styles.sliderContainer} ${className}`}
-			style={{ '--duration': `${duration}s` } as React.CSSProperties}
+			style={{ '--duration': `${animationDuration}s` } as React.CSSProperties}
 		>
 			<div className={styles.slider}>
-				{randomItems.map((item, index) => (
-					<div key={`${item.id}-${index}`} className={styles.slide}>
+				{displayItems.map(item => (
+					<div key={item.uniqueId} className={styles.slide}>
 						<div className={styles.imageWrapper}>
 							<Image
 								src={item.image}
@@ -124,6 +151,7 @@ const Slider: React.FC<SliderProps> = ({
 								width={200}
 								height={200}
 								className={styles.image}
+								priority={true}
 							/>
 						</div>
 						<p className={styles.description}>{item.description}</p>

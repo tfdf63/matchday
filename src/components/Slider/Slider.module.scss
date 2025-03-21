@@ -29,8 +29,9 @@
 .slider {
 	display: flex;
 	animation: slide var(--duration) linear infinite;
-	gap: 4rem;
+	gap: 8rem;
 	padding: 0 1rem;
+	width: fit-content;
 }
 
 .slide {
@@ -64,7 +65,7 @@
 }
 
 .imageWrapper {
-	width: 200px;
+	width: 300px;
 	height: 200px;
 	border-radius: 10px;
 	overflow: hidden;
@@ -110,9 +111,9 @@
 }
 
 .slide:nth-child(even) .imageWrapper {
-	--rotation: 12deg;
+	--rotation: 4deg;
 }
 
 .slide:nth-child(odd) .imageWrapper {
-	--rotation: -12deg;
+	--rotation: -4deg;
 }
