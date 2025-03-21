@@ -32,4 +32,4 @@ jobs:
           echo "$SSH_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H tfdf63.beget.tech >> ~/.ssh/known_hosts
-          scp -r out/* tfdf63_test@tfdf63.beget.tech:/
+          scp -r out/* tfdf63_test@tfdf63.beget.tech:/fcaf.ru/public_html/
