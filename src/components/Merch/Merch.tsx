@@ -46,9 +46,13 @@ const Merch: React.FC<MerchProps> = ({
 	// Определение количества отображаемых элементов в зависимости от размера экрана
 	useEffect(() => {
 		const handleResize = () => {
+			// Определяем, является ли устройство мобильным
+			const mobile = window.innerWidth <= 768
+
 			// Выбираем случайные элементы из массива
 			const shuffled = [...items].sort(() => Math.random() - 0.5)
-			const selectedItems = shuffled.slice(0, 5)
+			// Выбираем 5 элементов для десктопа и 3 для мобильных устройств
+			const selectedItems = shuffled.slice(0, mobile ? 3 : 5)
 			setDisplayItems(selectedItems)
 		}
 
