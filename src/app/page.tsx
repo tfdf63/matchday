@@ -4,6 +4,7 @@ import Games from '@/components/Games/Games'
 import Marquee from '@/components/Marquee/Marquee'
 import Slider from '@/components/Slider/Slider'
 import FanCard from '@/components/FanCard/FanCard'
+import Merch from '@/components/Merch/Merch'
 
 const MatchesPage = () => {
 	return (
@@ -20,6 +21,11 @@ const MatchesPage = () => {
 			/>
 			<Slider />
 			<FanCard />
+			<Marquee
+				text='БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × '
+				duration={48}
+			/>
+			<Merch />
 		</>
 	)
 }
