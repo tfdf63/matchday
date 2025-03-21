@@ -1,0 +1,35 @@
+name: Deploy to Beget
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '^19.8.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Beget
+        uses: appleboy/scp-action@v0.1.0
+        with:
+          host: tfdf63.beget.tech
+          username: tfdf63_test
+          key: ${{ secrets.BEGET_SSH_KEY }}
+          port: 22
+          source: 'build/*'
+          target: '/fcaf.ru/public_html'
