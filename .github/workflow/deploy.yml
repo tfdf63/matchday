@@ -25,11 +25,11 @@ jobs:
         run: npm run build
 
       - name: Deploy to Beget
-        uses: appleboy/scp-action@v0.1.0
-        with:
-          host: tfdf63.beget.tech
-          username: tfdf63_test
-          key: ${{ secrets.BEGET_SSH_KEY }}
-          port: 22
-          source: '.next/*'
-          target: '/fcaf.ru/public_html'
+        env:
+          SSH_KEY: ${{ secrets.BEGET_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H tfdf63.beget.tech >> ~/.ssh/known_hosts
+          scp -r .next/* tfdf63_test@tfdf63.beget.tech:/fcaf.ru/public_html
