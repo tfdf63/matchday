@@ -31,5 +31,4 @@ const Main: React.FC<MainProps> = ({ children, matchIndex = 0 }) => {
 		</div>
 	)
 }
-
 export default Main

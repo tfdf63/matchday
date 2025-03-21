@@ -32,7 +32,7 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'Факел',
 		date: '13 апреля',
-		time: '15:30',
+		time: 'SAMT 15:30',
 		stadium: 'Самара Солидарность Арена',
 		ticketLink: '/tickets/lokomotiv-rostov',
 	},
