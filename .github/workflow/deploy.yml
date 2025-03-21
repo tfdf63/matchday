@@ -31,5 +31,5 @@ jobs:
           username: tfdf63_test
           key: ${{ secrets.BEGET_SSH_KEY }}
           port: 22
-          source: 'build/*'
+          source: '.next/*'
           target: '/fcaf.ru/public_html'
