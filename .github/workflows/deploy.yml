@@ -13,11 +13,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build # Убедитесь, что эта команда создает директорию ./out/
+
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/ # Локальная директория для загрузки
-          server-dir: / # Директория на сервере
+          local-dir: ./out/ # Убедитесь, что эта директория существует после сборки
+          server-dir: /
