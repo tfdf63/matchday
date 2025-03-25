@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# github
+/.github/workflows/.deploy2.yml
+
 # next.js
 /.next/
 /out/

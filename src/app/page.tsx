@@ -5,6 +5,8 @@ import Marquee from '@/components/Marquee/Marquee'
 import Slider from '@/components/Slider/Slider'
 import FanCard from '@/components/FanCard/FanCard'
 import Merch from '@/components/Merch/Merch'
+import Stadium from '@/components/Stadium/Stadium'
+import Skybox from '@/components/Skybox/Skybox'
 
 const MatchesPage = () => {
 	return (
@@ -26,6 +28,12 @@ const MatchesPage = () => {
 				duration={48}
 			/>
 			<Merch />
+			<Marquee
+				text='SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX ×'
+				duration={48}
+			/>
+			<Skybox />
+			<Stadium />
 		</>
 	)
 }

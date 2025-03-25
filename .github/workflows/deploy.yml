@@ -1,4 +1,4 @@
-name: Deploy to Beget
+name: Deploy to FTP
 
 on:
   push:
@@ -6,30 +6,18 @@ on:
       - main
 
 jobs:
-  build:
+  ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          node-version: '^19.8.0'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy to Beget
-        env:
-          SSH_KEY: ${{ secrets.BEGET_SSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H tfdf63.beget.tech >> ~/.ssh/known_hosts
-          scp -r out/* tfdf63_test@tfdf63.beget.tech:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out # Локальная директория для загрузки
+          server-dir: / # Директория на сервере

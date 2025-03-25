@@ -34,7 +34,7 @@ const games: Game[] = [
 		date: '13 апреля',
 		time: 'SAMT 15:30',
 		stadium: 'Самара Солидарность Арена',
-		ticketLink: '/tickets/lokomotiv-rostov',
+		ticketLink: 'https://fcakron.tncloud.ru/view-available-zones/29',
 	},
 	{
 		id: '4',
@@ -43,7 +43,7 @@ const games: Game[] = [
 		date: '19 апреля',
 		time: 'SAMT 15:30',
 		stadium: 'Cамара Солидарность Арена',
-		ticketLink: ' ',
+		ticketLink: 'https://fcakron.tncloud.ru/view-available-zones/30',
 	},
 	{
 		id: '5',
