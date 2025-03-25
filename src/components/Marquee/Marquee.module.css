@@ -1,0 +1,46 @@
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--background-color);
+  padding: 1rem 0;
+  position: relative;
+}
+.marqueeContainer::before, .marqueeContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 2;
+}
+.marqueeContainer::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background-color), transparent);
+}
+.marqueeContainer::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background-color), transparent);
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee var(--duration) linear infinite;
+  color: var(--text-color);
+  font-size: var(--font-size);
+}
+.marquee span {
+  font-size: 4rem;
+  font-weight: 500;
+  display: inline-block;
+  padding-right: 50px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}/*# sourceMappingURL=Marquee.module.css.map */

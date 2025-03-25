@@ -1,94 +1,19 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
 import styles from './Skybox.module.scss'
-
-interface SkyboxFormData {
-	fullName: string
-	email: string
-	phone: string
-}
 
 export default function Skybox() {
 	const skyboxRef = useRef<HTMLDivElement>(null)
 	const formRef = useRef<HTMLDivElement>(null)
 	const [activeImage, setActiveImage] = useState(0)
-	const [formData, setFormData] = useState<SkyboxFormData>({
-		fullName: '',
-		email: '',
-		phone: '',
-	})
-	const [isSubmitting, setIsSubmitting] = useState(false)
-	const [submitSuccess, setSubmitSuccess] = useState(false)
-	const [isMobile, setIsMobile] = useState(false)
-	const [scrollY, setScrollY] = useState(0)
-
-	// Определяем, является ли устройство мобильным
-	useEffect(() => {
-		const checkIfMobile = () => {
-			setIsMobile(window.innerWidth <= 768)
-		}
-
-		checkIfMobile()
-		window.addEventListener('resize', checkIfMobile)
-
-		return () => {
-			window.removeEventListener('resize', checkIfMobile)
-		}
-	}, [])
 
 	const skyboxImages = [
 		'/images/skybox/skybox-1.webp',
 		'/images/skybox/skybox-2.webp',
 		'/images/skybox/skybox-3.webp',
 	]
-
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const { name, value } = e.target
-		setFormData(prev => ({
-			...prev,
-			[name]: value,
-		}))
-	}
-
-	// Сохраняем текущую позицию прокрутки при клике на поле формы
-	const handleTouchStart = () => {
-		setScrollY(window.scrollY)
-	}
-
-	// Предотвращаем дефолтное поведение мобильных браузеров при фокусировке на полях ввода
-	const handleFocus = () => {
-		if (isMobile) {
-			// Запрещаем автоматическую прокрутку
-			setTimeout(() => {
-				window.scrollTo(0, scrollY)
-			}, 10)
-		}
-	}
-
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault()
-		setIsSubmitting(true)
-
-		// Имитация отправки данных формы
-		setTimeout(() => {
-			setIsSubmitting(false)
-			setSubmitSuccess(true)
-
-			// Сброс формы
-			setFormData({
-				fullName: '',
-				email: '',
-				phone: '',
-			})
-
-			// Скрыть сообщение об успешной отправке через 3 секунды
-			setTimeout(() => {
-				setSubmitSuccess(false)
-			}, 3000)
-		}, 1500)
-	}
 
 	return (
 		<div className={styles.skyboxContainer} id='skybox' ref={skyboxRef}>
@@ -161,60 +86,6 @@ export default function Skybox() {
 								<li>Матч</li>
 							</ul>
 						</div>
-						{/* <form onSubmit={handleSubmit} className={styles.form}>
-							<div className={styles.formGroup}>
-								<input
-									type='text'
-									name='fullName'
-									value={formData.fullName}
-									onChange={handleChange}
-									onTouchStart={handleTouchStart}
-									onFocus={handleFocus}
-									placeholder='Фамилия Имя'
-									required
-									className={styles.input}
-								/>
-							</div>
-							<div className={styles.formGroup}>
-								<input
-									type='email'
-									name='email'
-									value={formData.email}
-									onChange={handleChange}
-									onTouchStart={handleTouchStart}
-									onFocus={handleFocus}
-									placeholder='Email'
-									required
-									className={styles.input}
-								/>
-							</div>
-							<div className={styles.formGroup}>
-								<input
-									type='tel'
-									name='phone'
-									value={formData.phone}
-									onChange={handleChange}
-									onTouchStart={handleTouchStart}
-									onFocus={handleFocus}
-									placeholder='Телефон'
-									required
-									className={styles.input}
-								/>
-							</div>
-							<button
-								type='submit'
-								className={styles.submitButton}
-								disabled={isSubmitting}
-							>
-								{isSubmitting ? 'Отправка...' : 'Отправить'}
-							</button>
-							{submitSuccess && (
-								<div className={styles.successMessage}>
-									Заявка успешно отправлена! Мы свяжемся с вами в ближайшее
-									время.
-								</div>
-							)}
-						</form> */}
 					</div>
 				</div>
 			</div>
