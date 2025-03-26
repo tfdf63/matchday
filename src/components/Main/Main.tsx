@@ -15,6 +15,29 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 
 	return (
 		<div className={styles.main}>
+			<video
+				autoPlay
+				muted
+				loop
+				playsInline
+				className={styles.backgroundVideo}
+				id='desktop-video'
+			>
+				<source src='/videos/bgmain.webm' type='video/webm' />
+			</video>
+			<video
+				autoPlay
+				muted
+				loop
+				playsInline
+				className={styles.backgroundVideoMobile}
+				id='mobile-video'
+			>
+				<source src='/videos/bgmainmob.webm' type='video/webm' />
+			</video>
+			<div className={styles.leagueInfo}>
+				МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 22 ТУР
+			</div>
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
 					<CardMatch

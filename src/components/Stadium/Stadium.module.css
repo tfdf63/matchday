@@ -118,7 +118,7 @@
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 0.5rem;
   }
   .thumbnail {

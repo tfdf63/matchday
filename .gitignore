@@ -23,6 +23,10 @@
 # production
 /build
 
+#video
+/public/videos/.bgmain.mov
+/public/videos/.bgmainmob.mov
+
 # misc
 .DS_Store
 *.pem

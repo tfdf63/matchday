@@ -76,7 +76,7 @@ export default function Skybox() {
 						<div className={styles.formText}>
 							Напишите сообщение на почту{' '}
 							<a href='mailto:test@yandex.ru'>
-								<span>test@yandex.ru</span>
+								<span>egorova_ka@fcakron.com</span>
 							</a>
 							, указав следующую информацию:
 							<ul>

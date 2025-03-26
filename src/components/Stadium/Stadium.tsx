@@ -21,11 +21,11 @@ const stadiumSchemas: SchemaImage[] = [
 		image: '/images/stadium/schema-1.jpg',
 		title: 'Схема прохода к теплой зоне',
 	},
-	{
-		id: 2,
-		image: '/images/stadium/schema-2.jpg',
-		title: 'Наполнение теплой зоны',
-	},
+	// {
+	// 	id: 2,
+	// 	image: '/images/stadium/schema-2.jpg',
+	// 	title: 'Наполнение теплой зоны',
+	// },
 	{
 		id: 3,
 		image: '/images/stadium/schema-3.jpg',

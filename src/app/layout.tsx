@@ -23,6 +23,9 @@ export const metadata: Metadata = {
 	title: 'Matchday | Купить билеты на Акрон',
 	description:
 		'Матчи Акрон, Купить билеты на Акрон, Купить билеты на Акрон, Купить билеты на Акрон',
+	icons: {
+		icon: '/favicon.ico',
+	},
 }
 
 export default function RootLayout({
@@ -32,6 +35,15 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
+			<head>
+				<link
+					rel='preload'
+					href='/fonts/Akademia.otf'
+					as='font'
+					type='font/opentype'
+					crossOrigin='anonymous'
+				/>
+			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable}`}
 			>
