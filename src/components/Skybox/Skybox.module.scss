@@ -1,5 +1,5 @@
 .skyboxContainer {
-	padding: 4rem 2rem;
+	padding: 2rem 2rem;
 	max-width: 1200px;
 	margin: 0 auto;
 	color: var(--foreground);
@@ -43,7 +43,7 @@
 	margin: 0 auto;
 
 	img {
-		border-radius: 8px;
+		/* border-radius: 8px; */
 		object-fit: cover;
 	}
 }
@@ -52,7 +52,6 @@
 	width: 100%;
 	height: auto;
 	aspect-ratio: 3/4;
-	border-radius: 8px;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -70,7 +69,6 @@
 	cursor: pointer;
 	opacity: 0.7;
 	transition: opacity 0.3s, transform 0.3s;
-	border-radius: 4px;
 	overflow: hidden;
 
 	&:hover {
@@ -99,7 +97,6 @@
 
 .benefits {
 	background-color: rgba(255, 255, 255, 0.05);
-	border-radius: 8px;
 	padding: 1.5rem;
 }
 
@@ -124,7 +121,6 @@
 
 .formSection {
 	background-color: rgba(255, 255, 255, 0.05);
-	border-radius: 8px;
 	padding: 1.5rem;
 	scroll-margin-top: 100px;
 	position: relative;
@@ -176,7 +172,6 @@
 
 .input {
 	padding: 0.75rem 1rem;
-	border-radius: 4px;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	background-color: rgba(0, 0, 0, 0.3);
 	color: var(--foreground);

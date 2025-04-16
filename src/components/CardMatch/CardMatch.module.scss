@@ -3,8 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 12px;
-	/* color: white; */
+	gap: 1rem;
 	font-weight: 400;
 	z-index: 999;
 }
@@ -25,8 +24,17 @@
 	font-size: 1.2rem;
 }
 
+.buttonsContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	gap: 1rem;
+}
+
 .button {
-	width: 20rem;
+	width: 100%;
+	max-width: 20rem;
 	height: 50px;
 	background-color: #b2061c;
 	color: #fff;
@@ -46,11 +54,26 @@
 	}
 }
 
+.button:last-child {
+	background-color: #1a1a1a;
+	border-color: #b2061c;
+
+	&:hover {
+		background-color: #020b12;
+		border-color: #990517;
+	}
+}
+
 @media (max-width: 768px) {
 	.teams {
 		display: flex;
 		justify-content: space-between;
 		gap: 12px;
 		font-size: 3rem;
+	}
+
+	.button {
+		width: 100%;
+		max-width: 20rem;
 	}
 }

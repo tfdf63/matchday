@@ -17,6 +17,7 @@ const Games = () => {
 						time={game.time}
 						stadium={game.stadium}
 						ticketLink={game.ticketLink}
+						ticketLinkVip={game.ticketLinkVip}
 					/>
 				</div>
 			))}

@@ -81,16 +81,6 @@ const FanCard = () => {
 			{/* Контент */}
 			<div className={styles.content}>
 				<div className={styles.step}>
-					<div className={styles.stepHeader}>
-						<Image
-							src={steps[activeTab].icon}
-							alt={steps[activeTab].title}
-							width={64}
-							height={64}
-							className={styles.stepIcon}
-						/>
-						<h3 className={styles.stepTitle}>{steps[activeTab].title}</h3>
-					</div>
 					<p className={styles.stepDescription}>
 						{steps[activeTab].description}
 					</p>
@@ -102,18 +92,6 @@ const FanCard = () => {
 						))}
 					</ul>
 				</div>
-			</div>
-
-			{/* Индикатор прогресса для мобильных */}
-			<div className={styles.progress}>
-				{steps.map((_, index) => (
-					<div
-						key={index}
-						className={`${styles.progressDot} ${
-							activeTab === index ? styles.active : ''
-						}`}
-					/>
-				))}
 			</div>
 		</div>
 	)

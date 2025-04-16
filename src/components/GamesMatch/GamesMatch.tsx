@@ -12,6 +12,7 @@ interface CardMatchProps {
 	stadium?: string
 	className?: string
 	ticketLink?: string
+	ticketLinkVip?: string
 }
 
 const CardMatch: React.FC<CardMatchProps> = ({
@@ -21,7 +22,8 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	time = '19:30',
 	stadium = 'Стадион',
 	className,
-	ticketLink,
+	ticketLink = '#',
+	ticketLinkVip = '#',
 }) => {
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
@@ -39,11 +41,14 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				<span>{stadium}</span>
 			</div>
 
-			{ticketLink && ticketLink !== '' && (
+			<div className={styles.buttonsContainer}>
 				<Link href={ticketLink} className={styles.button}>
 					Купить билеты
 				</Link>
-			)}
+				<Link href={ticketLinkVip} className={styles.button}>
+					VIP A106
+				</Link>
+			</div>
 		</div>
 	)
 }

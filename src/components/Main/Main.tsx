@@ -35,9 +35,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 			>
 				<source src='/videos/bgmainmob.webm' type='video/webm' />
 			</video>
-			<div className={styles.leagueInfo}>
-				МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 22 ТУР
-			</div>
+			<div className={styles.leagueInfo}>{selectedGame.leagueInfo}</div>
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
 					<CardMatch
@@ -47,6 +45,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						time={selectedGame.time}
 						stadium={selectedGame.stadium}
 						ticketLink={selectedGame.ticketLink}
+						ticketLinkVip={selectedGame.ticketLinkVip}
 					/>
 				</div>
 			</div>

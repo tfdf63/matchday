@@ -1,16 +1,17 @@
 .stadiumContainer {
+	margin: 2rem auto 0 auto;
 	width: 100%;
 	max-width: 1200px;
-	margin: 2rem auto;
 	padding: 0 1rem;
 }
 
 .title {
-	font-size: 3.5rem;
-	font-weight: 700;
+	margin-top: 2rem;
+	font-family: 'Akademia', sans-serif;
+	font-size: 2rem;
 	text-align: center;
-	/* margin-bottom: 3rem; */
-	color: #fff;
+	margin-bottom: 2rem;
+	color: var(--foreground);
 }
 
 .schemaContainer {
@@ -37,7 +38,6 @@
 	max-width: 600px;
 	height: auto;
 	object-fit: contain;
-	border-radius: 8px;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	margin: 0 auto;
 	display: block;
@@ -139,5 +139,12 @@
 
 	.infoText {
 		font-size: 0.8rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.title {
+		margin-top: 3xrem;
+		font-size: 1.8rem;
 	}
 }
