@@ -23,9 +23,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Создать директории на сервере
-        run: ssh tfdf63_test@tfdf63.beget.tech:/public_html/ "mkdir -p 404_next fonts images videos"
-
       - name: Build project
         run: npm run build
 
