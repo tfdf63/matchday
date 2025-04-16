@@ -1,9 +1,10 @@
 .games {
 	max-width: 1200px;
 	margin: 0 auto;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr); // Максимум 3 карточки в строку
-	gap: 0.8rem;
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	flex-wrap: wrap;
 
 	@media (max-width: 1024px) {
 		grid-template-columns: repeat(2, 1fr); // 2 карточки для планшетов
@@ -21,9 +22,10 @@
 }
 
 .gameCard {
-	width: 100%;
 	min-width: 280px; // Минимальная ширина карточки
 	animation: fadeIn 0.5s ease-in-out;
+	display: flex;
+	justify-content: center; // Дополнительное центрирование содержимого
 }
 
 @keyframes fadeIn {
