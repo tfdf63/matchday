@@ -23,7 +23,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				className={styles.backgroundVideo}
 				id='desktop-video'
 			>
-				<source src='/videos/bgmain.webm' type='video/webm' />
+				<source src='/videos/bgmain1.webm' type='video/webm' />
 			</video>
 			<video
 				autoPlay
