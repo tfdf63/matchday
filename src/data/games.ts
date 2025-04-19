@@ -12,17 +12,6 @@ export interface Game {
 
 const games: Game[] = [
 	{
-		id: '4',
-		homeTeam: 'Акрон',
-		awayTeam: 'Спартак',
-		date: '19 апреля',
-		time: 'SAMT 15:30',
-		stadium: 'Cамара Солидарность Арена',
-		ticketLink: 'https://fcakron.tncloud.ru/view-available-zones/30',
-		ticketLinkVip: 'https://fcakron.tncloud.ru/choose-seats/30/2200',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 25 ТУР',
-	},
-	{
 		id: '6',
 		homeTeam: 'Акрон',
 		awayTeam: 'Динамо Мх',
