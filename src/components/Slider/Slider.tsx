@@ -79,7 +79,7 @@ const defaultItems: SlideItem[] = [
 	{
 		id: 13,
 		image: `/images/slider13.jpg`,
-		description: 'Автограф сессии с игроком',
+		description: 'Автограф-сессия с игроком',
 	},
 	{
 		id: 14,
