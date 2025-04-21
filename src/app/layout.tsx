@@ -26,6 +26,34 @@ export const metadata: Metadata = {
 	icons: {
 		icon: '/favicon.ico',
 	},
+	// Предотвращение преобразования страницы через Google Web Light
+	other: {
+		googlebot: 'notranslate',
+		google: 'notranslate',
+		'X-Frame-Options': 'SAMEORIGIN',
+		'Content-Security-Policy': "frame-ancestors 'self'",
+		'Cache-Control': 'no-transform',
+		// Запрет Apple на форматирование телефонных номеров и адресов
+		'format-detection': 'telephone=no, address=no, email=no, date=no',
+		// Запрет на автоматический перевод
+		'google-site-verification': process.env.GOOGLE_SITE_VERIFICATION || '',
+	},
+	// Запрет на индексацию iframe
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+		},
+	},
+	viewport: {
+		width: 'device-width',
+		initialScale: 1,
+		maximumScale: 5,
+	},
 }
 
 export default function RootLayout({
@@ -34,7 +62,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='en'>
+		<html lang='ru'>
 			<head>
 				<link
 					rel='preload'
@@ -43,6 +71,16 @@ export default function RootLayout({
 					type='font/opentype'
 					crossOrigin='anonymous'
 				/>
+				{/* Дополнительный мета-тег для предотвращения iframe */}
+				<meta httpEquiv='X-Frame-Options' content='SAMEORIGIN' />
+				<meta
+					httpEquiv='Content-Security-Policy'
+					content="frame-ancestors 'self'"
+				/>
+				{/* Запрет Web Light и других трансформаций */}
+				<meta name='googlebot' content='notranslate' />
+				<meta name='google' content='notranslate' />
+				<meta httpEquiv='Cache-Control' content='no-transform' />
 			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable}`}
