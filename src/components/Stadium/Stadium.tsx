@@ -18,22 +18,22 @@ interface StadiumProps {
 const stadiumSchemas: SchemaImage[] = [
 	{
 		id: 1,
-		image: '/images/stadium/schema-1.jpg',
+		image: 'schema-1.webp',
 		title: 'Схема прохода к теплой зоне',
 	},
 	// {
 	// 	id: 2,
-	// 	image: '/images/stadium/schema-2.jpg',
+	// 	image: 'schema-2.webp',
 	// 	title: 'Наполнение теплой зоны',
 	// },
 	{
 		id: 3,
-		image: '/images/stadium/schema-3.jpg',
+		image: 'schema-3.webp',
 		title: 'Схема парковок и Gate',
 	},
 	{
 		id: 4,
-		image: '/images/stadium/schema-4.jpg',
+		image: 'schema-4.webp',
 		title: 'Схема остановок транспорта',
 	},
 ]
@@ -45,22 +45,22 @@ const Stadium: React.FC<StadiumProps> = ({ className = '' }) => {
 
 	return (
 		<div className={`${styles.stadiumContainer} ${className}`}>
-			<h2 className={styles.title}>Солидарность Самара Арена</h2>
+			<h2 className={styles.title}>Самара Солидарность Арена</h2>
 
 			<div className={styles.schemaContainer}>
 				<div className={styles.mainSchema}>
 					<Image
-						src={activeSchema.image}
+						src={`/images/optimized/stadium/${activeSchema.image}`}
 						alt={activeSchema.title}
-						width={300}
-						height={200}
+						width={600}
+						height={400}
 						className={styles.mainSchemaImage}
 					/>
 					<p className={styles.schemaTitle}>{activeSchema.title}</p>
 				</div>
 
 				<div className={styles.thumbnails}>
-					{stadiumSchemas.map(schema => (
+					{stadiumSchemas.map((schema, index) => (
 						<div
 							key={schema.id}
 							className={`${styles.thumbnail} ${
@@ -69,17 +69,17 @@ const Stadium: React.FC<StadiumProps> = ({ className = '' }) => {
 							onClick={() => setActiveSchema(schema)}
 						>
 							<Image
-								src={schema.image}
-								alt={schema.title}
-								width={150}
-								height={200}
+								src={`/images/optimized/stadium/${schema.image}`}
+								alt={`Схема стадиона ${index + 1}`}
+								width={120}
+								height={80}
 								className={styles.thumbnailImage}
 							/>
 						</div>
 					))}
 					<div className={styles.info}>
 						<p className={styles.infoText}>
-							Стадион &ldquo;Солидарность Самара Арена&rdquo; — современный
+							Стадион &ldquo;Самара Солидарность Арена&rdquo; — современный
 							футбольный стадион, построенный к Чемпионату мира по футболу 2018
 							года. Вместимость арены составляет 44 918 зрителей. На стадионе
 							предусмотрены комфортные зоны для болельщиков, современные системы

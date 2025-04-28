@@ -29,10 +29,14 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	z-index: 0;
-	will-change: transform;
-	backface-visibility: hidden;
-	transform: translateZ(0);
+	z-index: -1;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	will-change: opacity;
+
+	&.loaded {
+		opacity: 1;
+	}
 }
 
 .backgroundVideo {
@@ -88,7 +92,7 @@
 	}
 
 	.backgroundVideo {
-		display: none;
+		display: none !important;
 	}
 
 	.backgroundVideoMobile {
@@ -98,5 +102,15 @@
 	.leagueInfo {
 		font-size: 1rem;
 		padding: 0.75rem;
+	}
+}
+
+@media (min-width: 769px) {
+	.backgroundVideo {
+		display: block;
+	}
+
+	.backgroundVideoMobile {
+		display: none !important;
 	}
 }
