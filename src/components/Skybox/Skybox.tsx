@@ -79,7 +79,7 @@ export default function Skybox() {
 
 				<div className={styles.infoSection}>
 					<div className={styles.benefits}>
-						<h3 className={styles.benefitsTitle}>Преимущества:</h3>
+						<h3 className={styles.benefitsTitle}>Преимущества</h3>
 						<ul className={styles.benefitsList}>
 							<li>► VIP-заезд/вход на стадион;</li>
 							<li>► Приоритетная парковка (5 мест);</li>
