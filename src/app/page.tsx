@@ -14,8 +14,8 @@ const MatchesPage = () => {
 		<>
 			<Main />
 			<Marquee
-				text='БИЛЕТЫ ЗА 10 ДНЕЙ ДО МАТЧА ВЫГОДНЕЕ × БИЛЕТЫ ЗА 10 ДНЕЙ ДО МАТЧА ВЫГОДНЕЕ × БИЛЕТЫ ЗА 10 ДНЕЙ ДО МАТЧА ВЫГОДНЕЕ × '
-				duration={48}
+				text='ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × '
+				duration={50}
 			/>
 			{/* <Games /> */}
 			{/* <Marquee
@@ -26,12 +26,12 @@ const MatchesPage = () => {
 			<FanCard />
 			<Marquee
 				text='БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × '
-				duration={48}
+				duration={50}
 			/>
 			<Merch />
 			<Marquee
 				text='SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX ×'
-				duration={48}
+				duration={50}
 			/>
 			<Skybox />
 			<Stadium />

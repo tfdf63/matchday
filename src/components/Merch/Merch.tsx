@@ -18,16 +18,12 @@ interface MerchProps {
 
 // Массив товаров по умолчанию
 const defaultItems: MerchItem[] = [
-	{ id: 1, image: '/images/merch/optimized/merch-1.webp' },
 	{ id: 2, image: '/images/merch/optimized/merch-2.webp' },
 	{ id: 3, image: '/images/merch/optimized/merch-3.webp' },
 	{ id: 4, image: '/images/merch/optimized/merch-4.webp' },
-	{ id: 5, image: '/images/merch/optimized/merch-5.webp' },
-	{ id: 6, image: '/images/merch/optimized/merch-6.webp' },
 	{ id: 7, image: '/images/merch/optimized/merch-7.webp' },
 	{ id: 8, image: '/images/merch/optimized/merch-8.webp' },
 	{ id: 9, image: '/images/merch/optimized/merch-9.webp' },
-	{ id: 10, image: '/images/merch/optimized/merch-10.webp' },
 	{ id: 11, image: '/images/merch/optimized/merch-11.webp' },
 	{ id: 12, image: '/images/merch/optimized/merch-12.webp' },
 	{ id: 13, image: '/images/merch/optimized/merch-13.webp' },

@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Main.module.scss'
 import CardMatch from '../CardMatch/CardMatch'
+// import Timer from '../Timer/Timer'
+import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
 
 // URL видеофайлов для кэширования
@@ -15,7 +17,7 @@ const VIDEO_URLS = [
 
 // Функция для регистрации сервис-воркера для кэширования видео
 const registerVideoServiceWorker = async () => {
-	if ('serviceWorker' in navigator) {
+	if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
 		try {
 			// Регистрируем сервис-воркер для кэширования видео
 			navigator.serviceWorker.register('/video-sw.js').catch(error => {
@@ -81,13 +83,30 @@ const supportsWebP = () => {
 // Функция для предварительной загрузки видео
 const preloadVideo = (videoUrl: string) => {
 	return new Promise<void>(resolve => {
-		const link = document.createElement('link')
-		link.rel = 'preload'
-		link.as = 'video'
-		link.href = videoUrl
-		link.onload = () => resolve()
-		link.onerror = () => resolve() // Продолжаем даже если возникла ошибка
-		document.head.appendChild(link)
+		// Создаем элемент video для предзагрузки
+		const video = document.createElement('video')
+		video.preload = 'auto'
+		video.style.display = 'none'
+
+		// Добавляем источник видео
+		const source = document.createElement('source')
+		source.src = videoUrl
+		source.type = videoUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'
+		video.appendChild(source)
+
+		// Добавляем обработчики событий
+		video.onloadeddata = () => {
+			document.body.removeChild(video)
+			resolve()
+		}
+
+		video.onerror = () => {
+			document.body.removeChild(video)
+			resolve()
+		}
+
+		// Добавляем видео в DOM для начала загрузки
+		document.body.appendChild(video)
 	})
 }
 
@@ -256,6 +275,8 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						ticketLink={selectedGame.ticketLink}
 						ticketLinkVip={selectedGame.ticketLinkVip}
 					/>
+					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
+					<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
 				</div>
 			</div>
 		</div>

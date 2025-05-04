@@ -8,31 +8,28 @@ export interface Game {
 	ticketLink: string
 	ticketLinkVip: string
 	leagueInfo: string
+	priceIncreaseDates: {
+		first: string // Первое повышение цен
+		second: string // Второе повышение цен
+	}
 }
 
 const games: Game[] = [
 	{
-		id: '6',
+		id: '7',
 		homeTeam: 'Акрон',
-		awayTeam: 'Динамо Мх',
-		date: '02 мая',
-		time: 'SAMT 19:00',
+		awayTeam: 'Ахмат',
+		date: '11 мая',
+		time: 'SAMT 15:00',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: 'https://fcakron.tncloud.ru/view-available-zones/31',
-		ticketLinkVip: 'https://fcakron.tncloud.ru/choose-seats/31/2200',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 27 ТУР',
+		ticketLink: 'https://fcakron.tncloud.ru/view-available-zones/33',
+		ticketLinkVip: 'https://fcakron.tncloud.ru/choose-seats/33/2200',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 28 ТУР',
+		priceIncreaseDates: {
+			first: '2025-05-01',
+			second: '2025-05-09',
+		},
 	},
-	// {
-	// 	id: '7',
-	// 	homeTeam: 'Акрон',
-	// 	awayTeam: 'Ахмат',
-	// 	date: '11 мая',
-	// 	time: 'SAMT 15:00',
-	// 	stadium: 'Солидарность Самара Арена',
-	// 	ticketLink: '',
-	// 	ticketLinkVip: '',
-	// 	leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 28 ТУР',
-	// },
 	// {
 	// 	id: '9',
 	// 	homeTeam: 'Акрон',

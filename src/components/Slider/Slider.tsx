@@ -19,22 +19,22 @@ const defaultItems: SlideItem[] = [
 	{
 		id: 1,
 		image: `/images/slider1.jpg`,
-		description: 'Яркий аквагримм',
+		description: 'Нарисуй аквагримм',
 	},
 	{
 		id: 2,
 		image: `/images/slider2.jpg`,
-		description: 'Настольный футбол',
+		description: 'Сыграй в футбол',
 	},
 	{
 		id: 3,
 		image: `/images/slider3.jpg`,
-		description: 'Сидячий футбол',
+		description: 'Забей сидя',
 	},
 	{
 		id: 4,
 		image: `/images/slider4.jpg`,
-		description: 'DJ и музыка',
+		description: 'Слушай музыку',
 	},
 	{
 		id: 5,
@@ -44,42 +44,42 @@ const defaultItems: SlideItem[] = [
 	{
 		id: 6,
 		image: `/images/slider6.jpg`,
-		description: 'Мягкая детская площадка',
+		description: 'Играй на площадке',
 	},
 	{
 		id: 7,
 		image: `/images/slider7.jpg`,
-		description: 'Лектории и мастер-классы',
+		description: 'Участвуй в мастер-классе',
 	},
 	{
 		id: 8,
 		image: `/images/slider8.jpg`,
-		description: 'Встреча с маскотом',
+		description: 'Встречай маскота',
 	},
 	{
 		id: 9,
 		image: `/images/slider9.jpg`,
-		description: 'Энергичные ведущие',
+		description: 'Общайся с ведущим',
 	},
 	{
 		id: 10,
 		image: `/images/slider10.jpg`,
-		description: 'Настольный теннис',
+		description: 'Играй в теннис',
 	},
 	{
 		id: 11,
 		image: `/images/slider11.jpg`,
-		description: 'Магазин атрибутики',
+		description: 'Купи атрибутику',
 	},
 	{
 		id: 12,
 		image: `/images/slider12.jpg`,
-		description: 'Площадки от партнёров',
+		description: 'Посети площадку',
 	},
 	{
 		id: 13,
 		image: `/images/slider13.jpg`,
-		description: 'Автограф-сессия с игроком',
+		description: 'Получи автограф',
 	},
 	{
 		id: 14,
@@ -89,13 +89,13 @@ const defaultItems: SlideItem[] = [
 	{
 		id: 15,
 		image: `/images/slider15.jpg`,
-		description: 'Нарисуй плакат поддержки',
+		description: 'Нарисуй плакат',
 	},
 ]
 
 const MOBILE_BREAKPOINT = 768
-const MOBILE_DURATION = 30
-const DESKTOP_DURATION = 30
+const MOBILE_DURATION = 50
+const DESKTOP_DURATION = 50
 
 const Slider: React.FC<SliderProps> = ({
 	items = defaultItems,
