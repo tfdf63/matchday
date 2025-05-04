@@ -26,7 +26,6 @@
 
 .date {
 	font-size: 1rem;
-	color: #b2061c;
 	font-weight: 600;
 	transition: all 0.3s ease;
 
@@ -39,50 +38,6 @@
 .separator {
 	color: #b2061c;
 	font-size: 1.2rem;
-}
-
-.progressContainer {
-	width: 100%;
-	margin-top: 1rem;
-}
-
-.progressBar {
-	width: 100%;
-	height: 4px;
-	background-color: rgba(255, 255, 255, 0.2);
-	position: relative;
-	border-radius: 2px;
-}
-
-.progress {
-	height: 100%;
-	background-color: #b2061c;
-	border-radius: 2px;
-	transition: width 0.3s ease;
-}
-
-.marker {
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	width: 12px;
-	height: 12px;
-	background-color: #fff;
-	border: 2px solid #b2061c;
-	border-radius: 50%;
-}
-
-.markersLabels {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 0.5rem;
-}
-
-.markerLabel {
-	font-size: 0.7rem;
-	color: #fff;
-	opacity: 0.7;
-	font-family: var(--font-ibm-plex-mono), monospace;
 }
 
 @media (max-width: 768px) {

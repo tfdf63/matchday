@@ -1,31 +1,31 @@
-.skyboxContainer {
-	padding: 2rem 2rem;
-	max-width: 1200px;
-	margin: 0 auto;
-	color: var(--foreground);
-	scroll-margin-top: 60px;
+.skybox {
 	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #000;
+	overflow: hidden;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	padding: 2rem 0;
+	visibility: hidden;
 
-	@media (max-width: 768px) {
-		padding: 2rem 1rem;
-		overflow: hidden;
+	&.visible {
+		opacity: 1;
+		visibility: visible;
 	}
 }
 
-.title {
-	font-size: 2.5rem;
-	margin-bottom: 2rem;
-	text-align: center;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
 .contentWrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
 	display: flex;
 	gap: 3rem;
 
 	@media (max-width: 992px) {
 		flex-direction: column;
+		padding: 0 1rem;
 	}
 }
 
@@ -43,7 +43,6 @@
 	margin: 0 auto;
 
 	img {
-		/* border-radius: 8px; */
 		object-fit: cover;
 	}
 }
@@ -104,10 +103,12 @@
 	font-size: 1.5rem;
 	margin-bottom: 1rem;
 	font-weight: 600;
+	color: #fff;
 }
 
 .benefitsList {
 	list-style-type: none;
+	color: #fff;
 
 	li {
 		margin-bottom: 0.75rem;
@@ -233,4 +234,15 @@
 	color: #00ff00;
 	text-align: center;
 	font-family: var(--font-ibm-plex-mono), monospace;
+}
+
+@media (max-width: 768px) {
+	.skybox {
+		padding: 1rem 0;
+	}
+
+	.contentWrapper {
+		padding: 0 0.5rem;
+		gap: 1rem;
+	}
 }

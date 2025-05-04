@@ -1,13 +1,15 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './Skybox.module.scss'
+import ContactForm from './ContactForm/ContactForm'
 
 export default function Skybox() {
 	const skyboxRef = useRef<HTMLDivElement>(null)
 	const formRef = useRef<HTMLDivElement>(null)
 	const [activeImage, setActiveImage] = useState(0)
+	const [isVisible, setIsVisible] = useState(false)
 
 	const skyboxImages = [
 		'/images/skybox/skybox-1.webp',
@@ -15,8 +17,33 @@ export default function Skybox() {
 		'/images/skybox/skybox-3.webp',
 	]
 
+	useEffect(() => {
+		const checkVisibility = () => {
+			const scrollPosition = window.scrollY
+			const windowHeight = window.innerHeight
+			const documentHeight = document.documentElement.scrollHeight
+
+			// Показываем компонент, когда пользователь прокрутил 80% страницы
+			if (scrollPosition + windowHeight >= documentHeight * 0.8) {
+				setIsVisible(true)
+			} else {
+				setIsVisible(false)
+			}
+		}
+
+		// Проверяем видимость сразу при монтировании
+		checkVisibility()
+
+		window.addEventListener('scroll', checkVisibility)
+		return () => window.removeEventListener('scroll', checkVisibility)
+	}, [])
+
 	return (
-		<div className={styles.skyboxContainer} id='skybox' ref={skyboxRef}>
+		<div
+			className={`${styles.skybox} ${isVisible ? styles.visible : ''}`}
+			id='skybox'
+			ref={skyboxRef}
+		>
 			{/* <h2 className={styles.title}>SKYBOX</h2> */}
 
 			<div className={styles.contentWrapper}>
@@ -72,20 +99,7 @@ export default function Skybox() {
 					</div>
 
 					<div className={styles.formSection} ref={formRef}>
-						<h3 className={styles.formTitle}>Оставить заявку:</h3>
-						<div className={styles.formText}>
-							Напишите сообщение на почту{' '}
-							<a href='mailto:test@yandex.ru'>
-								<span>egorova_ka@fcakron.com</span>
-							</a>
-							, указав следующую информацию:
-							<ul>
-								<li>ФИО</li>
-								<li>Телефон</li>
-								<li>Почта</li>
-								<li>Матч</li>
-							</ul>
-						</div>
+						<ContactForm />
 					</div>
 				</div>
 			</div>
