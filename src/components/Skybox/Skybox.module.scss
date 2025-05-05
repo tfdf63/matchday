@@ -2,7 +2,7 @@
 	position: relative;
 	width: 100%;
 	min-height: 100vh;
-	background-color: #000;
+	background-color: var(--background);
 	overflow: hidden;
 	opacity: 0;
 	transition: opacity 0.5s ease;

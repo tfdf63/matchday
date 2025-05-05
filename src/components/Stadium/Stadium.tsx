@@ -16,11 +16,11 @@ interface StadiumProps {
 
 // Массив схем стадиона
 const stadiumSchemas: SchemaImage[] = [
-	{
-		id: 1,
-		image: 'schema-1.webp',
-		title: 'Схема прохода к теплой зоне',
-	},
+	// {
+	// 	id: 1,
+	// 	image: 'schema-1.webp',
+	// 	title: 'Схема прохода к теплой зоне',
+	// },
 	// {
 	// 	id: 2,
 	// 	image: 'schema-2.webp',
