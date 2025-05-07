@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
 	output: 'export',
 	distDir: 'out',
 	images: { unoptimized: true },
+	https: true,
 
 	// Добавляем HTTP-заголовки
 	async headers() {

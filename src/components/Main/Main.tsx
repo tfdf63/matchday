@@ -256,14 +256,13 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				preload='none'
 				className={styles.backgroundVideoMobile}
 				id='mobile-video'
-				poster='/images/optimized/mainmob.webp'
+				poster='/images/optimized/stadium-background-mobile.webp'
 			>
 				{supportsWebPFormat && (
 					<source src='/videos/bgmainmob-optimized.webm' type='video/webm' />
 				)}
 				<source src='/videos/bgmainmob-optimized-fast.mp4' type='video/mp4' />
 			</video>
-			<div className={styles.leagueInfo}>{selectedGame.leagueInfo}</div>
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
 					<CardMatch
