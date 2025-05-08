@@ -1,0 +1,15 @@
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+	background-color: var(--background);
+}
+
+#ya-widget-frame {
+	width: 100%;
+	min-height: 600px;
+	background-color: var(--background);
+	border-radius: 8px;
+	overflow: hidden;
+}
