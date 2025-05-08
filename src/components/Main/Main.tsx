@@ -232,7 +232,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 		return () => {
 			window.removeEventListener('resize', handleResize)
 		}
-	}, []) // Оставляем пустой массив зависимостей, так как все зависимости определены внутри эффекта
+	}, [isMobile]) // Добавляем isMobile в зависимости, так как он используется внутри эффекта
 
 	return (
 		<div className={styles.main}>
