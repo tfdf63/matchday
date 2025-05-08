@@ -148,10 +148,11 @@ const Slider: React.FC<SliderProps> = ({
 							<Image
 								src={item.image}
 								alt={item.description}
-								width={200}
+								width={300}
 								height={200}
 								className={styles.image}
 								priority={true}
+								style={{ width: '100%', height: 'auto' }}
 							/>
 						</div>
 						<p className={styles.description}>{item.description}</p>

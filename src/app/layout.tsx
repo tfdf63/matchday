@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono, IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
 
@@ -18,6 +18,12 @@ const ibmPlexMono = IBM_Plex_Mono({
 	weight: ['300', '400', '600'],
 	display: 'swap',
 })
+
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 5,
+}
 
 export const metadata: Metadata = {
 	title: 'Matchday | Купить билеты на Акрон',
@@ -49,11 +55,6 @@ export const metadata: Metadata = {
 			'max-snippet': -1,
 		},
 	},
-	viewport: {
-		width: 'device-width',
-		initialScale: 1,
-		maximumScale: 5,
-	},
 }
 
 export default function RootLayout({
@@ -68,14 +69,8 @@ export default function RootLayout({
 					rel='preload'
 					href='/fonts/Akademia.otf'
 					as='font'
-					type='font/opentype'
+					type='font/otf'
 					crossOrigin='anonymous'
-				/>
-				{/* Дополнительный мета-тег для предотвращения iframe */}
-				<meta httpEquiv='X-Frame-Options' content='SAMEORIGIN' />
-				<meta
-					httpEquiv='Content-Security-Policy'
-					content="frame-ancestors 'self'"
 				/>
 				{/* Запрет Web Light и других трансформаций */}
 				<meta name='googlebot' content='notranslate' />

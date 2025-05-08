@@ -159,7 +159,10 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 
 		// Обработка изменения размера экрана
 		const handleResize = () => {
-			setIsMobile(isMobileDevice())
+			const newIsMobile = isMobileDevice()
+			if (newIsMobile !== isMobile) {
+				setIsMobile(newIsMobile)
+			}
 		}
 
 		window.addEventListener('resize', handleResize)
@@ -175,8 +178,8 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 
 			if (desktopVideo && mobileVideo) {
 				// Определяем, какое видео должно загружаться первым
-				const primaryVideo = isMobile ? mobileVideo : desktopVideo
-				const secondaryVideo = isMobile ? desktopVideo : mobileVideo
+				const primaryVideo = mobile ? mobileVideo : desktopVideo
+				const secondaryVideo = mobile ? desktopVideo : mobileVideo
 
 				// Настраиваем приоритетное видео
 				primaryVideo.setAttribute('preload', 'auto')
@@ -208,12 +211,12 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 
 				// Обработчики ошибок
 				primaryVideo.addEventListener('error', () => {
-					console.log(`${isMobile ? 'Mobile' : 'Desktop'} video loading error`)
+					console.log(`${mobile ? 'Mobile' : 'Desktop'} video loading error`)
 					primaryVideo.classList.add(styles.loaded)
 				})
 
 				secondaryVideo.addEventListener('error', () => {
-					console.log(`${!isMobile ? 'Mobile' : 'Desktop'} video loading error`)
+					console.log(`${!mobile ? 'Mobile' : 'Desktop'} video loading error`)
 					secondaryVideo.classList.add(styles.loaded)
 				})
 
@@ -229,7 +232,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 		return () => {
 			window.removeEventListener('resize', handleResize)
 		}
-	}, [])
+	}, []) // Оставляем пустой массив зависимостей, так как все зависимости определены внутри эффекта
 
 	return (
 		<div className={styles.main}>
@@ -241,7 +244,6 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				preload='none'
 				className={styles.backgroundVideo}
 				id='desktop-video'
-				poster='/images/optimized/stadium-background.webp'
 			>
 				{supportsWebPFormat && (
 					<source src='/videos/bgmain1-optimized.webm' type='video/webm' />
@@ -256,7 +258,6 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				preload='none'
 				className={styles.backgroundVideoMobile}
 				id='mobile-video'
-				poster='/images/optimized/stadium-background-mobile.webp'
 			>
 				{supportsWebPFormat && (
 					<source src='/videos/bgmainmob-optimized.webm' type='video/webm' />
