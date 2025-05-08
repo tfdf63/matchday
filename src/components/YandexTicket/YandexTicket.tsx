@@ -3,13 +3,62 @@
 import { useEffect } from 'react'
 import styles from './YandexTicket.module.scss'
 
+type DealerCommand =
+	| ['setDefaultClientKey', string]
+	| ['setDefaultRegionId', number]
+	| ['getDealer', (dealer: YandexTicketsDealer) => void]
+
+interface YandexTicketsDealer {
+	Widget: (
+		eventId: string,
+		type: string,
+		options: {
+			target: HTMLElement | null
+			onRequestClose: () => void
+		}
+	) => {
+		mount: (options: { style: { height: string } }) => void
+		unmount: () => void
+		destroy: () => void
+	}
+}
+
+declare global {
+	interface Window {
+		YandexTicketsDealer: DealerCommand[]
+	}
+}
+
 const YandexTicket = () => {
 	useEffect(() => {
-		// Загружаем скрипт Яндекс.Афиши
+		const dealerName = 'YandexTicketsDealer'
+		const dealer = (window[dealerName] = window[dealerName] || [])
+
+		dealer.push(['setDefaultClientKey', 'd721bb72-e7ce-4a03-8775-67aea527feb0'])
+		dealer.push(['setDefaultRegionId', 51])
+
+		dealer.push([
+			'getDealer',
+			function (dealer: YandexTicketsDealer) {
+				const widget = dealer.Widget('ticketsteam-2130@36744901', 'session', {
+					target: document.getElementById('ya-widget-frame'),
+					onRequestClose: function () {
+						widget.unmount()
+						widget.destroy()
+					},
+				})
+
+				widget.mount({ style: { height: '600px' } })
+			},
+		])
+
+		// Загрузка скрипта
+		const rnd = '?' + new Date().getTime() * Math.random()
 		const script = document.createElement('script')
-		script.src = '/components/YandexTicket/yandex-tickets.js'
+		const target = document.getElementsByTagName('script')[0]
 		script.async = true
-		document.body.appendChild(script)
+		script.src = 'https://widget.afisha.yandex.ru/dealer/dealer.js' + rnd
+		target.parentNode?.insertBefore(script, target)
 
 		// Очистка при размонтировании
 		return () => {
@@ -17,7 +66,6 @@ const YandexTicket = () => {
 			if (widgetFrame) {
 				widgetFrame.innerHTML = ''
 			}
-			document.body.removeChild(script)
 		}
 	}, [])
 
