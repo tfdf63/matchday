@@ -19,10 +19,10 @@ const nextConfig: NextConfig = {
 						key: 'X-Frame-Options',
 						value: 'SAMEORIGIN',
 					},
-					{
-						key: 'Content-Security-Policy',
-						value: "frame-ancestors 'self'",
-					},
+					// {
+					// 	key: 'Content-Security-Policy',
+					// 	value: "frame-ancestors 'self'",
+					// },
 					{
 						key: 'X-Content-Type-Options',
 						value: 'nosniff',
