@@ -7,7 +7,7 @@ import FanCard from '@/components/FanCard/FanCard'
 import Merch from '@/components/Merch/Merch'
 import Stadium from '@/components/Stadium/Stadium'
 import Skybox from '@/components/Skybox/Skybox'
-import YandexTicket from '@/components/YandexTicket/YandexTicket'
+// import YandexTicket from '@/components/YandexTicket/YandexTicket'
 // import VIP from '@/components/VIP/VIP'
 const MatchesPage = () => {
 	return (
@@ -35,7 +35,7 @@ const MatchesPage = () => {
 			/>
 			<Skybox />
 			<Stadium />
-			<YandexTicket />
+			{/* <YandexTicket /> */}
 			{/* <VIP /> */}
 		</>
 	)
