@@ -11,6 +11,7 @@ export default function Skybox() {
 	const videoRef = useRef<HTMLVideoElement>(null)
 	const [activeItem, setActiveItem] = useState(0)
 	const [isVisible, setIsVisible] = useState(false)
+	const [isMobile, setIsMobile] = useState(false)
 
 	const skyboxItems = [
 		{
@@ -30,6 +31,25 @@ export default function Skybox() {
 			alt: 'Skybox VIP ложа 3',
 		},
 	] as const
+
+	// Определяем, является ли устройство мобильным
+	useEffect(() => {
+		const checkMobile = () => {
+			const isMobileDevice =
+				window.innerWidth <= 768 ||
+				/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+					navigator.userAgent
+				)
+			setIsMobile(isMobileDevice)
+		}
+
+		checkMobile()
+		window.addEventListener('resize', checkMobile)
+
+		return () => {
+			window.removeEventListener('resize', checkMobile)
+		}
+	}, [])
 
 	useEffect(() => {
 		const checkVisibility = () => {
@@ -87,6 +107,9 @@ export default function Skybox() {
 				/>
 			)
 		} else if (item.type === 'video') {
+			// Определяем суффикс для мобильной версии
+			const mobileSuffix = isMobile ? '-mobile' : ''
+
 			return (
 				<video
 					ref={videoRef}
@@ -98,8 +121,8 @@ export default function Skybox() {
 					playsInline
 					poster={item.poster}
 				>
-					<source src={`${item.src}.webm`} type='video/webm' />
-					<source src={`${item.src}.mp4`} type='video/mp4' />
+					<source src={`${item.src}${mobileSuffix}.webm`} type='video/webm' />
+					<source src={`${item.src}${mobileSuffix}.mp4`} type='video/mp4' />
 					Ваш браузер не поддерживает видео.
 				</video>
 			)
