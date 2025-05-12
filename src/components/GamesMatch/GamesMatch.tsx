@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from './GamesMatch.module.scss'
-
+import Timer2 from '../Timer2/Timer2'
 interface CardMatchProps {
 	homeTeam?: string
 	awayTeam?: string
@@ -13,6 +13,10 @@ interface CardMatchProps {
 	className?: string
 	ticketLink?: string
 	ticketLinkVip?: string
+	priceIncreaseDates?: {
+		first?: string
+		second?: string
+	}
 }
 
 const CardMatch: React.FC<CardMatchProps> = ({
@@ -23,7 +27,11 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	stadium = 'Стадион',
 	className,
 	ticketLink = '#',
-	ticketLinkVip = '#',
+	// ticketLinkVip = '#',
+	priceIncreaseDates = {
+		first: '2025-05-18',
+		second: '2025-05-22',
+	},
 }) => {
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
@@ -45,10 +53,11 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				<Link href={ticketLink} className={styles.button}>
 					Купить билеты
 				</Link>
-				<Link href={ticketLinkVip} className={styles.button}>
+				{/* <Link href={ticketLinkVip} className={styles.button}>
 					VIP A106
-				</Link>
+				</Link> */}
 			</div>
+			<Timer2 priceIncreaseDates={priceIncreaseDates} />
 		</div>
 	)
 }

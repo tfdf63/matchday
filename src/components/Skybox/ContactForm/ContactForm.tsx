@@ -159,6 +159,11 @@ const ContactForm: React.FC = () => {
 					)}
 				</div>
 
+				<div className={styles.consentText}>
+					Нажимая кнопку &quot;Отправить&quot;, я даю согласие на обработку
+					персональных данных
+				</div>
+
 				<button
 					type='submit'
 					className={styles.submitButton}

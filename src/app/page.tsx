@@ -1,6 +1,6 @@
 import React from 'react'
 import Main from '@/components/Main/Main'
-// import Games from '@/components/Games/Games'
+import Games from '@/components/Games/Games'
 import Marquee from '@/components/Marquee/Marquee'
 import Slider from '@/components/Slider/Slider'
 import FanCard from '@/components/FanCard/FanCard'
@@ -8,7 +8,7 @@ import Merch from '@/components/Merch/Merch'
 import Stadium from '@/components/Stadium/Stadium'
 import Skybox from '@/components/Skybox/Skybox'
 // import YandexTicket from '@/components/YandexTicket/YandexTicket'
-// import VIP from '@/components/VIP/VIP'
+
 const MatchesPage = () => {
 	return (
 		<>
@@ -17,7 +17,8 @@ const MatchesPage = () => {
 				text='ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × '
 				duration={50}
 			/>
-			{/* <Games /> */}
+			{/* <YandexTicket /> */}
+			<Games />
 			{/* <Marquee
 				text='ПРИЕЗЖАЙ НА СТАДИОН ЗАРАНЕЕ ВЫИГРЫВАЙ ПРИЗЫ ОТ ПАРТНËРОВ × ПРИЕЗЖАЙ НА СТАДИОН ЗАРАНЕЕ ВЫИГРЫВАЙ ПРИЗЫ ОТ ПАРТНËРОВ ×'
 				duration={48}
@@ -35,8 +36,6 @@ const MatchesPage = () => {
 			/>
 			<Skybox />
 			<Stadium />
-			{/* <YandexTicket /> */}
-			{/* <VIP /> */}
 		</>
 	)
 }

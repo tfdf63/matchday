@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono, IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
+import Script from 'next/script'
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -80,7 +81,22 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable}`}
 			>
+				<Script
+					id='top-mail-ru'
+					strategy='afterInteractive'
+					src='/top-mail-ru.js'
+				/>
+				<Script
+					id='yandex-metrika'
+					strategy='afterInteractive'
+					src='/yandex-metrika.js'
+				/>
 				{children}
+				<Script
+					id='andata-tag-manager'
+					strategy='beforeInteractive'
+					src='//tagmanager.andata.ru/api/v1/container/9ebcc59d-e373-447f-b5cd-0de5dc2006e4/published/code.js'
+				/>
 			</body>
 		</html>
 	)

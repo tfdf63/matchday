@@ -57,6 +57,14 @@
 	font-family: var(--font-ibm-plex-mono), monospace;
 }
 
+.consentText {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 0.8rem;
+	margin-bottom: 0.2rem;
+	line-height: 1.3;
+	font-family: var(--font-ibm-plex-mono), monospace;
+}
+
 .submitButton {
 	height: 50px;
 	background-color: #b2061c;

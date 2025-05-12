@@ -3,8 +3,6 @@
 	height: 100dvh;
 	position: relative;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
 	justify-content: center;
 	overflow: hidden;
 	gap: 15rem;
@@ -48,17 +46,14 @@
 }
 
 .content {
-	position: relative;
+	display: flex;
+	flex-direction: column;
 	z-index: 2;
 	width: 100%;
 	max-width: 1200px;
 	padding: 2rem 20px;
 	color: white;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	gap: 13rem;
 }
 
 .leagueInfo {
@@ -66,7 +61,6 @@
 	z-index: 2;
 	width: 100%;
 	text-align: center;
-	margin-top: 1rem;
 	padding: 1rem;
 	font-size: 1.5rem;
 	color: white;
@@ -79,7 +73,7 @@
 }
 
 .featuredMatch {
-	max-width: 500px;
+	max-width: 20rem;
 	width: 100%;
 	margin: 0 auto;
 	transform: scale(1.05);
