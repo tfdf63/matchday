@@ -5,8 +5,8 @@ import styles from './Timer2.module.scss'
 
 interface Timer2Props {
 	priceIncreaseDates: {
-		first: string
-		second: string
+		first?: string
+		second?: string
 	}
 }
 
@@ -17,11 +17,20 @@ const Timer2: React.FC<Timer2Props> = ({ priceIncreaseDates }) => {
 	useEffect(() => {
 		const checkDates = () => {
 			const now = new Date()
-			const firstDate = new Date(priceIncreaseDates.first)
-			const secondDate = new Date(priceIncreaseDates.second)
+			const firstDate = priceIncreaseDates.first
+				? new Date(priceIncreaseDates.first)
+				: null
+			const secondDate = priceIncreaseDates.second
+				? new Date(priceIncreaseDates.second)
+				: null
 
-			setIsFirstPassed(now > firstDate)
-			setIsSecondPassed(now > secondDate)
+			if (firstDate) {
+				setIsFirstPassed(now > firstDate)
+			}
+
+			if (secondDate) {
+				setIsSecondPassed(now > secondDate)
+			}
 		}
 
 		// Проверяем даты сразу при монтировании
@@ -41,7 +50,8 @@ const Timer2: React.FC<Timer2Props> = ({ priceIncreaseDates }) => {
 		return () => clearInterval(timer)
 	}, [priceIncreaseDates])
 
-	const formatDate = (dateString: string) => {
+	const formatDate = (dateString?: string) => {
+		if (!dateString) return '—'
 		const date = new Date(dateString)
 		return date.toLocaleDateString('ru-RU', {
 			day: 'numeric',
