@@ -38,7 +38,7 @@ const games: Game[] = [
 		time: 'SAMT 17:30',
 		stadium: 'Солидарность Самара Арена',
 		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/Nzk4MDd8Njc0NjQxfDg3NDY0OTd8MTc0ODA5MzQwMDAwMA==?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0',
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@36744901?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
 		ticketLinkVip: '',
 		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 30 ТУР',
 		priceIncreaseDates: {
