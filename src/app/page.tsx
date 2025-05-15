@@ -7,6 +7,7 @@ import FanCard from '@/components/FanCard/FanCard'
 import Merch from '@/components/Merch/Merch'
 import Stadium from '@/components/Stadium/Stadium'
 import Skybox from '@/components/Skybox/Skybox'
+import Requisites from '@/components/Requisites'
 // import YandexTicket from '@/components/YandexTicket/YandexTicket'
 
 const MatchesPage = () => {
@@ -36,6 +37,7 @@ const MatchesPage = () => {
 			/>
 			<Skybox />
 			<Stadium />
+			<Requisites />
 		</>
 	)
 }

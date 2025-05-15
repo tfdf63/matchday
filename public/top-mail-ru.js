@@ -1,6 +1,11 @@
 // Top.Mail.Ru counter
 var _tmr = window._tmr || (window._tmr = [])
-_tmr.push({ id: '3582661', type: 'pageView', start: new Date().getTime() })
+_tmr.push({
+	id: '3648109',
+	type: 'pageView',
+	start: new Date().getTime(),
+	pid: 'USER_ID',
+})
 ;(function (d, w, id) {
 	if (d.getElementById(id)) return
 	var ts = d.createElement('script')
@@ -25,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const div = document.createElement('div')
 	const img = document.createElement('img')
 
-	img.src = 'https://top-fwz1.mail.ru/counter?id=3582661;js=na'
+	img.src = 'https://top-fwz1.mail.ru/counter?id=3648109;js=na'
 	img.style.position = 'absolute'
 	img.style.left = '-9999px'
 	img.alt = 'Top.Mail.Ru'

@@ -23,6 +23,7 @@ ym(90103330, 'init', {
 	trackLinks: true,
 	accurateTrackBounce: true,
 	webvisor: true,
+	ecommerce: 'dataLayer',
 })
 
 // Добавление noscript элемента для Яндекс.Метрики

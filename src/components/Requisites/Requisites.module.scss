@@ -1,0 +1,41 @@
+.requisitesContainer {
+	width: 100%;
+	padding: 2rem 1rem;
+	background: var(--background);
+	color: var(--foreground);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	max-width: 400px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.text {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 0.5rem;
+	line-height: 1.5;
+	text-align: center;
+}
+
+// Адаптивный дизайн для планшетов
+@media (max-width: 768px) {
+	.text {
+		font-size: 0.47rem;
+		text-align: left;
+	}
+}
+
+// Адаптивный дизайн для мобильных устройств
+@media (max-width: 480px) {
+	.content {
+		max-width: 360px;
+	}
+	.text {
+		font-size: 0.43rem;
+		text-align: left;
+	}
+}
