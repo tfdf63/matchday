@@ -18,77 +18,77 @@ interface SliderProps {
 const defaultItems: SlideItem[] = [
 	{
 		id: 1,
-		image: `/images/slider1.jpg`,
+		image: `/images/slider/slider1.webp`,
 		description: 'Нарисуй аквагримм',
 	},
 	{
 		id: 2,
-		image: `/images/slider2.jpg`,
+		image: `/images/slider/slider2.webp`,
 		description: 'Сыграй в футбол',
 	},
 	{
 		id: 3,
-		image: `/images/slider3.jpg`,
+		image: `/images/slider/slider3.webp`,
 		description: 'Забей сидя',
 	},
 	{
 		id: 4,
-		image: `/images/slider4.jpg`,
+		image: `/images/slider/slider4.webp`,
 		description: 'Слушай музыку',
 	},
 	{
 		id: 5,
-		image: `/images/slider5.jpg`,
+		image: `/images/slider/slider5.webp`,
 		description: 'Сыграй в приставку PS5',
 	},
 	{
 		id: 6,
-		image: `/images/slider6.jpg`,
+		image: `/images/slider/slider6.webp`,
 		description: 'Играй на площадке',
 	},
 	{
 		id: 7,
-		image: `/images/slider7.jpg`,
+		image: `/images/slider/slider7.webp`,
 		description: 'Участвуй в мастер-классе',
 	},
 	{
 		id: 8,
-		image: `/images/slider8.jpg`,
+		image: `/images/slider/slider8.webp`,
 		description: 'Встречай маскота',
 	},
 	{
 		id: 9,
-		image: `/images/slider9.jpg`,
+		image: `/images/slider/slider9.webp`,
 		description: 'Общайся с ведущим',
 	},
 	{
 		id: 10,
-		image: `/images/slider10.jpg`,
+		image: `/images/slider/slider10.webp`,
 		description: 'Играй в теннис',
 	},
 	{
 		id: 11,
-		image: `/images/slider11.jpg`,
+		image: `/images/slider/slider11.webp`,
 		description: 'Купи атрибутику',
 	},
 	{
 		id: 12,
-		image: `/images/slider12.jpg`,
+		image: `/images/slider/slider12.webp`,
 		description: 'Посети площадку',
 	},
 	{
 		id: 13,
-		image: `/images/slider13.jpg`,
+		image: `/images/slider/slider13.webp`,
 		description: 'Получи автограф',
 	},
 	{
 		id: 14,
-		image: `/images/slider14.jpg`,
+		image: `/images/slider/slider14.webp`,
 		description: 'Посети тёплую зону',
 	},
 	{
 		id: 15,
-		image: `/images/slider15.jpg`,
+		image: `/images/slider/slider15.webp`,
 		description: 'Нарисуй плакат',
 	},
 ]
