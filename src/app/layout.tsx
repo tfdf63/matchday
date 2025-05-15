@@ -72,6 +72,20 @@ export default function RootLayout({
 					as='font'
 					type='font/otf'
 					crossOrigin='anonymous'
+					fetchPriority='high'
+				/>
+				<style
+					dangerouslySetInnerHTML={{
+						__html: `
+						@font-face {
+							font-family: 'Akademia';
+							font-display: swap;
+							src: url('/fonts/Akademia.otf') format('opentype');
+							font-weight: normal;
+							font-style: normal;
+						}
+					`,
+					}}
 				/>
 				{/* Запрет Web Light и других трансформаций */}
 				<meta name='googlebot' content='notranslate' />
