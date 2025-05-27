@@ -5,8 +5,13 @@ const VIDEO_CACHE_NAME = 'video-cache-v1'
 const VIDEO_URLS = [
 	'/videos/bgmain1-optimized-fast.mp4',
 	'/videos/bgmain1-optimized.webm',
+	'/videos/bgmain1-av1.mp4',
 	'/videos/bgmainmob-optimized-fast.mp4',
 	'/videos/bgmainmob-optimized.webm',
+	'/videos/bgmainmob-av1.mp4',
+	'/videos/bgmainmob1-optimized-fast.mp4',
+	'/videos/bgmainmob1-optimized.webm',
+	'/videos/bgmainmob1-av1.mp4',
 ]
 
 // Событие установки сервис-воркера

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Main.module.scss'
 import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
@@ -252,10 +252,11 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 			</video>
 			<video
 				autoPlay
-				muted
 				loop
+				muted
 				playsInline
-				preload='none'
+				poster='/videos/bgmainmob-poster.jpg'
+				preload='auto'
 				className={styles.backgroundVideoMobile}
 				id='mobile-video'
 			>

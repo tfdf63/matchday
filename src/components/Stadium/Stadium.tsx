@@ -49,13 +49,22 @@ const Stadium: React.FC<StadiumProps> = ({ className = '' }) => {
 
 			<div className={styles.schemaContainer}>
 				<div className={styles.mainSchema}>
-					<Image
-						src={`/images/optimized/stadium/${activeSchema.image}`}
-						alt={activeSchema.title}
-						width={600}
-						height={400}
-						className={styles.mainSchemaImage}
-					/>
+					<div
+						style={{
+							position: 'relative',
+							width: '100%',
+							maxWidth: '600px',
+							height: '400px',
+							margin: '0 auto',
+						}}
+					>
+						<Image
+							src={`/images/optimized/stadium/${activeSchema.image}`}
+							alt={activeSchema.title}
+							fill
+							className={styles.mainSchemaImage}
+						/>
+					</div>
 					<p className={styles.schemaTitle}>{activeSchema.title}</p>
 				</div>
 
@@ -68,13 +77,16 @@ const Stadium: React.FC<StadiumProps> = ({ className = '' }) => {
 							}`}
 							onClick={() => setActiveSchema(schema)}
 						>
-							<Image
-								src={`/images/optimized/stadium/${schema.image}`}
-								alt={`Схема стадиона ${index + 1}`}
-								width={120}
-								height={80}
-								className={styles.thumbnailImage}
-							/>
+							<div
+								style={{ position: 'relative', width: '100%', height: '100%' }}
+							>
+								<Image
+									src={`/images/optimized/stadium/${schema.image}`}
+									alt={`Схема стадиона ${index + 1}`}
+									fill
+									className={styles.thumbnailImage}
+								/>
+							</div>
 						</div>
 					))}
 					<div className={styles.info}>

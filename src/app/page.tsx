@@ -1,5 +1,5 @@
 import React from 'react'
-import Main from '@/components/Main/Main'
+// import Main from '@/components/Main/Main'
 import Games from '@/components/Games/Games'
 import Marquee from '@/components/Marquee/Marquee'
 import Slider from '@/components/Slider/Slider'
@@ -13,17 +13,13 @@ import Requisites from '@/components/Requisites'
 const MatchesPage = () => {
 	return (
 		<>
-			<Main />
-			<Marquee
+			{/* <Main /> */}
+			{/* <Marquee
 				text='ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × '
 				duration={50}
-			/>
+			/> */}
 			{/* <YandexTicket /> */}
 			<Games />
-			{/* <Marquee
-				text='ПРИЕЗЖАЙ НА СТАДИОН ЗАРАНЕЕ ВЫИГРЫВАЙ ПРИЗЫ ОТ ПАРТНËРОВ × ПРИЕЗЖАЙ НА СТАДИОН ЗАРАНЕЕ ВЫИГРЫВАЙ ПРИЗЫ ОТ ПАРТНËРОВ ×'
-				duration={48}
-			/> */}
 			<Slider />
 			<FanCard />
 			<Marquee
