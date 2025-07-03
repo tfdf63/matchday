@@ -1,9 +1,8 @@
 .marqueeContainer {
-	margin-top: 2rem;
+	margin-top: 1rem;
 	width: 100%;
 	overflow: hidden;
 	background-color: var(--background-color);
-	padding: 1rem 0;
 	position: relative;
 
 	&::before,

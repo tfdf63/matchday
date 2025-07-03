@@ -1,0 +1,275 @@
+.pricingTables {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+	background-color: var(--background);
+}
+
+.sectionTitle {
+	font-family: 'Akademia', sans-serif;
+	font-size: 2rem;
+	color: white;
+	margin: 0 0 1rem 0;
+	text-align: left;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pricingSection,
+.benefitsSection {
+	margin-top: 1rem;
+}
+
+.pricingTable {
+	overflow-x: auto;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1rem;
+	color: #ccc;
+
+	th,
+	td {
+		padding: 0.5rem;
+		text-align: left;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	th {
+		font-family: 'Akademia', sans-serif;
+		font-size: 1.2rem;
+		color: white;
+		font-weight: 600;
+		background: rgba(255, 255, 255, 0.05);
+		text-align: left;
+	}
+
+	td {
+		font-size: 1rem;
+	}
+
+	tr:hover {
+		background: rgba(255, 255, 255, 0.02);
+	}
+
+	tr:last-child td {
+		border-bottom: none;
+	}
+}
+
+.sectorName {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1rem;
+	color: white;
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+
+.sectorCode {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 0.9rem;
+	color: #ccc;
+}
+
+// Мобильная версия таблицы
+.mobileTable {
+	display: none;
+}
+
+.mobileHeaders {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+}
+
+.mobileHeader {
+	font-family: 'Akademia', sans-serif;
+	font-size: 1.1rem;
+	color: white;
+	font-weight: 600;
+	text-align: center;
+	flex: 1;
+}
+
+.mobileRow {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	/* border-radius: 4px; */
+}
+
+.businessClub {
+	background-color: rgba(220, 202, 167, 0.15);
+}
+
+.regularSector {
+	background-color: rgba(178, 6, 28, 0.15);
+}
+
+.mobileSector {
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.5rem;
+}
+
+.mobileSectorName {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1.1rem;
+	color: white;
+	font-weight: 600;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 180px;
+	flex-shrink: 0;
+}
+
+.mobileSectorCode {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1rem;
+	color: #ccc;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: 0.5rem;
+
+	&::before {
+		content: '|';
+		margin-right: 0.5rem;
+		color: rgba(255, 255, 255, 0.3);
+	}
+}
+
+.mobilePrices {
+	display: flex;
+	justify-content: space-between;
+	gap: 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding-top: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.mobilePrice {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1rem;
+	color: #ccc;
+	text-align: center;
+	flex: 1;
+	white-space: nowrap;
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 0 0.25rem;
+
+	&:last-child {
+		border-right: none;
+	}
+}
+
+// Адаптивность для мобильных устройств
+@media (max-width: 768px) {
+	.pricingTables {
+		padding: 1rem;
+	}
+
+	.sectionTitle {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.pricingSection,
+	.benefitsSection {
+		margin-bottom: 2rem;
+	}
+
+	.pricingTable,
+	.benefitsTable {
+		padding: 0.5rem;
+	}
+
+	.table {
+		font-size: 0.8rem;
+
+		th,
+		td {
+			padding: 0.5rem;
+		}
+
+		th {
+			font-size: 1rem;
+		}
+	}
+
+	// Скрываем десктопную таблицу на мобильных
+	.desktopTable {
+		display: none;
+	}
+
+	// Показываем мобильную версию
+	.mobileTable {
+		display: block;
+	}
+
+	.sectorName {
+		width: 73px;
+		display: flex;
+		flex-wrap: wrap;
+		font-family: var(--font-ibm-plex-mono), monospace;
+		font-size: 0.7rem;
+		color: white;
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+	}
+
+	.sectorCode {
+		font-family: var(--font-ibm-plex-mono), monospace;
+		font-size: 0.6rem;
+		color: #ccc;
+	}
+}
+
+.benefitsSection {
+	margin-bottom: 1rem;
+}
+
+.benefitsList {
+	margin-top: 1rem;
+}
+
+.servicesList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.serviceItem {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1.1rem;
+	color: #ccc;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&::before {
+		content: '✓';
+		color: #b2061c;
+		margin-right: 0.5rem;
+		font-weight: bold;
+	}
+}
+
+.benefitDescription {
+	font-size: 1rem;
+	color: #ccc;
+	line-height: 1.4;
+	margin-top: 0.25rem;
+	margin-left: 1.5rem;
+}

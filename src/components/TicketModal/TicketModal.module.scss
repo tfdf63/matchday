@@ -1,0 +1,104 @@
+.modalOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10000;
+	backdrop-filter: blur(4px);
+}
+
+.modalContent {
+	background: var(--background);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	max-width: 90vw;
+	max-height: 90vh;
+	width: 800px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.closeButton {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 40px;
+	height: 40px;
+	background: rgba(255, 255, 255, 0.1);
+	border: none;
+	color: white;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	z-index: 1;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.2);
+		transform: scale(1.1);
+	}
+
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.modalBody {
+	padding: 2rem;
+}
+
+.modalTitle {
+	font-family: 'Akademia', sans-serif;
+	font-size: 2rem;
+	color: white;
+	margin: 0 0 1.5rem 0;
+	text-align: center;
+}
+
+.widgetContainer {
+	min-height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.widgetFrame {
+	width: 100%;
+	height: 600px;
+	border: none;
+	border-radius: 8px;
+	background: transparent;
+}
+
+// Мобильная версия
+@media (max-width: 768px) {
+	.modalContent {
+		width: 95vw;
+		max-height: 95vh;
+		margin: 1rem;
+	}
+
+	.modalBody {
+		padding: 1.5rem;
+	}
+
+	.modalTitle {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.widgetContainer {
+		min-height: 300px;
+	}
+
+	.widgetFrame {
+		height: 500px;
+	}
+}

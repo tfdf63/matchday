@@ -9,7 +9,13 @@ interface FormData {
 	email: string
 }
 
-const ContactForm: React.FC = () => {
+interface ContactFormProps {
+	email?: string
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({
+	email = 'egorova_ka@fcakron.com',
+}) => {
 	const [formData, setFormData] = useState<FormData>({
 		fullName: '',
 		phone: '',
@@ -66,7 +72,7 @@ const ContactForm: React.FC = () => {
 		e.preventDefault()
 
 		if (validateForm()) {
-			const mailtoLink = `mailto:egorova_ka@fcakron.com?subject=Новая заявка&body=ФИО: ${formData.fullName}%0D%0AТелефон: ${formData.phone}%0D%0AEmail: ${formData.email}`
+			const mailtoLink = `mailto:${email}?subject=Новая заявка&body=ФИО: ${formData.fullName}%0D%0AТелефон: ${formData.phone}%0D%0AEmail: ${formData.email}`
 
 			window.location.href = mailtoLink
 			setIsSubmitted(true)
@@ -113,7 +119,7 @@ const ContactForm: React.FC = () => {
 	}
 
 	return (
-		<>
+		<div className={styles.formContainer}>
 			<h2 className={styles.title}>Оставить заявку</h2>
 			<form onSubmit={handleSubmit} className={styles.form}>
 				<div className={styles.formGroup}>
@@ -172,7 +178,7 @@ const ContactForm: React.FC = () => {
 					{isSubmitted ? 'Отправлено!' : 'Отправить'}
 				</button>
 			</form>
-		</>
+		</div>
 	)
 }
 

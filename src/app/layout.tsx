@@ -1,17 +1,18 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, IBM_Plex_Mono } from 'next/font/google'
+import { IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
 import Script from 'next/script'
+import BackToHome from '@/components/BackToHome'
 
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
-})
+// const geistSans = Geist({
+// 	variable: '--font-geist-sans',
+// 	subsets: ['latin'],
+// })
 
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin'],
-})
+// const geistMono = Geist_Mono({
+// 	variable: '--font-geist-mono',
+// 	subsets: ['latin'],
+// })
 
 const ibmPlexMono = IBM_Plex_Mono({
 	variable: '--font-ibm-plex-mono',
@@ -92,9 +93,8 @@ export default function RootLayout({
 				<meta name='google' content='notranslate' />
 				<meta httpEquiv='Cache-Control' content='no-transform' />
 			</head>
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable}`}
-			>
+			<body className={`${ibmPlexMono.variable}`}>
+				<BackToHome />
 				<Script
 					id='top-mail-ru'
 					strategy='afterInteractive'
@@ -106,11 +106,11 @@ export default function RootLayout({
 					src='/yandex-metrika.js'
 				/>
 				{children}
-				<Script
+				{/* <Script
 					id='andata-tag-manager'
 					strategy='beforeInteractive'
 					src='//tagmanager.andata.ru/api/v1/container/9ebcc59d-e373-447f-b5cd-0de5dc2006e4/published/code.js'
-				/>
+				/> */}
 			</body>
 		</html>
 	)

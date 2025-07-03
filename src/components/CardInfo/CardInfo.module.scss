@@ -1,0 +1,431 @@
+.cardInfo {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+	background-color: var(--background);
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	gap: 2rem;
+
+	@media (max-width: 768px) {
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+	}
+}
+
+.title {
+	font-family: 'Akademia', sans-serif;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: white;
+	margin: 0;
+
+	@media (max-width: 768px) {
+		font-size: 1.5rem;
+		flex: 1;
+	}
+}
+
+.subtitle {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1.2rem;
+	color: #ccc;
+	margin-bottom: 2rem;
+	line-height: 1.6;
+}
+
+.cardSlider {
+	margin-bottom: 2rem;
+}
+
+.sliderContainer {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	position: relative;
+}
+
+.sliderWrapper {
+	flex: 1;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.sliderArrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	background: rgba(178, 6, 28, 0.9);
+	color: white;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	flex-shrink: 0;
+
+	&:hover {
+		background: rgba(178, 6, 28, 1);
+		transform: scale(1.1);
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+// Скрываем стрелки на мобильных устройствах
+@media (max-width: 768px) {
+	.sliderContainer {
+		gap: 0;
+	}
+
+	.sliderArrow {
+		display: none;
+	}
+
+	.sliderWrapper {
+		width: 100%;
+	}
+}
+
+.slider {
+	display: flex;
+	gap: 1rem;
+	padding: 0.5rem 0;
+	width: fit-content;
+}
+
+.sectorButton {
+	font-family: 'Akademia', sans-serif;
+	padding: 0.8rem 1.5rem;
+	background-color: #b2061c;
+	color: #fff;
+	border: 3px solid #b2061c;
+	font-size: 1rem;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	white-space: nowrap;
+
+	&:hover {
+		background-color: #020b12;
+		border-color: #990517;
+	}
+
+	// Стили для активной карточки
+	&.active {
+		background-color: #020b12;
+		border-color: #ffffff;
+		color: #ffffff;
+	}
+
+	// Стили для Mass статуса - красный цвет
+	&.mass {
+		background-color: #b2061c;
+		border-color: #b2061c;
+		color: #fff;
+
+		&:hover {
+			background-color: #020b12;
+			border-color: #990517;
+		}
+
+		&.active {
+			background-color: #020b12;
+			border-color: #ffffff;
+			color: #ffffff;
+		}
+	}
+
+	// Стили для VIP статуса - золотой цвет
+	&.vip {
+		background-color: #dccaa7;
+		border-color: #dccaa7;
+		color: #020b12;
+
+		&:hover {
+			background-color: #020b12;
+			border-color: #dccaa7;
+			color: #ffffff;
+		}
+
+		&.active {
+			background-color: #020b12;
+			border-color: #ffffff;
+			color: #ffffff;
+		}
+	}
+
+	// Стили для Premium статуса - серебряный цвет
+	&.premium {
+		background-color: #c0c0c0;
+		border-color: #c0c0c0;
+		color: #020b12;
+
+		&:hover {
+			background-color: #020b12;
+			border-color: #c0c0c0;
+			color: #ffffff;
+		}
+
+		&.active {
+			background-color: #020b12;
+			border-color: #ffffff;
+			color: #ffffff;
+		}
+	}
+}
+
+.gallery {
+	margin-bottom: 1rem;
+}
+
+.mainGalleryImage {
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	margin-bottom: 1rem;
+
+	.galleryImage {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.galleryThumbnails {
+	display: flex;
+	gap: 0.5rem;
+	overflow-x: auto;
+	padding: 0.5rem 0;
+}
+
+.thumbnail {
+	width: 80px;
+	height: 60px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	flex-shrink: 0;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	&.active {
+		border: 3px solid #b2061c;
+	}
+}
+
+.thumbnailImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.features {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	margin-bottom: 2rem;
+}
+
+.featureCard {
+	background: rgba(255, 255, 255, 0.05);
+	padding: 2rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.featureTitle {
+	font-family: 'Akademia', sans-serif;
+	font-size: 1.5rem;
+	color: white;
+	margin: 0 0 1rem 0;
+}
+
+.featureDescription {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1rem;
+	color: #ccc;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.sectionTitle {
+	font-family: 'Akademia', sans-serif;
+	font-size: 2rem;
+	color: white;
+	margin: 0 0 1.5rem 0;
+}
+
+.services {
+	margin-bottom: 2rem;
+}
+
+.servicesList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.serviceItem {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1.1rem;
+	color: #ccc;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&::before {
+		content: '✓';
+		color: #b2061c;
+		margin-right: 0.5rem;
+		font-weight: bold;
+	}
+}
+
+.sectors {
+	margin-bottom: 2rem;
+}
+
+.sectorsButtons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.stadiumSchema {
+	width: 100%;
+	margin-bottom: 2rem;
+	text-align: center;
+
+	.schemaImage {
+		max-width: 100%;
+		height: auto;
+		border-radius: 12px;
+	}
+}
+
+.tariffs {
+	margin-bottom: 2rem;
+}
+
+.tariffsTable {
+	overflow-x: auto;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1rem;
+	color: #ccc;
+
+	th,
+	td {
+		padding: 0.5rem;
+		text-align: left;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	th {
+		font-family: 'Akademia', sans-serif;
+		font-size: 1rem;
+		color: white;
+		font-weight: 600;
+		background: rgba(255, 255, 255, 0.05);
+	}
+
+	td {
+		font-size: 0.9rem;
+	}
+
+	tr:hover {
+		background: rgba(255, 255, 255, 0.02);
+	}
+
+	tr:last-child td {
+		border-bottom: none;
+	}
+}
+
+.bottomButton {
+	text-align: center;
+	margin-top: 3rem;
+
+	.buyButton {
+		width: 100%;
+		max-width: none;
+	}
+}
+
+// Адаптивность для мобильных устройств
+@media (max-width: 768px) {
+	.cardInfo {
+		padding: 1rem;
+	}
+
+	.mainImage {
+		height: 250px;
+	}
+
+	.title {
+		font-size: 1.8rem;
+	}
+
+	.subtitle {
+		font-size: 1rem;
+	}
+
+	.features {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.featureCard {
+		padding: 1.5rem;
+	}
+
+	.featureTitle {
+		font-size: 1.3rem;
+	}
+
+	.sectionTitle {
+		font-size: 1.5rem;
+	}
+
+	.sectorButton {
+		padding: 0.6rem 1rem;
+		font-size: 0.9rem;
+	}
+
+	.mainGalleryImage {
+		height: 250px;
+	}
+
+	.thumbnail {
+		width: 60px;
+		height: 45px;
+	}
+}
