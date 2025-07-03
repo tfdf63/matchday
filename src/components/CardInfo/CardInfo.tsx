@@ -37,6 +37,19 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 	const pathname = usePathname()
 	const sliderWrapperRef = React.useRef<HTMLDivElement>(null)
 	const [isModalOpen, setIsModalOpen] = React.useState(false)
+	const [isMobile, setIsMobile] = React.useState(false)
+
+	// Определяем мобильное устройство
+	React.useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth <= 768)
+		}
+
+		checkMobile()
+		window.addEventListener('resize', checkMobile)
+
+		return () => window.removeEventListener('resize', checkMobile)
+	}, [])
 
 	const handleSectorClick = (url: string) => {
 		router.push(url)
@@ -72,8 +85,11 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 		card.title.toLowerCase().includes('социальный')
 
 	const buttonTitle = isFanPage ? 'Группа болельщиков' : 'Купить абонементы'
-	const buttonActionType = isFanPage ? 'link' : 'modal'
-	const buttonHref = isFanPage ? 'https://vk.com/fcakron_fans' : '#'
+	// На мобильных устройствах всегда используем link, на десктопе - modal для покупки билетов
+	const buttonActionType = isMobile || isFanPage ? 'link' : 'modal'
+	const buttonHref = isFanPage
+		? 'https://vk.com/fcakron_fans'
+		: 'https://widget.afisha.yandex.ru/w/venues/79807?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
 
 	// Функция для получения статуса сектора по названию
 	const getSectorStatus = (sectorName: string) => {
@@ -112,7 +128,7 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 						href={buttonHref}
 						title={buttonTitle}
 						actionType={buttonActionType}
-						onModalOpen={openModal}
+						onModalOpen={!isMobile ? openModal : undefined}
 					/>
 				)}
 			</div>
@@ -251,12 +267,12 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 						href={buttonHref}
 						title={buttonTitle}
 						actionType={buttonActionType}
-						onModalOpen={openModal}
+						onModalOpen={!isMobile ? openModal : undefined}
 					/>
 				</div>
 			)}
-			{/* Модальное окно */}
-			<TicketModal isOpen={isModalOpen} onClose={closeModal} />
+			{/* Модальное окно - только для десктопа */}
+			{!isMobile && <TicketModal isOpen={isModalOpen} onClose={closeModal} />}
 		</div>
 	)
 }
