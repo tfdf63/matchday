@@ -11,7 +11,7 @@ const BusinessClubPage: React.FC = () => {
 	// Данные для CardInfo компонента
 	const cardData = {
 		id: 1,
-		title: 'Развлекательный',
+		title: 'Семейный',
 		subtitle: 'Семейный футбол в тепле и комфорте!',
 		sectors: subscriptionCards, // Все доступные сектора
 		gallery: ['/images/sector/gallery/c413c417.png'],

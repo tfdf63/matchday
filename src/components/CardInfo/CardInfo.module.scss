@@ -267,6 +267,14 @@
 	color: #ccc;
 	line-height: 1.6;
 	margin: 0;
+
+	p {
+		margin: 0 0 0.5rem 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 .sectionTitle {
@@ -302,6 +310,27 @@
 		color: #b2061c;
 		margin-right: 0.5rem;
 		font-weight: bold;
+	}
+
+	strong {
+		color: white;
+		font-weight: 600;
+	}
+}
+
+.benefitDescription {
+	font-size: 1rem;
+	color: #ccc;
+	line-height: 1.4;
+	margin-top: 0.25rem;
+	margin-left: 1.5rem;
+
+	p {
+		margin: 0 0 0.25rem 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 

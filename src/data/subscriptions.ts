@@ -35,7 +35,7 @@ export const subscriptionCards: SubscriptionCard[] = [
 	{
 		id: 6,
 		image: `/images/sector/subscription1.jpg`,
-		buttonText: 'Premium',
+		buttonText: 'Бизнес-клуб',
 		price: 'от 32990 руб.',
 		url: '/sector/business-club',
 		status: 'Premium',
@@ -49,11 +49,11 @@ export const subscriptionCards: SubscriptionCard[] = [
 		status: 'VIP',
 	},
 	{
-		id: 4,
-		image: `/images/sector/subscription2.jpg`,
-		buttonText: 'Семейный сектор',
-		price: 'от 5990 руб.',
-		url: '/sector/family-sector',
+		id: 8,
+		image: `/images/sector/subscription9.jpg`,
+		buttonText: 'Семейный',
+		price: 'от 17490 руб.',
+		url: '/sector/c4',
 		status: 'Mass',
 	},
 	{
@@ -62,6 +62,14 @@ export const subscriptionCards: SubscriptionCard[] = [
 		buttonText: 'Фанатский',
 		price: 'закрытая продажа',
 		url: '/sector/fans',
+		status: 'Mass',
+	},
+	{
+		id: 4,
+		image: `/images/sector/subscription2.jpg`,
+		buttonText: 'Классический',
+		price: 'от 5990 руб.',
+		url: '/sector/family-sector',
 		status: 'Mass',
 	},
 	{
@@ -88,15 +96,6 @@ export const subscriptionCards: SubscriptionCard[] = [
 		url: '/sector/d116d112',
 		status: 'Mass',
 	},
-	{
-		id: 8,
-		image: `/images/sector/subscription9.jpg`,
-		buttonText: 'Развлекательный',
-		price: 'от 17490 руб.',
-		url: '/sector/c4',
-		status: 'Mass',
-	},
-
 	{
 		id: 10,
 		image: `/images/sector/subscription13.jpg`,

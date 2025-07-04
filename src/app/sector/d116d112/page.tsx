@@ -14,11 +14,7 @@ const BusinessClubPage: React.FC = () => {
 		title: 'За воротами',
 		subtitle: 'Идеально для тех, кто хочет быть ближе к действию!',
 		sectors: subscriptionCards, // Все доступные сектора
-		gallery: [
-			'/images/sector/zavorotami.png',
-			'/images/vip/sector.webp',
-			'/images/vip/view.webp',
-		],
+		gallery: ['/images/sector/zavorotami.png'],
 		features: [
 			{
 				title: 'Лучший вид на голевые моменты',

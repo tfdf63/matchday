@@ -14,7 +14,12 @@ interface CardInfoProps {
 		title: string
 		subtitle: string
 		gallery: string[]
-		services: string[]
+		services:
+			| string[]
+			| Array<{
+					benefit: string
+					description: string
+			  }>
 		sectors: SubscriptionCard[]
 		subsectors: string[]
 		tariffs?: Array<{
@@ -191,7 +196,11 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 				{card.features.map((feature, index) => (
 					<div key={index} className={styles.featureCard}>
 						<h2 className={styles.featureTitle}>{feature.title}</h2>
-						<p className={styles.featureDescription}>{feature.description}</p>
+						<div className={styles.featureDescription}>
+							{feature.description.split('\n').map((line, lineIndex) => (
+								<p key={lineIndex}>{line}</p>
+							))}
+						</div>
 					</div>
 				))}
 			</div>
@@ -201,7 +210,18 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 				<ul className={styles.servicesList}>
 					{card.services.map((service, index) => (
 						<li key={index} className={styles.serviceItem}>
-							{service}
+							{typeof service === 'string' ? (
+								service
+							) : (
+								<>
+									<strong>{service.benefit}</strong>
+									<div className={styles.benefitDescription}>
+										{service.description.split('\n').map((line, lineIndex) => (
+											<p key={lineIndex}>{line}</p>
+										))}
+									</div>
+								</>
+							)}
 						</li>
 					))}
 				</ul>

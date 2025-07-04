@@ -27,7 +27,7 @@ const pricingData = [
 		price3: '13 990 ₽',
 	},
 	{
-		sectorName: 'Семейный',
+		sectorName: 'Классический',
 		sectorCode: 'C124-118',
 		price1: '5 990 ₽',
 		price2: '8 990 ₽',
@@ -41,7 +41,7 @@ const pricingData = [
 		price3: '8 990 ₽',
 	},
 	{
-		sectorName: 'Развлекательный',
+		sectorName: 'Семейный',
 		sectorCode: 'C413-417',
 		price1: '17 490 ₽',
 		price2: '20 990 ₽',
