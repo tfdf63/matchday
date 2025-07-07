@@ -62,7 +62,7 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 		<div className={`${styles.sliderContainer} ${className}`}>
 			<div className={styles.headerRow}>
 				<h2 className={styles.sectionTitle}>Выбери свой сектор</h2>
-				<Timer targetDate='2025-07-07T18:00:00' className={styles.timer} />
+				<Timer targetDate='2025-07-14T18:00:00' className={styles.timer} />
 			</div>
 			<div ref={sliderWrapperRef} className={styles.sliderWrapper}>
 				<div className={styles.slider}>
