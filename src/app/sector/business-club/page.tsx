@@ -11,7 +11,7 @@ const BusinessClubPage: React.FC = () => {
 	// Данные для CardInfo компонента
 	const cardData = {
 		id: 1,
-		title: 'Premium',
+		title: 'Бизнес-клуб',
 		subtitle: 'Место, где рождается история матча!',
 		sectors: subscriptionCards, // Все доступные сектора
 		gallery: ['/images/sector/gallery/premium.png'],

@@ -105,6 +105,7 @@ export default function RootLayout({
 					strategy='afterInteractive'
 					src='/yandex-metrika.js'
 				/>
+				<Script id='sber-counter' strategy='afterInteractive' src='/sber.js' />
 				{children}
 				<Script
 					id='andata-tag-manager'

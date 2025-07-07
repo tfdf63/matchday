@@ -109,6 +109,23 @@ const benefitsData = [
 const PricingTables: React.FC = () => {
 	return (
 		<div className={styles.pricingTables}>
+			{/* Таблица с выгодой */}
+			<div className={styles.benefitsSection}>
+				<h2 className={styles.sectionTitle}>Ваши преимущества</h2>
+				<div className={styles.benefitsList}>
+					<ul className={styles.servicesList}>
+						{benefitsData.map((item, index) => (
+							<li key={index} className={styles.serviceItem}>
+								<strong>{item.benefit}</strong>
+								<div className={styles.benefitDescription}>
+									{item.description}
+								</div>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+
 			{/* Таблица с ценами */}
 			<div className={styles.pricingSection}>
 				<h2 className={styles.sectionTitle}>Цены на абонементы</h2>
@@ -174,23 +191,6 @@ const PricingTables: React.FC = () => {
 							</div>
 						))}
 					</div>
-				</div>
-			</div>
-
-			{/* Таблица с выгодой */}
-			<div className={styles.benefitsSection}>
-				<h2 className={styles.sectionTitle}>Ваши преимущества</h2>
-				<div className={styles.benefitsList}>
-					<ul className={styles.servicesList}>
-						{benefitsData.map((item, index) => (
-							<li key={index} className={styles.serviceItem}>
-								<strong>{item.benefit}</strong>
-								<div className={styles.benefitDescription}>
-									{item.description}
-								</div>
-							</li>
-						))}
-					</ul>
 				</div>
 			</div>
 		</div>
