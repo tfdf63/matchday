@@ -1,15 +1,15 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Timer.module.scss'
 
 interface TimerProps {
-	priceIncreaseDate: string
+	targetDate: string // Дата в формате '2024-12-31T23:59:59'
+	className?: string
 }
 
-const Timer: React.FC<TimerProps> = ({ priceIncreaseDate }) => {
+const Timer: React.FC<TimerProps> = ({ targetDate, className = '' }) => {
 	const [timeLeft, setTimeLeft] = useState({
-		days: 0,
 		hours: 0,
 		minutes: 0,
 		seconds: 0,
@@ -17,52 +17,50 @@ const Timer: React.FC<TimerProps> = ({ priceIncreaseDate }) => {
 
 	useEffect(() => {
 		const calculateTimeLeft = () => {
-			const difference =
-				new Date(priceIncreaseDate).getTime() - new Date().getTime()
+			// Получаем текущее время
+			const now = new Date()
+
+			// Парсим целевую дату (уже в локальном времени)
+			const target = new Date(targetDate)
+
+			const difference = target.getTime() - now.getTime()
+
+			// Отладочная информация
+			console.log('Текущее время:', now.toLocaleString())
+			console.log('Целевое время:', target.toLocaleString())
+			console.log('Разница в миллисекундах:', difference)
 
 			if (difference > 0) {
-				setTimeLeft({
-					days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-					hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-					minutes: Math.floor((difference / 1000 / 60) % 60),
-					seconds: Math.floor((difference / 1000) % 60),
-				})
+				const hours = Math.floor(difference / (1000 * 60 * 60))
+				const minutes = Math.floor(
+					(difference % (1000 * 60 * 60)) / (1000 * 60)
+				)
+				const seconds = Math.floor((difference % (1000 * 60)) / 1000)
+
+				console.log('Осталось времени:', `${hours}:${minutes}:${seconds}`)
+				setTimeLeft({ hours, minutes, seconds })
 			} else {
-				setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+				setTimeLeft({ hours: 0, minutes: 0, seconds: 0 })
 			}
 		}
 
-		// Вычисляем время сразу при монтировании
 		calculateTimeLeft()
-
-		// Обновляем каждую секунду
 		const timer = setInterval(calculateTimeLeft, 1000)
 
-		// Очищаем интервал при размонтировании
 		return () => clearInterval(timer)
-	}, [priceIncreaseDate])
+	}, [targetDate])
+
+	const formatTime = (time: number) => {
+		return time.toString().padStart(2, '0')
+	}
 
 	return (
-		<div className={styles.timer}>
-			<div className={styles.title}>До повышения цен</div>
-			<div className={styles.countdown}>
-				<div className={styles.timeBlock}>
-					<span className={styles.number}>{timeLeft.days}</span>
-					<span className={styles.label}>дней</span>
-				</div>
-				<div className={styles.timeBlock}>
-					<span className={styles.number}>{timeLeft.hours}</span>
-					<span className={styles.label}>часов</span>
-				</div>
-				<div className={styles.timeBlock}>
-					<span className={styles.number}>{timeLeft.minutes}</span>
-					<span className={styles.label}>минут</span>
-				</div>
-				<div className={styles.timeBlock}>
-					<span className={styles.number}>{timeLeft.seconds}</span>
-					<span className={styles.label}>секунд</span>
-				</div>
-			</div>
+		<div className={`${styles.timer} ${className}`}>
+			<span className={styles.timerText}>до повышения цен осталось:</span>
+			<span className={styles.timerValue}>
+				{formatTime(timeLeft.hours)}:{formatTime(timeLeft.minutes)}:
+				{formatTime(timeLeft.seconds)}
+			</span>
 		</div>
 	)
 }

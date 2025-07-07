@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { SubscriptionCard, subscriptionCards } from '@/data/subscriptions'
+import Timer from '@/components/Timer/Timer'
 import styles from './SubscriptionSlider.module.scss'
 
 interface SubscriptionSliderProps {
@@ -59,7 +60,10 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 
 	return (
 		<div className={`${styles.sliderContainer} ${className}`}>
-			<h2 className={styles.sectionTitle}>Выбери свой сектор</h2>
+			<div className={styles.headerRow}>
+				<h2 className={styles.sectionTitle}>Выбери свой сектор</h2>
+				<Timer targetDate='2025-07-07T18:00:00' className={styles.timer} />
+			</div>
 			<div ref={sliderWrapperRef} className={styles.sliderWrapper}>
 				<div className={styles.slider}>
 					{cards.map(card => (
