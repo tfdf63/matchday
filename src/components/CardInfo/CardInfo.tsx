@@ -89,12 +89,12 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 		card.title.toLowerCase().includes('skybox') ||
 		card.title.toLowerCase().includes('социальный')
 
-	const buttonTitle = isFanPage ? 'Группа болельщиков' : 'Купить абонементы'
+	const buttonTitle = isFanPage ? 'Группа болельщиков' : 'Купить'
 	// На мобильных устройствах всегда используем link, на десктопе - modal для покупки билетов
 	const buttonActionType = isMobile || isFanPage ? 'link' : 'modal'
 	const buttonHref = isFanPage
 		? 'https://vk.com/fcakron_fans'
-		: 'https://widget.afisha.yandex.ru/w/venues/79807?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
+		: 'https://widget.afisha.yandex.ru/w/venues/79807?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51&_ab_new_calendar=off'
 
 	// Функция для получения статуса сектора по названию
 	const getSectorStatus = (sectorName: string) => {
