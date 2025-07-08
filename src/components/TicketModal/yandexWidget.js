@@ -16,6 +16,7 @@ export const initYandexWidget = () => {
 					widget.unmount()
 					widget.destroy()
 				},
+				urlQueryParams: '_ab_new_calendar=off',
 			})
 
 			widget.mount({ style: { height: '600px' } })

@@ -37,7 +37,7 @@ const TicketModal: React.FC<TicketModalProps> = ({ isOpen, onClose }) => {
 					</svg>
 				</button>
 				<div className={styles.modalBody}>
-					<h2 className={styles.modalTitle}>Купить абонементы</h2>
+					<h2 className={styles.modalTitle}>Купить билеты и абонементы</h2>
 					<div className={styles.widgetContainer}>
 						<div id='ya-widget-frame' className={styles.widgetFrame}></div>
 					</div>
