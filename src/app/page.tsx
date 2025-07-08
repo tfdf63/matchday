@@ -17,7 +17,7 @@ const MatchesPage = () => {
 	return (
 		<>
 			<Marquee
-				text='АБОНЕМЕНТЫ × АБОНЕМЕНТЫ × АБОНЕМЕНТЫ × АБОНЕМЕНТЫ × АБОНЕМЕНТЫ ×'
+				text='БИЛЕТЫ × АБОНЕМЕНТЫ × БИЛЕТЫ × АБОНЕМЕНТЫ × БИЛЕТЫ ×'
 				duration={50}
 			/>
 			<SubscriptionSlider />
