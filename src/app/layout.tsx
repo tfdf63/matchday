@@ -75,6 +75,11 @@ export default function RootLayout({
 					crossOrigin='anonymous'
 					fetchPriority='high'
 				/>
+				{/* Preconnect для внешних доменов */}
+				<link rel='preconnect' href='https://top-fwz1.mail.ru' />
+				<link rel='preconnect' href='https://mc.yandex.ru' />
+				<link rel='preconnect' href='https://st.top100.ru' />
+				<link rel='preconnect' href='https://tagmanager.andata.ru' />
 				<style
 					dangerouslySetInnerHTML={{
 						__html: `
@@ -95,21 +100,17 @@ export default function RootLayout({
 			</head>
 			<body className={`${ibmPlexMono.variable}`}>
 				<BackToHome />
-				<Script
-					id='top-mail-ru'
-					strategy='afterInteractive'
-					src='/top-mail-ru.js'
-				/>
+				<Script id='top-mail-ru' strategy='lazyOnload' src='/top-mail-ru.js' />
 				<Script
 					id='yandex-metrika'
-					strategy='afterInteractive'
+					strategy='lazyOnload'
 					src='/yandex-metrika.js'
 				/>
-				<Script id='sber-counter' strategy='afterInteractive' src='/sber.js' />
+				<Script id='sber-counter' strategy='lazyOnload' src='/sber.js' />
 				{children}
 				<Script
 					id='andata-tag-manager'
-					strategy='beforeInteractive'
+					strategy='lazyOnload'
 					src='//tagmanager.andata.ru/api/v1/container/9ebcc59d-e373-447f-b5cd-0de5dc2006e4/published/code.js'
 				/>
 			</body>

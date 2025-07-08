@@ -25,11 +25,6 @@ const Timer: React.FC<TimerProps> = ({ targetDate, className = '' }) => {
 
 			const difference = target.getTime() - now.getTime()
 
-			// Отладочная информация
-			console.log('Текущее время:', now.toLocaleString())
-			console.log('Целевое время:', target.toLocaleString())
-			console.log('Разница в миллисекундах:', difference)
-
 			if (difference > 0) {
 				const hours = Math.floor(difference / (1000 * 60 * 60))
 				const minutes = Math.floor(
@@ -37,7 +32,6 @@ const Timer: React.FC<TimerProps> = ({ targetDate, className = '' }) => {
 				)
 				const seconds = Math.floor((difference % (1000 * 60)) / 1000)
 
-				console.log('Осталось времени:', `${hours}:${minutes}:${seconds}`)
 				setTimeLeft({ hours, minutes, seconds })
 			} else {
 				setTimeLeft({ hours: 0, minutes: 0, seconds: 0 })
