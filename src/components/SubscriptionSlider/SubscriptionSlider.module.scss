@@ -28,6 +28,10 @@
 .timer {
 	flex-shrink: 0;
 }
+
+.buyButton {
+	flex-shrink: 0;
+}
 @media (max-width: 768px) {
 	.headerRow {
 		flex-direction: column;

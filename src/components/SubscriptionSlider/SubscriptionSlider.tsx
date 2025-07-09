@@ -1,10 +1,12 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { SubscriptionCard, subscriptionCards } from '@/data/subscriptions'
-// import Timer from '@/components/Timer/Timer'
+
+import ActionButton from '@/components/ActionButton'
+import TicketModal from '@/components/TicketModal'
 import styles from './SubscriptionSlider.module.scss'
 
 interface SubscriptionSliderProps {
@@ -18,6 +20,20 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 }) => {
 	const router = useRouter()
 	const sliderWrapperRef = useRef<HTMLDivElement>(null)
+	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [isMobile, setIsMobile] = useState(false)
+
+	// Определяем мобильное устройство
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth <= 768)
+		}
+
+		checkMobile()
+		window.addEventListener('resize', checkMobile)
+
+		return () => window.removeEventListener('resize', checkMobile)
+	}, [])
 
 	const handleCardClick = (url: string) => {
 		router.push(url)
@@ -27,6 +43,16 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 		e.stopPropagation() // Предотвращаем всплытие события
 		router.push(url)
 	}
+
+	// Функции для модального окна
+	const openModal = () => setIsModalOpen(true)
+	const closeModal = () => setIsModalOpen(false)
+
+	// Определяем параметры для кнопки "Купить"
+	const buttonTitle = 'Купить'
+	const buttonActionType = isMobile ? 'link' : 'modal'
+	const buttonHref =
+		'https://widget.afisha.yandex.ru/w/venues/79807?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
 
 	// Функции для навигации стрелками
 	const scrollLeft = () => {
@@ -62,7 +88,13 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 		<div className={`${styles.sliderContainer} ${className}`}>
 			<div className={styles.headerRow}>
 				<h2 className={styles.sectionTitle}>Выбери свой сектор</h2>
-				{/* <Timer targetDate='2025-07-14T18:00:00' className={styles.timer} /> */}
+				<ActionButton
+					href={buttonHref}
+					title={buttonTitle}
+					actionType={buttonActionType}
+					onModalOpen={!isMobile ? openModal : undefined}
+					className={styles.buyButton}
+				/>
 			</div>
 			<div ref={sliderWrapperRef} className={styles.sliderWrapper}>
 				<div className={styles.slider}>
@@ -145,6 +177,8 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 					</svg>
 				</button>
 			</div>
+			{/* Модальное окно */}
+			<TicketModal isOpen={isModalOpen} onClose={closeModal} />
 		</div>
 	)
 }
