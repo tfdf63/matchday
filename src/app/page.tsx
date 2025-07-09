@@ -5,7 +5,7 @@ import Marquee from '@/components/Marquee/Marquee'
 // import Slider from '@/components/Slider/Slider'
 import FanCard from '@/components/FanCard/FanCard'
 import Merch from '@/components/Merch/Merch'
-// import Stadium from '@/components/Stadium/Stadium'
+import Stadium from '@/components/Stadium/Stadium'
 // import Skybox from '@/components/Skybox/Skybox'
 import Requisites from '@/components/Requisites'
 import SubscriptionSlider from '@/components/SubscriptionSlider/SubscriptionSlider'
@@ -41,7 +41,7 @@ const MatchesPage = () => {
 				duration={50}
 			/> */}
 			{/* <Skybox /> */}
-			{/* <Stadium /> */}
+			<Stadium />
 			<Requisites />
 		</>
 	)
