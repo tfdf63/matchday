@@ -52,7 +52,7 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 	const buttonTitle = 'Купить'
 	const buttonActionType = isMobile ? 'link' : 'modal'
 	const buttonHref =
-		'https://widget.afisha.yandex.ru/w/venues/79807?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
+		'https://widget.afisha.yandex.ru/w/venues/79807?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51&_ab_new_calendar=off'
 
 	// Функции для навигации стрелками
 	const scrollLeft = () => {

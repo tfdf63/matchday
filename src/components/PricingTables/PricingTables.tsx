@@ -111,7 +111,7 @@ const PricingTables: React.FC = () => {
 		<div className={styles.pricingTables}>
 			{/* Таблица с выгодой */}
 			<div className={styles.benefitsSection}>
-				<h2 className={styles.sectionTitle}>Ваши преимущества</h2>
+				<h2 className={styles.sectionTitle}>Преимущества абонемента</h2>
 				<div className={styles.benefitsList}>
 					<ul className={styles.servicesList}>
 						{benefitsData.map((item, index) => (
