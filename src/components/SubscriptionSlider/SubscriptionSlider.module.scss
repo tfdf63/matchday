@@ -1,5 +1,5 @@
 .sliderContainer {
-	margin-top: 1rem;
+	margin-top: 3rem;
 	width: 100%;
 	position: relative;
 	background-color: var(--background);
@@ -228,7 +228,7 @@
 // Адаптивность для мобильных устройств
 @media (max-width: 768px) {
 	.sliderContainer {
-		margin-top: 1rem;
+		margin-top: 3rem;
 	}
 
 	.slider {

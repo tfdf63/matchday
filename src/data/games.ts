@@ -18,7 +18,7 @@ const games: Game[] = [
 	{
 		id: '1',
 		homeTeam: 'Акрон',
-		awayTeam: 'Крылья Сов',
+		awayTeam: 'Крылья Советов',
 		date: '19 июля',
 		time: 'SAMT 16:30',
 		stadium: 'Солидарность Самара Арена',
