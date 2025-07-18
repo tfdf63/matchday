@@ -11,6 +11,7 @@ const Games = () => {
 			{remainingGames.map((game, index) => (
 				<div key={index} className={styles.gameCard}>
 					<GamesMatch
+						leagueInfo={game.leagueInfo}
 						homeTeam={game.homeTeam}
 						awayTeam={game.awayTeam}
 						date={game.date}
@@ -18,6 +19,7 @@ const Games = () => {
 						stadium={game.stadium}
 						ticketLink={game.ticketLink}
 						ticketLinkVip={game.ticketLinkVip}
+						priceIncreaseDates={game.priceIncreaseDates}
 					/>
 				</div>
 			))}

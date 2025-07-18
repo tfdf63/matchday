@@ -1,6 +1,6 @@
 import React from 'react'
-// import Main from '@/components/Main/Main'
-// import Games from '@/components/Games/Games'
+import Main from '@/components/Main/Main'
+import Games from '@/components/Games/Games'
 import Marquee from '@/components/Marquee/Marquee'
 // import Slider from '@/components/Slider/Slider'
 import FanCard from '@/components/FanCard/FanCard'
@@ -16,13 +16,17 @@ import PricingTables from '@/components/PricingTables/PricingTables'
 const MatchesPage = () => {
 	return (
 		<>
+			<Main />
+			<Marquee
+				text='БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ ×'
+				duration={50}
+			/>
+			<Games />
 			<Marquee
 				text='БИЛЕТЫ × АБОНЕМЕНТЫ × БИЛЕТЫ × АБОНЕМЕНТЫ × БИЛЕТЫ ×'
 				duration={50}
 			/>
 			<SubscriptionSlider />
-			{/* <Main /> */}
-			{/* <Games /> */}
 			{/* <Marquee
 				text='ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × '
 				duration={50}

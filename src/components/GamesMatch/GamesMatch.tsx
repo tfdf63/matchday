@@ -13,6 +13,7 @@ interface CardMatchProps {
 	className?: string
 	ticketLink?: string
 	ticketLinkVip?: string
+	leagueInfo?: string
 	priceIncreaseDates?: {
 		first?: string
 		second?: string
@@ -28,6 +29,7 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	className,
 	ticketLink = '#',
 	// ticketLinkVip = '#',
+	leagueInfo = '',
 	priceIncreaseDates = {
 		first: '2025-05-18',
 		second: '2025-05-22',
@@ -35,6 +37,11 @@ const CardMatch: React.FC<CardMatchProps> = ({
 }) => {
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
+			{leagueInfo && (
+				<div className={styles.leagueInfo}>
+					<span>{leagueInfo}</span>
+				</div>
+			)}
 			<div className={styles.teams}>
 				<span className={styles.team}>{homeTeam}</span>
 				<span className={styles.divider}>—</span>

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import styles from './CardMatch.module.scss'
 
 interface CardMatchProps {
+	leagueInfo?: string
 	homeTeam?: string
 	awayTeam?: string
 	date?: string
@@ -16,6 +17,7 @@ interface CardMatchProps {
 }
 
 const CardMatch: React.FC<CardMatchProps> = ({
+	leagueInfo,
 	homeTeam = 'Команда 1',
 	awayTeam = 'Команда 2',
 	date = '12 марта',
@@ -27,6 +29,11 @@ const CardMatch: React.FC<CardMatchProps> = ({
 }) => {
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
+			{leagueInfo && (
+				<div className={styles.leagueInfo}>
+					<span>{leagueInfo}</span>
+				</div>
+			)}
 			<div className={styles.teams}>
 				<span className={styles.team}>{homeTeam}</span>
 				<span className={styles.divider}>—</span>

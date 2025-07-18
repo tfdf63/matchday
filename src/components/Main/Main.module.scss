@@ -1,4 +1,5 @@
 .main {
+	margin-bottom: 3rem;
 	width: 100%;
 	height: 100dvh;
 	position: relative;
@@ -34,6 +35,20 @@
 
 	&.loaded {
 		opacity: 1;
+	}
+
+	// Стили для постера - постер должен быть виден до загрузки видео
+	&[poster] {
+		object-fit: cover;
+		background-size: cover;
+		background-position: center;
+		opacity: 1; // Постер всегда видим
+		background-color: transparent; // Убираем черный фон
+	}
+
+	// Когда видео загружено и готово к воспроизведению, показываем видео
+	&.loaded {
+		opacity: 1; // Видео становится видимым
 	}
 }
 
@@ -81,6 +96,10 @@
 
 	&:hover {
 		transform: scale(1.1);
+	}
+
+	@media (min-width: 769px) {
+		max-width: 28rem; // Увеличиваем ширину для десктопа
 	}
 }
 

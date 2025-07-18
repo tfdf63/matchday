@@ -191,10 +191,15 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 
 				// Событие загрузки метаданных для приоритетного видео
 				primaryVideo.addEventListener('loadeddata', () => {
-					primaryVideo
-						.play()
-						.catch(e => console.log('Video autoplay failed:', e))
+					// Видео готово к воспроизведению, показываем видео поверх постера
 					primaryVideo.classList.add(styles.loaded)
+
+					// Запускаем видео только один раз после полной загрузки
+					setTimeout(() => {
+						primaryVideo
+							.play()
+							.catch(e => console.log('Video autoplay failed:', e))
+					}, 100) // Небольшая задержка для плавного перехода
 
 					// После загрузки основного видео начинаем загрузку второстепенного
 					setTimeout(() => {
@@ -212,12 +217,12 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				// Обработчики ошибок
 				primaryVideo.addEventListener('error', () => {
 					console.log(`${mobile ? 'Mobile' : 'Desktop'} video loading error`)
-					primaryVideo.classList.add(styles.loaded)
+					// При ошибке оставляем постер видимым
 				})
 
 				secondaryVideo.addEventListener('error', () => {
 					console.log(`${!mobile ? 'Mobile' : 'Desktop'} video loading error`)
-					secondaryVideo.classList.add(styles.loaded)
+					// При ошибке оставляем постер видимым
 				})
 
 				// Загружаем приоритетное видео
@@ -237,10 +242,10 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	return (
 		<div className={styles.main}>
 			<video
-				autoPlay
 				muted
 				loop
 				playsInline
+				poster='/videos/bgmain1-poster.jpg'
 				preload='none'
 				className={styles.backgroundVideo}
 				id='desktop-video'
@@ -251,7 +256,6 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				<source src='/videos/bgmain1-optimized-fast.mp4' type='video/mp4' />
 			</video>
 			<video
-				autoPlay
 				loop
 				muted
 				playsInline

@@ -6,92 +6,77 @@ export interface Game {
 	time: string
 	stadium: string
 	ticketLink: string
-	ticketLinkVip: string
+	ticketLinkVip?: string
 	leagueInfo: string
 	priceIncreaseDates: {
-		first: string // Первое повышение цен
-		second: string // Второе повышение цен
+		first?: string // Первое повышение цен
+		second?: string // Второе повышение цен
 	}
 }
 
 const games: Game[] = [
 	{
-		id: '7',
+		id: '1',
 		homeTeam: 'Акрон',
-		awayTeam: 'Ахмат',
-		date: '11 мая',
-		time: 'SAMT 15:00',
+		awayTeam: 'Крылья Сов',
+		date: '19 июля',
+		time: 'SAMT 16:30',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: 'https://fcakron.tncloud.ru/view-available-zones/33',
-		ticketLinkVip: 'https://fcakron.tncloud.ru/choose-seats/33/2200',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 28 ТУР',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39663552?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+		ticketLinkVip: '',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 - 1 ТУР',
 		priceIncreaseDates: {
-			first: '2025-05-01',
-			second: '2025-05-09',
+			first: '2025-07-12',
+			second: '2025-07-17',
 		},
 	},
 	{
-		id: '9',
+		id: '2',
 		homeTeam: 'Акрон',
-		awayTeam: 'Локомотив',
-		date: '24 мая',
-		time: 'SAMT 17:30',
+		awayTeam: 'Балтика',
+		date: '29 июля',
+		time: 'SAMT 19:30',
 		stadium: 'Солидарность Самара Арена',
 		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@36744901?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39873507?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
 		ticketLinkVip: '',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 30 ТУР',
+		leagueInfo: 'FONBET Кубок России 2025/2026 - 1 ТУР',
 		priceIncreaseDates: {
-			first: '2025-05-18',
-			second: '2025-05-22',
+			first: '2025-07-23',
+			second: '',
 		},
 	},
 	{
-		id: '9',
+		id: '3',
 		homeTeam: 'Акрон',
-		awayTeam: 'Локомотив',
-		date: '24 мая',
-		time: 'SAMT 17:30',
+		awayTeam: 'Спартак',
+		date: '3 августа',
+		time: 'SAMT 14:30',
 		stadium: 'Солидарность Самара Арена',
 		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@36744901?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39719522?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
 		ticketLinkVip: '',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 30 ТУР',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 25/26 3 ТУР',
 		priceIncreaseDates: {
-			first: '2025-05-18',
-			second: '2025-05-22',
+			first: '2025-07-27',
+			second: '2025-08-01',
 		},
 	},
 	{
-		id: '9',
+		id: '4',
 		homeTeam: 'Акрон',
-		awayTeam: 'Локомотив',
-		date: '24 мая',
-		time: 'SAMT 17:30',
+		awayTeam: 'ЦСКА',
+		date: '12 августа',
+		time: 'SAMT 17:15',
 		stadium: 'Солидарность Самара Арена',
 		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@36744901?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39879676?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
 		ticketLinkVip: '',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 30 ТУР',
+		leagueInfo: 'FONBET Кубок России 2025/2026 - 2 ТУР',
 		priceIncreaseDates: {
-			first: '2025-05-18',
-			second: '2025-05-22',
-		},
-	},
-	{
-		id: '9',
-		homeTeam: 'Акрон',
-		awayTeam: 'Локомотив',
-		date: '24 мая',
-		time: 'SAMT 17:30',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@36744901?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkVip: '',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2024/2025 - 30 ТУР',
-		priceIncreaseDates: {
-			first: '2025-05-18',
-			second: '2025-05-22',
+			first: '2025-08-06',
+			second: '',
 		},
 	},
 ]
