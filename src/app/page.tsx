@@ -9,7 +9,7 @@ import Stadium from '@/components/Stadium/Stadium'
 // import Skybox from '@/components/Skybox/Skybox'
 import Requisites from '@/components/Requisites'
 import SubscriptionSlider from '@/components/SubscriptionSlider/SubscriptionSlider'
-import PricingTables from '@/components/PricingTables/PricingTables'
+// import PricingTables from '@/components/PricingTables/PricingTables'
 
 // import YandexTicket from '@/components/YandexTicket/YandexTicket'
 
@@ -33,7 +33,7 @@ const MatchesPage = () => {
 			/> */}
 			{/* <YandexTicket /> */}
 			{/* <Slider /> */}
-			<PricingTables />
+			{/* <PricingTables /> */}
 			<Marquee
 				text='БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × '
 				duration={50}
