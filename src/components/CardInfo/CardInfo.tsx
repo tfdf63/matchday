@@ -253,7 +253,7 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 				/>
 			</div>
 			{/* Блок Тарифы */}
-			{card.tariffs && card.tariffs.length > 0 && (
+			{false && card.tariffs && card.tariffs.length > 0 && (
 				<div className={styles.tariffs}>
 					<h2 className={styles.sectionTitle}>Цены</h2>
 					<div className={styles.tariffsTable}>

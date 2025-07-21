@@ -2,8 +2,8 @@
 
 import React from 'react'
 import CardInfo from '@/components/CardInfo/CardInfo'
-import ContactForm from '@/components/Skybox/ContactForm/ContactForm'
 import { subscriptionCards } from '@/data/subscriptions'
+import styles from '@/components/CardInfo/CardInfo.module.scss'
 
 const BusinessClubPage: React.FC = () => {
 	// Находим данные для бизнес-клуба
@@ -64,7 +64,39 @@ const BusinessClubPage: React.FC = () => {
 	return (
 		<>
 			<CardInfo card={cardData} />
-			<ContactForm email='ticket@fcakron.ru' />
+			<div className={styles.cardInfo} style={{ marginTop: 0 }}>
+				<h2
+					style={{
+						fontFamily: 'Akademia, sans-serif',
+						fontSize: '2rem',
+						marginBottom: '1rem',
+						color: 'var(--foreground)',
+						textAlign: 'left',
+					}}
+				>
+					Оставить заявку
+				</h2>
+				<p
+					style={{
+						fontSize: '1.1rem',
+						lineHeight: 1.6,
+						color: 'var(--foreground-secondary)',
+						textAlign: 'left',
+						fontFamily: 'var(--font-ibm-plex-mono), monospace',
+					}}
+				>
+					Для заявки необходимо отправить сообщение в телеграм по номеру{' '}
+					<b>89276879750</b> или через профиль{' '}
+					<a
+						href='https://t.me/slava_tfdf'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						t.me/slava_tfdf
+					</a>
+					, написав: <q>заявка на соц. билет на матч {'{указать матч}'}</q>.
+				</p>
+			</div>
 		</>
 	)
 }
