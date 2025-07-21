@@ -18,6 +18,7 @@ interface CardMatchProps {
 		first?: string
 		second?: string
 	}
+	fanIdStatus?: string
 }
 
 const CardMatch: React.FC<CardMatchProps> = ({
@@ -34,6 +35,7 @@ const CardMatch: React.FC<CardMatchProps> = ({
 		first: '2025-05-18',
 		second: '2025-05-22',
 	},
+	fanIdStatus,
 }) => {
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
@@ -41,6 +43,11 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				<div className={styles.leagueInfo}>
 					<span>{leagueInfo}</span>
 				</div>
+			)}
+			{fanIdStatus && (
+				<Link href='#fan-card' className={styles.fanIdStatus}>
+					{fanIdStatus}
+				</Link>
 			)}
 			<div className={styles.teams}>
 				<span className={styles.team}>{homeTeam}</span>

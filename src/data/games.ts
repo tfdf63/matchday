@@ -12,6 +12,7 @@ export interface Game {
 		first?: string // Первое повышение цен
 		second?: string // Второе повышение цен
 	}
+	fanIdStatus: 'Без fan id' | 'Fan id'
 }
 
 const games: Game[] = [
@@ -30,6 +31,7 @@ const games: Game[] = [
 	// 		first: '2025-07-12',
 	// 		second: '2025-07-17',
 	// 	},
+	// 	fanIdStatus: 'Без fan id',
 	// },
 	{
 		id: '2',
@@ -46,6 +48,7 @@ const games: Game[] = [
 			first: '2025-07-23',
 			second: '',
 		},
+		fanIdStatus: 'Без fan id',
 	},
 	{
 		id: '3',
@@ -62,6 +65,7 @@ const games: Game[] = [
 			first: '2025-07-27',
 			second: '2025-08-01',
 		},
+		fanIdStatus: 'Fan id',
 	},
 	{
 		id: '4',
@@ -78,23 +82,8 @@ const games: Game[] = [
 			first: '2025-08-06',
 			second: '',
 		},
+		fanIdStatus: 'Без fan id',
 	},
-	// {
-	// 	id: '5',
-	// 	homeTeam: 'Акрон',
-	// 	awayTeam: 'Оренбург',
-	// 	date: '17 августа',
-	// 	time: 'SAMT 14:30',
-	// 	stadium: 'Солидарность Самара Арена',
-	// 	ticketLink:
-	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39879676?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-	// 	ticketLinkVip: '',
-	// 	leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 25/26 5 ТУР',
-	// 	priceIncreaseDates: {
-	// 		first: '2025-08-06',
-	// 		second: '',
-	// 	},
-	// },
 ]
 
 export default games

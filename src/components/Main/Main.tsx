@@ -282,6 +282,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						stadium={selectedGame.stadium}
 						ticketLink={selectedGame.ticketLink}
 						ticketLinkVip={selectedGame.ticketLinkVip}
+						fanIdStatus={selectedGame.fanIdStatus}
 					/>
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
 					<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />

@@ -14,6 +14,7 @@ interface CardMatchProps {
 	className?: string
 	ticketLink?: string
 	ticketLinkVip?: string
+	fanIdStatus?: string
 }
 
 const CardMatch: React.FC<CardMatchProps> = ({
@@ -25,6 +26,7 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	stadium = 'Стадион',
 	className,
 	ticketLink = '#',
+	fanIdStatus,
 	// ticketLinkVip = '#',
 }) => {
 	return (
@@ -33,6 +35,11 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				<div className={styles.leagueInfo}>
 					<span>{leagueInfo}</span>
 				</div>
+			)}
+			{fanIdStatus && (
+				<Link href='#fan-card' className={styles.fanIdStatus}>
+					{fanIdStatus}
+				</Link>
 			)}
 			<div className={styles.teams}>
 				<span className={styles.team}>{homeTeam}</span>

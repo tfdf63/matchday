@@ -59,7 +59,7 @@ const FanCard = () => {
 	]
 
 	return (
-		<div className={styles.container}>
+		<div id='fan-card' className={styles.fanCard}>
 			<h2 className={styles.title}>Карта болельщика</h2>
 
 			{/* Мобильные табы */}

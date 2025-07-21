@@ -20,6 +20,7 @@ const Games = () => {
 						ticketLink={game.ticketLink}
 						ticketLinkVip={game.ticketLinkVip}
 						priceIncreaseDates={game.priceIncreaseDates}
+						fanIdStatus={game.fanIdStatus}
 					/>
 				</div>
 			))}
