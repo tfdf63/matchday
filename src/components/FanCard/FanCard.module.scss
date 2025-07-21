@@ -1,7 +1,20 @@
-.container {
+.fanCard {
+	margin: 2rem auto 0 auto;
+	width: 100%;
+	max-width: 1200px;
 	padding: 0 1rem;
 	background: var(--background);
 	color: var(--foreground);
+}
+
+.content {
+	width: 100%;
+	padding: 0;
+}
+
+.step {
+	width: 100%;
+	padding: 0;
 }
 
 .title {
@@ -43,10 +56,6 @@
 		background: var(--foreground);
 		color: var(--background);
 	}
-}
-
-.step {
-	animation: fadeIn 0.3s ease;
 }
 
 .stepIcon {
@@ -138,9 +147,14 @@
 	}
 }
 
+@media (max-width: 768px) {
+	.fanCard {
+		padding: 0 0.5rem;
+	}
+}
+
 @media (max-width: 400px) {
-	.title {
-		margin-top: 3rem;
-		font-size: 2rem;
+	.fanCard {
+		padding: 0 0.25rem;
 	}
 }
