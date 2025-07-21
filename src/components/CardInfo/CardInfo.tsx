@@ -253,7 +253,8 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 				/>
 			</div>
 			{/* Блок Тарифы */}
-			{false && card.tariffs && card.tariffs.length > 0 && (
+			{/*
+			{card.tariffs && card.tariffs.length > 0 && (
 				<div className={styles.tariffs}>
 					<h2 className={styles.sectionTitle}>Цены</h2>
 					<div className={styles.tariffsTable}>
@@ -280,6 +281,7 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 					</div>
 				</div>
 			)}
+			*/}
 			{/* Кнопка покупки внизу */}
 			{!isVipSector && (
 				<div className={styles.bottomButton}>
