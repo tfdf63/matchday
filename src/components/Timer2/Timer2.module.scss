@@ -16,15 +16,17 @@
 	align-items: center;
 	gap: 1rem;
 	font-family: var(--font-ibm-plex-mono), monospace;
+	white-space: nowrap;
+	flex-wrap: nowrap;
 }
 
 .title {
-	font-size: 1rem;
+	font-size: 0.95rem;
 	color: #fff;
 }
 
 .date {
-	font-size: 1rem;
+	font-size: 0.95rem;
 	font-weight: 600;
 	transition: all 0.3s ease;
 
@@ -36,7 +38,7 @@
 
 .separator {
 	color: #b2061c;
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 @media (max-width: 768px) {

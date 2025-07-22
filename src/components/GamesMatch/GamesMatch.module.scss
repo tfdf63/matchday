@@ -1,38 +1,39 @@
 .card {
-	margin-top: 1rem;
+	margin: 16px auto 16px auto;
 	width: 100%;
 	min-width: 350px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1rem;
+	gap: 16px;
 	font-weight: 400;
 	z-index: 999;
-	margin: 0 auto;
 }
 
 .leagueInfo {
-	margin-top: 2rem;
-	width: 100%;
-	text-align: center;
+	margin: 0;
+	width: auto;
+	height: 40px;
+	display: flex;
+	align-items: center;
 	font-family: var(--font-ibm-plex-mono), monospace;
 	font-size: 0.8rem;
 	color: #ccc;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
-	margin-bottom: 0.5rem;
 }
 
 .teams {
-	margin-top: 1rem;
+	margin: 0;
 	display: flex;
 	justify-content: space-between;
 	gap: 12px;
-	font-size: 2.5rem;
+	font-size: 3rem;
 	font-family: 'Akademia', sans-serif;
 }
 
 .info {
+	margin: 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -42,6 +43,7 @@
 }
 
 .buttonsContainer {
+	margin: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -81,15 +83,42 @@
 	}
 } */
 
+.infoRow {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	width: 100%;
+	max-width: 20rem;
+	margin: 0 auto;
+	justify-content: flex-start;
+}
+
 .fanIdStatus {
-	display: inline-block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
 	background: #b2061c;
 	color: #fff;
 	font-size: 0.95rem;
 	font-family: var(--font-ibm-plex-mono), monospace;
-	padding: 0.25em 0.8em;
+	padding: 0 0.8em;
 	font-weight: 600;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
 	box-shadow: 0 2px 8px rgba(178, 6, 28, 0.08);
+	border-radius: 0;
+	white-space: nowrap;
+}
+.fanIdStatus s {
+	color: #fff;
+	text-decoration: line-through;
+	text-decoration-thickness: 2px;
+}
+
+.timerWrapper {
+	width: 100%;
+	max-width: 20rem;
+	margin: 0 auto;
+	white-space: nowrap;
 }

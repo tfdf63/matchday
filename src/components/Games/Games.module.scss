@@ -1,11 +1,10 @@
 .games {
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 1rem auto;
 	display: flex;
 	gap: 2rem;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin-bottom: 3rem;
 
 	@media (max-width: 1024px) {
 		grid-template-columns: repeat(2, 1fr); // 2 карточки для планшетов
