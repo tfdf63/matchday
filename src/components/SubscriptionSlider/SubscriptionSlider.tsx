@@ -88,6 +88,50 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 		<div className={`${styles.sliderContainer} ${className}`}>
 			<div className={styles.headerRow}>
 				<h2 className={styles.sectionTitle}>Выбери свой сектор</h2>
+				<div className={styles.navigationArrows}>
+					<button
+						className={styles.arrowButton}
+						onClick={scrollLeft}
+						aria-label='Прокрутить влево'
+					>
+						<svg
+							width='24'
+							height='24'
+							viewBox='0 0 24 24'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
+						>
+							<path
+								d='M15 18L9 12L15 6'
+								stroke='currentColor'
+								strokeWidth='2'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							/>
+						</svg>
+					</button>
+					<button
+						className={styles.arrowButton}
+						onClick={scrollRight}
+						aria-label='Прокрутить вправо'
+					>
+						<svg
+							width='24'
+							height='24'
+							viewBox='0 0 24 24'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
+						>
+							<path
+								d='M9 18L15 12L9 6'
+								stroke='currentColor'
+								strokeWidth='2'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							/>
+						</svg>
+					</button>
+				</div>
 				<ActionButton
 					href={buttonHref}
 					title={buttonTitle}
@@ -132,51 +176,6 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 				</div>
 			</div>
 
-			{/* Стрелки навигации */}
-			<div className={styles.navigationArrows}>
-				<button
-					className={styles.arrowButton}
-					onClick={scrollLeft}
-					aria-label='Прокрутить влево'
-				>
-					<svg
-						width='24'
-						height='24'
-						viewBox='0 0 24 24'
-						fill='none'
-						xmlns='http://www.w3.org/2000/svg'
-					>
-						<path
-							d='M15 18L9 12L15 6'
-							stroke='currentColor'
-							strokeWidth='2'
-							strokeLinecap='round'
-							strokeLinejoin='round'
-						/>
-					</svg>
-				</button>
-				<button
-					className={styles.arrowButton}
-					onClick={scrollRight}
-					aria-label='Прокрутить вправо'
-				>
-					<svg
-						width='24'
-						height='24'
-						viewBox='0 0 24 24'
-						fill='none'
-						xmlns='http://www.w3.org/2000/svg'
-					>
-						<path
-							d='M9 18L15 12L9 6'
-							stroke='currentColor'
-							strokeWidth='2'
-							strokeLinecap='round'
-							strokeLinejoin='round'
-						/>
-					</svg>
-				</button>
-			</div>
 			{/* Модальное окно */}
 			<TicketModal isOpen={isModalOpen} onClose={closeModal} />
 		</div>

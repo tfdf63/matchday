@@ -94,6 +94,69 @@
 	margin: 0;
 }
 
+.stadiumNewContainer {
+	width: 100vw;
+	padding: 0;
+	margin: 0;
+	background: #020b12;
+}
+
+.backgroundWrapper {
+	position: relative;
+	width: 100vw;
+	height: 48vw;
+	min-height: 320px;
+	max-height: 600px;
+	overflow: hidden;
+}
+
+.backgroundImage {
+	object-fit: cover;
+	z-index: 1;
+}
+
+.titleOnImage {
+	position: absolute;
+	left: 2rem;
+	bottom: 2rem;
+	z-index: 2;
+	color: #fff;
+	font-size: 4.5rem;
+	font-family: 'Akademia', sans-serif;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.3);
+	padding: 0.5rem 1.5rem;
+}
+
+.thumbsGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 8px;
+	width: 100vw;
+	margin: 8px auto 0 auto;
+	background: #020b12;
+	padding: 0;
+	max-height: none;
+	overflow: hidden;
+}
+
+.thumbCell {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 8/9;
+	min-height: 80px;
+	max-height: 480px;
+	overflow: hidden;
+	background: #222;
+	border-radius: 0;
+	padding: 6px;
+}
+
+.thumbImage {
+	object-fit: cover;
+	border-radius: 0;
+}
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
 	.stadiumContainer {
@@ -145,6 +208,54 @@
 	}
 }
 
+@media (max-width: 900px) {
+	.backgroundWrapper {
+		height: 60vw;
+		min-height: 200px;
+	}
+	.thumbsGrid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 4px !important;
+		row-gap: 4px !important;
+		margin: 4px auto 0 auto;
+		background: #020b12;
+	}
+	.thumbCell {
+		aspect-ratio: 8/9;
+		padding: 0;
+		min-height: unset;
+		max-height: unset;
+		height: unset;
+	}
+	.titleOnImage {
+		font-size: 2.55rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.backgroundWrapper {
+		width: 100vw;
+		height: 0;
+		padding-top: 75%; /* 4/3 = 1.333... => 75% */
+		min-height: unset;
+		max-height: unset;
+	}
+	.titleOnImage {
+		font-size: 1.8rem;
+		left: 1rem;
+		bottom: 1rem;
+		padding: 0.3rem 0.7rem;
+	}
+	.thumbsGrid {
+		grid-template-columns: 1fr;
+		gap: 4px !important;
+	}
+	.thumbCell {
+		aspect-ratio: 4/3;
+		padding: 0;
+	}
+}
+
 @media (max-width: 400px) {
 	.stadiumContainer {
 		padding: 0 0.25rem;
@@ -161,5 +272,11 @@
 
 	.infoText {
 		font-size: 1rem;
+	}
+	.thumbsGrid {
+		gap: 4px !important;
+	}
+	.titleOnImage {
+		font-size: 1.55rem;
 	}
 }

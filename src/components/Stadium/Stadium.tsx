@@ -1,104 +1,66 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import styles from './Stadium.module.scss'
 
-interface SchemaImage {
-	id: number
-	image: string
-	title: string
-}
-
-interface StadiumProps {
-	className?: string
-}
-
-// Массив схем стадиона
-const stadiumSchemas: SchemaImage[] = [
-	// {
-	// 	id: 1,
-	// 	image: 'schema-1.webp',
-	// 	title: 'Схема прохода к теплой зоне',
-	// },
-	// {
-	// 	id: 2,
-	// 	image: 'schema-2.webp',
-	// 	title: 'Наполнение теплой зоны',
-	// },
+const thumbnails = [
 	{
-		id: 3,
-		image: 'schema-3.webp',
+		id: 2,
+		image: 'Stadium2.webp',
 		title: 'Схема парковок и входов',
 	},
 	{
-		id: 4,
-		image: 'schema-4.webp',
+		id: 1,
+		image: 'Stadium4.webp',
 		title: 'Остановки общественного транспорта',
+	},
+	{
+		id: 3,
+		image: 'Stadium.webp',
+		title: 'Схема прохода к теплой зоне',
+	},
+	{
+		id: 4,
+		image: 'Stadium7.webp',
+		title: 'Наполнение теплой зоны',
+	},
+	{
+		id: 5,
+		image: 'Stadium6.webp',
+		title: 'Наполнение теплой зоны',
+	},
+	{
+		id: 6,
+		image: 'Stadium5.webp',
+		title: 'Схема прохода к теплой зоне',
 	},
 ]
 
-const Stadium: React.FC<StadiumProps> = ({ className = '' }) => {
-	const [activeSchema, setActiveSchema] = useState<SchemaImage>(
-		stadiumSchemas[0]
-	)
-
+const Stadium: React.FC = () => {
 	return (
-		<div className={`${styles.stadiumContainer} ${className}`}>
-			<h2 className={styles.title}>Самара Солидарность Арена</h2>
-
-			<div className={styles.schemaContainer}>
-				<div className={styles.mainSchema}>
-					<div
-						style={{
-							position: 'relative',
-							width: '100%',
-							maxWidth: '600px',
-							height: '400px',
-							margin: '0 auto',
-						}}
-					>
+		<div className={styles.stadiumNewContainer}>
+			<div className={styles.backgroundWrapper}>
+				<Image
+					src={'/images/optimized/stadium/Stadium3.webp'}
+					alt='Стадион Самара Солидарность Арена'
+					fill
+					className={styles.backgroundImage}
+					priority
+				/>
+				<h2 className={styles.titleOnImage}>Стадион Чемпионата Мира 2018</h2>
+			</div>
+			<div className={styles.thumbsGrid}>
+				{thumbnails.map(thumb => (
+					<div className={styles.thumbCell} key={thumb.id}>
 						<Image
-							src={`/images/optimized/stadium/${activeSchema.image}`}
-							alt={activeSchema.title}
+							src={`/images/optimized/stadium/${thumb.image}`}
+							alt={thumb.title}
 							fill
-							className={styles.mainSchemaImage}
+							className={styles.thumbImage}
 						/>
 					</div>
-					<p className={styles.schemaTitle}>{activeSchema.title}</p>
-				</div>
-
-				<div className={styles.thumbnails}>
-					{stadiumSchemas.map((schema, index) => (
-						<div
-							key={schema.id}
-							className={`${styles.thumbnail} ${
-								activeSchema.id === schema.id ? styles.active : ''
-							}`}
-							onClick={() => setActiveSchema(schema)}
-						>
-							<div
-								style={{ position: 'relative', width: '100%', height: '100%' }}
-							>
-								<Image
-									src={`/images/optimized/stadium/${schema.image}`}
-									alt={`Схема стадиона ${index + 1}`}
-									fill
-									className={styles.thumbnailImage}
-								/>
-							</div>
-						</div>
-					))}
-					<div className={styles.info}>
-						<p className={styles.infoText}>
-							Стадион «Самара Солидарность Арена» — современный футбольный
-							стадион, построенный к Чемпионату мира по футболу 2018 года.
-							Вместимость арены составляет 44 918 зрителей. На стадионе
-							предусмотрены комфортные зоны для болельщиков, современные системы
-							безопасности и прекрасный обзор поля с любого места.
-						</p>
-					</div>
-				</div>
+				))}
 			</div>
 		</div>
 	)

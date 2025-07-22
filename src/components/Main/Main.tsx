@@ -285,7 +285,9 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						fanIdStatus={selectedGame.fanIdStatus}
 					/>
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
-					<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
+					<div className={styles.timerWrapper}>
+						<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
+					</div>
 				</div>
 			</div>
 		</div>

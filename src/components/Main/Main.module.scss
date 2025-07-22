@@ -103,6 +103,12 @@
 	}
 }
 
+.timerWrapper {
+	width: 100%;
+	max-width: 20rem;
+	margin: 0 auto;
+}
+
 @media (max-width: 768px) {
 	.main {
 		height: 100vh;

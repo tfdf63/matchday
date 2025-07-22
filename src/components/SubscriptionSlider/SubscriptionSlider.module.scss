@@ -1,5 +1,6 @@
 .sliderContainer {
-	margin-top: 3rem;
+	margin-top: 2rem;
+	margin-bottom: 3rem;
 	width: 100%;
 	position: relative;
 	background-color: var(--background);
@@ -10,9 +11,10 @@
 	justify-content: space-between;
 	align-items: center;
 	max-width: 1200px;
-	margin: 0 auto 1.5rem auto;
+	margin: 16px auto 16px auto;
 	padding: 0 1rem;
 	gap: 1rem;
+	position: relative;
 }
 
 .sectionTitle {
@@ -189,10 +191,17 @@
 .navigationArrows {
 	display: none; // По умолчанию скрыты
 	justify-content: center;
+	align-items: center;
 	gap: 2rem;
 	margin-top: 0.2rem;
 	padding: 0.5rem;
 	opacity: 0.7;
+	flex-grow: 1;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
 }
 
 .arrowButton {
@@ -263,5 +272,8 @@
 @media (min-width: 1024px) {
 	.navigationArrows {
 		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-grow: 1;
 	}
 }
