@@ -42,7 +42,7 @@ const Stadium: React.FC = () => {
 		<div className={styles.stadiumNewContainer}>
 			<div className={styles.backgroundWrapper}>
 				<Image
-					src={'/images/optimized/stadium/Stadium3.webp'}
+					src={'/images/optimized/stadium/Stadium32.webp'}
 					alt='Стадион Самара Солидарность Арена'
 					fill
 					className={styles.backgroundImage}

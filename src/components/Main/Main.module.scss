@@ -109,6 +109,14 @@
 	margin: 0 auto;
 }
 
+.promoButton {
+	margin: 1rem auto 0 auto;
+	width: 100%;
+	max-width: 20rem;
+	display: block;
+	padding: 0.8rem 2rem;
+}
+
 @media (max-width: 768px) {
 	.main {
 		height: 100vh;
@@ -125,6 +133,10 @@
 	.leagueInfo {
 		font-size: 1rem;
 		padding: 0.75rem;
+	}
+
+	.promoButton {
+		padding: 0.6rem 1.5rem;
 	}
 }
 

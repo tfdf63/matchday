@@ -6,6 +6,8 @@ import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
 import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
+import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
+import ActionButton from '../ActionButton/ActionButton'
 
 // URL видеофайлов для кэширования
 const VIDEO_URLS = [
@@ -123,6 +125,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	// Состояние для отслеживания готовности видео
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 	const [supportsWebPFormat, setSupportsWebPFormat] = useState<boolean>(true)
+	const [isPromoOpen, setPromoOpen] = useState(false)
 
 	// Предзагрузка видео при монтировании компонента
 	useEffect(() => {
@@ -284,10 +287,21 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						ticketLinkVip={selectedGame.ticketLinkVip}
 						fanIdStatus={selectedGame.fanIdStatus}
 					/>
+					<ActionButton
+						href='#'
+						title='Промокоды для друзей'
+						actionType='modal'
+						onModalOpen={() => setPromoOpen(true)}
+						className={styles.promoButton}
+					/>
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
 					<div className={styles.timerWrapper}>
 						<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
 					</div>
+					<PromoCodesModal
+						isOpen={isPromoOpen}
+						onClose={() => setPromoOpen(false)}
+					/>
 				</div>
 			</div>
 		</div>
