@@ -9,6 +9,9 @@
 	background-color: rgba(0, 0, 0, 0.4);
 	backdrop-filter: blur(5px);
 	padding: 0.2rem;
+	max-width: 20rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .datesContainer {
@@ -18,15 +21,16 @@
 	font-family: var(--font-ibm-plex-mono), monospace;
 	white-space: nowrap;
 	flex-wrap: nowrap;
+	font-size: 0.85rem;
 }
 
 .title {
-	font-size: 0.95rem;
+	font-size: 0.85rem;
 	color: #fff;
 }
 
 .date {
-	font-size: 0.95rem;
+	font-size: 0.85rem;
 	font-weight: 600;
 	transition: all 0.3s ease;
 
@@ -38,7 +42,7 @@
 
 .separator {
 	color: #b2061c;
-	font-size: 1rem;
+	font-size: 0.85rem;
 }
 
 @media (max-width: 768px) {

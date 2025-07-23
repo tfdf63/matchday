@@ -21,6 +21,33 @@ interface CardMatchProps {
 	fanIdStatus?: string
 }
 
+function getShortWeekdayRu(dateStr: string): string {
+	// Ожидается формат '29 июля' или '3 августа'
+	const months: Record<string, number> = {
+		января: 0,
+		февраля: 1,
+		марта: 2,
+		апреля: 3,
+		мая: 4,
+		июня: 5,
+		июля: 6,
+		августа: 7,
+		сентября: 8,
+		октября: 9,
+		ноября: 10,
+		декабря: 11,
+	}
+	const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
+	const match = dateStr.match(/(\d{1,2}) ([а-я]+)/i)
+	if (!match) return ''
+	const day = parseInt(match[1], 10)
+	const month = months[match[2].toLowerCase()]
+	if (month === undefined) return ''
+	const year = new Date().getFullYear()
+	const date = new Date(year, month, day)
+	return days[date.getDay()]
+}
+
 const CardMatch: React.FC<CardMatchProps> = ({
 	homeTeam = 'Команда 1',
 	awayTeam = 'Команда 2',
@@ -65,7 +92,9 @@ const CardMatch: React.FC<CardMatchProps> = ({
 			</div>
 
 			<div className={styles.info}>
-				<span>{date}</span>
+				<span>
+					{date} ({getShortWeekdayRu(date)})
+				</span>
 				<span>{time}</span>
 			</div>
 			<div className={styles.info}>
