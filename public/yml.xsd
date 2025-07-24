@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="yml_catalog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="shop">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="company" type="xs:string"/>
+              <xs:element name="url" type="xs:string"/>
+              <xs:element name="currencies" minOccurs="0"/>
+              <xs:element name="categories" minOccurs="0"/>
+              <xs:element name="offers">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="offer" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="url" type="xs:string"/>
+                          <xs:element name="price" type="xs:decimal"/>
+                          <xs:element name="currencyId" type="xs:string"/>
+                          <xs:element name="categoryId" type="xs:string"/>
+                          <xs:element name="picture" type="xs:string"/>
+                          <xs:element name="name" type="xs:string"/>
+                          <xs:element name="description" type="xs:string"/>
+                          <xs:element name="vendor" type="xs:string"/>
+                          <xs:element name="vendorCode" type="xs:string"/>
+                          <xs:element name="available" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                        <xs:attribute name="available" type="xs:boolean" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="date" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema> 

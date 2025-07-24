@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2024-07-01T12:00:00+03:00">
+  <shop>
+    <name>ФК Акрон</name>
+    <company>Футбольный клуб Акрон</company>
+    <url>https://matchday.fcakron.ru/</url>
+    <currencies>
+      <currency id="RUR" rate="1"/>
+    </currencies>
+    <categories>
+      <category id="1">Билеты</category>
+    </categories>
+    <offers>
+      <offer id="match-2" available="true">
+        <url>https://matchday.fcakron.ru/</url>
+        <price>500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://matchday.fcakron.ru/images/optimized/stadium/Stadium.webp</picture>
+        <name>Билет на матч Акрон — Балтика (29 июля, 19:30)</name>
+        <description>
+          <![CDATA[
+            Матч: Акрон — Балтика<br/>
+            Дата: 29 июля 2025 (пн), 19:30<br/>
+            Стадион: Солидарность Самара Арена<br/>
+            Турнир: FONBET Кубок России 2025/2026 - 1 ТУР<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39873507?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51">Купить билет</a>
+          ]]>
+        </description>
+        <vendor>ФК Акрон</vendor>
+        <vendorCode>AKR-BLT-20250729</vendorCode>
+        <available>true</available>
+      </offer>
+      <offer id="match-3" available="true">
+        <url>https://matchday.fcakron.ru/</url>
+        <price>500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://matchday.fcakron.ru/images/optimized/stadium/Stadium.webp</picture>
+        <name>Билет на матч Акрон — Спартак (3 августа, 14:30)</name>
+        <description>
+          <![CDATA[
+            Матч: Акрон — Спартак<br/>
+            Дата: 3 августа 2025 (вс), 14:30<br/>
+            Стадион: Солидарность Самара Арена<br/>
+            Турнир: МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 3 ТУР<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39719522?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51">Купить билет</a>
+          ]]>
+        </description>
+        <vendor>ФК Акрон</vendor>
+        <vendorCode>AKR-SPA-20250803</vendorCode>
+        <available>true</available>
+      </offer>
+      <offer id="match-4" available="true">
+        <url>https://matchday.fcakron.ru/</url>
+        <price>500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://matchday.fcakron.ru/images/optimized/stadium/Stadium.webp</picture>
+        <name>Билет на матч Акрон — ЦСКА (12 августа, 17:15)</name>
+        <description>
+          <![CDATA[
+            Матч: Акрон — ЦСКА<br/>
+            Дата: 12 августа 2025 (вт), 17:15<br/>
+            Стадион: Солидарность Самара Арена<br/>
+            Турнир: FONBET Кубок России 2025/2026 - 2 ТУР<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39879676?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51">Купить билет</a>
+          ]]>
+        </description>
+        <vendor>ФК Акрон</vendor>
+        <vendorCode>AKR-CSK-20250812</vendorCode>
+        <available>true</available>
+      </offer>
+      <offer id="match-5" available="true">
+        <url>https://matchday.fcakron.ru/</url>
+        <price>500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://matchday.fcakron.ru/images/optimized/stadium/Stadium.webp</picture>
+        <name>Билет на матч Акрон — Оренбург (20 августа, 18:00)</name>
+        <description>
+          <![CDATA[
+            Матч: Акрон — Оренбург<br/>
+            Дата: 20 августа 2025 (ср), 18:00<br/>
+            Стадион: Солидарность Самара Арена<br/>
+            Турнир: МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@40529687?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51">Купить билет</a>
+          ]]>
+        </description>
+        <vendor>ФК Акрон</vendor>
+        <vendorCode>AKR-ORN-20250820</vendorCode>
+        <available>true</available>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
