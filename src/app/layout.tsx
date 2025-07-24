@@ -3,6 +3,7 @@ import { IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
 import Script from 'next/script'
 import BackToHome from '@/components/BackToHome'
+import Image from 'next/image'
 
 // const geistSans = Geist({
 // 	variable: '--font-geist-sans',
@@ -107,6 +108,13 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className={`${ibmPlexMono.variable}`}>
+				<Image
+					src='/images/fon.webp'
+					alt='Фон'
+					fill
+					priority
+					className='globalBgFon'
+				/>
 				<BackToHome />
 				<Script id='top-mail-ru' strategy='lazyOnload' src='/top-mail-ru.js' />
 				<Script

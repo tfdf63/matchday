@@ -48,7 +48,10 @@ const Stadium: React.FC = () => {
 					className={styles.backgroundImage}
 					priority
 				/>
-				<h2 className={styles.titleOnImage}>Стадион Чемпионата Мира 2018</h2>
+				<h2 className={styles.titleOnImage}>
+					<span>Стадион Чемпионата Мира 2018</span>
+					<span className={styles.city}>Самара</span>
+				</h2>
 			</div>
 			<div className={styles.thumbsGrid}>
 				{thumbnails.map(thumb => (

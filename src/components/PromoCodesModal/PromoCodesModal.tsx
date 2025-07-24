@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './PromoCodesModal.module.scss'
 import ActionButton from '../ActionButton/ActionButton'
+import Image from 'next/image'
 
 interface PromoCodesModalProps {
 	isOpen: boolean
@@ -44,11 +45,21 @@ const PromoCodesModal: React.FC<PromoCodesModalProps> = ({
 	return (
 		<div className={styles.modalOverlay} onClick={handleOverlayClick}>
 			<div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-				<div className={styles.title}>
-					<span>С друзьями на матчи</span>
+				<div className={styles.imageWrapper}>
+					<Image
+						src='/images/friends.jpg'
+						alt='С друзьями на матчи'
+						className={styles.bgImage}
+						width={100}
+						height={200}
+						priority
+					/>
 					<button className={styles.closeButton} onClick={onClose}>
 						×
 					</button>
+				</div>
+				<div className={styles.title}>
+					<span>С друзьями на матчи ФК Акрон</span>
 				</div>
 				<div className={styles.promoTextBlock}>
 					<span>
