@@ -22,11 +22,6 @@ const MatchesPage = () => {
 				duration={50}
 			/>
 			<Games />
-			<Marquee
-				text='БИЛЕТЫ × АБОНЕМЕНТЫ × БИЛЕТЫ × АБОНЕМЕНТЫ × БИЛЕТЫ ×'
-				duration={50}
-			/>
-			<SubscriptionSlider />
 			{/* <Marquee
 				text='ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × '
 				duration={50}
@@ -46,6 +41,11 @@ const MatchesPage = () => {
 			/> */}
 			{/* <Skybox /> */}
 			<Stadium />
+			<Marquee
+				text='БИЛЕТЫ × АБОНЕМЕНТЫ × БИЛЕТЫ × АБОНЕМЕНТЫ × БИЛЕТЫ ×'
+				duration={50}
+			/>
+			<SubscriptionSlider />
 			<Requisites />
 		</>
 	)

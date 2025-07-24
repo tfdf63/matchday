@@ -3,6 +3,7 @@
 import React from 'react'
 import CardInfo from '@/components/CardInfo/CardInfo'
 import { subscriptionCards } from '@/data/subscriptions'
+import Head from 'next/head'
 
 const BusinessClubPage: React.FC = () => {
 	// Находим данные для бизнес-клуба
@@ -59,7 +60,21 @@ const BusinessClubPage: React.FC = () => {
 		return <div>Абонемент не найден</div>
 	}
 
-	return <CardInfo card={cardData} />
+	return (
+		<>
+			<Head>
+				<meta
+					name='description'
+					content='Фанатский сектор Акрон — атмосфера, перформансы, поддержка команды, лучшие места для настоящих болельщиков!'
+				/>
+				<meta
+					name='keywords'
+					content='фанаты, сектор, Акрон, футбол, поддержка, перформанс, билеты, стадион'
+				/>
+			</Head>
+			<CardInfo card={cardData} />
+		</>
+	)
 }
 
 export default BusinessClubPage

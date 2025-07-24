@@ -76,11 +76,7 @@ const CardMatch: React.FC<CardMatchProps> = ({
 					)}
 					{fanIdStatus && (
 						<Link href='#fan-card' className={styles.fanIdStatus}>
-							{leagueInfo && leagueInfo.includes('Кубок') ? (
-								<s>fan id</s>
-							) : (
-								'fan id'
-							)}
+							{fanIdStatus === 'Без fan id' ? 'без fan id' : 'fan id'}
 						</Link>
 					)}
 				</div>

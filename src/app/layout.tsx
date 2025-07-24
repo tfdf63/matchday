@@ -97,6 +97,14 @@ export default function RootLayout({
 				<meta name='googlebot' content='notranslate' />
 				<meta name='google' content='notranslate' />
 				<meta httpEquiv='Cache-Control' content='no-transform' />
+				<meta
+					name='description'
+					content='Покупайте билеты на матчи ФК Акрон онлайн. Расписание игр, акции, абонементы, лучшие места на стадионе.'
+				/>
+				<meta
+					name='keywords'
+					content='Акрон, билеты, футбол, Самара, стадион, купить билет, матч, абонемент, расписание'
+				/>
 			</head>
 			<body className={`${ibmPlexMono.variable}`}>
 				<BackToHome />

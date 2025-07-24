@@ -4,6 +4,7 @@ import React from 'react'
 import CardInfo from '@/components/CardInfo/CardInfo'
 import ContactForm from '@/components/Skybox/ContactForm/ContactForm'
 import { subscriptionCards } from '@/data/subscriptions'
+import Head from 'next/head'
 
 const BusinessClubPage: React.FC = () => {
 	// Находим данные для бизнес-клуба
@@ -79,6 +80,16 @@ const BusinessClubPage: React.FC = () => {
 
 	return (
 		<>
+			<Head>
+				<meta
+					name='description'
+					content='VIP-ложи и Skybox на стадионе Акрон — комфорт, приватность, лучшие места для просмотра футбола. Узнайте больше и забронируйте!'
+				/>
+				<meta
+					name='keywords'
+					content='VIP, Skybox, Акрон, стадион, футбол, ложа, комфорт, приватность, билеты'
+				/>
+			</Head>
 			<CardInfo card={cardData} />
 			<ContactForm />
 		</>

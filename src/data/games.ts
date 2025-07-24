@@ -99,7 +99,7 @@ const games: Game[] = [
 			first: '2025-08-11',
 			second: '2025-08-15',
 		},
-		fanIdStatus: 'Без fan id',
+		fanIdStatus: 'Fan id',
 	},
 ]
 

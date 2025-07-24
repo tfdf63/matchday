@@ -4,6 +4,7 @@ import React from 'react'
 import CardInfo from '@/components/CardInfo/CardInfo'
 import { subscriptionCards } from '@/data/subscriptions'
 import styles from '@/components/CardInfo/CardInfo.module.scss'
+import Head from 'next/head'
 
 const BusinessClubPage: React.FC = () => {
 	// Находим данные для бизнес-клуба
@@ -63,6 +64,16 @@ const BusinessClubPage: React.FC = () => {
 
 	return (
 		<>
+			<Head>
+				<meta
+					name='description'
+					content='Социальный сектор Акрон — комфортные места для болельщиков с ограниченными возможностями. Бесплатные билеты, отдельный вход, поддержка на стадионе.'
+				/>
+				<meta
+					name='keywords'
+					content='социальный сектор, Акрон, футбол, билеты, стадион, доступная среда, инвалид, комфорт'
+				/>
+			</Head>
 			<CardInfo card={cardData} />
 			<div className={styles.cardInfo} style={{ marginTop: 0 }}>
 				<h2
