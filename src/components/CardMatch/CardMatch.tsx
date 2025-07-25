@@ -57,16 +57,18 @@ const CardMatch: React.FC<CardMatchProps> = ({
 }) => {
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
-			{leagueInfo && (
-				<div className={styles.leagueInfo}>
-					<span>{leagueInfo}</span>
-				</div>
-			)}
-			{fanIdStatus && (
-				<Link href='#fan-card' className={styles.fanIdStatus}>
-					{fanIdStatus}
-				</Link>
-			)}
+			<div className={styles.infoRow}>
+				{leagueInfo && (
+					<div className={styles.leagueInfo}>
+						<span>{leagueInfo}</span>
+					</div>
+				)}
+				{fanIdStatus && (
+					<Link href='#fan-card' className={styles.fanIdStatus}>
+						{fanIdStatus}
+					</Link>
+				)}
+			</div>
 			<div className={styles.teams}>
 				<span className={styles.team}>{homeTeam}</span>
 				<span className={styles.divider}>—</span>

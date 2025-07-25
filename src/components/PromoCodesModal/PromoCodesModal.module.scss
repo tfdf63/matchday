@@ -68,7 +68,7 @@
 	max-width: 20rem;
 	font-family: var(--font-main, inherit);
 	font-weight: 700;
-	font-size: 1.3rem;
+	font-size: 2rem;
 	color: #fff;
 	text-align: center;
 	padding: 1rem 0 0.5rem 0;
@@ -116,7 +116,7 @@
 .promoTextBlock {
 	font-family: var(--font-ibm-plex-mono), monospace;
 	color: #fff;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	margin-top: 1rem;
 	margin-bottom: 1.5rem;
 	line-height: 1.7;
@@ -165,11 +165,11 @@
 		/* max-width: 20rem;
 		min-width: 280px; */
 		/* margin: auto; */
-		padding: 1.2rem 1rem 1.2rem 1rem;
+		padding: 1.2rem 0.5rem 0.5rem 1rem;
 		height: auto;
 	}
 	.title {
-		font-size: 1.1rem;
+		font-size: 1.6rem;
 	}
 	.closeButton {
 		position: absolute;

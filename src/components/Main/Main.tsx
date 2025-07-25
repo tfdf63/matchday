@@ -273,9 +273,6 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				<source src='/videos/bgmainmob-optimized-fast.mp4' type='video/mp4' />
 			</video>
 			<div className={styles.content}>
-				<div className={styles.leagueInfo}>
-					<span>{selectedGame.leagueInfo}</span>
-				</div>
 				<div className={styles.featuredMatch}>
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
@@ -286,6 +283,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						ticketLink={selectedGame.ticketLink}
 						ticketLinkVip={selectedGame.ticketLinkVip}
 						fanIdStatus={selectedGame.fanIdStatus}
+						leagueInfo={selectedGame.leagueInfo}
 					/>
 					<ActionButton
 						href='#'

@@ -8,6 +8,24 @@
 	z-index: 2;
 }
 
+.infoRow {
+	width: 100%;
+	max-width: 20rem;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+
+.leagueInfo {
+	text-align: left;
+	font-size: 0.8rem;
+	color: #fff;
+	font-family: var(--font-ibm-plex-mono), monospace;
+	text-transform: uppercase;
+}
+
 .teams {
 	display: flex;
 	justify-content: space-between;
@@ -71,7 +89,12 @@
 	font-size: 0.95rem;
 	font-family: var(--font-ibm-plex-mono), monospace;
 	padding: 0.25em 0.8em;
-	margin-bottom: 0.5rem;
+	text-align: right;
+	white-space: nowrap;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-weight: 600;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;

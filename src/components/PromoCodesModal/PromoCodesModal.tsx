@@ -59,11 +59,12 @@ const PromoCodesModal: React.FC<PromoCodesModalProps> = ({
 					</button>
 				</div>
 				<div className={styles.title}>
-					<span>С друзьями на матчи ФК Акрон</span>
+					<span>Вместе выгоднее</span>
 				</div>
 				<div className={styles.promoTextBlock}>
+					<span>При покупке:</span>
 					<span>
-						2 билета — 10%{' '}
+						2 билетов скидка 10%
 						<span
 							className={styles.promoCode}
 							onClick={() => handleCopy('AKRCUP10')}
@@ -80,7 +81,7 @@ const PromoCodesModal: React.FC<PromoCodesModalProps> = ({
 					</span>
 					<br />
 					<span>
-						3 билета — 15%{' '}
+						3 билетов скидка 15%
 						<span
 							className={styles.promoCode}
 							onClick={() => handleCopy('AKRCUP15')}
@@ -97,7 +98,7 @@ const PromoCodesModal: React.FC<PromoCodesModalProps> = ({
 					</span>
 					<br />
 					<span>
-						от 4 билетов — 20%{' '}
+						от 4 билетов скидка 20%
 						<span
 							className={styles.promoCode}
 							onClick={() => handleCopy('AKRCUP20')}
