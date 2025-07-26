@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Head from 'next/head'
 import CardInfo from '@/components/CardInfo/CardInfo'
 import { subscriptionCards } from '@/data/subscriptions'
 
@@ -102,7 +103,24 @@ const BusinessClubPage: React.FC = () => {
 		return <div>Абонемент не найден</div>
 	}
 
-	return <CardInfo card={cardData} />
+	return (
+		<>
+			<Head>
+				<title>
+					Бизнес-клуб | ФК Акрон - Премиум места у скамейки запасных
+				</title>
+				<meta
+					name='description'
+					content='Бизнес-клуб ФК Акрон — эксклюзивные места у скамейки запасных. Слышите указания тренера, видите реакции игроков. Премиум сервис, комфорт, нетворкинг.'
+				/>
+				<meta
+					name='keywords'
+					content='бизнес-клуб, премиум места, скамейка запасных, ФК Акрон, VIP, комфорт, нетворкинг, эксклюзив'
+				/>
+			</Head>
+			<CardInfo card={cardData} />
+		</>
+	)
 }
 
 export default BusinessClubPage

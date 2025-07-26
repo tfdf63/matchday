@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Head from 'next/head'
 import CardInfo from '@/components/CardInfo/CardInfo'
 import { subscriptionCards } from '@/data/subscriptions'
 
@@ -11,29 +12,22 @@ const BusinessClubPage: React.FC = () => {
 	// Данные для CardInfo компонента
 	const cardData = {
 		id: 1,
-		title: 'За скамейкой',
-		subtitle: 'Ваш пропуск за кулисы большого футбола!',
+		title: 'Классический',
+		subtitle: 'Здесь сохраняется аутентичная атмосфера большого спорта.',
 		sectors: subscriptionCards, // Все доступные сектора
 		gallery: ['/images/sector/gallery/a104a108.png'],
 		features: [
 			{
-				title: 'Видите живые тренерские эмоции',
-				description:
-					'Указания игрокам, реакцию на забитые голы и как принимаются ключевые тактические решения.',
+				title: 'Проверенный временем ракурс',
+				description: 'Поколения болельщиков выбирали именно такие места',
 			},
 			{
-				title: 'Видите разминку звёзд перед выходом',
-				description: 'Их фирменные ритуалы и подготовку к игре.',
-			},
-			{
-				title: 'Близко к игрокам',
-				description:
-					'Шанс поймать взгляд или получить автограф при выходе игроков в тоннель.',
+				title: 'Баланс цены и впечатлений',
+				description: 'Все преимущества центральной трибуны',
 			},
 			{
 				title: '',
-				description:
-					'Это не просто трибуна — это мастер-класс по футбольной психологии!',
+				description: 'Ваш семейный футбольный опыт начинается здесь!',
 			},
 		],
 		services: [
@@ -48,10 +42,16 @@ const BusinessClubPage: React.FC = () => {
 		subsectors: ['A104', 'A108'],
 		tariffs: [
 			{
-				sector: 'A104-108',
-				price1: '16 990 ₽',
-				price2: '18 990 ₽',
-				price3: '22 890 ₽',
+				sector: 'A104',
+				price1: '5 990 ₽',
+				price2: '8 990 ₽',
+				price3: '10 990 ₽',
+			},
+			{
+				sector: 'A108',
+				price1: '5 990 ₽',
+				price2: '8 990 ₽',
+				price3: '10 990 ₽',
 			},
 		],
 		stadiumSchema: '/images/sector/shema-stadium/schema-a104a108.png',
@@ -62,7 +62,24 @@ const BusinessClubPage: React.FC = () => {
 		return <div>Абонемент не найден</div>
 	}
 
-	return <CardInfo card={cardData} />
+	return (
+		<>
+			<Head>
+				<title>
+					Сектор A104-A108 | ФК Акрон - Классические места центральной трибуны
+				</title>
+				<meta
+					name='description'
+					content='Сектор A104-A108 на стадионе Акрон — классические места центральной трибуны. Отличный обзор поля, аутентичная атмосфера футбола, доступные цены.'
+				/>
+				<meta
+					name='keywords'
+					content='сектор A104, сектор A108, центральная трибуна, ФК Акрон, футбол, классические места, стадион'
+				/>
+			</Head>
+			<CardInfo card={cardData} />
+		</>
+	)
 }
 
 export default BusinessClubPage

@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Head from 'next/head'
 import CardInfo from '@/components/CardInfo/CardInfo'
 import { subscriptionCards } from '@/data/subscriptions'
 
@@ -11,29 +12,22 @@ const BusinessClubPage: React.FC = () => {
 	// Данные для CardInfo компонента
 	const cardData = {
 		id: 1,
-		title: 'Центральный',
-		subtitle: 'Лучший ракурс для истинных ценителей футбола!',
+		title: 'Классический',
+		subtitle: 'Здесь сохраняется аутентичная атмосфера большого спорта.',
 		sectors: subscriptionCards, // Все доступные сектора
 		gallery: ['/images/sector/gallery/c121.png'],
 		features: [
 			{
-				title: 'Безупречный обзор',
-				description:
-					'Вся тактика, перепасовки и ключевые моменты как на ладони.',
+				title: 'Проверенный временем ракурс',
+				description: 'Поколения болельщиков выбирали именно такие места',
 			},
 			{
-				title: 'Близко к действию',
-				description: 'Отличная видимость обеих половин поля.',
-			},
-			{
-				title: 'Идеальный ракурс',
-				description:
-					'Отличный обзор атакующих действий и оборонительных построений вашей команды.',
+				title: 'Баланс цены и впечатлений',
+				description: 'Все преимущества центральной трибуны',
 			},
 			{
 				title: '',
-				description:
-					'Это место для тех, кто ценит красоту футбола и хочет насладиться игрой по-настоящему.',
+				description: 'Ваш семейный футбольный опыт начинается здесь!',
 			},
 		],
 		services: [
@@ -49,9 +43,9 @@ const BusinessClubPage: React.FC = () => {
 		tariffs: [
 			{
 				sector: 'C121',
-				price1: '12 490 ₽',
-				price2: '17 990 ₽',
-				price3: '21 550 ₽',
+				price1: '5 990 ₽',
+				price2: '8 990 ₽',
+				price3: '10 990 ₽',
 			},
 		],
 		stadiumSchema: '/images/sector/shema-stadium/schema-c121.png',
@@ -62,7 +56,24 @@ const BusinessClubPage: React.FC = () => {
 		return <div>Абонемент не найден</div>
 	}
 
-	return <CardInfo card={cardData} />
+	return (
+		<>
+			<Head>
+				<title>
+					Сектор C121 | ФК Акрон - Классические места центральной трибуны
+				</title>
+				<meta
+					name='description'
+					content='Сектор C121 на стадионе Акрон — классические места центральной трибуны. Отличный обзор поля, аутентичная атмосфера футбола, доступные цены.'
+				/>
+				<meta
+					name='keywords'
+					content='сектор C121, центральная трибуна, ФК Акрон, футбол, классические места, стадион'
+				/>
+			</Head>
+			<CardInfo card={cardData} />
+		</>
+	)
 }
 
 export default BusinessClubPage

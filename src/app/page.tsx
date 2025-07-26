@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import Main from '@/components/Main/Main'
 import Games from '@/components/Games/Games'
 import Marquee from '@/components/Marquee/Marquee'
@@ -16,6 +17,17 @@ import SubscriptionSlider from '@/components/SubscriptionSlider/SubscriptionSlid
 const MatchesPage = () => {
 	return (
 		<>
+			<Head>
+				<title>ФК Акрон - Билеты на матчи | Официальный сайт</title>
+				<meta
+					name='description'
+					content='Купить билеты на матчи ФК Акрон в Самаре. Расписание игр, абонементы, VIP-ложи. Официальный сайт клуба с актуальными ценами и бронированием.'
+				/>
+				<meta
+					name='keywords'
+					content='ФК Акрон, билеты на футбол, матчи Акрон, стадион Самара, купить билет, абонемент, VIP, расписание игр'
+				/>
+			</Head>
 			<Main />
 			<Marquee
 				text='БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ ×'

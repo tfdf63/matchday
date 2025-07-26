@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Head from 'next/head'
 import CardInfo from '@/components/CardInfo/CardInfo'
 import { subscriptionCards } from '@/data/subscriptions'
 
@@ -11,25 +12,22 @@ const BusinessClubPage: React.FC = () => {
 	// Данные для CardInfo компонента
 	const cardData = {
 		id: 1,
-		title: 'Игровая панорама',
-		subtitle: 'Вы получаете идеальный баланс обзора и атмосферы.',
+		title: 'Классический',
+		subtitle: 'Здесь сохраняется аутентичная атмосфера большого спорта.',
 		sectors: subscriptionCards, // Все доступные сектора
 		gallery: ['/images/sector/gallery/c122c120.png'],
 		features: [
 			{
-				title: 'Тактический взгляд на игру',
-				description:
-					'Здесь открывается панорама всего поля - вы увидите, как строится атака от защиты и как игроки перестраиваются в зависимости от ситуации.',
+				title: 'Проверенный временем ракурс',
+				description: 'Поколения болельщиков выбирали именно такие места',
 			},
 			{
-				title: 'Развивай футбольную интуицию',
-				description:
-					'С этого сектора хорошо читаются заготовленные комбинации и направления атак. Уже через пару матчей вы начнёте предвосхищать голевые моменты за несколько секунд до их развития.',
+				title: 'Баланс цены и впечатлений',
+				description: 'Все преимущества центральной трибуны',
 			},
 			{
-				title: 'Секрет профессионалов',
-				description:
-					'Именно такие места часто выбирают скауты и аналитики - отсюда лучше всего видна игровая дисциплина и тактические схемы. Попробуйте и вы посмотреть матч "глазами специалиста".',
+				title: '',
+				description: 'Ваш семейный футбольный опыт начинается здесь!',
 			},
 		],
 		services: [
@@ -44,10 +42,16 @@ const BusinessClubPage: React.FC = () => {
 		subsectors: ['C122', 'C120'],
 		tariffs: [
 			{
-				sector: 'C122-120',
-				price1: '9 990 ₽',
-				price2: '12 990 ₽',
-				price3: '15 990 ₽',
+				sector: 'C122',
+				price1: '5 990 ₽',
+				price2: '8 990 ₽',
+				price3: '10 990 ₽',
+			},
+			{
+				sector: 'C120',
+				price1: '5 990 ₽',
+				price2: '8 990 ₽',
+				price3: '10 990 ₽',
 			},
 		],
 		stadiumSchema: '/images/sector/shema-stadium/schema-c122c120.png',
@@ -58,7 +62,24 @@ const BusinessClubPage: React.FC = () => {
 		return <div>Абонемент не найден</div>
 	}
 
-	return <CardInfo card={cardData} />
+	return (
+		<>
+			<Head>
+				<title>
+					Сектор C122-C120 | ФК Акрон - Классические места центральной трибуны
+				</title>
+				<meta
+					name='description'
+					content='Сектор C122-C120 на стадионе Акрон — классические места центральной трибуны. Отличный обзор поля, аутентичная атмосфера футбола, доступные цены.'
+				/>
+				<meta
+					name='keywords'
+					content='сектор C122, сектор C120, центральная трибуна, ФК Акрон, футбол, классические места, стадион'
+				/>
+			</Head>
+			<CardInfo card={cardData} />
+		</>
+	)
 }
 
 export default BusinessClubPage
