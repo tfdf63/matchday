@@ -2,7 +2,8 @@
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 2rem 1rem;
-	background-color: var(--background);
+	/* background-color: var(--background); */
+	z-index: 12;
 }
 
 .header {

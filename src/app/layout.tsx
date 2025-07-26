@@ -114,6 +114,7 @@ export default function RootLayout({
 					fill
 					priority
 					className='globalBgFon'
+					style={{ zIndex: -1 }}
 				/>
 				<BackToHome />
 				<Script id='top-mail-ru' strategy='lazyOnload' src='/top-mail-ru.js' />
