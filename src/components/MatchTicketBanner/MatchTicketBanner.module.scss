@@ -1,0 +1,36 @@
+.banner {
+	position: absolute;
+	top: -30px;
+	left: -4px;
+	z-index: 1;
+	transform: rotate(-20deg);
+}
+
+.bannerText {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 16px;
+	background: #ffd700;
+	color: #000;
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+	white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+	.banner {
+		top: -35px;
+		left: 0px;
+		transform: rotate(0deg);
+	}
+
+	.bannerText {
+		padding: 6px 12px;
+		font-size: 0.7rem;
+	}
+}

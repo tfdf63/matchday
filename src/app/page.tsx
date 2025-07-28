@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Main from '@/components/Main/Main'
 import Games from '@/components/Games/Games'
+// import Players from '@/components/Players'
 import Marquee from '@/components/Marquee/Marquee'
 // import Slider from '@/components/Slider/Slider'
 import FanCard from '@/components/FanCard/FanCard'
@@ -34,6 +35,11 @@ const MatchesPage = () => {
 				duration={50}
 			/>
 			<Games />
+			{/* <Marquee
+				text='СИЛЬНЕЙШИЕ ИГРОКИ ГЛАВНОГО ФУТБОЛЬНОГО ТУРНИРА СТРАНЫ × СИЛЬНЕЙШИЕ ИГРОКИ ГЛАВНОГО ФУТБОЛЬНОГО ТУРНИРА СТРАНЫ ×'
+				duration={50}
+			/>
+			<Players /> */}
 			{/* <Marquee
 				text='ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × ПОКУПАТЬ ЗАРАНЕЕ - ВЫГОДНО! × '
 				duration={50}

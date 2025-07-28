@@ -7,7 +7,7 @@ interface ActionButtonProps {
 	href: string
 	title: string
 	className?: string
-	actionType?: 'modal' | 'link'
+	actionType?: 'modal' | 'link' | 'internal'
 	onModalOpen?: () => void
 }
 
@@ -23,7 +23,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
 			e.preventDefault()
 			onModalOpen()
 		}
-		// Для actionType === 'link' используется стандартное поведение ссылки
+		// Для actionType === 'link' и 'internal' используется стандартное поведение ссылки
 	}
 
 	return (

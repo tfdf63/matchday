@@ -1,0 +1,237 @@
+.container {
+	min-height: 100vh;
+	position: relative;
+	z-index: 2;
+	padding: 2rem 1rem;
+}
+
+.content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-top: 4rem; // Отступ для кнопки "Домой"
+}
+
+.title {
+	font-family: 'Akademia', sans-serif;
+	font-size: 4rem;
+	color: white;
+	text-align: center;
+	margin-bottom: 3rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.playersGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+	justify-items: center;
+}
+
+.playerCard {
+	width: 340px;
+	height: 340px; /* Квадратная карточка */
+	overflow: hidden;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+}
+
+.imageWrapper {
+	position: relative;
+	width: 100%;
+	height: 340px; /* Вся высота карточки */
+	overflow: hidden;
+}
+
+.image {
+	object-fit: cover !important;
+}
+
+.cardOverlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.8) 0%,
+		rgba(0, 0, 0, 0.4) 50%,
+		transparent 100%
+	);
+	padding: 1rem;
+}
+
+.cardContent {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 1rem;
+}
+
+.playerInfo {
+	color: white;
+}
+
+.playerName {
+	margin-bottom: 0.5rem;
+}
+
+.lastName {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin-bottom: 2px;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.firstName {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1rem;
+	font-weight: 500;
+	opacity: 0.9;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.playerPosition {
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #b2061c;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 0.2rem 0.5rem;
+	display: inline-block;
+}
+
+.playerNumber {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	background: #b2061c;
+	color: #fff;
+	font-size: 2rem;
+	font-family: Akademia, sans;
+	padding: 1rem;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	box-shadow: 0 2px 8px rgba(178, 6, 28, 0.08);
+	border-radius: 0;
+	white-space: nowrap;
+}
+
+// Дополнительная информация при наведении
+.hoverInfo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transform: translateY(-100%);
+	transition: all 0.3s ease;
+	pointer-events: none;
+}
+
+.hoverContent {
+	padding: 1.5rem;
+	color: white;
+	text-align: center;
+	max-width: 90%;
+}
+
+.playerTitles {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.title {
+	background: #b2061c;
+	color: white;
+	padding: 0.3rem 0.6rem;
+	font-size: 0.7rem;
+	font-weight: 500;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.playerDescription {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 0.85rem;
+	line-height: 1.4;
+	color: #ccc;
+}
+
+// Анимация при наведении
+.playerCard:hover .hoverInfo {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+// Мобильные стили
+@media (max-width: 768px) {
+	.container {
+		padding: 1rem 0.5rem;
+	}
+
+	.content {
+		padding-top: 3rem;
+	}
+
+	.title {
+		font-size: 3rem;
+		margin-bottom: 2rem;
+	}
+
+	.playersGrid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		justify-items: center;
+	}
+
+	.playerCard {
+		width: 280px;
+		height: 280px; /* Квадратная карточка */
+	}
+
+	.imageWrapper {
+		height: 280px; /* Вся высота карточки */
+	}
+
+	.hoverContent {
+		padding: 1rem;
+	}
+
+	.playerTitles {
+		gap: 0.3rem;
+		margin-bottom: 0.8rem;
+	}
+
+	.title {
+		font-size: 0.65rem;
+		padding: 0.25rem 0.5rem;
+	}
+
+	.playerDescription {
+		font-size: 0.8rem;
+		line-height: 1.3;
+	}
+}
+
+// Планшетные стили
+@media (min-width: 769px) and (max-width: 1024px) {
+	.playersGrid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+		justify-items: center;
+	}
+}

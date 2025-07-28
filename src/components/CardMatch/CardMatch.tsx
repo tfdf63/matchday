@@ -3,6 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from './CardMatch.module.scss'
+import MatchTicketBanner from '../MatchTicketBanner'
 
 interface CardMatchProps {
 	leagueInfo?: string
@@ -57,6 +58,9 @@ const CardMatch: React.FC<CardMatchProps> = ({
 }) => {
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
+			{/* Баннер статуса матча */}
+			<MatchTicketBanner date={date} />
+
 			<div className={styles.infoRow}>
 				{leagueInfo && (
 					<div className={styles.leagueInfo}>

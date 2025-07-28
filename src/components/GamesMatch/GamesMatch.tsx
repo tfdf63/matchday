@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import styles from './GamesMatch.module.scss'
 import Timer2 from '../Timer2/Timer2'
+import MatchTicketBanner from '../MatchTicketBanner'
 interface CardMatchProps {
 	homeTeam?: string
 	awayTeam?: string
@@ -66,6 +67,9 @@ const CardMatch: React.FC<CardMatchProps> = ({
 }) => {
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
+			{/* Баннер статуса матча */}
+			<MatchTicketBanner date={date} />
+
 			{/* Новый flex-контейнер для leagueInfo и fanIdStatus */}
 			{(leagueInfo || fanIdStatus) && (
 				<div className={styles.infoRow}>
