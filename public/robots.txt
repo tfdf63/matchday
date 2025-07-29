@@ -1,4 +1,21 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://matchday.fcakron.ru/sitemap.xml 
+# Запрет индексации служебных файлов
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.map$
+
+# Разрешить индексацию изображений
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Указание sitemap
+Sitemap: https://matchday.fcakron.ru/sitemap.xml
+
+# Время задержки между запросами (в секундах)
+Crawl-delay: 1 

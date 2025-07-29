@@ -113,7 +113,7 @@ const games: Game[] = [
 		ticketLinkVip: '',
 		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 5 ТУР',
 		priceIncreaseDates: {
-			first: '2025-08-11',
+			first: '2025-08-25',
 			second: '',
 		},
 		fanIdStatus: 'Fan id',

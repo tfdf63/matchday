@@ -106,6 +106,27 @@ export default function RootLayout({
 					name='keywords'
 					content='Акрон, билеты, футбол, Самара, стадион, купить билет, матч, абонемент, расписание'
 				/>
+				{/* Структурированные данные */}
+				<script
+					type='application/ld+json'
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'SportsOrganization',
+							name: 'ФК Акрон',
+							url: 'https://matchday.fcakron.ru',
+							description:
+								'Официальный сайт ФК Акрон для покупки билетов на матчи',
+							address: {
+								'@type': 'PostalAddress',
+								addressLocality: 'Самара',
+								addressCountry: 'RU',
+							},
+							sport: 'Футбол',
+							league: 'Российская Премьер-Лига',
+						}),
+					}}
+				/>
 			</head>
 			<body className={`${ibmPlexMono.variable}`}>
 				<Image
