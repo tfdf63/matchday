@@ -114,7 +114,7 @@ const games: Game[] = [
 		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 5 ТУР',
 		priceIncreaseDates: {
 			first: '2025-08-11',
-			second: '2025-08-15',
+			second: '',
 		},
 		fanIdStatus: 'Fan id',
 	},
