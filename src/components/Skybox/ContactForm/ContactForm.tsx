@@ -14,7 +14,7 @@ interface ContactFormProps {
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({
-	email = 'egorova_ka@fcakron.com',
+	email = 'baranovskaya_vyu@fcakron.com',
 }) => {
 	const [formData, setFormData] = useState<FormData>({
 		fullName: '',

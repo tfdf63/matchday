@@ -68,7 +68,7 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
 			{/* Баннер статуса матча */}
-			<MatchTicketBanner date={date} />
+			<MatchTicketBanner date={date} isGamesMatch={true} />
 
 			{/* Новый flex-контейнер для leagueInfo и fanIdStatus */}
 			{(leagueInfo || fanIdStatus) && (

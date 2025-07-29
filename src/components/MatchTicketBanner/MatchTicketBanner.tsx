@@ -5,9 +5,13 @@ import styles from './MatchTicketBanner.module.scss'
 
 interface MatchTicketBannerProps {
 	date: string
+	isGamesMatch?: boolean
 }
 
-const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({ date }) => {
+const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({
+	date,
+	isGamesMatch = false,
+}) => {
 	// Функция для парсинга даты из строки "29 июля"
 	const parseDate = (dateStr: string): Date => {
 		const months: Record<string, number> = {
@@ -36,18 +40,29 @@ const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({ date }) => {
 		return new Date(year, month, day)
 	}
 
-	// Функция для определения, находится ли матч на этой неделе
-	const isThisWeek = (matchDate: Date): boolean => {
+	// Функция для определения, находится ли матч в пределах недели
+	const isWithinWeek = (matchDate: Date): boolean => {
 		const now = new Date()
-		const startOfWeek = new Date(now)
-		startOfWeek.setDate(now.getDate() - now.getDay()) // Начало недели (воскресенье)
-		startOfWeek.setHours(0, 0, 0, 0)
+		const today = new Date(now)
+		today.setHours(0, 0, 0, 0)
 
-		const endOfWeek = new Date(startOfWeek)
-		endOfWeek.setDate(startOfWeek.getDate() + 6) // Конец недели (суббота)
-		endOfWeek.setHours(23, 59, 59, 999)
+		const weekFromNow = new Date(today)
+		weekFromNow.setDate(today.getDate() + 7) // Через неделю
+		weekFromNow.setHours(23, 59, 59, 999)
 
-		return matchDate >= startOfWeek && matchDate <= endOfWeek
+		return matchDate >= today && matchDate <= weekFromNow
+	}
+
+	// Функция для определения, сегодня ли матч
+	const isToday = (matchDate: Date): boolean => {
+		const now = new Date()
+		const today = new Date(now)
+		today.setHours(0, 0, 0, 0)
+
+		const matchDay = new Date(matchDate)
+		matchDay.setHours(0, 0, 0, 0)
+
+		return matchDay.getTime() === today.getTime()
 	}
 
 	// Функция для определения, завтра ли матч
@@ -64,18 +79,29 @@ const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({ date }) => {
 	}
 
 	const matchDate = parseDate(date)
-	const showBanner = isThisWeek(matchDate)
+	const showBanner = isWithinWeek(matchDate)
+	const isTodayMatch = isToday(matchDate)
 	const isTomorrowMatch = isTomorrow(matchDate)
 
 	if (!showBanner) {
 		return null
 	}
 
+	// Определяем текст баннера с приоритетом: Сегодня > Завтра > На этой неделе
+	let bannerText = 'На этой неделе'
+	if (isTodayMatch) {
+		bannerText = 'Сегодня!'
+	} else if (isTomorrowMatch) {
+		bannerText = 'Уже завтра!'
+	}
+
 	return (
-		<div className={styles.banner}>
-			<div className={styles.bannerText}>
-				{isTomorrowMatch ? 'Уже завтра!' : 'На этой неделе'}
-			</div>
+		<div
+			className={`${styles.banner} ${
+				isGamesMatch ? styles.bannerGamesMatch : ''
+			}`}
+		>
+			<div className={styles.bannerText}>{bannerText}</div>
 		</div>
 	)
 }
