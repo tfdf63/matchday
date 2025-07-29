@@ -33,23 +33,23 @@ const games: Game[] = [
 	// 	},
 	// 	fanIdStatus: 'Без fan id',
 	// },
-	{
-		id: '2',
-		homeTeam: 'Акрон',
-		awayTeam: 'Балтика',
-		date: '29 июля',
-		time: 'SAMT 19:30',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39873507?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkVip: '',
-		leagueInfo: 'FONBET Кубок России 2025/2026 - 1 ТУР',
-		priceIncreaseDates: {
-			first: '2025-07-23',
-			second: '',
-		},
-		fanIdStatus: 'Без fan id',
-	},
+	// {
+	// 	id: '2',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'Балтика',
+	// 	date: '29 июля',
+	// 	time: 'SAMT 19:30',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39873507?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkVip: '',
+	// 	leagueInfo: 'FONBET Кубок России 2025/2026 - 1 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '2025-07-23',
+	// 		second: '',
+	// 	},
+	// 	fanIdStatus: 'Без fan id',
+	// },
 	{
 		id: '3',
 		homeTeam: 'Акрон',
