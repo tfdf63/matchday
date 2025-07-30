@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { createPortal } from 'react-dom'
 import styles from './PromoCodesModal.module.scss'
 import ActionButton from '../ActionButton/ActionButton'
 import Image from 'next/image'
@@ -15,6 +16,7 @@ const PromoCodesModal: React.FC<PromoCodesModalProps> = ({
 	onBuyClick,
 }) => {
 	const [copied, setCopied] = useState<string | null>(null)
+
 	if (!isOpen) return null
 
 	const handleCopy = async (code: string) => {
@@ -42,7 +44,7 @@ const PromoCodesModal: React.FC<PromoCodesModalProps> = ({
 		if (e.target === e.currentTarget) onClose()
 	}
 
-	return (
+	const modalContent = (
 		<div className={styles.modalOverlay} onClick={handleOverlayClick}>
 			<div className={styles.modalContent} onClick={e => e.stopPropagation()}>
 				<div className={styles.imageWrapper}>
@@ -124,6 +126,9 @@ const PromoCodesModal: React.FC<PromoCodesModalProps> = ({
 			</div>
 		</div>
 	)
+
+	// Рендерим модальное окно в корне документа через портал
+	return createPortal(modalContent, document.body)
 }
 
 export default PromoCodesModal

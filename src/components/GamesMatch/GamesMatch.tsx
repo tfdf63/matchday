@@ -1,10 +1,13 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import styles from './GamesMatch.module.scss'
 import Timer2 from '../Timer2/Timer2'
 import MatchTicketBanner from '../MatchTicketBanner'
+import ActionButton from '../ActionButton'
+import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
+
 interface CardMatchProps {
 	homeTeam?: string
 	awayTeam?: string
@@ -65,6 +68,9 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	},
 	fanIdStatus,
 }) => {
+	const [isPromoOpen, setPromoOpen] = useState(false)
+	const isCupMatch = leagueInfo?.toLowerCase().includes('кубок')
+
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
 			{/* Баннер статуса матча */}
@@ -109,9 +115,27 @@ const CardMatch: React.FC<CardMatchProps> = ({
 					VIP A106
 				</Link> */}
 			</div>
+
+			{/* Кнопка промокодов только для матчей с Кубком */}
+			{isCupMatch && (
+				<ActionButton
+					href='#'
+					title='Промокоды для друзей'
+					actionType='modal'
+					onModalOpen={() => setPromoOpen(true)}
+					className={styles.promoButton}
+				/>
+			)}
+
 			<div className={styles.timerWrapper}>
 				<Timer2 priceIncreaseDates={priceIncreaseDates} />
 			</div>
+
+			{/* Модальное окно промокодов */}
+			<PromoCodesModal
+				isOpen={isPromoOpen}
+				onClose={() => setPromoOpen(false)}
+			/>
 		</div>
 	)
 }
