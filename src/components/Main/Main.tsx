@@ -7,7 +7,7 @@ import CardMatch from '../CardMatch/CardMatch'
 import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
 import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
-import ActionButton from '../ActionButton/ActionButton'
+// import ActionButton from '../ActionButton/ActionButton'
 
 // URL видеофайлов для кэширования
 const VIDEO_URLS = [
