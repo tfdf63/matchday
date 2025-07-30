@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Head from 'next/head'
 import CardInfo from '@/components/CardInfo/CardInfo'
 import { subscriptionCards } from '@/data/subscriptions'
 
@@ -61,7 +62,25 @@ const BusinessClubPage: React.FC = () => {
 		return <div>Абонемент не найден</div>
 	}
 
-	return <CardInfo card={cardData} />
+	return (
+		<>
+			<Head>
+				<title>
+					Угловые секторы C125-C117 | ФК Акрон - Лучший вид на стандарты и
+					эмоции
+				</title>
+				<meta
+					name='description'
+					content='Угловые секторы C125-C117 — уникальные места для наблюдения за стандартами и эмоциями игроков. Игроки разминаются в паре метров, празднуют голы прямо перед вами.'
+				/>
+				<meta
+					name='keywords'
+					content='угловые секторы, C125, C117, стандарты, эмоции, ФК Акрон, футбол, угловые, штрафные, разминка'
+				/>
+			</Head>
+			<CardInfo card={cardData} />
+		</>
+	)
 }
 
 export default BusinessClubPage

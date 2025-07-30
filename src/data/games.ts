@@ -111,7 +111,7 @@ const games: Game[] = [
 		ticketLink:
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39731107?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
 		ticketLinkVip: '',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 5 ТУР',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 7 ТУР',
 		priceIncreaseDates: {
 			first: '2025-08-25',
 			second: '',
