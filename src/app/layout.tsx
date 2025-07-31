@@ -132,7 +132,6 @@ export default function RootLayout({
 					src='/yandex-metrika.js'
 				/>
 				<Script id='sber-counter' strategy='lazyOnload' src='/sber.js' />
-				{children}
 				<Script
 					id='andata-tag-manager'
 					strategy='lazyOnload'
