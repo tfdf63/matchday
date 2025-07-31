@@ -3,23 +3,14 @@ import { IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
 import Script from 'next/script'
 import BackToHome from '@/components/BackToHome'
+import '../styles/globals.css'
+import '../styles/fonts.css'
 import Image from 'next/image'
 
-// const geistSans = Geist({
-// 	variable: '--font-geist-sans',
-// 	subsets: ['latin'],
-// })
-
-// const geistMono = Geist_Mono({
-// 	variable: '--font-geist-mono',
-// 	subsets: ['latin'],
-// })
-
 const ibmPlexMono = IBM_Plex_Mono({
+	subsets: ['latin', 'cyrillic'],
+	weight: ['400', '500', '600', '700'],
 	variable: '--font-ibm-plex-mono',
-	subsets: ['latin'],
-	weight: ['300', '400', '600'],
-	display: 'swap',
 })
 
 export const viewport: Viewport = {
@@ -29,9 +20,14 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-	title: 'Matchday | Купить билеты на Акрон',
+	title: {
+		template: 'ФК Акрон | %s',
+		default: 'ФК Акрон - Билеты на матчи',
+	},
 	description:
-		'Матчи Акрон, Купить билеты на Акрон, Купить билеты на Акрон, Купить билеты на Акрон',
+		'Купить билеты на матчи ФК Акрон в Самаре. Расписание игр, абонементы, VIP-ложи. Официальный сайт клуба.',
+	keywords:
+		'ФК Акрон, билеты на футбол, матчи Акрон, стадион Самара, купить билет, абонемент, VIP, расписание игр',
 	icons: {
 		icon: '/favicon.ico',
 	},
@@ -62,9 +58,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-}: Readonly<{
+}: {
 	children: React.ReactNode
-}>) {
+}) {
 	return (
 		<html lang='ru'>
 			<head>
@@ -98,15 +94,6 @@ export default function RootLayout({
 				<meta name='googlebot' content='notranslate' />
 				<meta name='google' content='notranslate' />
 				<meta httpEquiv='Cache-Control' content='no-transform' />
-				<meta
-					name='description'
-					content='Покупайте билеты на матчи ФК Акрон онлайн. Расписание игр, акции, абонементы, лучшие места на стадионе.'
-				/>
-				<meta
-					name='keywords'
-					content='Акрон, билеты, футбол, Самара, стадион, купить билет, матч, абонемент, расписание'
-				/>
-				{/* Структурированные данные */}
 				<script
 					type='application/ld+json'
 					dangerouslySetInnerHTML={{
@@ -115,6 +102,7 @@ export default function RootLayout({
 							'@type': 'SportsOrganization',
 							name: 'ФК Акрон',
 							url: 'https://matchday.fcakron.ru',
+							logo: 'https://matchday.fcakron.ru/images/akron-logo.svg',
 							description:
 								'Официальный сайт ФК Акрон для покупки билетов на матчи',
 							address: {
@@ -128,14 +116,13 @@ export default function RootLayout({
 					}}
 				/>
 			</head>
-			<body className={`${ibmPlexMono.variable}`}>
+			<body className={ibmPlexMono.variable}>
 				<Image
 					src='/images/fon.webp'
 					alt='Фон'
 					fill
 					priority
 					className='globalBgFon'
-					style={{ zIndex: -1 }}
 				/>
 				<BackToHome />
 				<Script id='top-mail-ru' strategy='lazyOnload' src='/top-mail-ru.js' />
@@ -151,6 +138,7 @@ export default function RootLayout({
 					strategy='lazyOnload'
 					src='//tagmanager.andata.ru/api/v1/container/9ebcc59d-e373-447f-b5cd-0de5dc2006e4/published/code.js'
 				/>
+				{children}
 			</body>
 		</html>
 	)

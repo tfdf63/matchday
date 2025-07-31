@@ -55,28 +55,35 @@
 }
 
 .promoButton {
-	width: 100%;
-	max-width: 20rem;
-	height: 40px;
-	background-color: #ffd700;
-	color: #000;
-	border: 2px solid #ffd700;
-	font-size: 0.9rem;
-	font-family: var(--font-ibm-plex-mono), monospace;
-	font-weight: 600;
+	font-family: 'Akademia', sans-serif;
+	padding: 0.8rem 2rem;
+	background-color: #b2061c;
+	color: #fff;
+	border: 4px solid #b2061c;
+	font-size: 1.2rem;
 	text-transform: uppercase;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-decoration: none;
 	transition: all 0.3s ease;
-	letter-spacing: 0.5px;
+	white-space: nowrap;
+	height: fit-content;
+	line-height: 1.2;
+	width: 100%;
+	max-width: 20rem;
 	margin: 0 auto;
 
 	&:hover {
-		background-color: #e6c200;
-		border-color: #e6c200;
-		transform: translateY(-1px);
+		background-color: #020b12;
+		border-color: #990517;
+	}
+
+	@media (max-width: 768px) {
+		padding: 0.6rem 1.5rem;
+		font-size: 0.9rem;
+		flex-shrink: 0;
 	}
 }
 

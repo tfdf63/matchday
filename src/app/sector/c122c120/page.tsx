@@ -1,85 +1,17 @@
-'use client'
-
 import React from 'react'
-import Head from 'next/head'
-import CardInfo from '@/components/CardInfo/CardInfo'
-import { subscriptionCards } from '@/data/subscriptions'
+import { Metadata } from 'next'
+import C122C120Client from './C122C120Client'
 
-const BusinessClubPage: React.FC = () => {
-	// Находим данные для бизнес-клуба
-	const businessClubCard = subscriptionCards.find(card => card.id === 1)
-
-	// Данные для CardInfo компонента
-	const cardData = {
-		id: 1,
-		title: 'Классический',
-		subtitle: 'Здесь сохраняется аутентичная атмосфера большого спорта.',
-		sectors: subscriptionCards, // Все доступные сектора
-		gallery: ['/images/sector/gallery/c122c120.png'],
-		features: [
-			{
-				title: 'Проверенный временем ракурс',
-				description: 'Поколения болельщиков выбирали именно такие места',
-			},
-			{
-				title: 'Баланс цены и впечатлений',
-				description: 'Все преимущества центральной трибуны',
-			},
-			{
-				title: '',
-				description: 'Ваш семейный футбольный опыт начинается здесь!',
-			},
-		],
-		services: [
-			'Удобная навигация по трибунам',
-			'Зоны активности для болельщиков',
-			'Точки питания в шаговой доступности',
-			'Магазин или мобильные пункты продажи атрибутики',
-			'Туалеты расположенные в близи от сектора',
-			'Возможность подняться на лифте и оставить коляску наверху у входа на сектор',
-			'Стюарды на каждом секторе, у которых можно уточнить информацию по стадиону',
-		],
-		subsectors: ['C122', 'C120'],
-		tariffs: [
-			{
-				sector: 'C122',
-				price1: '5 990 ₽',
-				price2: '8 990 ₽',
-				price3: '10 990 ₽',
-			},
-			{
-				sector: 'C120',
-				price1: '5 990 ₽',
-				price2: '8 990 ₽',
-				price3: '10 990 ₽',
-			},
-		],
-		stadiumSchema: '/images/sector/shema-stadium/schema-c122c120.png',
-		buyButton: 'https://tickets.example.com/business-club',
-	}
-
-	if (!businessClubCard) {
-		return <div>Абонемент не найден</div>
-	}
-
-	return (
-		<>
-			<Head>
-				<title>
-					Сектор C122-C120 | ФК Акрон - Популярные места для семейного просмотра
-				</title>
-				<meta
-					name='description'
-					content='Секторы C122 и C120 — популярные места для семейного просмотра матчей. Удобное расположение, отличный обзор поля, комфортные условия для болельщиков всех возрастов.'
-				/>
-				<meta
-					name='keywords'
-					content='сектор C122, сектор C120, семейный просмотр, ФК Акрон, футбол, популярные места, стадион, комфорт'
-				/>
-			</Head>
-			<CardInfo card={cardData} />
-		</>
-	)
+export const metadata: Metadata = {
+	title: 'Сектор C122-C120',
+	description:
+		'Секторы C122 и C120 — популярные места для семейного просмотра матчей. Удобное расположение, отличный обзор поля, комфортные условия для болельщиков всех возрастов.',
+	keywords:
+		'сектор C122, сектор C120, семейный просмотр, ФК Акрон, футбол, популярные места, стадион, комфорт',
 }
 
-export default BusinessClubPage
+const C122C120Page: React.FC = () => {
+	return <C122C120Client />
+}
+
+export default C122C120Page
