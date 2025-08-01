@@ -94,6 +94,15 @@ export default function RootLayout({
 				<meta name='googlebot' content='notranslate' />
 				<meta name='google' content='notranslate' />
 				<meta httpEquiv='Cache-Control' content='no-transform' />
+
+				{/* Геолокация для локального SEO */}
+				<meta name='geo.placename' content='Samara, Russia' />
+				<meta
+					name='geo.position'
+					content='53.27804484340651; 50.23771335335012'
+				/>
+				<meta name='geo.region' content='RU-' />
+				<meta name='ICBM' content='53.27804484340651, 50.23771335335012' />
 				<script
 					type='application/ld+json'
 					dangerouslySetInnerHTML={{

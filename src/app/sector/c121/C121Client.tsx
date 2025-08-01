@@ -5,8 +5,8 @@ import CardInfo from '@/components/CardInfo/CardInfo'
 import { subscriptionCards } from '@/data/subscriptions'
 
 const C121Client: React.FC = () => {
-	// Находим данные для бизнес-клуба
-	const businessClubCard = subscriptionCards.find(card => card.id === 1)
+	// Находим данные для сектора C121
+	const c121Card = subscriptionCards.find(card => card.url === '/sector/c121')
 
 	// Данные для CardInfo компонента
 	const cardData = {
@@ -51,7 +51,7 @@ const C121Client: React.FC = () => {
 		buyButton: 'https://tickets.example.com/business-club',
 	}
 
-	if (!businessClubCard) {
+	if (!c121Card) {
 		return <div>Абонемент не найден</div>
 	}
 
