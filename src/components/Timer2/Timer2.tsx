@@ -65,12 +65,14 @@ const Timer2: React.FC<Timer2Props> = ({ priceIncreaseDates }) => {
 				<span className={styles.title}>Повышение цен:</span>
 				<span
 					className={`${styles.date} ${isFirstPassed ? styles.passed : ''}`}
+					suppressHydrationWarning
 				>
 					{formatDate(priceIncreaseDates.first)}
 				</span>
 				<span className={styles.separator}>|</span>
 				<span
 					className={`${styles.date} ${isSecondPassed ? styles.passed : ''}`}
+					suppressHydrationWarning
 				>
 					{formatDate(priceIncreaseDates.second)}
 				</span>

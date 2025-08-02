@@ -51,7 +51,7 @@ const Timer: React.FC<TimerProps> = ({ targetDate, className = '' }) => {
 	return (
 		<div className={`${styles.timer} ${className}`}>
 			<span className={styles.timerText}>до повышения цен осталось:</span>
-			<span className={styles.timerValue}>
+			<span className={styles.timerValue} suppressHydrationWarning>
 				{formatTime(timeLeft.hours)}:{formatTime(timeLeft.minutes)}:
 				{formatTime(timeLeft.seconds)}
 			</span>
