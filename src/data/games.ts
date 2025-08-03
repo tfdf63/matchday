@@ -50,23 +50,23 @@ const games: Game[] = [
 	// 	},
 	// 	fanIdStatus: 'Без fan id',
 	// },
-	{
-		id: '3',
-		homeTeam: 'Акрон',
-		awayTeam: 'Спартак',
-		date: '3 августа',
-		time: 'SAMT 14:30',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39719522?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkVip: '',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 3 ТУР',
-		priceIncreaseDates: {
-			first: '2025-07-27',
-			second: '2025-08-01',
-		},
-		fanIdStatus: 'Fan id',
-	},
+	// {
+	// 	id: '3',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'Спартак',
+	// 	date: '3 августа',
+	// 	time: 'SAMT 14:30',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39719522?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkVip: '',
+	// 	leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 3 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '2025-07-27',
+	// 		second: '2025-08-01',
+	// 	},
+	// 	fanIdStatus: 'Fan id',
+	// },
 	{
 		id: '5',
 		homeTeam: 'Акрон',

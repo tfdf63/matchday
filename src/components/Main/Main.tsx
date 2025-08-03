@@ -7,7 +7,7 @@ import CardMatch from '../CardMatch/CardMatch'
 import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
 import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
-// import ActionButton from '../ActionButton/ActionButton'
+import ActionButton from '../ActionButton/ActionButton'
 
 // URL видеофайлов для кэширования
 const VIDEO_URLS = [
@@ -285,13 +285,13 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						fanIdStatus={selectedGame.fanIdStatus}
 						leagueInfo={selectedGame.leagueInfo}
 					/>
-					{/* <ActionButton
+					<ActionButton
 						href='#'
 						title='Промокоды для друзей'
 						actionType='modal'
 						onModalOpen={() => setPromoOpen(true)}
 						className={styles.promoButton}
-					/> */}
+					/>
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
 					<div className={styles.timerWrapper}>
 						<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
