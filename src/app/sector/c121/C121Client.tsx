@@ -11,22 +11,24 @@ const C121Client: React.FC = () => {
 	// Данные для CardInfo компонента
 	const cardData = {
 		id: 1,
-		title: 'Классический',
-		subtitle: 'Здесь сохраняется аутентичная атмосфера большого спорта.',
+		title: 'Центральный',
+		subtitle: 'Лучший ракурс для истинных ценителей футбола!',
 		sectors: subscriptionCards, // Все доступные сектора
 		gallery: ['/images/sector/gallery/c121.png'],
 		features: [
 			{
-				title: 'Проверенный временем ракурс',
-				description: 'Поколения болельщиков выбирали именно такие места',
+				title: 'Безупречный обзор',
+				description:
+					'Вся тактика, перепасовки и ключевые моменты как на ладони.',
 			},
 			{
-				title: 'Баланс цены и впечатлений',
-				description: 'Все преимущества центральной трибуны',
+				title: 'Близко к действию',
+				description: 'Отличная видимость обеих половин поля.',
 			},
 			{
 				title: '',
-				description: 'Ваш семейный футбольный опыт начинается здесь!',
+				description:
+					'Это место для тех, кто ценит красоту футбола и хочет насладиться игрой по-настоящему.',
 			},
 		],
 		services: [
@@ -42,9 +44,9 @@ const C121Client: React.FC = () => {
 		tariffs: [
 			{
 				sector: 'C121',
-				price1: '5 990 ₽',
-				price2: '8 990 ₽',
-				price3: '10 990 ₽',
+				price1: '12 490 ₽',
+				price2: '17 990 ₽',
+				price3: '21 550 ₽',
 			},
 		],
 		stadiumSchema: '/images/sector/shema-stadium/schema-c121.png',

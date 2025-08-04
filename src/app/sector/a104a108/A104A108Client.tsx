@@ -11,22 +11,24 @@ const A104A108Client: React.FC = () => {
 	// Данные для CardInfo компонента
 	const cardData = {
 		id: 1,
-		title: 'Классический',
-		subtitle: 'Здесь сохраняется аутентичная атмосфера большого спорта.',
+		title: 'За скамейкой',
+		subtitle: 'Ваш пропуск за кулисы большого футбола!',
 		sectors: subscriptionCards, // Все доступные сектора
 		gallery: ['/images/sector/gallery/a104a108.png'],
 		features: [
 			{
-				title: 'Проверенный временем ракурс',
-				description: 'Поколения болельщиков выбирали именно такие места',
+				title: 'Видите живые тренерские эмоции',
+				description:
+					'Указания игрокам, реакцию на забитые голы и как принимаются ключевые тактические решения.',
 			},
 			{
-				title: 'Баланс цены и впечатлений',
-				description: 'Все преимущества центральной трибуны',
+				title: 'Видите разминку звёзд перед выходом',
+				description: 'Их фирменные ритуалы и подготовку к игре.',
 			},
 			{
 				title: '',
-				description: 'Ваш семейный футбольный опыт начинается здесь!',
+				description:
+					'Это не просто трибуна — это мастер-класс по футбольной психологии!',
 			},
 		],
 		services: [
@@ -41,16 +43,10 @@ const A104A108Client: React.FC = () => {
 		subsectors: ['A104', 'A108'],
 		tariffs: [
 			{
-				sector: 'A104',
-				price1: '5 990 ₽',
-				price2: '8 990 ₽',
-				price3: '10 990 ₽',
-			},
-			{
-				sector: 'A108',
-				price1: '5 990 ₽',
-				price2: '8 990 ₽',
-				price3: '10 990 ₽',
+				sector: 'A104-108',
+				price1: '16 990 ₽',
+				price2: '18 990 ₽',
+				price3: '22 890 ₽',
 			},
 		],
 		stadiumSchema: '/images/sector/shema-stadium/schema-a104a108.png',
