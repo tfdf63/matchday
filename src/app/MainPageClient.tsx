@@ -60,8 +60,8 @@ const MainPageClient: React.FC = () => {
 			{/* <Skybox /> */}
 			<Stadium />
 			<Marquee
-				text='БИЛЕТЫ × АБОНЕМЕНТЫ × БИЛЕТЫ × 
-        АБОНЕМЕНТЫ × БИЛЕТЫ ×'
+				text='КУПИТЬ БИЛЕТЫ × КУПИТЬ БИЛЕТЫ × КУПИТЬ БИЛЕТЫ × 
+        КУПИТЬ БИЛЕТЫ × КУПИТЬ БИЛЕТЫ ×'
 				duration={50}
 			/>
 			<SubscriptionSlider />
