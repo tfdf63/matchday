@@ -5,57 +5,6 @@
 	position: relative;
 }
 
-.headerRow {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	max-width: 1200px;
-	margin: 16px auto 16px auto;
-	padding: 0 1rem;
-	gap: 1rem;
-	position: relative;
-}
-
-.sectionTitle {
-	font-family: 'Akademia', sans-serif;
-	font-size: 2rem;
-	color: white;
-	margin: 0;
-	text-align: left;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	flex: 1;
-}
-
-.timer {
-	flex-shrink: 0;
-}
-
-.buyButton {
-	flex-shrink: 0;
-}
-@media (max-width: 1024px) {
-	.headerRow {
-		flex-direction: row;
-		align-items: center;
-		gap: 1rem;
-		text-align: left;
-	}
-
-	.sectionTitle {
-		font-size: 1.5rem;
-		flex: 1;
-		text-align: left;
-	}
-
-	.buyButton {
-		display: none;
-	}
-
-	.navigationArrows {
-		display: none;
-	}
-}
-
 .sliderWrapper {
 	width: 100%;
 	overflow-x: auto;
@@ -184,53 +133,6 @@
 	}
 }
 
-// Стрелки навигации
-.navigationArrows {
-	display: none; // По умолчанию скрыты
-	justify-content: center;
-	align-items: center;
-	gap: 2rem;
-	margin-top: 0.2rem;
-	padding: 0.5rem;
-	opacity: 0.7;
-	flex-grow: 1;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 2;
-}
-
-.arrowButton {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 48px;
-	height: 48px;
-	background: rgba(255, 255, 255, 0);
-	border: 2px solid rgba(255, 255, 255, 0.2);
-	color: white;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	backdrop-filter: blur(10px);
-	z-index: 10;
-
-	&:hover {
-		background: rgba(255, 255, 255, 0.2);
-		border-color: rgba(255, 255, 255, 0.4);
-		transform: scale(1.05);
-	}
-
-	&:active {
-		transform: scale(0.95);
-	}
-
-	svg {
-		width: 20px;
-		height: 20px;
-	}
-}
-
 // Адаптивность для мобильных устройств и планшетов
 @media (max-width: 1024px) {
 	.sliderContainer {
@@ -247,12 +149,12 @@
 	.card {
 		width: 100%;
 		max-width: 400px;
-		height: 113.4px;
+		height: 188.116992px;
 		overflow: hidden;
 	}
 
 	.imageWrapper {
-		height: 113.4px;
+		height: 188.116992px;
 	}
 
 	.cardOverlay {
@@ -277,15 +179,5 @@
 		border-width: 2px;
 		min-width: 120px;
 		margin-bottom: 0.5rem;
-	}
-}
-
-// Показываем стрелки только на больших экранах
-@media (min-width: 1024px) {
-	.navigationArrows {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-grow: 1;
 	}
 }

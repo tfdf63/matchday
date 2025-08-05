@@ -22,7 +22,11 @@ const MainPageClient: React.FC = () => {
 	return (
 		<>
 			<Main />
-			{/* <TicketSlider cards={ticketCards} /> */}
+			{/* <Marquee
+				text='БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА ×'
+				duration={50}
+			/>
+			<TicketSlider cards={ticketCards} /> */}
 			<Marquee
 				text='БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × 
         БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ ×'

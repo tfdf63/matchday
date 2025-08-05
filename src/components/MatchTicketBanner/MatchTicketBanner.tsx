@@ -53,6 +53,41 @@ const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({
 		return matchDate >= today && matchDate <= weekFromNow
 	}
 
+	// Функция для определения, находится ли матч на текущей неделе
+	const isCurrentWeek = (matchDate: Date): boolean => {
+		const now = new Date()
+		const today = new Date(now)
+		today.setHours(0, 0, 0, 0)
+
+		const endOfWeek = new Date(today)
+		endOfWeek.setDate(today.getDate() + (7 - today.getDay())) // Конец текущей недели (воскресенье)
+		endOfWeek.setHours(23, 59, 59, 999)
+
+		return matchDate >= today && matchDate <= endOfWeek
+	}
+
+	// Функция для подсчета дней до матча
+	const getDaysUntilMatch = (matchDate: Date): number => {
+		const now = new Date()
+		const today = new Date(now)
+		today.setHours(0, 0, 0, 0)
+
+		const matchDay = new Date(matchDate)
+		matchDay.setHours(0, 0, 0, 0)
+
+		const diffTime = matchDay.getTime() - today.getTime()
+		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+
+		return diffDays
+	}
+
+	// Функция для правильного склонения слова "день"
+	const getDayWord = (days: number): string => {
+		if (days === 1) return 'день'
+		if (days >= 2 && days <= 4) return 'дня'
+		return 'дней'
+	}
+
 	// Функция для определения, сегодня ли матч
 	const isToday = (matchDate: Date): boolean => {
 		const now = new Date()
@@ -82,17 +117,21 @@ const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({
 	const showBanner = isWithinWeek(matchDate)
 	const isTodayMatch = isToday(matchDate)
 	const isTomorrowMatch = isTomorrow(matchDate)
+	const isCurrentWeekMatch = isCurrentWeek(matchDate)
+	const daysUntilMatch = getDaysUntilMatch(matchDate)
 
 	if (!showBanner) {
 		return null
 	}
 
-	// Определяем текст баннера с приоритетом: Сегодня > Завтра > На этой неделе
-	let bannerText = 'На этой неделе'
+	// Определяем текст баннера с приоритетом: Сегодня > Завтра > На этой неделе > Через X дней
+	let bannerText = `Через ${daysUntilMatch} ${getDayWord(daysUntilMatch)}`
 	if (isTodayMatch) {
 		bannerText = 'Сегодня!'
 	} else if (isTomorrowMatch) {
 		bannerText = 'Уже завтра!'
+	} else if (isCurrentWeekMatch) {
+		bannerText = 'На этой неделе'
 	}
 
 	return (

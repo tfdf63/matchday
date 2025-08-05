@@ -22,18 +22,18 @@ export const ticketCards: TicketCard[] = [
 		url: '/sector/vip',
 		status: 'VIP',
 	},
-	{
-		id: 5,
-		image: `/images/sector/subscription2.jpg`,
-		buttonText: 'Тарифы',
-		url: '/sector/vip',
-		status: 'Mass',
-	},
-	{
-		id: 4,
-		image: `/images/sector/subscription6.jpg`,
-		buttonText: 'Промокоды',
-		url: '/sector/vip',
-		status: 'Mass',
-	},
+	// {
+	// 	id: 5,
+	// 	image: `/images/sector/subscription2.jpg`,
+	// 	buttonText: 'Тарифы',
+	// 	url: '/sector/vip',
+	// 	status: 'Mass',
+	// },
+	// {
+	// 	id: 4,
+	// 	image: `/images/sector/subscription6.jpg`,
+	// 	buttonText: 'Промокоды',
+	// 	url: '/sector/vip',
+	// 	status: 'Mass',
+	// },
 ]
