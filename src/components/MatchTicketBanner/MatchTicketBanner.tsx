@@ -40,7 +40,7 @@ const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({
 		return new Date(year, month, day)
 	}
 
-	// Функция для определения, находится ли матч в пределах недели
+	// Функция для определения, находится ли матч в пределах недели (максимум 7 дней)
 	const isWithinWeek = (matchDate: Date): boolean => {
 		const now = new Date()
 		const today = new Date(now)
@@ -50,7 +50,12 @@ const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({
 		weekFromNow.setDate(today.getDate() + 7) // Через неделю
 		weekFromNow.setHours(23, 59, 59, 999)
 
-		return matchDate >= today && matchDate <= weekFromNow
+		// Дополнительная проверка: матч должен быть не более чем через 7 дней
+		const daysUntil = Math.ceil(
+			(matchDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+		)
+
+		return matchDate >= today && matchDate <= weekFromNow && daysUntil <= 7
 	}
 
 	// Функция для определения, находится ли матч на текущей неделе
@@ -59,8 +64,17 @@ const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({
 		const today = new Date(now)
 		today.setHours(0, 0, 0, 0)
 
+		// Если сегодня воскресенье (день 0), то это последний день текущей недели
+		// Матч может быть только сегодня, чтобы считаться на текущей неделе
+		if (today.getDay() === 0) {
+			const todayEnd = new Date(today)
+			todayEnd.setHours(23, 59, 59, 999)
+			return matchDate >= today && matchDate <= todayEnd
+		}
+
+		// Для остальных дней недели - до ближайшего воскресенья включительно
 		const endOfWeek = new Date(today)
-		endOfWeek.setDate(today.getDate() + (7 - today.getDay())) // Конец текущей недели (воскресенье)
+		endOfWeek.setDate(today.getDate() + (7 - today.getDay())) // Следующее воскресенье
 		endOfWeek.setHours(23, 59, 59, 999)
 
 		return matchDate >= today && matchDate <= endOfWeek
@@ -113,10 +127,24 @@ const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({
 		return matchDay.getTime() === tomorrow.getTime()
 	}
 
+	// Функция для определения, послезавтра ли матч
+	const isDayAfterTomorrow = (matchDate: Date): boolean => {
+		const now = new Date()
+		const dayAfterTomorrow = new Date(now)
+		dayAfterTomorrow.setDate(now.getDate() + 2)
+		dayAfterTomorrow.setHours(0, 0, 0, 0)
+
+		const matchDay = new Date(matchDate)
+		matchDay.setHours(0, 0, 0, 0)
+
+		return matchDay.getTime() === dayAfterTomorrow.getTime()
+	}
+
 	const matchDate = parseDate(date)
 	const showBanner = isWithinWeek(matchDate)
 	const isTodayMatch = isToday(matchDate)
 	const isTomorrowMatch = isTomorrow(matchDate)
+	const isDayAfterTomorrowMatch = isDayAfterTomorrow(matchDate)
 	const isCurrentWeekMatch = isCurrentWeek(matchDate)
 	const daysUntilMatch = getDaysUntilMatch(matchDate)
 
@@ -124,12 +152,14 @@ const MatchTicketBanner: React.FC<MatchTicketBannerProps> = ({
 		return null
 	}
 
-	// Определяем текст баннера с приоритетом: Сегодня > Завтра > На этой неделе > Через X дней
+	// Определяем текст баннера с приоритетом: Сегодня > Завтра > Послезавтра > На этой неделе > Через X дней
 	let bannerText = `Через ${daysUntilMatch} ${getDayWord(daysUntilMatch)}`
 	if (isTodayMatch) {
 		bannerText = 'Сегодня!'
 	} else if (isTomorrowMatch) {
 		bannerText = 'Уже завтра!'
+	} else if (isDayAfterTomorrowMatch) {
+		bannerText = 'Послезавтра'
 	} else if (isCurrentWeekMatch) {
 		bannerText = 'На этой неделе'
 	}
