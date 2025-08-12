@@ -67,23 +67,23 @@ const games: Game[] = [
 	// 	},
 	// 	fanIdStatus: 'Fan id',
 	// },
-	{
-		id: '5',
-		homeTeam: 'Акрон',
-		awayTeam: 'ЦСКА',
-		date: '12 августа',
-		time: 'SAMT 17:15',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39879676?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkVip: '',
-		leagueInfo: 'FONBET Кубок России 2025/2026 - 2 ТУР',
-		priceIncreaseDates: {
-			first: '2025-08-06',
-			second: '',
-		},
-		fanIdStatus: 'Без fan id',
-	},
+	// {
+	// 	id: '5',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'ЦСКА',
+	// 	date: '12 августа',
+	// 	time: 'SAMT 17:15',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39879676?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkVip: '',
+	// 	leagueInfo: 'FONBET Кубок России 2025/2026 - 2 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '2025-08-06',
+	// 		second: '',
+	// 	},
+	// 	fanIdStatus: 'Без fan id',
+	// },
 	{
 		id: '4',
 		homeTeam: 'Акрон',
