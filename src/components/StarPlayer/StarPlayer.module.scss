@@ -1,0 +1,143 @@
+.starPlayer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10rem;
+	width: 100%;
+	margin: 2rem auto;
+	padding: 0 2rem;
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+		gap: 2rem;
+		text-align: center;
+		padding: 0 2rem;
+		align-items: center;
+	}
+}
+
+.photoSection {
+	flex-shrink: 0;
+	margin-left: 120px;
+
+	@media (max-width: 768px) {
+		margin-left: 0;
+	}
+}
+
+.photoStack {
+	position: relative;
+	width: 200px;
+	height: 300px;
+
+	@media (max-width: 768px) {
+		width: 100%;
+		height: 180px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 1rem;
+	}
+}
+
+.photoCard {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease;
+	cursor: pointer;
+
+	@media (max-width: 768px) {
+		position: static;
+		width: 100px;
+		height: 150px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&:nth-child(1) {
+		transform: translateX(-120px) translateY(0);
+		z-index: 1;
+	}
+
+	&:nth-child(2) {
+		transform: translateX(0) translateY(0);
+		z-index: 2;
+	}
+
+	&:nth-child(3) {
+		transform: translateX(120px) translateY(0);
+		z-index: 3;
+	}
+
+	@media (max-width: 768px) {
+		&:nth-child(1) {
+			transform: none;
+		}
+
+		&:nth-child(2) {
+			transform: none;
+		}
+
+		&:nth-child(3) {
+			transform: none;
+		}
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.activeCard {
+	border-bottom: 8px solid rgba(255, 255, 255, 0.5);
+}
+
+.infoSection {
+	flex: 1;
+	max-width: 500px;
+
+	@media (max-width: 768px) {
+		max-width: 100%;
+	}
+}
+
+.playerName {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin: 0 0 1rem 0;
+	color: white;
+
+	@media (max-width: 768px) {
+		font-size: 2rem;
+	}
+}
+
+.playerNumber {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: white;
+	margin-bottom: 1.5rem;
+
+	@media (max-width: 768px) {
+		font-size: 1.25rem;
+	}
+}
+
+.playerDescription {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: white;
+	margin: 0;
+	font-family: 'Plex Mono', monospace;
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
+}

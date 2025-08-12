@@ -3,6 +3,7 @@
 import React from 'react'
 import Main from '@/components/Main/Main'
 import Games from '@/components/Games/Games'
+// import StarPlayer from '@/components/StarPlayer'
 // import Players from '@/components/Players/Players'
 import Merch from '@/components/Merch/Merch'
 import Stadium from '@/components/Stadium/Stadium'
@@ -32,7 +33,12 @@ const MainPageClient: React.FC = () => {
 				text='БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА ×'
 				duration={50}
 			/>
-			<TicketSlider cards={ticketCards} /> */}
+			<TicketSlider cards={ticketCards} />
+			<Marquee
+				text='ЗВЕЗДНЫЕ ИГРОКИ × ЗВЕЗДНЫЕ ИГРОКИ × ЗВЕЗДНЫЕ ИГРОКИ × ЗВЕЗДНЫЕ ИГРОКИ ×'
+				duration={50}
+			/>
+			<StarPlayer /> */}
 			{/* <Marquee
         text='СИЛЬНЕЙШИЕ ИГРОКИ ГЛАВНОГО 
         ФУТБОЛЬНОГО ТУРНИРА СТРАНЫ × СИЛЬНЕЙШИЕ 
