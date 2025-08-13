@@ -285,13 +285,16 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						fanIdStatus={selectedGame.fanIdStatus}
 						leagueInfo={selectedGame.leagueInfo}
 					/>
-					<ActionButton
-						href='#'
-						title='Промокоды для друзей'
-						actionType='modal'
-						onModalOpen={() => setPromoOpen(true)}
-						className={styles.promoButton}
-					/>
+					{selectedGame.leagueInfo &&
+						selectedGame.leagueInfo.includes('КУБОК') && (
+							<ActionButton
+								href='#'
+								title='Промокоды для друзей'
+								actionType='modal'
+								onModalOpen={() => setPromoOpen(true)}
+								className={styles.promoButton}
+							/>
+						)}
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
 					<div className={styles.timerWrapper}>
 						<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
