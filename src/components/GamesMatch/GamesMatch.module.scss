@@ -1,7 +1,7 @@
 .card {
 	margin: 16px auto 16px auto;
 	width: 100%;
-	min-width: 350px;
+	/* min-width: 350px; */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -28,11 +28,24 @@
 
 .teams {
 	margin: 0;
+	width: 100%;
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
+	justify-content: center;
 	gap: 12px;
-	font-size: 3rem;
+	font-size: 2.5rem;
 	font-family: 'Akademia', sans-serif;
+}
+
+.team {
+	display: flex;
+	text-align: center;
+}
+
+.divider {
+	flex-shrink: 0;
+	text-align: center;
+	font-size: clamp(1.5rem, 4vw, 3rem);
 }
 
 .info {

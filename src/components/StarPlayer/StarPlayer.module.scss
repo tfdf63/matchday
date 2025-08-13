@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 10rem;
+	gap: 5rem;
 	width: 100%;
 	margin: 2rem auto;
 	padding: 0 2rem;
@@ -18,7 +18,6 @@
 
 .photoSection {
 	flex-shrink: 0;
-	margin-left: 120px;
 
 	@media (max-width: 768px) {
 		margin-left: 0;
@@ -27,76 +26,29 @@
 
 .photoStack {
 	position: relative;
-	width: 200px;
+	width: 300px;
 	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	@media (max-width: 768px) {
 		width: 100%;
 		height: 180px;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		gap: 1rem;
 	}
 }
 
 .photoCard {
-	position: absolute;
 	width: 100%;
 	height: 100%;
 	border-radius: 0;
 	overflow: hidden;
 	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-	transition: transform 0.3s ease;
-	cursor: pointer;
 
 	@media (max-width: 768px) {
-		position: static;
-		width: 100px;
+		width: 150px;
 		height: 150px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
-
-	&:nth-child(1) {
-		transform: translateX(-120px) translateY(0);
-		z-index: 1;
-	}
-
-	&:nth-child(2) {
-		transform: translateX(0) translateY(0);
-		z-index: 2;
-	}
-
-	&:nth-child(3) {
-		transform: translateX(120px) translateY(0);
-		z-index: 3;
-	}
-
-	@media (max-width: 768px) {
-		&:nth-child(1) {
-			transform: none;
-		}
-
-		&:nth-child(2) {
-			transform: none;
-		}
-
-		&:nth-child(3) {
-			transform: none;
-		}
-	}
-
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-}
-
-.activeCard {
-	border-bottom: 8px solid #d6c5e7;
 }
 
 .infoSection {
@@ -134,10 +86,59 @@
 	font-size: 1.1rem;
 	line-height: 1.6;
 	color: white;
-	margin: 0;
+	margin: 0 0 2rem 0;
 	font-family: 'Plex Mono', monospace;
 
 	@media (max-width: 768px) {
 		font-size: 1rem;
 	}
+}
+
+.achievements {
+	margin-bottom: 2rem;
+}
+
+.achievementsTitle {
+	font-family: 'Akademia', sans-serif;
+	font-size: 1.5rem;
+	color: white;
+	margin: 0 0 1rem 0;
+}
+
+.achievementsList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.achievementItem {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1rem;
+	color: #ccc;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&::before {
+		content: '✓';
+		color: #b2061c;
+		margin-right: 0.5rem;
+		font-weight: bold;
+	}
+
+	strong {
+		color: white;
+		font-weight: 600;
+	}
+}
+
+.achievementDescription {
+	font-size: 0.9rem;
+	color: #ccc;
+	line-height: 1.4;
+	margin-top: 0.25rem;
+	margin-left: 1.5rem;
 }

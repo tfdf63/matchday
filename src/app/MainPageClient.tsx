@@ -35,7 +35,7 @@ const MainPageClient: React.FC = () => {
 			/>
 			<TicketSlider cards={ticketCards} />
 			<Marquee
-				text='ЗВЕЗДНЫЕ ИГРОКИ × ЗВЕЗДНЫЕ ИГРОКИ × ЗВЕЗДНЫЕ ИГРОКИ × ЗВЕЗДНЫЕ ИГРОКИ ×'
+				text='Легенда Российского футбола × Игрок национальной сборной × ЗВЕЗДНЫЕ ИГРОКИ ×'
 				duration={50}
 			/>
 			<StarPlayer /> */}
