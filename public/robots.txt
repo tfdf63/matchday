@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
+# Разрешить индексацию основных страниц
+Allow: /sector/
+Allow: /players/
+
 # Запрет индексации служебных файлов
 Disallow: /_next/
 Disallow: /api/
@@ -13,6 +17,10 @@ Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
 Allow: /*.webp$
+
+# Директива Clean-param для внешних ссылок с GET-параметрами
+# Игнорировать незначащие параметры для ссылок на Яндекс.Афишу
+Clean-param: clientKey&regionId&_ab_new_calendar
 
 # Указание sitemap
 Sitemap: https://matchday.fcakron.ru/sitemap.xml

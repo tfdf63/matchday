@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import styles from './CardMatch.module.scss'
 import MatchTicketBanner from '../MatchTicketBanner'
+import ActionButton from '../ActionButton/ActionButton'
 
 interface CardMatchProps {
 	leagueInfo?: string
@@ -90,9 +91,13 @@ const CardMatch: React.FC<CardMatchProps> = ({
 			</div>
 
 			<div className={styles.buttonsContainer}>
-				<Link href={ticketLink} className={styles.button}>
-					Купить билеты
-				</Link>
+				<ActionButton
+					href={ticketLink}
+					title='Купить билеты'
+					actionType='link'
+					external={true}
+					className={styles.button}
+				/>
 				{/* <Link href={ticketLinkVip} className={styles.button}>
 					VIP A106
 				</Link> */}

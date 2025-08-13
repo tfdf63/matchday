@@ -138,6 +138,7 @@ const SubscriptionSlider: React.FC<SubscriptionSliderProps> = ({
 					actionType={buttonActionType}
 					onModalOpen={!isMobile ? openModal : undefined}
 					className={styles.buyButton}
+					external={true}
 				/>
 			</div>
 			<div ref={sliderWrapperRef} className={styles.sliderWrapper}>
