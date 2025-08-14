@@ -66,12 +66,11 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	z-index: 2;
+	z-index: 10; // Повышаем z-index, чтобы быть поверх фотографий
 	width: 100%;
 	max-width: 1200px;
 	padding: 2rem 20px;
 	color: white;
-	gap: 10rem;
 	height: 100%;
 }
 
@@ -97,6 +96,8 @@
 	margin: 0 auto;
 	transform: scale(1.05);
 	transition: transform 0.3s ease;
+	z-index: 15; // Повышаем z-index для информации о матче
+	position: relative;
 
 	&:hover {
 		transform: scale(1.1);
@@ -104,6 +105,7 @@
 
 	@media (min-width: 769px) {
 		max-width: 28rem; // Увеличиваем ширину для десктопа
+		z-index: 20; // Еще выше для ПК версии
 	}
 }
 
@@ -151,5 +153,51 @@
 
 	.backgroundVideoMobile {
 		display: none !important;
+	}
+}
+
+.specialGuestLink {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	margin-bottom: 8rem;
+	z-index: 25;
+	max-width: 20rem;
+	width: 100%;
+	background-color: rgba(214, 197, 231, 0.2);
+}
+
+.specialGuestButton {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.1rem;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+	line-height: 1.4;
+	white-space: normal;
+}
+
+.guestTitle {
+	font-family: 'Akademia', sans-serif;
+	font-size: 2rem;
+}
+
+.guestNames {
+	font-family: var(--font-ibm-plex-mono);
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+	.specialGuestButton {
+		font-size: 1rem;
+		padding: 0.4rem 0.8rem;
 	}
 }
