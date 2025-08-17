@@ -8,7 +8,7 @@ import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
 import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
 import ActionButton from '../ActionButton/ActionButton'
-import SpecialGuestModal from '../SpecialGuestModal'
+// import SpecialGuestModal from '../SpecialGuestModal'
 
 // URL видеофайлов для кэширования
 const VIDEO_URLS = [
@@ -127,7 +127,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 	const [supportsWebPFormat, setSupportsWebPFormat] = useState<boolean>(true)
 	const [isPromoOpen, setPromoOpen] = useState(false)
-	const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
+	// const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
 
 	// Предзагрузка видео при монтировании компонента
 	useEffect(() => {
@@ -278,7 +278,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 			</video>
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
-					<div className={styles.specialGuestLink}>
+					{/* <div className={styles.specialGuestLink}>
 						<button
 							className={styles.specialGuestButton}
 							onClick={() => setSpecialGuestOpen(true)}
@@ -287,7 +287,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 							<br />
 							<span className={styles.guestNames}>Слава и Настя Морозовы</span>
 						</button>
-					</div>
+					</div> */}
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}
@@ -317,10 +317,10 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						isOpen={isPromoOpen}
 						onClose={() => setPromoOpen(false)}
 					/>
-					<SpecialGuestModal
+					{/* <SpecialGuestModal
 						isOpen={isSpecialGuestOpen}
 						onClose={() => setSpecialGuestOpen(false)}
-					/>
+					/> */}
 				</div>
 			</div>
 		</div>

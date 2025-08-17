@@ -84,23 +84,23 @@ const games: Game[] = [
 	// 	},
 	// 	fanIdStatus: 'Без fan id',
 	// },
-	{
-		id: '4',
-		homeTeam: 'Акрон',
-		awayTeam: 'Оренбург',
-		date: '17 августа',
-		time: 'SAMT 14:30',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@40529687?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkVip: '',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 5 ТУР',
-		priceIncreaseDates: {
-			first: '2025-08-11',
-			second: '',
-		},
-		fanIdStatus: 'Fan id',
-	},
+	// {
+	// 	id: '4',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'Оренбург',
+	// 	date: '17 августа',
+	// 	time: 'SAMT 14:30',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@40529687?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkVip: '',
+	// 	leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 5 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '2025-08-11',
+	// 		second: '',
+	// 	},
+	// 	fanIdStatus: 'Fan id',
+	// },
 	{
 		id: '6',
 		homeTeam: 'Акрон',
