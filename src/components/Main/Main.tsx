@@ -124,7 +124,6 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	const selectedGame = games[selectedIndex]
 
 	// Определяем тип матча для промокодов
-	const isCupMatch = selectedGame.leagueInfo?.toLowerCase().includes('кубок')
 	const isRplMatch = selectedGame.leagueInfo
 		?.toLowerCase()
 		.includes('премьер-лига')
