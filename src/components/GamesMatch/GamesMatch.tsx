@@ -69,7 +69,9 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	fanIdStatus,
 }) => {
 	const [isPromoOpen, setPromoOpen] = useState(false)
+	const [isRplPromoOpen, setIsRplPromoOpen] = useState(false)
 	const isCupMatch = leagueInfo?.toLowerCase().includes('кубок')
+	const isRplMatch = leagueInfo?.toLowerCase().includes('премьер-лига')
 
 	return (
 		<div className={`${styles.card} ${className || ''}`}>
@@ -116,7 +118,7 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				</Link> */}
 			</div>
 
-			{/* Кнопка промокодов только для матчей с Кубком */}
+			{/* Кнопка промокодов для матчей с Кубком */}
 			{isCupMatch && (
 				<ActionButton
 					href='#'
@@ -127,14 +129,32 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				/>
 			)}
 
+			{/* Кнопка промокодов для матчей РПЛ */}
+			{isRplMatch && (
+				<ActionButton
+					href='#'
+					title='Промокоды для друзей'
+					actionType='modal'
+					onModalOpen={() => setIsRplPromoOpen(true)}
+					className={styles.promoButton}
+				/>
+			)}
+
 			<div className={styles.timerWrapper}>
 				<Timer2 priceIncreaseDates={priceIncreaseDates} />
 			</div>
 
-			{/* Модальное окно промокодов */}
+			{/* Модальное окно промокодов для Кубка */}
 			<PromoCodesModal
 				isOpen={isPromoOpen}
 				onClose={() => setPromoOpen(false)}
+			/>
+
+			{/* Модальное окно промокодов для РПЛ */}
+			<PromoCodesModal
+				isOpen={isRplPromoOpen}
+				onClose={() => setIsRplPromoOpen(false)}
+				promoType='rpl'
 			/>
 		</div>
 	)

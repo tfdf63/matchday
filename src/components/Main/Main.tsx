@@ -123,6 +123,13 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 		matchIndex >= 0 && matchIndex < games.length ? matchIndex : 0
 	const selectedGame = games[selectedIndex]
 
+	// Определяем тип матча для промокодов
+	const isCupMatch = selectedGame.leagueInfo?.toLowerCase().includes('кубок')
+	const isRplMatch = selectedGame.leagueInfo
+		?.toLowerCase()
+		.includes('премьер-лига')
+	const promoType = isRplMatch ? 'rpl' : 'cup'
+
 	// Состояние для отслеживания готовности видео
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 	const [supportsWebPFormat, setSupportsWebPFormat] = useState<boolean>(true)
@@ -300,7 +307,8 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						leagueInfo={selectedGame.leagueInfo}
 					/>
 					{selectedGame.leagueInfo &&
-						selectedGame.leagueInfo.includes('КУБОК') && (
+						(selectedGame.leagueInfo.includes('КУБОК') ||
+							selectedGame.leagueInfo.includes('ПРЕМЬЕР-ЛИГА')) && (
 							<ActionButton
 								href='#'
 								title='Промокоды для друзей'
@@ -316,6 +324,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 					<PromoCodesModal
 						isOpen={isPromoOpen}
 						onClose={() => setPromoOpen(false)}
+						promoType={promoType}
 					/>
 					{/* <SpecialGuestModal
 						isOpen={isSpecialGuestOpen}
