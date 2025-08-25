@@ -12,7 +12,7 @@ const VipPageClient: React.FC = () => {
 	// Данные для CardInfo компонента
 	const cardData = {
 		id: 13,
-		title: 'Skybox',
+		title: 'VIP ложа',
 		subtitle: 'Идеальный баланс приватности и полного погружения в футбол.',
 		sectors: subscriptionCards, // Все доступные сектора
 		gallery: ['/images/vip/interior.webp'],
@@ -80,6 +80,51 @@ const VipPageClient: React.FC = () => {
 	return (
 		<>
 			<CardInfo card={cardData} />
+			<div
+				id='ya-widget-frame'
+				style={{
+					width: '100%',
+					maxWidth: '1200px',
+					margin: '0 auto',
+					padding: '0 1rem',
+				}}
+			></div>
+
+			{/* Виджет Яндекс.Билетов для VIP */}
+			<script
+				dangerouslySetInnerHTML={{
+					__html: `
+						/* Настройка */
+						var dealerName = 'YandexTicketsDealer';
+						var dealer = window[dealerName] = window[dealerName] || [];
+
+						dealer.push(['setDefaultClientKey', 'f524515c-ae22-419d-9b15-80eea470a53b']);
+						dealer.push(['setDefaultRegionId', 51]);
+
+						YandexTicketsDealer.push(['getDealer', function (dealer) {
+							const widget = dealer.Widget('85005', 'venue', {
+								target: document.getElementById('ya-widget-frame'),
+								onRequestClose: function() {
+									widget.unmount();
+									widget.destroy();
+								},
+							});
+
+							widget.mount({ style: { height: '600px' } });
+						}]);
+
+						/* Загрузка */
+						(function () {
+							var rnd = '?' + new Date().getTime() * Math.random();
+							var script = document.createElement('script');
+							var target = document.getElementsByTagName('script')[0];
+							script.async = true;
+							script.src = 'https://widget.afisha.yandex.ru/dealer/dealer.js'+rnd;
+							target.parentNode.insertBefore(script, target);
+						})();
+					`,
+				}}
+			/>
 			<ContactForm />
 		</>
 	)

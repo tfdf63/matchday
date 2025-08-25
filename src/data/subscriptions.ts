@@ -35,7 +35,7 @@ export const subscriptionCards: SubscriptionCard[] = [
 	{
 		id: 6,
 		image: `/images/sector/subscription1.jpg`,
-		buttonText: 'Бизнес-клуб',
+		buttonText: 'VIP',
 		price: 'от 2390 руб.',
 		url: '/sector/business-club',
 		status: 'Premium',
