@@ -85,7 +85,7 @@ const VipPageClient: React.FC = () => {
 				style={{
 					width: '100%',
 					maxWidth: '1200px',
-					margin: '0 auto',
+					margin: '0 auto 20px auto',
 					padding: '0 1rem',
 				}}
 			></div>
@@ -110,7 +110,7 @@ const VipPageClient: React.FC = () => {
 								},
 							});
 
-							widget.mount({ style: { height: '600px' } });
+							widget.mount({ style: { height: '800px' } });
 						}]);
 
 						/* Загрузка */
