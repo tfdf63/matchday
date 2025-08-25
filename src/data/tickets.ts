@@ -10,14 +10,14 @@ export const ticketCards: TicketCard[] = [
 	},
 	{
 		id: 2,
-		image: `/images/tickets/noroot.png`,
+		image: `/images/tickets/noroot.jpg`,
 		buttonText: 'VIP',
 		url: '/sector/business-club',
 		status: 'Premium',
 	},
 	{
 		id: 3,
-		image: `/images/tickets/image_11.jpg`,
+		image: `/images/vip/interior.webp`,
 		buttonText: 'Ложи',
 		url: '/sector/vip',
 		status: 'VIP',
