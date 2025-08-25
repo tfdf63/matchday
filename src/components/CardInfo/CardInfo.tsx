@@ -87,7 +87,8 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 	const isFanPage = card.title.toLowerCase().includes('фанатский')
 	const isVipSector =
 		card.title.toLowerCase().includes('skybox') ||
-		card.title.toLowerCase().includes('социальный')
+		card.title.toLowerCase().includes('социальный') ||
+		card.title.toLowerCase().includes('vip')
 
 	const buttonTitle = isFanPage ? 'Группа болельщиков' : 'Купить'
 	// На мобильных устройствах всегда используем link, на десктопе - modal для покупки билетов

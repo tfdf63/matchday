@@ -105,7 +105,15 @@ const BusinessClubClient: React.FC = () => {
 	return (
 		<>
 			<CardInfo card={cardData} />
-			<div id='ya-widget-frame'></div>
+			<div
+				id='ya-widget-frame'
+				style={{
+					width: '100%',
+					maxWidth: '1200px',
+					margin: '0 auto',
+					padding: '0 1rem',
+				}}
+			></div>
 
 			{/* Виджет Яндекс.Билетов */}
 			<script
