@@ -15,8 +15,8 @@ import Stadium from '@/components/Stadium/Stadium'
 import Marquee from '@/components/Marquee/Marquee'
 import Requisites from '@/components/Requisites/Requisites'
 import SubscriptionSlider from '@/components/SubscriptionSlider/SubscriptionSlider'
-// import TicketSlider from '@/components/TicketSlider'
-// import { ticketCards } from '@/data/tickets'
+import TicketSlider from '@/components/TicketSlider'
+import { ticketCards } from '@/data/tickets'
 import FanCard from '@/components/FanCard/FanCard'
 
 const MainPageClient: React.FC = () => {
@@ -29,12 +29,12 @@ const MainPageClient: React.FC = () => {
 				duration={50}
 			/>
 			<Games />
-			{/* <Marquee
+			<Marquee
 				text='БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА ×'
 				duration={50}
 			/>
 			<TicketSlider cards={ticketCards} />
-			<Marquee
+			{/* <Marquee
 				text='Легенда Российского футбола × Игрок национальной сборной × ЗВЕЗДНЫЕ ИГРОКИ ×'
 				duration={50}
 			/>

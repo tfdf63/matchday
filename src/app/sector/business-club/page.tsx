@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import BusinessClubClient from './BusinessClubClient'
 
 export const metadata: Metadata = {
-	title: 'Бизнес-клуб',
+	title: 'VIP',
 	description:
 		'Бизнес-клуб ФК Акрон — эксклюзивные места у скамейки запасных. Слышите указания тренера, видите реакции игроков. Премиум сервис, комфорт, нетворкинг.',
 	keywords:
