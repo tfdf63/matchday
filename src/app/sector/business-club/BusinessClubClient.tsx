@@ -8,6 +8,17 @@ const BusinessClubClient: React.FC = () => {
 	// Находим данные для бизнес-клуба
 	const businessClubCard = subscriptionCards.find(card => card.id === 1)
 
+	// Функция для плавной прокрутки к заголовку
+	const scrollToBuyTickets = () => {
+		const element = document.getElementById('buy-tickets-section')
+		if (element) {
+			element.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start',
+			})
+		}
+	}
+
 	// Данные для CardInfo компонента
 	const cardData = {
 		id: 1,
@@ -96,6 +107,10 @@ const BusinessClubClient: React.FC = () => {
 		],
 		stadiumSchema: '/images/sector/shema-stadium/schema-business.png',
 		buyButton: 'https://tickets.example.com/business-club',
+		// Добавляем флаг для скрытия нижней кнопки
+		hideBottomButton: true,
+		// Добавляем функцию для верхней кнопки
+		topButtonAction: scrollToBuyTickets,
 	}
 
 	if (!businessClubCard) {
@@ -105,6 +120,32 @@ const BusinessClubClient: React.FC = () => {
 	return (
 		<>
 			<CardInfo card={cardData} />
+
+			{/* Заголовок секции покупки билетов */}
+			<div
+				id='buy-tickets-section'
+				style={{
+					textAlign: 'left',
+					margin: '2rem 0',
+					maxWidth: '1200px',
+					marginLeft: 'auto',
+					marginRight: 'auto',
+					padding: '0 1rem',
+				}}
+			>
+				<h3
+					style={{
+						fontFamily: 'Akademia, sans-serif',
+						fontSize: '2rem',
+						color: 'white',
+						margin: '0',
+						textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+					}}
+				>
+					Купить билеты на Акрон
+				</h3>
+			</div>
+
 			<div
 				id='ya-widget-frame'
 				style={{

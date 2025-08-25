@@ -34,6 +34,8 @@ interface CardInfoProps {
 			title: string
 			description: string
 		}>
+		hideBottomButton?: boolean
+		topButtonAction?: () => void
 	}
 }
 
@@ -87,8 +89,10 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 	const isFanPage = card.title.toLowerCase().includes('фанатский')
 	const isVipSector =
 		card.title.toLowerCase().includes('skybox') ||
-		card.title.toLowerCase().includes('социальный') ||
-		card.title.toLowerCase().includes('vip')
+		card.title.toLowerCase().includes('социальный')
+
+	// Для VIP секторов показываем верхнюю кнопку, но скрываем нижнюю
+	const isVipForTopButton = card.title.toLowerCase().includes('vip')
 
 	const buttonTitle = isFanPage ? 'Группа болельщиков' : 'Купить'
 	// На мобильных устройствах всегда используем link, на десктопе - modal для покупки билетов
@@ -129,14 +133,24 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 			{/* Заголовок и кнопка */}
 			<div className={styles.header}>
 				<h1 className={styles.title}>{card.title}</h1>
-				{!isVipSector && (
-					<ActionButton
-						href={buttonHref}
-						title={buttonTitle}
-						actionType={buttonActionType}
-						onModalOpen={!isMobile ? openModal : undefined}
-					/>
-				)}
+				{(!isVipSector || isVipForTopButton) &&
+					(card.topButtonAction ? (
+						<button
+							className={styles.customButton}
+							onClick={card.topButtonAction}
+						>
+							{buttonTitle}
+						</button>
+					) : (
+						<ActionButton
+							href={isVipForTopButton ? '#buy-tickets-section' : buttonHref}
+							title={buttonTitle}
+							actionType={isVipForTopButton ? 'link' : buttonActionType}
+							onModalOpen={
+								!isMobile && !isVipForTopButton ? openModal : undefined
+							}
+						/>
+					))}
 			</div>
 			{/* Подзаголовок */}
 			<p className={styles.subtitle}>{card.subtitle}</p>
@@ -284,7 +298,7 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 			)}
 			*/}
 			{/* Кнопка покупки внизу */}
-			{!isVipSector && (
+			{!isVipSector && !card.hideBottomButton && (
 				<div className={styles.bottomButton}>
 					<ActionButton
 						href={buttonHref}
