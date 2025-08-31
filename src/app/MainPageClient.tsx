@@ -18,10 +18,12 @@ import SubscriptionSlider from '@/components/SubscriptionSlider/SubscriptionSlid
 import TicketSlider from '@/components/TicketSlider'
 import { ticketCards } from '@/data/tickets'
 import FanCard from '@/components/FanCard/FanCard'
+// import Menu from '@/components/Menu'
 
 const MainPageClient: React.FC = () => {
 	return (
 		<>
+			{/* <Menu /> */}
 			<Main />
 			<Marquee
 				text='БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × 

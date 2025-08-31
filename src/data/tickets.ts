@@ -26,7 +26,7 @@ export const ticketCards: TicketCard[] = [
 	// 	id: 5,
 	// 	image: `/images/sector/subscription2.jpg`,
 	// 	buttonText: 'Тарифы',
-	// 	url: '/sector/vip',
+	// 	url: '/sector/tariffs',
 	// 	status: 'Mass',
 	// },
 	// {

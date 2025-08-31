@@ -124,15 +124,16 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	const selectedGame = games[selectedIndex]
 
 	// Определяем тип матча для промокодов
+	const isCupMatch = selectedGame.leagueInfo?.toLowerCase().includes('кубок')
 	const isRplMatch = selectedGame.leagueInfo
 		?.toLowerCase()
 		.includes('премьер-лига')
-	const promoType = isRplMatch ? 'rpl' : 'cup'
 
 	// Состояние для отслеживания готовности видео
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 	const [supportsWebPFormat, setSupportsWebPFormat] = useState<boolean>(true)
 	const [isPromoOpen, setPromoOpen] = useState(false)
+	const [isRplPromoOpen, setIsRplPromoOpen] = useState(false)
 	// const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
 
 	// Предзагрузка видео при монтировании компонента
@@ -305,25 +306,43 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						fanIdStatus={selectedGame.fanIdStatus}
 						leagueInfo={selectedGame.leagueInfo}
 					/>
-					{selectedGame.leagueInfo &&
-						(selectedGame.leagueInfo.includes('КУБОК') ||
-							selectedGame.leagueInfo.includes('ПРЕМЬЕР-ЛИГА')) && (
-							<ActionButton
-								href='#'
-								title='Промокоды для друзей'
-								actionType='modal'
-								onModalOpen={() => setPromoOpen(true)}
-								className={styles.promoButton}
-							/>
-						)}
+					{/* Кнопка промокодов для матчей с Кубком */}
+					{isCupMatch && (
+						<ActionButton
+							href='#'
+							title='Промокоды для друзей'
+							actionType='modal'
+							onModalOpen={() => setPromoOpen(true)}
+							className={styles.promoButton}
+						/>
+					)}
+
+					{/* Кнопка промокодов для матчей РПЛ */}
+					{isRplMatch && (
+						<ActionButton
+							href='#'
+							title='Промокоды для друзей'
+							actionType='modal'
+							onModalOpen={() => setIsRplPromoOpen(true)}
+							className={styles.promoButton}
+						/>
+					)}
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
 					<div className={styles.timerWrapper}>
 						<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
 					</div>
+
+					{/* Модальное окно промокодов для Кубка */}
 					<PromoCodesModal
 						isOpen={isPromoOpen}
 						onClose={() => setPromoOpen(false)}
-						promoType={promoType}
+					/>
+
+					{/* Модальное окно промокодов для РПЛ */}
+					<PromoCodesModal
+						isOpen={isRplPromoOpen}
+						onClose={() => setIsRplPromoOpen(false)}
+						promoType='rpl'
 					/>
 					{/* <SpecialGuestModal
 						isOpen={isSpecialGuestOpen}
