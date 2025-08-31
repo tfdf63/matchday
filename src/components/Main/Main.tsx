@@ -123,17 +123,10 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 		matchIndex >= 0 && matchIndex < games.length ? matchIndex : 0
 	const selectedGame = games[selectedIndex]
 
-	// Определяем тип матча для промокодов
-	const isCupMatch = selectedGame.leagueInfo?.toLowerCase().includes('кубок')
-	const isRplMatch = selectedGame.leagueInfo
-		?.toLowerCase()
-		.includes('премьер-лига')
-
 	// Состояние для отслеживания готовности видео
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 	const [supportsWebPFormat, setSupportsWebPFormat] = useState<boolean>(true)
 	const [isPromoOpen, setPromoOpen] = useState(false)
-	const [isRplPromoOpen, setIsRplPromoOpen] = useState(false)
 	// const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
 
 	// Предзагрузка видео при монтировании компонента
@@ -307,7 +300,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						leagueInfo={selectedGame.leagueInfo}
 					/>
 					{/* Кнопка промокодов для матчей с Кубком */}
-					{isCupMatch && (
+					{selectedGame.leagueInfo?.toLowerCase().includes('кубок') && (
 						<ActionButton
 							href='#'
 							title='Промокоды для друзей'
@@ -318,12 +311,12 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 					)}
 
 					{/* Кнопка промокодов для матчей РПЛ */}
-					{isRplMatch && (
+					{selectedGame.leagueInfo?.toLowerCase().includes('премьер-лига') && (
 						<ActionButton
 							href='#'
 							title='Промокоды для друзей'
 							actionType='modal'
-							onModalOpen={() => setIsRplPromoOpen(true)}
+							onModalOpen={() => setPromoOpen(true)}
 							className={styles.promoButton}
 						/>
 					)}
@@ -331,18 +324,9 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 					<div className={styles.timerWrapper}>
 						<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
 					</div>
-
-					{/* Модальное окно промокодов для Кубка */}
 					<PromoCodesModal
 						isOpen={isPromoOpen}
 						onClose={() => setPromoOpen(false)}
-					/>
-
-					{/* Модальное окно промокодов для РПЛ */}
-					<PromoCodesModal
-						isOpen={isRplPromoOpen}
-						onClose={() => setIsRplPromoOpen(false)}
-						promoType='rpl'
 					/>
 					{/* <SpecialGuestModal
 						isOpen={isSpecialGuestOpen}
