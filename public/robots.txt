@@ -2,8 +2,7 @@ User-agent: *
 Allow: /
 
 # Разрешить индексацию основных страниц
-Allow: /sector/
-Allow: /players/
+Allow: /sector/*/
 
 # Запрет индексации служебных файлов
 Disallow: /_next/
@@ -11,6 +10,9 @@ Disallow: /api/
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.map$
+Disallow: /sector/
+Disallow: /players/
+Disallow: /players/*/
 Clean-param: ctime&utm_mediumt&yprqee&bx_sender_conversion_id&b24form_user&_ym_debug&erid&C&O
 
 # Разрешить индексацию изображений
