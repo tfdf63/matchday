@@ -11,6 +11,7 @@ Disallow: /api/
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.map$
+Clean-param: ctime&utm_mediumt&yprqee&bx_sender_conversion_id&b24form_user&_ym_debug&erid&C&O
 
 # Разрешить индексацию изображений
 Allow: /*.jpg$
