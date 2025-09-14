@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Main from '@/components/Main/Main'
 import Games from '@/components/Games/Games'
 // import StarPlayer from '@/components/StarPlayer'
@@ -16,12 +16,29 @@ import SubscriptionSlider from '@/components/SubscriptionSlider/SubscriptionSlid
 import TicketSlider from '@/components/TicketSlider'
 import { ticketCards } from '@/data/tickets'
 import FanCard from '@/components/FanCard/FanCard'
+import CupTourModal from '@/components/CupTourModal/CupTourModal'
 // import Menu from '@/components/Menu'
 
 const MainPageClient: React.FC = () => {
+	const [isCupTourModalOpen, setCupTourModalOpen] = useState(false)
+
+	// Открываем модальное окно при загрузке страницы
+	useEffect(() => {
+		// Небольшая задержка для плавного появления
+		const timer = setTimeout(() => {
+			setCupTourModalOpen(true)
+		}, 1000)
+
+		return () => clearTimeout(timer)
+	}, [])
+
 	return (
 		<>
 			{/* <Menu /> */}
+			<CupTourModal
+				isOpen={isCupTourModalOpen}
+				onClose={() => setCupTourModalOpen(false)}
+			/>
 			<Main />
 			<Marquee
 				text='БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × 
