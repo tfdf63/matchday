@@ -169,6 +169,23 @@ const games: Game[] = [
 		},
 		fanIdStatus: 'Fan id',
 	},
+	// {
+	// 	id: '9',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'Локомотив',
+	// 	date: '26 октября',
+	// 	time: 'SAMT 14:00',
+	// 	stadium: 'Саранск. Мордовия Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@43608494?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=42',
+	// 	ticketLinkVip: '',
+	// 	leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 13 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '2025-10-20',
+	// 		second: '',
+	// 	},
+	// 	fanIdStatus: 'Fan id',
+	// },
 ]
 
 export default games

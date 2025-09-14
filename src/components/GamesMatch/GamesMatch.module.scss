@@ -55,7 +55,7 @@
 	justify-content: center;
 	gap: 24px;
 	font-family: var(--font-ibm-plex-mono), monospace;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
 
 .buttonsContainer {
@@ -172,4 +172,25 @@
 	max-width: 20rem;
 	margin: 0 auto;
 	white-space: nowrap;
+}
+
+// Специальные стили для стадиона "Саранск. Мордовия Арена"
+.saranskCard {
+	border: 2px dashed #b2061c !important;
+	padding: 8px;
+}
+
+.blinkingStadium {
+	animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+	0%,
+	50% {
+		opacity: 1;
+	}
+	51%,
+	100% {
+		opacity: 0.3;
+	}
 }

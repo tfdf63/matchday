@@ -57,8 +57,14 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	fanIdStatus,
 	// ticketLinkVip = '#',
 }) => {
+	const isSaranskStadium = stadium === 'Саранск. Мордовия Арена'
+
 	return (
-		<div className={`${styles.card} ${className || ''}`}>
+		<div
+			className={`${styles.card} ${
+				isSaranskStadium ? styles.saranskCard : ''
+			} ${className || ''}`}
+		>
 			{/* Баннер статуса матча */}
 			<MatchTicketBanner date={date} />
 
@@ -87,7 +93,9 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				<span>{time}</span>
 			</div>
 			<div className={styles.info}>
-				<span>{stadium}</span>
+				<span className={isSaranskStadium ? styles.blinkingStadium : ''}>
+					{stadium}
+				</span>
 			</div>
 
 			<div className={styles.buttonsContainer}>

@@ -7,7 +7,7 @@ import styles from './Menu.module.scss'
 const Menu: React.FC = () => {
 	return (
 		<nav className={styles.menu}>
-			<Link href='/sector/c121' className={styles.menuLink}>
+			<Link href='/#ticket-program' className={styles.menuLink}>
 				Билеты
 			</Link>
 			<span className={styles.separator}>|</span>

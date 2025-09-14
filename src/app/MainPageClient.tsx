@@ -7,8 +7,6 @@ import Games from '@/components/Games/Games'
 // import Players from '@/components/Players/Players'
 import Merch from '@/components/Merch/Merch'
 import Stadium from '@/components/Stadium/Stadium'
-// import VIP from '@/components/VIP/VIP'
-// import Skybox from '@/components/Skybox/Skybox'
 // import Slider from '@/components/Slider/Slider'
 // import Timer from '@/components/Timer/Timer'
 // import Timer2 from '@/components/Timer2/Timer2'
@@ -31,13 +29,15 @@ const MainPageClient: React.FC = () => {
 				duration={50}
 			/>
 			<Games />
-			<Marquee
-				text='БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА ×'
-				duration={50}
-			/>
+			<div id='ticket-program'>
+				<Marquee
+					text='БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА ×'
+					duration={50}
+				/>
+			</div>
 			<TicketSlider cards={ticketCards} />
 			{/* <Marquee
-				text='Легенда Российского футбола × Игрок национальной сборной × ЗВЕЗДНЫЕ ИГРОКИ ×'
+				text='Легенда российского футбола × Лучший бомбардир в истории сборной ×'
 				duration={50}
 			/>
 			<StarPlayer /> */}
@@ -66,13 +66,6 @@ const MainPageClient: React.FC = () => {
 			/>
 			<Merch />
 			<FanCard />
-			{/* <Marquee
-        text='SKYBOX × SKYBOX × SKYBOX × SKYBOX × 
-        SKYBOX × SKYBOX × SKYBOX × SKYBOX × SKYBOX 
-        × SKYBOX × SKYBOX ×'
-        duration={50}
-      /> */}
-			{/* <Skybox /> */}
 			<Stadium />
 			<Marquee
 				text='КУПИТЬ БИЛЕТЫ × КУПИТЬ БИЛЕТЫ × КУПИТЬ БИЛЕТЫ × 

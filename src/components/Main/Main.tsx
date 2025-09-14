@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import styles from './Main.module.scss'
 import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
@@ -332,6 +333,13 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						isOpen={isSpecialGuestOpen}
 						onClose={() => setSpecialGuestOpen(false)}
 					/> */}
+					<Image
+						src='/images/cuptour.jpg'
+						alt='Cup Tour'
+						className={styles.cuptourImage}
+						width={320}
+						height={200}
+					/>
 				</div>
 			</div>
 		</div>

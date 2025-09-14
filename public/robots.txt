@@ -11,9 +11,13 @@ Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.map$
 Disallow: /sector/
+Disallow: /video/
+Disallow: /video/*/
+Disallow: /images/
+Disallow: /images/*/
 Disallow: /players/
 Disallow: /players/*/
-Clean-param: ctime&utm_mediumt&yprqee&bx_sender_conversion_id&b24form_user&_ym_debug&erid&C&O
+Clean-param: ctime&utm_mediumt&yprqee&bx_sender_conversion_id&b24form_user&_ym_debug&erid&C&O&yclid&utm_source
 
 # Разрешить индексацию изображений
 Allow: /*.jpg$

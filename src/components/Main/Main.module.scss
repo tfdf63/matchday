@@ -123,6 +123,16 @@
 	padding: 0.8rem 2rem;
 }
 
+.cuptourImage {
+	width: 100%;
+	max-width: 20rem;
+	height: auto;
+	object-fit: cover;
+	margin: 1rem auto 0 auto;
+	display: block;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 768px) {
 	.main {
 		height: 100vh;
