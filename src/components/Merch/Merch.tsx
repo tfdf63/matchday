@@ -14,8 +14,6 @@ interface MerchProps {
 
 const Merch: React.FC<MerchProps> = ({
 	items = merchItems,
-	buttonText = 'Купить атрибутику',
-	buttonLink = 'https://shop.fcakron.ru/',
 	className = '',
 }) => {
 	const [displayItems, setDisplayItems] = useState<MerchItem[]>([])
@@ -59,11 +57,6 @@ const Merch: React.FC<MerchProps> = ({
 					</a>
 				))}
 			</div>
-			{/* <div className={styles.buttonWrapper}>
-				<a href={buttonLink} className={styles.button}>
-					{buttonText}
-				</a>
-			</div> */}
 		</div>
 	)
 }
