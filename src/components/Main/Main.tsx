@@ -334,7 +334,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						onClose={() => setSpecialGuestOpen(false)}
 					/> */}
 					<Image
-						src='/images/cuptour.jpg'
+						src='/images/cuptour.webp'
 						alt='Cup Tour'
 						className={styles.cuptourImage}
 						width={320}
