@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Main from '@/components/Main/Main'
 import Games from '@/components/Games/Games'
-// import StarPlayer from '@/components/StarPlayer'
+import StarPlayer from '@/components/StarPlayer'
 // import Players from '@/components/Players/Players'
 import Merch from '@/components/Merch/Merch'
 import Stadium from '@/components/Stadium/Stadium'
@@ -16,7 +16,7 @@ import SubscriptionSlider from '@/components/SubscriptionSlider/SubscriptionSlid
 import TicketSlider from '@/components/TicketSlider'
 import { ticketCards } from '@/data/tickets'
 import FanCard from '@/components/FanCard/FanCard'
-import CupTourModal from '@/components/CupTourModal/CupTourModal'
+// import CupTourModal from '@/components/CupTourModal/CupTourModal'
 // import Menu from '@/components/Menu'
 
 const MainPageClient: React.FC = () => {
@@ -35,10 +35,10 @@ const MainPageClient: React.FC = () => {
 	return (
 		<>
 			{/* <Menu /> */}
-			<CupTourModal
+			{/* <CupTourModal
 				isOpen={isCupTourModalOpen}
 				onClose={() => setCupTourModalOpen(false)}
-			/>
+			/> */}
 			<Main />
 			<Marquee
 				text='БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × 
@@ -53,11 +53,11 @@ const MainPageClient: React.FC = () => {
 				/>
 			</div>
 			<TicketSlider cards={ticketCards} />
-			{/* <Marquee
+			<Marquee
 				text='Легенда российского футбола × Лучший бомбардир в истории сборной ×'
 				duration={50}
 			/>
-			<StarPlayer /> */}
+			<StarPlayer />
 			{/* <Marquee
 				text='СИЛЬНЕЙШИЕ ИГРОКИ ГЛАВНОГО 
         ФУТБОЛЬНОГО ТУРНИРА СТРАНЫ × СИЛЬНЕЙШИЕ 

@@ -118,23 +118,23 @@ const games: Game[] = [
 	// 	},
 	// 	fanIdStatus: 'Fan id',
 	// },
-	{
-		id: '5',
-		homeTeam: 'Акрон',
-		awayTeam: 'Локомотив',
-		date: '16 сентября',
-		time: 'SAMT 19:45',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@41413962?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkVip: '',
-		leagueInfo: 'FONBET Кубок России 2025/2026 - 4 ТУР',
-		priceIncreaseDates: {
-			first: '2025-09-10',
-			second: '',
-		},
-		fanIdStatus: 'Без fan id',
-	},
+	// {
+	// 	id: '5',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'Локомотив',
+	// 	date: '16 сентября',
+	// 	time: 'SAMT 19:45',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@41413962?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkVip: '',
+	// 	leagueInfo: 'FONBET Кубок России 2025/2026 - 4 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '2025-09-10',
+	// 		second: '',
+	// 	},
+	// 	fanIdStatus: 'Без fan id',
+	// },
 	{
 		id: '7',
 		homeTeam: 'Акрон',
