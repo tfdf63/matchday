@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+// import React, { useState, useEffect } from 'react'
 import Main from '@/components/Main/Main'
 import Games from '@/components/Games/Games'
 import StarPlayer from '@/components/StarPlayer'
@@ -20,17 +20,17 @@ import FanCard from '@/components/FanCard/FanCard'
 // import Menu from '@/components/Menu'
 
 const MainPageClient: React.FC = () => {
-	const [isCupTourModalOpen, setCupTourModalOpen] = useState(false)
+	// const [isCupTourModalOpen, setCupTourModalOpen] = useState(false)
 
-	// Открываем модальное окно при загрузке страницы
-	useEffect(() => {
-		// Небольшая задержка для плавного появления
-		const timer = setTimeout(() => {
-			setCupTourModalOpen(true)
-		}, 1000)
+	// // Открываем модальное окно при загрузке страницы
+	// useEffect(() => {
+	// 	// Небольшая задержка для плавного появления
+	// 	const timer = setTimeout(() => {
+	// 		setCupTourModalOpen(true)
+	// 	}, 1000)
 
-		return () => clearTimeout(timer)
-	}, [])
+	// 	return () => clearTimeout(timer)
+	// }, [])
 
 	return (
 		<>
