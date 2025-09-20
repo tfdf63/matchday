@@ -1,0 +1,135 @@
+.saranskPage {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+	z-index: 12;
+}
+
+.heroImage {
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	margin-bottom: 2rem;
+
+	@media (max-width: 768px) {
+		height: 250px;
+		margin-bottom: 1.5rem;
+	}
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.headerSection {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	gap: 2rem;
+
+	@media (max-width: 768px) {
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+	}
+}
+
+.title {
+	font-family: 'Akademia', sans-serif;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: white;
+	margin: 0;
+	text-align: left;
+	flex: 1;
+
+	@media (max-width: 768px) {
+		font-size: 1.8rem;
+		flex: 1;
+	}
+}
+
+.vs {
+	font-size: 0.5em;
+}
+
+.subtitle {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1.2rem;
+	color: #ccc;
+	margin: 0 0 2rem 0;
+	line-height: 1.6;
+	text-align: left;
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
+		margin-bottom: 1.5rem;
+	}
+}
+
+.descriptionSection {
+	margin-bottom: 2rem;
+	padding: 2rem;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+
+	@media (max-width: 768px) {
+		padding: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+}
+
+.descriptionTitle {
+	font-family: 'Akademia', sans-serif;
+	font-size: 1.8rem;
+	color: white;
+	margin: 0 0 1rem 0;
+	font-weight: 600;
+	text-align: left;
+
+	@media (max-width: 768px) {
+		font-size: 1.5rem;
+	}
+}
+
+.descriptionText {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1.1rem;
+	color: #ccc;
+	line-height: 1.6;
+	margin: 0;
+	text-align: left;
+
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
+}
+
+.smallButton {
+	margin: 0;
+	flex-shrink: 0;
+
+	@media (max-width: 768px) {
+		margin: 0;
+		flex-shrink: 0;
+	}
+}
+
+.bigButton {
+	text-align: left;
+	margin-top: 2rem;
+
+	@media (max-width: 768px) {
+		margin-top: 1.5rem;
+	}
+}
+
+// Адаптивность для мобильных устройств
+@media (max-width: 768px) {
+	.saranskPage {
+		padding: 1rem;
+	}
+}

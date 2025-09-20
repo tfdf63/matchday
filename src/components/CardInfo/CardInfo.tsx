@@ -155,118 +155,176 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 			{/* Подзаголовок */}
 			<p className={styles.subtitle}>{card.subtitle}</p>
 			{/* Слайдер с кнопками карточек */}
-			<div className={styles.cardSlider}>
-				<div className={styles.sliderContainer}>
-					<button
-						className={styles.sliderArrow}
-						onClick={scrollLeft}
-						aria-label='Прокрутить влево'
-					>
-						<svg
-							width='24'
-							height='24'
-							viewBox='0 0 24 24'
-							fill='none'
-							stroke='currentColor'
-							strokeWidth='2'
+			{card.sectors && card.sectors.length > 0 && (
+				<div className={styles.cardSlider}>
+					<div className={styles.sliderContainer}>
+						<button
+							className={styles.sliderArrow}
+							onClick={scrollLeft}
+							aria-label='Прокрутить влево'
 						>
-							<path d='M15 18l-6-6 6-6' />
-						</svg>
-					</button>
-					<div className={styles.sliderWrapper} ref={sliderWrapperRef}>
-						<div className={styles.slider}>
-							{card.sectors.map(sector => (
-								<button
-									key={sector.id}
-									className={`${styles.sectorButton} ${
-										styles[getSectorStatus(sector.buttonText).toLowerCase()]
-									} ${isActiveCard(sector) ? styles.active : ''}`}
-									onClick={() => handleSectorClick(sector.url)}
-								>
-									{sector.buttonText}
-								</button>
-							))}
+							<svg
+								width='24'
+								height='24'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								strokeWidth='2'
+							>
+								<path d='M15 18l-6-6 6-6' />
+							</svg>
+						</button>
+						<div className={styles.sliderWrapper} ref={sliderWrapperRef}>
+							<div className={styles.slider}>
+								{card.sectors.map(sector => (
+									<button
+										key={sector.id}
+										className={`${styles.sectorButton} ${
+											styles[getSectorStatus(sector.buttonText).toLowerCase()]
+										} ${isActiveCard(sector) ? styles.active : ''}`}
+										onClick={() => handleSectorClick(sector.url)}
+									>
+										{sector.buttonText}
+									</button>
+								))}
+							</div>
 						</div>
-					</div>
-					<button
-						className={styles.sliderArrow}
-						onClick={scrollRight}
-						aria-label='Прокрутить вправо'
-					>
-						<svg
-							width='24'
-							height='24'
-							viewBox='0 0 24 24'
-							fill='none'
-							stroke='currentColor'
-							strokeWidth='2'
+						<button
+							className={styles.sliderArrow}
+							onClick={scrollRight}
+							aria-label='Прокрутить вправо'
 						>
-							<path d='M9 18l6-6-6-6' />
-						</svg>
-					</button>
+							<svg
+								width='24'
+								height='24'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								strokeWidth='2'
+							>
+								<path d='M9 18l6-6-6-6' />
+							</svg>
+						</button>
+					</div>
 				</div>
-			</div>
+			)}
 			{/* Текстовые мини-карточки */}
-			<div className={styles.features}>
-				{card.features.map((feature, index) => (
-					<div key={index} className={styles.featureCard}>
-						<h2 className={styles.featureTitle}>{feature.title}</h2>
-						<div className={styles.featureDescription}>
-							{feature.description.split('\n').map((line, lineIndex) => (
-								<p key={lineIndex}>{line}</p>
-							))}
-						</div>
+			<div
+				className={`${styles.features} ${
+					isMobile ? styles.featuresMobile : ''
+				}`}
+			>
+				{isMobile ? (
+					<div className={styles.featuresScrollContainer}>
+						{card.features.map((feature, index) => (
+							<div key={index} className={styles.featureCard}>
+								<h2 className={styles.featureTitle}>{feature.title}</h2>
+								<div className={styles.featureDescription}>
+									{feature.description.split('\n').map((line, lineIndex) => (
+										<p key={lineIndex}>{line}</p>
+									))}
+								</div>
+							</div>
+						))}
 					</div>
-				))}
+				) : (
+					card.features.map((feature, index) => (
+						<div key={index} className={styles.featureCard}>
+							<h2 className={styles.featureTitle}>{feature.title}</h2>
+							<div className={styles.featureDescription}>
+								{feature.description.split('\n').map((line, lineIndex) => (
+									<p key={lineIndex}>{line}</p>
+								))}
+							</div>
+						</div>
+					))
+				)}
 			</div>
 			{/* Блок Сервис */}
-			<div className={styles.services}>
-				<h2 className={styles.sectionTitle}>Сервис</h2>
-				<ul className={styles.servicesList}>
-					{card.services.map((service, index) => (
-						<li key={index} className={styles.serviceItem}>
-							{typeof service === 'string' ? (
-								service
-							) : (
-								<>
-									<strong>{service.benefit}</strong>
-									<div className={styles.benefitDescription}>
-										{service.description.split('\n').map((line, lineIndex) => (
-											<p key={lineIndex}>{line}</p>
-										))}
-									</div>
-								</>
-							)}
-						</li>
-					))}
-				</ul>
-			</div>
-			{/* Блок Сектора */}
-			<div className={styles.sectors}>
-				<h2 className={styles.sectionTitle}>Сектор</h2>
-				<div className={styles.sectorsButtons}>
-					{card.subsectors.map((subsector, index) => (
-						<button
-							key={index}
-							className={`${styles.sectorButton} ${
-								styles[getSectorStatus(subsector).toLowerCase()]
-							}`}
-						>
-							{subsector}
-						</button>
-					))}
+			{card.services && card.services.length > 0 && (
+				<div
+					className={`${styles.services} ${
+						isMobile ? styles.servicesMobile : ''
+					}`}
+				>
+					<h2 className={styles.sectionTitle}>Сервис</h2>
+					{isMobile ? (
+						<div className={styles.servicesScrollContainer}>
+							{card.services.map((service, index) => (
+								<div key={index} className={styles.serviceCard}>
+									{typeof service === 'string' ? (
+										<div className={styles.serviceText}>{service}</div>
+									) : (
+										<>
+											<strong className={styles.serviceBenefit}>
+												{service.benefit}
+											</strong>
+											<div className={styles.benefitDescription}>
+												{service.description
+													.split('\n')
+													.map((line, lineIndex) => (
+														<p key={lineIndex}>{line}</p>
+													))}
+											</div>
+										</>
+									)}
+								</div>
+							))}
+						</div>
+					) : (
+						<ul className={styles.servicesList}>
+							{card.services.map((service, index) => (
+								<li key={index} className={styles.serviceItem}>
+									{typeof service === 'string' ? (
+										service
+									) : (
+										<>
+											<strong>{service.benefit}</strong>
+											<div className={styles.benefitDescription}>
+												{service.description
+													.split('\n')
+													.map((line, lineIndex) => (
+														<p key={lineIndex}>{line}</p>
+													))}
+											</div>
+										</>
+									)}
+								</li>
+							))}
+						</ul>
+					)}
 				</div>
-			</div>
+			)}
+			{/* Блок Сектора */}
+			{card.subsectors && card.subsectors.length > 0 && (
+				<div className={styles.sectors}>
+					<h2 className={styles.sectionTitle}>Сектор</h2>
+					<div className={styles.sectorsButtons}>
+						{card.subsectors.map((subsector, index) => (
+							<button
+								key={index}
+								className={`${styles.sectorButton} ${
+									styles[getSectorStatus(subsector).toLowerCase()]
+								}`}
+							>
+								{subsector}
+							</button>
+						))}
+					</div>
+				</div>
+			)}
 			{/* Схема стадиона */}
-			<div className={styles.stadiumSchema}>
-				<Image
-					src={card.stadiumSchema}
-					alt='Схема стадиона'
-					width={800}
-					height={600}
-					className={styles.schemaImage}
-				/>
-			</div>
+			{card.stadiumSchema && card.stadiumSchema.length > 0 && (
+				<div className={styles.stadiumSchema}>
+					<Image
+						src={card.stadiumSchema}
+						alt='Схема стадиона'
+						width={800}
+						height={600}
+						className={styles.schemaImage}
+					/>
+				</div>
+			)}
 			{/* Блок Тарифы */}
 			{/*
 			{card.tariffs && card.tariffs.length > 0 && (

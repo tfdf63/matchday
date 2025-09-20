@@ -277,12 +277,43 @@
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 2rem;
 	margin-bottom: 2rem;
+
+	&.featuresMobile {
+		display: block;
+		margin-bottom: 2rem;
+	}
+}
+
+.featuresScrollContainer {
+	display: flex;
+	gap: 1rem;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 0.5rem 0;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	// Показываем часть следующей карточки
+	padding-right: 1rem;
 }
 
 .featureCard {
 	background: rgba(255, 255, 255, 0.05);
 	padding: 2rem;
 	border: 1px solid rgba(255, 255, 255, 0.1);
+	flex-shrink: 0;
+
+	// На мобильных устройствах карточка чуть меньше ширины экрана
+	@media (max-width: 768px) {
+		width: calc(100vw - 3rem); // Чуть меньше ширины экрана с учетом отступов
+		max-width: 320px;
+		min-width: 280px;
+		padding: 1.5rem;
+	}
 }
 
 .featureTitle {
@@ -317,6 +348,70 @@
 
 .services {
 	margin-bottom: 2rem;
+
+	&.servicesMobile {
+		margin-bottom: 2rem;
+	}
+}
+
+.servicesScrollContainer {
+	display: flex;
+	gap: 1rem;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 0.5rem 0;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	// Показываем часть следующей карточки
+	padding-right: 1rem;
+}
+
+.serviceCard {
+	background: rgba(255, 255, 255, 0.05);
+	padding: 1.5rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	flex-shrink: 0;
+	border-radius: 8px;
+
+	// На мобильных устройствах карточка чуть меньше ширины экрана
+	@media (max-width: 768px) {
+		width: calc(100vw - 3rem); // Чуть меньше ширины экрана с учетом отступов
+		max-width: 320px;
+		min-width: 280px;
+		padding: 1.2rem;
+	}
+}
+
+.serviceText {
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 1rem;
+	color: #ccc;
+	line-height: 1.6;
+	margin: 0;
+	position: relative;
+	padding-left: 1.5rem;
+
+	&::before {
+		content: '✓';
+		color: #b2061c;
+		position: absolute;
+		left: 0;
+		top: 0;
+		font-weight: bold;
+	}
+}
+
+.serviceBenefit {
+	color: white;
+	font-weight: 600;
+	font-size: 1.1rem;
+	display: block;
+	margin-bottom: 0.5rem;
 }
 
 .servicesList {
@@ -350,6 +445,7 @@
 }
 
 .benefitDescription {
+	font-family: var(--font-ibm-plex-mono), monospace;
 	font-size: 1rem;
 	color: #ccc;
 	line-height: 1.4;
@@ -461,6 +557,10 @@
 	.features {
 		grid-template-columns: 1fr;
 		gap: 1rem;
+
+		&.featuresMobile {
+			display: block;
+		}
 	}
 
 	.featureCard {
