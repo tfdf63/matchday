@@ -3,6 +3,29 @@ Options -Indexes
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    # Запрет доступа к корневым директориям
     RewriteRule ^images/$ - [F,L]
     RewriteRule ^sector/$ - [F,L]
+    
+    # Запрет доступа к конкретным директориям изображений
+    RewriteRule ^images/stadium/$ - [F,L]
+    RewriteRule ^images/posters/$ - [F,L]
+    RewriteRule ^images/sector/$ - [F,L]
+    RewriteRule ^images/sector/gallery/$ - [F,L]
+    RewriteRule ^images/sector/shema-stadium/$ - [F,L]
+    RewriteRule ^images/sector/business-club/$ - [F,L]
+    RewriteRule ^images/players/$ - [F,L]
+    RewriteRule ^images/merch/$ - [F,L]
+    RewriteRule ^images/vip/$ - [F,L]
+    RewriteRule ^images/skybox/$ - [F,L]
+    RewriteRule ^images/slider/$ - [F,L]
+    RewriteRule ^images/tickets/$ - [F,L]
+    RewriteRule ^images/saransk/$ - [F,L]
+    RewriteRule ^images/specialguest/$ - [F,L]
+    RewriteRule ^images/optimized/$ - [F,L]
+    
+    # Запрет доступа к другим служебным директориям
+    RewriteRule ^components/$ - [F,L]
+    RewriteRule ^components/YandexTicket/$ - [F,L]
+    RewriteRule ^videos/$ - [F,L]
 </IfModule>

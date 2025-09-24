@@ -296,7 +296,7 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 				</div>
 			)}
 			{/* Блок Сектора */}
-			{card.subsectors && card.subsectors.length > 0 && (
+			{/* {card.subsectors && card.subsectors.length > 0 && (
 				<div className={styles.sectors}>
 					<h2 className={styles.sectionTitle}>Сектор</h2>
 					<div className={styles.sectorsButtons}>
@@ -312,9 +312,9 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 						))}
 					</div>
 				</div>
-			)}
+			)} */}
 			{/* Схема стадиона */}
-			{card.stadiumSchema && card.stadiumSchema.length > 0 && (
+			{/* {card.stadiumSchema && card.stadiumSchema.length > 0 && (
 				<div className={styles.stadiumSchema}>
 					<Image
 						src={card.stadiumSchema}
@@ -324,7 +324,7 @@ const CardInfo: React.FC<CardInfoProps> = ({ card }) => {
 						className={styles.schemaImage}
 					/>
 				</div>
-			)}
+			)} */}
 			{/* Блок Тарифы */}
 			{/*
 			{card.tariffs && card.tariffs.length > 0 && (

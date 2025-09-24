@@ -1,16 +1,15 @@
 User-agent: *
 Allow: /
 
-# Разрешить индексацию основных страниц
-Allow: /sector/*/
-
 # Запрет индексации служебных файлов
 Disallow: /_next/
 Disallow: /api/
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.map$
-Disallow: /sector/
+
+# Разрешить индексацию основных страниц
+Allow: /sector/*/
 Disallow: /video/
 Disallow: /video/*/
 Disallow: /images/
