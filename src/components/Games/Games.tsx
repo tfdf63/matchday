@@ -4,7 +4,10 @@ import GamesMatch from '../GamesMatch/GamesMatch'
 import games from '@/data/games'
 
 const Games = () => {
-	const remainingGames = games.slice(1, 4) // Берем 3 матча, начиная со второго (индексы 1, 2, 3)
+	const remainingGames = games.slice(1) // Берем все матчи, начиная со второго
+
+	// Отладочная информация
+	console.log('Games remainingGames:', remainingGames)
 
 	return (
 		<div className={styles.games}>

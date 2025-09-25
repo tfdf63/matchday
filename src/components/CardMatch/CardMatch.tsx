@@ -17,6 +17,7 @@ interface CardMatchProps {
 	ticketLink?: string
 	ticketLinkVip?: string
 	fanIdStatus?: string
+	promoType?: 'cup' | 'rpl'
 }
 
 function getShortWeekdayRu(dateStr: string): string {
