@@ -13,6 +13,7 @@ export interface Game {
 		second?: string // Второе повышение цен
 	}
 	fanIdStatus: 'Без fan id' | 'Fan id'
+	promoType?: 'cup' | 'rpl'
 }
 
 const games: Game[] = [
@@ -168,6 +169,7 @@ const games: Game[] = [
 			second: '2025-10-02',
 		},
 		fanIdStatus: 'Fan id',
+		promoType: 'rpl',
 	},
 	{
 		id: '9',
@@ -185,6 +187,7 @@ const games: Game[] = [
 			second: '',
 		},
 		fanIdStatus: 'Fan id',
+		promoType: 'rpl',
 	},
 ]
 

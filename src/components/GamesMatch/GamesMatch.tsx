@@ -23,6 +23,7 @@ interface CardMatchProps {
 		second?: string
 	}
 	fanIdStatus?: string
+	promoType?: 'cup' | 'rpl'
 }
 
 function getShortWeekdayRu(dateStr: string): string {
@@ -67,11 +68,11 @@ const CardMatch: React.FC<CardMatchProps> = ({
 		second: '2025-05-22',
 	},
 	fanIdStatus,
+	promoType,
 }) => {
 	const [isPromoOpen, setPromoOpen] = useState(false)
-	const [isRplPromoOpen, setIsRplPromoOpen] = useState(false)
-	const isCupMatch = leagueInfo?.toLowerCase().includes('кубок')
-	const isRplMatch = leagueInfo?.toLowerCase().includes('премьер-лига')
+	const isCupMatch = promoType === 'cup'
+	const isRplMatch = promoType === 'rpl'
 
 	const isSaranskStadium = stadium === 'Саранск. Мордовия Арена'
 
@@ -126,8 +127,8 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				</Link> */}
 			</div>
 
-			{/* Кнопка промокодов для матчей с Кубком */}
-			{isCupMatch && (
+			{/* Кнопка промокодов */}
+			{(isCupMatch || isRplMatch) && (
 				<ActionButton
 					href='#'
 					title='Промокоды для друзей'
@@ -137,32 +138,15 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				/>
 			)}
 
-			{/* Кнопка промокодов для матчей РПЛ */}
-			{isRplMatch && (
-				<ActionButton
-					href='#'
-					title='Промокоды для друзей'
-					actionType='modal'
-					onModalOpen={() => setIsRplPromoOpen(true)}
-					className={styles.promoButton}
-				/>
-			)}
-
 			<div className={styles.timerWrapper}>
 				<Timer2 priceIncreaseDates={priceIncreaseDates} />
 			</div>
 
-			{/* Модальное окно промокодов для Кубка */}
+			{/* Модальное окно промокодов */}
 			<PromoCodesModal
 				isOpen={isPromoOpen}
 				onClose={() => setPromoOpen(false)}
-			/>
-
-			{/* Модальное окно промокодов для РПЛ */}
-			<PromoCodesModal
-				isOpen={isRplPromoOpen}
-				onClose={() => setIsRplPromoOpen(false)}
-				promoType='rpl'
+				promoType={promoType}
 			/>
 		</div>
 	)

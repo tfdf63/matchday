@@ -21,6 +21,7 @@ const Games = () => {
 						ticketLinkVip={game.ticketLinkVip}
 						priceIncreaseDates={game.priceIncreaseDates}
 						fanIdStatus={game.fanIdStatus}
+						promoType={game.promoType}
 					/>
 				</div>
 			))}

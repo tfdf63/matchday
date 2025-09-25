@@ -298,20 +298,10 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						ticketLinkVip={selectedGame.ticketLinkVip}
 						fanIdStatus={selectedGame.fanIdStatus}
 						leagueInfo={selectedGame.leagueInfo}
+						promoType={selectedGame.promoType}
 					/>
-					{/* Кнопка промокодов для матчей с Кубком */}
-					{selectedGame.leagueInfo?.toLowerCase().includes('кубок') && (
-						<ActionButton
-							href='#'
-							title='Промокоды для друзей'
-							actionType='modal'
-							onModalOpen={() => setPromoOpen(true)}
-							className={styles.promoButton}
-						/>
-					)}
-
-					{/* Кнопка промокодов для матчей РПЛ */}
-					{selectedGame.leagueInfo?.toLowerCase().includes('премьер-лига') && (
+					{/* Кнопка промокодов */}
+					{selectedGame.promoType && (
 						<ActionButton
 							href='#'
 							title='Промокоды для друзей'
@@ -327,6 +317,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 					<PromoCodesModal
 						isOpen={isPromoOpen}
 						onClose={() => setPromoOpen(false)}
+						promoType={selectedGame.promoType}
 					/>
 					{/* <SpecialGuestModal
 						isOpen={isSpecialGuestOpen}
