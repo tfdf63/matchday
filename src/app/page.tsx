@@ -3,7 +3,6 @@ import { Metadata } from 'next'
 import MainPageClient from './MainPageClient'
 
 export const metadata: Metadata = {
-	title: 'ФК Акрон - Билеты на матчи',
 	description:
 		'Купить билеты на матчи ФК Акрон в Самаре. Расписание игр, абонементы, VIP-ложи. Официальный сайт клуба с актуальными ценами и бронированием.',
 	keywords:
