@@ -12,6 +12,7 @@ interface CardMatchProps {
 	awayTeam?: string
 	date?: string
 	time?: string
+	timeLocal?: string
 	stadium?: string
 	className?: string
 	ticketLink?: string
@@ -52,6 +53,7 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	awayTeam = 'Команда 2',
 	date = '12 марта',
 	time = '19:30',
+	timeLocal,
 	stadium = 'Стадион',
 	className,
 	ticketLink = '#',
@@ -91,7 +93,15 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				<span>
 					{date} ({getShortWeekdayRu(date)})
 				</span>
-				<span>{time}</span>
+				<div>
+					<span>{time}</span>
+					{timeLocal && (
+						<span>
+							<br />
+							{timeLocal}
+						</span>
+					)}
+				</div>
 			</div>
 			<div className={styles.info}>
 				<span className={isSaranskStadium ? styles.blinkingStadium : ''}>

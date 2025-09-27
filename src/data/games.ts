@@ -4,6 +4,7 @@ export interface Game {
 	awayTeam: string
 	date: string
 	time: string
+	timeLocal?: string // Местное время для матчей в других городах
 	stadium: string
 	ticketLink: string
 	ticketLinkVip?: string
@@ -177,6 +178,7 @@ const games: Game[] = [
 		awayTeam: 'Локомотив',
 		date: '26 октября',
 		time: 'SAMT 14:00',
+		timeLocal: 'MSK 13:00',
 		stadium: 'Саранск. Мордовия Арена',
 		ticketLink:
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@43608494?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=42',

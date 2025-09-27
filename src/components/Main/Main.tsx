@@ -293,6 +293,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						awayTeam={selectedGame.awayTeam}
 						date={selectedGame.date}
 						time={selectedGame.time}
+						timeLocal={selectedGame.timeLocal}
 						stadium={selectedGame.stadium}
 						ticketLink={selectedGame.ticketLink}
 						ticketLinkVip={selectedGame.ticketLinkVip}
