@@ -93,14 +93,9 @@ const CardMatch: React.FC<CardMatchProps> = ({
 				<span>
 					{date} ({getShortWeekdayRu(date)})
 				</span>
-				<div>
+				<div className={styles.time}>
 					<span>{time}</span>
-					{timeLocal && (
-						<span>
-							<br />
-							{timeLocal}
-						</span>
-					)}
+					{timeLocal && <span>{timeLocal}</span>}
 				</div>
 			</div>
 			<div className={styles.info}>

@@ -154,24 +154,24 @@ const games: Game[] = [
 	// 	},
 	// 	fanIdStatus: 'Fan id',
 	// },
-	{
-		id: '8',
-		homeTeam: 'Акрон',
-		awayTeam: 'Зенит',
-		date: '4 октября',
-		time: 'SAMT 14:00',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@42315054?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkVip: '',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 11 ТУР',
-		priceIncreaseDates: {
-			first: '',
-			second: '2025-10-02',
-		},
-		fanIdStatus: 'Fan id',
-		promoType: 'rpl',
-	},
+	// {
+	// 	id: '8',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'Зенит',
+	// 	date: '4 октября',
+	// 	time: 'SAMT 14:00',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@42315054?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkVip: '',
+	// 	leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 11 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '',
+	// 		second: '2025-10-02',
+	// 	},
+	// 	fanIdStatus: 'Fan id',
+	// 	promoType: 'rpl',
+	// },
 	{
 		id: '9',
 		homeTeam: 'Акрон',
