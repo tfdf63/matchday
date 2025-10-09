@@ -4,6 +4,10 @@ import React from 'react'
 import Image from 'next/image'
 import ActionButton from '@/components/ActionButton'
 import styles from './SaranskClient.module.scss'
+import Marquee from '@/components/Marquee/Marquee'
+import StarPlayer from '@/components/StarPlayer'
+import Merch from '@/components/Merch'
+import FanCard from '@/components/FanCard/FanCard'
 
 const SaranskClient: React.FC = () => {
 	const [isMobile, setIsMobile] = React.useState(false)
@@ -66,6 +70,21 @@ const SaranskClient: React.FC = () => {
 					атмосферой и поддержкой наших красно-черных!
 				</p>
 			</div>
+
+			<Marquee
+				text='Легенда российского футбола × Лучший бомбардир в истории сборной ×'
+				duration={50}
+			/>
+			<StarPlayer />
+
+			<Marquee
+				text='БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × 
+        БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × БУДЬ 
+        СТИЛЬНЫМ × БУДЬ С АКРОНОМ × '
+				duration={50}
+			/>
+			<Merch />
+			<FanCard />
 
 			{/* Большая кнопка Купить билеты */}
 			<div className={styles.bigButton}>
