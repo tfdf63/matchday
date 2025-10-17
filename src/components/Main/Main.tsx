@@ -8,6 +8,7 @@ import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
 import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
 import ActionButton from '../ActionButton/ActionButton'
+import FonBus from '../FonBus/FonBus'
 // import SpecialGuestModal from '../SpecialGuestModal'
 
 // URL видеофайлов для кэширования
@@ -127,6 +128,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 	const [supportsWebPFormat, setSupportsWebPFormat] = useState<boolean>(true)
 	const [isPromoOpen, setPromoOpen] = useState(false)
+	const [isFonBusVisible, setIsFonBusVisible] = useState(false)
 	// const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
 
 	// Предзагрузка видео при монтировании компонента
@@ -244,6 +246,15 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 		}
 	}, [isMobile]) // Добавляем isMobile в зависимости, так как он используется внутри эффекта
 
+	// Эффект для показа FonBus с задержкой
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsFonBusVisible(true)
+		}, 1000) // Показываем через 1 секунду после загрузки
+
+		return () => clearTimeout(timer)
+	}, [])
+
 	return (
 		<div className={styles.main}>
 			{/* Компонент специального гостя */}
@@ -320,6 +331,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						onClose={() => setPromoOpen(false)}
 						promoType={selectedGame.promoType}
 					/>
+					<FonBus isVisible={isFonBusVisible} />
 					{/* <SpecialGuestModal
 						isOpen={isSpecialGuestOpen}
 						onClose={() => setSpecialGuestOpen(false)}
