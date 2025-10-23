@@ -124,6 +124,64 @@
 	padding: 0.8rem 2rem;
 }
 
+// Баннер для десктопа - под таймером
+.saranskBannerDesktop {
+	display: none;
+	width: 100%;
+	max-width: none;
+	margin: 3rem auto 0 auto;
+	text-decoration: none;
+	transition: transform 0.3s ease;
+	cursor: pointer;
+	text-align: center;
+
+	&:hover {
+		transform: scale(1.02);
+	}
+}
+
+.saranskBannerImageDesktop {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+	transition: box-shadow 0.3s ease;
+
+	&:hover {
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+	}
+}
+
+// Баннер для мобильных устройств - под таймером
+.saranskBannerMobile {
+	display: block;
+	width: 100%;
+	max-width: 40rem;
+	margin: 1rem auto 0 auto;
+	text-decoration: none;
+	transition: transform 0.3s ease;
+	cursor: pointer;
+	text-align: center;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+.saranskBannerImageMobile {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	transition: box-shadow 0.3s ease;
+
+	&:hover {
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+	}
+}
+
 .cuptourImage {
 	width: 100%;
 	max-width: 20rem;
@@ -155,6 +213,19 @@
 	.promoButton {
 		padding: 0.6rem 1.5rem;
 	}
+
+	.saranskBannerDesktop {
+		display: none !important;
+	}
+
+	.saranskBannerMobile {
+		max-width: 36rem;
+		margin: 0.8rem auto 0 auto;
+	}
+
+	.saranskBannerImageMobile {
+		border-radius: 6px;
+	}
 }
 
 @media (min-width: 769px) {
@@ -163,6 +234,15 @@
 	}
 
 	.backgroundVideoMobile {
+		display: none !important;
+	}
+
+	.saranskBannerDesktop {
+		display: block !important;
+		margin: 3rem auto 0 auto;
+	}
+
+	.saranskBannerMobile {
 		display: none !important;
 	}
 }

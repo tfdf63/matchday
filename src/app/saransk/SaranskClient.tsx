@@ -33,7 +33,11 @@ const SaranskClient: React.FC = () => {
 			{/* Фото */}
 			<div className={styles.heroImage}>
 				<Image
-					src='/images/saransk/mordovia-arena.jpg'
+					src={
+						isMobile
+							? '/images/saransk/banner3.webp'
+							: '/images/saransk/banner3.png'
+					}
 					alt='Стадион Мордовия Арена'
 					width={1200}
 					height={600}
@@ -70,6 +74,17 @@ const SaranskClient: React.FC = () => {
 					спортивное событие на стадионе &quot;Мордовия Арена&quot; с отличной
 					атмосферой и поддержкой наших красно-черных!
 				</p>
+			</div>
+
+			{/* Схема стадиона */}
+			<div className={styles.bannerSchemeContainer}>
+				<Image
+					src='/images/saransk/banner_scheme.webp'
+					alt='Схема стадиона Мордовия Арена'
+					width={1200}
+					height={600}
+					className={styles.bannerSchemeImage}
+				/>
 			</div>
 
 			<Marquee
