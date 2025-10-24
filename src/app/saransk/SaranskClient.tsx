@@ -30,7 +30,7 @@ const SaranskClient: React.FC = () => {
 		const images = djContainerRef.current?.querySelectorAll('.djImage')
 		if (!images) return
 
-		const handleWheel = (e: WheelEvent) => {
+		const handleWheel = (e: Event) => {
 			// Предотвращаем перехват событий прокрутки изображениями
 			e.stopPropagation()
 		}
