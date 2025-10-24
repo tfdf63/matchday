@@ -11,6 +11,7 @@ import FanCard from '@/components/FanCard/FanCard'
 
 const SaranskClient: React.FC = () => {
 	const [isMobile, setIsMobile] = React.useState(false)
+	const djContainerRef = React.useRef<HTMLDivElement>(null)
 
 	// Определяем мобильное устройство
 	React.useEffect(() => {
@@ -23,6 +24,46 @@ const SaranskClient: React.FC = () => {
 
 		return () => window.removeEventListener('resize', checkMobile)
 	}, [])
+
+	// Обработчики событий для предотвращения блокировки прокрутки при hover на изображениях
+	React.useEffect(() => {
+		const images = djContainerRef.current?.querySelectorAll('.djImage')
+		if (!images) return
+
+		const handleWheel = (e: WheelEvent) => {
+			// Предотвращаем перехват событий прокрутки изображениями
+			e.stopPropagation()
+		}
+
+		images.forEach(image => {
+			image.addEventListener('wheel', handleWheel, { passive: false })
+		})
+
+		return () => {
+			images.forEach(image => {
+				image.removeEventListener('wheel', handleWheel)
+			})
+		}
+	}, [])
+
+	// Функции для прокрутки
+	const scrollLeft = () => {
+		if (djContainerRef.current) {
+			djContainerRef.current.scrollBy({
+				left: -320,
+				behavior: 'smooth',
+			})
+		}
+	}
+
+	const scrollRight = () => {
+		if (djContainerRef.current) {
+			djContainerRef.current.scrollBy({
+				left: 320,
+				behavior: 'smooth',
+			})
+		}
+	}
 
 	const buttonHref =
 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@43608494?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=42'
@@ -88,7 +129,116 @@ const SaranskClient: React.FC = () => {
 				duration={50}
 			/>
 			<StarPlayer />
+			{/* Информация о DJ*/}
+			<div className={styles.djMarqueeWrapper}>
+				<Marquee
+					text='DJ FEST × DJ FEST × DJ FEST × DJ FEST × DJ FEST × DJ FEST × DJ FEST × DJ FEST × DJ FEST × '
+					duration={50}
+				/>
+			</div>
+			{/* Секция с описанием DJ FEST */}
+			<div className={styles.djDescriptionSection}>
+				<h2 className={styles.djDescriptionTitle}>
+					DJ FEST перед стартовым свистком на «Мордовия Арене»
+				</h2>
+				<p className={styles.djDescriptionText}>
+					Мы впервые сыграем в Саранске в роли хозяев поля. И по этому поводу
+					решили закатить вечеринку.
+				</p>
+				<p className={styles.djDescriptionText}>
+					В день игры мастера звука зададут настроение и объединят трибуны
+					ритмом. Готовимся к жаркой вписке!
+				</p>
+			</div>
 
+			<div className={styles.djSection}>
+				<div className={styles.djHeaderRow}>
+					{!isMobile && (
+						<div className={styles.navigationArrows}>
+							<button
+								className={styles.arrowButton}
+								onClick={scrollLeft}
+								aria-label='Прокрутить влево'
+							>
+								<svg
+									width='24'
+									height='24'
+									viewBox='0 0 24 24'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'
+								>
+									<path
+										d='M15 18L9 12L15 6'
+										stroke='currentColor'
+										strokeWidth='2'
+										strokeLinecap='round'
+										strokeLinejoin='round'
+									/>
+								</svg>
+							</button>
+							<button
+								className={styles.arrowButton}
+								onClick={scrollRight}
+								aria-label='Прокрутить вправо'
+							>
+								<svg
+									width='24'
+									height='24'
+									viewBox='0 0 24 24'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'
+								>
+									<path
+										d='M9 18L15 12L9 6'
+										stroke='currentColor'
+										strokeWidth='2'
+										strokeLinecap='round'
+										strokeLinejoin='round'
+									/>
+								</svg>
+							</button>
+						</div>
+					)}
+				</div>
+				<div className={styles.djImagesContainer} ref={djContainerRef}>
+					<div className={styles.djImage}>
+						<Image
+							src='/images/saransk/DJ1.webp'
+							alt='DJ 1'
+							width={300}
+							height={500}
+							className={styles.djImageItem}
+						/>
+					</div>
+					<div className={styles.djImage}>
+						<Image
+							src='/images/saransk/DJ2.webp'
+							alt='DJ 2'
+							width={300}
+							height={500}
+							className={styles.djImageItem}
+						/>
+					</div>
+					<div className={styles.djImage}>
+						<Image
+							src='/images/saransk/DJ3.webp'
+							alt='DJ 3'
+							width={300}
+							height={500}
+							className={styles.djImageItem}
+						/>
+					</div>
+					<div className={styles.djImage}>
+						<Image
+							src='/images/saransk/DJ4.webp'
+							alt='DJ 4'
+							width={300}
+							height={500}
+							className={styles.djImageItem}
+						/>
+					</div>
+				</div>
+			</div>
 			<Marquee
 				text='БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × 
         БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × БУДЬ 
