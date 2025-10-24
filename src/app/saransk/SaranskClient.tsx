@@ -33,11 +33,7 @@ const SaranskClient: React.FC = () => {
 			{/* Фото */}
 			<div className={styles.heroImage}>
 				<Image
-					src={
-						isMobile
-							? '/images/saransk/banner3.webp'
-							: '/images/saransk/banner3.png'
-					}
+					src='/images/saransk/mordovia-arena.jpg'
 					alt='Стадион Мордовия Арена'
 					width={1200}
 					height={600}
