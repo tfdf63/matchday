@@ -1,8 +1,6 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
 import styles from './Main.module.scss'
 import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
@@ -328,17 +326,6 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 					<div className={styles.timerWrapper}>
 						<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
 					</div>
-					{/* Баннер Саранска для мобильных устройств - под таймером */}
-					<Link href='/saransk' className={styles.saranskBannerMobile}>
-						<Image
-							src='/images/saransk/banner11.webp'
-							alt='Саранск'
-							width={990}
-							height={876}
-							className={styles.saranskBannerImageMobile}
-							priority={false}
-						/>
-					</Link>
 					<PromoCodesModal
 						isOpen={isPromoOpen}
 						onClose={() => setPromoOpen(false)}
@@ -350,17 +337,6 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						onClose={() => setSpecialGuestOpen(false)}
 					/> */}
 				</div>
-				{/* Баннер Саранска для десктопа - под таймером */}
-				<Link href='/saransk' className={styles.saranskBannerDesktop}>
-					<Image
-						src='/images/saransk/banner1.webp'
-						alt='Саранск'
-						width={3600}
-						height={1800}
-						className={styles.saranskBannerImageDesktop}
-						priority={false}
-					/>
-				</Link>
 			</div>
 		</div>
 	)
