@@ -2,7 +2,7 @@
 
 // import React, { useState, useEffect } from 'react'
 import Main from '@/components/Main/Main'
-// import Games from '@/components/Games/Games'
+import Games from '@/components/Games/Games'
 import StarPlayer from '@/components/StarPlayer'
 // import Players from '@/components/Players/Players'
 import Merch from '@/components/Merch/Merch'
@@ -16,8 +16,9 @@ import SubscriptionSlider from '@/components/SubscriptionSlider/SubscriptionSlid
 import TicketSlider from '@/components/TicketSlider'
 import { ticketCards } from '@/data/tickets'
 import FanCard from '@/components/FanCard/FanCard'
+import CardEvent from '@/components/CardEvent'
+import CardRules from '@/components/CardRules'
 // import CupTourModal from '@/components/CupTourModal/CupTourModal'
-// import Menu from '@/components/Menu'
 
 const MainPageClient: React.FC = () => {
 	// const [isCupTourModalOpen, setCupTourModalOpen] = useState(false)
@@ -34,18 +35,23 @@ const MainPageClient: React.FC = () => {
 
 	return (
 		<>
-			{/* <Menu /> */}
 			{/* <CupTourModal
 				isOpen={isCupTourModalOpen}
 				onClose={() => setCupTourModalOpen(false)}
 			/> */}
 			<Main />
-			{/* <Marquee
+			<Marquee
 				text='БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × 
         БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ ×'
 				duration={50}
 			/>
-			<Games /> */}
+			<Games />
+			<Marquee
+				text='КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × 
+        КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ ×'
+				duration={80}
+			/>
+			<CardEvent />
 			<div id='ticket-program'>
 				<Marquee
 					text='БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА × БИЛЕТНАЯ ПРОГРАММА ×'
@@ -75,6 +81,11 @@ const MainPageClient: React.FC = () => {
 			{/* <YandexTicket /> */}
 			{/* <Slider /> */}
 			{/* <PricingTables /> */}
+			<Marquee
+				text='Не были на футболе? основные правила игры × Не были на футболе?основные правила игры × Не были на футболе? основные правила игры ×'
+				duration={80}
+			/>
+			<CardRules limit={4} showViewAllButton={true} />
 			<Marquee
 				text='БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × 
         БУДЬ СТИЛЬНЫМ × БУДЬ С АКРОНОМ × БУДЬ 

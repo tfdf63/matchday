@@ -1,0 +1,56 @@
+.cardEventSection {
+	padding: 60px 20px;
+	/* background: #000; */
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		padding: 40px 20px;
+	}
+}
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.cardsGrid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	justify-content: center;
+
+	// ПК версия - карточки занимают всю ширину экрана
+	@media (min-width: 769px) {
+		gap: 40px;
+
+		> * {
+			flex: 1 1 calc(25% - 30px); // 4 карточки в ряд с учетом gap
+			min-width: 280px;
+			max-width: 340px;
+		}
+	}
+
+	// Мобильная версия - 2 карточки в ряд
+	@media (max-width: 768px) {
+		gap: 20px;
+		justify-content: space-between;
+
+		> * {
+			flex: 1 1 calc(50% - 10px); // 2 карточки в ряд с учетом gap
+			max-width: calc(50% - 10px);
+		}
+	}
+
+	@media (max-width: 480px) {
+		gap: 15px;
+
+		> * {
+			flex: 1 1 calc(50% - 7.5px);
+			max-width: calc(50% - 7.5px);
+		}
+	}
+}
+
+.eventCard {
+	// Дополнительные стили для карточек событий, если нужно
+}

@@ -17,6 +17,7 @@ interface CardMatchProps {
 	className?: string
 	ticketLink?: string
 	ticketLinkVip?: string
+	ticketLinkSkybox?: string
 	fanIdStatus?: string
 	promoType?: 'cup' | 'rpl'
 }
@@ -57,8 +58,9 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	stadium = 'Стадион',
 	className,
 	ticketLink = '#',
+	ticketLinkVip = '#',
+	ticketLinkSkybox = '#',
 	fanIdStatus,
-	// ticketLinkVip = '#',
 }) => {
 	const isSaranskStadium = stadium === 'Саранск. Мордовия Арена'
 
@@ -105,16 +107,35 @@ const CardMatch: React.FC<CardMatchProps> = ({
 			</div>
 
 			<div className={styles.buttonsContainer}>
-				<ActionButton
-					href={ticketLink}
-					title='Купить билеты'
-					actionType='link'
-					external={true}
-					className={styles.button}
-				/>
-				{/* <Link href={ticketLinkVip} className={styles.button}>
-					VIP A106
-				</Link> */}
+				{ticketLink && ticketLink !== '#' && (
+					<ActionButton
+						href={ticketLink}
+						title='Купить билеты'
+						actionType='link'
+						external={true}
+						className={`${styles.button} ${styles.buttonMain}`}
+					/>
+				)}
+				{ticketLinkVip && ticketLinkVip !== '#' && (
+					<Link
+						href={ticketLinkVip}
+						className={`${styles.button} ${styles.buttonVip}`}
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						VIP
+					</Link>
+				)}
+				{ticketLinkSkybox && ticketLinkSkybox !== '#' && (
+					<Link
+						href={ticketLinkSkybox}
+						className={`${styles.button} ${styles.buttonSkybox}`}
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						Ложи
+					</Link>
+				)}
 			</div>
 		</div>
 	)

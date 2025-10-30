@@ -23,6 +23,7 @@ const Games = () => {
 						stadium={game.stadium}
 						ticketLink={game.ticketLink}
 						ticketLinkVip={game.ticketLinkVip}
+						ticketLinkSkybox={game.ticketLinkSkybox}
 						priceIncreaseDates={game.priceIncreaseDates}
 						fanIdStatus={game.fanIdStatus}
 						promoType={game.promoType}

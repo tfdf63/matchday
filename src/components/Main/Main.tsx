@@ -8,6 +8,8 @@ import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
 import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
 import ActionButton from '../ActionButton/ActionButton'
+import NavCard from '../NavCard'
+import { Ticket, Navigation } from 'lucide-react'
 // import FonBus from '../FonBus/FonBus'
 // import SpecialGuestModal from '../SpecialGuestModal'
 
@@ -308,6 +310,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						stadium={selectedGame.stadium}
 						ticketLink={selectedGame.ticketLink}
 						ticketLinkVip={selectedGame.ticketLinkVip}
+						ticketLinkSkybox={selectedGame.ticketLinkSkybox}
 						fanIdStatus={selectedGame.fanIdStatus}
 						leagueInfo={selectedGame.leagueInfo}
 						promoType={selectedGame.promoType}
@@ -326,6 +329,13 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 					<div className={styles.timerWrapper}>
 						<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
 					</div>
+
+					{/* Навигационные карточки */}
+					<div className={styles.navCardsContainer}>
+						<NavCard title='Тарифы промокоды' href='/bonuses' icon={Ticket} />
+						<NavCard title='Как добраться?' href='/road' icon={Navigation} />
+					</div>
+
 					<PromoCodesModal
 						isOpen={isPromoOpen}
 						onClose={() => setPromoOpen(false)}
