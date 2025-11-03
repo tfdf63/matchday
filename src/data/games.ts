@@ -1,16 +1,16 @@
 export interface Game {
 	id: string
-	homeTeam: string
-	awayTeam: string
-	date: string
-	time: string
+	homeTeam?: string
+	awayTeam?: string
+	date?: string
+	time?: string
 	timeLocal?: string // Местное время для матчей в других городах
-	stadium: string
-	ticketLink: string
+	stadium?: string
+	ticketLink?: string
 	ticketLinkVip?: string
 	ticketLinkSkybox?: string
-	leagueInfo: string
-	priceIncreaseDates: {
+	leagueInfo?: string
+	priceIncreaseDates?: {
 		first?: string // Первое повышение цен
 		second?: string // Второе повышение цен
 	}
@@ -215,7 +215,7 @@ const games: Game[] = [
 		promoType: 'rpl',
 	},
 	{
-		id: '11',
+		id: '12',
 		homeTeam: 'Акрон',
 		awayTeam: 'Пари НН',
 		date: '29 ноября',

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './Timer2.module.scss'
 
 interface Timer2Props {
-	priceIncreaseDates: {
+	priceIncreaseDates?: {
 		first?: string
 		second?: string
 	}
@@ -15,6 +15,8 @@ const Timer2: React.FC<Timer2Props> = ({ priceIncreaseDates }) => {
 	const [isSecondPassed, setIsSecondPassed] = useState(false)
 
 	useEffect(() => {
+		if (!priceIncreaseDates) return
+
 		const checkDates = () => {
 			const now = new Date()
 			const firstDate = priceIncreaseDates.first
@@ -58,6 +60,8 @@ const Timer2: React.FC<Timer2Props> = ({ priceIncreaseDates }) => {
 			month: 'long',
 		})
 	}
+
+	if (!priceIncreaseDates) return null
 
 	return (
 		<div className={styles.timer}>

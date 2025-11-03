@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
 import styles from './Main.module.scss'
 import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
@@ -289,18 +290,34 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				)}
 				<source src='/videos/bgmainmob-optimized-fast.mp4' type='video/mp4' />
 			</video>
+			{/* Баннер абонемента для десктопа */}
+			<Link href='/benchi50' className={styles.abonementBannerDesktop}>
+				<img
+					src='/images/abon.webp'
+					alt='Абонемент Ноябрь'
+					className={styles.abonementImageDesktop}
+				/>
+			</Link>
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
 					{/* <div className={styles.specialGuestLink}>
-						<button
-							className={styles.specialGuestButton}
-							onClick={() => setSpecialGuestOpen(true)}
-						>
-							<span className={styles.guestTitle}>Специальные гости</span>
-							<br />
-							<span className={styles.guestNames}>Слава и Настя Морозовы</span>
-						</button>
-					</div> */}
+					<button
+						className={styles.specialGuestButton}
+						onClick={() => setSpecialGuestOpen(true)}
+					>
+						<span className={styles.guestTitle}>Специальные гости</span>
+						<br />
+						<span className={styles.guestNames}>Слава и Настя Морозовы</span>
+					</button>
+				</div> */}
+					{/* Баннер абонемента для мобильного */}
+					<Link href='/benchi50' className={styles.abonementBannerMobile}>
+						<img
+							src='/images/abon.webp'
+							alt='Абонемент Ноябрь'
+							className={styles.abonementImageMobile}
+						/>
+					</Link>
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}
@@ -326,9 +343,11 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						/>
 					)}
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
-					<div className={styles.timerWrapper}>
-						<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
-					</div>
+					{selectedGame.priceIncreaseDates && (
+						<div className={styles.timerWrapper}>
+							<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
+						</div>
+					)}
 
 					{/* Навигационные карточки */}
 					<div className={styles.navCardsContainer}>
