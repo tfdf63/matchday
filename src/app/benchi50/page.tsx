@@ -3,10 +3,10 @@ import { Metadata } from 'next'
 import Benchi50Client from './Benchi50Client'
 
 export const metadata: Metadata = {
-	title: 'Скамейка 50',
+	title: 'Абонемент',
 	description:
-		'Абонемент "Скамейка 50" - специальное предложение для болельщиков ФК Акрон',
-	keywords: 'Абонемент, Скамейка 50, ФК Акрон, футбол, билеты',
+		'Абонемент "Ноябрь" - специальное предложение для болельщиков ФК Акрон',
+	keywords: 'Абонемент, Ноябрь, ФК Акрон, футбол, билеты, 11.11',
 }
 
 const Benchi50Page: React.FC = () => {
@@ -14,4 +14,3 @@ const Benchi50Page: React.FC = () => {
 }
 
 export default Benchi50Page
-

@@ -291,13 +291,18 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				<source src='/videos/bgmainmob-optimized-fast.mp4' type='video/mp4' />
 			</video>
 			{/* Баннер абонемента для десктопа */}
-			<Link href='/benchi50' className={styles.abonementBannerDesktop}>
-				<img
-					src='/images/abon.webp'
-					alt='Абонемент Ноябрь'
-					className={styles.abonementImageDesktop}
-				/>
-			</Link>
+			<div className={styles.abonementBannerWrapperDesktop}>
+				<Link href='/benchi50' className={styles.abonementBannerDesktop}>
+					<img
+						src='/images/abon.webp'
+						alt='Абонемент Ноябрь'
+						className={styles.abonementImageDesktop}
+					/>
+				</Link>
+				<p className={styles.abonementDate}>
+					на абонемент действует до 11.11.2025 | жми на баннер
+				</p>
+			</div>
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
 					{/* <div className={styles.specialGuestLink}>
@@ -311,13 +316,18 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 					</button>
 				</div> */}
 					{/* Баннер абонемента для мобильного */}
-					<Link href='/benchi50' className={styles.abonementBannerMobile}>
-						<img
-							src='/images/abon.webp'
-							alt='Абонемент Ноябрь'
-							className={styles.abonementImageMobile}
-						/>
-					</Link>
+					<div className={styles.abonementBannerWrapperMobile}>
+						<Link href='/benchi50' className={styles.abonementBannerMobile}>
+							<img
+								src='/images/abon.webp'
+								alt='Абонемент Ноябрь'
+								className={styles.abonementImageMobile}
+							/>
+						</Link>
+						<p className={styles.abonementDate}>
+							на абонемент действует до 11.11.2025 | жми на баннер
+						</p>
+					</div>
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}

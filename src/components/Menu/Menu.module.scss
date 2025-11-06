@@ -24,7 +24,7 @@
 	border-radius: 4px;
 
 	&:hover {
-		color: #b2061c;
+		color: var(--primary-red);
 		background-color: rgba(178, 6, 28, 0.1);
 		transform: translateY(-1px);
 	}

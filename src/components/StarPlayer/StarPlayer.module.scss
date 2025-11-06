@@ -173,7 +173,7 @@
 
 	&::before {
 		content: '✓';
-		color: #b2061c;
+		color: var(--primary-red);
 		margin-right: 0.5rem;
 		font-weight: bold;
 	}

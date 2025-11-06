@@ -79,9 +79,9 @@
 .promoButton {
 	font-family: 'Akademia', sans-serif;
 	padding: 0.8rem 2rem;
-	background-color: #b2061c;
+	background-color: var(--primary-red);
 	color: #fff;
-	border: 4px solid #b2061c;
+	border: 4px solid var(--primary-red);
 	font-size: 1.2rem;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -99,7 +99,7 @@
 
 	&:hover {
 		background-color: #020b12;
-		border-color: #990517;
+		border-color: var(--primary-red-hover);
 	}
 
 	@media (max-width: 768px) {
@@ -113,9 +113,9 @@
 	flex: 1 1 auto;
 	min-width: 0;
 	height: 50px !important;
-	background-color: #b2061c;
+	background-color: var(--primary-red);
 	color: #fff;
-	border: 4px solid #b2061c;
+	border: 4px solid var(--primary-red);
 	font-size: 1.2rem;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -131,7 +131,7 @@
 
 	&:hover {
 		background-color: #020b12;
-		border-color: #990517;
+		border-color: var(--primary-red-hover);
 	}
 }
 
@@ -176,7 +176,7 @@
 	align-items: center;
 	justify-content: center;
 	height: 40px;
-	background: #b2061c;
+	background: var(--primary-red);
 	color: #fff;
 	font-size: 0.95rem;
 	font-family: var(--font-ibm-plex-mono), monospace;
@@ -203,7 +203,7 @@
 
 // Специальные стили для стадиона "Саранск. Мордовия Арена"
 .saranskCard {
-	border: 2px dashed #b2061c !important;
+	border: 2px dashed var(--primary-red) !important;
 	padding: 8px;
 }
 

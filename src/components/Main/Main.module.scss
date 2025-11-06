@@ -74,6 +74,11 @@
 	height: 100%;
 	// transform: translateY(-10vh); // Поднимаем всю группу выше
 
+	@media (max-width: 768px) {
+		justify-content: center;
+		align-items: center;
+	}
+
 	@media (min-width: 769px) {
 		padding-top: 8rem; // Отступ для баннера абонемента
 	}
@@ -103,6 +108,15 @@
 	transition: transform 0.3s ease;
 	z-index: 15; // Повышаем z-index для информации о матче
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@media (max-width: 768px) {
+		justify-content: center;
+		align-items: center;
+	}
 
 	&:hover {
 		transform: scale(1.1);
@@ -115,7 +129,7 @@
 }
 
 // Баннер абонемента для десктопа - по ширине карточки матча вверху
-.abonementBannerDesktop {
+.abonementBannerWrapperDesktop {
 	display: none;
 
 	@media (min-width: 769px) {
@@ -127,12 +141,17 @@
 		width: 100%;
 		max-width: 28rem;
 		z-index: 100;
-		cursor: pointer;
-		transition: opacity 0.3s ease;
+	}
+}
 
-		&:hover {
-			opacity: 0.9;
-		}
+.abonementBannerDesktop {
+	width: 100%;
+	cursor: pointer;
+	transition: opacity 0.3s ease;
+	display: block;
+
+	&:hover {
+		opacity: 0.9;
 	}
 }
 
@@ -144,20 +163,24 @@
 }
 
 // Баннер абонемента для мобильного - внутри featuredMatch
-.abonementBannerMobile {
+.abonementBannerWrapperMobile {
 	width: 100%;
 	max-width: 20rem;
-	margin: 0 auto 1.5rem auto;
+	margin: 0 auto 3rem auto;
+
+	@media (min-width: 769px) {
+		display: none;
+	}
+}
+
+.abonementBannerMobile {
+	width: 100%;
 	display: block;
 	cursor: pointer;
 	transition: transform 0.3s ease;
 
 	&:hover {
 		transform: scale(1.02);
-	}
-
-	@media (min-width: 769px) {
-		display: none;
 	}
 }
 
@@ -167,6 +190,21 @@
 	object-fit: contain;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 	transition: box-shadow 0.3s ease;
+}
+
+.abonementDate {
+	font-family: 'Akademia', sans-serif;
+	font-size: 0.9rem;
+	color: #fff;
+	text-align: center;
+	margin-top: 0.5rem;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+	opacity: 0.9;
+
+	@media (max-width: 768px) {
+		font-size: 0.8rem;
+		margin-top: 0.4rem;
+	}
 }
 
 .timerWrapper {

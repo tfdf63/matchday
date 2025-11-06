@@ -18,6 +18,7 @@ import { ticketCards } from '@/data/tickets'
 import FanCard from '@/components/FanCard/FanCard'
 import CardEvent from '@/components/CardEvent'
 import CardRules from '@/components/CardRules'
+import Offer from '@/components/Offer'
 // import CupTourModal from '@/components/CupTourModal/CupTourModal'
 
 const MainPageClient: React.FC = () => {
@@ -40,6 +41,17 @@ const MainPageClient: React.FC = () => {
 				onClose={() => setCupTourModalOpen(false)}
 			/> */}
 			<Main />
+			<Offer
+				items={[
+					{
+						text: 'детский тариф + промокод AKRRPL20 =\u00A0скидка до 70%',
+						highlight: true,
+					},
+					{ text: 'скидка 50% для детей 7-14 лет', highlight: true },
+					{ text: 'детям до 6 лет бесплатно', highlight: true },
+				]}
+				href='/bonuses'
+			/>
 			<Marquee
 				text='БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × 
         БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ ×'
@@ -82,7 +94,7 @@ const MainPageClient: React.FC = () => {
 			{/* <Slider /> */}
 			{/* <PricingTables /> */}
 			<Marquee
-				text='Не были на футболе? основные правила игры × Не были на футболе?основные правила игры × Не были на футболе? основные правила игры ×'
+				text='Не были на футболе? основные правила игры × Не были на футболе? основные правила игры × Не были на футболе? основные правила игры ×'
 				duration={80}
 			/>
 			<CardRules limit={4} showViewAllButton={true} />

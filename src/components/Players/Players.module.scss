@@ -145,7 +145,7 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
-	color: #b2061c;
+	color: var(--primary-red);
 	background: rgba(255, 255, 255, 0.9);
 	padding: 0.2rem 0.5rem;
 	display: inline-block;
@@ -156,7 +156,7 @@
 	align-items: center;
 	justify-content: center;
 	height: 40px;
-	background: #b2061c;
+	background: var(--primary-red);
 	color: #fff;
 	font-size: 2rem;
 	font-family: Akademia, sans;
@@ -202,7 +202,7 @@
 }
 
 .title {
-	background: #b2061c;
+	background: var(--primary-red);
 	color: white;
 	padding: 0.3rem 0.6rem;
 	font-size: 1rem;

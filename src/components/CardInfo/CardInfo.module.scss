@@ -23,9 +23,9 @@
 .customButton {
 	font-family: 'Akademia', sans-serif;
 	padding: 0.8rem 2rem;
-	background-color: #b2061c;
+	background-color: var(--primary-red);
 	color: #fff;
-	border: 4px solid #b2061c;
+	border: 4px solid var(--primary-red);
 	font-size: 1.2rem;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -40,7 +40,7 @@
 
 	&:hover {
 		background-color: #020b12;
-		border-color: #990517;
+		border-color: var(--primary-red-hover);
 	}
 
 	@media (max-width: 768px) {
@@ -100,7 +100,7 @@
 	justify-content: center;
 	width: 48px;
 	height: 48px;
-	background: rgba(178, 6, 28, 0.9);
+	background: var(--primary-red);
 	color: white;
 	border: none;
 	cursor: pointer;
@@ -108,7 +108,7 @@
 	flex-shrink: 0;
 
 	&:hover {
-		background: rgba(178, 6, 28, 1);
+		background: var(--primary-red);
 		transform: scale(1.1);
 	}
 
@@ -147,9 +147,9 @@
 .sectorButton {
 	font-family: 'Akademia', sans-serif;
 	padding: 0.8rem 1.5rem;
-	background-color: #b2061c;
+	background-color: var(--primary-red);
 	color: #fff;
-	border: 3px solid #b2061c;
+	border: 3px solid var(--primary-red);
 	font-size: 1rem;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -158,7 +158,7 @@
 
 	&:hover {
 		background-color: #020b12;
-		border-color: #990517;
+		border-color: var(--primary-red-hover);
 	}
 
 	// Стили для активной карточки
@@ -170,13 +170,13 @@
 
 	// Стили для Mass статуса - красный цвет
 	&.mass {
-		background-color: #b2061c;
-		border-color: #b2061c;
+		background-color: var(--primary-red);
+		border-color: var(--primary-red);
 		color: #fff;
 
 		&:hover {
 			background-color: #020b12;
-			border-color: #990517;
+			border-color: var(--primary-red-hover);
 		}
 
 		&.active {
@@ -262,7 +262,7 @@
 	}
 
 	&.active {
-		border: 3px solid #b2061c;
+		border: 3px solid var(--primary-red);
 	}
 }
 
@@ -398,7 +398,7 @@
 
 	&::before {
 		content: '✓';
-		color: #b2061c;
+		color: var(--primary-red);
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -433,7 +433,7 @@
 
 	&::before {
 		content: '✓';
-		color: #b2061c;
+		color: var(--primary-red);
 		margin-right: 0.5rem;
 		font-weight: bold;
 	}

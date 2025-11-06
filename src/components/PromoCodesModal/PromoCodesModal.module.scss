@@ -51,7 +51,7 @@
 	height: 40px;
 	background: rgba(255, 255, 255, 0.3);
 	border: none;
-	color: #b2061c;
+	color: var(--primary-red);
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -80,7 +80,7 @@
 	display: inline;
 	background: none;
 	border: none;
-	color: #b2061c;
+	color: var(--primary-red);
 	font-family: var(--font-ibm-plex-mono), monospace;
 	font-size: 1rem;
 	font-weight: 700;

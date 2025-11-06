@@ -39,7 +39,7 @@
 
 	&:focus {
 		outline: none;
-		border-color: #b2061c;
+		border-color: var(--primary-red);
 		background-color: rgba(255, 255, 255, 0.1);
 	}
 
@@ -68,9 +68,9 @@
 .submitButton {
 	font-family: 'Akademia', sans-serif;
 	padding: 1rem 2rem;
-	background-color: #b2061c;
+	background-color: var(--primary-red);
 	color: #fff;
-	border: 4px solid #b2061c;
+	border: 4px solid var(--primary-red);
 	font-size: 1.2rem;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -84,7 +84,7 @@
 
 	&:hover {
 		background-color: #020b12;
-		border-color: #990517;
+		border-color: var(--primary-red-hover);
 	}
 
 	&:disabled {

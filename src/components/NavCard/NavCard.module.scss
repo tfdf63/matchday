@@ -35,7 +35,7 @@
 
 	&:hover {
 		background-color: rgba(178, 6, 28, 0.3);
-		border-color: #b2061c;
+		border-color: var(--primary-red);
 		transform: translateY(-2px);
 		box-shadow: 0 8px 20px rgba(178, 6, 28, 0.3);
 
