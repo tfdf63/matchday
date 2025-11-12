@@ -28,4 +28,13 @@ Options -Indexes
     RewriteRule ^components/$ - [F,L]
     RewriteRule ^components/YandexTicket/$ - [F,L]
     RewriteRule ^videos/$ - [F,L]
+    
+    # Режим обслуживания (maintenance mode)
+    # Проверяем флаг обслуживания
+    RewriteCond %{DOCUMENT_ROOT}/maintenance.on -f
+    RewriteCond %{REQUEST_URI} !^/maintenance\.html$
+    RewriteRule ^(.*)$ /maintenance.html [R=503,L]
 </IfModule>
+
+# Страница ошибки для режима обслуживания
+ErrorDocument 503 /maintenance.html
