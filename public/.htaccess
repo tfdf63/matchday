@@ -3,6 +3,13 @@ Options -Indexes
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    
+    # Режим обслуживания (maintenance mode) - проверяется ПЕРВЫМ
+    # Проверяем флаг обслуживания
+    RewriteCond %{DOCUMENT_ROOT}/maintenance.on -f
+    RewriteCond %{REQUEST_URI} !^/maintenance\.html$
+    RewriteRule ^(.*)$ /maintenance.html [R=503,L]
+    
     # Запрет доступа к корневым директориям
     RewriteRule ^images/$ - [F,L]
     RewriteRule ^sector/$ - [F,L]
@@ -28,12 +35,6 @@ Options -Indexes
     RewriteRule ^components/$ - [F,L]
     RewriteRule ^components/YandexTicket/$ - [F,L]
     RewriteRule ^videos/$ - [F,L]
-    
-    # Режим обслуживания (maintenance mode)
-    # Проверяем флаг обслуживания
-    RewriteCond %{DOCUMENT_ROOT}/maintenance.on -f
-    RewriteCond %{REQUEST_URI} !^/maintenance\.html$
-    RewriteRule ^(.*)$ /maintenance.html [R=503,L]
 </IfModule>
 
 # Страница ошибки для режима обслуживания

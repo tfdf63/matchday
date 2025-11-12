@@ -48,7 +48,7 @@ const SpecialGuestModal: React.FC<SpecialGuestModalProps> = ({
 			<div className={styles.modalContent} onClick={e => e.stopPropagation()}>
 				<div className={styles.guestImage}>
 					<Image
-						src='/images/specialguest/morozov/morozov3.webp'
+						src='/images/specialguest/shnider/shnider.webp'
 						alt='Слава и Настя Морозовы'
 						width={260}
 						height={347}

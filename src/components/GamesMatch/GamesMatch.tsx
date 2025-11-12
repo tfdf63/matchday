@@ -79,14 +79,14 @@ const CardMatch: React.FC<CardMatchProps> = ({
 	const isRplMatch = promoType === 'rpl'
 
 	// Отладочная информация
-	console.log(
-		'GamesMatch promoType:',
-		promoType,
-		'isCupMatch:',
-		isCupMatch,
-		'isRplMatch:',
-		isRplMatch
-	)
+	// console.log(
+	// 	'GamesMatch promoType:',
+	// 	promoType,
+	// 	'isCupMatch:',
+	// 	isCupMatch,
+	// 	'isRplMatch:',
+	// 	isRplMatch
+	// )
 
 	const isSaranskStadium = stadium === 'Саранск. Мордовия Арена'
 

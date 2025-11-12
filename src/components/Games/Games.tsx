@@ -7,7 +7,7 @@ const Games = () => {
 	const remainingGames = games.slice(1) // Берем все матчи, начиная со второго
 
 	// Отладочная информация
-	console.log('Games remainingGames:', remainingGames)
+	// console.log('Games remainingGames:', remainingGames)
 
 	return (
 		<div className={styles.games}>

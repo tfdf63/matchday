@@ -3,9 +3,9 @@ const VIDEO_CACHE_NAME = 'video-cache-v1'
 
 // Список URL-адресов видео для кэширования
 const VIDEO_URLS = [
-	'/videos/bgmain1-optimized-fast.mp4',
-	'/videos/bgmain1-optimized.webm',
-	'/videos/bgmain1-av1.mp4',
+	'/videos/bgmain2-optimized-fast.mp4',
+	'/videos/bgmain2-optimized.webm',
+	'/videos/bgmain2-av1.mp4',
 	'/videos/bgmainmob-optimized-fast.mp4',
 	'/videos/bgmainmob-optimized.webm',
 	'/videos/bgmainmob-av1.mp4',

@@ -11,25 +11,27 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build # Убедитесь, что эта команда создает директорию ./out/
 
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/ # Убедитесь, что эта директория существует после сборки
           server-dir: /
-          dangerous-clean-slate: true
+          # Убрали dangerous-clean-slate: true - теперь загружаются только измененные файлы
+          # FTP-Deploy-Action автоматически определяет измененные файлы по размеру и дате

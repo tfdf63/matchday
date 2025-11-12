@@ -15,10 +15,10 @@ import { Ticket, Navigation } from 'lucide-react'
 
 // URL видеофайлов для кэширования
 const VIDEO_URLS = [
-	'/videos/bgmain1-optimized-fast.mp4',
-	'/videos/bgmain1-optimized.webm',
-	'/videos/bgmainmob-optimized-fast.mp4',
-	'/videos/bgmainmob-optimized.webm',
+	'/videos/bgmain2-optimized-fast.mp4',
+	'/videos/bgmain2-optimized.webm',
+	'/videos/bgmainmob1-optimized-fast.mp4',
+	'/videos/bgmainmob1-optimized.webm',
 ]
 
 // Функция для регистрации сервис-воркера для кэширования видео
@@ -146,11 +146,11 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 		// Выбираем правильное видео для предзагрузки в зависимости от устройства и поддержки формата
 		const priorityVideoUrl = mobile
 			? webpSupported
-				? '/videos/bgmainmob-optimized.webm'
-				: '/videos/bgmainmob-optimized-fast.mp4'
+				? '/videos/bgmainmob1-optimized.webm'
+				: '/videos/bgmainmob1-optimized-fast.mp4'
 			: webpSupported
-			? '/videos/bgmain1-optimized.webm'
-			: '/videos/bgmain1-optimized-fast.mp4'
+			? '/videos/bgmain2-optimized.webm'
+			: '/videos/bgmain2-optimized-fast.mp4'
 
 		// Приоритетно загружаем видео для текущего устройства
 		const loadPriorityVideo = async () => {
@@ -259,49 +259,46 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 
 	return (
 		<div className={styles.main}>
-			{/* Компонент специального гостя */}
-
 			<video
 				muted
 				loop
 				playsInline
-				poster='/videos/bgmain1-poster.jpg'
+				poster='/videos/bgmain2-poster.jpg'
 				preload='none'
 				className={styles.backgroundVideo}
 				id='desktop-video'
 			>
 				{supportsWebPFormat && (
-					<source src='/videos/bgmain1-optimized.webm' type='video/webm' />
+					<source src='/videos/bgmain2-optimized.webm' type='video/webm' />
 				)}
-				<source src='/videos/bgmain1-optimized-fast.mp4' type='video/mp4' />
+				<source src='/videos/bgmain2-optimized-fast.mp4' type='video/mp4' />
 			</video>
 			<video
 				loop
 				muted
 				playsInline
-				poster='/videos/bgmainmob-poster.jpg'
+				poster='/videos/bgmainmob1-poster.jpg'
 				preload='auto'
 				className={styles.backgroundVideoMobile}
 				id='mobile-video'
 			>
 				{supportsWebPFormat && (
-					<source src='/videos/bgmainmob-optimized.webm' type='video/webm' />
+					<source src='/videos/bgmainmob1-optimized.webm' type='video/webm' />
 				)}
-				<source src='/videos/bgmainmob-optimized-fast.mp4' type='video/mp4' />
+				<source src='/videos/bgmainmob1-optimized-fast.mp4' type='video/mp4' />
 			</video>
 			{/* СПЕЦИАЛЬНЫЙ ГОСТЬ */}
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
 					{/* <div className={styles.specialGuestLink}>
-					<button
-						className={styles.specialGuestButton}
-						onClick={() => setSpecialGuestOpen(true)}
-					>
-						<span className={styles.guestTitle}>Специальные гости</span>
-						<br />
-						<span className={styles.guestNames}>Слава и Настя Морозовы</span>
-					</button>
-				</div> */}
+						<button
+							className={styles.specialGuestButton}
+							onClick={() => setSpecialGuestOpen(true)}
+						>
+							<span className={styles.guestTitle}>Специальный гость</span>
+							<span className={styles.guestNames}>Динана Шнайдер</span>
+						</button>
+					</div> */}
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}
