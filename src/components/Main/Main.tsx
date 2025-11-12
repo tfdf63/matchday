@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
 import styles from './Main.module.scss'
 import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
