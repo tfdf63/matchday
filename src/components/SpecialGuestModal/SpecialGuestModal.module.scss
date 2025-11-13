@@ -88,6 +88,16 @@
 		color: white;
 		margin-top: 1.5rem;
 	}
+
+	.firstRedLink {
+		color: var(--primary-red);
+		text-decoration: none;
+		transition: opacity 0.2s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
 }
 
 .schedule {

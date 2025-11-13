@@ -11,7 +11,7 @@ import ActionButton from '../ActionButton/ActionButton'
 import NavCard from '../NavCard'
 import { Ticket, Navigation } from 'lucide-react'
 // import FonBus from '../FonBus/FonBus'
-// import SpecialGuestModal from '../SpecialGuestModal'
+import SpecialGuestModal from '../SpecialGuestModal'
 
 // URL видеофайлов для кэширования
 const VIDEO_URLS = [
@@ -131,7 +131,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	const [supportsWebPFormat, setSupportsWebPFormat] = useState<boolean>(true)
 	const [isPromoOpen, setPromoOpen] = useState(false)
 	// const [isFonBusVisible, setIsFonBusVisible] = useState(false)
-	// const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
+	const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
 
 	// Предзагрузка видео при монтировании компонента
 	useEffect(() => {
@@ -290,15 +290,15 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 			{/* СПЕЦИАЛЬНЫЙ ГОСТЬ */}
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
-					{/* <div className={styles.specialGuestLink}>
+					<div className={styles.specialGuestLink}>
 						<button
 							className={styles.specialGuestButton}
 							onClick={() => setSpecialGuestOpen(true)}
 						>
 							<span className={styles.guestTitle}>Специальный гость</span>
-							<span className={styles.guestNames}>Динана Шнайдер</span>
+							<span className={styles.guestNames}>Диана Шнайдер</span>
 						</button>
-					</div> */}
+					</div>
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}
@@ -342,10 +342,10 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						promoType={selectedGame.promoType}
 					/>
 					{/* <FonBus isVisible={isFonBusVisible} /> */}
-					{/* <SpecialGuestModal
+					<SpecialGuestModal
 						isOpen={isSpecialGuestOpen}
 						onClose={() => setSpecialGuestOpen(false)}
-					/> */}
+					/>
 				</div>
 			</div>
 		</div>

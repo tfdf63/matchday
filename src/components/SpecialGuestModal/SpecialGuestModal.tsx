@@ -49,7 +49,7 @@ const SpecialGuestModal: React.FC<SpecialGuestModalProps> = ({
 				<div className={styles.guestImage}>
 					<Image
 						src='/images/specialguest/shnider/shnider.webp'
-						alt='Слава и Настя Морозовы'
+						alt='Шнайдер Диана'
 						width={260}
 						height={347}
 						className={styles.image}
@@ -58,15 +58,26 @@ const SpecialGuestModal: React.FC<SpecialGuestModalProps> = ({
 
 				<div className={styles.description}>
 					<p>
-						Поболеть за «Акрон» в Самару приедут актеры, блогеры и просто
-						классная семья Морозовых. Слава и Настя уже поддерживали любимый
-						клуб в Москве, а 18 августа у зрителей «Солидарность Самара Арены»
-						будет возможность увидеться с ними лично.
+						Диана Шнайдер проведёт автограф-сессию перед&nbsp;матчем
+						с&nbsp;«Сочи».
 					</p>
-					<p className={styles.rememberText}>Запоминай время:</p>
+					<p>
+						Серебряный призёр Олимпийских игр 2024&nbsp;года, 21-я ракетка мира,
+						амбассадор{' '}
+						<a
+							href='https://t.me/firstandred'
+							target='_blank'
+							rel='noopener noreferrer'
+							className={styles.firstRedLink}
+						>
+							First&Red
+						</a>
+						, уроженка Жигулёвска и&nbsp;наша болельщица будет ждать тебя
+						в&nbsp;тёплой зоне «Солидарность Самара Арены» на&nbsp;секторе С4.
+					</p>
 				</div>
 
-				<div className={styles.schedule}>
+				{/* <div className={styles.schedule}>
 					<div className={styles.scheduleItem}>
 						<span className={styles.time}>13:30</span>
 						<span className={styles.event}>автограф-сессия</span>
@@ -75,7 +86,7 @@ const SpecialGuestModal: React.FC<SpecialGuestModalProps> = ({
 						<span className={styles.time}>14:30</span>
 						<span className={styles.event}>символический удар</span>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)
