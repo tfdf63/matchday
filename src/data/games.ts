@@ -192,28 +192,28 @@ const games: Game[] = [
 	// 	fanIdStatus: 'Fan id',
 	// 	promoType: 'rpl',
 	// },
-	{
-		id: '10',
-		homeTeam: 'Акрон',
-		awayTeam: 'Сочи',
-		date: '21 ноября',
-		time: 'SAMT 19:30',
-		// timeLocal: 'MSK 13:00',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@48450863?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkVip:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@48450863?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
-		ticketLinkSkybox:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@48450863?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 16 ТУР',
-		priceIncreaseDates: {
-			first: '2025-11-15',
-			second: '',
-		},
-		fanIdStatus: 'Fan id',
-		promoType: 'rpl',
-	},
+	// {
+	// 	id: '10',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'Сочи',
+	// 	date: '21 ноября',
+	// 	time: 'SAMT 19:30',
+	// 	// timeLocal: 'MSK 13:00',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@48450863?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkVip:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@48450863?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+	// 	ticketLinkSkybox:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@48450863?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+	// 	leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 16 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '2025-11-15',
+	// 		second: '',
+	// 	},
+	// 	fanIdStatus: 'Fan id',
+	// 	promoType: 'rpl',
+	// },
 	{
 		id: '12',
 		homeTeam: 'Акрон',

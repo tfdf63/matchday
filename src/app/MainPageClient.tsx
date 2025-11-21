@@ -52,11 +52,11 @@ const MainPageClient: React.FC = () => {
 				]}
 				href='/bonuses'
 			/>
-			<Marquee
+			{/* <Marquee
 				text='БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ × 
         БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ ×'
 				duration={50}
-			/>
+			/> */}
 			<Games />
 			<Marquee
 				text='КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × 

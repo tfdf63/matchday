@@ -11,7 +11,7 @@ import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
 import NavCard from '../NavCard'
 import { Ticket, Navigation } from 'lucide-react'
 // import FonBus from '../FonBus/FonBus'
-import SpecialGuestModal from '../SpecialGuestModal'
+// import SpecialGuestModal from '../SpecialGuestModal'
 
 // URL видеофайлов для кэширования
 const VIDEO_URLS = [
@@ -130,8 +130,9 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 	const [supportsWebPFormat, setSupportsWebPFormat] = useState<boolean>(true)
 	const [isPromoOpen, setPromoOpen] = useState(false)
+	const [copied, setCopied] = useState<boolean>(false)
 	// const [isFonBusVisible, setIsFonBusVisible] = useState(false)
-	const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
+	// const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
 
 	// Предзагрузка видео при монтировании компонента
 	useEffect(() => {
@@ -248,6 +249,26 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 		}
 	}, [isMobile]) // Добавляем isMobile в зависимости, так как он используется внутри эффекта
 
+	// Функция для копирования промокода
+	const handleCopy = async (code: string) => {
+		try {
+			const el = document.createElement('textarea')
+			el.value = code
+			document.body.appendChild(el)
+			el.select()
+			document.execCommand('copy')
+			document.body.removeChild(el)
+			setCopied(true)
+			setTimeout(() => setCopied(false), 1500)
+		} catch {
+			try {
+				await navigator.clipboard.writeText(code)
+				setCopied(true)
+				setTimeout(() => setCopied(false), 1500)
+			} catch {}
+		}
+	}
+
 	// // Эффект для показа FonBus с задержкой
 	// useEffect(() => {
 	// 	const timer = setTimeout(() => {
@@ -290,7 +311,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 			{/* СПЕЦИАЛЬНЫЙ ГОСТЬ */}
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
-					<div className={styles.specialGuestLink}>
+					{/* <div className={styles.specialGuestLink}>
 						<button
 							className={styles.specialGuestButton}
 							onClick={() => setSpecialGuestOpen(true)}
@@ -298,6 +319,26 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 							<span className={styles.guestTitle}>Специальный гость</span>
 							<span className={styles.guestNames}>Диана Шнайдер</span>
 						</button>
+					</div> */}
+					{/* Промокод */}
+					<div className={styles.promoCodeSection}>
+						<div className={styles.promoCodeWrapper}>
+							<span className={styles.promoCodeLabel}>Победный промокод:</span>
+							<span
+								className={styles.promoCode}
+								onClick={() => handleCopy('AKRWIN30')}
+								onTouchEnd={() => handleCopy('AKRWIN30')}
+								tabIndex={0}
+								role='button'
+								aria-label='Скопировать промокод AKRWIN30'
+							>
+								AKRWIN30
+								{copied && <span className={styles.copied}>✓</span>}
+							</span>
+						</div>
+						<p className={styles.promoCodeExpiry}>
+							Действует до 22.11.2025 до 23:55
+						</p>
 					</div>
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
@@ -349,10 +390,10 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						promoType={selectedGame.promoType}
 					/>
 					{/* <FonBus isVisible={isFonBusVisible} /> */}
-					<SpecialGuestModal
+					{/* <SpecialGuestModal
 						isOpen={isSpecialGuestOpen}
 						onClose={() => setSpecialGuestOpen(false)}
-					/>
+					/> */}
 				</div>
 			</div>
 		</div>
