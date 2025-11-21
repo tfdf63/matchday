@@ -313,8 +313,15 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						leagueInfo={selectedGame.leagueInfo}
 						promoType={selectedGame.promoType}
 					/>
+					{/* Кнопка парковки */}
+					{/* <ActionButton
+						href='/parking'
+						title='Оформить автопропуск'
+						actionType='internal'
+						className={styles.promoButton}
+					/> */}
 					{/* Кнопка промокодов */}
-					{selectedGame.promoType && (
+					{/* {selectedGame.promoType && (
 						<ActionButton
 							href='#'
 							title='Промокоды для друзей'
@@ -322,7 +329,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 							onModalOpen={() => setPromoOpen(true)}
 							className={styles.promoButton}
 						/>
-					)}
+					)} */}
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
 					{selectedGame.priceIncreaseDates && (
 						<div className={styles.timerWrapper}>
