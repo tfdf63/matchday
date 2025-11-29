@@ -1,7 +1,7 @@
 'use client'
 
 // import React, { useState, useEffect } from 'react'
-import Main from '@/components/Main/Main'
+// import Main from '@/components/Main/Main'
 import Games from '@/components/Games/Games'
 import StarPlayer from '@/components/StarPlayer'
 // import Players from '@/components/Players/Players'
@@ -20,6 +20,7 @@ import CardEvent from '@/components/CardEvent'
 import CardRules from '@/components/CardRules'
 import Offer from '@/components/Offer'
 // import CupTourModal from '@/components/CupTourModal/CupTourModal'
+import WinterBreak from '@/components/WinterBreak/WinterBreak'
 
 const MainPageClient: React.FC = () => {
 	// const [isCupTourModalOpen, setCupTourModalOpen] = useState(false)
@@ -40,7 +41,8 @@ const MainPageClient: React.FC = () => {
 				isOpen={isCupTourModalOpen}
 				onClose={() => setCupTourModalOpen(false)}
 			/> */}
-			<Main />
+			<WinterBreak />
+			{/* <Main /> */}
 			<Offer
 				items={[
 					{
