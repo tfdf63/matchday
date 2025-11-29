@@ -293,6 +293,16 @@
 		font-size: 1rem;
 		margin-bottom: 1.2rem;
 	}
+
+	a {
+		color: var(--primary-red);
+		text-decoration: none;
+		transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
 }
 
 .bottomButton {

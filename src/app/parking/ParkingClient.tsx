@@ -22,9 +22,10 @@ const ParkingClient: React.FC = () => {
 			{/* Заголовок */}
 			<div className={styles.headerSection}>
 				<h1 className={styles.title}>Парковка</h1>
+				{/* Кнопка вверху */}
 				<div className={styles.headerButton}>
 					<ActionButton
-						href='https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@50693782?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
+						href='https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@52105489?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
 						title='Оформить автопропуск'
 						actionType='link'
 					/>
@@ -63,7 +64,13 @@ const ParkingClient: React.FC = () => {
 								Приехать к{'\u00A0'}стадиону и{'\u00A0'}найти волонтёра, который
 								располагается в{'\u00A0'}
 								точке на{'\u00A0'}схеме (точка QR на{'\u00A0'}автобусной
-								остановке), чтобы получить бумажный автопропуск.
+								остановке), чтобы получить бумажный автопропуск,{' '}
+								<span className={styles.highlight}>
+									не{'\u00A0'}
+									позднее, чем{'\u00A0'}за{'\u00A0'}30{'\u00A0'}минут до
+									{'\u00A0'}
+									начала матча.
+								</span>
 							</p>
 						</div>
 					</div>
@@ -75,7 +82,8 @@ const ParkingClient: React.FC = () => {
 								Проехать через четвертое транспортное КПП (заранее необходимо
 								выложить из{'\u00A0'}авто: бутылки, канистры с жидкостями;
 								громоздкие предметы; запрещённые к проносу предметы согласно
-								правилам поведения болельщиков)
+								правилам поведения болельщиков). Запрещается проезд в{'\u00A0'}
+								тонированном авто.
 							</p>
 						</div>
 					</div>
@@ -153,12 +161,23 @@ const ParkingClient: React.FC = () => {
 				<p className={styles.rulesText}>
 					Соблюдайте правила дорожного движения.
 				</p>
+				<p className={styles.rulesText}>
+					Контакт для{'\u00A0'}связи в{'\u00A0'}телеграм{' '}
+					<a
+						href='https://t.me/slava_tfdf'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						t.me/slava_tfdf
+					</a>{' '}
+					- Кузнецов Вячеслав (специалист по работе с болельщиками).
+				</p>
 			</div>
 
 			{/* Кнопка внизу */}
 			<div className={styles.bottomButton}>
 				<ActionButton
-					href='https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@50693782?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
+					href='https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@52105489?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
 					title='Оформить автопропуск'
 					actionType='link'
 				/>
