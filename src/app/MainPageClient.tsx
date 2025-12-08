@@ -2,7 +2,7 @@
 
 // import React, { useState, useEffect } from 'react'
 // import Main from '@/components/Main/Main'
-import Games from '@/components/Games/Games'
+// import Games from '@/components/Games/Games'
 import StarPlayer from '@/components/StarPlayer'
 // import Players from '@/components/Players/Players'
 import Merch from '@/components/Merch/Merch'
@@ -59,7 +59,7 @@ const MainPageClient: React.FC = () => {
         БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ ×'
 				duration={50}
 			/> */}
-			<Games />
+			{/* <Games /> */}
 			<Marquee
 				text='КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × 
         КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ ×'

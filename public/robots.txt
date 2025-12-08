@@ -25,7 +25,7 @@ Disallow: /components/
 Disallow: /components/*/
 Disallow: /fonts/
 Disallow: /fonts/*/
-Clean-param: ctime&utm_medium&yprqee&bx_sender_conversion_id&b24form_user&_ym_debug&erid&yclid&utm_source&ybaip&etext&C
+Clean-param: ctime&utm_medium&yprqee&bx_sender_conversion_id&b24form_user&_ym_debug&erid&yclid&utm_source&ybaip&etext&C&amp
 Clean-param: etext /saransk/
 
 # Разрешить индексацию изображений
