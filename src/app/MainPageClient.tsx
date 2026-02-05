@@ -1,8 +1,8 @@
 'use client'
 
 // import React, { useState, useEffect } from 'react'
-// import Main from '@/components/Main/Main'
-// import Games from '@/components/Games/Games'
+import Main from '@/components/Main/Main'
+import Games from '@/components/Games/Games'
 import StarPlayer from '@/components/StarPlayer'
 // import Players from '@/components/Players/Players'
 import Merch from '@/components/Merch/Merch'
@@ -20,7 +20,7 @@ import CardEvent from '@/components/CardEvent'
 import CardRules from '@/components/CardRules'
 import Offer from '@/components/Offer'
 // import CupTourModal from '@/components/CupTourModal/CupTourModal'
-import WinterBreak from '@/components/WinterBreak/WinterBreak'
+// import WinterBreak from '@/components/WinterBreak/WinterBreak'
 
 const MainPageClient: React.FC = () => {
 	// const [isCupTourModalOpen, setCupTourModalOpen] = useState(false)
@@ -41,8 +41,8 @@ const MainPageClient: React.FC = () => {
 				isOpen={isCupTourModalOpen}
 				onClose={() => setCupTourModalOpen(false)}
 			/> */}
-			<WinterBreak />
-			{/* <Main /> */}
+			{/* <WinterBreak /> */}
+			<Main />
 			<Offer
 				items={[
 					{
@@ -59,7 +59,7 @@ const MainPageClient: React.FC = () => {
         БЛИЖАЙШИЕ МАТЧИ × БЛИЖАЙШИЕ МАТЧИ ×'
 				duration={50}
 			/> */}
-			{/* <Games /> */}
+			<Games />
 			<Marquee
 				text='КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × 
         КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ × КАЖДЫЙ МАТЧ - ШОУ, ЭМОЦИИ И КОМФОРТ ×'

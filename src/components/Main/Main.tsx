@@ -68,7 +68,7 @@ const isMobileDevice = () => {
 		return (
 			window.innerWidth <= 768 ||
 			/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-				navigator.userAgent
+				navigator.userAgent,
 			)
 		)
 	}
@@ -150,8 +150,8 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				? '/videos/bgmainmob1-optimized.webm'
 				: '/videos/bgmainmob1-optimized-fast.mp4'
 			: webpSupported
-			? '/videos/bgmain2-optimized.webm'
-			: '/videos/bgmain2-optimized-fast.mp4'
+				? '/videos/bgmain2-optimized.webm'
+				: '/videos/bgmain2-optimized-fast.mp4'
 
 		// Приоритетно загружаем видео для текущего устройства
 		const loadPriorityVideo = async () => {
@@ -180,10 +180,10 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 		// Инициализируем видео элементы сразу после загрузки приоритетного видео
 		const initializeVideoElements = () => {
 			const desktopVideo = document.getElementById(
-				'desktop-video'
+				'desktop-video',
 			) as HTMLVideoElement
 			const mobileVideo = document.getElementById(
-				'mobile-video'
+				'mobile-video',
 			) as HTMLVideoElement
 
 			if (desktopVideo && mobileVideo) {

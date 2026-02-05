@@ -214,23 +214,45 @@ const games: Game[] = [
 	// 	fanIdStatus: 'Fan id',
 	// 	promoType: 'rpl',
 	// },
+	// {
+	// 	id: '12',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'Пари НН',
+	// 	date: '29 ноября',
+	// 	time: 'SAMT 15:00',
+	// 	// timeLocal: 'MSK 13:00',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@48620447?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkVip:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@48620447?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+	// 	ticketLinkSkybox:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@48620447?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+	// 	leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 17 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '2025-11-23',
+	// 		second: '',
+	// 	},
+	// 	fanIdStatus: 'Fan id',
+	// 	promoType: 'rpl',
+	// },
 	{
-		id: '12',
+		id: '13',
 		homeTeam: 'Акрон',
-		awayTeam: 'Пари НН',
-		date: '29 ноября',
+		awayTeam: 'Ахмат',
+		date: '15 марта',
 		time: 'SAMT 15:00',
 		// timeLocal: 'MSK 13:00',
 		stadium: 'Солидарность Самара Арена',
 		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@48620447?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+			'https://widget.afisha.yandex.ru/w/events/787173?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
 		ticketLinkVip:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@48620447?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+			'https://widget.afisha.yandex.ru/w/events/787556?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
 		ticketLinkSkybox:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@48620447?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 17 ТУР',
+			'https://widget.afisha.yandex.ru/w/events/787561?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 21 ТУР',
 		priceIncreaseDates: {
-			first: '2025-11-23',
+			first: '2026-03-09',
 			second: '',
 		},
 		fanIdStatus: 'Fan id',
