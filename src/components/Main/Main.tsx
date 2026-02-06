@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 import styles from './Main.module.scss'
 import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
@@ -101,19 +103,23 @@ const preloadVideo = (videoUrl: string) => {
 		source.type = videoUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'
 		video.appendChild(source)
 
-		// Добавляем обработчики событий
-		video.onloadeddata = () => {
-			document.body.removeChild(video)
+		// Добавляем обработчики событий (проверяем parentNode: после размонтирования removeChild даёт ошибку)
+		const removeVideo = () => {
+			if (video.parentNode === document.body && document.body) {
+				document.body.removeChild(video)
+			}
 			resolve()
 		}
 
-		video.onerror = () => {
-			document.body.removeChild(video)
+		video.onloadeddata = removeVideo
+		video.onerror = removeVideo
+
+		// Добавляем видео в DOM для начала загрузки (только в браузере)
+		if (typeof document !== 'undefined' && document.body) {
+			document.body.appendChild(video)
+		} else {
 			resolve()
 		}
-
-		// Добавляем видео в DOM для начала загрузки
-		document.body.appendChild(video)
 	})
 }
 
@@ -288,20 +294,25 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 				)}
 				<source src='/videos/bgmainmob1-optimized-fast.mp4' type='video/mp4' />
 			</video>
-			{/* СПЕЦИАЛЬНЫЙ ГОСТЬ */}
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
-					{/* <div className={styles.specialGuestLink}>
-						<button
-							className={styles.specialGuestButton}
-							onClick={() => setSpecialGuestOpen(true)}
-						>
-							<span className={styles.guestTitle}>Специальный гость</span>
-							<span className={styles.guestNames}>Диана Шнайдер</span>
-						</button>
-					</div> */}
-					{/* Промокод */}
-					{/* <VictoryPromoCode /> */}
+					{/* Абонементы — на месте кнопки «Специальный гость» */}
+					<Link
+						href='/abonementy'
+						className={styles.abonementLink}
+						aria-label='Абонементы'
+					>
+						<div className={styles.abonementImageCrop}>
+							<Image
+								src='/images/abon/abon1.jpg'
+								alt='Абонементы'
+								width={448}
+								height={560}
+								className={styles.abonementImage}
+								sizes='(max-width: 768px) 20rem, 28rem'
+							/>
+						</div>
+					</Link>
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}
