@@ -119,8 +119,7 @@
 	}
 }
 
-// Баннер абонемента — над карточкой матча, в потоке; блок «абонемент + карточка» центрируется по вертикали вместе
-// На ПК ширина строго по ширине карточки матча (тот же блок), на мобильной без изменений
+// Баннер абонемента — над карточкой матча, уменьшенный размер на ПК и мобильной
 .abonementLink {
 	width: 100%;
 	max-width: 20rem;
@@ -136,11 +135,11 @@
 
 	@media (min-width: 769px) {
 		width: 100%;
-		max-width: 28rem;
+		max-width: 20rem;
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 4rem;
-		align-self: stretch; // как у карточки матча — на всю ширину блока .featuredMatch
+		align-self: center;
 		box-sizing: border-box;
 	}
 
