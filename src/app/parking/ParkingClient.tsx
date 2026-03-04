@@ -25,7 +25,7 @@ const ParkingClient: React.FC = () => {
 				{/* Кнопка вверху */}
 				<div className={styles.headerButton}>
 					<ActionButton
-						href='https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@52105489?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
+						href='https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@59707667?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
 						title='Оформить автопропуск'
 						actionType='link'
 					/>
@@ -35,7 +35,6 @@ const ParkingClient: React.FC = () => {
 			{/* Описание */}
 			<div className={styles.descriptionSection}>
 				<p className={styles.descriptionText}>
-					<span className={styles.testMode}>ТЕСТОВЫЙ РЕЖИМ:</span>{' '}
 					Воспользуйтесь удобной парковкой на
 					{'\u00A0'}
 					территории стадиона, рядом с{'\u00A0'}
@@ -46,7 +45,7 @@ const ParkingClient: React.FC = () => {
 			{/* Секция с шагами */}
 			<div className={styles.stepsSection}>
 				<h2 className={styles.stepsTitle}>
-					4 шага, как оформить парковку на матч
+					5 шагов, как оформить парковку на матч
 				</h2>
 
 				<div className={styles.stepsList}>
@@ -59,6 +58,22 @@ const ParkingClient: React.FC = () => {
 
 					<div className={styles.step}>
 						<div className={styles.stepNumber}>2</div>
+						<div className={styles.stepContent}>
+							<p className={styles.stepText}>
+								Заранее необходимо выложить из{'\u00A0'}авто: бутылки, канистры
+								с{'\u00A0'}жидкостями; громоздкие предметы; запрещённые к
+								{'\u00A0'}проносу предметы согласно правилам поведения
+								болельщиков.{' '}
+								<span className={styles.highlight}>
+									Запрещается проезд в{'\u00A0'}
+									тонированном авто.
+								</span>
+							</p>
+						</div>
+					</div>
+
+					<div className={styles.step}>
+						<div className={styles.stepNumber}>3</div>
 						<div className={styles.stepContent}>
 							<p className={styles.stepText}>
 								Приехать к{'\u00A0'}стадиону и{'\u00A0'}найти волонтёра, который
@@ -76,20 +91,16 @@ const ParkingClient: React.FC = () => {
 					</div>
 
 					<div className={styles.step}>
-						<div className={styles.stepNumber}>3</div>
+						<div className={styles.stepNumber}>4</div>
 						<div className={styles.stepContent}>
 							<p className={styles.stepText}>
-								Проехать через четвертое транспортное КПП (заранее необходимо
-								выложить из{'\u00A0'}авто: бутылки, канистры с жидкостями;
-								громоздкие предметы; запрещённые к проносу предметы согласно
-								правилам поведения болельщиков). Запрещается проезд в{'\u00A0'}
-								тонированном авто.
+								Проехать через четвертое транспортное КПП.
 							</p>
 						</div>
 					</div>
 
 					<div className={styles.step}>
-						<div className={styles.stepNumber}>4</div>
+						<div className={styles.stepNumber}>5</div>
 						<div className={styles.stepContent}>
 							<p className={styles.stepText}>
 								Расположиться на{'\u00A0'}парковке{' '}
@@ -102,10 +113,64 @@ const ParkingClient: React.FC = () => {
 
 				<div className={styles.finishNote}>
 					<p className={styles.finishText}>
-						По{'\u00A0'}завершению матча выехать через четвертое транспортное
+						По{'\u00A0'}завершении матча выехать через четвертое транспортное
 						КПП (согласно схеме).
 					</p>
 				</div>
+			</div>
+
+			{/* Секция с правилами */}
+			<div className={styles.rulesSection}>
+				<p className={styles.rulesText}>
+					Автопропуск даёт право парковки транспортного средства в{'\u00A0'}
+					местах, установленных организатором мероприятия.
+				</p>
+
+				<p className={styles.rulesText}>
+					Парковка транспортного средства вне мест, установленных организатором,
+					категорически запрещена.
+				</p>
+
+				<p className={styles.rulesText}>
+					Автопропуск должен быть размещён в{'\u00A0'}углу переднего стекла
+					транспортного средства и{'\u00A0'}чётко видим снаружи.
+				</p>
+
+				<p className={styles.rulesText}>
+					В{'\u00A0'}случае нарушений правил дорожного движения, правил доступа
+					и{'\u00A0'}
+					парковки транспортного средства производится фотофиксация, автопропуск
+					аннулируется и{'\u00A0'}изымается при следующем посещении стадиона.
+				</p>
+
+				<p className={styles.rulesText}>
+					АНО &quot;ФК &quot;Акрон&quot; не{'\u00A0'}несёт материальной
+					ответственности за{'\u00A0'}автотранспорт.
+				</p>
+
+				<p className={styles.rulesText}>
+					При въезде на{'\u00A0'}стадион водитель обязан предоставить документы,
+					дающие право посещения матча, и{'\u00A0'}предоставить транспортное
+					средство для{'\u00A0'}
+					осмотра. Все пассажиры обязаны предъявить документы, дающие право
+					прохода на{'\u00A0'}стадион, пройти осмотр и{'\u00A0'}предоставить для
+					{'\u00A0'}осмотра личные вещи.
+				</p>
+
+				<p className={styles.rulesText}>
+					Соблюдайте правила дорожного движения.
+				</p>
+				<p className={styles.rulesText}>
+					Контакт для{'\u00A0'}связи в{'\u00A0'}Telegram{' '}
+					<a
+						href='https://t.me/slava_tfdf'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						t.me/slava_tfdf
+					</a>{' '}
+					- Кузнецов Вячеслав (специалист по работе с болельщиками).
+				</p>
 			</div>
 
 			{/* Схема проезда на парковку Ps */}
@@ -118,60 +183,6 @@ const ParkingClient: React.FC = () => {
 					height={1080}
 					className={styles.schemaImg}
 				/>
-			</div>
-
-			{/* Секция с правилами */}
-			<div className={styles.rulesSection}>
-				<p className={styles.rulesText}>
-					Автопропуск дает право парковки транспортного средства в{'\u00A0'}
-					местах, установленных организатором мероприятия.
-				</p>
-
-				<p className={styles.rulesText}>
-					Парковка транспортного средства вне мест, установленных организатором,
-					категорически запрещена.
-				</p>
-
-				<p className={styles.rulesText}>
-					Автопропуск должен быть размещен в{'\u00A0'}углу переднего стекла
-					транспортного средства и{'\u00A0'}четко видим снаружи.
-				</p>
-
-				<p className={styles.rulesText}>
-					В{'\u00A0'}случае нарушений правил дорожного движения, правил доступа
-					и{'\u00A0'}
-					парковки транспортного средства производится фотофиксация, автопропуск
-					аннулируется и{'\u00A0'}изымается при следующем посещении стадиона.
-				</p>
-
-				<p className={styles.rulesText}>
-					АНО &quot;ФК &quot;Акрон&quot; не{'\u00A0'}несет материальной
-					ответственности за{'\u00A0'}автотранспорт.
-				</p>
-
-				<p className={styles.rulesText}>
-					При въезде на{'\u00A0'}стадион водитель обязан предоставить документы
-					дающие право посещения матча и{'\u00A0'}предоставить транспортное
-					средство для{'\u00A0'}
-					осмотра. Все пассажиры обязаны предъявить документы дающие право
-					прохода на{'\u00A0'}стадион, пройти осмотр и{'\u00A0'}предоставить для
-					{'\u00A0'}осмотра личные вещи.
-				</p>
-
-				<p className={styles.rulesText}>
-					Соблюдайте правила дорожного движения.
-				</p>
-				<p className={styles.rulesText}>
-					Контакт для{'\u00A0'}связи в{'\u00A0'}телеграм{' '}
-					<a
-						href='https://t.me/slava_tfdf'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						t.me/slava_tfdf
-					</a>{' '}
-					- Кузнецов Вячеслав (специалист по работе с болельщиками).
-				</p>
 			</div>
 
 			{/* Кнопка внизу */}

@@ -9,7 +9,7 @@ import CardMatch from '../CardMatch/CardMatch'
 import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
 import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
-// import ActionButton from '../ActionButton/ActionButton'
+import ActionButton from '../ActionButton/ActionButton'
 import NavCard from '../NavCard'
 // import VictoryPromoCode from '../VictoryPromoCode'
 import { Ticket, Navigation } from 'lucide-react'
@@ -328,12 +328,12 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						promoType={selectedGame.promoType}
 					/>
 					{/* Кнопка парковки */}
-					{/* <ActionButton
+					<ActionButton
 						href='/parking'
 						title='Оформить автопропуск'
 						actionType='internal'
 						className={styles.promoButton}
-					/> */}
+					/>
 					{/* Кнопка промокодов */}
 					{/* {selectedGame.promoType && (
 						<ActionButton
