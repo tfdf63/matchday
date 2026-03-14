@@ -1,0 +1,28 @@
+.wrapper {
+	width: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+
+	@media (min-width: 768px) {
+		padding: 1.5rem 2rem;
+	}
+}
+
+.link {
+	display: block;
+	max-width: 1200px;
+	margin: 0 auto;
+	transition: opacity 0.3s ease;
+
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+.image {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	vertical-align: middle;
+}

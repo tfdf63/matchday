@@ -2,6 +2,7 @@
 
 // import React, { useState, useEffect } from 'react'
 import Main from '@/components/Main/Main'
+import FonbetBanner from '@/components/FonbetBanner/FonbetBanner'
 import Games from '@/components/Games/Games'
 import StarPlayer from '@/components/StarPlayer'
 // import Players from '@/components/Players/Players'
@@ -43,6 +44,7 @@ const MainPageClient: React.FC = () => {
 			/> */}
 			{/* <WinterBreak /> */}
 			<Main />
+			<FonbetBanner />
 			<Offer
 				items={[
 					{
