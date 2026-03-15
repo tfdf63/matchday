@@ -1,15 +1,15 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+// import Link from 'next/link'
+// import Image from 'next/image'
 import styles from './Main.module.scss'
 import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
 import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
 import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
-import ActionButton from '../ActionButton/ActionButton'
+// import ActionButton from '../ActionButton/ActionButton'
 import NavCard from '../NavCard'
 // import VictoryPromoCode from '../VictoryPromoCode'
 import { Ticket, Navigation } from 'lucide-react'
@@ -297,7 +297,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
 					{/* Абонементы — на месте кнопки «Специальный гость» */}
-					<Link
+					{/* <Link
 						href='/abonementy'
 						className={styles.abonementLink}
 						aria-label='Абонементы'
@@ -312,7 +312,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 								sizes='(max-width: 768px) 20rem, 28rem'
 							/>
 						</div>
-					</Link>
+					</Link> */}
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}
@@ -328,12 +328,12 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						promoType={selectedGame.promoType}
 					/>
 					{/* Кнопка парковки */}
-					<ActionButton
+					{/* <ActionButton
 						href='/parking'
 						title='Оформить автопропуск'
 						actionType='internal'
 						className={styles.promoButton}
-					/>
+					/> */}
 					{/* Кнопка промокодов */}
 					{/* {selectedGame.promoType && (
 						<ActionButton
