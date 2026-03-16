@@ -236,28 +236,28 @@ const games: Game[] = [
 	// 	fanIdStatus: 'Fan id',
 	// 	promoType: 'rpl',
 	// },
-	{
-		id: '13',
-		homeTeam: 'Акрон',
-		awayTeam: 'Ахмат',
-		date: '15 марта',
-		time: 'SAMT 15:00',
-		// timeLocal: 'MSK 13:00',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/events/787173?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkVip:
-			'https://widget.afisha.yandex.ru/w/events/787556?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
-		ticketLinkSkybox:
-			'https://widget.afisha.yandex.ru/w/events/787561?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 21 ТУР',
-		priceIncreaseDates: {
-			first: '2026-03-09',
-			second: '',
-		},
-		fanIdStatus: 'Fan id',
-		promoType: 'rpl',
-	},
+	// {
+	// 	id: '13',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'Ахмат',
+	// 	date: '15 марта',
+	// 	time: 'SAMT 15:00',
+	// 	// timeLocal: 'MSK 13:00',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/events/787173?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkVip:
+	// 		'https://widget.afisha.yandex.ru/w/events/787556?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+	// 	ticketLinkSkybox:
+	// 		'https://widget.afisha.yandex.ru/w/events/787561?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+	// 	leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 21 ТУР',
+	// 	priceIncreaseDates: {
+	// 		first: '2026-03-09',
+	// 		second: '',
+	// 	},
+	// 	fanIdStatus: 'Fan id',
+	// 	promoType: 'rpl',
+	// },
 	{
 		id: '14',
 		homeTeam: 'Акрон',

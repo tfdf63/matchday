@@ -84,7 +84,7 @@ const TicketSaleNotifyModal: React.FC<TicketSaleNotifyModalProps> = ({
 					×
 				</button>
 				<h2 className={styles.modalTitle}>
-					Не пропустите старт продаж билетов
+					Не пропустите старт продажи билетов
 				</h2>
 				<div
 					ref={formContainerRef}

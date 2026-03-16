@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 // import Link from 'next/link'
 // import Image from 'next/image'
 import styles from './Main.module.scss'
-// import CardMatch from '../CardMatch/CardMatch'
+import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
 // import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
@@ -298,23 +298,6 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 			</video>
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
-					{/* Форма старта продажи билетов */}
-					<div className={styles.specialGuestLink}>
-						{/* <h2 className={styles.guestTitle}>
-							Не пропустите старт продаж
-						</h2> */}
-						<ActionButton
-							href='#'
-							title='Хочу узнать первым'
-							actionType='modal'
-							onModalOpen={() => setTicketNotifyOpen(true)}
-							className={styles.specialGuestButton}
-						/>
-					</div>
-					<TicketSaleNotifyModal
-						isOpen={isTicketNotifyOpen}
-						onClose={() => setTicketNotifyOpen(false)}
-					/>
 					{/* Абонементы — на месте кнопки «Специальный гость» */}
 					{/* <Link
 						href='/abonementy'
@@ -332,7 +315,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 							/>
 						</div>
 					</Link> */}
-					{/* <CardMatch
+					<CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}
 						date={selectedGame.date}
@@ -345,7 +328,21 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						fanIdStatus={selectedGame.fanIdStatus}
 						leagueInfo={selectedGame.leagueInfo}
 						promoType={selectedGame.promoType}
-					/> */}
+					/>
+					{/* Форма старта продажи билетов */}
+					<div className={styles.specialGuestLink}>
+						<ActionButton
+							href='#'
+							title='Узнать первым о старте продаж'
+							actionType='modal'
+							onModalOpen={() => setTicketNotifyOpen(true)}
+							className={styles.specialGuestButton}
+						/>
+					</div>
+					<TicketSaleNotifyModal
+						isOpen={isTicketNotifyOpen}
+						onClose={() => setTicketNotifyOpen(false)}
+					/>
 					{/* Кнопка парковки */}
 					{/* <ActionButton
 						href='/parking'
