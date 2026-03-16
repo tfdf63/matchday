@@ -4,15 +4,16 @@ import React, { useState, useEffect } from 'react'
 // import Link from 'next/link'
 // import Image from 'next/image'
 import styles from './Main.module.scss'
-import CardMatch from '../CardMatch/CardMatch'
+// import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
-import Timer2 from '../Timer2/Timer2'
+// import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
 import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
-// import ActionButton from '../ActionButton/ActionButton'
-import NavCard from '../NavCard'
+import TicketSaleNotifyModal from '../TicketSaleNotifyModal/TicketSaleNotifyModal'
+import ActionButton from '../ActionButton/ActionButton'
+// import NavCard from '../NavCard'
 // import VictoryPromoCode from '../VictoryPromoCode'
-import { Ticket, Navigation } from 'lucide-react'
+// import { Ticket, Navigation } from 'lucide-react'
 // import FonBus from '../FonBus/FonBus'
 // import SpecialGuestModal from '../SpecialGuestModal'
 
@@ -137,6 +138,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 	const [isMobile, setIsMobile] = useState<boolean>(false)
 	const [supportsWebPFormat, setSupportsWebPFormat] = useState<boolean>(true)
 	const [isPromoOpen, setPromoOpen] = useState(false)
+	const [isTicketNotifyOpen, setTicketNotifyOpen] = useState(false)
 	// const [isFonBusVisible, setIsFonBusVisible] = useState(false)
 	// const [isSpecialGuestOpen, setSpecialGuestOpen] = useState(false)
 
@@ -296,6 +298,23 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 			</video>
 			<div className={styles.content}>
 				<div className={styles.featuredMatch}>
+					{/* Форма старта продажи билетов */}
+					<div className={styles.specialGuestLink}>
+						{/* <h2 className={styles.guestTitle}>
+							Не пропустите старт продаж
+						</h2> */}
+						<ActionButton
+							href='#'
+							title='Хочу узнать первым'
+							actionType='modal'
+							onModalOpen={() => setTicketNotifyOpen(true)}
+							className={styles.specialGuestButton}
+						/>
+					</div>
+					<TicketSaleNotifyModal
+						isOpen={isTicketNotifyOpen}
+						onClose={() => setTicketNotifyOpen(false)}
+					/>
 					{/* Абонементы — на месте кнопки «Специальный гость» */}
 					{/* <Link
 						href='/abonementy'
@@ -313,7 +332,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 							/>
 						</div>
 					</Link> */}
-					<CardMatch
+					{/* <CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}
 						date={selectedGame.date}
@@ -326,7 +345,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						fanIdStatus={selectedGame.fanIdStatus}
 						leagueInfo={selectedGame.leagueInfo}
 						promoType={selectedGame.promoType}
-					/>
+					/> */}
 					{/* Кнопка парковки */}
 					{/* <ActionButton
 						href='/parking'
@@ -345,18 +364,16 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						/>
 					)} */}
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
-					{selectedGame.priceIncreaseDates && (
+					{/* {selectedGame.priceIncreaseDates && (
 						<div className={styles.timerWrapper}>
 							<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
 						</div>
-					)}
-
+					)} */}
 					{/* Навигационные карточки */}
-					<div className={styles.navCardsContainer}>
+					{/* <div className={styles.navCardsContainer}>
 						<NavCard title='Тарифы промокоды' href='/bonuses' icon={Ticket} />
 						<NavCard title='Как добраться?' href='/road' icon={Navigation} />
-					</div>
-
+					</div> */}
 					<PromoCodesModal
 						isOpen={isPromoOpen}
 						onClose={() => setPromoOpen(false)}

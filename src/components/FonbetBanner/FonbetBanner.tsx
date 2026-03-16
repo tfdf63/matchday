@@ -17,7 +17,7 @@ const FonbetBanner: React.FC = () => {
 			>
 				<img
 					src='/images/fonbetticket2.png'
-					alt='FONBET — до 15000 ₽ по промокоду АКРОН'
+					alt='FONBET — выиграй джерси АКРОН с автографом Дианы Шнайдер по промокоду ДИ24'
 					className={styles.image}
 				/>
 			</a>
