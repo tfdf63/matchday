@@ -78,7 +78,6 @@ export default function RootLayout({
 				<link rel='preconnect' href='https://top-fwz1.mail.ru' />
 				<link rel='preconnect' href='https://mc.yandex.ru' />
 				<link rel='preconnect' href='https://st.top100.ru' />
-				<link rel='preconnect' href='https://tagmanager.andata.ru' />
 				<style
 					dangerouslySetInnerHTML={{
 						__html: `
@@ -136,18 +135,27 @@ export default function RootLayout({
 					className='globalBgFon'
 				/>
 				<BackToHome />
+				<noscript>
+					<div>
+						<img
+							src='https://mc.yandex.ru/watch/107730968'
+							style={{ position: 'absolute', left: '-9999px' }}
+							alt=''
+						/>
+					</div>
+				</noscript>
 				<Script id='top-mail-ru' strategy='lazyOnload' src='/top-mail-ru.js' />
+				<Script
+					id='yandex-metrika-main'
+					strategy='lazyOnload'
+					src='/yandex-metrika-main.js'
+				/>
 				<Script
 					id='yandex-metrika'
 					strategy='lazyOnload'
 					src='/yandex-metrika.js'
 				/>
 				<Script id='sber-counter' strategy='lazyOnload' src='/sber.js' />
-				<Script
-					id='andata-tag-manager'
-					strategy='lazyOnload'
-					src='//tagmanager.andata.ru/api/v1/container/9ebcc59d-e373-447f-b5cd-0de5dc2006e4/published/code.js'
-				/>
 				{children}
 			</body>
 		</html>
