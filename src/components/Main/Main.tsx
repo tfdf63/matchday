@@ -6,14 +6,16 @@ import React, { useState, useEffect } from 'react'
 import styles from './Main.module.scss'
 import CardMatch from '../CardMatch/CardMatch'
 // import Timer from '../Timer/Timer'
-// import Timer2 from '../Timer2/Timer2'
+import Timer2 from '../Timer2/Timer2'
 import games from '@/data/games'
+// import nextMatchGames from '@/data/nextMatchMock'
 import PromoCodesModal from '../PromoCodesModal/PromoCodesModal'
 import TicketSaleNotifyModal from '../TicketSaleNotifyModal/TicketSaleNotifyModal'
 import ActionButton from '../ActionButton/ActionButton'
-// import NavCard from '../NavCard'
+// import NextMatchCard from '../NextMatchCard'
+import NavCard from '../NavCard'
 // import VictoryPromoCode from '../VictoryPromoCode'
-// import { Ticket, Navigation } from 'lucide-react'
+import { Ticket, Navigation } from 'lucide-react'
 // import FonBus from '../FonBus/FonBus'
 // import SpecialGuestModal from '../SpecialGuestModal'
 
@@ -315,6 +317,10 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 							/>
 						</div>
 					</Link> */}
+					{/* <NextMatchCard
+						game={nextMatchGames[0]}
+						onPromoClick={() => setPromoOpen(true)}
+					/> */}
 					<CardMatch
 						homeTeam={selectedGame.homeTeam}
 						awayTeam={selectedGame.awayTeam}
@@ -330,7 +336,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						promoType={selectedGame.promoType}
 					/>
 					{/* Форма старта продажи билетов */}
-					<div className={styles.specialGuestLink}>
+					{/* <div className={styles.specialGuestLink}>
 						<ActionButton
 							href='#'
 							title='Узнать первым о старте продаж'
@@ -338,7 +344,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 							onModalOpen={() => setTicketNotifyOpen(true)}
 							className={styles.specialGuestButton}
 						/>
-					</div>
+					</div> */}
 					<TicketSaleNotifyModal
 						isOpen={isTicketNotifyOpen}
 						onClose={() => setTicketNotifyOpen(false)}
@@ -351,7 +357,7 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						className={styles.promoButton}
 					/> */}
 					{/* Кнопка промокодов */}
-					{/* {selectedGame.promoType && (
+					{selectedGame.promoType && (
 						<ActionButton
 							href='#'
 							title='Промокоды для друзей'
@@ -359,18 +365,18 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 							onModalOpen={() => setPromoOpen(true)}
 							className={styles.promoButton}
 						/>
-					)} */}
+					)}
 					{/* <Timer priceIncreaseDate={selectedGame.priceIncreaseDates.first} /> */}
-					{/* {selectedGame.priceIncreaseDates && (
+					{selectedGame.priceIncreaseDates && (
 						<div className={styles.timerWrapper}>
 							<Timer2 priceIncreaseDates={selectedGame.priceIncreaseDates} />
 						</div>
-					)} */}
+					)}
 					{/* Навигационные карточки */}
-					{/* <div className={styles.navCardsContainer}>
+					<div className={styles.navCardsContainer}>
 						<NavCard title='Тарифы промокоды' href='/bonuses' icon={Ticket} />
 						<NavCard title='Как добраться?' href='/road' icon={Navigation} />
-					</div> */}
+					</div>
 					<PromoCodesModal
 						isOpen={isPromoOpen}
 						onClose={() => setPromoOpen(false)}

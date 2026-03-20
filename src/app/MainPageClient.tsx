@@ -2,6 +2,7 @@
 
 // import React, { useState, useEffect } from 'react'
 import Main from '@/components/Main/Main'
+// import Main2 from '@/components/Main2'
 import FonbetBanner from '@/components/FonbetBanner/FonbetBanner'
 import Games from '@/components/Games/Games'
 import StarPlayer from '@/components/StarPlayer'
