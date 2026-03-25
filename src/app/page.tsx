@@ -1,5 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
+
+import Main from '@/features/home'
 import MainPageClient from './MainPageClient'
 
 export const metadata: Metadata = {
@@ -10,7 +12,12 @@ export const metadata: Metadata = {
 }
 
 const MatchesPage: React.FC = () => {
-	return <MainPageClient />
+	return (
+		<>
+			<Main withBottomMenu />
+			<MainPageClient />
+		</>
+	)
 }
 
 export default MatchesPage

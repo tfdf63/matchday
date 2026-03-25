@@ -1,0 +1,5 @@
+export { MenuTicketIcon } from './MenuTicketIcon'
+export { MenuParkingIcon } from './MenuParkingIcon'
+export { MenuActivitiesIcon } from './MenuActivitiesIcon'
+export { MenuBagIcon } from './MenuBagIcon'
+export { MenuFcLogoIcon } from './MenuFcLogoIcon'

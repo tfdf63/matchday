@@ -10,6 +10,10 @@ export interface Game {
 	ticketLinkVip?: string
 	ticketLinkSkybox?: string
 	leagueInfo?: string
+	/** Сезон и тур — вторая строка под названием лиги на карточке матча. */
+	seasonTour?: string
+	/** Дата для карточки: «ДД.ММ (ДН)». */
+	dateCard?: string
 	priceIncreaseDates?: {
 		first?: string // Первое повышение цен
 		second?: string // Второе повышение цен
@@ -263,16 +267,18 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'ЦСКА',
 		date: '4 апреля',
+		dateCard: '04.04 (СБ)',
 		time: 'SAMT 14:00',
 		// timeLocal: 'MSK 13:00',
 		stadium: 'Солидарность Самара Арена',
 		ticketLink:
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61062106?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
 		ticketLinkVip:
-			' https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@61062106?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@61062106?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
 		ticketLinkSkybox:
 			'https://widget.afisha.yandex.ru/w/events/787561?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 23 ТУР',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
+		seasonTour: '2025/2026 23 ТУР',
 		priceIncreaseDates: {
 			first: '2026-03-29',
 			second: '2026-04-02',
@@ -285,6 +291,7 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'Динамо Мск',
 		date: '13 апреля',
+		dateCard: '13.04 (ПН)',
 		time: 'SAMT 18:15',
 		// timeLocal: 'MSK 13:00',
 		stadium: 'Солидарность Самара Арена',
@@ -294,7 +301,8 @@ const games: Game[] = [
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@61113918?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
 		ticketLinkSkybox:
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@61113918?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 24 ТУР',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
+		seasonTour: '2025/2026 24 ТУР',
 		priceIncreaseDates: {
 			first: '2026-04-07',
 			second: '2026-04-11',
@@ -307,6 +315,7 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'Динамо Мх',
 		date: '23 апреля',
+		dateCard: '23.04 (ЧТ)',
 		time: 'SAMT 18:30',
 		// timeLocal: 'MSK 13:00',
 		stadium: 'Солидарность Самара Арена',
@@ -316,7 +325,8 @@ const games: Game[] = [
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@61067766?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
 		ticketLinkSkybox:
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@61067766?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 26 ТУР',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
+		seasonTour: '2025/2026 26 ТУР',
 		priceIncreaseDates: {
 			first: '2026-04-17',
 			second: '2026-04-23',
@@ -329,6 +339,7 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'Краснодар',
 		date: '3 мая',
+		dateCard: '03.05 (ВС)',
 		time: 'SAMT 18:00',
 		// timeLocal: 'MSK 13:00',
 		stadium: 'Солидарность Самара Арена',
@@ -338,7 +349,8 @@ const games: Game[] = [
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@61074227?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
 		ticketLinkSkybox:
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@61074227?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 28 ТУР',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
+		seasonTour: '2025/2026 28 ТУР',
 		priceIncreaseDates: {
 			first: '2026-04-27',
 			second: '2026-05-01',
@@ -351,6 +363,7 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'Ростов',
 		date: '11 мая',
+		dateCard: '11.05 (ПН)',
 		time: 'SAMT 14:00',
 		// timeLocal: 'MSK 13:00',
 		stadium: 'Солидарность Самара Арена',
@@ -360,7 +373,8 @@ const games: Game[] = [
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@61076128?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
 		ticketLinkSkybox:
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@61076128?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
-		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 29 ТУР',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
+		seasonTour: '2025/2026 29 ТУР',
 		priceIncreaseDates: {
 			first: '2026-05-05',
 			second: '2026-05-09',

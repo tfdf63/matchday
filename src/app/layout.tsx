@@ -1,11 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import { IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
-import BackToHome from '@/components/BackToHome'
 import { AnalyticsScripts } from '@/lib/analytics/AnalyticsScripts'
 import '../styles/globals.css'
 import '../styles/fonts.css'
-import Image from 'next/image'
 
 const ibmPlexMono = IBM_Plex_Mono({
 	subsets: ['latin', 'cyrillic'],
@@ -127,14 +125,6 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className={ibmPlexMono.variable}>
-				<Image
-					src='/images/fon.webp'
-					alt='Фон'
-					fill
-					priority
-					className='globalBgFon'
-				/>
-				<BackToHome />
 				<AnalyticsScripts />
 				{children}
 			</body>

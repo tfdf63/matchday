@@ -7,6 +7,26 @@
 	/* --primary-red: #b2061c; */
 	--primary-red: #e30613;
 	--primary-red-hover: #e30613;
+
+	/* Кнопки (Figma FCA_Fans / Кнопки) */
+	--button-label: #ffffff;
+	--button-disabled-bg: #777777;
+
+	--button-primary-bg: #b2061c;
+	--button-primary-bg-hover: var(--primary-red);
+	/* pressed в макете совпадает с default */
+	--button-primary-bg-active: #b2061c;
+
+	--button-outline-border: #ffffff;
+	--button-outline-bg-hover: #ffffff;
+	--button-outline-label-hover: #020a0a;
+
+	--button-secondary-bg: #1b2222;
+	--button-secondary-bg-hover: #272727;
+	/* pressed в макете совпадает с default */
+	--button-secondary-bg-active: #1b2222;
+
+	--button-focus-ring: rgb(255 255 255 / 0.55);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,7 +39,8 @@
 html,
 body {
 	max-width: 100%;
-	max-height: 100dvh;
+	max-height: 100vh; /* fallback */
+	max-height: 100dvh; /* видимая область с учётом моб. адресной строки */
 	overflow-x: hidden;
 }
 
@@ -31,18 +52,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	position: relative;
 	z-index: 1;
-}
-
-.globalBgFon {
-	position: fixed !important;
-	z-index: 0;
-	top: 0;
-	left: 0;
-	width: 100vw !important;
-	height: 100vh !important;
-	object-fit: cover;
-	opacity: 0.09;
-	pointer-events: none;
 }
 
 .font-mono {

@@ -16,6 +16,8 @@ export type ContentMatch = {
 	ticketLinkVip?: string
 	ticketLinkSkybox?: string
 	leagueInfo?: string
+	seasonTour?: string
+	dateCard?: string
 	priceIncreaseDates?: {
 		first?: string
 		second?: string
@@ -38,6 +40,8 @@ export function contentMatchToGame(row: ContentMatch): Game {
 		ticketLinkVip: row.ticketLinkVip,
 		ticketLinkSkybox: row.ticketLinkSkybox,
 		leagueInfo: row.leagueInfo,
+		seasonTour: row.seasonTour,
+		dateCard: row.dateCard,
 		priceIncreaseDates: row.priceIncreaseDates,
 		fanIdStatus: row.fanIdStatus ?? 'Без fan id',
 		promoType: row.promoType,
