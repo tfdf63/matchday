@@ -1,7 +1,7 @@
 'use client'
 
 // import React, { useState, useEffect } from 'react'
-import Main from '@/components/Main/Main'
+import Main from '@/features/home'
 // import Main2 from '@/components/Main2'
 import FonbetBanner from '@/components/FonbetBanner/FonbetBanner'
 import Games from '@/components/Games/Games'

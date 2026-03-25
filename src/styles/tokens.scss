@@ -1,0 +1,14 @@
+// Дизайн-токены и брейкпоинты (mobile-first).
+// Цвета/типографика из Figma: синхронизировать через Figma MCP → при необходимости
+// дублировать сюда как $var или :root { --token-* }.
+
+$bp-tablet-sm: 768px;
+$bp-tablet: 1024px;
+$bp-desktop: 1440px;
+$bp-desktop-xl: 1920px;
+
+@mixin from($bp) {
+	@media (min-width: $bp) {
+		@content;
+	}
+}

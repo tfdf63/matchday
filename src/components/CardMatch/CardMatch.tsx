@@ -5,6 +5,7 @@ import Link from 'next/link'
 import styles from './CardMatch.module.scss'
 import MatchTicketBanner from '../MatchTicketBanner'
 import ActionButton from '../ActionButton/ActionButton'
+import { getShortWeekdayRu } from '@/lib/match-dates'
 
 interface CardMatchProps {
 	leagueInfo?: string
@@ -20,32 +21,6 @@ interface CardMatchProps {
 	ticketLinkSkybox?: string
 	fanIdStatus?: string
 	promoType?: 'cup' | 'rpl'
-}
-
-function getShortWeekdayRu(dateStr: string): string {
-	const months: Record<string, number> = {
-		января: 0,
-		февраля: 1,
-		марта: 2,
-		апреля: 3,
-		мая: 4,
-		июня: 5,
-		июля: 6,
-		августа: 7,
-		сентября: 8,
-		октября: 9,
-		ноября: 10,
-		декабря: 11,
-	}
-	const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
-	const match = dateStr.match(/(\d{1,2}) ([а-я]+)/i)
-	if (!match) return ''
-	const day = parseInt(match[1], 10)
-	const month = months[match[2].toLowerCase()]
-	if (month === undefined) return ''
-	const year = new Date().getFullYear()
-	const date = new Date(year, month, day)
-	return days[date.getDay()]
 }
 
 const CardMatch: React.FC<CardMatchProps> = ({

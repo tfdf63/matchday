@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
-import Script from 'next/script'
 import BackToHome from '@/components/BackToHome'
+import { AnalyticsScripts } from '@/lib/analytics/AnalyticsScripts'
 import '../styles/globals.css'
 import '../styles/fonts.css'
 import Image from 'next/image'
@@ -135,27 +135,7 @@ export default function RootLayout({
 					className='globalBgFon'
 				/>
 				<BackToHome />
-				<noscript>
-					<div>
-						<img
-							src='https://mc.yandex.ru/watch/107730968'
-							style={{ position: 'absolute', left: '-9999px' }}
-							alt=''
-						/>
-					</div>
-				</noscript>
-				<Script id='top-mail-ru' strategy='lazyOnload' src='/top-mail-ru.js' />
-				<Script
-					id='yandex-metrika-main'
-					strategy='lazyOnload'
-					src='/yandex-metrika-main.js'
-				/>
-				<Script
-					id='yandex-metrika'
-					strategy='lazyOnload'
-					src='/yandex-metrika.js'
-				/>
-				<Script id='sber-counter' strategy='lazyOnload' src='/sber.js' />
+				<AnalyticsScripts />
 				{children}
 			</body>
 		</html>
