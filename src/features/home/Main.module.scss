@@ -3,8 +3,9 @@
 /* Зарезервировано под нижнее меню (см. Menu): полоса + выступ FAB */
 $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 
-/* Первый экран FCA_Fans node 4810:16477 — артборд 767×928 */
+/* Первый экран FCA_Fans: 767 — node 4810:16477 (767×928); 1024 — node 4810:14187 (1024×1085) */
 $main-first-screen-min-height: 928px;
+$main-first-screen-min-height-tablet: 1085px;
 
 .main {
 	box-sizing: border-box;
@@ -26,6 +27,10 @@ $main-first-screen-min-height: 928px;
 		&.withBottomMenu {
 			padding-bottom: 3rem;
 		}
+	}
+
+	@include from($bp-tablet) {
+		min-height: max(100svh, #{$main-first-screen-min-height-tablet});
 	}
 }
 
@@ -91,6 +96,11 @@ $main-first-screen-min-height: 928px;
 		max-width: 334px;
 		flex-shrink: 0;
 	}
+
+	@include from($bp-tablet) {
+		gap: 40px;
+		max-width: 462px;
+	}
 }
 
 .heroTitleBlock {
@@ -99,6 +109,10 @@ $main-first-screen-min-height: 928px;
 	align-items: flex-start;
 	gap: 20px;
 	width: 100%;
+
+	@include from($bp-tablet) {
+		gap: 30px;
+	}
 }
 
 .heroTitle {
@@ -112,6 +126,11 @@ $main-first-screen-min-height: 928px;
 	line-height: 0.9;
 	text-transform: uppercase;
 	color: #fff;
+
+	@include from($bp-tablet) {
+		max-width: 462px;
+		font-size: 80px;
+	}
 }
 
 .heroTitleLine1 {
@@ -125,6 +144,10 @@ $main-first-screen-min-height: 928px;
 	gap: 0;
 	width: 100%;
 	max-width: 296px;
+
+	@include from($bp-tablet) {
+		max-width: 462px;
+	}
 }
 
 .heroLeadLine {
@@ -136,6 +159,12 @@ $main-first-screen-min-height: 928px;
 
 	&:first-child {
 		text-indent: 59px;
+	}
+
+	@include from($bp-tablet) {
+		&:first-child {
+			text-indent: 123px;
+		}
 	}
 }
 
@@ -207,6 +236,10 @@ $main-first-screen-min-height: 928px;
 		flex-shrink: 0;
 		align-self: flex-start;
 	}
+
+	@include from($bp-tablet) {
+		width: 301px;
+	}
 }
 
 @include from($bp-tablet-sm) {
@@ -277,10 +310,15 @@ $club-wordmark-overlap-menu: 6px;
 		width: 100%;
 		max-width: 100%;
 		margin: 80px 0 0;
-		padding: 0 20px;
+		padding: 0;
 		text-align: center;
 		font-size: 184px;
 		white-space: nowrap;
+	}
+
+	@include from($bp-tablet) {
+		margin-top: 100px;
+		font-size: 254px;
 	}
 }
 

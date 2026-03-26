@@ -425,3 +425,37 @@ $fan-id-to-title-gap: 20px;
 		padding: 10px 24px;
 	}
 }
+
+/* FCA_Fans первый экран 1024 — node 4810:14214 */
+@include from($bp-tablet) {
+	.root {
+		width: 301px;
+		padding: 70px 16px 30px;
+	}
+
+	.rootWithFanBadge {
+		padding-top: 70px;
+	}
+
+	.title {
+		font-size: 32px;
+	}
+
+	.dateMain {
+		font-size: 16px;
+	}
+
+	.teamLogo,
+	.teamLogoPlaceholder {
+		width: 50px;
+		height: 50px;
+	}
+
+	.teamName {
+		font-size: 18px;
+	}
+
+	.vs {
+		font-size: 18px;
+	}
+}
