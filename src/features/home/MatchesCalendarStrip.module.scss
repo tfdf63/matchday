@@ -1,0 +1,203 @@
+@use '../../styles/tokens.scss' as *;
+
+$muted: rgb(255 255 255 / 0.8);
+$border-muted: rgb(255 255 255 / 0.3);
+$strip-sticky-bg: #020a0a;
+$bar-home: #e30613;
+$bar-away: #272727;
+
+$cal-date-pad-top: 10px;
+$cal-date-pad-bottom: 14px;
+$cal-date-font-size: 20px;
+$cal-date-line-height: 1.1;
+$cal-date-border: 1px;
+$cal-date-row-height: $cal-date-pad-top +
+	($cal-date-font-size * $cal-date-line-height) + $cal-date-pad-bottom +
+	$cal-date-border;
+$cal-date-row-height-accent: $cal-date-row-height + 3px;
+
+.strip {
+	width: 100%;
+	max-width: 320px;
+	margin-inline: auto;
+
+	@include from($bp-tablet-sm) {
+		max-width: min(100%, 720px);
+	}
+
+	@include from($bp-laptop) {
+		max-width: min(100%, 960px);
+	}
+}
+
+.scroller {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: thin;
+}
+
+.monthDivider {
+	position: sticky;
+	left: 0;
+	z-index: 2;
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	align-items: stretch;
+	align-self: stretch;
+	width: 45px;
+	background-color: $strip-sticky-bg;
+}
+
+.monthLabelCell {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	height: $cal-date-row-height;
+	padding: $cal-date-pad-top 4px $cal-date-pad-bottom;
+	border-bottom: $cal-date-border solid $border-muted;
+}
+
+.monthLabel {
+	margin: 0;
+	width: 100%;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-align: center;
+	text-transform: uppercase;
+	color: $muted;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.monthDividerFill {
+	flex: 1 1 auto;
+	min-height: 0;
+}
+
+.col {
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+	align-items: stretch;
+	min-width: 48px;
+	max-width: 80px;
+}
+
+.dayTab {
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+	align-items: stretch;
+	min-width: 48px;
+	max-width: 80px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+	font: inherit;
+	color: inherit;
+	text-align: inherit;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+		z-index: 1;
+	}
+}
+
+.dateNum {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	height: $cal-date-row-height;
+	padding: $cal-date-pad-top 10px $cal-date-pad-bottom;
+	border-bottom: $cal-date-border solid $border-muted;
+	font-size: $cal-date-font-size;
+	font-weight: 400;
+	line-height: $cal-date-line-height;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+/* Ячейка с матчем: полоса 4px домашний / гостевой */
+.dateNumMatch {
+	height: $cal-date-row-height-accent;
+	padding: $cal-date-pad-top 10px $cal-date-pad-bottom;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	background: transparent;
+	color: #fff;
+}
+
+.dateNumActiveHome {
+	background: #fff;
+	color: #020a0a;
+	border-bottom-color: $bar-home;
+}
+
+.dateNumInactiveHome {
+	border-bottom-color: $bar-home;
+}
+
+.dateNumActiveAway {
+	background: #fff;
+	color: #020a0a;
+	border-bottom-color: $bar-away;
+}
+
+.dateNumInactiveAway {
+	border-bottom-color: $bar-away;
+}
+
+.weekday {
+	margin: 0;
+	flex-shrink: 0;
+	padding: 10px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.3;
+	text-align: center;
+	color: $muted;
+}
+
+.weekdayActiveHome {
+	background: #b2061c;
+	color: #fff;
+}
+
+.logoCell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1 1 auto;
+	min-height: 44px;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.logoCellActiveHome {
+	background: #b2061c;
+}
+
+.logo {
+	display: block;
+	width: 100%;
+	max-width: 28px;
+	height: auto;
+	max-height: 28px;
+	object-fit: contain;
+}

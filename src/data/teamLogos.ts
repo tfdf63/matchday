@@ -1,3 +1,28 @@
+/** Город клуба (подпись под названием в карточках). */
+export const TEAM_CITY_BY_NAME: Record<string, string> = {
+	Акрон: 'Тольятти',
+	Ахмат: 'Грозный',
+	Балтика: 'Калининград',
+	'Крылья Советов': 'Самара',
+	Локомотив: 'Москва',
+	Оренбург: 'Оренбург',
+	'Пари НН': 'Нижний Новгород',
+	Ростов: 'Ростов-на-Дону',
+	Рубин: 'Казань',
+	Сочи: 'Сочи',
+	Спартак: 'Москва',
+	ЦСКА: 'Москва',
+	Зенит: 'Санкт-Петербург',
+	Краснодар: 'Краснодар',
+	'Динамо Мск': 'Москва',
+	'Динамо Мх': 'Химки',
+}
+
+export function getTeamCity(teamName: string | undefined): string | undefined {
+	if (!teamName?.trim()) return undefined
+	return TEAM_CITY_BY_NAME[teamName.trim()]
+}
+
 /** Путь к логотипу в `public/images/teamslogo`. */
 const TEAM_LOGO_BY_NAME: Record<string, string> = {
 	Акрон: '/images/teamslogo/Akron.png',

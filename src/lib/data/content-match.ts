@@ -1,4 +1,4 @@
-import type { Game } from '@/data/games'
+import type { Game, MatchVenue } from '@/data/games'
 
 /**
  * Целевая форма матча для нового контент-слоя (JSON/TS после редизайна).
@@ -18,12 +18,18 @@ export type ContentMatch = {
 	leagueInfo?: string
 	seasonTour?: string
 	dateCard?: string
+	dateIso?: string
+	venue?: MatchVenue
 	priceIncreaseDates?: {
 		first?: string
 		second?: string
 	}
 	fanIdStatus?: Game['fanIdStatus']
 	promoType?: Game['promoType']
+}
+
+function venueFromHomeTeam(homeTeam: string | undefined): MatchVenue {
+	return homeTeam?.trim() === 'Акрон' ? 'home' : 'away'
 }
 
 /** Маппинг новой записи в текущий тип `Game` для существующих компонентов. */
@@ -42,6 +48,8 @@ export function contentMatchToGame(row: ContentMatch): Game {
 		leagueInfo: row.leagueInfo,
 		seasonTour: row.seasonTour,
 		dateCard: row.dateCard,
+		dateIso: row.dateIso ?? '1970-01-01',
+		venue: row.venue ?? venueFromHomeTeam(row.homeTeam),
 		priceIncreaseDates: row.priceIncreaseDates,
 		fanIdStatus: row.fanIdStatus ?? 'Без fan id',
 		promoType: row.promoType,

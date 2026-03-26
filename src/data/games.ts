@@ -1,3 +1,5 @@
+export type MatchVenue = 'home' | 'away'
+
 export interface Game {
 	id: string
 	homeTeam?: string
@@ -14,12 +16,23 @@ export interface Game {
 	seasonTour?: string
 	/** Дата для карточки: «ДД.ММ (ДН)». */
 	dateCard?: string
+	/** ISO YYYY-MM-DD — сортировка и ячейки календаря. */
+	dateIso: string
+	/** Домашний для Акрона, если хозяин — Акрон; иначе гостевой. */
+	venue: MatchVenue
 	priceIncreaseDates?: {
 		first?: string // Первое повышение цен
 		second?: string // Второе повышение цен
 	}
 	fanIdStatus: 'Без fan id' | 'Fan id'
 	promoType?: 'cup' | 'rpl'
+}
+
+/** Логотип соперника ФК Акрон для полосы календаря. */
+export function getOpponentTeamName(game: Game): string | undefined {
+	const home = game.homeTeam?.trim()
+	if (home === 'Акрон') return game.awayTeam?.trim()
+	return home
 }
 
 const games: Game[] = [
@@ -267,6 +280,8 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'ЦСКА',
 		date: '4 апреля',
+		dateIso: '2026-04-04',
+		venue: 'home',
 		dateCard: '04.04 (СБ)',
 		time: 'SAMT 14:00',
 		// timeLocal: 'MSK 13:00',
@@ -291,6 +306,8 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'Динамо Мск',
 		date: '13 апреля',
+		dateIso: '2026-04-13',
+		venue: 'home',
 		dateCard: '13.04 (ПН)',
 		time: 'SAMT 18:15',
 		// timeLocal: 'MSK 13:00',
@@ -315,6 +332,8 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'Динамо Мх',
 		date: '23 апреля',
+		dateIso: '2026-04-23',
+		venue: 'home',
 		dateCard: '23.04 (ЧТ)',
 		time: 'SAMT 18:30',
 		// timeLocal: 'MSK 13:00',
@@ -339,6 +358,8 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'Краснодар',
 		date: '3 мая',
+		dateIso: '2026-05-03',
+		venue: 'home',
 		dateCard: '03.05 (ВС)',
 		time: 'SAMT 18:00',
 		// timeLocal: 'MSK 13:00',
@@ -363,6 +384,8 @@ const games: Game[] = [
 		homeTeam: 'Акрон',
 		awayTeam: 'Ростов',
 		date: '11 мая',
+		dateIso: '2026-05-11',
+		venue: 'home',
 		dateCard: '11.05 (ПН)',
 		time: 'SAMT 14:00',
 		// timeLocal: 'MSK 13:00',

@@ -1,4 +1,10 @@
-import { TicketCard } from '@/components/TicketSlider/TicketSlider'
+export type TicketCard = {
+	id: number
+	image: string
+	buttonText: string
+	url: string
+	status: 'Mass' | 'Premium' | 'VIP'
+}
 
 export const ticketCards: TicketCard[] = [
 	{

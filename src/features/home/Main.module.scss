@@ -102,22 +102,17 @@ $club-wordmark-overlap-menu: 6px;
 	background-clip: text;
 	-webkit-background-clip: text;
 	pointer-events: none;
+	position: absolute;
+	z-index: 2;
 	left: 50%;
 	transform: translateX(-50%);
+	bottom: 3rem;
 }
 
-/* Под фиксированным меню (z-index: 100), но поверх контента Main */
+/* То же визуальное положение над полосой меню, но относительно первой секции (уезжает при скролле). */
 .main.withBottomMenu .clubWordmark {
-	position: fixed;
-	z-index: 50;
 	bottom: calc(
 		env(safe-area-inset-bottom, 0px) + #{$menu-gray-bar-height} -
 			#{$club-wordmark-overlap-menu}
 	);
-}
-
-.main:not(.withBottomMenu) .clubWordmark {
-	position: absolute;
-	z-index: 2;
-	bottom: 3rem;
 }
