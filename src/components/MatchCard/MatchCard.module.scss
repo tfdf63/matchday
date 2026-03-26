@@ -569,3 +569,70 @@ $fan-id-to-title-gap: 20px;
 		font-size: 22px;
 	}
 }
+
+/* FCA_Fans первый экран 1920 — node 4810:1549 */
+@include from($bp-desktop-xl) {
+	.root {
+		width: 444px;
+		padding: 80px 20px 40px;
+	}
+
+	.rootWithFanBadge {
+		padding-top: 80px;
+	}
+
+	.title {
+		font-size: 48px;
+	}
+
+	.leagueLine {
+		font-size: 16px;
+	}
+
+	.timeLocal {
+		font-size: 16px;
+	}
+
+	.stadium {
+		font-size: 16px;
+	}
+
+	.dateMain {
+		font-size: 20px;
+	}
+
+	.teamName {
+		font-size: 24px;
+	}
+
+	.teamCity {
+		font-size: 14px;
+	}
+
+	.vs {
+		font-size: 24px;
+	}
+
+	.btnPrimary {
+		min-height: 60px;
+		font-size: 16px;
+	}
+
+	.btnOutline {
+		min-height: 60px;
+		font-size: 16px;
+	}
+
+	.btnSecondary {
+		min-height: 60px;
+		font-size: 16px;
+	}
+
+	.priceNote {
+		font-size: 16px;
+	}
+
+	.fanIdBadge {
+		font-size: 14px;
+	}
+}

@@ -3,11 +3,12 @@
 /* Зарезервировано под нижнее меню (см. Menu): полоса + выступ FAB */
 $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 
-/* Первый экран FCA_Fans: 767 — 4810:16477; 1024 — 4810:14187; 1280 — 4810:11897; 1600 — 4810:9597 (1600×1124) */
+/* Первый экран FCA_Fans: 767 — 4810:16477; 1024 — 4810:14187; 1280 — 4810:11897; 1600 — 4810:9597; 1920 — 4810:1522 (1920×1261) */
 $main-first-screen-min-height: 928px;
 $main-first-screen-min-height-tablet: 1085px;
 $main-first-screen-min-height-laptop: 1040px;
 $main-first-screen-min-height-desktop: 1124px;
+$main-first-screen-min-height-desktop-xl: 1261px;
 
 .main {
 	box-sizing: border-box;
@@ -41,6 +42,10 @@ $main-first-screen-min-height-desktop: 1124px;
 
 	@include from($bp-desktop) {
 		min-height: max(100svh, #{$main-first-screen-min-height-desktop});
+	}
+
+	@include from($bp-desktop-xl) {
+		min-height: max(100svh, #{$main-first-screen-min-height-desktop-xl});
 	}
 }
 
@@ -119,6 +124,10 @@ $main-first-screen-min-height-desktop: 1124px;
 	@include from($bp-desktop) {
 		max-width: 750px;
 	}
+
+	@include from($bp-desktop-xl) {
+		max-width: 910px;
+	}
 }
 
 .heroTitleBlock {
@@ -159,6 +168,11 @@ $main-first-screen-min-height-desktop: 1124px;
 		max-width: 771px;
 		font-size: 140px;
 	}
+
+	@include from($bp-desktop-xl) {
+		max-width: 910px;
+		font-size: 168px;
+	}
 }
 
 .heroTitleLine1 {
@@ -183,6 +197,10 @@ $main-first-screen-min-height-desktop: 1124px;
 
 	@include from($bp-desktop) {
 		max-width: 750px;
+	}
+
+	@include from($bp-desktop-xl) {
+		max-width: 910px;
 	}
 }
 
@@ -220,6 +238,10 @@ $main-first-screen-min-height-desktop: 1124px;
 
 	@include from($bp-laptop) {
 		font-size: 14px;
+	}
+
+	@include from($bp-desktop-xl) {
+		font-size: 16px;
 	}
 }
 
@@ -271,6 +293,10 @@ $main-first-screen-min-height-desktop: 1124px;
 	@include from($bp-desktop) {
 		max-width: 750px;
 	}
+
+	@include from($bp-desktop-xl) {
+		max-width: 755px;
+	}
 }
 
 .tagLink {
@@ -309,6 +335,10 @@ $main-first-screen-min-height-desktop: 1124px;
 		min-height: 48px;
 		padding: 12px 24px;
 	}
+
+	@include from($bp-desktop-xl) {
+		font-size: 16px;
+	}
 }
 
 /* Правая колонка: только карточка; вордмарк — отдельная строка на всю ширину (центр экрана) */
@@ -346,6 +376,10 @@ $main-first-screen-min-height-desktop: 1124px;
 
 	@include from($bp-laptop) {
 		width: 365px;
+	}
+
+	@include from($bp-desktop-xl) {
+		width: 444px;
 	}
 }
 
@@ -436,6 +470,25 @@ $club-wordmark-overlap-menu: 6px;
 	@include from($bp-desktop) {
 		margin-top: 56px;
 		font-size: 409.076px;
+	}
+
+	/*
+	 * 1920 FCA_Fans 4810:1524: не flex, а absolute — x=40, y=916, w=1840 (поля 40).
+	 * Иначе margin-top в потоке не совпадает с фиксированной координатой в макете.
+	 */
+	@include from($bp-desktop-xl) {
+		position: absolute;
+		left: 40px;
+		right: 40px;
+		top: 916px;
+		bottom: auto;
+		width: auto;
+		max-width: none;
+		flex-basis: auto;
+		margin: 0;
+		font-size: 495.198px;
+		line-height: 0.92;
+		text-align: center;
 	}
 }
 
