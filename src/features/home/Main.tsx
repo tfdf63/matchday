@@ -58,13 +58,44 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 							чем просто команда
 						</h1>
 						<div className={styles.heroLead}>
-							<p className={cx(styles.heroLeadLine, 'font-mono')}>
-								Мы объединяем амбиции города,{' '}
-							</p>
-							<p className={cx(styles.heroLeadLine, 'font-mono')}>
-								страсть болельщиков и силу стальной воли. Будь с «Акроном» до
-								финального свистка.
-							</p>
+							{/* <1024: 4810:16486 + 4810:16485 (Group 4810:16484) */}
+							<div className={styles.heroLeadNarrow}>
+								<p
+									className={cx(
+										styles.heroLeadLine,
+										styles.heroLeadFirst,
+										'font-mono',
+									)}
+								>
+									Мы объединяем амбиции города,{' '}
+								</p>
+								<div className={styles.heroLeadBody}>
+									<p className={cx(styles.heroLeadLine, 'font-mono')}>
+										страсть болельщиков и силу стальной воли.
+										<br />
+										Будь с «Акроном» до финального свистка.
+									</p>
+								</div>
+							</div>
+							{/* 1024+: 4810:14196; продолжение 4810:14195 / 1280 */}
+							<div className={styles.heroLeadWide}>
+								<p
+									className={cx(
+										styles.heroLeadLine,
+										styles.heroLeadFirst,
+										'font-mono',
+									)}
+								>
+									Мы объединяем амбиции города, страсть{' '}
+								</p>
+								<div className={styles.heroLeadBody}>
+									<p className={cx(styles.heroLeadLine, 'font-mono')}>
+										болельщиков и силу стальной воли. Будь с «Акроном»{' '}
+										<br />
+										до финального свистка.
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<nav className={styles.tagNav} aria-label='Разделы сайта'>

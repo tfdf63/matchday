@@ -3,9 +3,10 @@
 /* Зарезервировано под нижнее меню (см. Menu): полоса + выступ FAB */
 $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 
-/* Первый экран FCA_Fans: 767 — node 4810:16477 (767×928); 1024 — node 4810:14187 (1024×1085) */
+/* Первый экран FCA_Fans: 767 — 4810:16477 (767×928); 1024 — 4810:14187 (1024×1085); 1280 — 4810:11897 (1280×1040) */
 $main-first-screen-min-height: 928px;
 $main-first-screen-min-height-tablet: 1085px;
+$main-first-screen-min-height-laptop: 1040px;
 
 .main {
 	box-sizing: border-box;
@@ -31,6 +32,10 @@ $main-first-screen-min-height-tablet: 1085px;
 
 	@include from($bp-tablet) {
 		min-height: max(100svh, #{$main-first-screen-min-height-tablet});
+	}
+
+	@include from($bp-laptop) {
+		min-height: max(100svh, #{$main-first-screen-min-height-laptop});
 	}
 }
 
@@ -101,6 +106,10 @@ $main-first-screen-min-height-tablet: 1085px;
 		gap: 40px;
 		max-width: 462px;
 	}
+
+	@include from($bp-laptop) {
+		max-width: 590px;
+	}
 }
 
 .heroTitleBlock {
@@ -131,6 +140,11 @@ $main-first-screen-min-height-tablet: 1085px;
 		max-width: 462px;
 		font-size: 80px;
 	}
+
+	@include from($bp-laptop) {
+		max-width: 590px;
+		font-size: 96px;
+	}
 }
 
 .heroTitleLine1 {
@@ -148,6 +162,35 @@ $main-first-screen-min-height-tablet: 1085px;
 	@include from($bp-tablet) {
 		max-width: 462px;
 	}
+
+	@include from($bp-laptop) {
+		max-width: 590px;
+	}
+}
+
+.heroLeadNarrow,
+.heroLeadWide {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0;
+	width: 100%;
+}
+
+/* Узкий лид: мобилка и 767–1023 */
+.heroLeadNarrow {
+	@include from($bp-tablet) {
+		display: none;
+	}
+}
+
+/* Широкий лид: с 1024 */
+.heroLeadWide {
+	display: none;
+
+	@include from($bp-tablet) {
+		display: flex;
+	}
 }
 
 .heroLeadLine {
@@ -157,15 +200,40 @@ $main-first-screen-min-height-tablet: 1085px;
 	line-height: 1.3;
 	color: #fff;
 
-	&:first-child {
-		text-indent: 59px;
+	@include from($bp-laptop) {
+		font-size: 14px;
+	}
+}
+
+/* 4810:16486 — text x=59 в группе 296px */
+.heroLeadNarrow .heroLeadFirst {
+	text-indent: 59px;
+}
+
+/* 4810:14196 / 4810:11906 — отступ первой строки на 1024 / 1280 */
+.heroLeadWide .heroLeadFirst {
+	@include from($bp-tablet) {
+		text-indent: 123px;
 	}
 
-	@include from($bp-tablet) {
-		&:first-child {
-			text-indent: 123px;
-		}
+	@include from($bp-laptop) {
+		text-indent: 155px;
 	}
+}
+
+.heroLeadBody {
+	margin: 0;
+	width: 100%;
+}
+
+/* 4810:16484: вторая строка сразу под первой (без mt) */
+.heroLeadNarrow .heroLeadBody {
+	margin-top: 0;
+}
+
+/* Широкий лид: без вертикального зазора между первой строкой и продолжением */
+.heroLeadWide .heroLeadBody {
+	margin-top: 0;
 }
 
 .tagNav {
@@ -177,6 +245,10 @@ $main-first-screen-min-height-tablet: 1085px;
 	width: 100%;
 	max-width: 300px;
 	pointer-events: auto;
+
+	@include from($bp-laptop) {
+		max-width: 305px;
+	}
 }
 
 .tagLink {
@@ -205,6 +277,10 @@ $main-first-screen-min-height-tablet: 1085px;
 	&:focus-visible {
 		outline: 2px solid var(--button-focus-ring, rgb(255 255 255 / 0.55));
 		outline-offset: 2px;
+	}
+
+	@include from($bp-laptop) {
+		font-size: 14px;
 	}
 }
 
@@ -239,6 +315,10 @@ $main-first-screen-min-height-tablet: 1085px;
 
 	@include from($bp-tablet) {
 		width: 301px;
+	}
+
+	@include from($bp-laptop) {
+		width: 365px;
 	}
 }
 
@@ -319,6 +399,11 @@ $club-wordmark-overlap-menu: 6px;
 	@include from($bp-tablet) {
 		margin-top: 100px;
 		font-size: 254px;
+	}
+
+	@include from($bp-laptop) {
+		margin-top: 72px;
+		font-size: 323px;
 	}
 }
 

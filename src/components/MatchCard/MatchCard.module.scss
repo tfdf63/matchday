@@ -459,3 +459,94 @@ $fan-id-to-title-gap: 20px;
 		font-size: 18px;
 	}
 }
+
+/* FCA_Fans первый экран 1280 — node 4810:11924 */
+@include from($bp-laptop) {
+	.root {
+		width: 365px;
+		padding: 70px 20px 40px;
+	}
+
+	.rootWithFanBadge {
+		padding-top: 70px;
+	}
+
+	.title {
+		font-size: 40px;
+	}
+
+	.leagueLine {
+		font-size: 14px;
+	}
+
+	.timeLocal {
+		font-size: 14px;
+	}
+
+	.stadium {
+		font-size: 14px;
+	}
+
+	.teamCol,
+	.teamColAway {
+		flex: 0 0 150px;
+		width: 150px;
+		min-width: 150px;
+	}
+
+	.teamLogo,
+	.teamLogoPlaceholder {
+		width: 56px;
+		height: 56px;
+	}
+
+	.teamName {
+		font-size: 20px;
+	}
+
+	.teamCity {
+		font-size: 12px;
+	}
+
+	.vs {
+		font-size: 22px;
+		flex: 1 1 0;
+	}
+
+	.btnPrimary {
+		min-height: 58px;
+		font-size: 14px;
+	}
+
+	.btnOutline {
+		flex: 1 1 0;
+		width: auto;
+		min-width: 0;
+		min-height: 58px;
+		padding: 16px 32px;
+		font-size: 14px;
+	}
+
+	.btnSecondary {
+		flex: 1 1 0;
+		width: auto;
+		min-width: 0;
+		min-height: 58px;
+		gap: 8px;
+		font-size: 14px;
+	}
+
+	.priceNote {
+		font-size: 14px;
+	}
+
+	.outlineStack {
+		flex-direction: row;
+		gap: 10px;
+	}
+
+	.secondaryStack {
+		flex-direction: row;
+		gap: 10px;
+	}
+}
