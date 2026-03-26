@@ -87,16 +87,23 @@ export function MatchCard({
 							<Image
 								src={homeLogo}
 								alt=""
-								width={40}
-								height={40}
+								width={60}
+								height={60}
 								className={styles.teamLogo}
 							/>
 						) : (
 							<div className={styles.teamLogoPlaceholder} aria-hidden />
 						)}
-						{game.homeTeam ? (
-							<p className={styles.teamName}>{game.homeTeam}</p>
-						) : null}
+						<div className={styles.teamNameBlock}>
+							{game.homeTeam ? (
+								<p className={styles.teamName}>{game.homeTeam}</p>
+							) : null}
+							{game.homeTeamCity ? (
+								<p className={cx(styles.teamCity, 'font-mono')}>
+									{game.homeTeamCity}
+								</p>
+							) : null}
+						</div>
 					</div>
 					<p className={styles.vs} aria-hidden>
 						—
@@ -106,16 +113,23 @@ export function MatchCard({
 							<Image
 								src={awayLogo}
 								alt=""
-								width={40}
-								height={40}
+								width={60}
+								height={60}
 								className={styles.teamLogo}
 							/>
 						) : (
 							<div className={styles.teamLogoPlaceholder} aria-hidden />
 						)}
-						{game.awayTeam ? (
-							<p className={styles.teamName}>{game.awayTeam}</p>
-						) : null}
+						<div className={styles.teamNameBlock}>
+							{game.awayTeam ? (
+								<p className={styles.teamName}>{game.awayTeam}</p>
+							) : null}
+							{game.awayTeamCity ? (
+								<p className={cx(styles.teamCity, 'font-mono')}>
+									{game.awayTeamCity}
+								</p>
+							) : null}
+						</div>
 					</div>
 				</div>
 

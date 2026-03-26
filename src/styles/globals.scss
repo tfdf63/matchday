@@ -40,7 +40,7 @@ html,
 body {
 	max-width: 100%;
 	max-height: 100vh; /* fallback */
-	max-height: 100dvh; /* видимая область с учётом моб. адресной строки */
+	max-height: 100svh; /* стабильная высота вьюпорта; dvh давал пересчёт при скрытии панели */
 	overflow-x: hidden;
 }
 

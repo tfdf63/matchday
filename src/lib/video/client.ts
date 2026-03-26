@@ -44,7 +44,7 @@ export async function precacheMainBackgroundVideos(): Promise<void> {
 export function isMobileDevice(): boolean {
 	if (typeof window !== 'undefined') {
 		return (
-			window.innerWidth <= 768 ||
+			window.innerWidth < 767 ||
 			/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
 				navigator.userAgent,
 			)

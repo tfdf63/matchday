@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import type { FC } from 'react'
 
 import { MatchCard } from '@/components/MatchCard'
@@ -9,6 +10,17 @@ import styles from './Main.module.scss'
 function cx(...parts: Array<string | false | null | undefined>): string {
 	return parts.filter(Boolean).join(' ')
 }
+
+const HERO_TAGS: ReadonlyArray<{ label: string; href: string }> = [
+	{ label: 'Ближайшие матчи', href: '#' },
+	{ label: 'Активности', href: '/activities/' },
+	{ label: 'Билетная программа', href: '/' },
+	{ label: 'Сектора', href: '/' },
+	{ label: 'Карта болельщика', href: '/' },
+	{ label: 'Мерч', href: '/merch/' },
+	{ label: 'Правила', href: '/' },
+	{ label: 'FAQ', href: '/' },
+]
 
 export type MainProps = {
 	withBottomMenu?: boolean
@@ -35,13 +47,47 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 				<div className={styles.heroOverlayFade} aria-hidden />
 			</div>
 
-			<div className={styles.matchAnchor}>
-				<MatchCard game={game} />
+			<div className={styles.contentBand}>
+				<div className={styles.heroCopy}>
+					<div className={styles.heroTitleBlock}>
+						<h1 className={styles.heroTitle}>
+							<span className={styles.heroTitleLine1}>
+								Мы&nbsp;&mdash; больше
+							</span>
+							<br />
+							чем просто команда
+						</h1>
+						<div className={styles.heroLead}>
+							<p className={cx(styles.heroLeadLine, 'font-mono')}>
+								Мы объединяем амбиции города,{' '}
+							</p>
+							<p className={cx(styles.heroLeadLine, 'font-mono')}>
+								страсть болельщиков и силу стальной воли. Будь с «Акроном» до
+								финального свистка.
+							</p>
+						</div>
+					</div>
+					<nav className={styles.tagNav} aria-label='Разделы сайта'>
+						{HERO_TAGS.map(({ label, href }) => (
+							<Link
+								key={label}
+								href={href}
+								className={cx(styles.tagLink, 'font-mono')}
+							>
+								{label}
+							</Link>
+						))}
+					</nav>
+				</div>
+				<div className={styles.matchStack}>
+					<div className={styles.matchAnchor}>
+						<MatchCard game={game} />
+					</div>
+				</div>
+				<p className={styles.clubWordmark} aria-hidden>
+					ФК Акрон
+				</p>
 			</div>
-
-			<p className={styles.clubWordmark} aria-hidden>
-				ФК Акрон
-			</p>
 		</div>
 	)
 }

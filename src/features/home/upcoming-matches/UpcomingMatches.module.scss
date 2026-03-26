@@ -1,4 +1,4 @@
-@use '../../styles/tokens.scss' as *;
+@use '../../../styles/tokens.scss' as *;
 
 /* Согласовано с Main + нижнее меню */
 $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
@@ -23,7 +23,7 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	padding: 48px 20px 40px;
 
 	@include from($bp-tablet-sm) {
-		max-width: 768px;
+		max-width: 767px;
 		padding-inline: 32px;
 	}
 

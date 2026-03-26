@@ -20,6 +20,9 @@ export interface Game {
 	dateIso: string
 	/** Домашний для Акрона, если хозяин — Акрон; иначе гостевой. */
 	venue: MatchVenue
+	/** Город для подписи под названием команды на карточке (планшет). */
+	homeTeamCity?: string
+	awayTeamCity?: string
 	priceIncreaseDates?: {
 		first?: string // Первое повышение цен
 		second?: string // Второе повышение цен
@@ -278,7 +281,9 @@ const games: Game[] = [
 	{
 		id: '14',
 		homeTeam: 'Акрон',
+		homeTeamCity: 'Тольятти',
 		awayTeam: 'ЦСКА',
+		awayTeamCity: 'Москва',
 		date: '4 апреля',
 		dateIso: '2026-04-04',
 		venue: 'home',

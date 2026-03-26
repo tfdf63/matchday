@@ -144,8 +144,8 @@
 }
 
 @include from($bp-tablet-sm) {
-	.inner {
-		padding-left: 24px;
-		padding-right: 24px;
+	/* Макет первого экрана ≥767: нижнее меню не показываем */
+	.rootFixed {
+		display: none;
 	}
 }

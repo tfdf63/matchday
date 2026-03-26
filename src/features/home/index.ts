@@ -1,2 +1,2 @@
 export { default } from './Main'
-export { default as UpcomingMatches } from './UpcomingMatches'
+export { UpcomingMatches, type UpcomingMatchesProps } from './upcoming-matches'
