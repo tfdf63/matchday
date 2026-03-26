@@ -550,3 +550,22 @@ $fan-id-to-title-gap: 20px;
 		gap: 10px;
 	}
 }
+
+/* FCA_Fans первый экран 1600 — node 4810:9624 */
+@include from($bp-desktop) {
+	.inner {
+		gap: 30px;
+	}
+
+	.title {
+		font-size: 44px;
+	}
+
+	.dateMain {
+		font-size: 18px;
+	}
+
+	.teamName {
+		font-size: 22px;
+	}
+}
