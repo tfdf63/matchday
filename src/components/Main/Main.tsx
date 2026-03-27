@@ -350,12 +350,12 @@ const Main: React.FC<MainProps> = ({ matchIndex = 0 }) => {
 						onClose={() => setTicketNotifyOpen(false)}
 					/>
 					{/* Кнопка парковки */}
-					{/* <ActionButton
+					<ActionButton
 						href='/parking'
 						title='Оформить автопропуск'
 						actionType='internal'
 						className={styles.promoButton}
-					/> */}
+					/>
 					{/* Кнопка промокодов */}
 					{selectedGame.promoType && (
 						<ActionButton

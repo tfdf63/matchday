@@ -25,7 +25,7 @@ const ParkingClient: React.FC = () => {
 				{/* Кнопка вверху */}
 				<div className={styles.headerButton}>
 					<ActionButton
-						href='https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@59707667?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
+						href='https://widget.afisha.yandex.ru/w/events/752078?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
 						title='Оформить автопропуск'
 						actionType='link'
 					/>
@@ -188,7 +188,7 @@ const ParkingClient: React.FC = () => {
 			{/* Кнопка внизу */}
 			<div className={styles.bottomButton}>
 				<ActionButton
-					href='https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@52105489?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
+					href='https://widget.afisha.yandex.ru/w/events/752078?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
 					title='Оформить автопропуск'
 					actionType='link'
 				/>

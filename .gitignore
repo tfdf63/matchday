@@ -49,3 +49,5 @@ next-env.d.ts
 
 # maintenance mode flag (не коммитить флаг обслуживания)
 /public/maintenance.on
+
+/.cursor
