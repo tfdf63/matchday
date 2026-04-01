@@ -12,7 +12,7 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 }
 
 const HERO_TAGS: ReadonlyArray<{ label: string; href: string }> = [
-	{ label: 'Ближайшие матчи', href: '#' },
+	{ label: 'Ближайшие матчи', href: '#upcoming-match-panel' },
 	{ label: 'Активности', href: '/activities/' },
 	{ label: 'Билетная программа', href: '/' },
 	{ label: 'Сектора', href: '/' },

@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
 	trailingSlash: true,
 	skipTrailingSlashRedirect: true,
 	output: 'export',
-	distDir: 'out',
+	// distDir: 'out',
 	images: { unoptimized: true },
 
 	// Отключаем кэширование в режиме разработки

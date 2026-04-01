@@ -1,7 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 
-import Main from '@/features/home'
+import Main, { UpcomingMatches } from '@/features/home'
 import MainPageClient from './MainPageClient'
 
 export const metadata: Metadata = {
@@ -15,6 +15,7 @@ const MatchesPage: React.FC = () => {
 	return (
 		<>
 			<Main withBottomMenu />
+			<UpcomingMatches withBottomMenu />
 			<MainPageClient />
 		</>
 	)

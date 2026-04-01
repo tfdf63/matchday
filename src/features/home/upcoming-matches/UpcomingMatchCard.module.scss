@@ -1,3 +1,5 @@
+@use '../../../styles/tokens.scss' as *;
+
 $card-text-muted: rgb(255 255 255 / 0.8);
 
 $fan-id-badge-height: 32px;
@@ -106,10 +108,19 @@ $fan-id-to-meta-gap: 20px;
 	color: $card-text-muted;
 }
 
+.teamsSection {
+	width: 100%;
+}
+
+.teamsBlock {
+	width: 100%;
+}
+
 .teamsRow {
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 8px;
 	width: 100%;
 }
 
@@ -159,11 +170,23 @@ $fan-id-to-meta-gap: 20px;
 	color: #fff;
 }
 
-.vs {
-	flex: 1 1 auto;
-	min-width: 0;
+.teamCity {
+	display: none;
 	margin: 0;
-	padding: 0 4px;
+	width: 100%;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-align: center;
+	text-transform: uppercase;
+	color: $card-text-muted;
+}
+
+.vs {
+	flex: 0 0 auto;
+	align-self: center;
+	margin: 0;
+	padding: 0;
 	font-size: 20px;
 	font-weight: 400;
 	line-height: 1.1;
@@ -331,3 +354,110 @@ $fan-id-to-meta-gap: 20px;
 	width: 17px;
 	height: 17px;
 }
+
+@include from($bp-tablet-sm) {
+	.root {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	/* Правый край как у ряда кнопок (VIP / билеты / ложи), max-width совпадает с .actions */
+	.fanIdBadge {
+		right: calc((100% - min(100%, 452px)) / 2);
+	}
+
+	.metaBlock {
+		align-self: center;
+		gap: 10px;
+		max-width: 245px;
+	}
+
+	.teamsRow {
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+	}
+
+	.teamCol {
+		flex: 0 0 auto;
+		width: 157px;
+		max-width: 157px;
+		min-width: 0;
+		gap: 30px;
+	}
+
+	.teamColAway {
+		flex: 0 0 auto;
+		width: 155px;
+		max-width: 155px;
+		min-width: 0;
+		gap: 30px;
+	}
+
+	.teamNameBlock {
+		gap: 10px;
+	}
+
+	.teamName {
+		font-size: 24px;
+	}
+
+	.teamCity {
+		display: block;
+	}
+
+	.vs {
+		flex: 0 0 auto;
+		min-width: unset;
+		padding: 0;
+		font-size: 24px;
+	}
+
+	.actions {
+		align-self: center;
+		max-width: min(100%, 452px);
+		width: 100%;
+	}
+
+	.primaryStack {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: stretch;
+		gap: 20px;
+	}
+
+	.outlineStack {
+		display: contents;
+	}
+
+	.btnPrimary {
+		order: 2;
+		flex: 0 0 216px;
+		min-width: 0;
+	}
+
+	.outlineStack .btnOutline:only-of-type {
+		order: 1;
+		flex: 1 1 0;
+	}
+
+	.outlineStack .btnOutline:first-of-type:not(:only-of-type) {
+		order: 1;
+		flex: 1 1 0;
+	}
+
+	.outlineStack .btnOutline:last-of-type:not(:only-of-type) {
+		order: 3;
+		flex: 1 1 0;
+	}
+
+	.secondaryStack {
+		gap: 20px;
+	}
+
+	.btnSecondary {
+		gap: 8px;
+		padding: 16px 32px;
+	}
+}
+

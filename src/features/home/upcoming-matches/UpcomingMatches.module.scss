@@ -40,6 +40,10 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	text-align: center;
 	text-transform: uppercase;
 	color: #fff;
+
+	@include from($bp-tablet-sm) {
+		font-size: 48px;
+	}
 }
 
 .cards {
@@ -48,6 +52,84 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	align-items: center;
 	gap: 30px;
 	margin-top: 68px;
+
+	@include from($bp-tablet-sm) {
+		margin-top: 73px;
+	}
+}
+
+.cardWithNav {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	min-width: 0;
+}
+
+.cardRow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	width: 100%;
+	max-width: 100%;
+
+	@include from($bp-tablet-sm) {
+		max-width: min(100%, 688px);
+		margin-inline: auto;
+	}
+
+	@include from($bp-laptop) {
+		max-width: min(100%, 960px);
+	}
+}
+
+.cardPanel {
+	display: flex;
+	flex: 1 1 0;
+	justify-content: center;
+	min-width: 0;
+	max-width: 100%;
+}
+
+.matchNavBtn {
+	display: none;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	width: 48px;
+	height: 48px;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 1px solid rgb(255 255 255 / 0.3);
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+
+	@include from($bp-tablet-sm) {
+		display: flex;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+		z-index: 1;
+	}
+
+	/* Figma 4810:16610 — край списка; 4810:16612 — активная рамка rgb(255 255 255 / 0.3) */
+	&:disabled {
+		cursor: default;
+		border-color: #1c2222;
+		background-color: #0d1111;
+		color: #4a4d4d;
+	}
+}
+
+.matchNavIcon {
+	display: block;
+	width: 10px;
+	height: 20px;
+	flex-shrink: 0;
 }
 
 .calendarWrap {
@@ -96,4 +178,36 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	text-transform: uppercase;
 	color: rgb(255 255 255 / 0.8);
 	white-space: nowrap;
+}
+
+@include from($bp-tablet-sm) {
+	.legend {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		width: 100%;
+		max-width: min(100%, 688px);
+		margin-inline: auto;
+		grid-template-columns: unset;
+	}
+
+	.legendItem {
+		flex-shrink: 0;
+		min-width: auto;
+		max-width: none;
+	}
+
+	.legendText {
+		text-align: center;
+		flex-shrink: 0;
+	}
+}
+
+@include from($bp-laptop) {
+	.legend {
+		max-width: min(100%, 960px);
+	}
 }

@@ -21,7 +21,10 @@ const UPCOMING_MATCH_PANEL_ID = 'upcoming-match-panel'
 const CALENDAR_MONTH_COL_PX = 45
 /** Активный матч — N-я видимая колонка дня (1-based). */
 const CALENDAR_ACTIVE_DAY_SLOT = 3
-const CALENDAR_MOBILE_MAX_BP = 767
+/** Строго мобилка: ниже `$bp-tablet-sm` из tokens (767px). */
+const CALENDAR_MOBILE_MAX_BP = 766
+/** Планшет и выше — как `@include from($bp-tablet-sm)`. */
+const CALENDAR_TABLET_MIN_BP = 767
 
 function cx(...parts: Array<string | false | null | undefined>): string {
 	return parts.filter(Boolean).join(' ')
@@ -150,7 +153,7 @@ const CalendarDayColumn: FC<CalendarDayColumnProps> = ({
 
 	return (
 		<button
-			type="button"
+			type='button'
 			className={styles.dayTab}
 			data-calendar-match-id={game.id}
 			aria-pressed={isSelected}
@@ -176,9 +179,9 @@ const CalendarDayColumn: FC<CalendarDayColumnProps> = ({
 				{logo ? (
 					<Image
 						src={logo}
-						alt=""
-						width={28}
-						height={28}
+						alt=''
+						width={36}
+						height={36}
 						className={styles.logo}
 					/>
 				) : null}
@@ -228,15 +231,7 @@ export const MatchesCalendarStrip: FC<MatchesCalendarStripProps> = ({
 
 	useLayoutEffect(() => {
 		if (!scrollerRef.current || !selectedGameId) return
-		if (didInitialMobileAnchor.current) return
-		didInitialMobileAnchor.current = true
-
-		if (
-			typeof window === 'undefined' ||
-			!window.matchMedia(`(max-width: ${CALENDAR_MOBILE_MAX_BP}px)`).matches
-		) {
-			return
-		}
+		if (typeof window === 'undefined') return
 
 		const scroller = scrollerRef.current
 		const el = scroller.querySelector<HTMLElement>(
@@ -244,21 +239,51 @@ export const MatchesCalendarStrip: FC<MatchesCalendarStripProps> = ({
 		)
 		if (!el) return
 
+		const tabletUp = window.matchMedia(
+			`(min-width: ${CALENDAR_TABLET_MIN_BP}px)`,
+		).matches
+
+		if (tabletUp) {
+			const elLeft =
+				el.getBoundingClientRect().left -
+				scroller.getBoundingClientRect().left +
+				scroller.scrollLeft
+			const elCenter = elLeft + el.offsetWidth / 2
+			const target = elCenter - scroller.clientWidth / 2
+			const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth)
+			scroller.scrollLeft = Math.max(0, Math.min(target, maxScroll))
+			return
+		}
+
+		if (
+			!window.matchMedia(`(max-width: ${CALENDAR_MOBILE_MAX_BP}px)`).matches
+		) {
+			return
+		}
+
+		if (didInitialMobileAnchor.current) return
+		didInitialMobileAnchor.current = true
+
 		const elLeft =
 			el.getBoundingClientRect().left -
 			scroller.getBoundingClientRect().left +
 			scroller.scrollLeft
 		const slotW = el.offsetWidth
 		const target =
-			elLeft -
-			CALENDAR_MONTH_COL_PX -
-			(CALENDAR_ACTIVE_DAY_SLOT - 1) * slotW
+			elLeft - CALENDAR_MONTH_COL_PX - (CALENDAR_ACTIVE_DAY_SLOT - 1) * slotW
 		const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth)
 		scroller.scrollLeft = Math.max(0, Math.min(target, maxScroll))
 	}, [selectedGameId])
 
 	useEffect(() => {
 		if (!selectedGameId) return
+		if (
+			typeof window !== 'undefined' &&
+			window.matchMedia(`(min-width: ${CALENDAR_TABLET_MIN_BP}px)`).matches
+		) {
+			return
+		}
+
 		const scroller = scrollerRef.current
 		if (!scroller) return
 		const el = scroller.querySelector<HTMLElement>(
@@ -283,7 +308,7 @@ export const MatchesCalendarStrip: FC<MatchesCalendarStripProps> = ({
 	return (
 		<div className={styles.strip}>
 			<div ref={scrollerRef} className={styles.scroller}>
-				{items.map((item) =>
+				{items.map(item =>
 					item.kind === 'month' ? (
 						<MonthDivider key={item.key} label={item.label} />
 					) : item.game ? (

@@ -22,7 +22,7 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	margin-inline: auto;
 
 	@include from($bp-tablet-sm) {
-		max-width: min(100%, 720px);
+		max-width: min(100%, 688px);
 	}
 
 	@include from($bp-laptop) {
@@ -200,4 +200,61 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	height: auto;
 	max-height: 28px;
 	object-fit: contain;
+}
+
+@include from($bp-tablet-sm) {
+	$cal-t-pad-top: 16px;
+	$cal-t-pad-bottom: 20px;
+	$cal-t-pad-x: 16px;
+	$cal-t-font: 24px;
+	$cal-t-lh: 1.1;
+	$cal-t-row-h: $cal-t-pad-top + ($cal-t-font * $cal-t-lh) + $cal-t-pad-bottom +
+		$cal-date-border;
+	$cal-t-accent-extra: 7px;
+
+	.monthDivider {
+		width: 59px;
+	}
+
+	.monthLabelCell {
+		height: $cal-t-row-h;
+		padding: $cal-t-pad-top 4px $cal-t-pad-bottom;
+	}
+
+	.monthLabel {
+		font-size: 12px;
+	}
+
+	.col,
+	.dayTab {
+		min-width: 56px;
+		max-width: 96px;
+	}
+
+	.dateNum {
+		height: $cal-t-row-h;
+		padding: $cal-t-pad-top $cal-t-pad-x $cal-t-pad-bottom;
+		font-size: $cal-t-font;
+		line-height: $cal-t-lh;
+	}
+
+	.dateNumMatch {
+		height: $cal-t-row-h + $cal-t-accent-extra;
+		padding: $cal-t-pad-top $cal-t-pad-x $cal-t-pad-bottom;
+		border-bottom-width: 8px;
+	}
+
+	.weekday {
+		padding: 16px;
+	}
+
+	.logoCell {
+		min-height: 52px;
+		padding: 16px;
+	}
+
+	.logo {
+		max-width: 36px;
+		max-height: 36px;
+	}
 }

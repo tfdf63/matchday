@@ -1,0 +1,8 @@
+        column-gap
+Sets the gap between columns. If there is a column rule between columns, it will appear in the middle of the gap.
+
+Widely available across major browsers (Baseline since January 2018)
+Learn more
+
+Don't show
+: unset;

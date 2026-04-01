@@ -281,9 +281,7 @@ const games: Game[] = [
 	{
 		id: '14',
 		homeTeam: 'Акрон',
-		homeTeamCity: 'Тольятти',
 		awayTeam: 'ЦСКА',
-		awayTeamCity: 'Москва',
 		date: '4 апреля',
 		dateIso: '2026-04-04',
 		venue: 'home',

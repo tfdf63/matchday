@@ -39,6 +39,32 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 		.join(' ')
 	const timeLocal = game.timeLocal?.trim()
 	const showFanIdBadge = game.fanIdStatus === 'Fan id'
+	const homeCity = game.homeTeamCity?.trim()
+	const awayCity = game.awayTeamCity?.trim()
+
+	const homeLogoNode = homeLogo ? (
+		<Image
+			src={homeLogo}
+			alt=""
+			width={60}
+			height={60}
+			className={styles.teamLogo}
+		/>
+	) : (
+		<div className={styles.teamLogoPlaceholder} aria-hidden />
+	)
+
+	const awayLogoNode = awayLogo ? (
+		<Image
+			src={awayLogo}
+			alt=""
+			width={60}
+			height={60}
+			className={styles.teamLogo}
+		/>
+	) : (
+		<div className={styles.teamLogoPlaceholder} aria-hidden />
+	)
 
 	return (
 		<article
@@ -73,44 +99,38 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 				) : null}
 			</div>
 
-			<div className={styles.teamsRow}>
-				<div className={styles.teamCol}>
-					{homeLogo ? (
-						<Image
-							src={homeLogo}
-							alt=""
-							width={60}
-							height={60}
-							className={styles.teamLogo}
-						/>
-					) : (
-						<div className={styles.teamLogoPlaceholder} aria-hidden />
-					)}
-					<div className={styles.teamNameBlock}>
-						{game.homeTeam ? (
-							<p className={styles.teamName}>{game.homeTeam}</p>
-						) : null}
-					</div>
-				</div>
-				<p className={styles.vs} aria-hidden>
-					—
-				</p>
-				<div className={cx(styles.teamCol, styles.teamColAway)}>
-					{awayLogo ? (
-						<Image
-							src={awayLogo}
-							alt=""
-							width={60}
-							height={60}
-							className={styles.teamLogo}
-						/>
-					) : (
-						<div className={styles.teamLogoPlaceholder} aria-hidden />
-					)}
-					<div className={styles.teamNameBlock}>
-						{game.awayTeam ? (
-							<p className={styles.teamName}>{game.awayTeam}</p>
-						) : null}
+			<div className={styles.teamsSection}>
+				<div className={styles.teamsBlock}>
+					<div className={styles.teamsRow}>
+						<div className={styles.teamCol}>
+							{homeLogoNode}
+							<div className={styles.teamNameBlock}>
+								{game.homeTeam ? (
+									<p className={styles.teamName}>{game.homeTeam}</p>
+								) : null}
+								{homeCity ? (
+									<p className={cx(styles.teamCity, 'font-mono')}>
+										{homeCity}
+									</p>
+								) : null}
+							</div>
+						</div>
+						<p className={styles.vs} aria-hidden>
+							—
+						</p>
+						<div className={cx(styles.teamCol, styles.teamColAway)}>
+							{awayLogoNode}
+							<div className={styles.teamNameBlock}>
+								{game.awayTeam ? (
+									<p className={styles.teamName}>{game.awayTeam}</p>
+								) : null}
+								{awayCity ? (
+									<p className={cx(styles.teamCity, 'font-mono')}>
+										{awayCity}
+									</p>
+								) : null}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
