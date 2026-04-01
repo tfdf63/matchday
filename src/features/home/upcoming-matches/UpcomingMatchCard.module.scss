@@ -461,3 +461,80 @@ $fan-id-to-meta-gap: 20px;
 	}
 }
 
+@include from($bp-tablet) {
+	.root {
+		gap: 40px;
+	}
+
+	.fanIdBadge {
+		right: calc((100% - min(100%, 621px)) / 2);
+	}
+
+	.dateMain {
+		font-size: 16px;
+	}
+
+	/* Figma 4810:14280: как на 768 — группа от центра; колонки 220 / 221 */
+	.teamsRow {
+		justify-content: center;
+		gap: 16px;
+	}
+
+	.teamCol {
+		width: 220px;
+		max-width: 220px;
+		gap: 30px;
+	}
+
+	.teamColAway {
+		width: 221px;
+		max-width: 221px;
+		gap: 30px;
+	}
+
+	.teamLogo {
+		width: 100px;
+		height: 100px;
+	}
+
+	.teamLogoPlaceholder {
+		width: 100px;
+		height: 100px;
+	}
+
+	.teamNameBlock {
+		gap: 20px;
+	}
+
+	.teamName {
+		font-size: 32px;
+	}
+
+	.vs {
+		font-size: 32px;
+	}
+
+	.actions {
+		max-width: min(100%, 621px);
+	}
+
+	.btnPrimary {
+		flex: 0 0 302px;
+		min-height: 54px;
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}
+
+	.btnOutline {
+		min-height: 54px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+
+	.btnSecondary {
+		min-height: 54px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+}
+

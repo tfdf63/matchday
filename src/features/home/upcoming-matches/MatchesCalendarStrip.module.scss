@@ -25,6 +25,10 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 		max-width: min(100%, 688px);
 	}
 
+	@include from($bp-tablet) {
+		max-width: min(100%, 944px);
+	}
+
 	@include from($bp-laptop) {
 		max-width: min(100%, 960px);
 	}
@@ -256,5 +260,69 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	.logo {
 		max-width: 36px;
 		max-height: 36px;
+	}
+}
+
+@include from($bp-tablet) {
+	$cal-1024-pad-top: 20px;
+	$cal-1024-pad-bottom: 24px;
+	$cal-1024-pad-x: 20px;
+	$cal-1024-font: 32px;
+	$cal-1024-lh: 1.1;
+	$cal-1024-row-h: $cal-1024-pad-top +
+		($cal-1024-font * $cal-1024-lh) + $cal-1024-pad-bottom + $cal-date-border;
+	$cal-1024-accent-extra: 7px;
+
+	.monthDivider {
+		width: 108px;
+	}
+
+	/* Нижняя граница на одной линии с border-bottom у .dateNum (разделитель число / день недели) */
+	.monthLabelCell {
+		align-items: center;
+		justify-content: center;
+		box-sizing: border-box;
+		height: $cal-1024-row-h;
+		padding: $cal-1024-pad-top 4px $cal-1024-pad-bottom;
+	}
+
+	.monthLabel {
+		font-size: 12px;
+	}
+
+	.col,
+	.dayTab {
+		flex: 1 0 auto;
+		min-width: 72px;
+		max-width: none;
+	}
+
+	.dateNum {
+		height: $cal-1024-row-h;
+		padding: $cal-1024-pad-top $cal-1024-pad-x $cal-1024-pad-bottom;
+		font-size: $cal-1024-font;
+		line-height: $cal-1024-lh;
+	}
+
+	.dateNumMatch {
+		height: $cal-1024-row-h + $cal-1024-accent-extra;
+		padding: $cal-1024-pad-top $cal-1024-pad-x $cal-1024-pad-bottom;
+		border-bottom-width: 8px;
+	}
+
+	.weekday {
+		padding: 20px;
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	.logoCell {
+		min-height: 60px;
+		padding: 20px;
+	}
+
+	.logo {
+		max-width: 40px;
+		max-height: 40px;
 	}
 }

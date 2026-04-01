@@ -27,6 +27,11 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 		padding-inline: 32px;
 	}
 
+	@include from($bp-tablet) {
+		max-width: 1024px;
+		padding-inline: 40px;
+	}
+
 	@include from($bp-laptop) {
 		max-width: 1024px;
 	}
@@ -44,6 +49,10 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	@include from($bp-tablet-sm) {
 		font-size: 48px;
 	}
+
+	@include from($bp-tablet) {
+		font-size: 64px;
+	}
 }
 
 .cards {
@@ -55,6 +64,11 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 
 	@include from($bp-tablet-sm) {
 		margin-top: 73px;
+	}
+
+	/* Figma 4810:14269: ~41px от низа заголовка 64px до карточки */
+	@include from($bp-tablet) {
+		margin-top: 41px;
 	}
 }
 
@@ -76,6 +90,10 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	@include from($bp-tablet-sm) {
 		max-width: min(100%, 688px);
 		margin-inline: auto;
+	}
+
+	@include from($bp-tablet) {
+		max-width: min(100%, 944px);
 	}
 
 	@include from($bp-laptop) {
@@ -108,6 +126,11 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 
 	@include from($bp-tablet-sm) {
 		display: flex;
+	}
+
+	@include from($bp-tablet) {
+		width: 54px;
+		height: 54px;
 	}
 
 	&:focus-visible {
@@ -203,6 +226,12 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	.legendText {
 		text-align: center;
 		flex-shrink: 0;
+	}
+}
+
+@include from($bp-tablet) {
+	.legend {
+		max-width: min(100%, 944px);
 	}
 }
 

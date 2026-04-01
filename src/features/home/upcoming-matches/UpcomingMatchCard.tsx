@@ -46,8 +46,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 		<Image
 			src={homeLogo}
 			alt=""
-			width={60}
-			height={60}
+			width={100}
+			height={100}
 			className={styles.teamLogo}
 		/>
 	) : (
@@ -58,8 +58,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 		<Image
 			src={awayLogo}
 			alt=""
-			width={60}
-			height={60}
+			width={100}
+			height={100}
 			className={styles.teamLogo}
 		/>
 	) : (
