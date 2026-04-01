@@ -538,3 +538,82 @@ $fan-id-to-meta-gap: 20px;
 	}
 }
 
+@include from($bp-laptop) {
+	.root {
+		width: 100%;
+		max-width: 750px;
+	}
+
+	.fanIdBadge {
+		right: calc((100% - min(100%, 750px)) / 2);
+	}
+
+	.metaBlock {
+		max-width: 286px;
+	}
+
+	.leagueLine,
+	.timeLocal,
+	.stadium {
+		font-size: 14px;
+	}
+
+	/* Figma 4810:11990: space-between, колонки по 263px, без горизонтальных отступов ряда */
+	.teamsRow {
+		justify-content: space-between;
+		align-items: center;
+		gap: 0;
+	}
+
+	.teamCol,
+	.teamColAway {
+		flex: 0 0 auto;
+		width: 263px;
+		max-width: 263px;
+		min-width: 0;
+	}
+
+	.teamCity {
+		font-size: 14px;
+	}
+
+	.teamName {
+		font-size: 40px;
+	}
+
+	.vs {
+		font-size: 40px;
+		flex-shrink: 0;
+	}
+
+	.actions {
+		max-width: min(100%, 750px);
+	}
+
+	.btnPrimary {
+		flex: 0 0 290px;
+		min-height: 58px;
+		padding-top: 14px;
+		padding-bottom: 14px;
+		font-size: 14px;
+	}
+
+	.btnOutline {
+		min-height: 58px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		font-size: 14px;
+	}
+
+	.btnSecondary {
+		min-height: 58px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		font-size: 14px;
+	}
+
+	.priceNote {
+		font-size: 14px;
+	}
+}
+
