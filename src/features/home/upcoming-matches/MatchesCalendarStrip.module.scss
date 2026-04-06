@@ -36,6 +36,10 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	@include from($bp-desktop) {
 		max-width: min(100%, 1520px);
 	}
+
+	@include from($bp-desktop-xl) {
+		max-width: min(100%, 1840px);
+	}
 }
 
 .scroller {
@@ -423,6 +427,61 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	.weekday {
 		padding: 20px;
 		font-size: 18px;
+		font-weight: 500;
+	}
+
+	.logoCell {
+		min-height: 60px;
+		padding: 20px;
+	}
+
+	.logo {
+		max-width: 40px;
+		max-height: 40px;
+	}
+}
+
+/* Figma 4810:1136 — 1920: лента 1840px, месяц 155px, числа 48px; граница месяца = граница число/день недели */
+@include from($bp-desktop-xl) {
+	$cal-1920-pad: 20px;
+	$cal-1920-font: 48px;
+	$cal-1920-lh: 1.1;
+	$cal-1920-row-h: $cal-1920-pad + ($cal-1920-font * $cal-1920-lh) + $cal-1920-pad +
+		$cal-date-border;
+	$cal-1920-accent-extra: 7px;
+
+	.monthDivider {
+		width: 155px;
+	}
+
+	.monthLabelCell {
+		align-items: center;
+		justify-content: center;
+		box-sizing: border-box;
+		height: $cal-1920-row-h;
+		padding: $cal-1920-pad 4px $cal-1920-pad;
+	}
+
+	.monthLabel {
+		font-size: 16px;
+	}
+
+	.dateNum {
+		height: $cal-1920-row-h;
+		padding: $cal-1920-pad;
+		font-size: $cal-1920-font;
+		line-height: $cal-1920-lh;
+	}
+
+	.dateNumMatch {
+		height: $cal-1920-row-h + $cal-1920-accent-extra;
+		padding: $cal-1920-pad;
+		border-bottom-width: 8px;
+	}
+
+	.weekday {
+		padding: 20px;
+		font-size: 20px;
 		font-weight: 500;
 	}
 

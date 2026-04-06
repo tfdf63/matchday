@@ -634,3 +634,59 @@ $fan-id-to-meta-gap: 20px;
 	}
 }
 
+@include from($bp-desktop-xl) {
+	.root {
+		max-width: 910px;
+	}
+
+	.fanIdBadge {
+		right: calc((100% - min(100%, 910px)) / 2);
+	}
+
+	.metaBlock {
+		max-width: 327px;
+	}
+
+	.leagueLine,
+	.timeLocal,
+	.stadium,
+	.teamCity,
+	.priceNote {
+		font-size: 16px;
+	}
+
+	.dateMain {
+		font-size: 20px;
+	}
+
+	.teamName,
+	.vs {
+		font-size: 48px;
+	}
+
+	.actions {
+		max-width: min(100%, 910px);
+	}
+
+	.btnPrimary {
+		min-height: 60px;
+		padding-top: 14px;
+		padding-bottom: 14px;
+		font-size: 16px;
+	}
+
+	.btnOutline {
+		min-height: 60px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		font-size: 16px;
+	}
+
+	.btnSecondary {
+		min-height: 60px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		font-size: 16px;
+	}
+}
+

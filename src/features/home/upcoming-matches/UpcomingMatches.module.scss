@@ -39,6 +39,10 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	@include from($bp-desktop) {
 		max-width: 1600px;
 	}
+
+	@include from($bp-desktop-xl) {
+		max-width: 1920px;
+	}
 }
 
 .title {
@@ -65,6 +69,10 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	@include from($bp-desktop) {
 		font-size: 96px;
 	}
+
+	@include from($bp-desktop-xl) {
+		font-size: 128px;
+	}
 }
 
 .cards {
@@ -86,6 +94,11 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	/* Figma 4810:9679: заголовок 96px, контент с top 147px → зазор ~51px */
 	@include from($bp-desktop) {
 		margin-top: 51px;
+	}
+
+	/* Figma 4810:1080: заголовок 128px, контент top 169px → зазор 41px */
+	@include from($bp-desktop-xl) {
+		margin-top: 41px;
 	}
 }
 
@@ -119,6 +132,10 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 
 	@include from($bp-desktop) {
 		max-width: min(100%, 1520px);
+	}
+
+	@include from($bp-desktop-xl) {
+		max-width: min(100%, 1840px);
 	}
 }
 
@@ -157,6 +174,11 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 	@include from($bp-laptop) {
 		width: 58px;
 		height: 58px;
+	}
+
+	@include from($bp-desktop-xl) {
+		width: 60px;
+		height: 60px;
 	}
 
 	&:focus-visible {
@@ -274,5 +296,15 @@ $menu-stack: calc(54px + 30px + env(safe-area-inset-bottom, 0px));
 @include from($bp-desktop) {
 	.legend {
 		max-width: min(100%, 1520px);
+	}
+}
+
+@include from($bp-desktop-xl) {
+	.legend {
+		max-width: min(100%, 1840px);
+	}
+
+	.legendText {
+		font-size: 16px;
 	}
 }
