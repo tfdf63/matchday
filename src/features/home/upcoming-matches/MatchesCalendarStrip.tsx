@@ -17,7 +17,7 @@ import styles from './MatchesCalendarStrip.module.scss'
 
 const UPCOMING_MATCH_PANEL_ID = 'upcoming-match-panel'
 
-/** Мобилка: ширина `.monthDivider` в SCSS (45px). С 767px — 59px, с 1024px — 108px (см. MatchesCalendarStrip.module.scss). */
+/** Мобилка: ширина `.monthDivider` в SCSS (45px). ≥767 / ≥1024 / стили строки даты — см. MatchesCalendarStrip.module.scss. */
 const CALENDAR_MONTH_COL_PX = 45
 /** Активный матч — N-я видимая колонка дня (1-based). */
 const CALENDAR_ACTIVE_DAY_SLOT = 3

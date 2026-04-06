@@ -617,3 +617,20 @@ $fan-id-to-meta-gap: 20px;
 	}
 }
 
+@include from($bp-desktop) {
+	.dateMain {
+		font-size: 18px;
+	}
+
+	.teamCol,
+	.teamColAway {
+		width: 297px;
+		max-width: 297px;
+	}
+
+	.teamName,
+	.vs {
+		font-size: 44px;
+	}
+}
+
