@@ -4,6 +4,10 @@
 	margin-top: 60px;
 	margin-bottom: 120px;
 	width: 100%;
+
+	@include from($bp-desktop) {
+		margin-top: 180px;
+	}
 }
 
 .inner {
@@ -25,6 +29,11 @@
 
 	@include from($bp-laptop) {
 		max-width: 1280px;
+	}
+
+	/* Figma 4810:9831 — артборд 1600, контент баннера 1520 (поля .inner 40px) */
+	@include from($bp-desktop) {
+		max-width: 1600px;
 	}
 }
 
@@ -98,6 +107,22 @@
 			mix-blend-mode: multiply;
 		}
 	}
+
+	/* Figma 4810:9831 — высота 466px; маскот с x=810 во фрейме 1520 → padding-right 710px */
+	@include from($bp-desktop) {
+		align-items: stretch;
+		min-height: 466px;
+		height: auto;
+		padding-right: 710px;
+
+		&::before {
+			background-image: url('/images/offer/Pattern1600.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% 100%;
+			mix-blend-mode: multiply;
+		}
+	}
 }
 
 @keyframes offerFadeIn {
@@ -136,6 +161,10 @@
 		min-width: 0;
 		padding-block: 40px;
 		padding-inline: 30px;
+	}
+
+	@include from($bp-desktop) {
+		padding-inline: 40px;
 	}
 }
 
@@ -184,6 +213,12 @@
 		font-size: 80px;
 		line-height: 0.9;
 	}
+
+	/* Figma 4810:11472 — max 855px; y подзаголовка 273 − низ заголовка 193 = 80px */
+	@include from($bp-desktop) {
+		max-width: 855px;
+		margin: 0 0 80px;
+	}
 }
 
 .textBlock {
@@ -210,6 +245,10 @@
 
 	@include from($bp-laptop) {
 		max-width: 551px;
+	}
+
+	@include from($bp-desktop) {
+		max-width: 581px;
 	}
 }
 
@@ -248,6 +287,11 @@
 		max-width: 551px;
 		font-size: 40px;
 		line-height: 1.1;
+	}
+
+	/* Figma 4810:11474 — ширина текстового блока 595px */
+	@include from($bp-desktop) {
+		max-width: 595px;
 	}
 }
 
@@ -317,6 +361,14 @@
 		width: 553px;
 		height: 490px;
 	}
+
+	/* Figma 4810:11476 — 670×596, y=−130, отступ справа 40px во фрейме 1520 */
+	@include from($bp-desktop) {
+		right: 40px;
+		left: auto;
+		width: 670px;
+		height: 596px;
+	}
 }
 
 .picture {
@@ -369,13 +421,21 @@
 		object-position: right bottom;
 	}
 
-	/* 1280: mascot-1280.png — фрейм 553×490 */
+	/* 1280: масштаб в фрейме маскота */
 	@include from($bp-laptop) {
 		right: 0;
 		left: auto;
 		width: 118%;
 		max-width: none;
 		max-height: 110%;
+		object-position: right bottom;
+	}
+
+	/* 1600: без 118%/110% — картинка не вылезает за 670×596; выступ головы за счёт высоты фрейма */
+	@include from($bp-desktop) {
+		width: 100%;
+		max-width: 100%;
+		max-height: 100%;
 		object-position: right bottom;
 	}
 }

@@ -5,6 +5,7 @@ import {
 	OFFER_MASCOT_TABLET,
 	OFFER_MASCOT_WIDE,
 	OFFER_MASCOT_LAPTOP,
+	OFFER_MASCOT_DESKTOP,
 } from './offerAssets'
 import styles from './Offer.module.scss'
 
@@ -20,6 +21,7 @@ export type OfferBannerProps = {
 	imageSrcTablet?: string
 	imageSrcWide?: string
 	imageSrcLaptop?: string
+	imageSrcDesktop?: string
 	className?: string
 	headingId?: string
 }
@@ -32,6 +34,7 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 	imageSrcTablet = OFFER_MASCOT_TABLET,
 	imageSrcWide = OFFER_MASCOT_WIDE,
 	imageSrcLaptop = OFFER_MASCOT_LAPTOP,
+	imageSrcDesktop = OFFER_MASCOT_DESKTOP,
 	className,
 	headingId = 'offer-heading',
 }) => {
@@ -48,6 +51,7 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 			</div>
 			<div className={styles.imageWrap}>
 				<picture className={styles.picture}>
+					<source media="(min-width: 1600px)" srcSet={imageSrcDesktop} />
 					<source media="(min-width: 1280px)" srcSet={imageSrcLaptop} />
 					<source media="(min-width: 1024px)" srcSet={imageSrcWide} />
 					<source media="(min-width: 767px)" srcSet={imageSrcTablet} />
@@ -55,8 +59,8 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 						className={styles.image}
 						src={imageSrc}
 						alt=""
-						width={1106}
-						height={980}
+						width={1340}
+						height={1192}
 						decoding="async"
 						loading="lazy"
 					/>
