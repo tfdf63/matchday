@@ -17,6 +17,15 @@
 		max-width: 768px;
 		padding-inline: 32px;
 	}
+
+	@include from($bp-tablet) {
+		max-width: 1024px;
+		padding-inline: 40px;
+	}
+
+	@include from($bp-laptop) {
+		max-width: 1280px;
+	}
 }
 
 .card {
@@ -57,6 +66,38 @@
 			background-size: 100% 100%;
 		}
 	}
+
+	/* Figma 4810:14409 — минимум 348px; height: auto + stretch — padding .cardMain 30px не сжимается */
+	@include from($bp-tablet) {
+		align-items: stretch;
+		min-height: 348px;
+		height: auto;
+		padding-right: 436px;
+
+		&::before {
+			background-image: url('/images/offer/Pattern1024.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% 100%;
+		}
+	}
+
+	/* Figma 4810:12119 — минимум 414px; height: auto, чтобы padding .cardMain не сжимался контентом */
+	@include from($bp-laptop) {
+		align-items: stretch;
+		min-height: 414px;
+		height: auto;
+		/* 1200 − 647 = 553px под колонку маскота (узел 4810:13764); overflow visible — маскот выступает вверх */
+		padding-right: 553px;
+
+		&::before {
+			background-image: url('/images/offer/Pattern1280.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% 100%;
+			mix-blend-mode: multiply;
+		}
+	}
 }
 
 @keyframes offerFadeIn {
@@ -77,6 +118,24 @@
 
 	@include from($bp-tablet-sm) {
 		padding: 30px 16px 24px 16px;
+	}
+
+	/* Figma 4810:14410: 30px сверху и снизу внутри колонки текста (как 1280 / .cardMain) */
+	@include from($bp-tablet) {
+		box-sizing: border-box;
+		flex: 1 1 auto;
+		min-width: 0;
+		padding-block: 30px;
+		padding-inline: 20px;
+	}
+
+	/* 1280: 40px сверху и снизу внутри колонки текста (Figma 4810:12120) */
+	@include from($bp-laptop) {
+		box-sizing: border-box;
+		flex: 1 1 auto;
+		min-width: 0;
+		padding-block: 40px;
+		padding-inline: 30px;
 	}
 }
 
@@ -106,6 +165,25 @@
 		font-size: 48px;
 		line-height: 0.9;
 	}
+
+	/* Figma 4810:16050 — leading 0.9; отступ сверху задаёт padding .cardMain */
+	@include from($bp-tablet) {
+		min-width: 0;
+		max-width: 442px;
+		margin: 0 0 60px;
+		padding: 0;
+		font-size: 64px;
+		line-height: 0.9;
+	}
+
+	/* Figma 4810:13760 — leading 0.9 */
+	@include from($bp-laptop) {
+		max-width: 551px;
+		margin: 0 0 60px;
+		padding: 0;
+		font-size: 80px;
+		line-height: 0.9;
+	}
 }
 
 .textBlock {
@@ -123,6 +201,15 @@
 	@include from($bp-tablet-sm) {
 		max-width: 330px;
 		padding: 0;
+	}
+
+	@include from($bp-tablet) {
+		max-width: 422px;
+		gap: 20px;
+	}
+
+	@include from($bp-laptop) {
+		max-width: 551px;
 	}
 }
 
@@ -147,6 +234,21 @@
 		max-width: 320px;
 		font-size: 24px;
 	}
+
+	/* Figma 4810:16052 — leading 1.1 */
+	@include from($bp-tablet) {
+		min-width: 0;
+		max-width: 422px;
+		font-size: 32px;
+		line-height: 1.1;
+	}
+
+	/* Figma 4810:13762 — leading 1.1 */
+	@include from($bp-laptop) {
+		max-width: 551px;
+		font-size: 40px;
+		line-height: 1.1;
+	}
 }
 
 .description {
@@ -164,6 +266,19 @@
 	@include from($bp-tablet-sm) {
 		min-width: 330px;
 		max-width: 330px;
+	}
+
+	@include from($bp-tablet) {
+		min-width: 0;
+		max-width: 422px;
+		line-height: 1.3;
+	}
+
+	/* Узел 4810:13763 — 14px, переносы по ширине колонки */
+	@include from($bp-laptop) {
+		max-width: 581px;
+		font-size: 14px;
+		line-height: 1.3;
 	}
 }
 
@@ -191,6 +306,17 @@
 		justify-content: flex-end;
 		align-items: flex-end;
 	}
+
+	@include from($bp-tablet) {
+		width: 436px;
+		height: 387px;
+	}
+
+	/* Figma 4810:13764 — 553×490, y=−76: маскот выступает над верхом баннера */
+	@include from($bp-laptop) {
+		width: 553px;
+		height: 490px;
+	}
 }
 
 .picture {
@@ -203,6 +329,10 @@
 		position: relative;
 		overflow: hidden;
 		pointer-events: none;
+	}
+
+	@include from($bp-tablet) {
+		overflow: visible;
 	}
 }
 
@@ -225,5 +355,27 @@
 		max-width: none;
 		object-fit: contain;
 		object-position: bottom center;
+	}
+
+	/* 1024: mascot-1024.png — крупнее в фрейме 436×387, выступ вверх (как на 1280) */
+	@include from($bp-tablet) {
+		left: auto;
+		right: 0;
+		width: 118%;
+		max-width: none;
+		max-height: 110%;
+		height: auto;
+		object-fit: contain;
+		object-position: right bottom;
+	}
+
+	/* 1280: mascot-1280.png — фрейм 553×490 */
+	@include from($bp-laptop) {
+		right: 0;
+		left: auto;
+		width: 118%;
+		max-width: none;
+		max-height: 110%;
+		object-position: right bottom;
 	}
 }

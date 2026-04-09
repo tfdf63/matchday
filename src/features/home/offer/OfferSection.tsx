@@ -13,6 +13,8 @@ export type OfferSectionProps = {
 	description: string
 	imageSrc?: string
 	imageSrcTablet?: string
+	imageSrcWide?: string
+	imageSrcLaptop?: string
 	className?: string
 }
 
@@ -22,6 +24,8 @@ export const OfferSection: FC<OfferSectionProps> = ({
 	description,
 	imageSrc,
 	imageSrcTablet,
+	imageSrcWide,
+	imageSrcLaptop,
 	className,
 }) => {
 	return (
@@ -36,6 +40,8 @@ export const OfferSection: FC<OfferSectionProps> = ({
 					description={description}
 					imageSrc={imageSrc}
 					imageSrcTablet={imageSrcTablet}
+					imageSrcWide={imageSrcWide}
+					imageSrcLaptop={imageSrcLaptop}
 				/>
 			</div>
 		</section>

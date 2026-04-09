@@ -3,6 +3,8 @@ import type { FC } from 'react'
 import {
 	OFFER_MASCOT_MOBILE,
 	OFFER_MASCOT_TABLET,
+	OFFER_MASCOT_WIDE,
+	OFFER_MASCOT_LAPTOP,
 } from './offerAssets'
 import styles from './Offer.module.scss'
 
@@ -16,6 +18,8 @@ export type OfferBannerProps = {
 	description: string
 	imageSrc?: string
 	imageSrcTablet?: string
+	imageSrcWide?: string
+	imageSrcLaptop?: string
 	className?: string
 	headingId?: string
 }
@@ -26,6 +30,8 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 	description,
 	imageSrc = OFFER_MASCOT_MOBILE,
 	imageSrcTablet = OFFER_MASCOT_TABLET,
+	imageSrcWide = OFFER_MASCOT_WIDE,
+	imageSrcLaptop = OFFER_MASCOT_LAPTOP,
 	className,
 	headingId = 'offer-heading',
 }) => {
@@ -42,13 +48,15 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 			</div>
 			<div className={styles.imageWrap}>
 				<picture className={styles.picture}>
+					<source media="(min-width: 1280px)" srcSet={imageSrcLaptop} />
+					<source media="(min-width: 1024px)" srcSet={imageSrcWide} />
 					<source media="(min-width: 767px)" srcSet={imageSrcTablet} />
 					<img
 						className={styles.image}
 						src={imageSrc}
 						alt=""
-						width={778}
-						height={690}
+						width={1106}
+						height={980}
 						decoding="async"
 						loading="lazy"
 					/>
