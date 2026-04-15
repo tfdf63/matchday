@@ -1,0 +1,367 @@
+@use '../../../styles/tokens.scss' as *;
+
+/* FCA_Fans: блок «Активности на матче» — 20772 / заголовок 20773 / лид 20776–20775 / сетка мобилка 20778 / сетка ≥767 20777 / карточка 20786 / теги 20779, 20790, 20799 */
+
+.section {
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 80px;
+	color: var(--foreground);
+}
+
+.inner {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 360px;
+	margin-inline: auto;
+	padding-inline: 20px;
+
+	@include from($bp-tablet-sm) {
+		max-width: 768px;
+		padding-inline: 32px;
+	}
+
+	@include from($bp-tablet) {
+		max-width: 1024px;
+		padding-inline: 40px;
+	}
+
+	@include from($bp-laptop) {
+		max-width: 1280px;
+	}
+
+	@include from($bp-desktop) {
+		max-width: 1600px;
+	}
+
+	@include from($bp-desktop-xl) {
+		max-width: 1920px;
+	}
+}
+
+.head {
+	margin-bottom: 24px;
+
+	@include from($bp-tablet-sm) {
+		margin-bottom: 28px;
+	}
+}
+
+.heading {
+	margin: 0 0 16px;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 1.05;
+	text-transform: uppercase;
+	color: var(--foreground);
+
+	@include from($bp-tablet-sm) {
+		margin-bottom: 18px;
+		font-size: 32px;
+	}
+
+	@include from($bp-tablet) {
+		font-size: 40px;
+	}
+}
+
+.headingLine {
+	display: inline;
+}
+
+/*
+ * Лид: 4810:20776 + 4810:20775 — Mono 12px, rgba 80%.
+ * Мобилка: сетка Figma — 4 колонки stretch, gutter 16px, margin 20px (= padding .inner).
+ * «Энергия…» с левого края 2-й вертикальной линии (= начало колонки 2).
+ */
+.leadWrap {
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	column-gap: 16px;
+	row-gap: 0;
+}
+
+.leadFirst {
+	margin: 0;
+	padding-left: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+	grid-column: 2 / span 3;
+}
+
+/* 4810:20775 — на всю ширину контентной области (колонки 1–4) */
+.leadSecondGroup {
+	margin: 0;
+	margin-top: 0;
+	grid-column: 1 / -1;
+}
+
+@include from($bp-tablet-sm) {
+	.leadWrap {
+		display: block;
+	}
+
+	.leadFirst {
+		grid-column: auto;
+		padding-left: 24px;
+	}
+
+	.leadSecondGroup {
+		grid-column: auto;
+	}
+}
+
+.leadSecondPara {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+}
+
+.grid {
+	display: grid;
+	box-sizing: border-box;
+	/* FCA_Fans 4810:20778 — мобилка: карточки столбиком, одна колонка */
+	grid-template-columns: 1fr;
+	gap: 16px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	/* От 767 — сетка из нескольких колонок (4810:20777) */
+	@include from($bp-tablet-sm) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px;
+	}
+
+	@include from($bp-laptop) {
+		gap: 20px;
+	}
+}
+
+.gridItem {
+	min-width: 0;
+}
+
+/* Карточка: Figma 4810:20778 (фрейм), 20779 теги, 20786–20788 текст */
+.card {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	overflow: hidden;
+	border-radius: 0;
+	color: #fff;
+}
+
+.cardTheme_photo {
+	background-color: rgb(2 10 10);
+}
+
+/* Красная карточка: заливка как чипы в макете (#b2061c) */
+.cardTheme_red {
+	background-color: var(--button-primary-bg);
+}
+
+/* Figma 4810:20798 / 20816 — чёрная карточка: фон #1b2222 */
+.cardTheme_black {
+	background-color: var(--button-secondary-bg);
+}
+
+.cardFill {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.cardFillMedia {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+}
+
+/* Фон фото: Figma 4810:20778 */
+.cardFillImg {
+	position: absolute;
+	max-width: none;
+	object-fit: cover;
+}
+
+/* Мобилка: отдельный ассет под квадрат — cover на весь фрейм */
+.cardFillImgMobile {
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-position: center center;
+
+	@include from($bp-tablet-sm) {
+		display: none;
+	}
+}
+
+/* Планшет+: широкий кроп как в макете (209% / сдвиг) */
+.cardFillImgDesktop {
+	display: none;
+	top: -5.67%;
+	left: -89.19%;
+	width: 209.49%;
+	height: 149%;
+
+	@include from($bp-tablet-sm) {
+		display: block;
+	}
+}
+
+/* Нет `imageSrcMobile` — один файл на всех ширинах с кропом макета */
+.cardFillImgCrop {
+	display: block;
+	top: -5.67%;
+	left: -89.19%;
+	width: 209.49%;
+	height: 149%;
+}
+
+/* 4810:20807 — фото на весь фрейм: object-fit cover */
+.cardFillImgCover {
+	inset: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+.cardFillGradients {
+	position: absolute;
+	inset: 0;
+	background-image:
+		linear-gradient(
+			0deg,
+			rgb(2 10 10 / 0) 74.667%,
+			rgb(2 10 10 / 0.3) 100%
+		),
+		linear-gradient(
+			180deg,
+			rgb(2 10 10 / 0) 65.5%,
+			rgb(2 10 10 / 0.8) 100%
+		);
+}
+
+.cardInner {
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 16px;
+}
+
+.cardTags {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+/* Общие чипы: Mono 10px, px 16 py 8 (макеты 20779 / 20790 / 20816) */
+.tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 16px;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-transform: none;
+}
+
+/* 4810:20779 — фото: gap 8px; 4810:20807 — gap 10px */
+.cardTheme_photo .cardTags {
+	gap: 8px;
+}
+
+.cardTheme_photo .cardTags.cardTagsGap10 {
+	gap: 10px;
+}
+
+.cardTheme_photo .tag {
+	color: #fff;
+	backdrop-filter: blur(20px);
+	background-color: var(--button-primary-bg);
+}
+
+/* 4810:20790 — красная карточка: теги gap 10px, белый фон чипа, текст #020a0a */
+.cardTheme_red .cardTags {
+	gap: 10px;
+}
+
+.cardTheme_red .tag {
+	color: var(--button-outline-label-hover);
+	background-color: #fff;
+	/* 4810:20825 — белые чипы с blur */
+	backdrop-filter: blur(20px);
+}
+
+/* 4810:20816 / 4810:20799 — чёрная карточка: теги gap 10px, красные чипы + blur */
+.cardTheme_black .cardTags {
+	gap: 10px;
+}
+
+.cardTheme_black .tag {
+	color: #fff;
+	background-color: var(--button-primary-bg);
+	/* 4810:20799 */
+	backdrop-filter: blur(20px);
+}
+
+/* 4810:20816 — красные чипы без blur */
+.cardTheme_black.cardBlackTagFlat .tag {
+	backdrop-filter: none;
+}
+
+/* 4810:20786 — колонка заголовок + описание, gap 10px */
+.cardBody {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: flex-start;
+}
+
+/* 4810:20787 — Akademia 24px uppercase; на фото/красной — две строки leading 1 */
+.cardTitle {
+	width: 100%;
+	font-family: 'Akademia', sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.cardTitleLine {
+	margin: 0;
+	line-height: 1;
+}
+
+/* 4810:20823 — чёрная карточка: заголовок leading 1.1 */
+.cardTheme_black .cardTitle,
+.cardTheme_black .cardTitleLine {
+	line-height: 1.1;
+}
+
+/* 4810:20788 — IBM Plex Mono 12px, белый 80%, leading 1.3 */
+.cardSubtitle {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+	white-space: pre-line;
+}

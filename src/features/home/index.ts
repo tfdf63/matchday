@@ -19,3 +19,9 @@ export {
 	OFFER_PATTERN_DESKTOP_XL,
 } from './offer'
 export { UpcomingMatches, type UpcomingMatchesProps } from './upcoming-matches'
+export {
+	MatchActivitiesSection,
+	type MatchActivitiesSectionProps,
+	MatchActivityCard,
+	type MatchActivityCardProps,
+} from './match-activities'

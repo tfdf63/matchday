@@ -3,7 +3,7 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
 	trailingSlash: true,
 	skipTrailingSlashRedirect: true,
-	output: 'export',
+	// output: 'export',
 	// distDir: 'out',
 	images: { unoptimized: true },
 
