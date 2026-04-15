@@ -32,6 +32,8 @@ export type MatchActivity = {
 	/** Для `photo`: десктопный кадр / общий файл при `photoImageLayout: 'cover'`. */
 	imageSrc?: string
 	imageSrcMobile?: string
+	/** Для `photo` при `≥767px`: отдельный кадр (например 4810:18351 / activity-01-768). */
+	imageSrcTablet?: string
 	solidTone?: MatchActivitySolidTone
 	/** Ряд тегов: 8px (20779) или 10px (20807); у красных/чёрных по умолчанию 10 из SCSS. */
 	tagsGap?: 8 | 10
@@ -52,9 +54,10 @@ export const matchActivitiesAll: MatchActivity[] = [
 		titleLine1: 'Автограф-сессии',
 		titleLine2: 'с игроками',
 		subtitle:
-			'Получи уникальную карточку с автографом игрока, сделай памятное селфи и скажи слова поддержки тем, кто защищает \nцвета «Акрона».',
+			'Получи уникальную карточку с автографом игрока, сделай памятное селфи и скажи слова поддержки тем, кто защищает цвета «Акрона».',
 		imageSrc: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01.png`,
 		imageSrcMobile: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-mobile.png`,
+		imageSrcTablet: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-768.png`,
 		tags: ['#встреча с игроками', '#автографы', '#фото'],
 	},
 	{
@@ -65,7 +68,7 @@ export const matchActivitiesAll: MatchActivity[] = [
 		titleLine1: 'Активности',
 		titleLine2: 'для всей семьи',
 		subtitle:
-			'Интересно и детям, и взрослым: интерактивы, фотозоны и совместные развлечения, которые делают поход \nна матч общим событием для всей семьи.',
+			'Интересно и детям, и взрослым: интерактивы, фотозоны и совместные развлечения, которые делают поход на матч общим событием для всей семьи.',
 		tags: ['#совместный отдых', '#общие впечатления'],
 	},
 	{
@@ -86,7 +89,7 @@ export const matchActivitiesAll: MatchActivity[] = [
 		titleLine1: 'Игровые зоны',
 		titleLine2: 'для детей',
 		subtitle:
-			'Пока вы готовитесь к матчу, дети проводят время в безопасной игровой зоне \nс аниматорами и активностями.',
+			'Пока вы готовитесь к матчу, дети проводят время в безопасной игровой зоне с аниматорами и активностями.',
 		imageSrc: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02.png`,
 		tags: ['#для детей', '#аниматоры'],
 		tagsGap: 10,
@@ -160,7 +163,7 @@ export const matchActivitiesAll: MatchActivity[] = [
 export const defaultMatchActivitiesLead = {
 	firstLine: 'Энергия игры за пределами поля.',
 	secondLine:
-		'Приходи заранее, чтобы почувствовать атмосферу каждой локации и зарядиться \nна победу вместе с тысячами болельщиков.',
+		'Приходи заранее, чтобы почувствовать атмосферу каждой локации и зарядиться на победу вместе с тысячами болельщиков.',
 } as const
 
 export function getMatchActivitiesPreview(

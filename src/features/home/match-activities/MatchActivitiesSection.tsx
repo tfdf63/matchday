@@ -7,7 +7,7 @@ import {
 	type MatchActivity,
 } from '@/data/matchActivities'
 
-import { MatchActivityCard } from './MatchActivityCard'
+import { MatchActivitiesCarousel } from './MatchActivitiesCarousel'
 import styles from './MatchActivities.module.scss'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
@@ -67,13 +67,10 @@ export const MatchActivitiesSection: FC<MatchActivitiesSectionProps> = ({
 						</div>
 					</div>
 				</header>
-				<ul className={styles.grid}>
-					{effectivePreview.map((activity) => (
-						<li key={activity.id} className={styles.gridItem}>
-							<MatchActivityCard activity={activity} />
-						</li>
-					))}
-				</ul>
+				<MatchActivitiesCarousel
+					activities={effectivePreview}
+					ariaLabelledBy={SECTION_HEADING_ID}
+				/>
 			</div>
 		</section>
 	)

@@ -35,10 +35,12 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 		variant,
 		imageSrc,
 		imageSrcMobile,
+		imageSrcTablet,
 		photoImageLayout,
 	} = activity
 
 	const hasMobileAsset = Boolean(imageSrcMobile)
+	const desktopPhotoSrc = imageSrcTablet ?? imageSrc
 	const coverPhoto = variant === 'photo' && photoImageLayout === 'cover'
 
 	const photoFillInner =
@@ -72,8 +74,12 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 							/>
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img
-								className={cx(styles.cardFillImg, styles.cardFillImgDesktop)}
-								src={imageSrc}
+								className={cx(
+									styles.cardFillImg,
+									styles.cardFillImgDesktop,
+									imageSrcTablet && styles.cardFillImgDesktopTablet,
+								)}
+								src={desktopPhotoSrc}
 								alt=""
 								width={800}
 								height={800}

@@ -19,7 +19,8 @@
 
 	@include from($bp-tablet-sm) {
 		max-width: 768px;
-		padding-inline: 32px;
+		/* FCA_Fans 4810:18345 — margin 40 (Figma MCP) */
+		padding-inline: 40px;
 	}
 
 	@include from($bp-tablet) {
@@ -44,7 +45,13 @@
 	margin-bottom: 24px;
 
 	@include from($bp-tablet-sm) {
-		margin-bottom: 28px;
+		/* FCA_Fans 4912:1576 — flex, gap 113px, items-end (Figma MCP) */
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: flex-end;
+		gap: 113px;
+		margin-bottom: 32px;
 	}
 }
 
@@ -57,8 +64,12 @@
 	color: var(--foreground);
 
 	@include from($bp-tablet-sm) {
-		margin-bottom: 18px;
-		font-size: 32px;
+		flex: 0 0 auto;
+		max-width: 241px;
+		margin-bottom: 0;
+		/* 4810:18346 / 4912:1576 — Akademia 48px (Figma MCP) */
+		font-size: 48px;
+		line-height: 1;
 	}
 
 	@include from($bp-tablet) {
@@ -101,17 +112,28 @@
 }
 
 @include from($bp-tablet-sm) {
+	/* 4912:1576 / 4810:18347 — без row-gap; отступы как в MCP */
 	.leadWrap {
-		display: block;
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		align-items: flex-start;
+		min-width: 0;
+		max-width: 334px;
 	}
 
+	/* 4810:18349 — ml 110px (Figma MCP) */
 	.leadFirst {
-		grid-column: auto;
-		padding-left: 24px;
+		margin-top: 0;
+		margin-left: 110px;
+		padding-left: 0;
 	}
 
+	/* 4810:18348 — w 334 (Figma MCP) */
 	.leadSecondGroup {
-		grid-column: auto;
+		width: 100%;
+		max-width: 334px;
+		margin-top: 0;
 	}
 }
 
@@ -123,32 +145,151 @@
 	color: rgb(255 255 255 / 0.8);
 }
 
-.grid {
+/* Карусель + мобильная колонка: 4810:18345 / 20778 (Figma MCP) */
+.carouselBlock {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.carouselViewport {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.carouselList {
+	position: relative;
 	display: grid;
 	box-sizing: border-box;
-	/* FCA_Fans 4810:20778 — мобилка: карточки столбиком, одна колонка */
 	grid-template-columns: 1fr;
 	gap: 16px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 
-	/* От 767 — сетка из нескольких колонок (4810:20777) */
 	@include from($bp-tablet-sm) {
-		grid-template-columns: repeat(3, 1fr);
-		gap: 16px;
-	}
-
-	@include from($bp-laptop) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
 		gap: 20px;
+		width: max-content;
+		min-height: 0;
 	}
 }
 
-.gridItem {
-	min-width: 0;
+@include from($bp-tablet-sm) {
+	.carouselViewport {
+		overflow-x: auto;
+		overscroll-behavior-x: contain;
+		scroll-snap-type: x mandatory;
+		container-type: inline-size;
+		container-name: match-act-carousel;
+		scrollbar-width: thin;
+	}
+
+	/* FCA_Fans 4810:18350 — все карточки одинаковой ширины 688px (контент 768 − margin 40×2) */
+	.carouselSlide {
+		box-sizing: border-box;
+		flex: 0 0 min(688px, 100cqi);
+		width: min(688px, 100cqi);
+		min-width: 0;
+		scroll-snap-align: start;
+		height: 380px;
+	}
 }
 
-/* Карточка: Figma 4810:20778 (фрейм), 20779 теги, 20786–20788 текст */
+.carouselChrome {
+	display: none;
+
+	@include from($bp-tablet-sm) {
+		/* 4810:18409–18413: зона под скроллом (Figma MCP ~30px) */
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 30px;
+	}
+}
+
+/* 4810:18409 / 4810:18411 — weui:arrow-outlined, 48px, border rgba(255,255,255,0.3), иконка 40px (Figma MCP) */
+.carouselNavBtn {
+	display: none;
+
+	@include from($bp-tablet-sm) {
+		display: flex;
+		box-sizing: border-box;
+		flex-shrink: 0;
+		width: 48px;
+		height: 48px;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		border: 1px solid rgb(255 255 255 / 0.3);
+		background: transparent;
+		color: #fff;
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
+
+		&:focus-visible {
+			outline: 2px solid var(--button-focus-ring);
+			outline-offset: 2px;
+			z-index: 1;
+		}
+
+		&:disabled {
+			cursor: default;
+			border-color: #1c2222;
+			background-color: #0d1111;
+			color: #4a4d4d;
+		}
+	}
+}
+
+.carouselNavIcon {
+	display: block;
+	width: 10px;
+	height: 20px;
+	flex-shrink: 0;
+}
+
+/* 4810:18413 — полоса индикаторов 88×8px, шаг 8px (Figma MCP) */
+.carouselDots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 88px;
+	height: 8px;
+	flex-shrink: 0;
+	gap: 8px;
+}
+
+.carouselDot {
+	box-sizing: border-box;
+	width: 8px;
+	height: 8px;
+	flex-shrink: 0;
+	padding: 0;
+	border: 1px solid rgb(255 255 255 / 0.35);
+	border-radius: 50%;
+	background: transparent;
+	opacity: 0.45;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+
+	@include from($bp-tablet-sm) {
+		&:focus-visible {
+			outline: 2px solid var(--button-focus-ring);
+			outline-offset: 2px;
+		}
+	}
+}
+
+.carouselDotActive {
+	border-color: #fff;
+	background-color: #fff;
+	opacity: 1;
+}
+
+/* Карточка: Figma 4810:20778 (фрейм), 20779 теги, 20786–20788 текст; планшет 18350 h 380 (MCP) */
 .card {
 	position: relative;
 	box-sizing: border-box;
@@ -157,6 +298,13 @@
 	overflow: hidden;
 	border-radius: 0;
 	color: #fff;
+
+	@include from($bp-tablet-sm) {
+		.carouselSlide & {
+			aspect-ratio: auto;
+			height: 100%;
+		}
+	}
 }
 
 .cardTheme_photo {
@@ -215,6 +363,17 @@
 
 	@include from($bp-tablet-sm) {
 		display: block;
+	}
+}
+
+/* Планшет: `imageSrcTablet` — полный кадр cover (4810:18351 + activity-01-768) */
+@include from($bp-tablet-sm) {
+	.cardFillImgDesktopTablet {
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
 	}
 }
 
@@ -282,9 +441,13 @@
 	text-transform: none;
 }
 
-/* 4810:20779 — фото: gap 8px; 4810:20807 — gap 10px */
+/* 4810:20779 — фото: gap 8px; 4810:20807 — gap 10px; планшет 18352 gap 10px (MCP) */
 .cardTheme_photo .cardTags {
 	gap: 8px;
+
+	@include from($bp-tablet-sm) {
+		gap: 10px;
+	}
 }
 
 .cardTheme_photo .cardTags.cardTagsGap10 {
@@ -326,12 +489,16 @@
 	backdrop-filter: none;
 }
 
-/* 4810:20786 — колонка заголовок + описание, gap 10px */
+/* 4810:20786 — колонка заголовок + описание; планшет MCP gap-[16px] */
 .cardBody {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 	align-items: flex-start;
+
+	@include from($bp-tablet-sm) {
+		gap: 16px;
+	}
 }
 
 /* 4810:20787 — Akademia 24px uppercase; на фото/красной — две строки leading 1 */
@@ -364,4 +531,13 @@
 	line-height: 1.3;
 	color: rgb(255 255 255 / 0.8);
 	white-space: pre-line;
+
+	/* Планшет: описание на ширину 7 из 12 колонок сетки (gutter 20px) */
+	@include from($bp-tablet-sm) {
+		.carouselSlide & {
+			box-sizing: border-box;
+			width: calc((100% * 7 - 100px) / 12);
+			max-width: 100%;
+		}
+	}
 }
