@@ -36,12 +36,22 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 		imageSrc,
 		imageSrcMobile,
 		imageSrcTablet,
+		imageSrcLaptop,
 		photoImageLayout,
 	} = activity
 
 	const hasMobileAsset = Boolean(imageSrcMobile)
 	const desktopPhotoSrc = imageSrcTablet ?? imageSrc
 	const coverPhoto = variant === 'photo' && photoImageLayout === 'cover'
+	const hasResponsiveDesktopPhoto = Boolean(imageSrcTablet || imageSrcLaptop)
+	const desktopSplitImgClass = cx(
+		styles.cardFillImg,
+		styles.cardFillImgDesktop,
+		imageSrcTablet && styles.cardFillImgDesktopTablet,
+		imageSrcLaptop &&
+			!imageSrcTablet &&
+			styles.cardFillImgDesktopLaptopOnly,
+	)
 
 	const photoFillInner =
 		variant === 'photo' && imageSrc ? (
@@ -49,16 +59,50 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 				<div className={styles.cardFillMedia}>
 					{coverPhoto ? (
 						<>
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img
-								className={cx(styles.cardFillImg, styles.cardFillImgCover)}
-								src={imageSrc}
-								alt=""
-								width={800}
-								height={800}
-								decoding="async"
-								loading="lazy"
-							/>
+							{hasResponsiveDesktopPhoto ? (
+								<picture>
+									{imageSrcLaptop ? (
+										<source
+											media="(min-width: 1024px)"
+											srcSet={imageSrcLaptop}
+										/>
+									) : null}
+									{imageSrcTablet ? (
+										<source
+											media="(min-width: 767px)"
+											srcSet={imageSrcTablet}
+										/>
+									) : null}
+									<img
+										className={cx(
+											styles.cardFillImg,
+											styles.cardFillImgCover,
+										)}
+										src={imageSrc}
+										alt=""
+										width={800}
+										height={800}
+										decoding="async"
+										loading="lazy"
+									/>
+								</picture>
+							) : (
+								<>
+									{/* eslint-disable-next-line @next/next/no-img-element */}
+									<img
+										className={cx(
+											styles.cardFillImg,
+											styles.cardFillImgCover,
+										)}
+										src={imageSrc}
+										alt=""
+										width={800}
+										height={800}
+										decoding="async"
+										loading="lazy"
+									/>
+								</>
+							)}
 						</>
 					) : hasMobileAsset ? (
 						<>
@@ -72,20 +116,45 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 								decoding="async"
 								loading="lazy"
 							/>
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img
-								className={cx(
-									styles.cardFillImg,
-									styles.cardFillImgDesktop,
-									imageSrcTablet && styles.cardFillImgDesktopTablet,
-								)}
-								src={desktopPhotoSrc}
-								alt=""
-								width={800}
-								height={800}
-								decoding="async"
-								loading="lazy"
-							/>
+							{hasResponsiveDesktopPhoto ? (
+								<picture>
+									{imageSrcLaptop ? (
+										<source
+											media="(min-width: 1024px)"
+											srcSet={imageSrcLaptop}
+										/>
+									) : null}
+									<source
+										media="(min-width: 767px)"
+										srcSet={desktopPhotoSrc}
+									/>
+									<img
+										className={desktopSplitImgClass}
+										src={imageSrc}
+										alt=""
+										width={800}
+										height={800}
+										decoding="async"
+										loading="lazy"
+									/>
+								</picture>
+							) : (
+								<>
+									{/* eslint-disable-next-line @next/next/no-img-element */}
+									<img
+										className={cx(
+											styles.cardFillImg,
+											styles.cardFillImgDesktop,
+										)}
+										src={desktopPhotoSrc}
+										alt=""
+										width={800}
+										height={800}
+										decoding="async"
+										loading="lazy"
+									/>
+								</>
+							)}
 						</>
 					) : (
 						<>

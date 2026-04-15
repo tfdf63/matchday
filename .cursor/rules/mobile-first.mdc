@@ -92,3 +92,4 @@ $bp-desktop-xl:  1920px;
 
 Мобильная версия: вертикальные линии count: 4 type: stretch, width: auto, margin: 20, gutter: 16.
 Адаптив 768: вертикальные линии count: 12 type: stretch, width: auto, margin: 40, gutter: 20.
+Адаптив 1024: вертикальные линии count: 12 type: stretch, width: auto, margin: 40, gutter: 20.

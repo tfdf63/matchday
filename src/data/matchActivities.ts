@@ -34,6 +34,8 @@ export type MatchActivity = {
 	imageSrcMobile?: string
 	/** Для `photo` при `≥767px`: отдельный кадр (например 4810:18351 / activity-01-768). */
 	imageSrcTablet?: string
+	/** Для `photo` при `≥1024px`: кадр под двухрядную сетку (FCA_Fans 4810:16088 / 16078). */
+	imageSrcLaptop?: string
 	solidTone?: MatchActivitySolidTone
 	/** Ряд тегов: 8px (20779) или 10px (20807); у красных/чёрных по умолчанию 10 из SCSS. */
 	tagsGap?: 8 | 10
@@ -58,6 +60,7 @@ export const matchActivitiesAll: MatchActivity[] = [
 		imageSrc: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01.png`,
 		imageSrcMobile: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-mobile.png`,
 		imageSrcTablet: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-768.png`,
+		imageSrcLaptop: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1024.png`,
 		tags: ['#встреча с игроками', '#автографы', '#фото'],
 	},
 	{
@@ -91,6 +94,8 @@ export const matchActivitiesAll: MatchActivity[] = [
 		subtitle:
 			'Пока вы готовитесь к матчу, дети проводят время в безопасной игровой зоне с аниматорами и активностями.',
 		imageSrc: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02.png`,
+		imageSrcTablet: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02-768.png`,
+		imageSrcLaptop: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02-1024.png`,
 		tags: ['#для детей', '#аниматоры'],
 		tagsGap: 10,
 		photoImageLayout: 'cover',

@@ -1,7 +1,13 @@
 'use client'
 
 import type { FC } from 'react'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+	useCallback,
+	useEffect,
+	useLayoutEffect,
+	useRef,
+	useState,
+} from 'react'
 
 import type { MatchActivity } from '@/data/matchActivities'
 
@@ -13,6 +19,9 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 }
 
 const SCROLL_EPS = 3
+
+/** Совпадает с `$bp-tablet` (1024px): chrome при max-width 1023px. */
+const CAROUSEL_CHROME_MQ = '(max-width: 1023px)'
 
 function slideIndexFromScroll(
 	slides: HTMLElement[],
@@ -73,6 +82,16 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 	const [canPrev, setCanPrev] = useState(false)
 	const [canNext, setCanNext] = useState(false)
 	const [activeIndex, setActiveIndex] = useState(0)
+	/** На ≥1024 разметку chrome не рендерим (двухрядная сетка без карусели). */
+	const [showCarouselChrome, setShowCarouselChrome] = useState(true)
+
+	useLayoutEffect(() => {
+		const mq = window.matchMedia(CAROUSEL_CHROME_MQ)
+		const apply = () => setShowCarouselChrome(mq.matches)
+		apply()
+		mq.addEventListener('change', apply)
+		return () => mq.removeEventListener('change', apply)
+	}, [])
 
 	const reconcileNavIndexFromScroll = useCallback(() => {
 		const viewport = viewportRef.current
@@ -100,6 +119,7 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 	}, [activities.length])
 
 	useEffect(() => {
+		if (!showCarouselChrome) return
 		const viewport = viewportRef.current
 		if (!viewport) return
 
@@ -125,7 +145,7 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 			viewport.removeEventListener('scrollend', onScrollEnd)
 			ro.disconnect()
 		}
-	}, [reconcileNavIndexFromScroll, syncScrollChrome])
+	}, [showCarouselChrome, reconcileNavIndexFromScroll, syncScrollChrome])
 
 	const scrollByStride = useCallback((direction: -1 | 1) => {
 		const viewport = viewportRef.current
@@ -162,7 +182,9 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 		<div
 			className={styles.carouselBlock}
 			role="region"
-			aria-roledescription="карусель"
+			aria-roledescription={
+				showCarouselChrome ? 'карусель' : undefined
+			}
 			aria-labelledby={ariaLabelledBy}
 		>
 			<div ref={viewportRef} className={styles.carouselViewport}>
@@ -174,41 +196,43 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 					))}
 				</ul>
 			</div>
-			<div className={styles.carouselChrome}>
-				<button
-					type="button"
-					className={styles.carouselNavBtn}
-					aria-label="Предыдущая активность"
-					disabled={!canPrev}
-					onClick={() => scrollByStride(-1)}
-				>
-					<CarouselChevron direction="left" />
-				</button>
-				<div className={styles.carouselDots} aria-label="Номер слайда">
-					{activities.map((activity, i) => (
-						<button
-							key={activity.id}
-							type="button"
-							className={cx(
-								styles.carouselDot,
-								i === activeIndex && styles.carouselDotActive,
-							)}
-							aria-label={`Слайд ${i + 1} из ${activities.length}`}
-							aria-current={i === activeIndex ? 'true' : undefined}
-							onClick={() => scrollToIndex(i)}
-						/>
-					))}
+			{showCarouselChrome ? (
+				<div className={styles.carouselChrome}>
+					<button
+						type="button"
+						className={styles.carouselNavBtn}
+						aria-label="Предыдущая активность"
+						disabled={!canPrev}
+						onClick={() => scrollByStride(-1)}
+					>
+						<CarouselChevron direction="left" />
+					</button>
+					<div className={styles.carouselDots} aria-label="Номер слайда">
+						{activities.map((activity, i) => (
+							<button
+								key={activity.id}
+								type="button"
+								className={cx(
+									styles.carouselDot,
+									i === activeIndex && styles.carouselDotActive,
+								)}
+								aria-label={`Слайд ${i + 1} из ${activities.length}`}
+								aria-current={i === activeIndex ? 'true' : undefined}
+								onClick={() => scrollToIndex(i)}
+							/>
+						))}
+					</div>
+					<button
+						type="button"
+						className={styles.carouselNavBtn}
+						aria-label="Следующая активность"
+						disabled={!canNext}
+						onClick={() => scrollByStride(1)}
+					>
+						<CarouselChevron direction="right" />
+					</button>
 				</div>
-				<button
-					type="button"
-					className={styles.carouselNavBtn}
-					aria-label="Следующая активность"
-					disabled={!canNext}
-					onClick={() => scrollByStride(1)}
-				>
-					<CarouselChevron direction="right" />
-				</button>
-			</div>
+			) : null}
 		</div>
 	)
 }
