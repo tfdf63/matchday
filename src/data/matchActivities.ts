@@ -36,6 +36,8 @@ export type MatchActivity = {
 	imageSrcTablet?: string
 	/** Для `photo` при `≥1024px`: кадр под двухрядную сетку (FCA_Fans 4810:16088 / 16078). */
 	imageSrcLaptop?: string
+	/** Для `photo` при `≥1280px`: кадр под сетку 1280 (4810:13797 / 13767). */
+	imageSrcLaptopLg?: string
 	solidTone?: MatchActivitySolidTone
 	/** Ряд тегов: 8px (20779) или 10px (20807); у красных/чёрных по умолчанию 10 из SCSS. */
 	tagsGap?: 8 | 10
@@ -61,6 +63,7 @@ export const matchActivitiesAll: MatchActivity[] = [
 		imageSrcMobile: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-mobile.png`,
 		imageSrcTablet: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-768.png`,
 		imageSrcLaptop: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1024.png`,
+		imageSrcLaptopLg: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1280.png`,
 		tags: ['#встреча с игроками', '#автографы', '#фото'],
 	},
 	{
@@ -96,6 +99,7 @@ export const matchActivitiesAll: MatchActivity[] = [
 		imageSrc: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02.png`,
 		imageSrcTablet: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02-768.png`,
 		imageSrcLaptop: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02-1024.png`,
+		imageSrcLaptopLg: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02-1280.png`,
 		tags: ['#для детей', '#аниматоры'],
 		tagsGap: 10,
 		photoImageLayout: 'cover',

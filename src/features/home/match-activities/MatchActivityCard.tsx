@@ -37,18 +37,21 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 		imageSrcMobile,
 		imageSrcTablet,
 		imageSrcLaptop,
+		imageSrcLaptopLg,
 		photoImageLayout,
 	} = activity
 
 	const hasMobileAsset = Boolean(imageSrcMobile)
 	const desktopPhotoSrc = imageSrcTablet ?? imageSrc
 	const coverPhoto = variant === 'photo' && photoImageLayout === 'cover'
-	const hasResponsiveDesktopPhoto = Boolean(imageSrcTablet || imageSrcLaptop)
+	const hasResponsiveDesktopPhoto = Boolean(
+		imageSrcTablet || imageSrcLaptop || imageSrcLaptopLg,
+	)
 	const desktopSplitImgClass = cx(
 		styles.cardFillImg,
 		styles.cardFillImgDesktop,
 		imageSrcTablet && styles.cardFillImgDesktopTablet,
-		imageSrcLaptop &&
+		(imageSrcLaptop || imageSrcLaptopLg) &&
 			!imageSrcTablet &&
 			styles.cardFillImgDesktopLaptopOnly,
 	)
@@ -61,6 +64,12 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 						<>
 							{hasResponsiveDesktopPhoto ? (
 								<picture>
+									{imageSrcLaptopLg ? (
+										<source
+											media="(min-width: 1280px)"
+											srcSet={imageSrcLaptopLg}
+										/>
+									) : null}
 									{imageSrcLaptop ? (
 										<source
 											media="(min-width: 1024px)"
@@ -118,6 +127,12 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 							/>
 							{hasResponsiveDesktopPhoto ? (
 								<picture>
+									{imageSrcLaptopLg ? (
+										<source
+											media="(min-width: 1280px)"
+											srcSet={imageSrcLaptopLg}
+										/>
+									) : null}
 									{imageSrcLaptop ? (
 										<source
 											media="(min-width: 1024px)"
