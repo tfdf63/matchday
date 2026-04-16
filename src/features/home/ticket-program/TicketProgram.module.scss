@@ -1,6 +1,6 @@
 @use '../../../styles/tokens.scss' as *;
 
-/* FCA_Fans: мобилка 21125–21140; планшет 18420–18444; карусель по логике MatchActivities */
+/* FCA_Fans: мобилка 21125–21140; 767 18420+; 1024 16120+; 1280 13830+; карусель как MatchActivities */
 
 .section {
 	box-sizing: border-box;
@@ -61,6 +61,12 @@
 		margin-bottom: 60px;
 		gap: 30px;
 	}
+
+	/* 4810:13831 — 686×122, gap 30, counter CENTER */
+	@include from($bp-laptop) {
+		max-width: 686px;
+		margin-bottom: 60px;
+	}
 }
 
 /* 21127 — 40px; 767 — 48px; 1024 — 4810:16122 Akademia 64 */
@@ -86,6 +92,13 @@
 		font-size: 64px;
 		text-align: center;
 	}
+
+	/* 4810:13832 — Akademia 80 */
+	@include from($bp-laptop) {
+		max-width: 686px;
+		font-size: 80px;
+		text-align: center;
+	}
 }
 
 /* 21128 / 18423 / 16123 — на 1024 лид 463px, #fff */
@@ -109,6 +122,13 @@
 		margin-inline: auto;
 		color: #fff;
 		text-align: center;
+	}
+
+	/* 4810:13833 — Mono 14, ширина 545 */
+	@include from($bp-laptop) {
+		max-width: 545px;
+		font-size: 14px;
+		line-height: 1.3;
 	}
 }
 
@@ -152,6 +172,11 @@
 		justify-content: center;
 		column-gap: 20px;
 		row-gap: 0;
+	}
+
+	/* 4810:13830 — три карточки 387 + 386 + 387 + gap 20×2 = 1200 (контент 1280 − 40×2) */
+	@include from($bp-laptop) {
+		max-width: 1200px;
 	}
 }
 
@@ -215,6 +240,30 @@
 		flex: 0 0 301px;
 		width: 301px;
 		max-width: 301px;
+	}
+}
+
+@include from($bp-laptop) {
+	.carouselSlide {
+		height: 417px;
+	}
+
+	.carouselSlide:nth-child(1) {
+		flex: 0 0 387px;
+		width: 387px;
+		max-width: 387px;
+	}
+
+	.carouselSlide:nth-child(2) {
+		flex: 0 0 386px;
+		width: 386px;
+		max-width: 386px;
+	}
+
+	.carouselSlide:nth-child(3) {
+		flex: 0 0 387px;
+		width: 387px;
+		max-width: 387px;
 	}
 }
 
@@ -341,6 +390,13 @@
 			min-height: 366px;
 		}
 	}
+
+	@include from($bp-laptop) {
+		.carouselSlide & {
+			min-height: 417px;
+			padding: 20px;
+		}
+	}
 }
 
 .cardTop {
@@ -391,6 +447,21 @@
 			grid-template-columns: 124px 125px;
 		}
 	}
+
+	/* 1280: 13835 / 13840 / 13845 */
+	@include from($bp-laptop) {
+		.carouselSlide .card[data-variant='solid_dark'] & {
+			grid-template-columns: 163px 164px;
+		}
+
+		.carouselSlide .card[data-variant='solid_red'] & {
+			grid-template-columns: 163px 163px;
+		}
+
+		.carouselSlide .card[data-variant='pattern'] & {
+			grid-template-columns: 164px 163px;
+		}
+	}
 }
 
 .cardTitle {
@@ -415,6 +486,12 @@
 			font-size: 80px;
 		}
 	}
+
+	@include from($bp-laptop) {
+		.carouselSlide & {
+			font-size: 96px;
+		}
+	}
 }
 
 .cardTitleLine {
@@ -434,6 +511,13 @@
 		.carouselSlide & {
 			grid-column: 2;
 			color: #fff;
+		}
+	}
+
+	@include from($bp-laptop) {
+		.carouselSlide & {
+			font-size: 14px;
+			line-height: 1.3;
 		}
 	}
 }
@@ -477,6 +561,14 @@
 			min-height: 54px;
 		}
 	}
+
+	@include from($bp-laptop) {
+		.carouselSlide & {
+			min-height: 58px;
+			font-size: 14px;
+			line-height: 1.3;
+		}
+	}
 }
 
 .cardSolid_dark {
@@ -495,5 +587,9 @@
 
 	@include from($bp-tablet) {
 		background-image: url('/images/tickets-prog/pattern-1024.png');
+	}
+
+	@include from($bp-laptop) {
+		background-image: url('/images/tickets-prog/pattern-1280.png');
 	}
 }
