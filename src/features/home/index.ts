@@ -31,3 +31,4 @@ export {
 	TicketProgramCard,
 	type TicketProgramCardProps,
 } from './ticket-program'
+export { SectorSection, type SectorSectionProps } from './sector'

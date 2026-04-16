@@ -1,0 +1,317 @@
+@use '../../../styles/tokens.scss' as *;
+
+/* FCA_Fans 4810:20879 — блок «Сектора», мобилка 360; карточка 20885; меню + градиент 20913 */
+
+.section {
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 80px;
+	color: var(--foreground);
+}
+
+.inner {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 360px;
+	margin-inline: auto;
+	padding-inline: 20px;
+}
+
+.head {
+	margin-bottom: 24px;
+}
+
+/* 20880 — Akademia 40 / 100%, две строки в разметке */
+.heading {
+	margin: 0 0 16px;
+	font-family: 'Akademia', sans-serif;
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 1;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.headingLine {
+	display: inline;
+}
+
+/* 20881 — первая строка к правому краю (202px), вторая на всю ширину (324) */
+.leadBlock {
+	display: flex;
+	width: 100%;
+	max-width: 320px;
+	flex-direction: column;
+	gap: 0;
+}
+
+.leadFirst {
+	box-sizing: border-box;
+	align-self: flex-end;
+	max-width: 202px;
+	margin: 0 0 0 auto;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-align: right;
+	color: rgb(255 255 255 / 0.8);
+}
+
+.leadSecond {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 324px;
+	margin: 0;
+	margin-top: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+}
+
+/*
+ * Тело секции: сетка FCA_Fans мобилка — 4 колонки, gutter 16px, margin 20px (= .inner).
+ * Карточка 4810:20885 — на всю ширину между линиями 1–5, внутри красного padding 24×16.
+ */
+.body {
+	display: grid;
+	box-sizing: border-box;
+	width: 100%;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	column-gap: 16px;
+	row-gap: 0;
+}
+
+/* 20885 — #b2061c, padding 24 16, gap 20 */
+.activeCard {
+	box-sizing: border-box;
+	display: flex;
+	grid-column: 1 / -1;
+	width: 100%;
+	flex-direction: column;
+	padding-block: 24px;
+	padding-inline: 16px;
+	background-color: var(--button-primary-bg);
+	gap: 20px;
+}
+
+.imageWrap {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+
+.image {
+	object-fit: cover;
+}
+
+.cardBody {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+/* Название (auto) + индекс во второй колонке 1fr; выравнивание по верху */
+.titleRow {
+	display: inline-grid;
+	grid-template-columns: auto 1fr;
+	align-items: start;
+	column-gap: 8px;
+	max-width: 100%;
+}
+
+.cardTitle {
+	margin: 0;
+	width: fit-content;
+	max-width: 100%;
+	overflow-wrap: anywhere;
+	font-family: 'Akademia', sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.1;
+	color: #fff;
+}
+
+.indexLabel {
+	justify-self: start;
+	padding-top: 1px;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 1;
+	color: #fff;
+}
+
+.price {
+	margin: 0;
+	font-family: 'Akademia', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1;
+	color: #fff;
+}
+
+.description {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+}
+
+.cardCta {
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	min-height: 48px;
+	align-items: center;
+	justify-content: center;
+	padding: 16px 32px;
+	border: 1px solid #fff;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	transition:
+		background-color 0.15s ease,
+		border-color 0.15s ease,
+		color 0.15s ease;
+
+	&:hover {
+		background-color: #fff;
+		border-color: #fff;
+		color: var(--button-outline-label-hover);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+/* Рамка + список; нижние пункты градиентом (4810:20913) */
+.menuShell {
+	position: relative;
+	box-sizing: border-box;
+	grid-column: 1 / -1;
+	width: 100%;
+	margin-top: 0;
+	border: 1px solid rgb(255 255 255 / 0.25);
+}
+
+/*
+ * 4810:20913 — фиксированная высота под 5 видимых строк; градиент на всю область:
+ * сверху текст читается, к низу затемнение усиливается.
+ */
+.menuViewport {
+	position: relative;
+	height: calc(62px * 5);
+}
+
+.menuScroll {
+	box-sizing: border-box;
+	height: 100%;
+	max-height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior-y: contain;
+	-webkit-overflow-scrolling: touch;
+}
+
+.menuList {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menuList li {
+	display: flex;
+	width: 100%;
+	justify-content: flex-start;
+
+	&:not(:last-child) {
+		border-bottom: 1px solid rgb(255 255 255 / 0.12);
+	}
+}
+
+.menuGradient {
+	position: absolute;
+	z-index: 1;
+	inset: 0;
+	pointer-events: none;
+	background: linear-gradient(
+		to bottom,
+		rgb(2 10 10 / 0) 0%,
+		rgb(2 10 10 / 0) 8%,
+		rgb(2 10 10 / 0.12) 28%,
+		rgb(2 10 10 / 0.38) 55%,
+		rgb(2 10 10 / 0.72) 78%,
+		rgb(2 10 10 / 0.94) 100%
+	);
+}
+
+/*
+ * 4810:20896–20910 — padding 24×16.
+ * Сетка: название (4810:20900) + индекс (4810:20912) в одной строке сверху; индекс по верхней границе блока названия, не по baseline.
+ */
+.menuButton {
+	box-sizing: border-box;
+	display: inline-grid;
+	width: fit-content;
+	max-width: 100%;
+	min-height: 62px;
+	grid-template-columns: auto auto;
+	align-items: start;
+	column-gap: 4px;
+	padding: 24px 16px;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	text-align: left;
+	-webkit-tap-highlight-color: transparent;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: -2px;
+		z-index: 2;
+	}
+}
+
+/*
+ * Неактивные пункты меню: Akademia 24, uppercase, line-height 90%, #FFFFFF4D.
+ * leading-trim / text-edge — по спецификации (поддержка браузерами частичная).
+ */
+.menuButtonTitle {
+	margin: 0;
+	width: fit-content;
+	max-width: 100%;
+	overflow-wrap: anywhere;
+	font-family: 'Akademia', sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 90%;
+	text-transform: uppercase;
+	color: #ffffff4d;
+	leading-trim: both;
+	text-edge: cap;
+}
+
+.menuButtonIndex {
+	padding-top: 1px;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	text-transform: uppercase;
+	color: #ffffff4d;
+	leading-trim: both;
+	text-edge: cap;
+}
