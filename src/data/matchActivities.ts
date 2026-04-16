@@ -38,6 +38,8 @@ export type MatchActivity = {
 	imageSrcLaptop?: string
 	/** Для `photo` при `≥1280px`: кадр под сетку 1280 (4810:13797 / 13767). */
 	imageSrcLaptopLg?: string
+	/** Для `photo` при `≥1920px`: кадр под сетку 1920 (4810:1652 / 4924:1652–1653). */
+	imageSrcDesktopXl?: string
 	solidTone?: MatchActivitySolidTone
 	/** Ряд тегов: 8px (20779) или 10px (20807); у красных/чёрных по умолчанию 10 из SCSS. */
 	tagsGap?: 8 | 10
@@ -64,6 +66,7 @@ export const matchActivitiesAll: MatchActivity[] = [
 		imageSrcTablet: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-768.png`,
 		imageSrcLaptop: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1024.png`,
 		imageSrcLaptopLg: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1280.png`,
+		imageSrcDesktopXl: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1920.png`,
 		tags: ['#встреча с игроками', '#автографы', '#фото'],
 	},
 	{
@@ -100,6 +103,7 @@ export const matchActivitiesAll: MatchActivity[] = [
 		imageSrcTablet: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02-768.png`,
 		imageSrcLaptop: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02-1024.png`,
 		imageSrcLaptopLg: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02-1280.png`,
+		imageSrcDesktopXl: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-02-1920.png`,
 		tags: ['#для детей', '#аниматоры'],
 		tagsGap: 10,
 		photoImageLayout: 'cover',

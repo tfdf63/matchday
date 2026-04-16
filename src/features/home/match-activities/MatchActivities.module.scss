@@ -75,6 +75,12 @@
 		gap: 20px;
 		margin-bottom: 16px;
 	}
+
+	@include from($bp-desktop-xl) {
+		/* FCA_Fans 4924:1644 — шапка 1920 */
+		gap: 20px;
+		margin-bottom: 16px;
+	}
 }
 
 .heading {
@@ -115,6 +121,13 @@
 		/* FCA_Fans 4810:11478 — заголовок 1600: колонки 1–9, лид 10–12 */
 		grid-column: 1 / 10;
 		font-size: 88px;
+		line-height: 1;
+	}
+
+	@include from($bp-desktop-xl) {
+		/* FCA_Fans 4810:1653 — заголовок секции 1920 */
+		grid-column: 1 / 10;
+		font-size: 104px;
 		line-height: 1;
 	}
 }
@@ -243,6 +256,25 @@
 	}
 }
 
+@include from($bp-desktop-xl) {
+	/* FCA_Fans 4810:1713–1714 — лид 1920: те же колонки 10–12 */
+	.leadWrap {
+		grid-column: 10 / 13;
+	}
+
+	.leadFirst {
+		margin-left: 0;
+		max-width: 100%;
+		font-size: 14px;
+		line-height: 1.3;
+	}
+
+	.leadSecondPara {
+		font-size: 14px;
+		line-height: 1.3;
+	}
+}
+
 .leadSecondPara {
 	margin: 0;
 	font-size: 12px;
@@ -298,6 +330,12 @@
 	@include from($bp-desktop) {
 		/* Контент 1600 − padding 40×2 = 1520px; ряды 4923:1607 / 1608 */
 		max-width: 1520px;
+		row-gap: 20px;
+	}
+
+	@include from($bp-desktop-xl) {
+		/* Контент 1920 − padding 40×2 = 1840px; ряды 4924:1652 / 1653 */
+		max-width: 1840px;
 		row-gap: 20px;
 	}
 }
@@ -444,6 +482,43 @@
 	.carouselSlide:nth-child(6) {
 		flex: 0 0 363px;
 		width: 363px;
+	}
+}
+
+@include from($bp-desktop-xl) {
+	/* FCA_Fans 4924:1652 / 1653 — порядок 1–2–3 / 5–6–4, пропорция к контенту 1840px */
+	.carouselSlide {
+		height: 580px;
+	}
+
+	.carouselSlide:nth-child(1) {
+		flex: 0 0 917px;
+		width: 917px;
+	}
+
+	.carouselSlide:nth-child(2) {
+		flex: 0 0 441px;
+		width: 441px;
+	}
+
+	.carouselSlide:nth-child(3) {
+		flex: 0 0 442px;
+		width: 442px;
+	}
+
+	.carouselSlide:nth-child(4) {
+		flex: 0 0 917px;
+		width: 917px;
+	}
+
+	.carouselSlide:nth-child(5) {
+		flex: 0 0 441px;
+		width: 441px;
+	}
+
+	.carouselSlide:nth-child(6) {
+		flex: 0 0 442px;
+		width: 442px;
 	}
 }
 
@@ -786,6 +861,10 @@
 	@include from($bp-desktop) {
 		font-size: 40px;
 	}
+
+	@include from($bp-desktop-xl) {
+		font-size: 48px;
+	}
 }
 
 .cardTitleLine {
@@ -858,6 +937,23 @@
 		.carouselSlide:nth-child(1) &,
 		.carouselSlide:nth-child(4) & {
 			max-width: calc(754px - 32px);
+		}
+	}
+
+	@include from($bp-desktop-xl) {
+		.carouselSlide:nth-child(2) &,
+		.carouselSlide:nth-child(5) & {
+			max-width: calc(441px - 32px);
+		}
+
+		.carouselSlide:nth-child(3) &,
+		.carouselSlide:nth-child(6) & {
+			max-width: calc(442px - 32px);
+		}
+
+		.carouselSlide:nth-child(1) &,
+		.carouselSlide:nth-child(4) & {
+			max-width: calc(917px - 32px);
 		}
 	}
 }
