@@ -1,6 +1,6 @@
 @use '../../../styles/tokens.scss' as *;
 
-/* FCA_Fans: мобилка 21125–21140; 767 18420+; 1024 16120+; 1280 13830+; карусель как MatchActivities */
+/* FCA_Fans: мобилка 21125+; 767 18420+; 1024 16120+; 1280 13830+; 1600 11540+; карусель как MatchActivities */
 
 .section {
 	box-sizing: border-box;
@@ -67,6 +67,13 @@
 		max-width: 686px;
 		margin-bottom: 60px;
 	}
+
+	/* 4810:11541 — 823×161, gap 40 */
+	@include from($bp-desktop) {
+		max-width: 823px;
+		margin-bottom: 80px;
+		gap: 40px;
+	}
 }
 
 /* 21127 — 40px; 767 — 48px; 1024 — 4810:16122 Akademia 64 */
@@ -99,6 +106,13 @@
 		font-size: 80px;
 		text-align: center;
 	}
+
+	/* 4810:11542 — секция, Akademia 96 */
+	@include from($bp-desktop) {
+		max-width: 823px;
+		font-size: 96px;
+		text-align: center;
+	}
 }
 
 /* 21128 / 18423 / 16123 — на 1024 лид 463px, #fff */
@@ -129,6 +143,11 @@
 		max-width: 545px;
 		font-size: 14px;
 		line-height: 1.3;
+	}
+
+	/* 4810:11543 — Mono 14, ширина 525 */
+	@include from($bp-desktop) {
+		max-width: 525px;
 	}
 }
 
@@ -177,6 +196,11 @@
 	/* 4810:13830 — три карточки 387 + 386 + 387 + gap 20×2 = 1200 (контент 1280 − 40×2) */
 	@include from($bp-laptop) {
 		max-width: 1200px;
+	}
+
+	/* 4810:11540 — 493 + 494 + 493 + gap 20×2 = 1520 (контент 1600 − 40×2) */
+	@include from($bp-desktop) {
+		max-width: 1520px;
 	}
 }
 
@@ -264,6 +288,30 @@
 		flex: 0 0 387px;
 		width: 387px;
 		max-width: 387px;
+	}
+}
+
+@include from($bp-desktop) {
+	.carouselSlide {
+		height: 528px;
+	}
+
+	.carouselSlide:nth-child(1) {
+		flex: 0 0 493px;
+		width: 493px;
+		max-width: 493px;
+	}
+
+	.carouselSlide:nth-child(2) {
+		flex: 0 0 494px;
+		width: 494px;
+		max-width: 494px;
+	}
+
+	.carouselSlide:nth-child(3) {
+		flex: 0 0 493px;
+		width: 493px;
+		max-width: 493px;
 	}
 }
 
@@ -397,6 +445,12 @@
 			padding: 20px;
 		}
 	}
+
+	@include from($bp-desktop) {
+		.carouselSlide & {
+			min-height: 528px;
+		}
+	}
 }
 
 .cardTop {
@@ -462,6 +516,21 @@
 			grid-template-columns: 164px 163px;
 		}
 	}
+
+	/* 1600: 11545 / 11550 / 11555 — Frame 133, gap 20 */
+	@include from($bp-desktop) {
+		.carouselSlide .card[data-variant='solid_dark'] & {
+			grid-template-columns: 217px 216px;
+		}
+
+		.carouselSlide .card[data-variant='solid_red'] & {
+			grid-template-columns: 217px 217px;
+		}
+
+		.carouselSlide .card[data-variant='pattern'] & {
+			grid-template-columns: 216px 217px;
+		}
+	}
 }
 
 .cardTitle {
@@ -490,6 +559,12 @@
 	@include from($bp-laptop) {
 		.carouselSlide & {
 			font-size: 96px;
+		}
+	}
+
+	@include from($bp-desktop) {
+		.carouselSlide & {
+			font-size: 140px;
 		}
 	}
 }
@@ -569,6 +644,12 @@
 			line-height: 1.3;
 		}
 	}
+
+	@include from($bp-desktop) {
+		.carouselSlide & {
+			min-height: 58px;
+		}
+	}
 }
 
 .cardSolid_dark {
@@ -591,5 +672,9 @@
 
 	@include from($bp-laptop) {
 		background-image: url('/images/tickets-prog/pattern-1280.png');
+	}
+
+	@include from($bp-desktop) {
+		background-image: url('/images/tickets-prog/pattern-1600.png');
 	}
 }
