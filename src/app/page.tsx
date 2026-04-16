@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 
 import Main, {
 	MatchActivitiesSection,
+	TicketProgramSection,
 	UpcomingMatches,
 	OfferSection,
 	defaultOfferContent,
@@ -23,6 +24,7 @@ const MatchesPage: React.FC = () => {
 			<UpcomingMatches withBottomMenu />
 			<OfferSection {...defaultOfferContent} />
 			<MatchActivitiesSection />
+			<TicketProgramSection />
 			<MainPageClient />
 		</>
 	)

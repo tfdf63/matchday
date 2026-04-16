@@ -25,3 +25,9 @@ export {
 	MatchActivityCard,
 	type MatchActivityCardProps,
 } from './match-activities'
+export {
+	TicketProgramSection,
+	type TicketProgramSectionProps,
+	TicketProgramCard,
+	type TicketProgramCardProps,
+} from './ticket-program'

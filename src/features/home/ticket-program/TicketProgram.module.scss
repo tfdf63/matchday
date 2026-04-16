@@ -1,0 +1,179 @@
+@use '../../../styles/tokens.scss' as *;
+
+/* FCA_Fans 4810:21125 — блок «Билетная программа», мобилка; карточки 21130 / 21135 / 21140 (MCP) */
+
+.section {
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 80px;
+	color: var(--foreground);
+}
+
+.inner {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 360px;
+	margin-inline: auto;
+	padding-inline: 20px;
+}
+
+/* Шапка: Frame 131 4810:21126 — VERTICAL, gap 20, выравнивание по центру */
+.head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 24px;
+	text-align: center;
+	gap: 20px;
+}
+
+/* 4810:21127 — Akademia 40, line-height 100%, UPPER, CENTER */
+.heading {
+	max-width: 320px;
+	margin: 0;
+	font-family: 'Akademia', sans-serif;
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 1;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+/* 4810:21128 — IBM Plex Mono 12 / 130%, CENTER, 80% белого */
+.lead {
+	box-sizing: border-box;
+	max-width: 320px;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-align: center;
+	color: rgb(255 255 255 / 0.8);
+}
+
+.cardList {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cardListItem {
+	width: 100%;
+}
+
+/* Карточка 320×300 контентной области: 360 − 2×20 padding .inner (4810:21130, 21135, 21140) */
+.card {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	max-width: 320px;
+	min-height: 300px;
+	flex-direction: column;
+	margin-inline: auto;
+	padding: 16px;
+	border-radius: 0;
+	color: #fff;
+}
+
+.cardTop {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	min-height: 0;
+}
+
+/*
+ * Сетка как во Frame 133: 4 колонки, gutter 16px; заголовок — колонки 1–2,
+ * описание — 3–4 (4810:21132 + 21133 и аналоги).
+ */
+.cardGrid {
+	display: grid;
+	box-sizing: border-box;
+	width: 100%;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	column-gap: 16px;
+	align-items: start;
+}
+
+.cardTitle {
+	grid-column: 1 / 3;
+	margin: 0;
+	font-family: 'Akademia', sans-serif;
+	font-size: 56px;
+	font-weight: 400;
+	line-height: 0.9;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.cardTitleLine {
+	display: inline;
+}
+
+.cardDesc {
+	grid-column: 3 / 5;
+	margin: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	white-space: pre-line;
+	color: rgb(255 255 255 / 0.8);
+}
+
+.cardCta {
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	min-height: 48px;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+	padding: 16px 32px;
+	border: 1px solid #fff;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	transition:
+		background-color 0.15s ease,
+		border-color 0.15s ease,
+		color 0.15s ease;
+
+	&:hover {
+		background-color: #fff;
+		border-color: #fff;
+		color: var(--button-outline-label-hover);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+/* #1b2222 — заливка 4810:21130 (трибуны) */
+.cardSolid_dark {
+	background-color: var(--button-secondary-bg);
+}
+
+/* #b2061c — 4810:21135 (VIP) */
+.cardSolid_red {
+	background-color: var(--button-primary-bg);
+}
+
+.cardPattern {
+	background-color: var(--button-secondary-bg);
+	background-repeat: repeat;
+	background-position: 0 0;
+	/* Второй fill в Figma — IMAGE; слой задаётся инлайном из `patternSrc` (4810:21140). */
+}
