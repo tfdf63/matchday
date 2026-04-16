@@ -66,49 +66,43 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 								<picture>
 									{imageSrcLaptopLg ? (
 										<source
-											media="(min-width: 1280px)"
+											media='(min-width: 1280px)'
 											srcSet={imageSrcLaptopLg}
 										/>
 									) : null}
 									{imageSrcLaptop ? (
 										<source
-											media="(min-width: 1024px)"
+											media='(min-width: 1024px)'
 											srcSet={imageSrcLaptop}
 										/>
 									) : null}
 									{imageSrcTablet ? (
 										<source
-											media="(min-width: 767px)"
+											media='(min-width: 767px)'
 											srcSet={imageSrcTablet}
 										/>
 									) : null}
 									<img
-										className={cx(
-											styles.cardFillImg,
-											styles.cardFillImgCover,
-										)}
+										className={cx(styles.cardFillImg, styles.cardFillImgCover)}
 										src={imageSrc}
-										alt=""
+										alt=''
 										width={800}
 										height={800}
-										decoding="async"
-										loading="lazy"
+										decoding='async'
+										loading='lazy'
 									/>
 								</picture>
 							) : (
 								<>
 									{/* eslint-disable-next-line @next/next/no-img-element */}
 									<img
-										className={cx(
-											styles.cardFillImg,
-											styles.cardFillImgCover,
-										)}
+										className={cx(styles.cardFillImg, styles.cardFillImgCover)}
 										src={imageSrc}
-										alt=""
+										alt=''
 										width={800}
 										height={800}
-										decoding="async"
-										loading="lazy"
+										decoding='async'
+										loading='lazy'
 									/>
 								</>
 							)}
@@ -119,38 +113,35 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 							<img
 								className={cx(styles.cardFillImg, styles.cardFillImgMobile)}
 								src={imageSrcMobile}
-								alt=""
+								alt=''
 								width={400}
 								height={400}
-								decoding="async"
-								loading="lazy"
+								decoding='async'
+								loading='lazy'
 							/>
 							{hasResponsiveDesktopPhoto ? (
 								<picture>
 									{imageSrcLaptopLg ? (
 										<source
-											media="(min-width: 1280px)"
+											media='(min-width: 1280px)'
 											srcSet={imageSrcLaptopLg}
 										/>
 									) : null}
 									{imageSrcLaptop ? (
 										<source
-											media="(min-width: 1024px)"
+											media='(min-width: 1024px)'
 											srcSet={imageSrcLaptop}
 										/>
 									) : null}
-									<source
-										media="(min-width: 767px)"
-										srcSet={desktopPhotoSrc}
-									/>
+									<source media='(min-width: 767px)' srcSet={desktopPhotoSrc} />
 									<img
 										className={desktopSplitImgClass}
 										src={imageSrc}
-										alt=""
+										alt=''
 										width={800}
 										height={800}
-										decoding="async"
-										loading="lazy"
+										decoding='async'
+										loading='lazy'
 									/>
 								</picture>
 							) : (
@@ -162,11 +153,11 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 											styles.cardFillImgDesktop,
 										)}
 										src={desktopPhotoSrc}
-										alt=""
+										alt=''
 										width={800}
 										height={800}
-										decoding="async"
-										loading="lazy"
+										decoding='async'
+										loading='lazy'
 									/>
 								</>
 							)}
@@ -177,11 +168,11 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 							<img
 								className={cx(styles.cardFillImg, styles.cardFillImgCrop)}
 								src={imageSrc}
-								alt=""
+								alt=''
 								width={800}
 								height={800}
-								decoding="async"
-								loading="lazy"
+								decoding='async'
+								loading='lazy'
 							/>
 						</>
 					)}
@@ -204,7 +195,7 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 						tagsGap === 10 && styles.cardTagsGap10,
 					)}
 				>
-					{tags.map((label) => (
+					{tags.map(label => (
 						<span key={label} className={cx(styles.tag, 'font-mono')}>
 							{label}
 						</span>
