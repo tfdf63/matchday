@@ -7,7 +7,7 @@ import {
 	type TicketProgramCard as TicketProgramCardData,
 } from '@/data/ticketProgram'
 
-import { TicketProgramCard } from './TicketProgramCard'
+import { TicketProgramCarousel } from './TicketProgramCarousel'
 import styles from './TicketProgram.module.scss'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
@@ -46,13 +46,10 @@ export const TicketProgramSection: FC<TicketProgramSectionProps> = ({
 					</h2>
 					<p className={cx(styles.lead, 'font-mono')}>{lead}</p>
 				</header>
-				<ul className={styles.cardList}>
-					{cards.map((card) => (
-						<li key={card.id} className={styles.cardListItem}>
-							<TicketProgramCard card={card} />
-						</li>
-					))}
-				</ul>
+				<TicketProgramCarousel
+					cards={cards}
+					ariaLabelledBy={SECTION_HEADING_ID}
+				/>
 			</div>
 		</section>
 	)

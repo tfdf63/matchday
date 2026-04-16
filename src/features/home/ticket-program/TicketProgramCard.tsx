@@ -45,6 +45,7 @@ export const TicketProgramCard: FC<TicketProgramCardProps> = ({
 		<article
 			className={cx(styles.card, variantClass[variant], className)}
 			style={patternStyle}
+			data-variant={variant}
 			aria-labelledby={headingId}
 		>
 			<div className={styles.cardTop}>

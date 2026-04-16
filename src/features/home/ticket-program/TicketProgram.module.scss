@@ -1,6 +1,6 @@
 @use '../../../styles/tokens.scss' as *;
 
-/* FCA_Fans 4810:21125 — блок «Билетная программа», мобилка; карточки 21130 / 21135 / 21140 (MCP) */
+/* FCA_Fans: мобилка 21125–21140; планшет 18420–18444; карусель по логике MatchActivities */
 
 .section {
 	box-sizing: border-box;
@@ -16,9 +16,31 @@
 	max-width: 360px;
 	margin-inline: auto;
 	padding-inline: 20px;
+
+	@include from($bp-tablet-sm) {
+		max-width: 768px;
+		padding-inline: 40px;
+	}
+
+	@include from($bp-tablet) {
+		max-width: 1024px;
+		padding-inline: 40px;
+	}
+
+	@include from($bp-laptop) {
+		max-width: 1280px;
+	}
+
+	@include from($bp-desktop) {
+		max-width: 1600px;
+	}
+
+	@include from($bp-desktop-xl) {
+		max-width: 1920px;
+	}
 }
 
-/* Шапка: Frame 131 4810:21126 — VERTICAL, gap 20, выравнивание по центру */
+/* Шапка: мобилка 21126; планшет Frame 131 4810:18421 */
 .head {
 	display: flex;
 	flex-direction: column;
@@ -26,9 +48,13 @@
 	margin-bottom: 24px;
 	text-align: center;
 	gap: 20px;
+
+	@include from($bp-tablet-sm) {
+		margin-bottom: 40px;
+	}
 }
 
-/* 4810:21127 — Akademia 40, line-height 100%, UPPER, CENTER */
+/* 21127 — 40px мобилка; 18422 — 48px планшет */
 .heading {
 	max-width: 320px;
 	margin: 0;
@@ -38,9 +64,14 @@
 	line-height: 1;
 	text-transform: uppercase;
 	color: #fff;
+
+	@include from($bp-tablet-sm) {
+		max-width: 412px;
+		font-size: 48px;
+	}
 }
 
-/* 4810:21128 — IBM Plex Mono 12 / 130%, CENTER, 80% белого */
+/* 21128 / 18423 */
 .lead {
 	box-sizing: border-box;
 	max-width: 320px;
@@ -51,22 +82,195 @@
 	line-height: 1.3;
 	text-align: center;
 	color: rgb(255 255 255 / 0.8);
+
+	@include from($bp-tablet-sm) {
+		max-width: 463px;
+	}
 }
 
-.cardList {
-	display: flex;
-	flex-direction: column;
+/* --- Карусель (как MatchActivities; слайды 334×316 с 767, точки 18444) --- */
+
+.carouselBlock {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.carouselViewport {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.carouselList {
+	position: relative;
+	display: grid;
+	box-sizing: border-box;
+	grid-template-columns: 1fr;
 	gap: 16px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
+
+	@include from($bp-tablet-sm) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		gap: 20px;
+		width: max-content;
+		min-height: 0;
+	}
+
+	@include from($bp-tablet) {
+		flex-wrap: wrap;
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 944px;
+		margin-inline: auto;
+		row-gap: 20px;
+	}
 }
 
-.cardListItem {
+.carouselSlide {
+	box-sizing: border-box;
 	width: 100%;
+	min-width: 0;
 }
 
-/* Карточка 320×300 контентной области: 360 − 2×20 padding .inner (4810:21130, 21135, 21140) */
+@include from($bp-tablet-sm) {
+	.carouselViewport {
+		overflow-x: auto;
+		overscroll-behavior-x: contain;
+		scroll-snap-type: x mandatory;
+		container-type: inline-size;
+		container-name: ticket-prog-carousel;
+		scrollbar-width: thin;
+	}
+
+	.carouselSlide {
+		box-sizing: border-box;
+		display: flex;
+		flex: 0 0 min(334px, 100cqi);
+		width: min(334px, 100cqi);
+		min-width: 0;
+		height: 316px;
+		flex-shrink: 0;
+		align-items: stretch;
+		justify-content: center;
+		scroll-snap-align: start;
+	}
+}
+
+@include from($bp-tablet) {
+	.carouselViewport {
+		overflow-x: visible;
+		overscroll-behavior-x: auto;
+		scroll-snap-type: none;
+	}
+
+	.carouselSlide {
+		scroll-snap-align: unset;
+		flex: 1 1 0;
+		width: auto;
+		min-width: 0;
+		max-width: 334px;
+		height: auto;
+		min-height: 316px;
+	}
+}
+
+.carouselChrome {
+	display: none;
+
+	@include from($bp-tablet-sm) {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 30px;
+	}
+
+	@include from($bp-tablet) {
+		display: none;
+	}
+}
+
+.carouselNavBtn {
+	display: none;
+
+	@include from($bp-tablet-sm) {
+		display: flex;
+		box-sizing: border-box;
+		flex-shrink: 0;
+		width: 48px;
+		height: 48px;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		border: 1px solid rgb(255 255 255 / 0.3);
+		background: transparent;
+		color: #fff;
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
+
+		&:focus-visible {
+			z-index: 1;
+			outline: 2px solid var(--button-focus-ring);
+			outline-offset: 2px;
+		}
+
+		&:disabled {
+			cursor: default;
+			border-color: #1c2222;
+			background-color: #0d1111;
+			color: #4a4d4d;
+		}
+	}
+}
+
+.carouselNavIcon {
+	display: block;
+	width: 10px;
+	height: 20px;
+	flex-shrink: 0;
+}
+
+.carouselDots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	height: 8px;
+	flex-shrink: 0;
+	gap: 8px;
+}
+
+.carouselDot {
+	box-sizing: border-box;
+	width: 8px;
+	height: 8px;
+	flex-shrink: 0;
+	padding: 0;
+	border: 1px solid rgb(255 255 255 / 0.35);
+	border-radius: 50%;
+	background: transparent;
+	opacity: 0.45;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+
+	@include from($bp-tablet-sm) {
+		&:focus-visible {
+			outline: 2px solid var(--button-focus-ring);
+			outline-offset: 2px;
+		}
+	}
+}
+
+.carouselDotActive {
+	border-color: #fff;
+	background-color: #fff;
+	opacity: 1;
+}
+
+/* Карточка: мобилка 320×300; в слайде планшет 334×316 (18425) */
 .card {
 	position: relative;
 	box-sizing: border-box;
@@ -79,6 +283,23 @@
 	padding: 16px;
 	border-radius: 0;
 	color: #fff;
+
+	@include from($bp-tablet-sm) {
+		.carouselSlide & {
+			max-width: none;
+			width: 100%;
+			min-height: 316px;
+			height: 100%;
+			margin-inline: 0;
+		}
+	}
+
+	@include from($bp-tablet) {
+		.carouselSlide & {
+			height: auto;
+			min-height: 316px;
+		}
+	}
 }
 
 .cardTop {
@@ -89,8 +310,8 @@
 }
 
 /*
- * Сетка как во Frame 133: 4 колонки, gutter 16px; заголовок — колонки 1–2,
- * описание — 3–4 (4810:21132 + 21133 и аналоги).
+ * Мобилка: 4 колонки (21132–21133).
+ * Планшет в слайде: две колонки по макету 18427–18428 / 18436–18438.
  */
 .cardGrid {
 	display: grid;
@@ -99,6 +320,21 @@
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 	column-gap: 16px;
 	align-items: start;
+
+	@include from($bp-tablet-sm) {
+		.carouselSlide & {
+			column-gap: 20px;
+		}
+
+		.carouselSlide .card[data-variant='solid_dark'] &,
+		.carouselSlide .card[data-variant='solid_red'] & {
+			grid-template-columns: 147px 135px;
+		}
+
+		.carouselSlide .card[data-variant='pattern'] & {
+			grid-template-columns: 124px 158px;
+		}
+	}
 }
 
 .cardTitle {
@@ -110,6 +346,13 @@
 	line-height: 0.9;
 	text-transform: uppercase;
 	color: #fff;
+
+	@include from($bp-tablet-sm) {
+		.carouselSlide & {
+			grid-column: 1;
+			font-size: 64px;
+		}
+	}
 }
 
 .cardTitleLine {
@@ -124,6 +367,13 @@
 	line-height: 1.3;
 	white-space: pre-line;
 	color: rgb(255 255 255 / 0.8);
+
+	@include from($bp-tablet-sm) {
+		.carouselSlide & {
+			grid-column: 2;
+			color: #fff;
+		}
+	}
 }
 
 .cardCta {
@@ -161,12 +411,10 @@
 	}
 }
 
-/* #1b2222 — заливка 4810:21130 (трибуны) */
 .cardSolid_dark {
 	background-color: var(--button-secondary-bg);
 }
 
-/* #b2061c — 4810:21135 (VIP) */
 .cardSolid_red {
 	background-color: var(--button-primary-bg);
 }
@@ -175,5 +423,4 @@
 	background-color: var(--button-secondary-bg);
 	background-repeat: repeat;
 	background-position: 0 0;
-	/* Второй fill в Figma — IMAGE; слой задаётся инлайном из `patternSrc` (4810:21140). */
 }
