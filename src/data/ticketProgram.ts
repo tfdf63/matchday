@@ -2,7 +2,7 @@
  * Варианты карточек (FCA_Fans мобилка):
  * - `solid_dark` — 4810:21130 (фон #1b2222)
  * - `solid_red` — 4810:21135 (#b2061c)
- * - `pattern` — 21140 / 16134 / 13844 / 11554 (паттерны в SCSS: 360, 1024, 1280, 1600 по брейкпоинтам)
+ * - `pattern` — 21140 / … / 1248 (паттерны в SCSS: 360 → 1024 → 1280 → 1600 → 1920)
  */
 export type TicketProgramCardVariant = 'solid_dark' | 'solid_red' | 'pattern'
 

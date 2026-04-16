@@ -1,6 +1,6 @@
 @use '../../../styles/tokens.scss' as *;
 
-/* FCA_Fans: мобилка 21125+; 767 18420+; 1024 16120+; 1280 13830+; 1600 11540+; карусель как MatchActivities */
+/* FCA_Fans: мобилка 21125+; 767+; 1024+; 1280+; 1600+; 1920 1234+; карусель как MatchActivities */
 
 .section {
 	box-sizing: border-box;
@@ -74,6 +74,13 @@
 		margin-bottom: 80px;
 		gap: 40px;
 	}
+
+	/* 4810:1235 — 1097×171, gap 40 */
+	@include from($bp-desktop-xl) {
+		max-width: 1097px;
+		margin-bottom: 80px;
+		gap: 40px;
+	}
 }
 
 /* 21127 — 40px; 767 — 48px; 1024 — 4810:16122 Akademia 64 */
@@ -113,6 +120,13 @@
 		font-size: 96px;
 		text-align: center;
 	}
+
+	/* 4810:1236 — секция, Akademia 128 */
+	@include from($bp-desktop-xl) {
+		max-width: 1097px;
+		font-size: 128px;
+		text-align: center;
+	}
 }
 
 /* 21128 / 18423 / 16123 — на 1024 лид 463px, #fff */
@@ -148,6 +162,13 @@
 	/* 4810:11543 — Mono 14, ширина 525 */
 	@include from($bp-desktop) {
 		max-width: 525px;
+	}
+
+	/* 4810:1237 — Mono 16, ширина 619 */
+	@include from($bp-desktop-xl) {
+		max-width: 619px;
+		font-size: 16px;
+		line-height: 1.3;
 	}
 }
 
@@ -201,6 +222,11 @@
 	/* 4810:11540 — 493 + 494 + 493 + gap 20×2 = 1520 (контент 1600 − 40×2) */
 	@include from($bp-desktop) {
 		max-width: 1520px;
+	}
+
+	/* 4810:1234 — 600×3 + gap 20×2 = 1840 (контент 1920 − 40×2) */
+	@include from($bp-desktop-xl) {
+		max-width: 1840px;
 	}
 }
 
@@ -312,6 +338,20 @@
 		flex: 0 0 493px;
 		width: 493px;
 		max-width: 493px;
+	}
+}
+
+@include from($bp-desktop-xl) {
+	.carouselSlide {
+		height: 600px;
+	}
+
+	.carouselSlide:nth-child(1),
+	.carouselSlide:nth-child(2),
+	.carouselSlide:nth-child(3) {
+		flex: 0 0 600px;
+		width: 600px;
+		max-width: 600px;
 	}
 }
 
@@ -451,6 +491,12 @@
 			min-height: 528px;
 		}
 	}
+
+	@include from($bp-desktop-xl) {
+		.carouselSlide & {
+			min-height: 600px;
+		}
+	}
 }
 
 .cardTop {
@@ -531,6 +577,15 @@
 			grid-template-columns: 216px 217px;
 		}
 	}
+
+	/* 1920: 1239 / 1244 / 1249 — Frame 133 560, две колонки 270 + 270 */
+	@include from($bp-desktop-xl) {
+		.carouselSlide .card[data-variant='solid_dark'] &,
+		.carouselSlide .card[data-variant='solid_red'] &,
+		.carouselSlide .card[data-variant='pattern'] & {
+			grid-template-columns: 270px 270px;
+		}
+	}
 }
 
 .cardTitle {
@@ -567,6 +622,12 @@
 			font-size: 140px;
 		}
 	}
+
+	@include from($bp-desktop-xl) {
+		.carouselSlide & {
+			font-size: 168px;
+		}
+	}
 }
 
 .cardTitleLine {
@@ -592,6 +653,13 @@
 	@include from($bp-laptop) {
 		.carouselSlide & {
 			font-size: 14px;
+			line-height: 1.3;
+		}
+	}
+
+	@include from($bp-desktop-xl) {
+		.carouselSlide & {
+			font-size: 16px;
 			line-height: 1.3;
 		}
 	}
@@ -650,6 +718,14 @@
 			min-height: 58px;
 		}
 	}
+
+	@include from($bp-desktop-xl) {
+		.carouselSlide & {
+			min-height: 60px;
+			font-size: 16px;
+			line-height: 1.3;
+		}
+	}
 }
 
 .cardSolid_dark {
@@ -676,5 +752,9 @@
 
 	@include from($bp-desktop) {
 		background-image: url('/images/tickets-prog/pattern-1600.png');
+	}
+
+	@include from($bp-desktop-xl) {
+		background-image: url('/images/tickets-prog/pattern-1920.png');
 	}
 }
