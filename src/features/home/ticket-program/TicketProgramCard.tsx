@@ -1,4 +1,4 @@
-import type { FC, CSSProperties } from 'react'
+import type { FC } from 'react'
 import Link from 'next/link'
 
 import type { TicketProgramCard as TicketProgramCardData } from '@/data/ticketProgram'
@@ -24,19 +24,7 @@ export const TicketProgramCard: FC<TicketProgramCardProps> = ({
 	card,
 	className,
 }) => {
-	const {
-		titleLines,
-		description,
-		variant,
-		patternSrc,
-		ctaLabel,
-		ctaHref,
-	} = card
-
-	const patternStyle: CSSProperties | undefined =
-		variant === 'pattern' && patternSrc
-			? { backgroundImage: `url(${patternSrc})` }
-			: undefined
+	const { titleLines, description, variant, ctaLabel, ctaHref } = card
 
 	const headingId = `ticket-program-card-${card.id}-title`
 	const titleForAria = titleLines.join(' ').trim()
@@ -44,7 +32,6 @@ export const TicketProgramCard: FC<TicketProgramCardProps> = ({
 	return (
 		<article
 			className={cx(styles.card, variantClass[variant], className)}
-			style={patternStyle}
 			data-variant={variant}
 			aria-labelledby={headingId}
 		>

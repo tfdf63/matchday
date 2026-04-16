@@ -1,13 +1,8 @@
 /**
- * Публичные пути к ассетам блока «Билетная программа» (`public/images/tickets-prog/`).
- */
-export const TICKET_PROGRAM_IMAGE_PREFIX = '/images/tickets-prog'
-
-/**
  * Варианты карточек (FCA_Fans мобилка):
  * - `solid_dark` — 4810:21130 (фон #1b2222)
  * - `solid_red` — 4810:21135 (#b2061c)
- * - `pattern` — 4810:21140 (фон + паттерн)
+ * - `pattern` — 4810:21140 / 16134 (фон + паттерн в SCSS: pattern-360 до 1024px, pattern-1024 от 1024px)
  */
 export type TicketProgramCardVariant = 'solid_dark' | 'solid_red' | 'pattern'
 
@@ -20,8 +15,6 @@ export type TicketProgramCard = {
 	description: string
 	ctaLabel: string
 	ctaHref: string
-	/** Только `variant: 'pattern'`: слой поверх `solid_dark` (4810:21140). */
-	patternSrc?: string
 }
 
 export const ticketProgramCards: TicketProgramCard[] = [
@@ -51,7 +44,6 @@ export const ticketProgramCards: TicketProgramCard[] = [
 			'Персональная зона просмотра матча \nдля друзей, семьи или партнёров. Максимальный комфорт, уединение \nи лучший вид \nна игру.',
 		ctaLabel: 'Узнать больше',
 		ctaHref: '#',
-		patternSrc: `${TICKET_PROGRAM_IMAGE_PREFIX}/pattern-360.png`,
 	},
 ]
 
