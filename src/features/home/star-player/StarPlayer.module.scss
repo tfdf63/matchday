@@ -70,7 +70,16 @@
 	overflow: hidden;
 }
 
+.photoPicture {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
 .photo {
+	display: block;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 	object-position: center top;
 }
@@ -284,7 +293,16 @@
 	inset: 0;
 }
 
+.newsPicture {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
 .newsImage {
+	display: block;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 }
 
@@ -363,4 +381,135 @@
 	line-height: 1;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+@include from($bp-tablet-sm) {
+	.inner {
+		display: grid;
+		max-width: 768px;
+		grid-template-columns: 215px 1fr;
+		column-gap: 20px;
+		row-gap: 20px;
+		padding-inline: 40px;
+	}
+
+	.tag {
+		height: 40px;
+		padding-inline: 24px;
+	}
+
+	.playerName {
+		width: 215px;
+		margin-top: 40px;
+		font-size: 48px;
+		white-space: normal;
+	}
+
+	.photoStage {
+		grid-column: 2;
+		grid-row: 1 / span 3;
+		width: 473px;
+		height: 622px;
+		margin-top: 0;
+	}
+
+	.playerNumber {
+		left: 50%;
+		font-size: 500px;
+	}
+
+	.params {
+		width: 215px;
+		gap: 40px;
+	}
+
+	.hwItem {
+		gap: 20px;
+	}
+
+	.factRow {
+		padding-block: 16px;
+	}
+
+	.matchesBlock {
+		grid-column: 1;
+		grid-row: 4;
+		width: 215px;
+		margin-top: 0;
+	}
+
+	.matchTab {
+		padding: 10px;
+	}
+
+	.matchCard {
+		gap: 10px;
+		padding: 16px 0;
+	}
+
+	.leagueInfo {
+		padding-inline: 6px;
+	}
+
+	.teamsRow {
+		padding-inline: 10px;
+	}
+
+	.teamCol {
+		width: 70px;
+		gap: 10px;
+	}
+
+	.teamName {
+		font-size: 18px;
+	}
+
+	.scoreMark {
+		font-size: 24px;
+	}
+
+	.newsRow {
+		grid-column: 2;
+		grid-row: 4;
+		width: 100%;
+		margin-top: 0;
+		gap: 20px;
+		overflow: hidden;
+	}
+
+	.newsCard {
+		width: 216px;
+		height: 235px;
+		padding: 16px;
+	}
+
+	.newsTitle {
+		font-size: 18px;
+	}
+
+	.metricsRow {
+		grid-column: 1 / -1;
+		width: 688px;
+		margin-top: 0;
+		gap: 20px;
+		overflow: visible;
+	}
+
+	.metricCard {
+		width: auto;
+		height: 174px;
+		flex: 1 1 0;
+		gap: 30px;
+		padding-bottom: 30px;
+	}
+
+	.metricLabel {
+		min-height: 53px;
+		padding: 16px;
+		font-size: 12px;
+	}
+
+	.metricValue {
+		font-size: 40px;
+	}
 }

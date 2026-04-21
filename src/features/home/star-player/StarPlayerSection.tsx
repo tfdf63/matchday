@@ -112,6 +112,7 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 
 	const homeLogo = activeMatch ? activeMatch.homeTeam.logo : '/images/teamslogo/Akron.png'
 	const awayLogo = activeMatch ? activeMatch.awayTeam.logo : '/images/teamslogo/Pari-NN.png'
+	const visibleNews = profileData.news.slice(0, 2)
 
 	return (
 		<section id='star-player' className={cx(styles.section, className)}>
@@ -129,13 +130,17 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 						{profileData.numberLabel}
 					</p>
 					<div className={styles.photoWrap}>
-						<Image
-							src={profileData.photoSrc}
-							alt={`${profileData.firstName} ${profileData.lastName}`}
-							fill
-							className={styles.photo}
-							sizes='320px'
-						/>
+						<picture className={styles.photoPicture}>
+							<source
+								media='(min-width: 767px)'
+								srcSet={profileData.photoSrc768 ?? profileData.photoSrc}
+							/>
+							<img
+								src={profileData.photoSrc}
+								alt={`${profileData.firstName} ${profileData.lastName}`}
+								className={styles.photo}
+							/>
+						</picture>
 					</div>
 				</div>
 
@@ -236,16 +241,16 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 				</div>
 
 				<div className={styles.newsRow}>
-					{profileData.news.map(item => (
+					{visibleNews.map(item => (
 						<article key={item.id} className={styles.newsCard}>
 							<div className={styles.newsImageWrap}>
-								<Image
-									src={item.imageSrc}
-									alt=''
-									fill
-									className={styles.newsImage}
-									sizes='152px'
-								/>
+								<picture className={styles.newsPicture}>
+									<source
+										media='(min-width: 767px)'
+										srcSet={item.imageSrc768 ?? item.imageSrc}
+									/>
+									<img src={item.imageSrc} alt={item.title} className={styles.newsImage} />
+								</picture>
 							</div>
 							<p className={styles.newsTitle}>{item.title}</p>
 						</article>

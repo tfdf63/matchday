@@ -7,6 +7,7 @@ export type StarPlayerNews = {
 	id: string
 	title: string
 	imageSrc: string
+	imageSrc768?: string
 }
 
 export type StarPlayerMetric = {
@@ -23,6 +24,7 @@ export type StarPlayerProfile = {
 	lastName: string
 	numberLabel: string
 	photoSrc: string
+	photoSrc768?: string
 	heightLabel: string
 	weightLabel: string
 	facts: StarPlayerFact[]
@@ -37,6 +39,7 @@ export const starPlayer: StarPlayerProfile = {
 	lastName: 'Дзюба',
 	numberLabel: '22',
 	photoSrc: '/images/star-player/player_360.png',
+	photoSrc768: '/images/star-player/player_768.png',
 	heightLabel: '197 см',
 	weightLabel: '98 кг',
 	facts: [
@@ -52,11 +55,13 @@ export const starPlayer: StarPlayerProfile = {
 			id: '1',
 			title: 'Лучшие моменты матча «Акрон» — «Пари НН»',
 			imageSrc: '/images/star-player/news/news-1-360.png',
+			imageSrc768: '/images/star-player/news/news-1-768.png',
 		},
 		{
 			id: '2',
 			title: 'Интервью с Артёмом Дзюбой после игры',
 			imageSrc: '/images/star-player/news/news-2-360.png',
+			imageSrc768: '/images/star-player/news/news-2-768.png',
 		},
 	],
 	metrics: [
