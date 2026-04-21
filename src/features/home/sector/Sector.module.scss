@@ -105,6 +105,9 @@
 }
 
 .image {
+	display: block;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 }
 
@@ -219,7 +222,7 @@
 	max-height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
-	overscroll-behavior-y: contain;
+	overscroll-behavior-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -673,6 +676,97 @@
 
 	.menuButtonTitle {
 		font-size: 48px;
+	}
+
+	.menuButtonIndex {
+		font-size: 14px;
+		line-height: 1.3;
+	}
+}
+
+/* FCA_Fans 4810:11559 — адаптив 1600 */
+@include from($bp-desktop) {
+	.inner {
+		max-width: 1600px;
+		padding-inline: 40px;
+	}
+
+	.head {
+		max-width: 1520px;
+		margin-bottom: 51px;
+	}
+
+	.heading {
+		max-width: 485px;
+		font-size: 96px;
+	}
+
+	.leadBlock {
+		width: 365px;
+		max-width: 365px;
+		margin-top: 88px;
+	}
+
+	.leadFirst {
+		font-size: 14px;
+	}
+
+	.leadSecond {
+		width: 365px;
+		max-width: 365px;
+		font-size: 14px;
+	}
+
+	.body {
+		max-width: 1520px;
+		grid-template-columns: 365px 750px;
+	}
+
+	.activeCard {
+		width: 365px;
+		gap: 40px;
+	}
+
+	.imageWrap {
+		height: 280px;
+	}
+
+	.cardBody {
+		gap: 30px;
+	}
+
+	.cardTitle {
+		font-size: 44px;
+	}
+
+	.price {
+		font-size: 28px;
+	}
+
+	.description {
+		font-size: 14px;
+	}
+
+	.cardCta {
+		min-height: 58px;
+		font-size: 14px;
+	}
+
+	.menuShell {
+		width: 750px;
+	}
+
+	.menuViewport {
+		height: 580px;
+	}
+
+	.menuButton {
+		padding: 40px 30px;
+		gap: 8px;
+	}
+
+	.menuButtonTitle {
+		font-size: 52px;
 	}
 
 	.menuButtonIndex {

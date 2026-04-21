@@ -10,6 +10,12 @@ export type Sector = {
 	description: string
 	/** Путь к фото карточки (мобилка 360). */
 	imageSrc: string
+	/** Путь к фото карточки для >=1024 (опционально). */
+	imageSrc1024?: string
+	/** Путь к фото карточки для >=1280 (опционально). */
+	imageSrc1280?: string
+	/** Путь к фото карточки для >=1600 (опционально). */
+	imageSrc1600?: string
 	ctaLabel: string
 	ctaHref: string
 }
@@ -20,8 +26,7 @@ export const defaultSectorTitle = {
 } as const
 
 /** Первая строка лида — у правого края блока (4810:20883). */
-export const defaultSectorLeadFirst =
-	'От шумного фанатского виража' as const
+export const defaultSectorLeadFirst = 'От шумного фанатского виража' as const
 
 /** Вторая строка — на всю ширину (4810:20882). */
 export const defaultSectorLeadSecond =
@@ -36,6 +41,9 @@ export const sectors: Sector[] = [
 		description:
 			'Центральное расположение сектора гарантирует отсутствие «слепых зон», позволяя одинаково четко контролировать события у обоих ворот и оценивать тактику команд. Это место для тех, кто ценит красоту футбола и хочет насладиться игрой по-настоящему.',
 		imageSrc: `${SECTOR_IMAGE_PREFIX}/1_360.png`,
+		imageSrc1024: `${SECTOR_IMAGE_PREFIX}/1_1024.png`,
+		imageSrc1280: `${SECTOR_IMAGE_PREFIX}/1_1280.png`,
+		imageSrc1600: `${SECTOR_IMAGE_PREFIX}/1_1600.png`,
 		ctaLabel: 'Узнать больше',
 		ctaHref: '#',
 	},

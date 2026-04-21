@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import type { FC } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
@@ -80,13 +79,26 @@ export const SectorSection: FC<SectorSectionProps> = ({
 						aria-live="polite"
 					>
 						<div className={styles.imageWrap}>
-							<Image
-								src={active.imageSrc}
-								alt=""
-								fill
-								className={styles.image}
-								sizes="(max-width: 766px) 288px, (max-width: 1023px) 216px, (max-width: 1279px) 221px, 285px"
-							/>
+							<picture>
+								<source
+									media="(min-width: 1600px)"
+									srcSet={
+										active.imageSrc1600 ??
+										active.imageSrc1280 ??
+										active.imageSrc1024 ??
+										active.imageSrc
+									}
+								/>
+								<source
+									media="(min-width: 1280px)"
+									srcSet={active.imageSrc1280 ?? active.imageSrc1024 ?? active.imageSrc}
+								/>
+								<source
+									media="(min-width: 1024px)"
+									srcSet={active.imageSrc1024 ?? active.imageSrc}
+								/>
+								<img src={active.imageSrc} alt="" className={styles.image} />
+							</picture>
 							<span className={styles.imageOverlay} aria-hidden />
 						</div>
 						<div className={styles.cardBody}>
