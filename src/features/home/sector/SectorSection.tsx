@@ -81,6 +81,16 @@ export const SectorSection: FC<SectorSectionProps> = ({
 						<div className={styles.imageWrap}>
 							<picture>
 								<source
+									media="(min-width: 1920px)"
+									srcSet={
+										active.imageSrc1920 ??
+										active.imageSrc1600 ??
+										active.imageSrc1280 ??
+										active.imageSrc1024 ??
+										active.imageSrc
+									}
+								/>
+								<source
 									media="(min-width: 1600px)"
 									srcSet={
 										active.imageSrc1600 ??

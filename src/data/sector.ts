@@ -16,6 +16,8 @@ export type Sector = {
 	imageSrc1280?: string
 	/** Путь к фото карточки для >=1600 (опционально). */
 	imageSrc1600?: string
+	/** Путь к фото карточки для >=1920 (опционально). */
+	imageSrc1920?: string
 	ctaLabel: string
 	ctaHref: string
 }
@@ -44,6 +46,7 @@ export const sectors: Sector[] = [
 		imageSrc1024: `${SECTOR_IMAGE_PREFIX}/1_1024.png`,
 		imageSrc1280: `${SECTOR_IMAGE_PREFIX}/1_1280.png`,
 		imageSrc1600: `${SECTOR_IMAGE_PREFIX}/1_1600.png`,
+		imageSrc1920: `${SECTOR_IMAGE_PREFIX}/1_1920.png`,
 		ctaLabel: 'Узнать больше',
 		ctaHref: '#',
 	},
