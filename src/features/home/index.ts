@@ -32,3 +32,4 @@ export {
 	type TicketProgramCardProps,
 } from './ticket-program'
 export { SectorSection, type SectorSectionProps } from './sector'
+export { StarPlayerSection, type StarPlayerSectionProps } from './star-player'
