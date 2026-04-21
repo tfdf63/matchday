@@ -85,7 +85,7 @@ export const SectorSection: FC<SectorSectionProps> = ({
 								alt=""
 								fill
 								className={styles.image}
-								sizes="(max-width: 766px) 288px, 216px"
+								sizes="(max-width: 766px) 288px, (max-width: 1023px) 216px, 221px"
 							/>
 							<span className={styles.imageOverlay} aria-hidden />
 						</div>

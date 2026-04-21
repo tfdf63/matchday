@@ -214,6 +214,17 @@
 }
 
 .menuScroll {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	.menuScroll::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;
+	}
+
+	.menuScroll {
 	box-sizing: border-box;
 	height: 100%;
 	max-height: 100%;
@@ -445,12 +456,7 @@
 	}
 
 	.menuGradient {
-		background: linear-gradient(
-			to bottom,
-			rgb(2 10 10 / 0) 0%,
-			rgb(2 10 10 / 0) 36.667%,
-			rgb(2 10 10 / 0.8) 100%
-		);
+		display: none;
 	}
 
 	.menuList li.menuItemActive {
@@ -464,9 +470,13 @@
 	}
 
 	.menuButton {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
 		width: 100%;
 		min-height: 0;
 		column-gap: 8px;
+		gap: 8px;
 	}
 
 	.menuButtonTitle {
@@ -499,5 +509,90 @@
 		&:hover .menuButtonIndex {
 			color: #fff;
 		}
+	}
+}
+
+/* FCA_Fans 4810:16139 / 4962:1549 — адаптив 1024 */
+@include from($bp-tablet) {
+	.inner {
+		max-width: 1024px;
+		padding-inline: 40px;
+	}
+
+	.head {
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 944px;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 0;
+		margin-bottom: 41px;
+	}
+
+	.heading {
+		max-width: 306px;
+		font-size: 64px;
+	}
+
+	.leadBlock {
+		width: 462px;
+		max-width: 462px;
+	}
+
+	.leadFirst {
+		width: 202px;
+		max-width: 202px;
+		margin-left: 260px;
+	}
+
+	.leadSecond {
+		width: 462px;
+		max-width: 462px;
+		margin-top: 0;
+	}
+
+	.body {
+		max-width: 944px;
+		grid-template-columns: 221px 462px;
+	}
+
+	.activeCard {
+		width: 221px;
+	}
+
+	.imageWrap {
+		height: 160px;
+	}
+
+	.cardTitle {
+		font-size: 32px;
+	}
+
+	.cardCta {
+		min-height: 54px;
+	}
+
+	.menuShell {
+		width: 462px;
+	}
+
+	.menuViewport {
+		height: 440px;
+	}
+
+	.menuButton {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding: 30px 20px;
+		gap: 8px;
+	}
+
+	.menuGradient {
+		display: none;
+	}
+
+	.menuButtonTitle {
+		font-size: 40px;
 	}
 }
