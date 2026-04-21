@@ -51,19 +51,19 @@ export const starPlayer: StarPlayerProfile = {
 		{
 			id: '1',
 			title: 'Лучшие моменты матча «Акрон» — «Пари НН»',
-			imageSrc: '/images/star-player/news/news-1.png',
+			imageSrc: '/images/star-player/news/news-1-360.png',
 		},
 		{
 			id: '2',
 			title: 'Интервью с Артёмом Дзюбой после игры',
-			imageSrc: '/images/star-player/news/news-2.png',
+			imageSrc: '/images/star-player/news/news-2-360.png',
 		},
 	],
 	metrics: [
 		{
 			id: '1',
 			label: 'Очки в матчах РПЛ (2025)',
-			value: '272',
+			value: '270+',
 			isHighlighted: true,
 		},
 		{
