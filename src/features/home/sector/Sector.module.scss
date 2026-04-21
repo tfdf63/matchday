@@ -214,17 +214,6 @@
 }
 
 .menuScroll {
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-	}
-
-	.menuScroll::-webkit-scrollbar {
-		width: 0;
-		height: 0;
-		display: none;
-	}
-
-	.menuScroll {
 	box-sizing: border-box;
 	height: 100%;
 	max-height: 100%;
@@ -253,19 +242,7 @@
 }
 
 .menuGradient {
-	position: absolute;
-	z-index: 1;
-	inset: 0;
-	pointer-events: none;
-	background: linear-gradient(
-		to bottom,
-		rgb(2 10 10 / 0) 0%,
-		rgb(2 10 10 / 0) 8%,
-		rgb(2 10 10 / 0.12) 28%,
-		rgb(2 10 10 / 0.38) 55%,
-		rgb(2 10 10 / 0.72) 78%,
-		rgb(2 10 10 / 0.94) 100%
-	);
+	display: none;
 }
 
 /*
@@ -455,6 +432,17 @@
 		height: calc(6 * (48px + 32px * 0.9));
 	}
 
+	.menuScroll {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	.menuScroll::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;
+	}
+
 	.menuGradient {
 		display: none;
 	}
@@ -594,5 +582,101 @@
 
 	.menuButtonTitle {
 		font-size: 40px;
+	}
+}
+
+/* FCA_Fans 4810:13849 — адаптив 1280 */
+@include from($bp-laptop) {
+	.inner {
+		max-width: 1280px;
+		padding-inline: 40px;
+	}
+
+	.head {
+		max-width: 1200px;
+		align-items: flex-start;
+		margin-bottom: 36px;
+	}
+
+	.heading {
+		max-width: 401px;
+		font-size: 80px;
+	}
+
+	.leadBlock {
+		display: flex;
+		flex-direction: column;
+		width: 285px;
+		max-width: 285px;
+		margin-top: 64px;
+		gap: 0;
+	}
+
+	.leadFirst {
+		align-self: flex-end;
+		width: fit-content;
+		max-width: none;
+		margin: 0;
+		font-size: 14px;
+		white-space: nowrap;
+	}
+
+	.leadSecond {
+		width: 285px;
+		max-width: 285px;
+		margin-top: 0;
+		font-size: 14px;
+	}
+
+	.body {
+		max-width: 1200px;
+		grid-template-columns: 285px 590px;
+	}
+
+	.activeCard {
+		width: 285px;
+	}
+
+	.imageWrap {
+		height: 200px;
+	}
+
+	.cardTitle {
+		font-size: 40px;
+	}
+
+	.price {
+		font-size: 24px;
+	}
+
+	.description {
+		font-size: 14px;
+	}
+
+	.cardCta {
+		min-height: 58px;
+		font-size: 14px;
+	}
+
+	.menuShell {
+		width: 590px;
+	}
+
+	.menuViewport {
+		height: 465px;
+	}
+
+	.menuButton {
+		padding: 30px 20px;
+		gap: 8px;
+	}
+
+	.menuButtonTitle {
+		font-size: 48px;
+	}
+
+	.menuButtonIndex {
+		font-size: 14px;
+		line-height: 1.3;
 	}
 }
