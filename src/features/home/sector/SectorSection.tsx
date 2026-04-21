@@ -38,11 +38,6 @@ export const SectorSection: FC<SectorSectionProps> = ({
 		[list, activeId],
 	)
 
-	const menuSectors = useMemo(
-		() => list.filter((s) => s.id !== active.id),
-		[list, active.id],
-	)
-
 	const menuScrollRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
@@ -90,8 +85,9 @@ export const SectorSection: FC<SectorSectionProps> = ({
 								alt=""
 								fill
 								className={styles.image}
-								sizes="288px"
+								sizes="(max-width: 766px) 288px, 216px"
 							/>
+							<span className={styles.imageOverlay} aria-hidden />
 						</div>
 						<div className={styles.cardBody}>
 							<div className={styles.titleRow}>
@@ -120,32 +116,41 @@ export const SectorSection: FC<SectorSectionProps> = ({
 								ref={menuScrollRef}
 								className={styles.menuScroll}
 							>
-								<ul
-									className={styles.menuList}
-									aria-label="Другие сектора"
-								>
-									{menuSectors.map((s) => (
-										<li key={s.id}>
-											<button
-												type="button"
-												className={styles.menuButton}
-												aria-label={`${s.title} ${s.indexLabel}`}
-												onClick={() => setActiveId(s.id)}
+								<ul className={styles.menuList} aria-label="Сектора">
+									{list.map((s) => {
+										const isActive = s.id === active.id
+										return (
+											<li
+												key={s.id}
+												className={cx(isActive && styles.menuItemActive)}
 											>
-												<span className={styles.menuButtonTitle}>
-													{s.title}
-												</span>
-												<span
+												<button
+													type="button"
 													className={cx(
-														styles.menuButtonIndex,
-														'font-mono',
+														styles.menuButton,
+														isActive && styles.menuButton_active,
 													)}
+													aria-current={isActive ? 'true' : undefined}
+													aria-label={`${s.title} ${s.indexLabel}`}
+													onClick={() => {
+														if (!isActive) setActiveId(s.id)
+													}}
 												>
-													{s.indexLabel}
-												</span>
-											</button>
-										</li>
-									))}
+													<span className={styles.menuButtonTitle}>
+														{s.title}
+													</span>
+													<span
+														className={cx(
+															styles.menuButtonIndex,
+															'font-mono',
+														)}
+													>
+														{s.indexLabel}
+													</span>
+												</button>
+											</li>
+										)
+									})}
 								</ul>
 							</div>
 							<div className={styles.menuGradient} aria-hidden />
