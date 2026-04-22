@@ -13,6 +13,12 @@
 	max-width: 360px;
 	margin-inline: auto;
 	padding-inline: 20px;
+	overflow: visible;
+}
+
+.leftPanel,
+.rightPanel {
+	display: contents;
 }
 
 .tag {
@@ -87,11 +93,7 @@
 .photoWrap::after {
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(
-		to bottom,
-		rgb(2 10 10 / 0) 65.5%,
-		#020a0a 100%
-	);
+	background: linear-gradient(to bottom, rgb(2 10 10 / 0) 65.5%, #020a0a 100%);
 	content: '';
 }
 
@@ -132,6 +134,13 @@
 }
 
 .factsList {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sideFactsList {
+	display: none;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -310,11 +319,7 @@
 	position: absolute;
 	inset: 0;
 	background:
-		linear-gradient(
-			to bottom,
-			rgb(2 10 10 / 0) 65.5%,
-			rgb(2 10 10 / 0.8) 100%
-		),
+		linear-gradient(to bottom, rgb(2 10 10 / 0) 65.5%, rgb(2 10 10 / 0.8) 100%),
 		linear-gradient(90deg, rgb(2 10 10 / 0.2) 0%, rgb(2 10 10 / 0.2) 100%);
 	content: '';
 }
@@ -507,6 +512,185 @@
 		min-height: 53px;
 		padding: 16px;
 		font-size: 12px;
+	}
+
+	.metricValue {
+		font-size: 40px;
+	}
+}
+
+@include from($bp-tablet) {
+	.inner {
+		display: grid;
+		max-width: 1024px;
+		grid-template-columns: 208px 1fr 221px;
+		align-items: start;
+		row-gap: 40px;
+		min-height: 1024px;
+		padding: 40px;
+	}
+
+	.leftPanel {
+		display: flex;
+		width: 220px;
+		flex-direction: column;
+		gap: 60px;
+		grid-column: 1;
+		z-index: 2;
+	}
+
+	.rightPanel {
+		display: flex;
+		width: 221px;
+		flex-direction: column;
+		gap: 20px;
+		grid-column: 3;
+		z-index: 2;
+	}
+
+	.tag {
+		height: 40px;
+		padding: 10px 24px;
+	}
+
+	.playerName {
+		width: 220px;
+		margin: 0;
+		font-size: 64px;
+		white-space: normal;
+	}
+
+	.photoStage {
+		position: absolute;
+		top: -40px;
+		left: 33%;
+		width: 514px;
+		height: 676px;
+		margin: 0;
+		transform: translateX(-50%);
+		z-index: 1;
+	}
+
+	.playerNumber {
+		top: -38px;
+		left: 50%;
+		font-size: 500px;
+		transform: translateX(-50%);
+	}
+
+	.params {
+		width: 220px;
+		margin-top: 0;
+		gap: 60px;
+	}
+
+	.hwValue {
+		font-size: 32px;
+	}
+
+	.factsList {
+		width: 220px;
+	}
+
+	.factsList .factRow {
+		padding-block: 20px;
+	}
+
+	.factsList .factRow:first-child {
+		border-top: 1px solid rgb(255 255 255 / 0.3);
+	}
+
+	.factsList .factRow:nth-child(n + 4) {
+		display: none;
+	}
+
+	.matchesBlock {
+		width: 221px;
+		margin-top: 0;
+	}
+
+	.matchCard {
+		padding: 16px 0;
+	}
+
+	.teamsRow {
+		padding-inline: 10px;
+	}
+
+	.teamCol {
+		width: 70px;
+		gap: 10px;
+	}
+
+	.teamName {
+		font-size: 18px;
+	}
+
+	.scoreMark {
+		font-size: 22px;
+	}
+
+	.newsRow {
+		width: 221px;
+		margin-top: 0;
+		gap: 20px;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
+	.newsCard {
+		width: 221px;
+		height: 109px;
+		padding: 16px;
+	}
+
+	.newsTitle {
+		font-size: 18px;
+	}
+
+	.sideFactsList {
+		display: flex;
+		width: 221px;
+		flex-direction: column;
+	}
+
+	.sideFactsList .factRow {
+		padding-block: 20px;
+	}
+
+	.sideFactsList .factRow:first-child {
+		border-top: 1px solid rgb(255 255 255 / 0.3);
+	}
+
+	.metricsRow {
+		position: absolute;
+		top: 655px;
+		left: 50%;
+		width: 622px;
+		margin: 0;
+		transform: translateX(-50%);
+		gap: 20px;
+		overflow: visible;
+		z-index: 2;
+	}
+
+	.metricCard {
+		width: auto;
+		height: 174px;
+		flex: 1 1 0;
+		gap: 30px;
+		padding-bottom: 30px;
+		box-shadow: 0 20px 4px 0 rgb(0 0 0 / 0.4);
+	}
+
+	.metricCard:nth-child(3) {
+		box-shadow: none;
+	}
+
+	.metricLabel {
+		min-height: 52px;
+		padding: 16px;
+		font-size: 10px;
 	}
 
 	.metricValue {
