@@ -15,6 +15,11 @@
 	padding-inline: 20px;
 }
 
+.leftSection,
+.rightSection {
+	display: contents;
+}
+
 .head {
 	margin-bottom: 24px;
 }
@@ -196,6 +201,49 @@
 	color: rgb(255 255 255 / 0.3);
 }
 
+.navArrows {
+	display: none;
+}
+
+.navArrowButton {
+	display: inline-flex;
+	width: 54px;
+	height: 54px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgb(255 255 255 / 0.3);
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	transition: border-color 0.15s ease;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+.navArrowIcon {
+	display: block;
+	width: 14px;
+	height: 14px;
+	border-top: 2px solid currentColor;
+	border-right: 2px solid currentColor;
+}
+
+.navArrowIconRight {
+	transform: rotate(45deg);
+}
+
+.navArrowIconLeft {
+	transform: rotate(-135deg);
+}
+
+.navArrowDisabled {
+	cursor: default;
+	color: rgb(255 255 255 / 0.3);
+}
+
 @include from($bp-tablet-sm) {
 	.inner {
 		max-width: 768px;
@@ -300,5 +348,110 @@
 	.menuButton:hover .menuButtonTitleSuffix,
 	.menuButton:hover .menuButtonIndex {
 		color: #fff;
+	}
+}
+
+@include from($bp-tablet) {
+	.inner {
+		display: grid;
+		max-width: 1024px;
+		grid-template-columns: 387px 462px;
+		column-gap: 95px;
+		padding-inline: 40px;
+	}
+
+	.leftSection {
+		display: flex;
+		flex-direction: column;
+		gap: 611px;
+	}
+
+	.rightSection {
+		display: block;
+		width: 462px;
+	}
+
+	.head {
+		display: block;
+		margin-bottom: 0;
+	}
+
+	.heading {
+		width: 387px;
+		font-size: 64px;
+	}
+
+	.leadBlock {
+		width: 221px;
+		max-width: 221px;
+		margin-top: 16px;
+	}
+
+	.leadFirst {
+		margin-left: 80px;
+	}
+
+	.leadSecond {
+		margin-top: 0;
+	}
+
+	.navArrows {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+	}
+
+	.body {
+		max-width: none;
+	}
+
+	.activeCard {
+		flex-direction: column;
+		padding: 30px 20px;
+	}
+
+	.cardContent {
+		gap: 16px;
+	}
+
+	.cardTitle,
+	.menuButtonTitle,
+	.menuButtonTitleSuffix {
+		font-size: 32px;
+	}
+
+	.indexLabel,
+	.menuButtonIndex {
+		font-size: 12px;
+	}
+
+	.cardImageWrap {
+		height: 240px;
+	}
+
+	/*
+	 * Сектор 1024: фиксированный «окно» + скролл; 6 видимых строк,
+	 * тот же расчёт строк, что FCA 4810:18450 в Sector 768: py+leading.
+	 */
+	.menuViewport {
+		height: calc(6 * (48px + 32px * 0.9));
+	}
+
+	.menuScroll {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.menuScroll::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		display: none;
+	}
+
+	.menuButton {
+		padding: 30px 20px;
 	}
 }

@@ -648,9 +648,11 @@
 		display: none;
 	}
 
+	/* Без явного order у sideFacts (0) перебивает matches (5) / news (6) из моб. базы. */
 	.matchesBlock {
 		width: 221px;
 		margin-top: 0;
+		order: 0;
 	}
 
 	.matchCard {
@@ -678,6 +680,7 @@
 		width: 221px;
 		margin-top: 0;
 		gap: 20px;
+		order: 1;
 		overflow-x: auto;
 		overflow-y: hidden;
 	}
@@ -695,6 +698,7 @@
 	.sideFactsList {
 		display: flex;
 		width: 221px;
+		order: 2;
 		flex-direction: column;
 	}
 
