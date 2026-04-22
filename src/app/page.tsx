@@ -9,6 +9,7 @@ import Main, {
 	OfferSection,
 	defaultOfferContent,
 	StarPlayerSection,
+	RulesSection,
 } from '@/features/home'
 import MainPageClient from './MainPageClient'
 
@@ -29,6 +30,7 @@ const MatchesPage: React.FC = () => {
 			<TicketProgramSection />
 			<SectorSection />
 			<StarPlayerSection />
+			<RulesSection />
 			<MainPageClient />
 		</>
 	)

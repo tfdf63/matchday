@@ -18,7 +18,7 @@ const HERO_TAGS: ReadonlyArray<{ label: string; href: string }> = [
 	{ label: 'Сектора', href: '#sector' },
 	{ label: 'Карта болельщика', href: '/' },
 	{ label: 'Мерч', href: '/merch/' },
-	{ label: 'Правила', href: '/' },
+	{ label: 'Правила', href: '#rules' },
 	{ label: 'FAQ', href: '/' },
 ]
 
