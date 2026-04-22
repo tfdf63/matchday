@@ -43,6 +43,15 @@
 	white-space: nowrap;
 }
 
+.nameLine,
+.nameLineLast {
+	display: inline;
+}
+
+.nameLineLast::before {
+	content: ' ';
+}
+
 .photoStage {
 	position: relative;
 	height: 473px;
@@ -235,6 +244,12 @@
 	gap: 8px;
 }
 
+.teamLogo {
+	width: 44px;
+	height: 44px;
+	object-fit: contain;
+}
+
 .teamName {
 	margin: 0;
 	font-family: 'Akademia', sans-serif;
@@ -399,8 +414,14 @@
 	}
 
 	.tag {
-		height: 40px;
-		padding-inline: 24px;
+		align-self: start;
+		width: fit-content;
+		max-width: 100%;
+		height: auto;
+		padding: 10px 24px;
+		white-space: nowrap;
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
 	}
 
 	.playerName {
@@ -549,8 +570,17 @@
 	}
 
 	.tag {
-		height: 40px;
+		display: inline-flex;
+		align-self: flex-start;
+		width: fit-content;
+		max-width: 100%;
+		height: auto;
 		padding: 10px 24px;
+		white-space: nowrap;
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		justify-content: center;
+		align-items: center;
 	}
 
 	.playerName {
@@ -695,5 +725,228 @@
 
 	.metricValue {
 		font-size: 40px;
+	}
+}
+
+@include from($bp-laptop) {
+	.inner {
+		display: grid;
+		max-width: 1280px;
+		min-height: 1000px;
+		grid-template-columns: 284px 1fr 285px;
+		row-gap: 40px;
+		align-items: start;
+		padding: 40px;
+	}
+
+	.leftPanel {
+		width: 284px;
+		gap: 80px;
+		z-index: 2;
+	}
+
+	.tag {
+		height: 40px;
+		padding: 10px 24px;
+		font-size: 12px;
+	}
+
+	.playerName {
+		margin: 0;
+		font-size: 80px;
+		white-space: normal;
+	}
+
+	.nameLine,
+	.nameLineLast {
+		display: block;
+	}
+
+	.nameLineLast {
+		margin: 0;
+	}
+
+	.nameLineLast::before {
+		content: none;
+	}
+
+	.params {
+		gap: 80px;
+	}
+
+	.hwItem {
+		gap: 20px;
+	}
+
+	.hwItem:first-child {
+		width: 125px;
+	}
+
+	.hwLabel {
+		font-size: 14px;
+	}
+
+	.hwValue {
+		font-size: 40px;
+	}
+
+	.factsList .factRow {
+		align-items: center;
+		padding-block: 20px;
+	}
+
+	.factsList .factRow:first-child {
+		border-top: 1px solid rgb(255 255 255 / 0.3);
+	}
+
+	.factsList .factLabel {
+		font-size: 14px;
+	}
+
+	.factsList .factValue {
+		font-size: 14px;
+	}
+
+	.factsList .factRow:nth-child(3) .factLabel {
+		flex: 0 0 125px;
+	}
+
+	.photoStage {
+		position: absolute;
+		top: -40px;
+		left: 33%;
+		width: 608px;
+		height: 779px;
+		margin: 0;
+		transform: translateX(-50%);
+		z-index: 1;
+	}
+
+	.playerNumber {
+		top: -38px;
+		left: 50%;
+		margin: 0;
+		font-size: 640px;
+		line-height: 0.9;
+		transform: translateX(-50%);
+	}
+
+	.photo {
+		object-fit: contain;
+		object-position: center;
+	}
+
+	.rightPanel {
+		width: 285px;
+		gap: 40px;
+		z-index: 2;
+	}
+
+	.matchesBlock {
+		width: 285px;
+	}
+
+	.matchTab {
+		height: 40px;
+		padding: 10px;
+		font-size: 14px;
+	}
+
+	.matchCard {
+		gap: 20px;
+	}
+
+	.leagueInfo {
+		padding: 0 2px;
+	}
+
+	.leagueLine {
+		font-size: 14px;
+	}
+
+	.teamCol {
+		width: 70px;
+		gap: 10px;
+	}
+
+	.teamLogo {
+		width: 56px;
+		height: 56px;
+	}
+
+	.teamName {
+		font-size: 20px;
+	}
+
+	.scoreMark {
+		font-size: 24px;
+	}
+
+	.matchDate {
+		font-size: 14px;
+	}
+
+	.newsRow {
+		width: 100%;
+		gap: 20px;
+		margin-top: 0;
+		overflow-x: auto;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		align-items: stretch;
+	}
+
+	.newsCard {
+		width: 237px;
+		min-height: 200px;
+		flex: 0 0 auto;
+	}
+
+	.newsTitle {
+		font-size: 20px;
+	}
+
+	.sideFactsList {
+		width: 285px;
+	}
+
+	.sideFactsList .factRow {
+		align-items: center;
+		padding-block: 20px;
+	}
+
+	.sideFactsList .factRow:first-child {
+		border-top: 1px solid rgb(255 255 255 / 0.3);
+	}
+
+	.sideFactsList .factLabel,
+	.sideFactsList .factValue {
+		font-size: 14px;
+	}
+
+	.sideFactsList .factRow:last-child {
+		align-items: flex-start;
+	}
+
+	.metricsRow {
+		top: 790px;
+		width: 794px;
+	}
+
+	.metricCard {
+		height: auto;
+		gap: 40px;
+		padding-bottom: 40px;
+	}
+
+	.metricLabel {
+		min-height: 0;
+		padding: 20px;
+		font-size: 14px;
+	}
+
+	.metricValue {
+		font-size: 48px;
 	}
 }

@@ -9,6 +9,7 @@ export type StarPlayerNews = {
 	imageSrc: string
 	imageSrc768?: string
 	imageSrc1024?: string
+	imageSrc1280?: string
 }
 
 export type StarPlayerMetric = {
@@ -27,6 +28,7 @@ export type StarPlayerProfile = {
 	photoSrc: string
 	photoSrc768?: string
 	photoSrc1024?: string
+	photoSrc1280?: string
 	heightLabel: string
 	weightLabel: string
 	facts: StarPlayerFact[]
@@ -43,6 +45,7 @@ export const starPlayer: StarPlayerProfile = {
 	photoSrc: '/images/star-player/player_360.png',
 	photoSrc768: '/images/star-player/player_768.png',
 	photoSrc1024: '/images/star-player/player_1024.png',
+	photoSrc1280: '/images/star-player/player_1280.png',
 	heightLabel: '197 см',
 	weightLabel: '98 кг',
 	facts: [
@@ -55,25 +58,27 @@ export const starPlayer: StarPlayerProfile = {
 	],
 	news: [
 		{
-			id: '1',
-			title: 'Лучшие моменты матча «Акрон» — «Пари НН»',
-			imageSrc: '/images/star-player/news/news-1-360.png',
-			imageSrc768: '/images/star-player/news/news-1-768.png',
-			imageSrc1024: '/images/star-player/news/news-1-1024.png',
-		},
-		{
 			id: '2',
 			title: 'Интервью с Артёмом Дзюбой после игры',
 			imageSrc: '/images/star-player/news/news-2-360.png',
 			imageSrc768: '/images/star-player/news/news-2-768.png',
 			imageSrc1024: '/images/star-player/news/news-2-1024.png',
+			imageSrc1280: '/images/star-player/news/news-2-1280.png',
+		},
+		{
+			id: '1',
+			title: 'Лучшие моменты матча «Акрон» — «Пари НН»',
+			imageSrc: '/images/star-player/news/news-1-360.png',
+			imageSrc768: '/images/star-player/news/news-1-768.png',
+			imageSrc1024: '/images/star-player/news/news-1-1024.png',
+			imageSrc1280: '/images/star-player/news/news-1-1280.png',
 		},
 	],
 	metrics: [
 		{
 			id: '1',
 			label: 'Очки в матчах РПЛ (2025)',
-			value: '270+',
+			value: '272',
 			isHighlighted: true,
 		},
 		{

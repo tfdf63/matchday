@@ -127,9 +127,12 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 						{profileData.tagLabel}
 					</div>
 
-					<h2
-						className={styles.playerName}
-					>{`${profileData.firstName} ${profileData.lastName}`}</h2>
+					<h2 className={styles.playerName}>
+						<span className={styles.nameLine}>{profileData.firstName}</span>
+						<span className={styles.nameLineLast}>
+							{profileData.lastName}
+						</span>
+					</h2>
 
 					<div className={styles.params}>
 						<div className={styles.hwRow}>
@@ -164,6 +167,15 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 					</p>
 					<div className={styles.photoWrap}>
 						<picture className={styles.photoPicture}>
+							<source
+								media='(min-width: 1280px)'
+								srcSet={
+									profileData.photoSrc1280 ??
+									profileData.photoSrc1024 ??
+									profileData.photoSrc768 ??
+									profileData.photoSrc
+								}
+							/>
 							<source
 								media='(min-width: 1024px)'
 								srcSet={
@@ -227,10 +239,11 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 								<div className={styles.teamsRow}>
 									<div className={styles.teamCol}>
 										<Image
+											className={styles.teamLogo}
 											src={homeLogo}
 											alt={activeMatch.homeTeam.name}
-											width={44}
-											height={44}
+											width={56}
+											height={56}
 										/>
 										<p className={styles.teamName}>
 											{activeMatch.homeTeam.name}
@@ -241,10 +254,11 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 									<p className={styles.scoreMark}>-</p>
 									<div className={styles.teamCol}>
 										<Image
+											className={styles.teamLogo}
 											src={awayLogo}
 											alt={activeMatch.awayTeam.name}
-											width={44}
-											height={44}
+											width={56}
+											height={56}
 										/>
 										<p className={styles.teamName}>
 											{activeMatch.awayTeam.name}
@@ -265,6 +279,15 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 							<article key={item.id} className={styles.newsCard}>
 								<div className={styles.newsImageWrap}>
 									<picture className={styles.newsPicture}>
+										<source
+											media='(min-width: 1280px)'
+											srcSet={
+												item.imageSrc1280 ??
+												item.imageSrc1024 ??
+												item.imageSrc768 ??
+												item.imageSrc
+											}
+										/>
 										<source
 											media='(min-width: 1024px)'
 											srcSet={
