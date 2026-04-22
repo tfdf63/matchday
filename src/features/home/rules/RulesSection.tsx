@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import type { FC } from 'react'
 import { useMemo, useState } from 'react'
 
@@ -58,23 +57,25 @@ export const RulesSection: FC<RulesSectionProps> = ({ rulesList, className }) =>
 
 				<div className={styles.body}>
 					<article className={styles.activeCard} aria-live="polite">
-						<div className={styles.titleRow}>
-							<h3 className={styles.cardTitle}>{activeRule.title}</h3>
-							<span className={cx(styles.indexLabel, 'font-mono')}>
-								{activeRule.indexLabel}
-							</span>
+						<div className={styles.cardContent}>
+							<div className={styles.titleRow}>
+								<h3 className={styles.cardTitle}>{activeRule.title}</h3>
+								<span className={cx(styles.indexLabel, 'font-mono')}>
+									{activeRule.indexLabel}
+								</span>
+							</div>
+							<p className={cx(styles.cardDescription, 'font-mono')}>
+								{activeRule.description}
+							</p>
 						</div>
-						<p className={cx(styles.cardDescription, 'font-mono')}>
-							{activeRule.description}
-						</p>
 						<div className={styles.cardImageWrap}>
-							<Image
-								src={activeRule.image}
-								alt=""
-								fill
-								sizes="320px"
-								className={styles.cardImage}
-							/>
+							<picture className={styles.cardPicture}>
+								<source
+									media="(min-width: 767px)"
+									srcSet={activeRule.image768 ?? activeRule.image}
+								/>
+								<img src={activeRule.image} alt="" className={styles.cardImage} />
+							</picture>
 						</div>
 					</article>
 					<div className={styles.menuViewport}>
