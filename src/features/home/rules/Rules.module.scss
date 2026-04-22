@@ -455,3 +455,99 @@
 		padding: 30px 20px;
 	}
 }
+
+@include from($bp-laptop) {
+	.inner {
+		max-width: 1280px;
+		grid-template-columns: 387px 590px;
+		column-gap: 223px;
+	}
+
+	.leftSection {
+		gap: 476px;
+	}
+
+	.heading {
+		width: 387px;
+		margin-bottom: 0;
+		font-size: 80px;
+	}
+
+	.leadBlock {
+		display: flex;
+		width: 387px;
+		max-width: 387px;
+		flex-direction: column;
+		margin-top: 6px;
+	}
+
+	.leadFirst,
+	.leadSecond {
+		font-size: 14px;
+	}
+
+	.leadFirst {
+		margin-left: 102px;
+	}
+
+	.leadSecond {
+		max-width: 285px;
+	}
+
+	.navArrowButton {
+		width: 58px;
+		height: 58px;
+	}
+
+	.navArrowIcon {
+		width: 20px;
+		height: 20px;
+		border-top-width: 4px;
+		border-right-width: 4px;
+	}
+
+	.rightSection {
+		width: 590px;
+	}
+
+	.activeCard {
+		flex-direction: row;
+		align-items: stretch;
+	}
+
+	.cardContent {
+		flex: 0 0 265px;
+		gap: 40px;
+	}
+
+	.titleRow {
+		column-gap: 8px;
+	}
+
+	.cardTitle,
+	.menuButtonTitle,
+	.menuButtonTitleSuffix {
+		font-size: 40px;
+	}
+
+	.indexLabel,
+	.menuButtonIndex,
+	.cardDescription {
+		font-size: 14px;
+	}
+
+	.indexLabel,
+	.menuButtonIndex {
+		padding-top: 0;
+	}
+
+	.cardImageWrap {
+		height: auto;
+		min-height: 0;
+		flex: 1 1 0;
+	}
+
+	.menuViewport {
+		height: calc(6 * (48px + 40px * 0.9));
+	}
+}

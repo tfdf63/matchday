@@ -4,6 +4,7 @@ export interface Rule {
 	image: string
 	image768?: string
 	image1024?: string
+	image1280?: string
 	title: string
 	description: string
 }
@@ -24,6 +25,7 @@ export const rules: Rule[] = [
 		image: '/images/rules/rules-1-360.png',
 		image768: '/images/rules/rules-1-768.png',
 		image1024: '/images/rules/rules-1-1024.png',
+		image1280: '/images/rules/rules-1-1280.png',
 		title: 'Суть игры',
 		description:
 			'Футбольный матч состоит из\u00A0двух таймов по\u00A045\u00A0минут. В\u00A0игре участвуют две команды по\u00A011\u00A0игроков, включая вратаря. Цель игры\u00A0— забить больше голов в\u00A0ворота соперника, используя любые части тела, кроме рук. Вратарь может играть руками в\u00A0своей штрафной площади.',
@@ -48,7 +50,7 @@ export const rules: Rule[] = [
 		id: 11,
 		indexLabel: '[04]',
 		image: '/images/rules/rules-1-360.png',
-		title: 'Предупреждение\u00A0/ Удаление',
+		title: 'Предупреждение / Удаление',
 		description:
 			'Желтая карточка\u00A0— предупреждение за\u00A0нарушения правил. Две желтые карточки\u00A0= красная карточка. Красная карточка\u00A0— удаление с\u00A0поля без права замены за\u00A0грубое нарушение или\u00A0вторую желтую карточку.',
 	},
