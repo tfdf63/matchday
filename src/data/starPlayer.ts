@@ -10,6 +10,7 @@ export type StarPlayerNews = {
 	imageSrc768?: string
 	imageSrc1024?: string
 	imageSrc1280?: string
+	imageSrc1600?: string
 }
 
 export type StarPlayerMetric = {
@@ -29,6 +30,7 @@ export type StarPlayerProfile = {
 	photoSrc768?: string
 	photoSrc1024?: string
 	photoSrc1280?: string
+	photoSrc1600?: string
 	heightLabel: string
 	weightLabel: string
 	facts: StarPlayerFact[]

@@ -129,9 +129,7 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 
 					<h2 className={styles.playerName}>
 						<span className={styles.nameLine}>{profileData.firstName}</span>
-						<span className={styles.nameLineLast}>
-							{profileData.lastName}
-						</span>
+						<span className={styles.nameLineLast}>{profileData.lastName}</span>
 					</h2>
 
 					<div className={styles.params}>
@@ -167,6 +165,16 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 					</p>
 					<div className={styles.photoWrap}>
 						<picture className={styles.photoPicture}>
+							<source
+								media='(min-width: 1600px)'
+								srcSet={
+									profileData.photoSrc1600 ??
+									profileData.photoSrc1280 ??
+									profileData.photoSrc1024 ??
+									profileData.photoSrc768 ??
+									profileData.photoSrc
+								}
+							/>
 							<source
 								media='(min-width: 1280px)'
 								srcSet={
@@ -279,6 +287,16 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 							<article key={item.id} className={styles.newsCard}>
 								<div className={styles.newsImageWrap}>
 									<picture className={styles.newsPicture}>
+										<source
+											media='(min-width: 1600px)'
+											srcSet={
+												item.imageSrc1600 ??
+												item.imageSrc1280 ??
+												item.imageSrc1024 ??
+												item.imageSrc768 ??
+												item.imageSrc
+											}
+										/>
 										<source
 											media='(min-width: 1280px)'
 											srcSet={
