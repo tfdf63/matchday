@@ -551,3 +551,62 @@
 		height: calc(6 * (48px + 40px * 0.9));
 	}
 }
+
+@include from($bp-desktop) {
+	.inner {
+		max-width: 1600px;
+		grid-template-columns: 600px 750px;
+		column-gap: 170px;
+	}
+
+	.leftSection {
+		gap: 602px;
+	}
+
+	.heading {
+		width: 600px;
+		font-size: 96px;
+	}
+
+	.leadBlock {
+		width: 600px;
+		max-width: 600px;
+		margin-top: 11px;
+	}
+
+	.leadFirst {
+		margin-left: 96px;
+	}
+
+	/* FCA 4810:11726 — ширина как 3 единицы сетки, в макете 378px */
+	.leadSecond {
+		max-width: 378px;
+	}
+
+	.rightSection {
+		width: 750px;
+	}
+
+	.activeCard {
+		padding: 40px 30px;
+	}
+
+	.cardContent {
+		flex: 0 0 335px;
+		gap: 80px;
+	}
+
+	.cardTitle,
+	.menuButtonTitle,
+	.menuButtonTitleSuffix {
+		font-size: 44px;
+	}
+
+	.menuButton {
+		padding: 40px 30px;
+	}
+
+	.menuViewport {
+		height: calc(6 * (48px + 44px * 0.9));
+	}
+}

@@ -5,6 +5,7 @@ export interface Rule {
 	image768?: string
 	image1024?: string
 	image1280?: string
+	image1600?: string
 	title: string
 	description: string
 }
@@ -26,6 +27,7 @@ export const rules: Rule[] = [
 		image768: '/images/rules/rules-1-768.png',
 		image1024: '/images/rules/rules-1-1024.png',
 		image1280: '/images/rules/rules-1-1280.png',
+		image1600: '/images/rules/rules-1-1600.png',
 		title: 'Суть игры',
 		description:
 			'Футбольный матч состоит из\u00A0двух таймов по\u00A045\u00A0минут. В\u00A0игре участвуют две команды по\u00A011\u00A0игроков, включая вратаря. Цель игры\u00A0— забить больше голов в\u00A0ворота соперника, используя любые части тела, кроме рук. Вратарь может играть руками в\u00A0своей штрафной площади.',
