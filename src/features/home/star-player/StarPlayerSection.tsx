@@ -166,6 +166,17 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 					<div className={styles.photoWrap}>
 						<picture className={styles.photoPicture}>
 							<source
+								media='(min-width: 1920px)'
+								srcSet={
+									profileData.photoSrc1920 ??
+									profileData.photoSrc1600 ??
+									profileData.photoSrc1280 ??
+									profileData.photoSrc1024 ??
+									profileData.photoSrc768 ??
+									profileData.photoSrc
+								}
+							/>
+							<source
 								media='(min-width: 1600px)'
 								srcSet={
 									profileData.photoSrc1600 ??
@@ -287,6 +298,17 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 							<article key={item.id} className={styles.newsCard}>
 								<div className={styles.newsImageWrap}>
 									<picture className={styles.newsPicture}>
+										<source
+											media='(min-width: 1920px)'
+											srcSet={
+												item.imageSrc1920 ??
+												item.imageSrc1600 ??
+												item.imageSrc1280 ??
+												item.imageSrc1024 ??
+												item.imageSrc768 ??
+												item.imageSrc
+											}
+										/>
 										<source
 											media='(min-width: 1600px)'
 											srcSet={

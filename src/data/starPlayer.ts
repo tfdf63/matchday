@@ -11,6 +11,7 @@ export type StarPlayerNews = {
 	imageSrc1024?: string
 	imageSrc1280?: string
 	imageSrc1600?: string
+	imageSrc1920?: string
 }
 
 export type StarPlayerMetric = {
@@ -31,6 +32,7 @@ export type StarPlayerProfile = {
 	photoSrc1024?: string
 	photoSrc1280?: string
 	photoSrc1600?: string
+	photoSrc1920?: string
 	heightLabel: string
 	weightLabel: string
 	facts: StarPlayerFact[]
@@ -48,6 +50,7 @@ export const starPlayer: StarPlayerProfile = {
 	photoSrc768: '/images/star-player/player_768.png',
 	photoSrc1024: '/images/star-player/player_1024.png',
 	photoSrc1280: '/images/star-player/player_1280.png',
+	photoSrc1920: '/images/star-player/player_1920.png',
 	heightLabel: '197 см',
 	weightLabel: '98 кг',
 	facts: [
@@ -66,6 +69,7 @@ export const starPlayer: StarPlayerProfile = {
 			imageSrc768: '/images/star-player/news/news-2-768.png',
 			imageSrc1024: '/images/star-player/news/news-2-1024.png',
 			imageSrc1280: '/images/star-player/news/news-2-1280.png',
+			imageSrc1920: '/images/star-player/news/news-2-1920.png',
 		},
 		{
 			id: '1',
@@ -74,6 +78,7 @@ export const starPlayer: StarPlayerProfile = {
 			imageSrc768: '/images/star-player/news/news-1-768.png',
 			imageSrc1024: '/images/star-player/news/news-1-1024.png',
 			imageSrc1280: '/images/star-player/news/news-1-1280.png',
+			imageSrc1920: '/images/star-player/news/news-1-1920.png',
 		},
 	],
 	metrics: [

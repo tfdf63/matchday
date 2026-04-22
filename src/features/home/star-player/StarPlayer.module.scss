@@ -1077,3 +1077,155 @@
 		font-size: 52px;
 	}
 }
+
+@include from($bp-desktop-xl) {
+	.inner {
+		max-width: 1920px;
+		min-height: 1400px;
+		grid-template-columns: 445px 1fr 445px;
+		padding: 160px 41px 40px;
+		align-content: start;
+		align-items: stretch;
+	}
+
+	.leftPanel {
+		width: 445px;
+		min-height: 0;
+		gap: 80px;
+		z-index: 2;
+	}
+
+	.params {
+		width: 445px;
+		flex: 1;
+		min-height: 0;
+		gap: 0;
+		justify-content: space-between;
+	}
+
+	.factsList {
+		width: 445px;
+	}
+
+	.factsList .factLabel,
+	.factsList .factValue {
+		font-size: 16px;
+	}
+
+	.tag {
+		height: 40px;
+		padding: 10px 24px;
+		font-size: 14px;
+	}
+
+	.playerName {
+		font-size: 128px;
+	}
+
+	.hwLabel {
+		font-size: 16px;
+	}
+
+	.hwValue {
+		font-size: 48px;
+	}
+
+	.hwRow {
+		margin-bottom: 100px;
+		justify-content: flex-start;
+		gap: 67px;
+	}
+
+	.hwItem:nth-child(2) {
+		width: 98px;
+	}
+
+	.photoStage {
+		top: -40px;
+		width: 849px;
+		height: 1089px;
+		margin: 0;
+		z-index: 1;
+	}
+
+	.playerNumber {
+		top: -38px;
+		margin: 0;
+		font-size: 989px;
+	}
+
+	.rightPanel {
+		width: 445px;
+		min-height: 0;
+		justify-content: space-between;
+		gap: 0;
+		z-index: 2;
+	}
+
+	.matchesBlock {
+		width: 445px;
+	}
+
+	.matchTab {
+		font-size: 16px;
+	}
+
+	.matchCard {
+		gap: 20px;
+	}
+
+	.leagueLine,
+	.matchDate {
+		font-size: 16px;
+	}
+
+	.leagueInfo {
+		max-width: 293px;
+	}
+
+	.teamName {
+		font-size: 24px;
+	}
+
+	.scoreMark {
+		font-size: 48px;
+	}
+
+	.newsRow {
+		margin-top: 0;
+	}
+
+	.newsCard {
+		width: 290px;
+		height: 170px;
+		min-height: 170px;
+		padding: 20px;
+	}
+
+	.newsTitle {
+		font-size: 24px;
+	}
+
+	.sideFactsList {
+		width: 445px;
+		margin-top: 0;
+	}
+
+	.sideFactsList .factLabel,
+	.sideFactsList .factValue {
+		font-size: 16px;
+	}
+
+	.metricsRow {
+		top: 1109px;
+		width: 1220px;
+	}
+
+	.metricLabel {
+		font-size: 16px;
+	}
+
+	.metricValue {
+		font-size: 64px;
+	}
+}
