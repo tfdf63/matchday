@@ -25,6 +25,7 @@ export type MerchSectionProps = {
 const IMG_HERO_360 = { w: 320, h: 360 }
 const IMG_SMALL_360 = { w: 152, h: 220 }
 const DEFAULT_768 = { w: 334, h: 410 }
+const DEFAULT_1024 = { w: 301, h: 440 }
 
 function MerchProductCard({
 	item,
@@ -36,7 +37,10 @@ function MerchProductCard({
 	const href = item.productUrl ?? merchStoreHref
 	const isMobileHero = itemIndex === 0
 	const isMobileSmall = itemIndex > 0 && itemIndex < 3
-	const isTabletOnly = itemIndex >= 3
+	/** 4–6: только &lt; 768 скрыто */
+	const isTabletRangeOnly = itemIndex >= 3 && itemIndex < 6
+	/** 7–8: только ≥1024 */
+	const isLgOnly = itemIndex >= 6
 	const w360 = isMobileHero
 		? IMG_HERO_360
 		: isMobileSmall
@@ -44,7 +48,83 @@ function MerchProductCard({
 			: null
 	const w768 = item.image768W ?? DEFAULT_768.w
 	const h768 = item.image768H ?? DEFAULT_768.h
+	const w1024 = item.image1024W ?? DEFAULT_1024.w
+	const h1024 = item.image1024H ?? DEFAULT_1024.h
 	const isHalfGradient = (item.gradient ?? 'tall') === 'half'
+
+	const has1024 = item.image1024 != null
+	const has768 = item.image768 != null
+	const has360 = item.image360 != null
+
+	function cardImageNode(): ReactElement {
+		/* 7–8: только 1024 */
+		if (has1024 && !has768) {
+			return (
+				<>
+					{/* eslint-disable-next-line @next/next/no-img-element -- только витрина ≥1024, без 768-ассетов */}
+					<img
+						className={styles.cardImage}
+						src={item.image1024}
+						alt=""
+						width={w1024}
+						height={h1024}
+						loading="lazy"
+						decoding="async"
+					/>
+				</>
+			)
+		}
+
+		/* 1–3: 360 + 768 + 1024 */
+		if (has360 && has768) {
+			return (
+				<picture>
+					{has1024 && (
+						<source
+							media="(min-width: 1024px)"
+							srcSet={item.image1024}
+						/>
+					)}
+					<source media="(min-width: 767px)" srcSet={item.image768!} />
+					<img
+						className={styles.cardImage}
+						src={item.image360}
+						alt=""
+						width={w360?.w}
+						height={w360?.h}
+						loading="lazy"
+						decoding="async"
+					/>
+				</picture>
+			)
+		}
+
+		/* 4–6: 768 + 1024, без 360 */
+		if (has768) {
+			return (
+				<picture>
+					{has1024 && (
+						<source
+							media="(min-width: 1024px)"
+							srcSet={item.image1024}
+						/>
+					)}
+					<source media="(min-width: 767px)" srcSet={item.image768} />
+					<img
+						className={styles.cardImage}
+						src={item.image768}
+						alt=""
+						width={w768}
+						height={h768}
+						loading="lazy"
+						decoding="async"
+					/>
+				</picture>
+			)
+		}
+
+		return <></>
+	}
 
 	return (
 		<Link
@@ -53,42 +133,14 @@ function MerchProductCard({
 				styles.card,
 				isMobileHero && styles.cardHero,
 				isMobileSmall && styles.cardSmall,
-				isTabletOnly && styles.cardTabletOnly,
+				isTabletRangeOnly && styles.cardTabletOnly,
+				isLgOnly && styles.cardLgOnly,
 			)}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
 			<div className={styles.cardImageWrap}>
-				{item.image360 != null ? (
-					<picture>
-						<source
-							media="(min-width: 767px)"
-							srcSet={item.image768}
-						/>
-						<img
-							className={styles.cardImage}
-							src={item.image360}
-							alt=""
-							width={w360?.w}
-							height={w360?.h}
-							loading="lazy"
-							decoding="async"
-						/>
-					</picture>
-				) : (
-					<>
-						{/* eslint-disable-next-line @next/next/no-img-element -- позиции 4–6 только ≥767, один кроп 768 */}
-						<img
-							className={styles.cardImage}
-							src={item.image768}
-							alt=""
-							width={w768}
-							height={h768}
-							loading="lazy"
-							decoding="async"
-						/>
-					</>
-				)}
+				{cardImageNode()}
 				<div
 					className={cx(
 						styles.cardGradient,
@@ -139,23 +191,24 @@ export const MerchSection: FC<MerchSectionProps> = ({ className }) => {
 				</header>
 
 				<div className={styles.showcase}>
-					{merchShowcaseItems.map((item, index) => (
-						<MerchProductCard
-							key={item.id}
-							item={item}
-							itemIndex={index}
-						/>
-					))}
+					<div className={styles.showcaseBento}>
+						{merchShowcaseItems.map((item, index) => (
+							<MerchProductCard
+								key={item.id}
+								item={item}
+								itemIndex={index}
+							/>
+						))}
+					</div>
+					<Link
+						href={merchStoreHref}
+						className={cx(styles.cta, 'font-mono')}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Перейти в магазин
+					</Link>
 				</div>
-
-				<Link
-					href={merchStoreHref}
-					className={cx(styles.cta, 'font-mono')}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Перейти в магазин
-				</Link>
 			</div>
 		</section>
 	)

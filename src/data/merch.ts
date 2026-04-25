@@ -58,20 +58,23 @@ export const merchCatalogItems: MerchCatalogItem[] = [
 	},
 ]
 
-/** half — 50% (FCA 18632, 18623); tall — 65,5% (остальные карточки) */
+/** half — 50% (FCA 18632, 18623); tall — 65,5% (остальные) */
 export type MerchImageGradient = 'half' | 'tall'
 
-/** FCA: витрина 360 (1–3) + 768 (4810:18619, masonry) */
+/** 360, 768 (4810:18619), 1024 (4810:16314) */
 export interface MerchShowcaseItem {
 	id: number
 	title: string
 	price: string
-	/** 360, только 1–3; на <767 4–6 скрыты */
+	/** 360, только 1–3; на <767 4+ скрыты (кроме lg-only) */
 	image360?: string
-	image768: string
-	/** Соотношение кропа ассета (для width/height у img) */
+	image768?: string
 	image768W?: number
 	image768H?: number
+	/** 1024; позиции 7–8 только с этим кропом (без 768) */
+	image1024?: string
+	image1024W?: number
+	image1024H?: number
 	gradient?: MerchImageGradient
 	productUrl?: string
 }
@@ -86,15 +89,13 @@ export const merchSubtitleLines = [
 	'большого города.',
 ] as const
 
-/** FCA 18622: один абзац на 768 */
 export const merchSubtitleParagraph768 =
 	'Твой стиль в цветах клуба. Выбирай официальный мерч «Акрона», чтобы чувствовать себя частью команды и на трибунах стадиона, и в ритме большого города.'
 
 export const merchStoreHref = 'https://shop.fcakron.ru/'
 
 /**
- * DOM: мобилка 1–3; планшет 4810:18619 — плитки 1…6, позиция через SCSS.
- * 1/6 — крупные 334×410; 3/4/5 — 157; вариации 210/240.
+ * 1–3: мобилка + 768 + 1024. 4–6: 768+ и 1024. 7–8: только ≥1024, ассет merch_7/8_1024.
  */
 export const merchShowcaseItems: MerchShowcaseItem[] = [
 	{
@@ -105,6 +106,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image768: '/images/merch/merch_1_768.png',
 		image768W: 334,
 		image768H: 410,
+		image1024: '/images/merch/merch_1_1024.png',
+		image1024W: 301,
+		image1024H: 440,
 		gradient: 'tall',
 		productUrl:
 			'https://shop.fcakron.ru/catalog/odezhda/khudi-i-kofty/khudi-akron-tolyatti-krasnoe/',
@@ -117,6 +121,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image768: '/images/merch/merch_2_768.png',
 		image768W: 157,
 		image768H: 240,
+		image1024: '/images/merch/merch_2_1024.png',
+		image1024W: 221,
+		image1024H: 300,
 		gradient: 'tall',
 		productUrl:
 			'https://shop.fcakron.ru/catalog/odezhda/khudi-i-kofty/khudi-akron-tolyatti-chernoe/',
@@ -129,6 +136,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image768: '/images/merch/merch_3_768.png',
 		image768W: 157,
 		image768H: 210,
+		image1024: '/images/merch/merch_3_1024.png',
+		image1024W: 141,
+		image1024H: 200,
 		gradient: 'tall',
 		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
 	},
@@ -139,6 +149,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image768: '/images/merch/merch_4_768.png',
 		image768W: 157,
 		image768H: 210,
+		image1024: '/images/merch/merch_4_1024.png',
+		image1024W: 141,
+		image1024H: 200,
 		gradient: 'half',
 		productUrl: 'https://shop.fcakron.ru/',
 	},
@@ -149,6 +162,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image768: '/images/merch/merch_5_768.png',
 		image768W: 157,
 		image768H: 240,
+		image1024: '/images/merch/merch_5_1024.png',
+		image1024W: 221,
+		image1024H: 300,
 		gradient: 'half',
 		productUrl: 'https://shop.fcakron.ru/',
 	},
@@ -159,7 +175,30 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image768: '/images/merch/merch_6_768.png',
 		image768W: 334,
 		image768H: 410,
+		image1024: '/images/merch/merch_6_1024.png',
+		image1024W: 301,
+		image1024H: 440,
 		gradient: 'tall',
 		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
+	},
+	{
+		id: 7,
+		title: 'Брюки тренировочные Jogel PREMIER',
+		price: '4 500 руб.',
+		image1024: '/images/merch/merch_7_1024.png',
+		image1024W: 143,
+		image1024H: 200,
+		gradient: 'tall',
+		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
+	},
+	{
+		id: 8,
+		title: 'Бейсболка «Акрон» с логотипом клуба, красная',
+		price: '1 200 руб.',
+		image1024: '/images/merch/merch_8_1024.png',
+		image1024W: 141,
+		image1024H: 200,
+		gradient: 'half',
+		productUrl: 'https://shop.fcakron.ru/',
 	},
 ]

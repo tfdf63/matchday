@@ -22,6 +22,10 @@
 		max-width: 768px;
 		padding-inline: 40px;
 	}
+
+	@include from($bp-tablet) {
+		max-width: 1024px;
+	}
 }
 
 .head {
@@ -86,10 +90,30 @@
 	@include from($bp-tablet-sm) {
 		display: block;
 	}
+
+	/* 16317: 580, по центру под заголовком */
+	@include from($bp-tablet) {
+		max-width: 580px;
+	}
 }
 
-/* --- Витрина: мобилка — сетка; 768 — 4 колонки 157, gap 20, masonry 4810:18619 */
+/* --- Витрина: оболочка + CTA 16342; bento — только 8 карточек */
 .showcase {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+
+	@include from($bp-tablet) {
+		position: relative;
+		min-height: 940px;
+		width: 100%;
+		align-items: stretch;
+	}
+}
+
+/* мобилка: сетка; 768: masonry; 1024: bento — всё FCA, контейнер 688 / 944 */
+.showcaseBento {
 	display: grid;
 	width: 100%;
 	max-width: 320px;
@@ -110,27 +134,34 @@
 		min-height: 860px;
 		margin-inline: 0;
 	}
+
+	@include from($bp-tablet) {
+		display: block;
+		position: relative;
+		width: 100%;
+		min-height: 940px;
+	}
 }
 
 /* Мобилка: герой + «скос»; 4–6 скрыты */
-.showcase .card:nth-child(1) {
+.showcaseBento .card:nth-child(1) {
 	grid-column: 1 / -1;
 }
 
-.showcase .card:nth-child(2) {
+.showcaseBento .card:nth-child(2) {
 	grid-row: 2;
 	grid-column: 2;
 }
 
-.showcase .card:nth-child(3) {
+.showcaseBento .card:nth-child(3) {
 	grid-row: 3;
 	grid-column: 1;
 }
 
-/* FCA: плитки 18623/18626/…/18638 — abs относительно .showcase (688) */
+/* FCA: плитки 18623/18626/…/18638 — abs (688) */
 @include from($bp-tablet-sm) {
 	/* 1 — 18638 красное, 2×, 410 */
-	.showcase .card:nth-child(1) {
+	.showcaseBento .card:nth-child(1) {
 		top: 0;
 		left: 0;
 		width: calc(2 * var(--c) + var(--g));
@@ -138,7 +169,7 @@
 	}
 
 	/* 2 — 18626 чёрное, 157×240, col2 */
-	.showcase .card:nth-child(2) {
+	.showcaseBento .card:nth-child(2) {
 		top: 450px;
 		left: calc(var(--c) + var(--g));
 		width: var(--c);
@@ -146,7 +177,7 @@
 	}
 
 	/* 3 — 18635 брюки, 157×210, col1 низ */
-	.showcase .card:nth-child(3) {
+	.showcaseBento .card:nth-child(3) {
 		top: 650px;
 		left: 0;
 		width: var(--c);
@@ -154,7 +185,7 @@
 	}
 
 	/* 4 — 18632 шапка, 157×210, col3 */
-	.showcase .card:nth-child(4) {
+	.showcaseBento .card:nth-child(4) {
 		top: 0;
 		left: calc(2 * var(--c) + 2 * var(--g));
 		width: var(--c);
@@ -162,7 +193,7 @@
 	}
 
 	/* 5 — 18623 бейсболка, 157×240, col4, +170 */
-	.showcase .card:nth-child(5) {
+	.showcaseBento .card:nth-child(5) {
 		top: 170px;
 		left: calc(3 * var(--c) + 3 * var(--g));
 		width: var(--c);
@@ -170,11 +201,78 @@
 	}
 
 	/* 6 — 18629 Jogel, 334×410, col3-4, низ */
-	.showcase .card:nth-child(6) {
+	.showcaseBento .card:nth-child(6) {
 		top: 450px;
 		left: calc(2 * var(--c) + 2 * var(--g));
 		width: calc(2 * var(--c) + var(--g));
 		height: 410px;
+	}
+}
+
+/* 4810:16314 — bento, абсолюты; контент 944; top = FigmaY − 167, left = FigmaX − 40 */
+@include from($bp-tablet) {
+	/* id1 16333 */
+	.showcaseBento .card:nth-child(1) {
+		top: 0;
+		left: 0;
+		width: calc(100% * 301 / 944);
+		height: 440px;
+	}
+
+	/* id2 16321 */
+	.showcaseBento .card:nth-child(2) {
+		top: 500px;
+		left: calc(100% * 241 / 944);
+		width: calc(100% * 221 / 944);
+		height: 300px;
+	}
+
+	/* id3 16330 */
+	.showcaseBento .card:nth-child(3) {
+		top: 740px;
+		left: 0;
+		width: calc(100% * 141 / 944);
+		height: 200px;
+	}
+
+	/* id4 16327 */
+	.showcaseBento .card:nth-child(4) {
+		top: 0;
+		left: calc(100% * 321 / 944);
+		width: calc(100% * 141 / 944);
+		height: 200px;
+	}
+
+	/* id5 16318 */
+	.showcaseBento .card:nth-child(5) {
+		top: 140px;
+		left: calc(100% * 482 / 944);
+		width: calc(100% * 221 / 944);
+		height: 300px;
+	}
+
+	/* id6 16324 */
+	.showcaseBento .card:nth-child(6) {
+		top: 500px;
+		left: calc(100% * 482 / 944);
+		width: calc(100% * 301 / 944);
+		height: 440px;
+	}
+
+	/* id7 16336 */
+	.showcaseBento .card:nth-child(7) {
+		top: 0;
+		left: calc(100% * 801 / 944);
+		width: calc(100% * 143 / 944);
+		height: 200px;
+	}
+
+	/* id8 16339 */
+	.showcaseBento .card:nth-child(8) {
+		top: 500px;
+		left: calc(100% * 803 / 944);
+		width: calc(100% * 141 / 944);
+		height: 200px;
 	}
 }
 
@@ -212,6 +310,15 @@
 	display: none;
 
 	@include from($bp-tablet-sm) {
+		display: flex;
+	}
+}
+
+/* Позиции 7–8: только ≥1024 */
+.cardLgOnly {
+	display: none;
+
+	@include from($bp-tablet) {
 		display: flex;
 	}
 }
@@ -254,16 +361,16 @@
 }
 
 /* 4810:21029/21026 — вторая и третья карта мобилки */
-.showcase .card:nth-child(2) .cardImage {
+.showcaseBento .card:nth-child(2) .cardImage {
 	object-position: center 20%;
 }
 
-.showcase .card:nth-child(3) .cardImage {
+.showcaseBento .card:nth-child(3) .cardImage {
 	object-position: center 68%;
 }
 
 @include from($bp-tablet-sm) {
-	.showcase .card .cardImage {
+	.showcaseBento .card .cardImage {
 		object-position: center;
 	}
 }
@@ -302,6 +409,11 @@
 	@include from($bp-tablet-sm) {
 		font-size: 24px;
 	}
+
+	/* 16320 — 22px */
+	@include from($bp-tablet) {
+		font-size: 22px;
+	}
 }
 
 .cardSmall {
@@ -338,6 +450,20 @@
 
 	@include from($bp-tablet-sm) {
 		max-width: 100%;
+	}
+
+	/* 4810:16342: как 16339 — ширина правой карточки; внизу, справа, одна строка */
+	@include from($bp-tablet) {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+		width: calc(100% * 141 / 944);
+		max-width: none;
+		min-height: 54px;
+		margin: 0;
+		padding: 14px 24px;
+		white-space: nowrap;
 	}
 
 	&:hover {
