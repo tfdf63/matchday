@@ -34,3 +34,4 @@ export {
 export { SectorSection, type SectorSectionProps } from './sector'
 export { StarPlayerSection, type StarPlayerSectionProps } from './star-player'
 export { RulesSection, type RulesSectionProps } from './rules'
+export { MerchSection, type MerchSectionProps } from './merch'
