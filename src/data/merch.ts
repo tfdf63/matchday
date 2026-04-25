@@ -61,7 +61,7 @@ export const merchCatalogItems: MerchCatalogItem[] = [
 /** half — 50% (FCA 18632, 18623); tall — 65,5% (остальные) */
 export type MerchImageGradient = 'half' | 'tall'
 
-/** 360, 768 (4810:18619), 1024 (4810:16314), 1280 (4810:14024) */
+/** 360, 768 (4810:18619), 1024 (4810:16314), 1280 (4810:14024), 1600 (4810:11734) */
 export interface MerchShowcaseItem {
 	id: number
 	title: string
@@ -79,6 +79,10 @@ export interface MerchShowcaseItem {
 	image1280?: string
 	image1280W?: number
 	image1280H?: number
+	/** 1600 (макет FCA 11738–11759) */
+	image1600?: string
+	image1600W?: number
+	image1600H?: number
 	gradient?: MerchImageGradient
 	productUrl?: string
 }
@@ -99,7 +103,7 @@ export const merchSubtitleParagraph768 =
 export const merchStoreHref = 'https://shop.fcakron.ru/'
 
 /**
- * 1–3: 360, 768, 1024, 1280. 4–6: 768+, 1024, 1280. 7–8: 1024 и 1280, без моб. ассетов 768.
+ * 1–3: 360, 768, 1024, 1280, 1600. 4–6: 768+, 1024, 1280, 1600. 7–8: 1024, 1280, 1600.
  */
 export const merchShowcaseItems: MerchShowcaseItem[] = [
 	{
@@ -116,6 +120,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1280: '/images/merch/merch_1_1280.png',
 		image1280W: 387,
 		image1280H: 550,
+		image1600: '/images/merch/merch_1_1600.png',
+		image1600W: 493,
+		image1600H: 720,
 		gradient: 'tall',
 		productUrl:
 			'https://shop.fcakron.ru/catalog/odezhda/khudi-i-kofty/khudi-akron-tolyatti-krasnoe/',
@@ -134,6 +141,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1280: '/images/merch/merch_2_1280.png',
 		image1280W: 285,
 		image1280H: 380,
+		image1600: '/images/merch/merch_2_1600.png',
+		image1600W: 365,
+		image1600H: 480,
 		gradient: 'tall',
 		productUrl:
 			'https://shop.fcakron.ru/catalog/odezhda/khudi-i-kofty/khudi-akron-tolyatti-chernoe/',
@@ -152,6 +162,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1280: '/images/merch/merch_3_1280.png',
 		image1280W: 183,
 		image1280H: 250,
+		image1600: '/images/merch/merch_3_1600.png',
+		image1600W: 237,
+		image1600H: 320,
 		gradient: 'tall',
 		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
 	},
@@ -168,6 +181,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1280: '/images/merch/merch_4_1280.png',
 		image1280W: 183,
 		image1280H: 250,
+		image1600: '/images/merch/merch_4_1600.png',
+		image1600W: 237,
+		image1600H: 320,
 		gradient: 'half',
 		productUrl: 'https://shop.fcakron.ru/',
 	},
@@ -184,6 +200,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1280: '/images/merch/merch_5_1280.png',
 		image1280W: 285,
 		image1280H: 380,
+		image1600: '/images/merch/merch_5_1600.png',
+		image1600W: 365,
+		image1600H: 480,
 		gradient: 'half',
 		productUrl: 'https://shop.fcakron.ru/',
 	},
@@ -200,6 +219,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1280: '/images/merch/merch_6_1280.png',
 		image1280W: 387,
 		image1280H: 550,
+		image1600: '/images/merch/merch_6_1600.png',
+		image1600W: 493,
+		image1600H: 720,
 		gradient: 'tall',
 		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
 	},
@@ -213,6 +235,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1280: '/images/merch/merch_7_1280.png',
 		image1280W: 183,
 		image1280H: 250,
+		image1600: '/images/merch/merch_7_1600.png',
+		image1600W: 237,
+		image1600H: 320,
 		gradient: 'tall',
 		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
 	},
@@ -226,6 +251,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1280: '/images/merch/merch_8_1280.png',
 		image1280W: 183,
 		image1280H: 250,
+		image1600: '/images/merch/merch_8_1600.png',
+		image1600W: 237,
+		image1600H: 320,
 		gradient: 'half',
 		productUrl: 'https://shop.fcakron.ru/',
 	},
