@@ -1,0 +1,263 @@
+$fc-active: #b2061c;
+$fc-muted: rgb(255 255 255 / 0.3);
+
+.section {
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: 80px;
+	color: #fff;
+}
+
+.inner {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 360px;
+	margin-inline: auto;
+	padding-inline: 20px;
+}
+
+.head {
+	margin-bottom: 24px;
+}
+
+.heading {
+	margin: 0 0 16px;
+	font-family: 'Akademia', sans-serif;
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 1;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.headingLine {
+	display: inline;
+}
+
+.leadBlock {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	column-gap: 16px;
+}
+
+.leadFirst,
+.leadSecond {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+}
+
+.leadFirst {
+	grid-column: 2 / -1;
+	text-align: right;
+}
+
+.leadSecond {
+	grid-column: 1 / -1;
+}
+
+.body {
+	display: flex;
+	width: 100%;
+	max-width: 320px;
+	margin-inline: auto;
+	flex-direction: column;
+}
+
+.menu {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: stretch;
+	white-space: nowrap;
+}
+
+.menuButton {
+	display: flex;
+	width: 100%;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 4px;
+	padding: 20px 10px;
+	border: none;
+	border-bottom: 1px solid $fc-muted;
+	background: transparent;
+	color: $fc-muted;
+	text-align: left;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: -2px;
+	}
+}
+
+.menuButtonTitle {
+	font-family: 'Akademia', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+.menuIndex {
+	padding-top: 0;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 1.3;
+}
+
+.menuButtonActive {
+	margin-bottom: -1px;
+	border: none;
+	background: $fc-active;
+	color: #fff;
+
+	.menuIndex {
+		color: #fff;
+	}
+}
+
+.panel {
+	display: flex;
+	width: 100%;
+	margin-top: 32px;
+	flex-direction: column;
+}
+
+.contentArticle {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.cardHero {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: flex-start;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.cardHeroLineTop {
+	margin: 0 0 0 154px;
+	white-space: normal;
+}
+
+.cardHeroLine {
+	margin: 0;
+	white-space: pre-wrap;
+}
+
+.bodyParagraph {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+}
+
+.bodyRich {
+	display: inline;
+}
+
+.guillemet,
+.bodyLink {
+	color: #fff;
+}
+
+.bodyLink {
+	text-decoration: underline;
+	text-decoration-skip-ink: auto;
+}
+
+.linkWithQuotes {
+	white-space: normal;
+}
+
+.emphasisBlock {
+	margin: 0;
+	font-family: 'Akademia', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.navRow {
+	display: flex;
+	margin-top: 32px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navArrowButton {
+	display: inline-flex;
+	width: 48px;
+	height: 48px;
+	box-sizing: border-box;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid $fc-muted;
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	transition: border-color 0.15s ease;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+.navArrowDisabled {
+	cursor: default;
+	color: $fc-muted;
+}
+
+.navArrowIcon {
+	display: block;
+	width: 12px;
+	height: 12px;
+	border-top: 2px solid currentColor;
+	border-right: 2px solid currentColor;
+}
+
+.navArrowIconRight {
+	transform: rotate(45deg);
+}
+
+.navArrowIconLeft {
+	transform: rotate(-135deg);
+}
+
+.pager {
+	display: flex;
+	width: 44px;
+	height: 8px;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+}
+
+.pagerDot {
+	display: block;
+	flex: 0 0 8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: $fc-muted;
+}
+
+.pagerDotOn {
+	background: #fff;
+}

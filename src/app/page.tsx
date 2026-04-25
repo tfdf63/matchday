@@ -11,6 +11,7 @@ import Main, {
 	StarPlayerSection,
 	RulesSection,
 	MerchSection,
+	FanCardSection,
 } from '@/features/home'
 import MainPageClient from './MainPageClient'
 
@@ -33,6 +34,7 @@ const MatchesPage: React.FC = () => {
 			<StarPlayerSection />
 			<RulesSection />
 			<MerchSection />
+			<FanCardSection />
 			<MainPageClient />
 		</>
 	)
