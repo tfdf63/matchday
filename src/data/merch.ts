@@ -61,7 +61,7 @@ export const merchCatalogItems: MerchCatalogItem[] = [
 /** half — 50% (FCA 18632, 18623); tall — 65,5% (остальные) */
 export type MerchImageGradient = 'half' | 'tall'
 
-/** 360, 768 (4810:18619), 1024 (4810:16314) */
+/** 360, 768 (4810:18619), 1024 (4810:16314), 1280 (4810:14024) */
 export interface MerchShowcaseItem {
 	id: number
 	title: string
@@ -75,6 +75,10 @@ export interface MerchShowcaseItem {
 	image1024?: string
 	image1024W?: number
 	image1024H?: number
+	/** 1280 (макет FCA 14028–14049) */
+	image1280?: string
+	image1280W?: number
+	image1280H?: number
 	gradient?: MerchImageGradient
 	productUrl?: string
 }
@@ -95,7 +99,7 @@ export const merchSubtitleParagraph768 =
 export const merchStoreHref = 'https://shop.fcakron.ru/'
 
 /**
- * 1–3: мобилка + 768 + 1024. 4–6: 768+ и 1024. 7–8: только ≥1024, ассет merch_7/8_1024.
+ * 1–3: 360, 768, 1024, 1280. 4–6: 768+, 1024, 1280. 7–8: 1024 и 1280, без моб. ассетов 768.
  */
 export const merchShowcaseItems: MerchShowcaseItem[] = [
 	{
@@ -109,6 +113,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1024: '/images/merch/merch_1_1024.png',
 		image1024W: 301,
 		image1024H: 440,
+		image1280: '/images/merch/merch_1_1280.png',
+		image1280W: 387,
+		image1280H: 550,
 		gradient: 'tall',
 		productUrl:
 			'https://shop.fcakron.ru/catalog/odezhda/khudi-i-kofty/khudi-akron-tolyatti-krasnoe/',
@@ -124,6 +131,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1024: '/images/merch/merch_2_1024.png',
 		image1024W: 221,
 		image1024H: 300,
+		image1280: '/images/merch/merch_2_1280.png',
+		image1280W: 285,
+		image1280H: 380,
 		gradient: 'tall',
 		productUrl:
 			'https://shop.fcakron.ru/catalog/odezhda/khudi-i-kofty/khudi-akron-tolyatti-chernoe/',
@@ -139,6 +149,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1024: '/images/merch/merch_3_1024.png',
 		image1024W: 141,
 		image1024H: 200,
+		image1280: '/images/merch/merch_3_1280.png',
+		image1280W: 183,
+		image1280H: 250,
 		gradient: 'tall',
 		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
 	},
@@ -152,6 +165,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1024: '/images/merch/merch_4_1024.png',
 		image1024W: 141,
 		image1024H: 200,
+		image1280: '/images/merch/merch_4_1280.png',
+		image1280W: 183,
+		image1280H: 250,
 		gradient: 'half',
 		productUrl: 'https://shop.fcakron.ru/',
 	},
@@ -165,6 +181,9 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1024: '/images/merch/merch_5_1024.png',
 		image1024W: 221,
 		image1024H: 300,
+		image1280: '/images/merch/merch_5_1280.png',
+		image1280W: 285,
+		image1280H: 380,
 		gradient: 'half',
 		productUrl: 'https://shop.fcakron.ru/',
 	},
@@ -178,26 +197,35 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		image1024: '/images/merch/merch_6_1024.png',
 		image1024W: 301,
 		image1024H: 440,
+		image1280: '/images/merch/merch_6_1280.png',
+		image1280W: 387,
+		image1280H: 550,
 		gradient: 'tall',
 		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
 	},
 	{
 		id: 7,
-		title: 'Брюки тренировочные Jogel PREMIER',
-		price: '4 500 руб.',
+		title: 'Брюки парадные Jogel PREMIER черные',
+		price: '5 400 руб.',
 		image1024: '/images/merch/merch_7_1024.png',
 		image1024W: 143,
 		image1024H: 200,
+		image1280: '/images/merch/merch_7_1280.png',
+		image1280W: 183,
+		image1280H: 250,
 		gradient: 'tall',
 		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
 	},
 	{
 		id: 8,
-		title: 'Бейсболка «Акрон» с логотипом клуба, красная',
-		price: '1 200 руб.',
+		title: 'Бейсболка красная Лого',
+		price: '2 300 руб.',
 		image1024: '/images/merch/merch_8_1024.png',
 		image1024W: 141,
 		image1024H: 200,
+		image1280: '/images/merch/merch_8_1280.png',
+		image1280W: 183,
+		image1280H: 250,
 		gradient: 'half',
 		productUrl: 'https://shop.fcakron.ru/',
 	},
