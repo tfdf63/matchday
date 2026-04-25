@@ -6,6 +6,7 @@ export interface Rule {
 	image1024?: string
 	image1280?: string
 	image1600?: string
+	image1920?: string
 	title: string
 	description: string
 }

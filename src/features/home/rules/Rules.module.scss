@@ -553,14 +553,17 @@
 }
 
 @include from($bp-desktop) {
+	/* Стрелки (4985:11728) и низ меню (4810:11698) на одной горизонтали: колонка тянется по высоте правой, стрелки внизу. */
 	.inner {
 		max-width: 1600px;
 		grid-template-columns: 600px 750px;
 		column-gap: 170px;
+		align-items: stretch;
 	}
 
 	.leftSection {
-		gap: 602px;
+		gap: 0;
+		justify-content: space-between;
 	}
 
 	.heading {
@@ -608,5 +611,86 @@
 
 	.menuViewport {
 		height: calc(6 * (48px + 44px * 0.9));
+	}
+}
+
+/* FCA 4810:1715 — макет 1920, без градиента 4810:1743 */
+@include from($bp-desktop-xl) {
+	.inner {
+		max-width: 1920px;
+		grid-template-columns: 600px 910px;
+		column-gap: 330px;
+		align-items: stretch;
+	}
+
+	.leftSection {
+		gap: 0;
+		justify-content: space-between;
+	}
+
+	.heading {
+		font-size: 128px;
+	}
+
+	/* 257 − 2×128 по вертикали h2, контейнер лид+загол. 320 в Figma (5055:1558) */
+	.leadBlock {
+		margin-top: 1px;
+	}
+
+	.leadFirst,
+	.leadSecond {
+		font-size: 16px;
+	}
+
+	/* FCA 4810:1747 / 1746 */
+	.leadFirst {
+		margin-left: 138px;
+	}
+
+	.leadSecond {
+		max-width: 445px;
+	}
+
+	.navArrowButton {
+		width: 60px;
+		height: 60px;
+	}
+
+	.rightSection {
+		width: 910px;
+	}
+
+	.activeCard {
+		box-sizing: border-box;
+		min-height: 345px;
+		padding: 40px 30px;
+	}
+
+	.cardContent {
+		flex: 0 0 415px;
+		gap: 0;
+		height: 100%;
+		justify-content: space-between;
+		min-height: 0;
+	}
+
+	.cardTitle,
+	.menuButtonTitle,
+	.menuButtonTitleSuffix {
+		font-size: 48px;
+	}
+
+	.indexLabel,
+	.menuButtonIndex,
+	.cardDescription {
+		font-size: 16px;
+	}
+
+	.menuButton {
+		padding: 40px 30px;
+	}
+
+	.menuViewport {
+		height: calc(6 * (48px + 48px * 0.9));
 	}
 }

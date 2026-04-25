@@ -112,6 +112,17 @@ export const RulesSection: FC<RulesSectionProps> = ({ rulesList, className }) =>
 							<div className={styles.cardImageWrap}>
 								<picture className={styles.cardPicture}>
 									<source
+										media="(min-width: 1920px)"
+										srcSet={
+											activeRule.image1920 ??
+											activeRule.image1600 ??
+											activeRule.image1280 ??
+											activeRule.image1024 ??
+											activeRule.image768 ??
+											activeRule.image
+										}
+									/>
+									<source
 										media="(min-width: 1600px)"
 										srcSet={
 											activeRule.image1600 ??
