@@ -1,11 +1,11 @@
 import type { FC, ReactElement } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import {
 	merchShowcaseItems,
 	merchStoreHref,
 	merchSubtitleLines,
+	merchSubtitleParagraph768,
 	merchTitle,
 	type MerchShowcaseItem,
 } from '@/data/merch'
@@ -22,46 +22,80 @@ export type MerchSectionProps = {
 	className?: string
 }
 
-const heroItem = merchShowcaseItems.find((i) => i.layout === 'hero')
-const topRight = merchShowcaseItems.find(
-	(i) => i.layout === 'smallStaggerTopRight',
-)
-const bottomLeft = merchShowcaseItems.find(
-	(i) => i.layout === 'smallStaggerBottomLeft',
-)
+const IMG_HERO_360 = { w: 320, h: 360 }
+const IMG_SMALL_360 = { w: 152, h: 220 }
+const DEFAULT_768 = { w: 334, h: 410 }
 
 function MerchProductCard({
 	item,
-	variant,
-	staggerClass,
+	itemIndex,
 }: {
 	item: MerchShowcaseItem
-	variant: 'hero' | 'small'
-	staggerClass?: string
+	itemIndex: number
 }): ReactElement {
 	const href = item.productUrl ?? merchStoreHref
+	const isMobileHero = itemIndex === 0
+	const isMobileSmall = itemIndex > 0 && itemIndex < 3
+	const isTabletOnly = itemIndex >= 3
+	const w360 = isMobileHero
+		? IMG_HERO_360
+		: isMobileSmall
+			? IMG_SMALL_360
+			: null
+	const w768 = item.image768W ?? DEFAULT_768.w
+	const h768 = item.image768H ?? DEFAULT_768.h
+	const isHalfGradient = (item.gradient ?? 'tall') === 'half'
 
 	return (
 		<Link
 			href={href}
 			className={cx(
 				styles.card,
-				variant === 'hero' && styles.cardHero,
-				variant === 'small' && styles.cardSmall,
-				staggerClass,
+				isMobileHero && styles.cardHero,
+				isMobileSmall && styles.cardSmall,
+				isTabletOnly && styles.cardTabletOnly,
 			)}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
 			<div className={styles.cardImageWrap}>
-				<Image
-					className={styles.cardImage}
-					src={item.image}
-					alt=''
-					fill
-					sizes={variant === 'hero' ? '320px' : '152px'}
+				{item.image360 != null ? (
+					<picture>
+						<source
+							media="(min-width: 767px)"
+							srcSet={item.image768}
+						/>
+						<img
+							className={styles.cardImage}
+							src={item.image360}
+							alt=""
+							width={w360?.w}
+							height={w360?.h}
+							loading="lazy"
+							decoding="async"
+						/>
+					</picture>
+				) : (
+					<>
+						{/* eslint-disable-next-line @next/next/no-img-element -- позиции 4–6 только ≥767, один кроп 768 */}
+						<img
+							className={styles.cardImage}
+							src={item.image768}
+							alt=""
+							width={w768}
+							height={h768}
+							loading="lazy"
+							decoding="async"
+						/>
+					</>
+				)}
+				<div
+					className={cx(
+						styles.cardGradient,
+						isHalfGradient && styles.cardGradientHalf,
+					)}
+					aria-hidden
 				/>
-				<div className={styles.cardGradient} aria-hidden />
 			</div>
 			<div className={styles.cardBody}>
 				<p className={styles.cardTitle}>{item.title}</p>
@@ -72,7 +106,7 @@ function MerchProductCard({
 }
 
 export const MerchSection: FC<MerchSectionProps> = ({ className }) => {
-	if (!heroItem || !topRight || !bottomLeft) {
+	if (merchShowcaseItems.length < 1) {
 		return null
 	}
 
@@ -97,23 +131,21 @@ export const MerchSection: FC<MerchSectionProps> = ({ className }) => {
 							</p>
 						))}
 					</div>
+					<p
+						className={cx(styles.subtitleLine768, 'font-mono')}
+					>
+						{merchSubtitleParagraph768}
+					</p>
 				</header>
 
 				<div className={styles.showcase}>
-					<MerchProductCard item={heroItem} variant="hero" />
-
-					<div className={styles.stagger}>
+					{merchShowcaseItems.map((item, index) => (
 						<MerchProductCard
-							item={topRight}
-							variant="small"
-							staggerClass={styles.cardTopRight}
+							key={item.id}
+							item={item}
+							itemIndex={index}
 						/>
-						<MerchProductCard
-							item={bottomLeft}
-							variant="small"
-							staggerClass={styles.cardBottomLeft}
-						/>
-					</div>
+					))}
 				</div>
 
 				<Link

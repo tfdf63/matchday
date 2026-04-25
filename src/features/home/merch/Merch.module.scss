@@ -1,8 +1,14 @@
+@use '../../../styles/tokens.scss' as *;
+
 .section {
 	box-sizing: border-box;
 	width: 100%;
 	margin-bottom: 80px;
 	color: #fff;
+
+	@include from($bp-tablet-sm) {
+		margin-bottom: 120px;
+	}
 }
 
 .inner {
@@ -11,6 +17,11 @@
 	max-width: 360px;
 	margin-inline: auto;
 	padding-inline: 20px;
+
+	@include from($bp-tablet-sm) {
+		max-width: 768px;
+		padding-inline: 40px;
+	}
 }
 
 .head {
@@ -20,6 +31,12 @@
 	align-items: center;
 	margin-bottom: 20px;
 	text-align: center;
+
+	/* FCA 4810:18620: колонка, gap 20, по центру */
+	@include from($bp-tablet-sm) {
+		align-items: center;
+		margin-bottom: 20px;
+	}
 }
 
 .title {
@@ -30,11 +47,20 @@
 	line-height: 1;
 	text-transform: uppercase;
 	color: #fff;
+
+	@include from($bp-tablet-sm) {
+		font-size: 48px;
+	}
 }
 
+/* Мобилка: несколько строк (4800: — старый ввод) */
 .subtitleBlock {
 	width: 100%;
 	margin: 0;
+
+	@include from($bp-tablet-sm) {
+		display: none;
+	}
 }
 
 .subtitleLine {
@@ -45,24 +71,111 @@
 	color: rgb(255 255 255 / 0.8);
 }
 
-.showcase {
-	display: flex;
-	width: 100%;
-	max-width: 320px;
-	flex-direction: column;
-	gap: 20px;
-	align-items: center;
+/* FCA 18622: один абзац, 580, выравнивание по центру */
+.subtitleLine768 {
+	display: none;
+	margin: 0;
+	max-width: 580px;
 	margin-inline: auto;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+	text-align: center;
+
+	@include from($bp-tablet-sm) {
+		display: block;
+	}
 }
 
-/* FCA 4810:21029 + 21026: две колонки 152+16+152, ряд-скос */
-.stagger {
+/* --- Витрина: мобилка — сетка; 768 — 4 колонки 157, gap 20, masonry 4810:18619 */
+.showcase {
 	display: grid;
 	width: 100%;
 	max-width: 320px;
+	margin-inline: auto;
 	grid-template-columns: 152px 152px;
-	grid-template-rows: auto auto;
 	gap: 20px 16px;
+	align-items: start;
+	justify-content: center;
+
+	@include from($bp-tablet-sm) {
+		--g: 20px;
+		--c: calc((100% - 3 * var(--g)) / 4);
+
+		position: relative;
+		display: block;
+		max-width: none;
+		width: 100%;
+		min-height: 860px;
+		margin-inline: 0;
+	}
+}
+
+/* Мобилка: герой + «скос»; 4–6 скрыты */
+.showcase .card:nth-child(1) {
+	grid-column: 1 / -1;
+}
+
+.showcase .card:nth-child(2) {
+	grid-row: 2;
+	grid-column: 2;
+}
+
+.showcase .card:nth-child(3) {
+	grid-row: 3;
+	grid-column: 1;
+}
+
+/* FCA: плитки 18623/18626/…/18638 — abs относительно .showcase (688) */
+@include from($bp-tablet-sm) {
+	/* 1 — 18638 красное, 2×, 410 */
+	.showcase .card:nth-child(1) {
+		top: 0;
+		left: 0;
+		width: calc(2 * var(--c) + var(--g));
+		height: 410px;
+	}
+
+	/* 2 — 18626 чёрное, 157×240, col2 */
+	.showcase .card:nth-child(2) {
+		top: 450px;
+		left: calc(var(--c) + var(--g));
+		width: var(--c);
+		height: 240px;
+	}
+
+	/* 3 — 18635 брюки, 157×210, col1 низ */
+	.showcase .card:nth-child(3) {
+		top: 650px;
+		left: 0;
+		width: var(--c);
+		height: 210px;
+	}
+
+	/* 4 — 18632 шапка, 157×210, col3 */
+	.showcase .card:nth-child(4) {
+		top: 0;
+		left: calc(2 * var(--c) + 2 * var(--g));
+		width: var(--c);
+		height: 210px;
+	}
+
+	/* 5 — 18623 бейсболка, 157×240, col4, +170 */
+	.showcase .card:nth-child(5) {
+		top: 170px;
+		left: calc(3 * var(--c) + 3 * var(--g));
+		width: var(--c);
+		height: 240px;
+	}
+
+	/* 6 — 18629 Jogel, 334×410, col3-4, низ */
+	.showcase .card:nth-child(6) {
+		top: 450px;
+		left: calc(2 * var(--c) + 2 * var(--g));
+		width: calc(2 * var(--c) + var(--g));
+		height: 410px;
+	}
 }
 
 .card {
@@ -77,15 +190,30 @@
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
 
-	&:focus-visible {
-		outline: 2px solid var(--button-focus-ring);
-		outline-offset: 2px;
+	@include from($bp-tablet-sm) {
+		position: absolute;
+		margin: 0;
 	}
 }
 
 .cardHero {
 	max-width: 320px;
 	min-height: 360px;
+
+	@include from($bp-tablet-sm) {
+		max-width: none;
+		width: auto;
+		min-height: 0;
+	}
+}
+
+/* Товары 4–6: только <767 */
+.cardTabletOnly {
+	display: none;
+
+	@include from($bp-tablet-sm) {
+		display: flex;
+	}
 }
 
 .cardImageWrap {
@@ -97,10 +225,14 @@
 }
 
 .cardImage {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 }
 
-/* FCA: градиент с 65.5% как в 4810:21023 */
+/* 4810:18629+ — 65,5% */
 .cardGradient {
 	position: absolute;
 	inset: 0;
@@ -110,6 +242,30 @@
 		rgb(2 10 10 / 0) 65.5%,
 		rgb(2 10 10 / 0.8) 100%
 	);
+}
+
+/* 18632, 18623: 50% */
+.cardGradientHalf {
+	background: linear-gradient(
+		to bottom,
+		rgb(2 10 10 / 0) 50%,
+		rgb(2 10 10 / 0.8) 100%
+	);
+}
+
+/* 4810:21029/21026 — вторая и третья карта мобилки */
+.showcase .card:nth-child(2) .cardImage {
+	object-position: center 20%;
+}
+
+.showcase .card:nth-child(3) .cardImage {
+	object-position: center 68%;
+}
+
+@include from($bp-tablet-sm) {
+	.showcase .card .cardImage {
+		object-position: center;
+	}
 }
 
 .cardBody {
@@ -129,6 +285,10 @@
 	font-weight: 400;
 	line-height: 1;
 	text-transform: uppercase;
+
+	@include from($bp-tablet-sm) {
+		font-size: 18px;
+	}
 }
 
 .cardPrice {
@@ -138,34 +298,23 @@
 	font-weight: 400;
 	line-height: 1;
 	text-transform: uppercase;
+
+	@include from($bp-tablet-sm) {
+		font-size: 24px;
+	}
 }
 
-/* Малые карточки 152×220 в сетке */
 .cardSmall {
 	width: 152px;
 	height: 220px;
+
+	@include from($bp-tablet-sm) {
+		width: auto;
+		height: auto;
+	}
 }
 
-.cardTopRight {
-	grid-column: 2;
-	grid-row: 1;
-}
-
-/* 4810:21029 — «Худи … чёрное»: портрет в верхней части кадра */
-.cardTopRight .cardImage {
-	object-position: center 20%;
-}
-
-.cardBottomLeft {
-	grid-column: 1;
-	grid-row: 2;
-}
-
-/* 4810:21026 — брюки: акцент на ноги, нижняя часть кадра */
-.cardBottomLeft .cardImage {
-	object-position: center 68%;
-}
-
+/* FCA 18641: 688×48, отступ 30 от сетки */
 .cta {
 	box-sizing: border-box;
 	display: flex;
@@ -186,6 +335,10 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	transition: background-color 0.15s ease;
+
+	@include from($bp-tablet-sm) {
+		max-width: 100%;
+	}
 
 	&:hover {
 		filter: brightness(1.05);

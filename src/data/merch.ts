@@ -58,19 +58,21 @@ export const merchCatalogItems: MerchCatalogItem[] = [
 	},
 ]
 
-/** FCA 4810:21019 — витрина на главной (мобилка 360). */
-export type MerchShowcaseLayout =
-	| 'hero'
-	| 'smallStaggerTopRight'
-	| 'smallStaggerBottomLeft'
+/** half — 50% (FCA 18632, 18623); tall — 65,5% (остальные карточки) */
+export type MerchImageGradient = 'half' | 'tall'
 
+/** FCA: витрина 360 (1–3) + 768 (4810:18619, masonry) */
 export interface MerchShowcaseItem {
 	id: number
 	title: string
 	price: string
-	image: string
-	layout: MerchShowcaseLayout
-	/** Ссылка на карточку в магазине (опционально) */
+	/** 360, только 1–3; на <767 4–6 скрыты */
+	image360?: string
+	image768: string
+	/** Соотношение кропа ассета (для width/height у img) */
+	image768W?: number
+	image768H?: number
+	gradient?: MerchImageGradient
 	productUrl?: string
 }
 
@@ -84,18 +86,26 @@ export const merchSubtitleLines = [
 	'большого города.',
 ] as const
 
+/** FCA 18622: один абзац на 768 */
+export const merchSubtitleParagraph768 =
+	'Твой стиль в цветах клуба. Выбирай официальный мерч «Акрона», чтобы чувствовать себя частью команды и на трибунах стадиона, и в ритме большого города.'
+
 export const merchStoreHref = 'https://shop.fcakron.ru/'
 
 /**
- * 1 — hero (красное худи), 2 — вверху справа (чёрное худи), 3 — внизу слева (брюки), FCA 21023/21029/21026.
+ * DOM: мобилка 1–3; планшет 4810:18619 — плитки 1…6, позиция через SCSS.
+ * 1/6 — крупные 334×410; 3/4/5 — 157; вариации 210/240.
  */
 export const merchShowcaseItems: MerchShowcaseItem[] = [
 	{
 		id: 1,
 		title: 'Худи Акрон Тольятти красное',
 		price: '5 500 руб.',
-		image: '/images/merch/merch_1_360.png',
-		layout: 'hero',
+		image360: '/images/merch/merch_1_360.png',
+		image768: '/images/merch/merch_1_768.png',
+		image768W: 334,
+		image768H: 410,
+		gradient: 'tall',
 		productUrl:
 			'https://shop.fcakron.ru/catalog/odezhda/khudi-i-kofty/khudi-akron-tolyatti-krasnoe/',
 	},
@@ -103,8 +113,11 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		id: 2,
 		title: 'Худи Акрон Тольятти черное',
 		price: '5 500 руб.',
-		image: '/images/merch/merch_2_360.png',
-		layout: 'smallStaggerTopRight',
+		image360: '/images/merch/merch_2_360.png',
+		image768: '/images/merch/merch_2_768.png',
+		image768W: 157,
+		image768H: 240,
+		gradient: 'tall',
 		productUrl:
 			'https://shop.fcakron.ru/catalog/odezhda/khudi-i-kofty/khudi-akron-tolyatti-chernoe/',
 	},
@@ -112,8 +125,41 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 		id: 3,
 		title: 'Брюки тренировочные Jogel PREMIER черные',
 		price: '4 500 руб.',
-		image: '/images/merch/merch_3_360.png',
-		layout: 'smallStaggerBottomLeft',
+		image360: '/images/merch/merch_3_360.png',
+		image768: '/images/merch/merch_3_768.png',
+		image768W: 157,
+		image768H: 210,
+		gradient: 'tall',
+		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
+	},
+	{
+		id: 4,
+		title: 'Шапка «Молодой Звонкий»',
+		price: '1 500 руб.',
+		image768: '/images/merch/merch_4_768.png',
+		image768W: 157,
+		image768H: 210,
+		gradient: 'half',
+		productUrl: 'https://shop.fcakron.ru/',
+	},
+	{
+		id: 5,
+		title: 'Бейсболка снэпбэк «Молодой Звонкий»',
+		price: '2 500 руб.',
+		image768: '/images/merch/merch_5_768.png',
+		image768W: 157,
+		image768H: 240,
+		gradient: 'half',
+		productUrl: 'https://shop.fcakron.ru/',
+	},
+	{
+		id: 6,
+		title: 'Худи на молнии Jogel ESSENTIAL красное',
+		price: '5 600 руб.',
+		image768: '/images/merch/merch_6_768.png',
+		image768W: 334,
+		image768H: 410,
+		gradient: 'tall',
 		productUrl: 'https://shop.fcakron.ru/catalog/equipment/',
 	},
 ]
