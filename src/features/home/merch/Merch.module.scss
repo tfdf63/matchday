@@ -37,6 +37,11 @@
 	@include from($bp-desktop) {
 		max-width: 1520px;
 	}
+
+	/* FCA 1358: контент 1840, поля 40+40 у 1920 */
+	@include from($bp-desktop-xl) {
+		max-width: 1840px;
+	}
 }
 
 .head {
@@ -81,6 +86,10 @@
 
 	@include from($bp-desktop) {
 		font-size: 96px;
+	}
+
+	@include from($bp-desktop-xl) {
+		font-size: 128px;
 	}
 }
 
@@ -128,6 +137,12 @@
 		max-width: 684px;
 		font-size: 14px;
 	}
+
+	/* FCA 1361: 16px, колонка 784 */
+	@include from($bp-desktop-xl) {
+		max-width: 784px;
+		font-size: 16px;
+	}
 }
 
 /* --- Витрина: оболочка + CTA 16342; bento — только 8 карточек */
@@ -150,6 +165,10 @@
 
 	@include from($bp-desktop) {
 		min-height: 1520px;
+	}
+
+	@include from($bp-desktop-xl) {
+		min-height: 1700px;
 	}
 }
 
@@ -195,6 +214,13 @@
 		width: 100%;
 		height: 1520px;
 		min-height: 1520px;
+	}
+
+	/* FCA 1358: 1840×1700 */
+	@include from($bp-desktop-xl) {
+		width: 100%;
+		height: 1700px;
+		min-height: 1700px;
 	}
 }
 
@@ -449,6 +475,65 @@
 	}
 }
 
+/* 4810:1358 — 1920, bento 1840×1700; плитки: Figma −(40, 251) */
+@include from($bp-desktop-xl) {
+	.showcaseBento .card:nth-child(1) {
+		top: 0;
+		left: 0;
+		width: calc(100% * 600 / 1840);
+		height: calc(100% * 810 / 1700);
+	}
+
+	.showcaseBento .card:nth-child(2) {
+		top: calc(100% * 890 / 1700);
+		left: calc(100% * 465 / 1840);
+		width: calc(100% * 445 / 1840);
+		height: calc(100% * 540 / 1700);
+	}
+
+	.showcaseBento .card:nth-child(3) {
+		top: calc(100% * 1350 / 1700);
+		left: 0;
+		width: calc(100% * 290 / 1840);
+		height: calc(100% * 350 / 1700);
+	}
+
+	.showcaseBento .card:nth-child(4) {
+		top: 0;
+		left: calc(100% * 620 / 1840);
+		width: calc(100% * 290 / 1840);
+		height: calc(100% * 350 / 1700);
+	}
+
+	.showcaseBento .card:nth-child(5) {
+		top: calc(100% * 270 / 1700);
+		left: calc(100% * 930 / 1840);
+		width: calc(100% * 445 / 1840);
+		height: calc(100% * 540 / 1700);
+	}
+
+	.showcaseBento .card:nth-child(6) {
+		top: calc(100% * 890 / 1700);
+		left: calc(100% * 930 / 1840);
+		width: calc(100% * 600 / 1840);
+		height: calc(100% * 810 / 1700);
+	}
+
+	.showcaseBento .card:nth-child(7) {
+		top: 0;
+		left: calc(100% * 1550 / 1840);
+		width: calc(100% * 290 / 1840);
+		height: calc(100% * 350 / 1700);
+	}
+
+	.showcaseBento .card:nth-child(8) {
+		top: calc(100% * 890 / 1700);
+		left: calc(100% * 1550 / 1840);
+		width: calc(100% * 290 / 1840);
+		height: calc(100% * 350 / 1700);
+	}
+}
+
 .card {
 	position: relative;
 	box-sizing: border-box;
@@ -582,6 +667,10 @@
 	@include from($bp-desktop) {
 		font-size: 22px;
 	}
+
+	@include from($bp-desktop-xl) {
+		font-size: 24px;
+	}
 }
 
 .cardPrice {
@@ -607,6 +696,10 @@
 
 	@include from($bp-desktop) {
 		font-size: 28px;
+	}
+
+	@include from($bp-desktop-xl) {
+		font-size: 32px;
 	}
 }
 
@@ -670,6 +763,13 @@
 	/* FCA 11762: 237×58 */
 	@include from($bp-desktop) {
 		width: calc(100% * 237 / 1520);
+	}
+
+	/* FCA 1386: 290×60, 16px */
+	@include from($bp-desktop-xl) {
+		width: calc(100% * 290 / 1840);
+		min-height: 60px;
+		font-size: 16px;
 	}
 
 	&:hover {

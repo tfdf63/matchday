@@ -52,6 +52,7 @@ function MerchProductCard({
 	const h1024 = item.image1024H ?? DEFAULT_1024.h
 	const isHalfGradient = (item.gradient ?? 'tall') === 'half'
 
+	const has1920 = item.image1920 != null
 	const has1600 = item.image1600 != null
 	const has1280 = item.image1280 != null
 	const has1024 = item.image1024 != null
@@ -59,10 +60,16 @@ function MerchProductCard({
 	const has360 = item.image360 != null
 
 	function cardImageNode(): ReactElement {
-		/* 7–8: 1024, 1280, 1600, без 768 */
+		/* 7–8: 1024, 1280, 1600, 1920, без 768 */
 		if (has1024 && !has768) {
 			return (
 				<picture>
+					{has1920 && (
+						<source
+							media="(min-width: 1920px)"
+							srcSet={item.image1920}
+						/>
+					)}
 					{has1600 && (
 						<source
 							media="(min-width: 1600px)"
@@ -88,10 +95,16 @@ function MerchProductCard({
 			)
 		}
 
-		/* 1–3: 360, 768, 1024, 1280, 1600 */
+		/* 1–3: 360, 768, 1024, 1280, 1600, 1920 */
 		if (has360 && has768) {
 			return (
 				<picture>
+					{has1920 && (
+						<source
+							media="(min-width: 1920px)"
+							srcSet={item.image1920}
+						/>
+					)}
 					{has1600 && (
 						<source
 							media="(min-width: 1600px)"
@@ -124,10 +137,16 @@ function MerchProductCard({
 			)
 		}
 
-		/* 4–6: 768, 1024, 1280, 1600, без 360 */
+		/* 4–6: 768, 1024, 1280, 1600, 1920, без 360 */
 		if (has768) {
 			return (
 				<picture>
+					{has1920 && (
+						<source
+							media="(min-width: 1920px)"
+							srcSet={item.image1920}
+						/>
+					)}
 					{has1600 && (
 						<source
 							media="(min-width: 1600px)"
