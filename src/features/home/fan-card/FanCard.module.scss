@@ -1,3 +1,5 @@
+@use '../../../styles/tokens.scss' as *;
+
 $fc-active: #b2061c;
 $fc-muted: rgb(255 255 255 / 0.3);
 
@@ -34,6 +36,21 @@ $fc-muted: rgb(255 255 255 / 0.3);
 	display: inline;
 }
 
+.headingBr {
+	/* планшет: одна строка заголовка, см. 4810:18669 */
+	@include from($bp-tablet-sm) {
+		display: none;
+	}
+}
+
+.headingSpacer {
+	display: none;
+
+	@include from($bp-tablet-sm) {
+		display: inline;
+	}
+}
+
 .leadBlock {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -64,9 +81,21 @@ $fc-muted: rgb(255 255 255 / 0.3);
 	max-width: 320px;
 	margin-inline: auto;
 	flex-direction: column;
+	align-items: stretch;
+}
+
+/* display: contents — порядок моб: menu(1) → panel(2) → nav(3) */
+.side {
+	display: contents;
+}
+
+/* Планшет: растяжка между меню и стрелками, min 40px до стрелок, низ колонки = низ правой */
+.sideSpacer {
+	display: none;
 }
 
 .menu {
+	order: 1;
 	display: flex;
 	width: 100%;
 	flex-direction: column;
@@ -122,6 +151,7 @@ $fc-muted: rgb(255 255 255 / 0.3);
 }
 
 .panel {
+	order: 2;
 	display: flex;
 	width: 100%;
 	margin-top: 32px;
@@ -194,12 +224,14 @@ $fc-muted: rgb(255 255 255 / 0.3);
 }
 
 .navRow {
+	order: 3;
 	display: flex;
 	margin-top: 32px;
 	align-items: center;
 	justify-content: space-between;
 }
 
+/* 4810:18664 — как .carouselNavBtn: Билетная программа / Активности (10×20, 48×48) */
 .navArrowButton {
 	display: inline-flex;
 	width: 48px;
@@ -207,37 +239,33 @@ $fc-muted: rgb(255 255 255 / 0.3);
 	box-sizing: border-box;
 	align-items: center;
 	justify-content: center;
+	padding: 0;
 	border: 1px solid $fc-muted;
 	background: transparent;
 	color: #fff;
 	cursor: pointer;
-	transition: border-color 0.15s ease;
+	-webkit-tap-highlight-color: transparent;
 
 	&:focus-visible {
+		z-index: 1;
 		outline: 2px solid var(--button-focus-ring);
 		outline-offset: 2px;
 	}
 }
 
-.navArrowDisabled {
+.navArrowButton:disabled,
+.navArrowButton.navArrowDisabled {
 	cursor: default;
-	color: $fc-muted;
+	border-color: #1c2222;
+	background-color: #0d1111;
+	color: #4a4d4d;
 }
 
 .navArrowIcon {
 	display: block;
-	width: 12px;
-	height: 12px;
-	border-top: 2px solid currentColor;
-	border-right: 2px solid currentColor;
-}
-
-.navArrowIconRight {
-	transform: rotate(45deg);
-}
-
-.navArrowIconLeft {
-	transform: rotate(-135deg);
+	width: 10px;
+	height: 20px;
+	flex-shrink: 0;
 }
 
 .pager {
@@ -260,4 +288,134 @@ $fc-muted: rgb(255 255 255 / 0.3);
 
 .pagerDotOn {
 	background: #fff;
+}
+
+/* FCA_Fans 4810:18642 — планшет 768, from 767px */
+@include from($bp-tablet-sm) {
+	.inner {
+		max-width: 768px;
+		padding-inline: 40px;
+	}
+
+	.head {
+		display: flex;
+		align-items: flex-end;
+		gap: 32px;
+		margin-bottom: 49px;
+	}
+
+	.heading {
+		flex: 0 0 auto;
+		max-width: 322px;
+		margin: 0;
+		font-size: 48px;
+	}
+
+	/* 4810:18670 — две строки: 18672 (nowrap) + 18671 */
+	.leadBlock {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		align-self: flex-end;
+		flex-shrink: 0;
+		gap: 0;
+		width: 334px;
+		max-width: 334px;
+	}
+
+	.leadFirst,
+	.leadSecond {
+		margin: 0;
+	}
+
+	.leadFirst {
+		margin-left: 146px;
+		text-align: left;
+		white-space: nowrap;
+	}
+
+	.leadSecond {
+		margin-top: 0;
+		width: 100%;
+	}
+
+	.body {
+		width: 100%;
+		max-width: 688px;
+		margin-inline: 0;
+		flex-direction: row;
+		align-items: stretch;
+		justify-content: flex-start;
+		gap: 79px;
+	}
+
+	.side {
+		display: flex;
+		width: 275px;
+		flex: 0 0 275px;
+		flex-direction: column;
+		align-items: flex-start;
+		align-self: stretch;
+		min-height: 0;
+	}
+
+	.sideSpacer {
+		display: block;
+		width: 100%;
+		min-width: 0;
+		flex: 1 1 auto;
+		min-height: 40px;
+	}
+
+	.menu {
+		order: unset;
+	}
+
+	.panel {
+		order: unset;
+		width: 334px;
+		flex: 0 0 334px;
+		margin-top: 0;
+	}
+
+	.navRow {
+		order: unset;
+		flex-shrink: 0;
+		margin-top: 0;
+		justify-content: flex-start;
+		gap: 20px;
+	}
+
+	.pager {
+		display: none;
+	}
+
+	.menuButton {
+		padding: 24px 16px;
+	}
+
+	.menuButtonTitle {
+		font-size: 18px;
+	}
+
+	.contentArticle {
+		gap: 20px;
+	}
+
+	.cardHero {
+		font-size: 24px;
+	}
+
+	.cardHeroLineTop {
+		margin: 0 0 0 118px;
+	}
+
+	/* 4810:18659 — вторая строка hero без margin-top, только line-height/верстка */
+	.cardHeroLine {
+		margin: 0;
+	}
+
+	.emphasisBlock {
+		font-size: 18px;
+	}
 }

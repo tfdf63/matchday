@@ -3,6 +3,7 @@
 import type { FC, ReactNode } from 'react'
 import { useMemo, useState } from 'react'
 
+import { CarouselNavChevron } from '@/components/CarouselNavChevron'
 import {
 	fanCardItems,
 	fanCardLeadFirst,
@@ -125,7 +126,10 @@ export const FanCardSection: FC<FanCardSectionProps> = ({ className }) => {
 				<header className={styles.head}>
 					<h2 id={SECTION_HEADING_ID} className={styles.heading}>
 						<span className={styles.headingLine}>{fanCardTitle.line1}</span>
-						<br />
+						<span className={styles.headingSpacer} aria-hidden="true">
+							{' '}
+						</span>
+						<br className={styles.headingBr} />
 						<span className={styles.headingLine}>{fanCardTitle.line2}</span>
 					</h2>
 					<div className={styles.leadBlock}>
@@ -135,48 +139,40 @@ export const FanCardSection: FC<FanCardSectionProps> = ({ className }) => {
 				</header>
 
 				<div className={styles.body}>
-					<div
-						className={styles.menu}
-						role="tablist"
-						aria-label="Разделы о карте болельщика"
-					>
-						{list.map((item) => {
-							const selected = item.id === activeId
-							return (
-								<button
-									key={item.id}
-									type="button"
-									id={wrapLabel(item.id)}
-									role="tab"
-									aria-selected={selected}
-									aria-controls={wrapPanel(item.id)}
-									className={cx(
-										styles.menuButton,
-										selected && styles.menuButtonActive,
-									)}
-									onClick={() => {
-										setActiveId(item.id)
-									}}
-								>
-									<span className={styles.menuButtonTitle}>{item.menuLabel}</span>
-									<span className={cx(styles.menuIndex, 'font-mono')}>
-										{item.indexLabel}
-									</span>
-								</button>
-							)
-						})}
-					</div>
+					<div className={styles.side}>
+						<div
+							className={styles.menu}
+							role="tablist"
+							aria-label="Разделы о карте болельщика"
+						>
+							{list.map((item) => {
+								const selected = item.id === activeId
+								return (
+									<button
+										key={item.id}
+										type="button"
+										id={wrapLabel(item.id)}
+										role="tab"
+										aria-selected={selected}
+										aria-controls={wrapPanel(item.id)}
+										className={cx(
+											styles.menuButton,
+											selected && styles.menuButtonActive,
+										)}
+										onClick={() => {
+											setActiveId(item.id)
+										}}
+									>
+										<span className={styles.menuButtonTitle}>{item.menuLabel}</span>
+										<span className={cx(styles.menuIndex, 'font-mono')}>
+											{item.indexLabel}
+										</span>
+									</button>
+								)
+							})}
+						</div>
 
-					<div
-						role="tabpanel"
-						id={wrapPanel(active.id)}
-						aria-labelledby={wrapLabel(active.id)}
-						className={styles.panel}
-						aria-live="polite"
-					>
-						<article className={styles.contentArticle}>
-							{active.blocks.map((block, i) => renderBlock(block, `b-${active.id}-${i}`))}
-						</article>
+						<div className={styles.sideSpacer} aria-hidden="true" />
 
 						<div
 							className={styles.navRow}
@@ -192,12 +188,12 @@ export const FanCardSection: FC<FanCardSectionProps> = ({ className }) => {
 								disabled={!canGoPrev}
 								onClick={goPrev}
 							>
-								<span className={cx(styles.navArrowIcon, styles.navArrowIconLeft)} />
+								<CarouselNavChevron
+									direction="left"
+									className={styles.navArrowIcon}
+								/>
 							</button>
-							<div
-								className={styles.pager}
-								aria-hidden="true"
-							>
+							<div className={styles.pager} aria-hidden="true">
 								{list.map((item) => {
 									const on = item.id === activeId
 									return (
@@ -221,9 +217,24 @@ export const FanCardSection: FC<FanCardSectionProps> = ({ className }) => {
 								disabled={!canGoNext}
 								onClick={goNext}
 							>
-								<span className={cx(styles.navArrowIcon, styles.navArrowIconRight)} />
+								<CarouselNavChevron
+									direction="right"
+									className={styles.navArrowIcon}
+								/>
 							</button>
 						</div>
+					</div>
+
+					<div
+						role="tabpanel"
+						id={wrapPanel(active.id)}
+						aria-labelledby={wrapLabel(active.id)}
+						className={styles.panel}
+						aria-live="polite"
+					>
+						<article className={styles.contentArticle}>
+							{active.blocks.map((block, i) => renderBlock(block, `b-${active.id}-${i}`))}
+						</article>
 					</div>
 				</div>
 			</div>

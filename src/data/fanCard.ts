@@ -1,6 +1,6 @@
 /**
  * Секция «Карта болельщика»: заголовок, навидация (4 пункта) и контент вкладок.
- * Копия текстов: Figma FCA_Fans, моб. нода 4810:21033.
+ * Копия текстов: Figma FCA_Fans (моб. 4810:21033, планшет 768 4810:18642, контент активного раздела 4810:18656).
  */
 
 export type FanCardTextPart = {
@@ -33,10 +33,10 @@ export const fanCardTitle = {
 	line2: 'болельщика',
 }
 
-export const fanCardLeadFirst = 'Что\u00A0такое карта болельщика, '
+/* Планшет 768: 4810:18672, 4810:18671 — две отдельные строки, без запятой после «болельщика» */
+export const fanCardLeadFirst = 'Что\u00A0такое карта болельщика\u00A0'
 
-export const fanCardLeadSecond =
-	'где\u00A0её\u00A0получить и\u00A0как\u00A0использовать на\u00A0матче.'
+export const fanCardLeadSecond = 'где\u00A0её\u00A0получить и\u00A0как\u00A0использовать на\u00A0матче.'
 
 const GOSU_SLUG = 'https://www.gosuslugi.ru/'
 
@@ -49,7 +49,8 @@ export const fanCardItems: FanCardItem[] = [
 			{
 				type: 'hero',
 				lineTop: 'Карта болельщика —',
-				line1: 'обязательный цифровой документ\nдля\u00A0посещения матчей.',
+				// 4810:18659 — вторая строка hero без margin-top; перенос после «цифровой»
+				line1: 'обязательный цифровой\nдокумент для\u00A0посещения матчей.',
 			},
 			{
 				type: 'bodyRich',

@@ -9,6 +9,7 @@ import {
 	useState,
 } from 'react'
 
+import { CarouselNavChevron } from '@/components/CarouselNavChevron'
 import type { MatchActivity } from '@/data/matchActivities'
 
 import { MatchActivityCard } from './MatchActivityCard'
@@ -36,31 +37,6 @@ function slideIndexFromScroll(
 
 function readSlides(list: HTMLUListElement): HTMLElement[] {
 	return [...list.querySelectorAll(':scope > li')] as HTMLElement[]
-}
-
-const CarouselChevron: FC<{ direction: 'left' | 'right' }> = ({ direction }) => {
-	const points =
-		direction === 'left' ? '8,3.5 2,10 8,16.5' : '2,3.5 8,10 2,16.5'
-
-	return (
-		<svg
-			className={styles.carouselNavIcon}
-			width={10}
-			height={20}
-			viewBox="0 0 10 20"
-			fill="none"
-			aria-hidden
-		>
-			<polyline
-				points={points}
-				stroke="currentColor"
-				strokeWidth={1.2}
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				vectorEffect="non-scaling-stroke"
-			/>
-		</svg>
-	)
 }
 
 export type MatchActivitiesCarouselProps = {
@@ -205,7 +181,10 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 						disabled={!canPrev}
 						onClick={() => scrollByStride(-1)}
 					>
-						<CarouselChevron direction="left" />
+						<CarouselNavChevron
+							direction="left"
+							className={styles.carouselNavIcon}
+						/>
 					</button>
 					<div className={styles.carouselDots} aria-label="Номер слайда">
 						{activities.map((activity, i) => (
@@ -229,7 +208,10 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 						disabled={!canNext}
 						onClick={() => scrollByStride(1)}
 					>
-						<CarouselChevron direction="right" />
+						<CarouselNavChevron
+							direction="right"
+							className={styles.carouselNavIcon}
+						/>
 					</button>
 				</div>
 			) : null}
