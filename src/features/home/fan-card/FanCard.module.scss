@@ -732,3 +732,91 @@ $fc-muted: rgb(255 255 255 / 0.3);
 		font-size: 22px;
 	}
 }
+
+/* FCA_Fans 4810:1387 — 1920, from 1920px; дельты к 1600 (1414, 1416-1417, 1388, 1409, 1402, 1403-1404) */
+@include from($bp-desktop-xl) {
+	.inner {
+		max-width: 1920px;
+	}
+
+	.heading {
+		max-width: 910px;
+		font-size: 128px;
+		line-height: 1;
+	}
+
+	/*
+	 * 1416/1417: две строки, 445px, 16px; как 1600 — wide + second compact, правый берег, без margin у строк.
+	 */
+	.leadBlock {
+		flex: 0 1 445px;
+		width: min(445px, 100%);
+		max-width: 445px;
+	}
+
+	.leadFirst,
+	.leadSecond {
+		font-size: 16px;
+	}
+
+	.body {
+		max-width: 1840px;
+		gap: 485px;
+	}
+
+	.side {
+		width: 445px;
+		flex: 0 0 445px;
+	}
+
+	.panel {
+		width: 910px;
+		flex: 0 0 910px;
+	}
+
+	.menuButtonTitle {
+		font-size: 24px;
+	}
+
+	.menuIndex {
+		font-size: 16px;
+	}
+
+	.cardHero {
+		font-size: 64px;
+	}
+
+	.cardHeroLineTop {
+		max-width: 600px;
+		margin: 0 0 0 310px;
+	}
+
+	.cardHeroLine {
+		margin: 0;
+	}
+
+	.bodyParagraph {
+		font-size: 16px;
+	}
+
+	.emphasisBlock {
+		font-size: 24px;
+	}
+
+	.navRow {
+		width: 135px;
+		justify-content: space-between;
+		gap: 0;
+	}
+
+	.navArrowButton {
+		width: 60px;
+		height: 60px;
+	}
+
+	/* 10×20 → 58: 1.208333; 60/58 */
+	.navArrowIcon {
+		transform: scale(1.25);
+		transform-origin: center;
+	}
+}
