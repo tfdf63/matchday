@@ -419,3 +419,97 @@ $fc-muted: rgb(255 255 255 / 0.3);
 		font-size: 18px;
 	}
 }
+
+/* FCA_Fans 4810:16343 — 1024, from 1024px; дельты к 768 */
+@include from($bp-tablet) {
+	.inner {
+		max-width: 1024px;
+	}
+
+	.head {
+		width: 100%;
+		gap: 32px;
+		margin-bottom: 60px;
+	}
+
+	.heading {
+		font-size: 64px;
+		line-height: 1;
+	}
+
+	/*
+	 * 16373 / 16372: две строки в зоне сетки справа (колонки 6–12 к правому краю контента 944).
+	 * 16358: ширина не больше контента активной карточки = 462px = .panel.
+	 */
+	.leadBlock {
+		box-sizing: border-box;
+		flex: 0 1 462px;
+		width: min(462px, 100%);
+		max-width: 462px;
+		min-width: 0;
+		margin-left: auto;
+		align-items: stretch;
+	}
+
+	.leadFirst {
+		margin-left: 0;
+		text-align: right;
+		white-space: normal;
+		align-self: stretch;
+	}
+
+	.leadSecond {
+		text-align: left;
+	}
+
+	.body {
+		max-width: 944px;
+		gap: 197px;
+	}
+
+	.side {
+		width: 285px;
+		flex: 0 0 285px;
+	}
+
+	.panel {
+		width: 462px;
+		flex: 0 0 462px;
+	}
+
+	.menuButton {
+		gap: 8px;
+	}
+
+	.menuIndex {
+		font-size: 12px;
+	}
+
+	.cardHero {
+		font-size: 32px;
+	}
+
+	.cardHeroLineTop {
+		margin: 0 0 0 161px;
+	}
+
+	.cardHeroLine {
+		margin: 0;
+	}
+
+	.navRow {
+		width: 135px;
+		justify-content: space-between;
+		gap: 0;
+	}
+
+	.navArrowButton {
+		width: 54px;
+		height: 54px;
+	}
+
+	.navArrowIcon {
+		transform: scale(1.125);
+		transform-origin: center;
+	}
+}
