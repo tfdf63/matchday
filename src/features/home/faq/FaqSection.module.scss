@@ -283,3 +283,43 @@ $faq-answer: rgb(255 255 255 / 0.8);
 		max-width: 458px;
 	}
 }
+
+/* FCA_Fans 4810:11800–11801, 11802 / 11808 — 1600, from 1600px: 645+125+750; 11800 Akademia 96; вопрос 22px, inset 30; ответ 592 */
+@include from($bp-desktop) {
+	.inner {
+		max-width: 1600px;
+		column-gap: 125px;
+		grid-template-columns: minmax(0, 645fr) minmax(0, 750fr);
+	}
+
+	.head,
+	.listBlock {
+		grid-column: auto;
+	}
+
+	.listBlock {
+		min-width: 0;
+	}
+
+	.title {
+		font-size: 96px;
+		line-height: 1;
+	}
+
+	.itemCardOpen {
+		gap: 20px;
+		padding: 30px;
+	}
+
+	.itemCard:not(.itemCardOpen) .trigger {
+		padding: 30px;
+	}
+
+	.questionLine {
+		font-size: 22px;
+	}
+
+	.answer {
+		max-width: 592px;
+	}
+}
