@@ -1,0 +1,125 @@
+@use '../../../styles/tokens.scss' as *;
+
+/* FCA_Fans: 20868 моб, 18764 768, 16465/14175 1024–1280, 11885 1600, 1510 1920 */
+.section {
+	box-sizing: border-box;
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+	color: #020a0a;
+}
+
+.inner {
+	width: 100%;
+	overflow: hidden;
+}
+
+.track {
+	display: flex;
+	width: max-content;
+	animation: marqueeScroll 38s linear infinite;
+	will-change: transform;
+}
+
+.chunk {
+	display: flex;
+	box-sizing: border-box;
+	flex: 0 0 auto;
+	flex-wrap: nowrap;
+	align-items: center;
+	white-space: nowrap;
+	/* 20868 */
+	gap: 20px;
+	padding: 10px 20px;
+}
+
+.phrase,
+.separator {
+	margin: 0;
+	font-family: 'Akademia', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 1;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.separator {
+	/* × как отдельный глиф, выравнивание по сетке текста */
+	display: block;
+}
+
+@keyframes marqueeScroll {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+/* 18764, 768+ */
+@include from($bp-tablet-sm) {
+	.chunk {
+		gap: 30px;
+	}
+}
+
+/* 16465 / 14175, 1024+ */
+@include from($bp-tablet) {
+	.chunk {
+		padding: 16px 20px;
+		gap: 30px;
+	}
+
+	.phrase,
+	.separator {
+		font-size: 40px;
+	}
+}
+
+/* 11885, 1600+ */
+@include from($bp-desktop) {
+	.chunk {
+		min-height: 100px;
+		padding: 18px 20px;
+		gap: 30px;
+	}
+
+	.phrase,
+	.separator {
+		font-size: 52px;
+	}
+}
+
+/* 1510, 1920+ */
+@include from($bp-desktop-xl) {
+	.chunk {
+		min-height: 104px;
+		padding: 20px;
+		gap: 30px;
+	}
+
+	.phrase,
+	.separator {
+		font-size: 64px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.inner {
+		display: flex;
+		justify-content: center;
+	}
+
+	.track {
+		width: 100%;
+		justify-content: center;
+		animation: none;
+	}
+
+	.chunk:last-child {
+		display: none;
+	}
+}
