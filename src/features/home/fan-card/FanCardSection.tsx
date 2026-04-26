@@ -7,6 +7,9 @@ import { CarouselNavChevron } from '@/components/CarouselNavChevron'
 import {
 	fanCardItems,
 	fanCardLeadFirst,
+	fanCardLeadLine1,
+	fanCardLeadLine2,
+	fanCardLeadLine3,
 	fanCardLeadSecond,
 	fanCardTitle,
 	type FanCardBlock,
@@ -133,8 +136,15 @@ export const FanCardSection: FC<FanCardSectionProps> = ({ className }) => {
 						<span className={styles.headingLine}>{fanCardTitle.line2}</span>
 					</h2>
 					<div className={styles.leadBlock}>
-						<p className={cx(styles.leadFirst, 'font-mono')}>{fanCardLeadFirst}</p>
-						<p className={cx(styles.leadSecond, 'font-mono')}>{fanCardLeadSecond}</p>
+						<p className={cx(styles.leadFirst, 'font-mono')}>
+							<span className={styles.leadFirstNarrow}>{fanCardLeadFirst}</span>
+							<span className={styles.leadFirstWide}>{fanCardLeadLine1}</span>
+						</p>
+						<p className={cx(styles.leadSecond, 'font-mono')}>
+							<span className={styles.leadSecondCompact}>{fanCardLeadSecond}</span>
+							<span className={styles.leadSecondLine2}>{fanCardLeadLine2}</span>
+						</p>
+						<p className={cx(styles.leadThird, 'font-mono')}>{fanCardLeadLine3}</p>
 					</div>
 				</header>
 

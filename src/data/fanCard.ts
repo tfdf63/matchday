@@ -1,6 +1,6 @@
 /**
  * Секция «Карта болельщика»: заголовок, навидация (4 пункта) и контент вкладок.
- * Копия текстов: Figma FCA_Fans (моб. 21033, 768: 18642/18656, 1024: 16343/16357).
+ * Копия текстов: FCA_Fans (моб. 21033, 768: 18642/18656, 1024: 16343, 1280: 14053/14067).
  */
 
 export type FanCardTextPart = {
@@ -33,11 +33,20 @@ export const fanCardTitle = {
 	line2: 'болельщика',
 }
 
-/* Планшет 768: 4810:18672, 4810:18671 — две отдельные строки, без запятой после «болельщика» */
+/** 768–1023: первая строка лида (без запятой), как 18672 */
 export const fanCardLeadFirst = 'Что\u00A0такое карта болельщика\u00A0'
 
-export const fanCardLeadSecond =
-	'где\u00A0её\u00A0получить и\u00A0как\u00A0использовать на\u00A0матче.'
+/** 1280: 14083 — с запятой, три строки лида (14083 / разрез 14082 / «на матче.») */
+export const fanCardLeadLine1 = 'Что\u00A0такое карта болельщика,\u00A0'
+
+/** Вторая строка лида (только 1280+; на моб. склеена с `fanCardLeadLine3` в `fanCardLeadSecond`) */
+export const fanCardLeadLine2 =
+	'где\u00A0её\u00A0получить и\u00A0как\u00A0использовать'
+
+export const fanCardLeadLine3 = 'на\u00A0матче.'
+
+/** 768/1024: одна вторая «строка» = прежняя вторая фраза целиком */
+export const fanCardLeadSecond = `${fanCardLeadLine2} ${fanCardLeadLine3}`
 
 const GOSU_SLUG = 'https://www.gosuslugi.ru/'
 
