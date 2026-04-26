@@ -43,6 +43,7 @@ export const MatchActivitiesSection: FC<MatchActivitiesSectionProps> = ({
 
 	return (
 		<section
+			id="match-activities"
 			className={cx(styles.section, className)}
 			aria-labelledby={SECTION_HEADING_ID}
 		>

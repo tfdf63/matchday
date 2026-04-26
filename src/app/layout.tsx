@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
+import { SiteFooter } from '@/components/Footer'
 import { AnalyticsScripts } from '@/lib/analytics/AnalyticsScripts'
 import '../styles/globals.css'
 import '../styles/fonts.css'
@@ -127,6 +128,7 @@ export default function RootLayout({
 			<body className={ibmPlexMono.variable}>
 				<AnalyticsScripts />
 				{children}
+				<SiteFooter />
 			</body>
 		</html>
 	)
