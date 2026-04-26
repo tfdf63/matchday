@@ -1,3 +1,5 @@
+@use '../../../styles/tokens.scss' as *;
+
 $faq-red: #b2061c;
 $faq-border: rgb(255 255 255 / 0.3);
 $faq-muted-question: rgb(255 255 255 / 0.8);
@@ -155,4 +157,34 @@ $faq-answer: rgb(255 255 255 / 0.8);
 
 .answer:last-child {
 	margin-bottom: 0;
+}
+
+/* FCA_Fans 4810:16380–16382 / 16388 — 768, from 767px */
+@include from($bp-tablet-sm) {
+	.inner {
+		max-width: 768px;
+		padding-inline: 40px;
+	}
+
+	.title {
+		margin: 0 0 60px;
+		font-size: 64px;
+	}
+
+	.itemCardOpen {
+		gap: 20px;
+		padding: 24px 16px;
+	}
+
+	.itemCard:not(.itemCardOpen) .trigger {
+		padding: 24px 16px;
+	}
+
+	.questionLine {
+		font-size: 18px;
+	}
+
+	.answer {
+		max-width: 100%;
+	}
 }
