@@ -323,3 +323,44 @@ $faq-answer: rgb(255 255 255 / 0.8);
 		max-width: 592px;
 	}
 }
+
+/* FCA_Fans 4810:1424–1425, 1426 / 1432 — 1920, from 1920px: 645+285+910; 1424 H2 128; 1428 24; 1431 16/755, inset 30 */
+@include from($bp-desktop-xl) {
+	.inner {
+		max-width: 1920px;
+		column-gap: 285px;
+		grid-template-columns: minmax(0, 645fr) minmax(0, 910fr);
+	}
+
+	.head,
+	.listBlock {
+		grid-column: auto;
+	}
+
+	.listBlock {
+		min-width: 0;
+	}
+
+	.title {
+		font-size: 128px;
+		line-height: 1;
+	}
+
+	.itemCardOpen {
+		gap: 20px;
+		padding: 30px;
+	}
+
+	.itemCard:not(.itemCardOpen) .trigger {
+		padding: 30px;
+	}
+
+	.questionLine {
+		font-size: 24px;
+	}
+
+	.answer {
+		max-width: 755px;
+		font-size: 16px;
+	}
+}
