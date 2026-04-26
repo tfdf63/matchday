@@ -248,3 +248,38 @@ $faq-answer: rgb(255 255 255 / 0.8);
 		font-size: 14px;
 	}
 }
+
+/* FCA_Fans 4810:14090–14091, 14092 / 14098 — 1280, from 1280px: 404+206+590 в полосе 1200, три строки заголовка; карточки — 14092 (open), 14098+ (closed) */
+@include from($bp-laptop) {
+	.inner {
+		max-width: 1280px;
+		align-items: start;
+		column-gap: 206px;
+		row-gap: 0;
+		grid-template-columns: minmax(0, 404fr) minmax(0, 590fr);
+	}
+
+	.head,
+	.listBlock {
+		grid-column: auto;
+	}
+
+	.listBlock {
+		min-width: 0;
+	}
+
+	/* 14092: py 30, px 20, gap 20; 14098: trigger py 30, px 20 (высота 92) */
+	.itemCardOpen {
+		gap: 20px;
+		padding: 30px 20px;
+	}
+
+	.itemCard:not(.itemCardOpen) .trigger {
+		padding: 30px 20px;
+	}
+
+	/* 14097: max-width 458, Mono 14 / 0.8 */
+	.answer {
+		max-width: 458px;
+	}
+}
