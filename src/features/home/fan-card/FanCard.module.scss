@@ -650,3 +650,85 @@ $fc-muted: rgb(255 255 255 / 0.3);
 		transform-origin: center;
 	}
 }
+
+/* FCA_Fans 4810:11763 — 1600, from 1600px; дельты к 1280 (11790, 11792/11793, 11764, 11765, 11785, 11778) */
+@include from($bp-desktop) {
+	.inner {
+		max-width: 1600px;
+	}
+
+	.heading {
+		font-size: 96px;
+		line-height: 1;
+	}
+
+	/*
+	 * 11792/11793: две строки, ~370px (1190–1560), 14px. Блок с правой границы поля, без margin.
+	 */
+	.leadBlock {
+		flex: 0 1 370px;
+		width: min(370px, 100%);
+		max-width: 370px;
+		margin: 0 0 0 auto;
+	}
+
+	.leadSecondCompact {
+		display: inline;
+	}
+
+	.leadSecondLine2 {
+		display: none;
+	}
+
+	.leadThird {
+		display: none;
+	}
+
+	.leadFirst {
+		align-self: flex-end;
+		width: 100%;
+		margin: 0;
+		text-align: right;
+	}
+
+	.leadSecond {
+		width: 100%;
+		margin: 0;
+		text-align: left;
+	}
+
+	.body {
+		max-width: 1520px;
+		gap: 405px;
+	}
+
+	.side {
+		width: 365px;
+		flex: 0 0 365px;
+	}
+
+	.panel {
+		width: 750px;
+		flex: 0 0 750px;
+	}
+
+	.menuButtonTitle {
+		font-size: 22px;
+	}
+
+	.cardHero {
+		font-size: 52px;
+	}
+
+	.cardHeroLineTop {
+		margin: 0 0 0 257px;
+	}
+
+	.cardHeroLine {
+		margin: 0;
+	}
+
+	.emphasisBlock {
+		font-size: 22px;
+	}
+}
