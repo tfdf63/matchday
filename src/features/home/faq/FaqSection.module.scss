@@ -20,10 +20,14 @@ $faq-answer: rgb(255 255 255 / 0.8);
 	padding-inline: 20px;
 }
 
+.head {
+	margin-bottom: 32px;
+}
+
 .title {
 	display: flex;
 	width: 100%;
-	margin: 0 0 32px;
+	margin: 0;
 	flex-direction: column;
 	align-items: flex-start;
 	font-family: 'Akademia', sans-serif;
@@ -159,15 +163,28 @@ $faq-answer: rgb(255 255 255 / 0.8);
 	margin-bottom: 0;
 }
 
-/* FCA_Fans 4810:16380–16382 / 16388 — 768, from 767px */
+/* FCA_Fans 4810:18680 — 768, from 767px: сетка 12 (margin 40, gutter 20); заголовок 1–6, карточки 7–12 (6 колонок справа) */
 @include from($bp-tablet-sm) {
 	.inner {
+		display: grid;
 		max-width: 768px;
+		align-items: start;
 		padding-inline: 40px;
+		gap: 20px;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+	}
+
+	.head {
+		grid-column: 1 / 7;
+		margin-bottom: 0;
+	}
+
+	.listBlock {
+		grid-column: 7 / 13;
+		min-width: 0;
 	}
 
 	.title {
-		margin: 0 0 60px;
 		font-size: 64px;
 	}
 
@@ -186,5 +203,48 @@ $faq-answer: rgb(255 255 255 / 0.8);
 
 	.answer {
 		max-width: 100%;
+	}
+}
+
+/* FCA_Fans 4810:14090–14092 / 14098 — 1024, from 1024px */
+@include from($bp-tablet) {
+	.inner {
+		max-width: 1024px;
+	}
+
+	.title {
+		font-size: 80px;
+	}
+
+	.itemCardOpen {
+		padding: 30px 20px;
+	}
+
+	.itemCard:not(.itemCardOpen) .trigger {
+		padding: 30px 20px;
+	}
+
+	.questionLine {
+		font-size: 20px;
+	}
+
+	.arrowSlot {
+		width: 32px;
+		height: 32px;
+		flex: 0 0 32px;
+	}
+
+	/* 24px слот 768+ → 32 (14092) */
+	.arrowIcon {
+		transform: scale(1.333333);
+		transform-origin: center;
+	}
+
+	.arrowOpen .arrowIcon {
+		transform: rotate(90deg) scale(1.333333);
+	}
+
+	.answer {
+		font-size: 14px;
 	}
 }

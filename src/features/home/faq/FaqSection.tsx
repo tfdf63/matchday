@@ -25,13 +25,16 @@ export const FaqSection: FC = () => {
 			aria-labelledby={SECTION_HEADING_ID}
 		>
 			<div className={styles.inner}>
-				<h2 id={SECTION_HEADING_ID} className={styles.title}>
-					<span className={styles.titleLine}>{faqTitle.line1}</span>
-					<span className={styles.titleLine}>{faqTitle.line2}</span>
-					<span className={styles.titleLine}>{faqTitle.line3}</span>
-				</h2>
+				<div className={styles.head}>
+					<h2 id={SECTION_HEADING_ID} className={styles.title}>
+						<span className={styles.titleLine}>{faqTitle.line1}</span>
+						<span className={styles.titleLine}>{faqTitle.line2}</span>
+						<span className={styles.titleLine}>{faqTitle.line3}</span>
+					</h2>
+				</div>
 
-				<ul className={styles.list} role="list">
+				<div className={styles.listBlock}>
+					<ul className={styles.list} role="list">
 					{faqItems.map((item, index) => {
 						const isOpen = openIndex === index
 						const trId = `${baseId}-tr-${item.id}`
@@ -100,7 +103,8 @@ export const FaqSection: FC = () => {
 							</li>
 						)
 					})}
-				</ul>
+					</ul>
+				</div>
 			</div>
 		</section>
 	)
