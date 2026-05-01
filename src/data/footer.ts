@@ -36,16 +36,16 @@ export const footerNavColumn2: FooterNavItem[] = [
 
 export const footerSocialVk = {
 	label: 'ВКонтакте',
-	href: process.env.NEXT_PUBLIC_FOOTER_VK_URL ?? '#',
+	href: 'https://vk.com/fcakron',
 } as const
 
 export const footerSocialTg = {
 	label: 'Телеграм',
-	href: process.env.NEXT_PUBLIC_FOOTER_TELEGRAM_URL ?? '#',
+	href: 'https://t.me/fcakron',
 } as const
 
 export const footerAgencyPrefix = 'Разработка сайта: ' as const
 export const footerAgencyName = 'kutuzova.agency' as const
-export const footerAgencyHref = 'https://kutuzova.agency/' as const
+export const footerAgencyHref = 'https://kutuzova-webdesign.ru/' as const
 
 export const footerBrandMark = 'Акрон' as const

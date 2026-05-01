@@ -13,25 +13,25 @@ const MENU_ITEMS: [MenuNavItem, MenuNavItem, MenuNavItem, MenuNavItem] = [
 	{
 		id: 'tickets',
 		label: 'Билеты',
-		href: '/',
+		href: '/#ticket-program',
 		icon: <MenuTicketIcon />,
 	},
 	{
 		id: 'parking',
 		label: 'Парковка',
-		href: '/parking/',
+		href: 'https://widget.afisha.yandex.ru/w/events/752078?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
 		icon: <MenuParkingIcon />,
 	},
 	{
 		id: 'activities',
 		label: 'Активности',
-		href: '/activities/',
+		href: '/#match-activities',
 		icon: <MenuActivitiesIcon />,
 	},
 	{
 		id: 'merch',
 		label: 'Мерч',
-		href: '/merch/',
+		href: '/#merch',
 		icon: <MenuBagIcon />,
 	},
 ]

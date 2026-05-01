@@ -4,8 +4,15 @@ import Image from 'next/image'
 import type { FC } from 'react'
 import { useMemo, useState } from 'react'
 
-import nextMatchGames, { type NextMatchGame } from '@/data/nextMatchMock'
+import gamesDefault, { type Game } from '@/data/games'
+import { getTeamLogoPath } from '@/data/teamLogos'
 import { starPlayer, type StarPlayerProfile } from '@/data/starPlayer'
+import {
+	getLocalDateIso,
+	pickHeroGame,
+	pickLastPastGame,
+	sortGamesByDateIso,
+} from '@/lib/match/upcomingGamePick'
 
 import styles from './StarPlayer.module.scss'
 
@@ -16,106 +23,47 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 export type StarPlayerSectionProps = {
 	className?: string
 	profileData?: StarPlayerProfile
-	matches?: NextMatchGame[]
-}
-
-function getLeagueLines(value: string): string[] {
-	return value.split('\n').filter(Boolean)
-}
-
-const MONTH_MAP: Record<string, number> = {
-	января: 0,
-	февраля: 1,
-	марта: 2,
-	апреля: 3,
-	мая: 4,
-	июня: 5,
-	июля: 6,
-	августа: 7,
-	сентября: 8,
-	октября: 9,
-	ноября: 10,
-	декабря: 11,
-}
-
-function parseMatchDate(dateRaw: string): Date | null {
-	const value = dateRaw.trim().toLowerCase()
-	const ddMmMatch = value.match(/(\d{1,2})\.(\d{1,2})/)
-	if (ddMmMatch) {
-		const day = Number(ddMmMatch[1])
-		const month = Number(ddMmMatch[2]) - 1
-		const now = new Date()
-		return new Date(now.getFullYear(), month, day)
-	}
-
-	const rangeMonthMatch = value.match(/(\d{1,2})(?:-\d{1,2})?\s+([а-яё]+)/i)
-	if (rangeMonthMatch) {
-		const day = Number(rangeMonthMatch[1])
-		const month = MONTH_MAP[rangeMonthMatch[2]]
-		if (month !== undefined) {
-			const now = new Date()
-			return new Date(now.getFullYear(), month, day)
-		}
-	}
-
-	return null
-}
-
-function getPreviousAndNextMatch(matches: NextMatchGame[]): {
-	previous: NextMatchGame | null
-	next: NextMatchGame | null
-} {
-	const now = new Date()
-	const dated = matches
-		.map(match => ({ match, date: parseMatchDate(match.date) }))
-		.filter((entry): entry is { match: NextMatchGame; date: Date } =>
-			Boolean(entry.date),
-		)
-		.sort((a, b) => a.date.getTime() - b.date.getTime())
-
-	if (dated.length === 0) {
-		return {
-			previous: matches[0] ?? null,
-			next: matches[1] ?? matches[0] ?? null,
-		}
-	}
-
-	let previous: NextMatchGame | null = null
-	let next: NextMatchGame | null = null
-
-	for (const entry of dated) {
-		if (entry.date.getTime() <= now.getTime()) {
-			previous = entry.match
-		} else if (!next) {
-			next = entry.match
-		}
-	}
-
-	return {
-		previous: previous ?? dated[0]?.match ?? null,
-		next: next ?? dated[dated.length - 1]?.match ?? null,
-	}
+	games?: Game[]
 }
 
 export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 	className,
 	profileData = starPlayer,
-	matches = nextMatchGames,
+	games = gamesDefault,
 }) => {
-	const { previous, next } = useMemo(
-		() => getPreviousAndNextMatch(matches),
-		[matches],
+	const todayIso = useMemo(() => getLocalDateIso(), [])
+	const sortedGames = useMemo(() => sortGamesByDateIso(games), [games])
+	const previousGame = useMemo(
+		() => pickLastPastGame(sortedGames, todayIso),
+		[sortedGames, todayIso],
 	)
+	const nextGame = useMemo(
+		() => pickHeroGame(sortedGames, todayIso),
+		[sortedGames, todayIso],
+	)
+
 	const [activeTab, setActiveTab] = useState<'previous' | 'next'>('next')
-	const activeMatch = activeTab === 'next' ? next : previous
-	const leagueLines = activeMatch ? getLeagueLines(activeMatch.leagueInfo) : []
+	const activeMatch = activeTab === 'next' ? nextGame : previousGame
 
 	const homeLogo = activeMatch
-		? activeMatch.homeTeam.logo
-		: '/images/teamslogo/Akron.png'
+		? getTeamLogoPath(activeMatch.homeTeam)
+		: undefined
 	const awayLogo = activeMatch
-		? activeMatch.awayTeam.logo
-		: '/images/teamslogo/Pari-NN.png'
+		? getTeamLogoPath(activeMatch.awayTeam)
+		: undefined
+
+	const dateTimeLine = activeMatch
+		? [activeMatch.dateCard?.trim(), activeMatch.time?.trim()]
+				.filter(Boolean)
+				.join(' ')
+		: ''
+	const matchDateLabel = activeMatch
+		? [dateTimeLine, activeMatch.timeLocal?.trim()].filter(Boolean).join(' • ')
+		: ''
+
+	const homeName = activeMatch?.homeTeam?.trim() ?? ''
+	const awayName = activeMatch?.awayTeam?.trim() ?? ''
+
 	const visibleNews = profileData.news.slice(0, 2)
 	const sideFacts = profileData.facts.slice(3)
 
@@ -228,6 +176,7 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 										: styles.matchTabMuted,
 									'font-mono',
 								)}
+								disabled={!previousGame}
 								onClick={() => setActiveTab('previous')}
 							>
 								Последний матч
@@ -248,46 +197,69 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 						</div>
 						<div className={styles.matchCard}>
 							<div className={styles.leagueInfo}>
-								{leagueLines.map(line => (
-									<p key={line} className={cx(styles.leagueLine, 'font-mono')}>
-										{line}
+								{activeMatch?.leagueInfo?.trim() ? (
+									<p className={cx(styles.leagueLine, 'font-mono')}>
+										{activeMatch.leagueInfo.trim()}
 									</p>
-								))}
+								) : null}
+								{activeMatch?.seasonTour?.trim() ? (
+									<p className={cx(styles.leagueLine, 'font-mono')}>
+										{activeMatch.seasonTour.trim()}
+									</p>
+								) : null}
 							</div>
 							{activeMatch ? (
 								<div className={styles.teamsRow}>
 									<div className={styles.teamCol}>
-										<Image
-											className={styles.teamLogo}
-											src={homeLogo}
-											alt={activeMatch.homeTeam.name}
-											width={56}
-											height={56}
-										/>
-										<p className={styles.teamName}>
-											{activeMatch.homeTeam.name}
-										</p>
+										{homeLogo ? (
+											<Image
+												className={styles.teamLogo}
+												src={homeLogo}
+												alt={homeName || ''}
+												width={56}
+												height={56}
+											/>
+										) : (
+											<div
+												className={styles.teamLogo}
+												style={{ flexShrink: 0 }}
+												aria-hidden
+											/>
+										)}
+										{homeName ? (
+											<p className={styles.teamName}>{homeName}</p>
+										) : null}
 									</div>
 									<p className={styles.scoreMark}>-</p>
 									<p className={styles.scoreMark}>:</p>
 									<p className={styles.scoreMark}>-</p>
 									<div className={styles.teamCol}>
-										<Image
-											className={styles.teamLogo}
-											src={awayLogo}
-											alt={activeMatch.awayTeam.name}
-											width={56}
-											height={56}
-										/>
-										<p className={styles.teamName}>
-											{activeMatch.awayTeam.name}
-										</p>
+										{awayLogo ? (
+											<Image
+												className={styles.teamLogo}
+												src={awayLogo}
+												alt={awayName || ''}
+												width={56}
+												height={56}
+											/>
+										) : (
+											<div
+												className={styles.teamLogo}
+												style={{ flexShrink: 0 }}
+												aria-hidden
+											/>
+										)}
+										{awayName ? (
+											<p className={styles.teamName}>{awayName}</p>
+										) : null}
 									</div>
 								</div>
 							) : null}
 							<p className={cx(styles.matchDate, 'font-mono')}>
 								{activeMatch
-									? `${activeMatch.date}${activeMatch.time ? ` • ${activeMatch.time}` : ''}`
+									? matchDateLabel ||
+										activeMatch.date?.trim() ||
+										activeMatch.dateIso
 									: 'Дата уточняется'}
 							</p>
 						</div>

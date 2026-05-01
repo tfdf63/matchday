@@ -4,6 +4,11 @@ import type { FC } from 'react'
 
 import { MatchCard } from '@/components/MatchCard'
 import games from '@/data/games'
+import {
+	getLocalDateIso,
+	pickHeroGame,
+	sortGamesByDateIso,
+} from '@/lib/match/upcomingGamePick'
 
 import styles from './Main.module.scss'
 
@@ -13,21 +18,24 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 
 const HERO_TAGS: ReadonlyArray<{ label: string; href: string }> = [
 	{ label: 'Ближайшие матчи', href: '#upcoming-match-panel' },
-	{ label: 'Активности', href: '/activities/' },
+	{ label: 'Активности', href: '#match-activities' },
 	{ label: 'Билетная программа', href: '#ticket-program' },
 	{ label: 'Сектора', href: '#sector' },
-	{ label: 'Карта болельщика', href: '/' },
-	{ label: 'Мерч', href: '/merch/' },
+	{ label: 'Карта болельщика', href: '#fan-card' },
+	{ label: 'Мерч', href: '#merch' },
 	{ label: 'Правила', href: '#rules' },
-	{ label: 'FAQ', href: '/' },
+	{ label: 'FAQ', href: '#faq' },
 ]
 
 export type MainProps = {
 	withBottomMenu?: boolean
 }
 
+const sortedGamesMain = sortGamesByDateIso(games)
+
 const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
-	const game = games[0]
+	const game =
+		pickHeroGame(sortedGamesMain, getLocalDateIso()) ?? sortedGamesMain[0]
 
 	return (
 		<div className={cx(styles.main, withBottomMenu && styles.withBottomMenu)}>
@@ -36,7 +44,7 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 					{/* Фон первого экрана FCA_Fans; при появлении финала из Figma заменить hero.png / hero.webp */}
 					<Image
 						src='/images/main/bg.png'
-						alt=''
+						alt='Болельщики ФК Акрон'
 						fill
 						className={styles.heroImage}
 						sizes='100vw'
@@ -90,8 +98,7 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 								</p>
 								<div className={styles.heroLeadBody}>
 									<p className={cx(styles.heroLeadLine, 'font-mono')}>
-										болельщиков и силу стальной воли. Будь с «Акроном»{' '}
-										<br />
+										болельщиков и силу стальной воли. Будь с «Акроном» <br />
 										до финального свистка.
 									</p>
 								</div>

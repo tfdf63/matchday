@@ -85,7 +85,7 @@ export const starPlayer: StarPlayerProfile = {
 		{
 			id: '1',
 			label: 'Очки в матчах РПЛ (2025)',
-			value: '272',
+			value: '270+',
 			isHighlighted: true,
 		},
 		{

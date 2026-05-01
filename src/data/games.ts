@@ -408,6 +408,29 @@ const games: Game[] = [
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
 	},
+	{
+		id: '19',
+		homeTeam: 'Крылья Советов',
+		awayTeam: 'Акрон',
+		date: '17 мая',
+		dateIso: '2026-05-17',
+		venue: 'away',
+		dateCard: '17.05 (ВС)',
+		time: 'SAMT 14:00',
+		// timeLocal: 'MSK 13:00',
+		stadium: 'Солидарность Самара Арена',
+		ticketLink: '', // Ссылка на объяснение покупки билетов
+		ticketLinkVip: '',
+		ticketLinkSkybox: '',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
+		seasonTour: '2025/2026 30 ТУР',
+		priceIncreaseDates: {
+			first: ' ',
+			second: ' ',
+		},
+		fanIdStatus: 'Fan id',
+		promoType: 'rpl',
+	},
 ]
 
 export default games

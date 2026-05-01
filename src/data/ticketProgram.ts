@@ -25,7 +25,8 @@ export const ticketProgramCards: TicketProgramCard[] = [
 		description:
 			'Здесь рождается энергия матча — поддержка, эмоции, скандирования и полное погружение в игру вместе с тысячами преданных болельщиков Акрона.',
 		ctaLabel: 'Узнать больше',
-		ctaHref: '#',
+		ctaHref:
+			'https://widget.afisha.yandex.ru/w/venues/79807?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
 	},
 	{
 		id: '2',
@@ -34,7 +35,8 @@ export const ticketProgramCards: TicketProgramCard[] = [
 		description:
 			'Удобные места с отличным обзором поля, отдельная зона и спокойная обстановка, чтобы сосредоточиться на игре и получать удовольствие от каждого момента матча.',
 		ctaLabel: 'Узнать больше',
-		ctaHref: '#',
+		ctaHref:
+			'https://widget.afisha.yandex.ru/w/venues/85000?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
 	},
 	{
 		id: '3',
@@ -43,7 +45,8 @@ export const ticketProgramCards: TicketProgramCard[] = [
 		description:
 			'Персональная зона просмотра матча для друзей, семьи или партнёров. Максимальный комфорт, уединение и лучший вид на игру.',
 		ctaLabel: 'Узнать больше',
-		ctaHref: '#',
+		ctaHref:
+			'https://widget.afisha.yandex.ru/w/venues/85005?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
 	},
 ]
 

@@ -5,7 +5,6 @@ import type { FC } from 'react'
 import { useEffect, useLayoutEffect, useRef } from 'react'
 
 import {
-	daysInMonth,
 	monthNameRu,
 	parseDateIsoLocal,
 	RU_WEEKDAY_SHORT,
@@ -85,30 +84,26 @@ type StripItem =
 	| {
 			kind: 'day'
 			key: string
-			year: number
-			month: number
-			day: number
-			game: Game | undefined
+			game: Game
 	  }
 
 function buildStripItems(groups: MonthGroup[]): StripItem[] {
 	const items: StripItem[] = []
 	for (const g of groups) {
-		const totalDays = daysInMonth(g.year, g.month)
 		const byDay = indexGamesByDayOfMonth(g.games, g.year, g.month)
 		items.push({
 			kind: 'month',
 			key: `m-${g.key}`,
 			label: g.monthLabel,
 		})
-		for (let day = 1; day <= totalDays; day++) {
+		const matchDays = Array.from(byDay.keys()).sort((a, b) => a - b)
+		for (const day of matchDays) {
+			const game = byDay.get(day)
+			if (!game) continue
 			items.push({
 				kind: 'day',
 				key: `${g.key}-${day}`,
-				year: g.year,
-				month: g.month,
-				day,
-				game: byDay.get(day),
+				game,
 			})
 		}
 	}
@@ -165,7 +160,7 @@ const CalendarDayColumn: FC<CalendarDayColumnProps> = ({
 				className={cx(
 					styles.weekday,
 					'font-mono',
-					isHome && isSelected && styles.weekdayActiveHome,
+					isSelected && styles.weekdaySelected,
 				)}
 			>
 				{wd}
@@ -173,7 +168,7 @@ const CalendarDayColumn: FC<CalendarDayColumnProps> = ({
 			<div
 				className={cx(
 					styles.logoCell,
-					isHome && isSelected && styles.logoCellActiveHome,
+					isSelected && styles.logoCellSelected,
 				)}
 			>
 				{logo ? (
@@ -187,29 +182,6 @@ const CalendarDayColumn: FC<CalendarDayColumnProps> = ({
 				) : null}
 			</div>
 		</button>
-	)
-}
-
-type CalendarEmptyDayColumnProps = {
-	year: number
-	month: number
-	day: number
-}
-
-const CalendarEmptyDayColumn: FC<CalendarEmptyDayColumnProps> = ({
-	year,
-	month,
-	day,
-}) => {
-	const d = new Date(year, month - 1, day)
-	const wd = RU_WEEKDAY_SHORT[d.getDay()] ?? ''
-
-	return (
-		<div className={styles.col}>
-			<div className={styles.dateNum}>{day}</div>
-			<p className={cx(styles.weekday, 'font-mono')}>{wd}</p>
-			<div className={styles.logoCell} aria-hidden />
-		</div>
 	)
 }
 
@@ -311,19 +283,12 @@ export const MatchesCalendarStrip: FC<MatchesCalendarStripProps> = ({
 				{items.map(item =>
 					item.kind === 'month' ? (
 						<MonthDivider key={item.key} label={item.label} />
-					) : item.game ? (
+					) : (
 						<CalendarDayColumn
 							key={item.key}
 							game={item.game}
 							isSelected={item.game.id === selectedGameId}
-							onSelect={() => onSelectGame(item.game!)}
-						/>
-					) : (
-						<CalendarEmptyDayColumn
-							key={item.key}
-							year={item.year}
-							month={item.month}
-							day={item.day}
+							onSelect={() => onSelectGame(item.game)}
 						/>
 					),
 				)}

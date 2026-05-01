@@ -14,7 +14,7 @@
 }
 
 .inner {
-	/* Для .brandMark: 130px max и подгонка по ширине (4810:18892) */
+	/* Для .brandMark: container query, масштаб ≈ 43.16% ширины .inner */
 	container-type: inline-size;
 	display: flex;
 	width: 100%;
@@ -145,7 +145,7 @@
 	text-decoration: underline;
 }
 
-/* «Акрон» — 4810:18892: Akademia 130px, line-height 1, #fff, uppercase, h 98.683, по центру */
+/* «Акрон» — 4810:18892: 138.103px / ширина 320; line-height 1, #fff, uppercase, h 98.683, по центру */
 .brandMark {
 	position: relative;
 	box-sizing: border-box;
@@ -159,8 +159,8 @@
 	align-items: center;
 	justify-content: center;
 	font-family: 'Akademia', sans-serif;
-	/* 8.125rem = 130px; cqi вписывает «АКРОН» в ширину .inner (nowrap) */
-	font-size: min(8.125rem, 40.625cqi);
+	/* 43.16% ширины .inner; верх min() с капом 9.631438rem */
+	font-size: min(9.631438rem, 43.16cqi);
 	font-weight: 400;
 	font-style: normal;
 	line-height: 1;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 
+import games from '@/data/games'
 import Main, {
 	MatchActivitiesSection,
 	SectorSection,
@@ -12,7 +13,7 @@ import Main, {
 	RulesSection,
 	MerchSection,
 	FanCardSection,
-	FaqSection,
+	// FaqSection,
 	MarqueeSection,
 } from '@/features/home'
 import MainPageClient from './MainPageClient'
@@ -33,11 +34,11 @@ const MatchesPage: React.FC = () => {
 			<MatchActivitiesSection />
 			<TicketProgramSection />
 			<SectorSection />
-			<StarPlayerSection />
+			<StarPlayerSection games={games} />
 			<RulesSection />
 			<MerchSection />
 			<FanCardSection />
-			<FaqSection />
+			{/* <FaqSection /> */}
 			<MarqueeSection />
 			<MainPageClient />
 		</>

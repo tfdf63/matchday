@@ -4,6 +4,11 @@ import type { FC } from 'react'
 import { useCallback, useMemo, useState } from 'react'
 
 import type { Game } from '@/data/games'
+import {
+	getLocalDateIso,
+	pickFollowingUpcomingGame,
+	sortGamesByDateIso,
+} from '@/lib/match/upcomingGamePick'
 
 import { MatchesCalendarStrip } from './MatchesCalendarStrip'
 import styles from './UpcomingMatches.module.scss'
@@ -14,10 +19,6 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 }
 
 const UPCOMING_MATCH_PANEL_ID = 'upcoming-match-panel'
-
-function sortGamesByDateIso(games: Game[]): Game[] {
-	return [...games].sort((a, b) => a.dateIso.localeCompare(b.dateIso))
-}
 
 const MatchNavChevron: FC<{ direction: 'left' | 'right' }> = ({ direction }) => {
 	const points =
@@ -53,18 +54,26 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 	games,
 	withBottomMenu = false,
 }) => {
-	const defaultGame = games[1] ?? games[0] ?? null
-	const [selectedId, setSelectedId] = useState<string | null>(
-		defaultGame?.id ?? null,
-	)
-
 	const sortedGames = useMemo(() => sortGamesByDateIso(games), [games])
+	const todayIso = useMemo(() => getLocalDateIso(), [])
+
+	const [selectedId, setSelectedId] = useState<string | null>(() => {
+		const sorted = sortGamesByDateIso(games)
+		return pickFollowingUpcomingGame(sorted, getLocalDateIso())?.id ?? null
+	})
 
 	const selectedGame = useMemo(() => {
-		if (!games.length) return null
-		const found = games.find((g) => g.id === selectedId)
-		return found ?? games[1] ?? games[0] ?? null
-	}, [games, selectedId])
+		if (!sortedGames.length) return null
+		const found = selectedId
+			? sortedGames.find((g) => g.id === selectedId)
+			: undefined
+		if (found) return found
+		return (
+			pickFollowingUpcomingGame(sortedGames, todayIso) ??
+			sortedGames[0] ??
+			null
+		)
+	}, [sortedGames, selectedId, todayIso])
 
 	const selectedIndex = useMemo(() => {
 		if (!selectedGame) return -1

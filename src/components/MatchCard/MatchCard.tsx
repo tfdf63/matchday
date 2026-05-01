@@ -32,7 +32,9 @@ export function MatchCard({
 	const ticket = game.ticketLink?.trim()
 	const vip = game.ticketLinkVip?.trim()
 	const skybox = game.ticketLinkSkybox?.trim()
+	const isAway = game.venue === 'away'
 	const priceLine =
+		!isAway &&
 		game.priceIncreaseDates &&
 		formatPriceIncreaseLabel(game.priceIncreaseDates)
 	const dateTimeLine = [game.dateCard?.trim(), game.time?.trim()]
@@ -175,26 +177,28 @@ export function MatchCard({
 						<p className={cx(styles.priceNote, 'font-mono')}>{priceLine}</p>
 					) : null}
 
-					<div className={styles.secondaryStack}>
-						<Link
-							href={promoHref}
-							className={cx(styles.btnSecondary, 'font-mono')}
-						>
-							<span className={cx(styles.secondaryIcon, styles.promoIcon)}>
-								<PromoBadgeIcon width={17} height={17} />
-							</span>
-							Промокоды
-						</Link>
-						<Link
-							href={directionsHref}
-							className={cx(styles.btnSecondary, 'font-mono')}
-						>
-							<span className={styles.secondaryIcon}>
-								<LocationArrowIcon />
-							</span>
-							Как добраться
-						</Link>
-					</div>
+					{!isAway ? (
+						<div className={styles.secondaryStack}>
+							<Link
+								href={promoHref}
+								className={cx(styles.btnSecondary, 'font-mono')}
+							>
+								<span className={cx(styles.secondaryIcon, styles.promoIcon)}>
+									<PromoBadgeIcon width={17} height={17} />
+								</span>
+								Промокоды
+							</Link>
+							<Link
+								href={directionsHref}
+								className={cx(styles.btnSecondary, 'font-mono')}
+							>
+								<span className={styles.secondaryIcon}>
+									<LocationArrowIcon />
+								</span>
+								Как добраться
+							</Link>
+						</div>
+					) : null}
 				</div>
 			</div>
 		</article>

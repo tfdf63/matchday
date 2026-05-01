@@ -10,7 +10,7 @@ import {
 
 import styles from './MarqueeSection.module.scss'
 
-const PAIR_COUNT = 24
+const PAIR_COUNT = 12
 
 function makePairs(keyPrefix: string): ReactNode {
 	const nodes: ReactNode[] = []
@@ -34,10 +34,7 @@ function makePairs(keyPrefix: string): ReactNode {
  */
 export const MarqueeSection: FC = () => {
 	return (
-		<section
-			className={styles.section}
-			aria-label={MARQUEE_SECTION_LABEL}
-		>
+		<section className={styles.section} aria-label={MARQUEE_SECTION_LABEL}>
 			<div className={styles.inner} aria-hidden>
 				<div className={styles.track}>
 					<div className={styles.chunk}>{makePairs('a')}</div>

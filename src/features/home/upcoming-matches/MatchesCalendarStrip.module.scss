@@ -186,7 +186,7 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	color: $muted;
 }
 
-.weekdayActiveHome {
+.weekdaySelected {
 	background: #b2061c;
 	color: #fff;
 }
@@ -201,7 +201,7 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	overflow: hidden;
 }
 
-.logoCellActiveHome {
+.logoCellSelected {
 	background: #b2061c;
 }
 
