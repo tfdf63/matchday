@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { LocationArrowIcon } from '@/components/Button/icons/LocationArrowIcon'
-import { PromoBadgeIcon } from '@/components/Button/icons/PromoBadgeIcon'
 import type { Game } from '@/data/games'
+import { PromoCodesModalTrigger } from '@/features/home/home-modal'
 import { getTeamLogoPath } from '@/data/teamLogos'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 
@@ -17,14 +17,12 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 export type MatchCardProps = {
 	game: Game
 	title?: string
-	promoHref?: string
 	directionsHref?: string
 }
 
 export function MatchCard({
 	game,
 	title = 'Следующий матч',
-	promoHref = '/',
 	directionsHref = '/',
 }: MatchCardProps) {
 	const homeLogo = getTeamLogoPath(game.homeTeam)
@@ -179,15 +177,10 @@ export function MatchCard({
 
 					{!isAway ? (
 						<div className={styles.secondaryStack}>
-							<Link
-								href={promoHref}
-								className={cx(styles.btnSecondary, 'font-mono')}
-							>
-								<span className={cx(styles.secondaryIcon, styles.promoIcon)}>
-									<PromoBadgeIcon width={17} height={17} />
-								</span>
-								Промокоды
-							</Link>
+							<PromoCodesModalTrigger
+								buttonClassName={cx(styles.btnSecondary, 'font-mono')}
+								iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
+							/>
 							<Link
 								href={directionsHref}
 								className={cx(styles.btnSecondary, 'font-mono')}

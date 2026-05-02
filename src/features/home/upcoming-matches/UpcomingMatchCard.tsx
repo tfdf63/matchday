@@ -3,10 +3,10 @@ import Link from 'next/link'
 import type { FC } from 'react'
 
 import { LocationArrowIcon } from '@/components/Button/icons/LocationArrowIcon'
-import { PromoBadgeIcon } from '@/components/Button/icons/PromoBadgeIcon'
 import { MatchCardCalendarIcon } from '@/components/MatchCard/icons/MatchCardCalendarIcon'
 import type { Game } from '@/data/games'
 import { getTeamLogoPath } from '@/data/teamLogos'
+import { PromoCodesModalTrigger } from '@/features/home/home-modal'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 
 import styles from './UpcomingMatchCard.module.scss'
@@ -17,13 +17,11 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 
 export type UpcomingMatchCardProps = {
 	game: Game
-	promoHref?: string
 	directionsHref?: string
 }
 
 export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	game,
-	promoHref = '/',
 	directionsHref = '/',
 }) => {
 	const homeLogo = getTeamLogoPath(game.homeTeam)
@@ -181,15 +179,10 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 
 				{!isAway ? (
 					<div className={styles.secondaryStack}>
-						<Link
-							href={promoHref}
-							className={cx(styles.btnSecondary, 'font-mono')}
-						>
-							<span className={cx(styles.secondaryIcon, styles.promoIcon)}>
-								<PromoBadgeIcon width={17} height={17} />
-							</span>
-							Промокоды
-						</Link>
+						<PromoCodesModalTrigger
+							buttonClassName={cx(styles.btnSecondary, 'font-mono')}
+							iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
+						/>
 						<Link
 							href={directionsHref}
 							className={cx(styles.btnSecondary, 'font-mono')}

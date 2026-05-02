@@ -37,4 +37,11 @@ export { RulesSection, type RulesSectionProps } from './rules'
 export { MerchSection, type MerchSectionProps } from './merch'
 export { FanCardSection, type FanCardSectionProps } from './fan-card'
 export { FaqSection } from './faq'
+export {
+	HomeInfoModalProvider,
+	type HomeInfoModalProviderProps,
+	useHomeInfoModal,
+	PromoCodesModalTrigger,
+	type PromoCodesModalTriggerProps,
+} from './home-modal'
 export { MarqueeSection } from './marquee'

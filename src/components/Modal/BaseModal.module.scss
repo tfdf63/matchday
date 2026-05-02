@@ -1,0 +1,160 @@
+@use '../../styles/tokens.scss' as *;
+
+$z-modal: 10000;
+
+.backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: $z-modal;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	padding: 0;
+	background: rgb(2 11 18 / 0.72);
+	box-sizing: border-box;
+
+	@include from($bp-tablet-sm) {
+		align-items: center;
+		padding: 24px;
+	}
+}
+
+.panel {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	max-width: 100%;
+	max-height: min(90vh, 100dvh);
+	flex-direction: column;
+	padding: 20px 20px 24px;
+	border-radius: 2px 2px 0 0;
+	background: #1b2222;
+	color: #fff;
+	box-shadow: 0 -8px 40px rgb(0 0 0 / 0.35);
+
+	@include from($bp-tablet-sm) {
+		max-width: 480px;
+		max-height: min(85vh, 720px);
+		border-radius: 2px;
+		padding: 24px 28px 28px;
+	}
+
+	@include from($bp-tablet) {
+		max-width: 560px;
+		padding: 28px 32px 32px;
+	}
+}
+
+.panelFullBleed {
+	padding: 0;
+	background: #020a0a;
+	max-height: min(92vh, 100dvh);
+
+	@include from($bp-tablet-sm) {
+		max-width: 360px;
+	}
+}
+
+.header {
+	display: flex;
+	flex-shrink: 0;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+
+.title {
+	margin: 0;
+	flex: 1 1 auto;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.15;
+	text-transform: uppercase;
+
+	@include from($bp-tablet-sm) {
+		font-size: 24px;
+	}
+}
+
+.close {
+	flex-shrink: 0;
+	display: flex;
+	width: 44px;
+	height: 44px;
+	align-items: center;
+	justify-content: center;
+	margin: -8px -8px 0 0;
+	padding: 0;
+	border: none;
+	border-radius: 2px;
+	background: transparent;
+	color: rgb(255 255 255 / 0.85);
+	cursor: pointer;
+	transition:
+		background-color 0.15s ease,
+		color 0.15s ease;
+
+	&:hover {
+		background: rgb(255 255 255 / 0.08);
+		color: #fff;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+.closeIcon {
+	display: block;
+	width: 20px;
+	height: 20px;
+}
+
+.body {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.bodyFullBleed {
+	display: flex;
+	min-height: 0;
+	flex: 1 1 auto;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.closeFloating {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 2;
+	display: flex;
+	width: 48px;
+	height: 48px;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: none;
+	border-radius: 2px;
+	background: transparent;
+	color: rgb(255 255 255 / 0.85);
+	cursor: pointer;
+	transition:
+		background-color 0.15s ease,
+		color 0.15s ease;
+
+	&:hover {
+		background: rgb(255 255 255 / 0.08);
+		color: #fff;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}

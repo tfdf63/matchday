@@ -1,0 +1,229 @@
+@use '../../../styles/tokens.scss' as *;
+
+.shell {
+	display: flex;
+	min-height: 0;
+	flex: 1 1 auto;
+	flex-direction: column;
+	max-height: min(92vh, 100dvh);
+}
+
+.scroll {
+	box-sizing: border-box;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+	padding: 88px 20px 24px;
+	-webkit-overflow-scrolling: touch;
+
+	@include from($bp-tablet-sm) {
+		padding: 88px 20px 28px;
+	}
+}
+
+/* Figma 4810:33900 — Akademia 32, leading-none, uppercase */
+.mainTitle {
+	display: flex;
+	max-width: 320px;
+	margin: 0 48px 0 0;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0;
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 1;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.titleLine {
+	display: block;
+	margin: 0;
+	line-height: 1;
+}
+
+/* 4810:33903 + 4810:33902 — блок лида под заголовком */
+.leadBlock {
+	display: flex;
+	max-width: 320px;
+	margin-top: 10px;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+/* 4810:33903 — IBM Plex Mono 12 / 1.3; строка по правому краю блока */
+.leadKicker {
+	margin: 0;
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+	text-align: right;
+	white-space: nowrap;
+}
+
+/* 4810:33902 — та же гарнитура; без отступа сверху (сразу под кикером) */
+.leadBody {
+	margin: 0;
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.8);
+	text-align: left;
+}
+
+/* Figma 4810:33904 — колонка, whitespace-nowrap; шрифты на подписях / индексах */
+.tabs {
+	display: flex;
+	width: 100%;
+	max-width: 320px;
+	margin-top: 24px;
+	flex-direction: column;
+	align-items: stretch;
+	white-space: nowrap;
+}
+
+.tabBtn {
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 4px;
+	padding: 20px 10px;
+	border: none;
+	border-bottom: 1px solid rgb(255 255 255 / 0.3);
+	background: transparent;
+	cursor: pointer;
+	text-align: left;
+	transition:
+		background-color 0.15s ease,
+		color 0.15s ease;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: -2px;
+	}
+}
+
+.tabBtnInactive {
+	color: rgb(255 255 255 / 0.3);
+}
+
+/* 4810:33905 — без линии между активным и следующим рядом */
+.tabBtnActive {
+	border-bottom: none;
+	background: #b2061c;
+	color: #fff;
+}
+
+/* 4810:33906 / 33909 / 33912 — Akademia Regular */
+.tabLabel {
+	flex-shrink: 0;
+	font-family: 'Akademia', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+/* 4810:33907 / 33910 / 33913 — IBM Plex Mono Regular */
+.tabIndex {
+	flex-shrink: 0;
+	font-family: var(--font-ibm-plex-mono), monospace;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+}
+
+.tabBtnActive .tabIndex {
+	color: inherit;
+}
+
+.footerNav {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 20px 20px;
+}
+
+.navBtn {
+	display: flex;
+	width: 48px;
+	height: 48px;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 1px solid rgb(255 255 255 / 0.3);
+	background: transparent;
+	color: rgb(255 255 255 / 0.85);
+	cursor: pointer;
+	transition:
+		background-color 0.15s ease,
+		border-color 0.15s ease;
+
+	&:hover {
+		background: rgb(255 255 255 / 0.06);
+		border-color: rgb(255 255 255 / 0.45);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+/* Figma 4810:33923 / 4810:33925 — иконка 40×40 в кнопке 48×48 */
+.navChevron {
+	display: block;
+	width: 40px;
+	height: 40px;
+}
+
+/* Левая — как в 33923 (Expand_right с отражением по X) */
+.navChevronFlip {
+	transform: scaleX(-1);
+}
+
+/* Figma 4810:33927 — три эллипса 8×8, шаг по центрам 12px (gap 4px) */
+.footerDots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+}
+
+.footerDot {
+	flex-shrink: 0;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: rgb(255 255 255 / 0.25);
+}
+
+.footerDotActive {
+	background: rgb(255 255 255 / 0.85);
+}
+
+@include from($bp-tablet-sm) {
+	.leadKicker,
+	.leadBody {
+		font-size: 13px;
+	}
+
+	.mainTitle {
+		max-width: none;
+		margin-right: 56px;
+	}
+
+	.leadBlock {
+		max-width: none;
+	}
+
+	.tabs {
+		max-width: none;
+	}
+}
