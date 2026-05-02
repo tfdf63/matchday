@@ -51,3 +51,7 @@ next-env.d.ts
 /public/maintenance.on
 
 /public/images/email
+
+# local / IDE
+.cursor/
+.github/
