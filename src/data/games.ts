@@ -20,6 +20,10 @@ export interface Game {
 	dateIso: string
 	/** Домашний для Акрона, если хозяин — Акрон; иначе гостевой. */
 	venue: MatchVenue
+	/** Голы хозяев матча (homeTeam); без поля — в UI «-». */
+	homeGoals?: number
+	/** Голы гостей матча (awayTeam); без поля — в UI «-». */
+	awayGoals?: number
 	/** Город для подписи под названием команды на карточке (планшет). */
 	homeTeamCity?: string
 	awayTeamCity?: string
@@ -303,6 +307,8 @@ const games: Game[] = [
 		},
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		homeGoals: 1,
+		awayGoals: 2,
 	},
 	{
 		id: '15',
@@ -329,6 +335,8 @@ const games: Game[] = [
 		},
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		homeGoals: 2,
+		awayGoals: 3,
 	},
 	{
 		id: '16',
@@ -355,9 +363,36 @@ const games: Game[] = [
 		},
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		homeGoals: 1,
+		awayGoals: 1,
 	},
 	{
 		id: '17',
+		homeTeam: 'Балтика',
+		awayTeam: 'Акрон',
+		date: '28 апреля',
+		dateIso: '2026-04-28',
+		venue: 'away',
+		dateCard: '28.04 (ПН)',
+		time: 'SAMT 14:00',
+		// timeLocal: 'MSK 13:00',
+		stadium: 'РОСТЕХ Арена',
+		ticketLink: '',
+		ticketLinkVip: '',
+		ticketLinkSkybox: '',
+		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
+		seasonTour: '2025/2026 27 ТУР',
+		priceIncreaseDates: {
+			first: '',
+			second: '',
+		},
+		fanIdStatus: 'Fan id',
+		promoType: 'rpl',
+		homeGoals: 0,
+		awayGoals: 1,
+	},
+	{
+		id: '18',
 		homeTeam: 'Акрон',
 		awayTeam: 'Краснодар',
 		date: '3 мая',
@@ -383,7 +418,7 @@ const games: Game[] = [
 		promoType: 'rpl',
 	},
 	{
-		id: '18',
+		id: '19',
 		homeTeam: 'Акрон',
 		awayTeam: 'Ростов',
 		date: '11 мая',
@@ -409,7 +444,7 @@ const games: Game[] = [
 		promoType: 'rpl',
 	},
 	{
-		id: '19',
+		id: '20',
 		homeTeam: 'Крылья Советов',
 		awayTeam: 'Акрон',
 		date: '17 мая',

@@ -13,6 +13,7 @@ import {
 	pickLastPastGame,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
+import { formatGoalCell } from '@/lib/match/formatMatchGoals'
 
 import styles from './StarPlayer.module.scss'
 
@@ -230,9 +231,21 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 											<p className={styles.teamName}>{homeName}</p>
 										) : null}
 									</div>
-									<p className={styles.scoreMark}>-</p>
-									<p className={styles.scoreMark}>:</p>
-									<p className={styles.scoreMark}>-</p>
+									<div
+										className={styles.scoreGroup}
+										role="group"
+										aria-label={`Счёт ${formatGoalCell(activeMatch.homeGoals)}:${formatGoalCell(activeMatch.awayGoals)}`}
+									>
+										<p className={styles.scoreMark}>
+											{formatGoalCell(activeMatch.homeGoals)}
+										</p>
+										<p className={styles.scoreMark} aria-hidden>
+											:
+										</p>
+										<p className={styles.scoreMark}>
+											{formatGoalCell(activeMatch.awayGoals)}
+										</p>
+									</div>
 									<div className={styles.teamCol}>
 										{awayLogo ? (
 											<Image

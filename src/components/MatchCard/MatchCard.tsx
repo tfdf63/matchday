@@ -5,6 +5,7 @@ import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
 import { getTeamLogoPath } from '@/data/teamLogos'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
+import { formatGoalCell } from '@/lib/match/formatMatchGoals'
 
 import { MatchCardCalendarIcon } from './icons/MatchCardCalendarIcon'
 import styles from './MatchCard.module.scss'
@@ -99,9 +100,21 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 							) : null}
 						</div>
 					</div>
-					<p className={styles.vs} aria-hidden>
-						—
-					</p>
+					<div
+						className={styles.scoreRow}
+						role="group"
+						aria-label={`Счёт: ${formatGoalCell(game.homeGoals)} ${formatGoalCell(game.awayGoals)}`}
+					>
+						<span className={cx(styles.scoreCell, 'font-mono')}>
+							{formatGoalCell(game.homeGoals)}
+						</span>
+						<span className={styles.scoreSep} aria-hidden>
+							:
+						</span>
+						<span className={cx(styles.scoreCell, 'font-mono')}>
+							{formatGoalCell(game.awayGoals)}
+						</span>
+					</div>
 					<div className={cx(styles.teamCol, styles.teamColAway)}>
 						{awayLogo ? (
 							<Image

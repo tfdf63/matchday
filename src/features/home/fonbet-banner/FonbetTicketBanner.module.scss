@@ -1,0 +1,56 @@
+@use '../../../styles/tokens.scss' as *;
+
+/* Сетка как у UpcomingMatches .inner — выравнивание с блоком «Ближайшие матчи» */
+
+.section {
+	width: 100%;
+	background: #020a0a;
+	color: #fff;
+}
+
+.inner {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 360px;
+	margin-inline: auto;
+	padding: 48px 20px;
+
+	@include from($bp-tablet-sm) {
+		max-width: 767px;
+		padding-inline: 32px;
+	}
+
+	@include from($bp-tablet) {
+		max-width: 1024px;
+		padding-inline: 40px;
+	}
+
+	@include from($bp-laptop) {
+		max-width: 1280px;
+	}
+
+	@include from($bp-desktop) {
+		max-width: 1600px;
+	}
+
+	@include from($bp-desktop-xl) {
+		max-width: 1920px;
+	}
+}
+
+.link {
+	display: block;
+	line-height: 0;
+	text-decoration: none;
+	outline-offset: 4px;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+	}
+}
+
+.bannerImg {
+	display: block;
+	width: 100%;
+	height: auto;
+}

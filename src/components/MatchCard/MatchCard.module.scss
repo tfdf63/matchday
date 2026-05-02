@@ -191,17 +191,30 @@ $fan-id-to-title-gap: 20px;
 	color: #fff;
 }
 
-.vs {
+.scoreRow {
 	flex: 1 1 auto;
+	display: flex;
 	min-width: 0;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
 	margin: 0;
 	padding: 0 4px;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1;
-	text-align: center;
-	text-transform: uppercase;
 	color: #fff;
+}
+
+.scoreCell {
+	min-width: 0.65em;
+	text-align: center;
+}
+
+.scoreSep {
+	flex-shrink: 0;
+	font-weight: 400;
+	line-height: 1;
 }
 
 .actions {
@@ -390,7 +403,7 @@ $fan-id-to-title-gap: 20px;
 		font-size: 16px;
 	}
 
-	.vs {
+	.scoreRow {
 		font-size: 16px;
 		flex: 1 1 0;
 	}
@@ -455,7 +468,7 @@ $fan-id-to-title-gap: 20px;
 		font-size: 18px;
 	}
 
-	.vs {
+	.scoreRow {
 		font-size: 18px;
 	}
 }
@@ -508,7 +521,7 @@ $fan-id-to-title-gap: 20px;
 		font-size: 12px;
 	}
 
-	.vs {
+	.scoreRow {
 		font-size: 22px;
 		flex: 1 1 0;
 	}
@@ -609,7 +622,7 @@ $fan-id-to-title-gap: 20px;
 		font-size: 14px;
 	}
 
-	.vs {
+	.scoreRow {
 		font-size: 24px;
 	}
 

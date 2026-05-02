@@ -7,6 +7,7 @@ import { getTeamLogoPath } from '@/data/teamLogos'
 import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
+import { formatGoalCell } from '@/lib/match/formatMatchGoals'
 
 import styles from './UpcomingMatchCard.module.scss'
 
@@ -110,9 +111,21 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 								) : null}
 							</div>
 						</div>
-						<p className={styles.vs} aria-hidden>
-							—
-						</p>
+						<div
+							className={styles.scoreRow}
+							role="group"
+							aria-label={`Счёт: ${formatGoalCell(game.homeGoals)} ${formatGoalCell(game.awayGoals)}`}
+						>
+							<span className={styles.scoreCell}>
+								{formatGoalCell(game.homeGoals)}
+							</span>
+							<span className={styles.scoreSep} aria-hidden>
+								:
+							</span>
+							<span className={styles.scoreCell}>
+								{formatGoalCell(game.awayGoals)}
+							</span>
+						</div>
 						<div className={cx(styles.teamCol, styles.teamColAway)}>
 							{awayLogoNode}
 							<div className={styles.teamNameBlock}>

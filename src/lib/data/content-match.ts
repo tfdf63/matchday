@@ -26,6 +26,8 @@ export type ContentMatch = {
 	}
 	fanIdStatus?: Game['fanIdStatus']
 	promoType?: Game['promoType']
+	homeGoals?: number
+	awayGoals?: number
 }
 
 function venueFromHomeTeam(homeTeam: string | undefined): MatchVenue {
@@ -53,5 +55,7 @@ export function contentMatchToGame(row: ContentMatch): Game {
 		priceIncreaseDates: row.priceIncreaseDates,
 		fanIdStatus: row.fanIdStatus ?? 'Без fan id',
 		promoType: row.promoType,
+		homeGoals: row.homeGoals,
+		awayGoals: row.awayGoals,
 	}
 }

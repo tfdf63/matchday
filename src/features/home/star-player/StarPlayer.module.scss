@@ -272,6 +272,14 @@
 	text-align: center;
 }
 
+.scoreGroup {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	gap: 2px;
+}
+
 .scoreMark {
 	margin: 0;
 	font-family: 'Akademia', sans-serif;
