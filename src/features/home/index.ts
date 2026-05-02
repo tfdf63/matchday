@@ -38,6 +38,12 @@ export { MerchSection, type MerchSectionProps } from './merch'
 export { FanCardSection, type FanCardSectionProps } from './fan-card'
 export { FaqSection } from './faq'
 export {
+	DirectionsModalProvider,
+	type DirectionsModalProviderProps,
+	DirectionsModalTrigger,
+	type DirectionsModalTriggerProps,
+} from './directions-modal'
+export {
 	HomeInfoModalProvider,
 	type HomeInfoModalProviderProps,
 	useHomeInfoModal,

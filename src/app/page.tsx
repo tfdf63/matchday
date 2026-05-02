@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 
 import games from '@/data/games'
 import Main, {
+	DirectionsModalProvider,
 	HomeInfoModalProvider,
 	MatchActivitiesSection,
 	SectorSection,
@@ -29,21 +30,23 @@ export const metadata: Metadata = {
 const MatchesPage: React.FC = () => {
 	return (
 		<HomeInfoModalProvider>
-			<>
-				<Main withBottomMenu />
-				<UpcomingMatches withBottomMenu />
-				<OfferSection {...defaultOfferContent} />
-				<MatchActivitiesSection />
-				<TicketProgramSection />
-				<SectorSection />
-				<StarPlayerSection games={games} />
-				<RulesSection />
-				<MerchSection />
-				<FanCardSection />
-				{/* <FaqSection /> */}
-				<MarqueeSection />
-				<MainPageClient />
-			</>
+			<DirectionsModalProvider>
+				<>
+					<Main withBottomMenu />
+					<UpcomingMatches withBottomMenu />
+					<OfferSection {...defaultOfferContent} />
+					<MatchActivitiesSection />
+					<TicketProgramSection />
+					<SectorSection />
+					<StarPlayerSection games={games} />
+					<RulesSection />
+					<MerchSection />
+					<FanCardSection />
+					{/* <FaqSection /> */}
+					<MarqueeSection />
+					<MainPageClient />
+				</>
+			</DirectionsModalProvider>
 		</HomeInfoModalProvider>
 	)
 }
