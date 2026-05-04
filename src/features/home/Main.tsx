@@ -2,14 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { FC } from 'react'
 
-import { MatchCard } from '@/components/MatchCard'
 import games from '@/data/games'
 import {
-	getLocalDateIso,
-	pickHeroGame,
+	pickHeroGameByMatchEnd,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
+import { MainMatchCardClient } from './MainMatchCardClient'
 import styles from './Main.module.scss'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
@@ -35,7 +34,7 @@ const sortedGamesMain = sortGamesByDateIso(games)
 
 const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 	const game =
-		pickHeroGame(sortedGamesMain, getLocalDateIso()) ?? sortedGamesMain[0]
+		pickHeroGameByMatchEnd(sortedGamesMain) ?? sortedGamesMain[0]
 
 	return (
 		<div className={cx(styles.main, withBottomMenu && styles.withBottomMenu)}>
@@ -119,7 +118,7 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 				</div>
 				<div className={styles.matchStack}>
 					<div className={styles.matchAnchor}>
-						<MatchCard game={game} />
+						<MainMatchCardClient games={sortedGamesMain} initialGame={game} />
 					</div>
 				</div>
 				<p className={styles.clubWordmark} aria-hidden>

@@ -1,5 +1,12 @@
 import type { Game } from '@/data/games'
 
+const MATCH_END_OFFSET_MS = 2 * 60 * 60 * 1000
+
+const MATCH_TIME_ZONE_OFFSETS: Record<string, string> = {
+	MSK: '+03:00',
+	SAMT: '+04:00',
+}
+
 /** Локальная дата в формате YYYY-MM-DD (как `Game.dateIso`). */
 export function getLocalDateIso(now: Date = new Date()): string {
 	const y = now.getFullYear()
@@ -27,6 +34,76 @@ export function indexNearestUpcoming(sorted: Game[], todayIso: string): number {
 export function pickHeroGame(sorted: Game[], todayIso: string): Game | null {
 	const i = indexNearestUpcoming(sorted, todayIso)
 	return i >= 0 ? sorted[i]! : null
+}
+
+export function getGameStartDate(game: Game): Date | null {
+	const time = game.time?.trim()
+	const match = time?.match(/^([A-Z]+)\s+(\d{1,2}):(\d{2})$/)
+	const zone = match?.[1]
+	const hours = match?.[2]
+	const minutes = match?.[3]
+
+	if (!zone || !hours || !minutes) return null
+
+	const offset = MATCH_TIME_ZONE_OFFSETS[zone]
+	const hoursNumber = Number(hours)
+	const minutesNumber = Number(minutes)
+
+	if (
+		!offset ||
+		hoursNumber < 0 ||
+		hoursNumber > 23 ||
+		minutesNumber < 0 ||
+		minutesNumber > 59
+	) {
+		return null
+	}
+
+	return new Date(
+		`${game.dateIso}T${hours.padStart(2, '0')}:${minutes}:00${offset}`,
+	)
+}
+
+export function getGameEndDate(game: Game): Date | null {
+	const startDate = getGameStartDate(game)
+	if (!startDate) return null
+
+	return new Date(startDate.getTime() + MATCH_END_OFFSET_MS)
+}
+
+/**
+ * Карточка героя с учётом условного окончания матча: `time` + 2 часа.
+ * Если время не распарсилось, матч живёт по прежнему правилу календарного дня.
+ */
+export function pickHeroGameByMatchEnd(
+	sorted: Game[],
+	now: Date = new Date(),
+): Game | null {
+	if (!sorted.length) return null
+
+	const todayIso = getLocalDateIso(now)
+	const nowMs = now.getTime()
+	const i = sorted.findIndex((game) => {
+		const endDate = getGameEndDate(game)
+		if (endDate) return endDate.getTime() > nowMs
+		return game.dateIso >= todayIso
+	})
+
+	if (i !== -1) return sorted[i]!
+	return sorted[sorted.length - 1]!
+}
+
+export function getHeroGameSwitchDate(
+	sorted: Game[],
+	now: Date = new Date(),
+): Date | null {
+	const game = pickHeroGameByMatchEnd(sorted, now)
+	if (!game) return null
+
+	const endDate = getGameEndDate(game)
+	if (!endDate || endDate.getTime() <= now.getTime()) return null
+
+	return endDate
 }
 
 /**
