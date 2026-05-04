@@ -1,5 +1,9 @@
 import Image from 'next/image'
 
+import {
+	MatchDateBanner,
+	getMatchDateBannerText,
+} from '@/components/MatchDateBanner'
 import type { Game } from '@/data/games'
 import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
@@ -35,11 +39,22 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 		.join(' ')
 	const timeLocal = game.timeLocal?.trim()
 	const showFanIdBadge = game.fanIdStatus === 'Fan id'
+	const now = new Date()
+	const matchDateBannerText = getMatchDateBannerText(game, now)
+	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
 
 	return (
 		<article
-			className={cx(styles.root, showFanIdBadge && styles.rootWithFanBadge)}
+			className={cx(styles.root, showTopBadges && styles.rootWithTopBadge)}
 		>
+			{matchDateBannerText ? (
+				<MatchDateBanner
+					game={game}
+					now={now}
+					className={styles.matchDateBanner}
+				/>
+			) : null}
+
 			{showFanIdBadge ? (
 				<div className={cx(styles.fanIdBadge, 'font-mono')} role="note">
 					FAN ID

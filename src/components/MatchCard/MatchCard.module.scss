@@ -20,9 +20,19 @@ $fan-id-to-title-gap: 20px;
 	-webkit-backdrop-filter: blur(20px);
 }
 
-/* Место под бейдж + ровно 20px до заголовка «Следующий матч» */
-.rootWithFanBadge {
+/* Место под верхние бейджи + ровно 20px до заголовка «Следующий матч» */
+.rootWithTopBadge {
 	padding-top: calc($fan-id-badge-height + $fan-id-to-title-gap);
+}
+
+.matchDateBanner {
+	left: 0;
+
+	span {
+		height: $fan-id-badge-height;
+		min-height: $fan-id-badge-height;
+		padding: 0 12px;
+	}
 }
 
 .fanIdBadge {
@@ -381,7 +391,7 @@ $fan-id-to-title-gap: 20px;
 		padding: 60px 16px 30px;
 	}
 
-	.rootWithFanBadge {
+	.rootWithTopBadge {
 		padding-top: 60px;
 	}
 
@@ -437,6 +447,12 @@ $fan-id-to-title-gap: 20px;
 		min-height: 40px;
 		padding: 10px 24px;
 	}
+
+	.matchDateBanner span {
+		height: 40px;
+		min-height: 40px;
+		padding: 10px 24px;
+	}
 }
 
 /* FCA_Fans первый экран 1024 — node 4810:14214 */
@@ -446,7 +462,7 @@ $fan-id-to-title-gap: 20px;
 		padding: 70px 16px 30px;
 	}
 
-	.rootWithFanBadge {
+	.rootWithTopBadge {
 		padding-top: 70px;
 	}
 
@@ -480,7 +496,7 @@ $fan-id-to-title-gap: 20px;
 		padding: 70px 20px 40px;
 	}
 
-	.rootWithFanBadge {
+	.rootWithTopBadge {
 		padding-top: 70px;
 	}
 
@@ -590,7 +606,7 @@ $fan-id-to-title-gap: 20px;
 		padding: 80px 20px 40px;
 	}
 
-	.rootWithFanBadge {
+	.rootWithTopBadge {
 		padding-top: 80px;
 	}
 
@@ -646,6 +662,10 @@ $fan-id-to-title-gap: 20px;
 	}
 
 	.fanIdBadge {
+		font-size: 14px;
+	}
+
+	.matchDateBanner span {
 		font-size: 14px;
 	}
 }

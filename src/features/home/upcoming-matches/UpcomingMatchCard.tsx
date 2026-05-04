@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import type { FC } from 'react'
 
+import {
+	MatchDateBanner,
+	getMatchDateBannerText,
+} from '@/components/MatchDateBanner'
 import { MatchCardCalendarIcon } from '@/components/MatchCard/icons/MatchCardCalendarIcon'
 import type { Game } from '@/data/games'
 import { getTeamLogoPath } from '@/data/teamLogos'
@@ -37,6 +41,9 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 	const showFanIdBadge = game.fanIdStatus === 'Fan id'
 	const homeCity = game.homeTeamCity?.trim()
 	const awayCity = game.awayTeamCity?.trim()
+	const now = new Date()
+	const matchDateBannerText = getMatchDateBannerText(game, now)
+	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
 
 	const homeLogoNode = homeLogo ? (
 		<Image
@@ -64,8 +71,16 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 
 	return (
 		<article
-			className={cx(styles.root, showFanIdBadge && styles.rootWithFanBadge)}
+			className={cx(styles.root, showTopBadges && styles.rootWithTopBadge)}
 		>
+			{matchDateBannerText ? (
+				<MatchDateBanner
+					game={game}
+					now={now}
+					className={styles.matchDateBanner}
+				/>
+			) : null}
+
 			{showFanIdBadge ? (
 				<div className={cx(styles.fanIdBadge, 'font-mono')} role="note">
 					FAN ID
