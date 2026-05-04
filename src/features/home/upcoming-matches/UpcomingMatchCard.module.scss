@@ -400,6 +400,10 @@ $fan-id-to-meta-gap: 20px;
 		right: calc((100% - min(100%, 452px)) / 2);
 	}
 
+	.matchDateBanner {
+		left: calc((100% - min(100%, 452px)) / 2);
+	}
+
 	.metaBlock {
 		align-self: center;
 		gap: 10px;

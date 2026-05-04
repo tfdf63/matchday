@@ -106,6 +106,31 @@ export function getHeroGameSwitchDate(
 	return endDate
 }
 
+/** Карточка героя только для домашних матчей с учётом условного окончания. */
+export function pickHomeHeroGameByMatchEnd(
+	sorted: Game[],
+	now: Date = new Date(),
+): Game | null {
+	return pickHeroGameByMatchEnd(
+		sorted.filter((game) => game.venue === 'home'),
+		now,
+	)
+}
+
+export function getHomeHeroGameSwitchDate(
+	sorted: Game[],
+	now: Date = new Date(),
+): Date | null {
+	const homeGames = sorted.filter((game) => game.venue === 'home')
+	const game = pickHeroGameByMatchEnd(homeGames, now)
+	if (!game) return null
+
+	const endDate = getGameEndDate(game)
+	if (!endDate || endDate.getTime() <= now.getTime()) return null
+
+	return endDate
+}
+
 /**
  * Последний сыгранный матч: с наибольшим `dateIso`, строго меньшим `todayIso`.
  * Если все матчи не раньше сегодняшнего дня — `null`.

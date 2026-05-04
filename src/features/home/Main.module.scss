@@ -450,7 +450,7 @@ $club-wordmark-overlap-menu: 6px;
 		flex-basis: 100%;
 		width: 100%;
 		max-width: 100%;
-		margin: 80px 0 0;
+		margin: 0;
 		padding: 0;
 		text-align: center;
 		font-size: 184px;
@@ -458,17 +458,17 @@ $club-wordmark-overlap-menu: 6px;
 	}
 
 	@include from($bp-tablet) {
-		margin-top: 100px;
+		margin-top: 60px;
 		font-size: 254px;
 	}
 
 	@include from($bp-laptop) {
-		margin-top: 72px;
+		margin-top: 0;
 		font-size: 323px;
 	}
 
 	@include from($bp-desktop) {
-		margin-top: 56px;
+		margin-top: 0;
 		font-size: 409.076px;
 	}
 

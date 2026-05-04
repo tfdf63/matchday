@@ -5,15 +5,21 @@ import type { Game } from '@/data/games'
 import {
 	getGameEndDate,
 	getHeroGameSwitchDate,
+	pickHomeHeroGameByMatchEnd,
 	pickHeroGameByMatchEnd,
 	sortGamesByDateIso,
 } from './upcomingGamePick'
 
-const makeGame = (id: string, dateIso: string, time: string): Game => ({
+const makeGame = (
+	id: string,
+	dateIso: string,
+	time: string,
+	venue: Game['venue'] = 'home',
+): Game => ({
 	id,
 	dateIso,
 	time,
-	venue: 'home',
+	venue,
 	fanIdStatus: 'Fan id',
 })
 
@@ -41,6 +47,18 @@ describe('pickHeroGameByMatchEnd', () => {
 		expect(getHeroGameSwitchDate(games, now)?.toISOString()).toBe(
 			'2026-05-03T16:00:00.000Z',
 		)
+	})
+})
+
+describe('pickHomeHeroGameByMatchEnd', () => {
+	it('skips away matches and picks the nearest home match', () => {
+		const games = sortGamesByDateIso([
+			makeGame('away', '2026-05-17', 'SAMT 14:00', 'away'),
+			makeGame('home', '2026-05-24', 'SAMT 18:00', 'home'),
+		])
+		const now = new Date('2026-05-16T12:00:00+04:00')
+
+		expect(pickHomeHeroGameByMatchEnd(games, now)?.id).toBe('home')
 	})
 })
 

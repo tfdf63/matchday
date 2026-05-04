@@ -1,12 +1,12 @@
 'use client'
 
 import type { FC } from 'react'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import type { Game } from '@/data/games'
 import {
-	getLocalDateIso,
-	pickFollowingUpcomingGame,
+	getHomeHeroGameSwitchDate,
+	pickHomeHeroGameByMatchEnd,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
@@ -19,6 +19,8 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 }
 
 const UPCOMING_MATCH_PANEL_ID = 'upcoming-match-panel'
+const MAX_TIMEOUT_MS = 2_147_000_000
+const SWITCH_DELAY_BUFFER_MS = 1000
 
 const MatchNavChevron: FC<{ direction: 'left' | 'right' }> = ({ direction }) => {
 	const points =
@@ -55,12 +57,40 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 	withBottomMenu = false,
 }) => {
 	const sortedGames = useMemo(() => sortGamesByDateIso(games), [games])
-	const todayIso = useMemo(() => getLocalDateIso(), [])
+	const timeoutRef = useRef<number | null>(null)
 
 	const [selectedId, setSelectedId] = useState<string | null>(() => {
 		const sorted = sortGamesByDateIso(games)
-		return pickFollowingUpcomingGame(sorted, getLocalDateIso())?.id ?? null
+		return pickHomeHeroGameByMatchEnd(sorted)?.id ?? null
 	})
+
+	useEffect(() => {
+		const refreshSelectedGame = () => {
+			timeoutRef.current = null
+
+			const now = new Date()
+			setSelectedId(pickHomeHeroGameByMatchEnd(sortedGames, now)?.id ?? null)
+
+			const switchDate = getHomeHeroGameSwitchDate(sortedGames, now)
+			if (!switchDate) return
+
+			const delay = Math.min(
+				Math.max(
+					switchDate.getTime() - now.getTime() + SWITCH_DELAY_BUFFER_MS,
+					SWITCH_DELAY_BUFFER_MS,
+				),
+				MAX_TIMEOUT_MS,
+			)
+
+			timeoutRef.current = window.setTimeout(refreshSelectedGame, delay)
+		}
+
+		refreshSelectedGame()
+
+		return () => {
+			if (timeoutRef.current !== null) window.clearTimeout(timeoutRef.current)
+		}
+	}, [sortedGames])
 
 	const selectedGame = useMemo(() => {
 		if (!sortedGames.length) return null
@@ -68,12 +98,8 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 			? sortedGames.find((g) => g.id === selectedId)
 			: undefined
 		if (found) return found
-		return (
-			pickFollowingUpcomingGame(sortedGames, todayIso) ??
-			sortedGames[0] ??
-			null
-		)
-	}, [sortedGames, selectedId, todayIso])
+		return pickHomeHeroGameByMatchEnd(sortedGames) ?? sortedGames[0] ?? null
+	}, [sortedGames, selectedId])
 
 	const selectedIndex = useMemo(() => {
 		if (!selectedGame) return -1
@@ -110,7 +136,7 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 		>
 			<div className={styles.inner}>
 				<h2 id="upcoming-matches-heading" className={styles.title}>
-					Ближайшие матчи
+					Календарь матчей
 				</h2>
 
 				<div className={styles.cards}>
