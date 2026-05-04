@@ -6,6 +6,7 @@ import Main, {
 	DirectionsModalProvider,
 	FonbetTicketBanner,
 	HomeInfoModalProvider,
+	ParkingModalProvider,
 	MatchActivitiesSection,
 	SectorSection,
 	TicketProgramSection,
@@ -30,26 +31,28 @@ export const metadata: Metadata = {
 
 const MatchesPage: React.FC = () => {
 	return (
-		<HomeInfoModalProvider>
-			<DirectionsModalProvider>
-				<>
-					<Main withBottomMenu />
-					<FonbetTicketBanner />
-					<UpcomingMatches withBottomMenu />
-					<OfferSection {...defaultOfferContent} />
-					<MatchActivitiesSection />
-					<TicketProgramSection />
-					<SectorSection />
-					<StarPlayerSection games={games} />
-					<RulesSection />
-					<MerchSection />
-					<FanCardSection />
-					{/* <FaqSection /> */}
-					<MarqueeSection />
-					<MainPageClient />
-				</>
-			</DirectionsModalProvider>
-		</HomeInfoModalProvider>
+		<ParkingModalProvider>
+			<HomeInfoModalProvider>
+				<DirectionsModalProvider>
+					<>
+						<Main withBottomMenu />
+						<FonbetTicketBanner />
+						<UpcomingMatches withBottomMenu />
+						<OfferSection {...defaultOfferContent} />
+						<MatchActivitiesSection />
+						<TicketProgramSection />
+						<SectorSection />
+						<StarPlayerSection games={games} />
+						<RulesSection />
+						<MerchSection />
+						<FanCardSection />
+						{/* <FaqSection /> */}
+						<MarqueeSection />
+						<MainPageClient />
+					</>
+				</DirectionsModalProvider>
+			</HomeInfoModalProvider>
+		</ParkingModalProvider>
 	)
 }
 

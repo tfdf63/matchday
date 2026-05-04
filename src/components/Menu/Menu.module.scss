@@ -51,7 +51,10 @@
 	gap: 4px;
 	min-width: 44px;
 	padding: 0 2px 2px;
+	border: none;
 	box-sizing: border-box;
+	background: transparent;
+	cursor: pointer;
 	text-decoration: none;
 	color: var(--menu-label);
 	transition: color 0.15s ease;

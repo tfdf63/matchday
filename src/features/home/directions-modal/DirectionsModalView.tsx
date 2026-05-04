@@ -116,7 +116,7 @@ export const DirectionsModalView: FC = () => {
 						onClick={goPrev}
 					>
 						<span className={styles.navChevronWrapDirectionsPrev}>
-							<NavChevron flipped />
+							<NavChevron flipped={false} />
 						</span>
 					</button>
 					<div

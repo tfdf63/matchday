@@ -376,6 +376,13 @@ $fan-id-to-title-gap: 20px;
 	color: #fff;
 }
 
+.secondaryActions {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+}
+
 .secondaryStack {
 	display: flex;
 	flex-direction: row;
@@ -383,6 +390,10 @@ $fan-id-to-title-gap: 20px;
 	gap: 10px;
 	width: 100%;
 	align-items: stretch;
+}
+
+.parkingButton {
+	display: none;
 }
 
 @include from($bp-tablet-sm) {
@@ -438,6 +449,10 @@ $fan-id-to-title-gap: 20px;
 	.btnSecondary {
 		flex: none;
 		width: 100%;
+	}
+
+	.parkingButton {
+		display: flex;
 	}
 
 	/* 4810:16504 — бейдж FAN ID 40px, py 10px по макету */
@@ -577,6 +592,11 @@ $fan-id-to-title-gap: 20px;
 	.secondaryStack {
 		flex-direction: row;
 		gap: 10px;
+	}
+
+	.parkingButton {
+		flex: none;
+		width: 100%;
 	}
 }
 

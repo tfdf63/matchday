@@ -10,8 +10,9 @@ import styles from './Menu.module.scss'
 export type MenuNavItem = {
 	id: string
 	label: string
-	href: string
+	href?: string
 	icon: ReactNode
+	onClick?: () => void
 }
 
 function normalizePath(path: string): string {
@@ -63,14 +64,41 @@ export function Menu({
 	const pathname = usePathname()
 	const [leftFirst, leftSecond, rightFirst, rightSecond] = items
 
-	function itemActive(id: string, href: string): boolean {
+	function itemActive(id: string, href?: string): boolean {
 		if (activeIdProp !== undefined) return activeIdProp === id
-		if (activeHrefProp !== undefined) return pathsMatch(href, activeHrefProp)
+		if (activeHrefProp !== undefined && href) {
+			return pathsMatch(href, activeHrefProp)
+		}
+		if (!href) return false
 		return isActivePath(pathname, href)
 	}
 
 	function renderTab(item: MenuNavItem) {
 		const active = itemActive(item.id, item.href)
+		const content = (
+			<>
+				<span className={styles.indicator} aria-hidden={true} />
+				<span className={styles.iconWrap}>{item.icon}</span>
+				<span className={styles.label}>{item.label}</span>
+			</>
+		)
+
+		if (item.onClick) {
+			return (
+				<button
+					key={item.id}
+					type="button"
+					className={cx(styles.tab, active && styles.tabActive, 'font-mono')}
+					aria-current={active ? 'page' : undefined}
+					onClick={item.onClick}
+				>
+					{content}
+				</button>
+			)
+		}
+
+		if (!item.href) return null
+
 		return (
 			<Link
 				key={item.id}
@@ -78,9 +106,7 @@ export function Menu({
 				className={cx(styles.tab, active && styles.tabActive, 'font-mono')}
 				aria-current={active ? 'page' : undefined}
 			>
-				<span className={styles.indicator} aria-hidden={true} />
-				<span className={styles.iconWrap}>{item.icon}</span>
-				<span className={styles.label}>{item.label}</span>
+				{content}
 			</Link>
 		)
 	}
@@ -104,9 +130,7 @@ export function Menu({
 				</div>
 				<Link href={centerHref} className={styles.fab} aria-label='На главную'>
 					<span className={styles.fabInner}>
-						{centerLogo ?? (
-							<MenuFcLogoIcon className={styles.fabLogo} />
-						)}
+						{centerLogo ?? <MenuFcLogoIcon className={styles.fabLogo} />}
 					</span>
 				</Link>
 			</div>

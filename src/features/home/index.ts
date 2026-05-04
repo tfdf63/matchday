@@ -51,4 +51,11 @@ export {
 	PromoCodesModalTrigger,
 	type PromoCodesModalTriggerProps,
 } from './home-modal'
+export {
+	ParkingModalProvider,
+	type ParkingModalProviderProps,
+	useParkingModal,
+	ParkingModalTrigger,
+	type ParkingModalTriggerProps,
+} from './parking-modal'
 export { MarqueeSection } from './marquee'

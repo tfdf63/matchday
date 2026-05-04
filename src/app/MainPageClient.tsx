@@ -8,36 +8,43 @@ import {
 	MenuTicketIcon,
 	type MenuNavItem,
 } from '@/components/Menu'
+import { useParkingModal } from '@/features/home/parking-modal'
 
-const MENU_ITEMS: [MenuNavItem, MenuNavItem, MenuNavItem, MenuNavItem] = [
-	{
-		id: 'tickets',
-		label: 'Билеты',
-		href: '/#ticket-program',
-		icon: <MenuTicketIcon />,
-	},
-	{
-		id: 'parking',
-		label: 'Парковка',
-		href: 'https://widget.afisha.yandex.ru/w/events/752078?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		icon: <MenuParkingIcon />,
-	},
-	{
-		id: 'activities',
-		label: 'Активности',
-		href: '/#match-activities',
-		icon: <MenuActivitiesIcon />,
-	},
-	{
-		id: 'merch',
-		label: 'Мерч',
-		href: '/#merch',
-		icon: <MenuBagIcon />,
-	},
-]
+const MainMenu: React.FC = () => {
+	const parkingModal = useParkingModal()
+
+	const menuItems: [MenuNavItem, MenuNavItem, MenuNavItem, MenuNavItem] = [
+		{
+			id: 'tickets',
+			label: 'Билеты',
+			href: '/#ticket-program',
+			icon: <MenuTicketIcon />,
+		},
+		{
+			id: 'parking',
+			label: 'Парковка',
+			icon: <MenuParkingIcon />,
+			onClick: parkingModal.open,
+		},
+		{
+			id: 'activities',
+			label: 'Активности',
+			href: '/#match-activities',
+			icon: <MenuActivitiesIcon />,
+		},
+		{
+			id: 'merch',
+			label: 'Мерч',
+			href: '/#merch',
+			icon: <MenuBagIcon />,
+		},
+	]
+
+	return <Menu items={menuItems} />
+}
 
 const MainPageClient: React.FC = () => {
-	return <Menu items={MENU_ITEMS} />
+	return <MainMenu />
 }
 
 export default MainPageClient

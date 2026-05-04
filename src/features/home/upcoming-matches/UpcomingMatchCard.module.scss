@@ -315,6 +315,13 @@ $fan-id-to-meta-gap: 20px;
 	color: $card-text-muted;
 }
 
+.secondaryActions {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+}
+
 .secondaryStack {
 	display: flex;
 	flex-direction: row;
@@ -355,6 +362,10 @@ $fan-id-to-meta-gap: 20px;
 		outline: 2px solid var(--button-focus-ring);
 		outline-offset: 2px;
 	}
+}
+
+.parkingButton {
+	display: none;
 }
 
 .secondaryIcon {
@@ -480,7 +491,11 @@ $fan-id-to-meta-gap: 20px;
 
 	.btnSecondary {
 		gap: 8px;
-		padding: 16px 32px;
+		padding: 16px 12px;
+	}
+
+	.parkingButton {
+		display: flex;
 	}
 }
 
@@ -724,4 +739,3 @@ $fan-id-to-meta-gap: 20px;
 		font-size: 16px;
 	}
 }
-

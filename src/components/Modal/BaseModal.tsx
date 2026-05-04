@@ -26,6 +26,8 @@ export type BaseModalProps = {
 	 * Задайте `aria-labelledby` на панели через `titleId` и заголовок с этим id внутри children.
 	 */
 	chrome?: 'default' | 'fullBleed'
+	panelClassName?: string
+	bodyClassName?: string
 }
 
 function CloseGlyph() {
@@ -51,6 +53,8 @@ export const BaseModal: FC<BaseModalProps> = ({
 	children,
 	titleId: titleIdProp,
 	chrome = 'default',
+	panelClassName,
+	bodyClassName,
 }) => {
 	const autoTitleId = useId()
 	const titleId = titleIdProp ?? autoTitleId
@@ -110,11 +114,13 @@ export const BaseModal: FC<BaseModalProps> = ({
 			}}
 		>
 			<div
-				className={
-					isFullBleed
-						? `${styles.panel} ${styles.panelFullBleed}`
-						: styles.panel
-				}
+				className={[
+					styles.panel,
+					isFullBleed && styles.panelFullBleed,
+					panelClassName,
+				]
+					.filter(Boolean)
+					.join(' ')}
 				role='dialog'
 				aria-modal='true'
 				aria-labelledby={titleId}
@@ -131,7 +137,13 @@ export const BaseModal: FC<BaseModalProps> = ({
 						>
 							<CloseGlyph />
 						</button>
-						<div className={styles.bodyFullBleed}>{children}</div>
+						<div
+							className={[styles.bodyFullBleed, bodyClassName]
+								.filter(Boolean)
+								.join(' ')}
+						>
+							{children}
+						</div>
 					</>
 				) : (
 					<>
@@ -149,7 +161,9 @@ export const BaseModal: FC<BaseModalProps> = ({
 								<CloseGlyph />
 							</button>
 						</div>
-						<div className={styles.body}>{children}</div>
+						<div className={[styles.body, bodyClassName].filter(Boolean).join(' ')}>
+							{children}
+						</div>
 					</>
 				)}
 			</div>

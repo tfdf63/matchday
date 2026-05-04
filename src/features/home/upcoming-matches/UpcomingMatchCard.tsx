@@ -10,6 +10,7 @@ import type { Game } from '@/data/games'
 import { getTeamLogoPath } from '@/data/teamLogos'
 import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
+import { ParkingModalTrigger } from '@/features/home/parking-modal'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 import { formatGoalCell } from '@/lib/match/formatMatchGoals'
 
@@ -48,7 +49,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 	const homeLogoNode = homeLogo ? (
 		<Image
 			src={homeLogo}
-			alt=""
+			alt=''
 			width={100}
 			height={100}
 			className={styles.teamLogo}
@@ -60,7 +61,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 	const awayLogoNode = awayLogo ? (
 		<Image
 			src={awayLogo}
-			alt=""
+			alt=''
 			width={100}
 			height={100}
 			className={styles.teamLogo}
@@ -82,17 +83,21 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 			) : null}
 
 			{showFanIdBadge ? (
-				<div className={cx(styles.fanIdBadge, 'font-mono')} role="note">
+				<div className={cx(styles.fanIdBadge, 'font-mono')} role='note'>
 					FAN ID
 				</div>
 			) : null}
 
 			<div className={styles.metaBlock}>
 				{game.leagueInfo ? (
-					<p className={cx(styles.leagueLine, 'font-mono')}>{game.leagueInfo}</p>
+					<p className={cx(styles.leagueLine, 'font-mono')}>
+						{game.leagueInfo}
+					</p>
 				) : null}
 				{game.seasonTour ? (
-					<p className={cx(styles.leagueLine, 'font-mono')}>{game.seasonTour}</p>
+					<p className={cx(styles.leagueLine, 'font-mono')}>
+						{game.seasonTour}
+					</p>
 				) : null}
 				{dateTimeLine ? (
 					<div className={styles.dateRow}>
@@ -120,15 +125,13 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 									<p className={styles.teamName}>{game.homeTeam}</p>
 								) : null}
 								{homeCity ? (
-									<p className={cx(styles.teamCity, 'font-mono')}>
-										{homeCity}
-									</p>
+									<p className={cx(styles.teamCity, 'font-mono')}>{homeCity}</p>
 								) : null}
 							</div>
 						</div>
 						<div
 							className={styles.scoreRow}
-							role="group"
+							role='group'
 							aria-label={`Счёт: ${formatGoalCell(game.homeGoals)} ${formatGoalCell(game.awayGoals)}`}
 						>
 							<span className={styles.scoreCell}>
@@ -148,9 +151,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 									<p className={styles.teamName}>{game.awayTeam}</p>
 								) : null}
 								{awayCity ? (
-									<p className={cx(styles.teamCity, 'font-mono')}>
-										{awayCity}
-									</p>
+									<p className={cx(styles.teamCity, 'font-mono')}>{awayCity}</p>
 								) : null}
 							</div>
 						</div>
@@ -164,8 +165,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 						<a
 							className={cx(styles.btnPrimary, 'font-mono')}
 							href={ticket}
-							target="_blank"
-							rel="noopener noreferrer"
+							target='_blank'
+							rel='noopener noreferrer'
 						>
 							Купить билеты
 						</a>
@@ -176,8 +177,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 								<a
 									className={cx(styles.btnOutline, 'font-mono')}
 									href={vip}
-									target="_blank"
-									rel="noopener noreferrer"
+									target='_blank'
+									rel='noopener noreferrer'
 								>
 									VIP
 								</a>
@@ -186,8 +187,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 								<a
 									className={cx(styles.btnOutline, 'font-mono')}
 									href={skybox}
-									target="_blank"
-									rel="noopener noreferrer"
+									target='_blank'
+									rel='noopener noreferrer'
 								>
 									ложи
 								</a>
@@ -200,18 +201,28 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 					<p className={cx(styles.priceNote, 'font-mono')}>{priceLine}</p>
 				) : null}
 
-				{!isAway ? (
-					<div className={styles.secondaryStack}>
-						<PromoCodesModalTrigger
-							buttonClassName={cx(styles.btnSecondary, 'font-mono')}
-							iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
-						/>
-						<DirectionsModalTrigger
-							buttonClassName={cx(styles.btnSecondary, 'font-mono')}
-							iconClassName={styles.secondaryIcon}
-						/>
-					</div>
-				) : null}
+				<div className={styles.secondaryActions}>
+					{!isAway ? (
+						<div className={styles.secondaryStack}>
+							<PromoCodesModalTrigger
+								buttonClassName={cx(styles.btnSecondary, 'font-mono')}
+								iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
+							/>
+							<DirectionsModalTrigger
+								buttonClassName={cx(styles.btnSecondary, 'font-mono')}
+								iconClassName={styles.secondaryIcon}
+							/>
+							<ParkingModalTrigger
+								buttonClassName={cx(
+									styles.btnSecondary,
+									styles.parkingButton,
+									'font-mono',
+								)}
+								iconClassName={styles.secondaryIcon}
+							/>
+						</div>
+					) : null}
+				</div>
 			</div>
 		</article>
 	)
