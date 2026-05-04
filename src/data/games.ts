@@ -453,7 +453,7 @@ const games: Game[] = [
 		dateIso: '2026-05-17',
 		venue: 'away',
 		dateCard: '17.05 (ВС)',
-		time: 'SAMT 14:00',
+		time: 'SAMT 19:00',
 		// timeLocal: 'MSK 13:00',
 		stadium: 'Солидарность Самара Арена',
 		ticketLink: '', // Ссылка на объяснение покупки билетов
