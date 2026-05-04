@@ -55,5 +55,5 @@ export function MainMatchCardClient({
 		}
 	}, [sortedGames])
 
-	return <MatchCard game={game} title="След. домашний матч" />
+	return <MatchCard game={game} title='Домашний матч' />
 }
