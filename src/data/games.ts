@@ -451,7 +451,7 @@ const games: Game[] = [
 		awayTeam: 'Акрон',
 		date: '17 мая',
 		dateIso: '2026-05-17',
-		venue: 'away',
+		venue: 'home',
 		dateCard: '17.05 (ВС)',
 		time: 'SAMT 19:00',
 		// timeLocal: 'MSK 13:00',

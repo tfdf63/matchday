@@ -315,13 +315,6 @@ $fan-id-to-meta-gap: 20px;
 	color: $card-text-muted;
 }
 
-.secondaryActions {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	width: 100%;
-}
-
 .secondaryStack {
 	display: flex;
 	flex-direction: row;
@@ -364,10 +357,6 @@ $fan-id-to-meta-gap: 20px;
 	}
 }
 
-.parkingButton {
-	display: none;
-}
-
 .secondaryIcon {
 	display: flex;
 	flex-shrink: 0;
@@ -398,10 +387,6 @@ $fan-id-to-meta-gap: 20px;
 	/* Правый край как у ряда кнопок (VIP / билеты / ложи), max-width совпадает с .actions */
 	.fanIdBadge {
 		right: calc((100% - min(100%, 452px)) / 2);
-	}
-
-	.matchDateBanner {
-		left: calc((100% - min(100%, 452px)) / 2);
 	}
 
 	.metaBlock {
@@ -495,11 +480,7 @@ $fan-id-to-meta-gap: 20px;
 
 	.btnSecondary {
 		gap: 8px;
-		padding: 16px 12px;
-	}
-
-	.parkingButton {
-		display: flex;
+		padding: 16px 32px;
 	}
 }
 

@@ -8,7 +8,7 @@ import {
 	MenuTicketIcon,
 	type MenuNavItem,
 } from '@/components/Menu'
-import { useParkingModal } from '@/features/home/parking-modal'
+import { ParkingModalProvider, useParkingModal } from '@/features/home/parking-modal'
 
 const MainMenu: React.FC = () => {
 	const parkingModal = useParkingModal()
@@ -44,7 +44,11 @@ const MainMenu: React.FC = () => {
 }
 
 const MainPageClient: React.FC = () => {
-	return <MainMenu />
+	return (
+		<ParkingModalProvider>
+			<MainMenu />
+		</ParkingModalProvider>
+	)
 }
 
 export default MainPageClient

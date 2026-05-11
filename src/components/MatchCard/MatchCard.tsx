@@ -7,7 +7,6 @@ import {
 import type { Game } from '@/data/games'
 import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
-import { ParkingModalTrigger } from '@/features/home/parking-modal'
 import { getTeamLogoPath } from '@/data/teamLogos'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 import { formatGoalCell } from '@/lib/match/formatMatchGoals'
@@ -22,9 +21,15 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 export type MatchCardProps = {
 	game: Game
 	title?: string
+	/** Скрыть «Промокоды» и «Как добраться» (например, карточка в блоке Main). */
+	hideSecondaryActions?: boolean
 }
 
-export function MatchCard({ game, title = 'Следующий матч' }: MatchCardProps) {
+export function MatchCard({
+	game,
+	title = 'Следующий матч',
+	hideSecondaryActions = false,
+}: MatchCardProps) {
 	const homeLogo = getTeamLogoPath(game.homeTeam)
 	const awayLogo = getTeamLogoPath(game.awayTeam)
 	const ticket = game.ticketLink?.trim()
@@ -57,7 +62,7 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 			) : null}
 
 			{showFanIdBadge ? (
-				<div className={cx(styles.fanIdBadge, 'font-mono')} role='note'>
+				<div className={cx(styles.fanIdBadge, 'font-mono')} role="note">
 					FAN ID
 				</div>
 			) : null}
@@ -97,7 +102,7 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 						{homeLogo ? (
 							<Image
 								src={homeLogo}
-								alt=''
+								alt=""
 								width={60}
 								height={60}
 								className={styles.teamLogo}
@@ -118,7 +123,7 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 					</div>
 					<div
 						className={styles.scoreRow}
-						role='group'
+						role="group"
 						aria-label={`Счёт: ${formatGoalCell(game.homeGoals)} ${formatGoalCell(game.awayGoals)}`}
 					>
 						<span className={cx(styles.scoreCell, 'font-mono')}>
@@ -135,7 +140,7 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 						{awayLogo ? (
 							<Image
 								src={awayLogo}
-								alt=''
+								alt=""
 								width={60}
 								height={60}
 								className={styles.teamLogo}
@@ -162,8 +167,8 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 							<a
 								className={cx(styles.btnPrimary, 'font-mono')}
 								href={ticket}
-								target='_blank'
-								rel='noopener noreferrer'
+								target="_blank"
+								rel="noopener noreferrer"
 							>
 								Купить билеты
 							</a>
@@ -174,8 +179,8 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 									<a
 										className={cx(styles.btnOutline, 'font-mono')}
 										href={vip}
-										target='_blank'
-										rel='noopener noreferrer'
+										target="_blank"
+										rel="noopener noreferrer"
 									>
 										VIP
 									</a>
@@ -184,8 +189,8 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 									<a
 										className={cx(styles.btnOutline, 'font-mono')}
 										href={skybox}
-										target='_blank'
-										rel='noopener noreferrer'
+										target="_blank"
+										rel="noopener noreferrer"
 									>
 										ложи
 									</a>
@@ -198,28 +203,18 @@ export function MatchCard({ game, title = 'Следующий матч' }: Match
 						<p className={cx(styles.priceNote, 'font-mono')}>{priceLine}</p>
 					) : null}
 
-					<div className={styles.secondaryActions}>
-						{!isAway ? (
-							<div className={styles.secondaryStack}>
-								<PromoCodesModalTrigger
-									buttonClassName={cx(styles.btnSecondary, 'font-mono')}
-									iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
-								/>
-								<DirectionsModalTrigger
-									buttonClassName={cx(styles.btnSecondary, 'font-mono')}
-									iconClassName={styles.secondaryIcon}
-								/>
-							</div>
-						) : null}
-						<ParkingModalTrigger
-							buttonClassName={cx(
-								styles.btnSecondary,
-								styles.parkingButton,
-								'font-mono',
-							)}
-							iconClassName={styles.secondaryIcon}
-						/>
-					</div>
+					{!isAway && !hideSecondaryActions ? (
+						<div className={styles.secondaryStack}>
+							<PromoCodesModalTrigger
+								buttonClassName={cx(styles.btnSecondary, 'font-mono')}
+								iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
+							/>
+							<DirectionsModalTrigger
+								buttonClassName={cx(styles.btnSecondary, 'font-mono')}
+								iconClassName={styles.secondaryIcon}
+							/>
+						</div>
+					) : null}
 				</div>
 			</div>
 		</article>
