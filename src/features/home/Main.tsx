@@ -4,7 +4,7 @@ import type { FC } from 'react'
 
 import games from '@/data/games'
 import {
-	pickHomeHeroGameByMatchEnd,
+	pickPromotedHeroGame,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
@@ -34,7 +34,7 @@ const sortedGamesMain = sortGamesByDateIso(games)
 
 const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 	const game =
-		pickHomeHeroGameByMatchEnd(sortedGamesMain) ?? sortedGamesMain[0]
+		pickPromotedHeroGame(sortedGamesMain) ?? sortedGamesMain[0]
 
 	return (
 		<div className={cx(styles.main, withBottomMenu && styles.withBottomMenu)}>

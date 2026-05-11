@@ -23,6 +23,10 @@ export type StarPlayerMetric = {
 
 export type StarPlayerProfile = {
 	id: string
+	/** Идентификатор игры из `games` для вкладки «Следующий матч». */
+	featuredNextGameId?: string
+	/** Идентификатор игры из `games` для вкладки «Последний матч». */
+	featuredPreviousGameId?: string
 	tagLabel: string
 	firstName: string
 	lastName: string
@@ -42,6 +46,8 @@ export type StarPlayerProfile = {
 
 export const starPlayer: StarPlayerProfile = {
 	id: '1',
+	featuredNextGameId: '20',
+	featuredPreviousGameId: '19',
 	tagLabel: '#лучший игрок',
 	firstName: 'Артем',
 	lastName: 'Дзюба',

@@ -5,8 +5,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import type { Game } from '@/data/games'
 import {
-	getHomeHeroGameSwitchDate,
-	pickHomeHeroGameByMatchEnd,
+	getPromotedHeroGameSwitchDate,
+	pickPromotedHeroGame,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
@@ -61,7 +61,7 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 
 	const [selectedId, setSelectedId] = useState<string | null>(() => {
 		const sorted = sortGamesByDateIso(games)
-		return pickHomeHeroGameByMatchEnd(sorted)?.id ?? null
+		return pickPromotedHeroGame(sorted)?.id ?? null
 	})
 
 	useEffect(() => {
@@ -69,9 +69,9 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 			timeoutRef.current = null
 
 			const now = new Date()
-			setSelectedId(pickHomeHeroGameByMatchEnd(sortedGames, now)?.id ?? null)
+			setSelectedId(pickPromotedHeroGame(sortedGames, now)?.id ?? null)
 
-			const switchDate = getHomeHeroGameSwitchDate(sortedGames, now)
+			const switchDate = getPromotedHeroGameSwitchDate(sortedGames, now)
 			if (!switchDate) return
 
 			const delay = Math.min(
@@ -98,7 +98,7 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 			? sortedGames.find((g) => g.id === selectedId)
 			: undefined
 		if (found) return found
-		return pickHomeHeroGameByMatchEnd(sortedGames) ?? sortedGames[0] ?? null
+		return pickPromotedHeroGame(sortedGames) ?? sortedGames[0] ?? null
 	}, [sortedGames, selectedId])
 
 	const selectedIndex = useMemo(() => {
@@ -163,6 +163,7 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 									<UpcomingMatchCard
 										key={selectedGame.id}
 										game={selectedGame}
+										hideSecondaryActions
 									/>
 								) : null}
 							</div>

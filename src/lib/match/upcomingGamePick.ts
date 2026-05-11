@@ -1,4 +1,4 @@
-import type { Game } from '@/data/games'
+import { PROMOTED_MAIN_CALENDAR_GAME_ID, type Game } from '@/data/games'
 
 const MATCH_END_OFFSET_MS = 2 * 60 * 60 * 1000
 
@@ -98,6 +98,39 @@ export function getHeroGameSwitchDate(
 	now: Date = new Date(),
 ): Date | null {
 	const game = pickHeroGameByMatchEnd(sorted, now)
+	if (!game) return null
+
+	const endDate = getGameEndDate(game)
+	if (!endDate || endDate.getTime() <= now.getTime()) return null
+
+	return endDate
+}
+
+/**
+ * Карточка Main / «Календарь матчей»: пока не закончился промо-матч
+ * (`PROMOTED_MAIN_CALENDAR_GAME_ID`), показываем его; иначе — общее правило `pickHeroGameByMatchEnd`.
+ */
+export function pickPromotedHeroGame(
+	sorted: Game[],
+	now: Date = new Date(),
+): Game | null {
+	const promoted = sorted.find(g => g.id === PROMOTED_MAIN_CALENDAR_GAME_ID)
+	if (promoted) {
+		const endDate = getGameEndDate(promoted)
+		if (endDate) {
+			if (endDate.getTime() > now.getTime()) return promoted
+		} else if (promoted.dateIso >= getLocalDateIso(now)) {
+			return promoted
+		}
+	}
+	return pickHeroGameByMatchEnd(sorted, now)
+}
+
+export function getPromotedHeroGameSwitchDate(
+	sorted: Game[],
+	now: Date = new Date(),
+): Date | null {
+	const game = pickPromotedHeroGame(sorted, now)
 	if (!game) return null
 
 	const endDate = getGameEndDate(game)

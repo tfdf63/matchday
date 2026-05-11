@@ -21,9 +21,14 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 
 export type UpcomingMatchCardProps = {
 	game: Game
+	/** Скрыть «Промокоды» и «Как добраться» в календаре матчей. */
+	hideSecondaryActions?: boolean
 }
 
-export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
+export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
+	game,
+	hideSecondaryActions = false,
+}) => {
 	const homeLogo = getTeamLogoPath(game.homeTeam)
 	const awayLogo = getTeamLogoPath(game.awayTeam)
 	const ticket = game.ticketLink?.trim()
@@ -200,7 +205,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({ game }) => {
 					<p className={cx(styles.priceNote, 'font-mono')}>{priceLine}</p>
 				) : null}
 
-				{!isAway ? (
+				{!isAway && !hideSecondaryActions ? (
 					<div className={styles.secondaryStack}>
 						<PromoCodesModalTrigger
 							buttonClassName={cx(styles.btnSecondary, 'font-mono')}

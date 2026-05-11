@@ -1,12 +1,13 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Game } from '@/data/games'
+import { PROMOTED_MAIN_CALENDAR_GAME_ID, type Game } from '@/data/games'
 
 import {
 	getGameEndDate,
 	getHeroGameSwitchDate,
 	pickHomeHeroGameByMatchEnd,
 	pickHeroGameByMatchEnd,
+	pickPromotedHeroGame,
 	sortGamesByDateIso,
 } from './upcomingGamePick'
 
@@ -46,6 +47,20 @@ describe('pickHeroGameByMatchEnd', () => {
 
 		expect(getHeroGameSwitchDate(games, now)?.toISOString()).toBe(
 			'2026-05-03T16:00:00.000Z',
+		)
+	})
+})
+
+describe('pickPromotedHeroGame', () => {
+	it('prefers promoted game id before its end while an earlier match is still current', () => {
+		const games = sortGamesByDateIso([
+			makeGame('19', '2026-05-11', 'SAMT 14:00'),
+			makeGame(PROMOTED_MAIN_CALENDAR_GAME_ID, '2026-05-17', 'SAMT 19:00', 'away'),
+		])
+		const now = new Date('2026-05-11T15:00:00+04:00')
+
+		expect(pickPromotedHeroGame(games, now)?.id).toBe(
+			PROMOTED_MAIN_CALENDAR_GAME_ID,
 		)
 	})
 })

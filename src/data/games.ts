@@ -42,6 +42,9 @@ export function getOpponentTeamName(game: Game): string | undefined {
 	return home
 }
 
+/** Матч для акцентной карточки в Main и «Календарь матчей» (пока не истёк по времени окончания). */
+export const PROMOTED_MAIN_CALENDAR_GAME_ID = '20' as const
+
 const games: Game[] = [
 	// {
 	// 	id: '1',
@@ -444,6 +447,8 @@ const games: Game[] = [
 		},
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		homeGoals: 1,
+		awayGoals: 3,
 	},
 	{
 		id: '20',
@@ -451,7 +456,7 @@ const games: Game[] = [
 		awayTeam: 'Акрон',
 		date: '17 мая',
 		dateIso: '2026-05-17',
-		venue: 'home',
+		venue: 'away',
 		dateCard: '17.05 (ВС)',
 		time: 'SAMT 19:00',
 		// timeLocal: 'MSK 13:00',

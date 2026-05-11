@@ -34,14 +34,22 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 }) => {
 	const todayIso = useMemo(() => getLocalDateIso(), [])
 	const sortedGames = useMemo(() => sortGamesByDateIso(games), [games])
-	const previousGame = useMemo(
-		() => pickLastPastGame(sortedGames, todayIso),
-		[sortedGames, todayIso],
-	)
-	const nextGame = useMemo(
-		() => pickHeroGame(sortedGames, todayIso),
-		[sortedGames, todayIso],
-	)
+	const previousGame = useMemo(() => {
+		const id = profileData.featuredPreviousGameId?.trim()
+		if (id) {
+			const featured = sortedGames.find(g => g.id === id)
+			if (featured) return featured
+		}
+		return pickLastPastGame(sortedGames, todayIso)
+	}, [sortedGames, todayIso, profileData.featuredPreviousGameId])
+	const nextGame = useMemo(() => {
+		const id = profileData.featuredNextGameId?.trim()
+		if (id) {
+			const featured = sortedGames.find(g => g.id === id)
+			if (featured) return featured
+		}
+		return pickHeroGame(sortedGames, todayIso)
+	}, [sortedGames, todayIso, profileData.featuredNextGameId])
 
 	const [activeTab, setActiveTab] = useState<'previous' | 'next'>('next')
 	const activeMatch = activeTab === 'next' ? nextGame : previousGame
