@@ -461,7 +461,7 @@ const games: Game[] = [
 		time: 'SAMT 19:00',
 		// timeLocal: 'MSK 13:00',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '', // Ссылка на объяснение покупки билетов
+		ticketLink: 'https://fcakron.ru/news/2407', // Ссылка на объяснение покупки билетов
 		ticketLinkVip: '',
 		ticketLinkSkybox: '',
 		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',

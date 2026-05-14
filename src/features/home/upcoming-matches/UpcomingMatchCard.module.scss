@@ -459,6 +459,11 @@ $fan-id-to-meta-gap: 20px;
 		min-width: 0;
 	}
 
+	/* Только «Купить билеты» (без VIP / лож): на всю ширину .actions */
+	.primaryStackSolo .btnPrimary {
+		flex: 1 1 0;
+	}
+
 	.outlineStack .btnOutline:only-of-type {
 		order: 1;
 		flex: 1 1 0;
@@ -552,6 +557,10 @@ $fan-id-to-meta-gap: 20px;
 		padding-bottom: 14px;
 	}
 
+	.primaryStackSolo .btnPrimary {
+		flex: 1 1 0;
+	}
+
 	.btnOutline {
 		min-height: 54px;
 		padding-top: 16px;
@@ -627,6 +636,10 @@ $fan-id-to-meta-gap: 20px;
 		padding-top: 14px;
 		padding-bottom: 14px;
 		font-size: 14px;
+	}
+
+	.primaryStackSolo .btnPrimary {
+		flex: 1 1 0;
 	}
 
 	.btnOutline {
