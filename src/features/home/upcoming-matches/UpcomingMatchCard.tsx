@@ -35,6 +35,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	const vip = game.ticketLinkVip?.trim()
 	const skybox = game.ticketLinkSkybox?.trim()
 	const hasExtraTicketLinks = Boolean(vip || skybox)
+	const vipLabel = game.ticketLinkVipLabel?.trim() || 'VIP'
 	const isAway = game.venue === 'away'
 	const priceLine =
 		!isAway &&
@@ -190,7 +191,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									VIP
+									{vipLabel}
 								</a>
 							) : null}
 							{skybox ? (

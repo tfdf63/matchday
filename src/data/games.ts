@@ -10,6 +10,8 @@ export interface Game {
 	stadium?: string
 	ticketLink?: string
 	ticketLinkVip?: string
+	/** Подпись кнопки для `ticketLinkVip`; по умолчанию «VIP». */
+	ticketLinkVipLabel?: string
 	ticketLinkSkybox?: string
 	leagueInfo?: string
 	/** Сезон и тур — вторая строка под названием лиги на карточке матча. */
@@ -462,7 +464,9 @@ const games: Game[] = [
 		// timeLocal: 'MSK 13:00',
 		stadium: 'Солидарность Самара Арена',
 		ticketLink: 'https://fcakron.ru/news/2407', // Ссылка на объяснение покупки билетов
-		ticketLinkVip: '',
+		ticketLinkVip:
+			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a',
+		ticketLinkVipLabel: 'Автобус',
 		ticketLinkSkybox: '',
 		leagueInfo: 'МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
 		seasonTour: '2025/2026 30 ТУР',

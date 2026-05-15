@@ -35,6 +35,7 @@ export function MatchCard({
 	const ticket = game.ticketLink?.trim()
 	const vip = game.ticketLinkVip?.trim()
 	const skybox = game.ticketLinkSkybox?.trim()
+	const vipLabel = game.ticketLinkVipLabel?.trim() || 'VIP'
 	const isAway = game.venue === 'away'
 	const priceLine =
 		!isAway &&
@@ -182,7 +183,7 @@ export function MatchCard({
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										VIP
+										{vipLabel}
 									</a>
 								) : null}
 								{skybox ? (
