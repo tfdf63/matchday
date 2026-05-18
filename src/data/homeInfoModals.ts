@@ -13,9 +13,16 @@ export const HOME_OFFERS_TABS: ReadonlyArray<{
 	id: HomeInfoModalVariant
 	label: string
 	indexLabel: string
+	/** Доп. подпись в строке меню (например, статус раздела). */
+	menuNote?: string
 }> = [
 	{ id: 'promo', label: 'Промокоды', indexLabel: '[01]' },
-	{ id: 'tariffs', label: 'тарифы', indexLabel: '[02]' },
+	{
+		id: 'tariffs',
+		label: 'тарифы',
+		indexLabel: '[02]',
+		menuNote: 'НЕ ДЕЙСТВУЮТ',
+	},
 	{ id: 'socialTickets', label: 'Социальные билеты', indexLabel: '[03]' },
 ]
 

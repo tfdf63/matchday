@@ -56,10 +56,6 @@ export function MainMatchCardClient({
 	}, [sortedGames])
 
 	return (
-		<MatchCard
-			game={game}
-			title='Домашний матч'
-			hideSecondaryActions
-		/>
+		<MatchCard game={game} title='Домашний матч' />
 	)
 }

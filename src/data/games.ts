@@ -494,7 +494,8 @@ const games: Game[] = [
 		ticketLinkVip: '',
 		ticketLinkVipLabel: '',
 		ticketLinkSkybox: '',
-		leagueInfo: 'Переходный матч между командами\nклубов РПЛи Первой лиги ФНЛ',
+		leagueInfo:
+			'VK Видео Переходный матч между командами клубов РПЛ и Первой лиги ФНЛ',
 		seasonTour: '2025/2026',
 		priceIncreaseDates: {
 			first: ' ',
@@ -514,11 +515,14 @@ const games: Game[] = [
 		time: 'SAMT 19:30',
 		// timeLocal: 'MSK 19:30',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '', // Ссылка на объяснение покупки билетов
-		ticketLinkVip: '',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@64713091?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51', // Ссылка на объяснение покупки билетов
+		ticketLinkVip:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@64713091?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
 		ticketLinkVipLabel: '',
 		ticketLinkSkybox: '',
-		leagueInfo: 'Переходный матч между командами\nклубов РПЛи Первой лиги ФНЛ',
+		leagueInfo:
+			'VK Видео Переходный матч между командами клубов РПЛ и Первой лиги ФНЛ',
 		seasonTour: '2025/2026',
 		priceIncreaseDates: {
 			first: ' ',

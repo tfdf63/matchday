@@ -94,6 +94,13 @@ export const HomeInfoModalView: FC = () => {
 								>
 									<span className={styles.tabLabel}>{tab.label}</span>
 									<span className={styles.tabIndex}>{tab.indexLabel}</span>
+									{tab.menuNote ? (
+										<span
+											className={cx(styles.tabMenuNote, 'font-mono')}
+										>
+											{tab.menuNote}
+										</span>
+									) : null}
 								</button>
 							)
 						})}
