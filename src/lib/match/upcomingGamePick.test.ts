@@ -74,6 +74,8 @@ describe('pickPromotedHomeHeroGame', () => {
 			makeGame('home-next', '2026-05-23', 'SAMT 19:30', 'home'),
 		])
 		const now = new Date('2026-05-17T12:00:00+04:00')
+
+		expect(pickPromotedHomeHeroGame(games, now)?.id).toBe('home-next')
 	})
 
 	it('если промо-матч домашний и ещё идёт — показываем промо', () => {
