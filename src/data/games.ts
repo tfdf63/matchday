@@ -34,7 +34,7 @@ export interface Game {
 		second?: string // Второе повышение цен
 	}
 	fanIdStatus: 'Без fan id' | 'Fan id'
-	promoType?: 'cup' | 'rpl'
+	promoType?: 'cup' | 'rpl' | 'vk'
 }
 
 /** Логотип соперника ФК Акрон для полосы календаря. */
@@ -475,6 +475,56 @@ const games: Game[] = [
 			second: ' ',
 		},
 		fanIdStatus: 'Fan id',
+		promoType: 'rpl',
+		homeGoals: 4,
+		awayGoals: 1,
+	},
+	{
+		id: '21',
+		homeTeam: 'Ротор',
+		awayTeam: 'Акрон',
+		date: '20 мая',
+		dateIso: '2026-05-20',
+		venue: 'away',
+		dateCard: '20.05 (СР)',
+		time: 'SAMT 20:30',
+		timeLocal: 'MSK 19:30',
+		stadium: 'Волгоград Арена',
+		ticketLink: '', // Ссылка на объяснение покупки билетов
+		ticketLinkVip: '',
+		ticketLinkVipLabel: '',
+		ticketLinkSkybox: '',
+		leagueInfo: 'Переходный матч между командами\nклубов РПЛи Первой лиги ФНЛ',
+		seasonTour: '2025/2026',
+		priceIncreaseDates: {
+			first: ' ',
+			second: ' ',
+		},
+		fanIdStatus: 'Без fan id',
+		promoType: 'rpl',
+	},
+	{
+		id: '22',
+		homeTeam: 'Акрон',
+		awayTeam: 'Ротор',
+		date: '23 мая',
+		dateIso: '2026-05-23',
+		venue: 'home',
+		dateCard: '23.05 (СБ)',
+		time: 'SAMT 19:30',
+		// timeLocal: 'MSK 19:30',
+		stadium: 'Солидарность Самара Арена',
+		ticketLink: '', // Ссылка на объяснение покупки билетов
+		ticketLinkVip: '',
+		ticketLinkVipLabel: '',
+		ticketLinkSkybox: '',
+		leagueInfo: 'Переходный матч между командами\nклубов РПЛи Первой лиги ФНЛ',
+		seasonTour: '2025/2026',
+		priceIncreaseDates: {
+			first: ' ',
+			second: ' ',
+		},
+		fanIdStatus: 'Без fan id',
 		promoType: 'rpl',
 	},
 ]

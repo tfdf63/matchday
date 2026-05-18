@@ -45,7 +45,10 @@ export function MatchCard({
 		.filter(Boolean)
 		.join(' ')
 	const timeLocal = game.timeLocal?.trim()
-	const showFanIdBadge = game.fanIdStatus === 'Fan id'
+	const showFanIdBadge =
+		game.fanIdStatus === 'Fan id' || game.fanIdStatus === 'Без fan id'
+	const fanIdBadgeText =
+		game.fanIdStatus === 'Fan id' ? 'FAN ID' : 'Без fan id'
 	const now = new Date()
 	const matchDateBannerText = getMatchDateBannerText(game, now)
 	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
@@ -64,7 +67,7 @@ export function MatchCard({
 
 			{showFanIdBadge ? (
 				<div className={cx(styles.fanIdBadge, 'font-mono')} role="note">
-					FAN ID
+					{fanIdBadgeText}
 				</div>
 			) : null}
 

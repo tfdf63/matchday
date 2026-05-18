@@ -165,6 +165,40 @@ export function getHomeHeroGameSwitchDate(
 }
 
 /**
+ * Карточка Main: следующий домашний матч с учётом условного окончания.
+ * Промо (`PROMOTED_MAIN_CALENDAR_GAME_ID`) учитывается только если это домашний матч;
+ * иначе — `pickHomeHeroGameByMatchEnd`.
+ */
+export function pickPromotedHomeHeroGame(
+	sorted: Game[],
+	now: Date = new Date(),
+): Game | null {
+	const promoted = sorted.find((g) => g.id === PROMOTED_MAIN_CALENDAR_GAME_ID)
+	if (promoted?.venue === 'home') {
+		const endDate = getGameEndDate(promoted)
+		if (endDate) {
+			if (endDate.getTime() > now.getTime()) return promoted
+		} else if (promoted.dateIso >= getLocalDateIso(now)) {
+			return promoted
+		}
+	}
+	return pickHomeHeroGameByMatchEnd(sorted, now)
+}
+
+export function getPromotedHomeHeroGameSwitchDate(
+	sorted: Game[],
+	now: Date = new Date(),
+): Date | null {
+	const game = pickPromotedHomeHeroGame(sorted, now)
+	if (!game) return null
+
+	const endDate = getGameEndDate(game)
+	if (!endDate || endDate.getTime() <= now.getTime()) return null
+
+	return endDate
+}
+
+/**
  * Последний сыгранный матч: с наибольшим `dateIso`, строго меньшим `todayIso`.
  * Если все матчи не раньше сегодняшнего дня — `null`.
  */

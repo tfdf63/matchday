@@ -45,7 +45,10 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 		.filter(Boolean)
 		.join(' ')
 	const timeLocal = game.timeLocal?.trim()
-	const showFanIdBadge = game.fanIdStatus === 'Fan id'
+	const showFanIdBadge =
+		game.fanIdStatus === 'Fan id' || game.fanIdStatus === 'Без fan id'
+	const fanIdBadgeText =
+		game.fanIdStatus === 'Fan id' ? 'FAN ID' : 'Без fan id'
 	const homeCity = game.homeTeamCity?.trim()
 	const awayCity = game.awayTeamCity?.trim()
 	const now = new Date()
@@ -90,7 +93,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 
 			{showFanIdBadge ? (
 				<div className={cx(styles.fanIdBadge, 'font-mono')} role="note">
-					FAN ID
+					{fanIdBadgeText}
 				</div>
 			) : null}
 

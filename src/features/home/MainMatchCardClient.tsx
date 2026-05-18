@@ -5,8 +5,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { MatchCard } from '@/components/MatchCard'
 import type { Game } from '@/data/games'
 import {
-	getPromotedHeroGameSwitchDate,
-	pickPromotedHeroGame,
+	getPromotedHomeHeroGameSwitchDate,
+	pickPromotedHomeHeroGame,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
@@ -31,10 +31,10 @@ export function MainMatchCardClient({
 			timeoutRef.current = null
 
 			const now = new Date()
-			const nextGame = pickPromotedHeroGame(sortedGames, now)
+			const nextGame = pickPromotedHomeHeroGame(sortedGames, now)
 			if (nextGame) setGame(nextGame)
 
-			const switchDate = getPromotedHeroGameSwitchDate(sortedGames, now)
+			const switchDate = getPromotedHomeHeroGameSwitchDate(sortedGames, now)
 			if (!switchDate) return
 
 			const delay = Math.min(
@@ -58,7 +58,7 @@ export function MainMatchCardClient({
 	return (
 		<MatchCard
 			game={game}
-			title={game.venue === 'away' ? 'Гостевой матч' : 'Домашний матч'}
+			title='Домашний матч'
 			hideSecondaryActions
 		/>
 	)

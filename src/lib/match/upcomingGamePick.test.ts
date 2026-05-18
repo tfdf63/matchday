@@ -8,6 +8,7 @@ import {
 	pickHomeHeroGameByMatchEnd,
 	pickHeroGameByMatchEnd,
 	pickPromotedHeroGame,
+	pickPromotedHomeHeroGame,
 	sortGamesByDateIso,
 } from './upcomingGamePick'
 
@@ -60,6 +61,29 @@ describe('pickPromotedHeroGame', () => {
 		const now = new Date('2026-05-11T15:00:00+04:00')
 
 		expect(pickPromotedHeroGame(games, now)?.id).toBe(
+			PROMOTED_MAIN_CALENDAR_GAME_ID,
+		)
+	})
+})
+
+describe('pickPromotedHomeHeroGame', () => {
+	it('если промо-матч гостевой — показываем ближайший домашний, а не промо', () => {
+		const games = sortGamesByDateIso([
+			makeGame('19', '2026-05-11', 'SAMT 14:00'),
+			makeGame(PROMOTED_MAIN_CALENDAR_GAME_ID, '2026-05-17', 'SAMT 19:00', 'away'),
+			makeGame('home-next', '2026-05-23', 'SAMT 19:30', 'home'),
+		])
+		const now = new Date('2026-05-17T12:00:00+04:00')
+	})
+
+	it('если промо-матч домашний и ещё идёт — показываем промо', () => {
+		const games = sortGamesByDateIso([
+			makeGame('19', '2026-05-11', 'SAMT 14:00'),
+			makeGame(PROMOTED_MAIN_CALENDAR_GAME_ID, '2026-05-17', 'SAMT 19:00', 'home'),
+		])
+		const now = new Date('2026-05-11T15:00:00+04:00')
+
+		expect(pickPromotedHomeHeroGame(games, now)?.id).toBe(
 			PROMOTED_MAIN_CALENDAR_GAME_ID,
 		)
 	})
