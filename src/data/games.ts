@@ -520,7 +520,8 @@ const games: Game[] = [
 		ticketLinkVip:
 			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@64713091?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
 		ticketLinkVipLabel: '',
-		ticketLinkSkybox: '',
+		ticketLinkSkybox:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@64713091?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
 		leagueInfo:
 			'VK Видео Переходный матч между командами клубов РПЛ и Первой лиги ФНЛ',
 		seasonTour: '2025/2026',
