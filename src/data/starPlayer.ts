@@ -46,8 +46,8 @@ export type StarPlayerProfile = {
 
 export const starPlayer: StarPlayerProfile = {
 	id: '1',
-	featuredNextGameId: '21',
-	featuredPreviousGameId: '20',
+	featuredNextGameId: '22',
+	featuredPreviousGameId: '21',
 	tagLabel: '#лучший игрок',
 	firstName: 'Артем',
 	lastName: 'Дзюба',
