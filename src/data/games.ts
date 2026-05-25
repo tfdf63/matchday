@@ -533,6 +533,8 @@ const games: Game[] = [
 		},
 		fanIdStatus: 'Без fan id',
 		promoType: 'rpl',
+		homeGoals: 0,
+		awayGoals: 1,
 	},
 ]
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 
-import games from '@/data/games'
+// import games from '@/data/games'
 import Main, {
 	DirectionsModalProvider,
 	FonbetTicketBanner,
@@ -13,7 +13,6 @@ import Main, {
 	UpcomingMatches,
 	OfferSection,
 	defaultOfferContent,
-	StarPlayerSection,
 	RulesSection,
 	MerchSection,
 	FanCardSection,
@@ -42,7 +41,7 @@ const MatchesPage: React.FC = () => {
 						<MatchActivitiesSection />
 						<TicketProgramSection />
 						<SectorSection />
-						<StarPlayerSection games={games} />
+						{/* <StarPlayerSection games={games} /> */}
 						<RulesSection />
 						<MerchSection />
 						<FanCardSection />
