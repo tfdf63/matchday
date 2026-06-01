@@ -8,7 +8,9 @@ import {
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
+import { MAIN_HERO_CARD_MODE } from './mainHeroConfig'
 import { MainMatchCardClient } from './MainMatchCardClient'
+import { MainSubscriptionCard } from './MainSubscriptionCard'
 import styles from './Main.module.scss'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
@@ -118,7 +120,14 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 				</div>
 				<div className={styles.matchStack}>
 					<div className={styles.matchAnchor}>
-						<MainMatchCardClient games={sortedGamesMain} initialGame={game} />
+						{MAIN_HERO_CARD_MODE === 'match' ? (
+							<MainMatchCardClient
+								games={sortedGamesMain}
+								initialGame={game}
+							/>
+						) : (
+							<MainSubscriptionCard />
+						)}
 					</div>
 				</div>
 				<p className={styles.clubWordmark} aria-hidden>

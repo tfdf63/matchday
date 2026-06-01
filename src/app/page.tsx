@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 // import games from '@/data/games'
 import Main, {
 	DirectionsModalProvider,
-	FonbetTicketBanner,
+	// FonbetTicketBanner,
 	HomeInfoModalProvider,
 	ParkingModalProvider,
 	MatchActivitiesSection,
@@ -35,7 +35,7 @@ const MatchesPage: React.FC = () => {
 				<DirectionsModalProvider>
 					<>
 						<Main withBottomMenu />
-						<FonbetTicketBanner />
+						{/* <FonbetTicketBanner /> */}
 						<UpcomingMatches withBottomMenu />
 						<OfferSection {...defaultOfferContent} />
 						<MatchActivitiesSection />

@@ -1,0 +1,71 @@
+@use '../../styles/tokens.scss' as *;
+
+.title {
+	white-space: pre-line;
+}
+
+.formSlot {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 165px;
+	overflow: visible;
+
+	:global(.b24-form) {
+		width: 100% !important;
+		max-width: 100%;
+	}
+
+	:global(.b24-form-wrapper) {
+		width: 100% !important;
+		max-width: 100%;
+	}
+
+	:global(.b24-form-control-container) {
+		width: 100% !important;
+		max-width: 100%;
+	}
+
+	:global(.b24-form-control) {
+		box-sizing: border-box;
+		width: 100% !important;
+		max-width: 100%;
+	}
+
+	:global(.b24-form-btn) {
+		box-sizing: border-box;
+		width: 100% !important;
+		max-width: 100%;
+	}
+
+	@include from($bp-tablet-sm) {
+		min-height: 170px;
+	}
+
+	@include from($bp-tablet) {
+		min-height: 175px;
+	}
+
+	@include from($bp-laptop) {
+		min-height: 180px;
+
+		:global(.b24-form-control),
+		:global(.b24-form-btn) {
+			min-height: 48px;
+			font-size: 14px;
+		}
+	}
+
+	@include from($bp-desktop) {
+		min-height: 185px;
+	}
+
+	@include from($bp-desktop-xl) {
+		min-height: 190px;
+
+		:global(.b24-form-control),
+		:global(.b24-form-btn) {
+			min-height: 52px;
+			font-size: 16px;
+		}
+	}
+}
