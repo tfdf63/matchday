@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2024-07-01T12:00:00+03:00">
+<yml_catalog date="2026-06-07T12:00:00+04:00">
   <shop>
     <name>ФК Акрон</name>
     <company>Футбольный клуб Акрон</company>
@@ -10,86 +10,144 @@
     </currencies>
     <categories>
       <category id="1">Билеты</category>
+      <category id="2">Абонементы</category>
     </categories>
     <offers>
-      <offer id="match-2" available="true">
-        <url>https://matchday.fcakron.ru/</url>
+      <offer id="season-2026-2027" available="true">
+        <url>https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@season-65811185?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51</url>
         <price>500</price>
         <currencyId>RUR</currencyId>
-        <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/optimized/stadium/Stadium.webp</picture>
-        <name>Билет на матч Акрон — Балтика (29 июля, 19:30)</name>
+        <categoryId>2</categoryId>
+        <picture>https://matchday.fcakron.ru/images/season-tickets/1.webp</picture>
+        <name>Абонемент на сезон 2026–2027 — все сектора</name>
         <description>
           <![CDATA[
-            Матч: Акрон — Балтика<br/>
-            Дата: 29 июля 2025 (пн), 19:30<br/>
-            Стадион: Солидарность Самара Арена<br/>
-            Турнир: FONBET Кубок России 2025/2026 - 1 ТУР<br/>
-            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39873507?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51">Купить билет</a>
+            Абонемент на сезон 2026–2027 на домашние матчи ФК «Акрон» на стадионе «Солидарность Самара Арена».<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@season-65811185?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51">Купить абонемент</a>
           ]]>
         </description>
         <vendor>ФК Акрон</vendor>
-        <vendorCode>AKR-BLT-20250729</vendorCode>
+        <vendorCode>AKR-SEASON-2026-2027</vendorCode>
         <available>true</available>
       </offer>
-      <offer id="match-3" available="true">
-        <url>https://matchday.fcakron.ru/</url>
+      <offer id="match-14" available="true">
+        <url>https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61062106?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51</url>
         <price>500</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/optimized/stadium/Stadium.webp</picture>
-        <name>Билет на матч Акрон — Спартак (3 августа, 14:30)</name>
-        <description>
-          <![CDATA[
-            Матч: Акрон — Спартак<br/>
-            Дата: 3 августа 2025 (вс), 14:30<br/>
-            Стадион: Солидарность Самара Арена<br/>
-            Турнир: МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026 3 ТУР<br/>
-            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39719522?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51">Купить билет</a>
-          ]]>
-        </description>
-        <vendor>ФК Акрон</vendor>
-        <vendorCode>AKR-SPA-20250803</vendorCode>
-        <available>true</available>
-      </offer>
-      <offer id="match-4" available="true">
-        <url>https://matchday.fcakron.ru/</url>
-        <price>500</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/optimized/stadium/Stadium.webp</picture>
-        <name>Билет на матч Акрон — ЦСКА (12 августа, 17:15)</name>
+        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <name>Билет на матч Акрон — ЦСКА (4 апреля, 14:00)</name>
         <description>
           <![CDATA[
             Матч: Акрон — ЦСКА<br/>
-            Дата: 12 августа 2025 (вт), 17:15<br/>
+            Дата: 04.04.2026 (СБ), SAMT 14:00<br/>
             Стадион: Солидарность Самара Арена<br/>
-            Турнир: FONBET Кубок России 2025/2026 - 2 ТУР<br/>
-            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@39879676?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51">Купить билет</a>
+            Турнир: МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА, 2025/2026 23 ТУР<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61062106?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51">Купить билет</a>
           ]]>
         </description>
         <vendor>ФК Акрон</vendor>
-        <vendorCode>AKR-CSK-20250812</vendorCode>
+        <vendorCode>AKR-CSK-20260404</vendorCode>
         <available>true</available>
       </offer>
-      <offer id="match-5" available="true">
-        <url>https://matchday.fcakron.ru/</url>
+      <offer id="match-15" available="true">
+        <url>https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61113918?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51</url>
         <price>500</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/optimized/stadium/Stadium.webp</picture>
-        <name>Билет на матч Акрон — Оренбург (20 августа, 18:00)</name>
+        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <name>Билет на матч Акрон — Динамо (13 апреля, 18:15)</name>
         <description>
           <![CDATA[
-            Матч: Акрон — Оренбург<br/>
-            Дата: 20 августа 2025 (ср), 18:00<br/>
+            Матч: Акрон — Динамо Мск<br/>
+            Дата: 13.04.2026 (ПН), SAMT 18:15<br/>
             Стадион: Солидарность Самара Арена<br/>
-            Турнир: МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА 2025/2026<br/>
-            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@40529687?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51">Купить билет</a>
+            Турнир: МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА, 2025/2026 24 ТУР<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61113918?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51">Купить билет</a>
           ]]>
         </description>
         <vendor>ФК Акрон</vendor>
-        <vendorCode>AKR-ORN-20250820</vendorCode>
+        <vendorCode>AKR-DIN-20260413</vendorCode>
+        <available>true</available>
+      </offer>
+      <offer id="match-16" available="true">
+        <url>https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61067766?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51</url>
+        <price>500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <name>Билет на матч Акрон — Динамо Мх (23 апреля, 18:30)</name>
+        <description>
+          <![CDATA[
+            Матч: Акрон — Динамо Мх<br/>
+            Дата: 23.04.2026 (ЧТ), SAMT 18:30<br/>
+            Стадион: Солидарность Самара Арена<br/>
+            Турнир: МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА, 2025/2026 26 ТУР<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61067766?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51">Купить билет</a>
+          ]]>
+        </description>
+        <vendor>ФК Акрон</vendor>
+        <vendorCode>AKR-DIN-20260423</vendorCode>
+        <available>true</available>
+      </offer>
+      <offer id="match-18" available="true">
+        <url>https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61074227?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51</url>
+        <price>500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <name>Билет на матч Акрон — Краснодар (3 мая, 18:00)</name>
+        <description>
+          <![CDATA[
+            Матч: Акрон — Краснодар<br/>
+            Дата: 03.05.2026 (ВС), SAMT 18:00<br/>
+            Стадион: Солидарность Самара Арена<br/>
+            Турнир: МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА, 2025/2026 28 ТУР<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61074227?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51">Купить билет</a>
+          ]]>
+        </description>
+        <vendor>ФК Акрон</vendor>
+        <vendorCode>AKR-KRA-20260503</vendorCode>
+        <available>true</available>
+      </offer>
+      <offer id="match-19" available="true">
+        <url>https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61076128?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51</url>
+        <price>500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <name>Билет на матч Акрон — Ростов (11 мая, 14:00)</name>
+        <description>
+          <![CDATA[
+            Матч: Акрон — Ростов<br/>
+            Дата: 11.05.2026 (ПН), SAMT 14:00<br/>
+            Стадион: Солидарность Самара Арена<br/>
+            Турнир: МИР РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА, 2025/2026 29 ТУР<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@61076128?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51">Купить билет</a>
+          ]]>
+        </description>
+        <vendor>ФК Акрон</vendor>
+        <vendorCode>AKR-ROS-20260511</vendorCode>
+        <available>true</available>
+      </offer>
+      <offer id="match-22" available="true">
+        <url>https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@64713091?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51</url>
+        <price>500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <name>Билет на матч Акрон — Ротор (23 мая, 19:30)</name>
+        <description>
+          <![CDATA[
+            Матч: Акрон — Ротор<br/>
+            Дата: 23.05.2026 (СБ), SAMT 19:30<br/>
+            Стадион: Солидарность Самара Арена<br/>
+            Турнир: VK Видео Переходный матч, 2025/2026<br/>
+            <a href="https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@64713091?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&amp;regionId=51">Купить билет</a>
+          ]]>
+        </description>
+        <vendor>ФК Акрон</vendor>
+        <vendorCode>AKR-ROT-20260523</vendorCode>
         <available>true</available>
       </offer>
     </offers>

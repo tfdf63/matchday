@@ -2,7 +2,12 @@ import type { Metadata, Viewport } from 'next'
 import { IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
 import { SiteFooter } from '@/components/Footer'
+import { SeoJsonLd } from '@/components/SeoJsonLd/SeoJsonLd'
 import { AnalyticsScripts } from '@/lib/analytics/AnalyticsScripts'
+import {
+	buildOrganizationJsonLd,
+	buildRootMetadata,
+} from '@/lib/seo'
 import '../styles/globals.css'
 import '../styles/fonts.css'
 
@@ -20,42 +25,7 @@ export const viewport: Viewport = {
 	viewportFit: 'cover',
 }
 
-export const metadata: Metadata = {
-	title: {
-		template: 'ФК Акрон | %s',
-		default: 'ФК Акрон - Билеты на матчи',
-	},
-	description:
-		'Купить билеты на матчи ФК Акрон в Самаре. Расписание игр, абонементы, VIP-ложи. Официальный сайт клуба.',
-	keywords:
-		'ФК Акрон, билеты на футбол, матчи Акрон, стадион Самара, купить билет, абонемент, VIP, расписание игр',
-	icons: {
-		icon: '/favicon.ico',
-	},
-	// Предотвращение преобразования страницы через Google Web Light
-	other: {
-		googlebot: 'notranslate',
-		google: 'notranslate',
-		'X-Frame-Options': 'SAMEORIGIN',
-		'Content-Security-Policy': "frame-ancestors 'self'",
-		'Cache-Control': 'no-transform',
-		// Запрет Apple на форматирование телефонных номеров и адресов
-		'format-detection': 'telephone=no, address=no, email=no, date=no',
-		// Запрет на автоматический перевод
-		'google-site-verification': process.env.GOOGLE_SITE_VERIFICATION || '',
-	},
-	// Запрет на индексацию iframe
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			'max-image-preview': 'large',
-			'max-snippet': -1,
-		},
-	},
-}
+export const metadata: Metadata = buildRootMetadata()
 
 export default function RootLayout({
 	children,
@@ -73,7 +43,6 @@ export default function RootLayout({
 					crossOrigin='anonymous'
 					fetchPriority='high'
 				/>
-				{/* Preconnect для внешних доменов */}
 				<link rel='preconnect' href='https://top-fwz1.mail.ru' />
 				<link rel='preconnect' href='https://mc.yandex.ru' />
 				<link rel='preconnect' href='https://st.top100.ru' />
@@ -90,12 +59,9 @@ export default function RootLayout({
 					`,
 					}}
 				/>
-				{/* Запрет Web Light и других трансформаций */}
 				<meta name='googlebot' content='notranslate' />
 				<meta name='google' content='notranslate' />
 				<meta httpEquiv='Cache-Control' content='no-transform' />
-
-				{/* Геолокация для локального SEO */}
 				<meta name='geo.placename' content='Samara, Russia' />
 				<meta
 					name='geo.position'
@@ -103,27 +69,7 @@ export default function RootLayout({
 				/>
 				<meta name='geo.region' content='RU-' />
 				<meta name='ICBM' content='53.27804484340651, 50.23771335335012' />
-				<script
-					type='application/ld+json'
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify({
-							'@context': 'https://schema.org',
-							'@type': 'SportsOrganization',
-							name: 'ФК Акрон',
-							url: 'https://matchday.fcakron.ru',
-							logo: 'https://matchday.fcakron.ru/images/akron-logo.svg',
-							description:
-								'Официальный сайт ФК Акрон для покупки билетов на матчи',
-							address: {
-								'@type': 'PostalAddress',
-								addressLocality: 'Самара',
-								addressCountry: 'RU',
-							},
-							sport: 'Футбол',
-							league: 'Российская Премьер-Лига',
-						}),
-					}}
-				/>
+				<SeoJsonLd data={buildOrganizationJsonLd()} />
 			</head>
 			<body className={ibmPlexMono.variable}>
 				<AnalyticsScripts />

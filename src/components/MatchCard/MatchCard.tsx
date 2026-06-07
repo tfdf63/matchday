@@ -106,7 +106,11 @@ export function MatchCard({
 						{homeLogo ? (
 							<Image
 								src={homeLogo}
-								alt=""
+								alt={
+									game.homeTeam
+										? `Логотип ${game.homeTeam}`
+										: 'Логотип команды хозяев'
+								}
 								width={60}
 								height={60}
 								className={styles.teamLogo}
@@ -144,7 +148,11 @@ export function MatchCard({
 						{awayLogo ? (
 							<Image
 								src={awayLogo}
-								alt=""
+								alt={
+									game.awayTeam
+										? `Логотип ${game.awayTeam}`
+										: 'Логотип команды гостей'
+								}
 								width={60}
 								height={60}
 								className={styles.teamLogo}

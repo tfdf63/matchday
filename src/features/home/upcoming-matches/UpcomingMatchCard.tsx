@@ -58,7 +58,9 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	const homeLogoNode = homeLogo ? (
 		<Image
 			src={homeLogo}
-			alt=""
+			alt={
+				game.homeTeam ? `Логотип ${game.homeTeam}` : 'Логотип команды хозяев'
+			}
 			width={100}
 			height={100}
 			className={styles.teamLogo}
@@ -70,7 +72,9 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	const awayLogoNode = awayLogo ? (
 		<Image
 			src={awayLogo}
-			alt=""
+			alt={
+				game.awayTeam ? `Логотип ${game.awayTeam}` : 'Логотип команды гостей'
+			}
 			width={100}
 			height={100}
 			className={styles.teamLogo}

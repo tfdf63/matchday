@@ -1,10 +1,10 @@
 import React from 'react'
-import { Metadata } from 'next'
 
-// import games from '@/data/games'
+import games from '@/data/games'
+import { faqItems } from '@/data/faq'
+import { SeoJsonLd } from '@/components/SeoJsonLd/SeoJsonLd'
 import Main, {
 	DirectionsModalProvider,
-	// FonbetTicketBanner,
 	HomeInfoModalProvider,
 	ParkingModalProvider,
 	MatchActivitiesSection,
@@ -16,39 +16,39 @@ import Main, {
 	RulesSection,
 	MerchSection,
 	FanCardSection,
-	// FaqSection,
+	FaqSection,
 	MarqueeSection,
 } from '@/features/home'
+import {
+	buildFaqPageJsonLd,
+	buildSportsEventsJsonLd,
+} from '@/lib/seo'
 import MainPageClient from './MainPageClient'
 
-export const metadata: Metadata = {
-	description:
-		'Купить билеты на матчи ФК Акрон в Самаре. Расписание игр, абонементы, VIP-ложи. Официальный сайт клуба с актуальными ценами и бронированием.',
-	keywords:
-		'ФК Акрон, билеты на футбол, матчи Акрон, стадион Самара, купить билет, абонемент, VIP, расписание игр',
-}
+const faqJsonLd = buildFaqPageJsonLd(faqItems)
+const eventsJsonLd = buildSportsEventsJsonLd(games)
 
 const MatchesPage: React.FC = () => {
 	return (
 		<ParkingModalProvider>
 			<HomeInfoModalProvider>
 				<DirectionsModalProvider>
-					<>
+					<main id='content'>
+						<SeoJsonLd data={faqJsonLd} />
+						<SeoJsonLd data={eventsJsonLd} />
 						<Main withBottomMenu />
-						{/* <FonbetTicketBanner /> */}
 						<UpcomingMatches withBottomMenu />
 						<OfferSection {...defaultOfferContent} />
 						<MatchActivitiesSection />
 						<TicketProgramSection />
 						<SectorSection />
-						{/* <StarPlayerSection games={games} /> */}
 						<RulesSection />
 						<MerchSection />
 						<FanCardSection />
-						{/* <FaqSection /> */}
+						<FaqSection />
 						<MarqueeSection />
 						<MainPageClient />
-					</>
+					</main>
 				</DirectionsModalProvider>
 			</HomeInfoModalProvider>
 		</ParkingModalProvider>
