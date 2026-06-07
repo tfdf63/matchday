@@ -25,8 +25,6 @@ Disallow: /components/
 Disallow: /components/*/
 Disallow: /fonts/
 Disallow: /fonts/*/
-Clean-param: ctime&utm_medium&yprqee&bx_sender_conversion_id&b24form_user&_ym_debug&erid&yclid&utm_source&ybaip&etext&C&amp
-Clean-param: etext /saransk/
 
 # Разрешить индексацию изображений
 Allow: /*.jpg$
@@ -34,12 +32,18 @@ Allow: /*.jpeg$
 Allow: /*.png$
 Allow: /*.webp$
 
-# Директива Clean-param для внешних ссылок с GET-параметрами
-# Игнорировать незначащие параметры для ссылок на Яндекс.Афишу
+# Яндекс Clean-param: трекинговые GET-параметры не создают отдельные URL в индексе.
+# Canonical главной — https://matchday.fcakron.ru/
+Clean-param: clckid&yclid&yprqee&erid&brid&fbclid&gclid&msclkid&rb_clickid
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+Clean-param: utm_notification_id&utm_notification_project&utm_notification_type
+Clean-param: utm_sup_source&utm_sup_project&utm_sup_type&push_id&exp_boxes
+Clean-param: amp&ctime&etext&C&from&openstat&_openstat
+Clean-param: bx_sender_conversion_id&b24form_user&_ym_debug&ybaip
 Clean-param: clientKey&regionId&_ab_new_calendar
 
 # Указание sitemap
 Sitemap: https://matchday.fcakron.ru/sitemap.xml
 
 # Время задержки между запросами (в секундах)
-Crawl-delay: 1 
+Crawl-delay: 1
