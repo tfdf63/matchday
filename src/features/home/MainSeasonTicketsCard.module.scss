@@ -1,0 +1,40 @@
+@use '../../styles/tokens.scss' as *;
+
+.heroFigure {
+	margin: 0;
+	width: 100%;
+}
+
+.heroImage {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.buyRow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	gap: 10px;
+	width: 100%;
+	align-items: stretch;
+
+	> a {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+}
+
+@include from($bp-laptop) {
+	.buyRow > a {
+		min-height: 58px;
+		font-size: 14px;
+	}
+}
+
+@include from($bp-desktop-xl) {
+	.buyRow > a {
+		min-height: 60px;
+		font-size: 16px;
+	}
+}

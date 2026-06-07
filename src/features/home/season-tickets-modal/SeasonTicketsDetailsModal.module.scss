@@ -1,0 +1,53 @@
+@use '../../../styles/tokens.scss' as *;
+
+.panel {
+	@include from($bp-tablet-sm) {
+		max-width: min(100%, 640px);
+	}
+
+	@include from($bp-tablet) {
+		max-width: min(100%, 720px);
+	}
+
+	@include from($bp-laptop) {
+		max-width: min(100%, 820px);
+	}
+
+	@include from($bp-desktop) {
+		max-width: min(100%, 900px);
+	}
+
+	@include from($bp-desktop-xl) {
+		max-width: min(100%, 980px);
+	}
+}
+
+.gallery {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 100%;
+
+	@include from($bp-tablet-sm) {
+		gap: 16px;
+	}
+
+	@include from($bp-tablet) {
+		gap: 18px;
+	}
+
+	@include from($bp-laptop) {
+		gap: 20px;
+	}
+}
+
+.figure {
+	margin: 0;
+	width: 100%;
+}
+
+.image {
+	display: block;
+	width: 100%;
+	height: auto;
+}

@@ -118,6 +118,7 @@ $z-modal: 10000;
 	min-height: 0;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
+	@include hide-scrollbar;
 }
 
 .bodyFullBleed {

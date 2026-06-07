@@ -10,7 +10,7 @@ import {
 
 import { MAIN_HERO_CARD_MODE } from './mainHeroConfig'
 import { MainMatchCardClient } from './MainMatchCardClient'
-import { MainSubscriptionCard } from './MainSubscriptionCard'
+import { MainSeasonTicketsCard } from './MainSeasonTicketsCard'
 import styles from './Main.module.scss'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
@@ -126,7 +126,7 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 								initialGame={game}
 							/>
 						) : (
-							<MainSubscriptionCard />
+							<MainSeasonTicketsCard />
 						)}
 					</div>
 				</div>
