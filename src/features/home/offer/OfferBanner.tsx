@@ -1,12 +1,14 @@
 import type { FC } from 'react'
 
 import {
-	OFFER_MASCOT_MOBILE,
-	OFFER_MASCOT_TABLET,
-	OFFER_MASCOT_WIDE,
-	OFFER_MASCOT_LAPTOP,
 	OFFER_MASCOT_DESKTOP,
 	OFFER_MASCOT_DESKTOP_XL,
+	OFFER_MASCOT_LAPTOP,
+	OFFER_MASCOT_MOBILE,
+	OFFER_MASCOT_MOBILE_HEIGHT,
+	OFFER_MASCOT_MOBILE_WIDTH,
+	OFFER_MASCOT_TABLET,
+	OFFER_MASCOT_WIDE,
 } from './offerAssets'
 import styles from './Offer.module.scss'
 
@@ -69,9 +71,9 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 					<img
 						className={styles.image}
 						src={imageSrc}
-						alt=""
-						width={2064}
-						height={1358}
+						alt='Детский абонемент — маскот ФК Акрон'
+						width={OFFER_MASCOT_MOBILE_WIDTH}
+						height={OFFER_MASCOT_MOBILE_HEIGHT}
 						decoding="async"
 						loading="lazy"
 					/>
