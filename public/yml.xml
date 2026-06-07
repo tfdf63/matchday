@@ -35,7 +35,7 @@
         <price>500</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <picture>https://matchday.fcakron.ru/images/main/bg.webp</picture>
         <name>Билет на матч Акрон — ЦСКА (4 апреля, 14:00)</name>
         <description>
           <![CDATA[
@@ -55,7 +55,7 @@
         <price>500</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <picture>https://matchday.fcakron.ru/images/main/bg.webp</picture>
         <name>Билет на матч Акрон — Динамо (13 апреля, 18:15)</name>
         <description>
           <![CDATA[
@@ -75,7 +75,7 @@
         <price>500</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <picture>https://matchday.fcakron.ru/images/main/bg.webp</picture>
         <name>Билет на матч Акрон — Динамо Мх (23 апреля, 18:30)</name>
         <description>
           <![CDATA[
@@ -95,7 +95,7 @@
         <price>500</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <picture>https://matchday.fcakron.ru/images/main/bg.webp</picture>
         <name>Билет на матч Акрон — Краснодар (3 мая, 18:00)</name>
         <description>
           <![CDATA[
@@ -115,7 +115,7 @@
         <price>500</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <picture>https://matchday.fcakron.ru/images/main/bg.webp</picture>
         <name>Билет на матч Акрон — Ростов (11 мая, 14:00)</name>
         <description>
           <![CDATA[
@@ -135,7 +135,7 @@
         <price>500</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://matchday.fcakron.ru/images/main/bg.png</picture>
+        <picture>https://matchday.fcakron.ru/images/main/bg.webp</picture>
         <name>Билет на матч Акрон — Ротор (23 мая, 19:30)</name>
         <description>
           <![CDATA[

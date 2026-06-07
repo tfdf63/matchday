@@ -4,6 +4,8 @@ import {
 	DEFAULT_DESCRIPTION,
 	DEFAULT_KEYWORDS,
 	DEFAULT_OG_IMAGE,
+	DEFAULT_OG_IMAGE_HEIGHT,
+	DEFAULT_OG_IMAGE_WIDTH,
 	DEFAULT_TITLE,
 	SITE_NAME,
 	SITE_URL,
@@ -33,8 +35,8 @@ export function buildRootMetadata(): Metadata {
 			images: [
 				{
 					url: DEFAULT_OG_IMAGE,
-					width: 1920,
-					height: 1080,
+					width: DEFAULT_OG_IMAGE_WIDTH,
+					height: DEFAULT_OG_IMAGE_HEIGHT,
 					alt: 'ФК Акрон — билеты на матчи',
 				},
 			],

@@ -44,7 +44,7 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 				<div className={styles.heroImageWrap}>
 					{/* Фон первого экрана FCA_Fans; при появлении финала из Figma заменить hero.png / hero.webp */}
 					<Image
-						src='/images/main/bg.png'
+						src='/images/main/bg.webp'
 						alt='Болельщики ФК Акрон'
 						fill
 						className={styles.heroImage}

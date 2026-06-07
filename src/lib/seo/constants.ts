@@ -10,7 +10,17 @@ export const DEFAULT_DESCRIPTION =
 export const DEFAULT_KEYWORDS =
 	'ФК Акрон, билеты на футбол, матчи Акрон, стадион Самара, купить билет, абонемент, VIP, расписание игр'
 
-export const DEFAULT_OG_IMAGE = '/images/main/bg.png'
+export const DEFAULT_OG_IMAGE = '/images/main/OG.webp'
+
+export const DEFAULT_OG_IMAGE_WIDTH = 1200
+
+export const DEFAULT_OG_IMAGE_HEIGHT = 630
+
+export const MAIN_HERO_IMAGE = '/images/main/bg.webp'
+
+export const MAIN_HERO_IMAGE_WIDTH = 1920
+
+export const MAIN_HERO_IMAGE_HEIGHT = 1281
 
 export const ORGANIZATION_DESCRIPTION =
 	'Официальный сайт ФК Акрон для покупки билетов на матчи'
