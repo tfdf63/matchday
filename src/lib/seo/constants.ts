@@ -22,7 +22,9 @@ export const MAIN_HERO_IMAGE_WIDTH = 1920
 
 export const MAIN_HERO_IMAGE_HEIGHT = 1281
 
+export const ORGANIZATION_LEAGUE = 'Российская Премьер-Лига'
+
 export const ORGANIZATION_DESCRIPTION =
-	'Официальный сайт ФК Акрон для покупки билетов на матчи'
+	'Официальный сайт ФК Акрон для покупки билетов на матчи. Клуб выступает в Российской Премьер-Лиге.'
 
 export const ORGANIZATION_LOGO = '/images/akron-logo.svg'

@@ -1,5 +1,6 @@
 import {
 	ORGANIZATION_DESCRIPTION,
+	ORGANIZATION_LEAGUE,
 	ORGANIZATION_LOGO,
 	SITE_NAME,
 	SITE_URL,
@@ -19,6 +20,9 @@ export function buildOrganizationJsonLd() {
 			addressCountry: 'RU',
 		},
 		sport: 'Футбол',
-		league: 'Российская Премьер-Лига',
+		memberOf: {
+			'@type': 'SportsOrganization',
+			name: ORGANIZATION_LEAGUE,
+		},
 	}
 }
