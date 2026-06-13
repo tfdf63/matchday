@@ -2,9 +2,11 @@ import matchCardStyles from '@/components/MatchCard/MatchCard.module.scss'
 
 import {
 	SEASON_TICKETS_BUY_URL,
+	SEASON_TICKETS_FAMILY_URL,
 	SEASON_TICKETS_VIP_URL,
 } from './mainHeroConfig'
 import styles from './MainSeasonTicketsCard.module.scss'
+import { SeasonTicketsFamilyNote } from './SeasonTicketsFamilyNote'
 import { SeasonTicketsHeroCarousel } from './SeasonTicketsHeroCarousel'
 import { SeasonTicketsPriceIncreaseBanner } from './SeasonTicketsPriceIncreaseBanner'
 
@@ -52,6 +54,17 @@ export function MainSeasonTicketsCard() {
 						>
 							VIP
 						</a>
+					</div>
+					<div className={styles.familyBlock}>
+						<a
+							className={cx(matchCardStyles.btnSecondary, 'font-mono')}
+							href={SEASON_TICKETS_FAMILY_URL}
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							семейный сектор С4
+						</a>
+						<SeasonTicketsFamilyNote />
 					</div>
 				</div>
 			</div>

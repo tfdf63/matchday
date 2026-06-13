@@ -8,6 +8,11 @@ export const seasonTicketsPriceIncreaseDates = [
 	'2026-08-31',
 ] as const
 
+export const seasonTicketsFamilyPromoCode = 'AKRONFAMILY' as const
+
+export const seasonTicketsFamilyNote =
+	'Покупайте от 2-х абонементов в С4, включая 1 детский - ещё -25%:' as const
+
 export const seasonTicketImages = [
 	'/images/season-tickets/1.webp',
 	'/images/season-tickets/2.webp',
