@@ -8,7 +8,6 @@ import {
 import styles from './MainSeasonTicketsCard.module.scss'
 import { SeasonTicketsFamilyNote } from './SeasonTicketsFamilyNote'
 import { SeasonTicketsHeroCarousel } from './SeasonTicketsHeroCarousel'
-import { SeasonTicketsPriceIncreaseBanner } from './SeasonTicketsPriceIncreaseBanner'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
 	return parts.filter(Boolean).join(' ')
@@ -23,7 +22,6 @@ export function MainSeasonTicketsCard() {
 				styles.seasonCard,
 			)}
 		>
-			<SeasonTicketsPriceIncreaseBanner />
 			<div
 				className={cx(
 					matchCardStyles.fanIdBadge,
