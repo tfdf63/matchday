@@ -12,6 +12,10 @@ import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 import { formatGoalCell } from '@/lib/match/formatMatchGoals'
+import {
+	GAME_DATE_TIME_TENTATIVE_LABEL,
+	isGameDateTimeTentative,
+} from '@/lib/match/isGameDateTimeTentative'
 
 import styles from './UpcomingMatchCard.module.scss'
 
@@ -47,13 +51,13 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	const timeLocal = game.timeLocal?.trim()
 	const showFanIdBadge =
 		game.fanIdStatus === 'Fan id' || game.fanIdStatus === 'Без fan id'
-	const fanIdBadgeText =
-		game.fanIdStatus === 'Fan id' ? 'FAN ID' : 'Без fan id'
+	const fanIdBadgeText = game.fanIdStatus === 'Fan id' ? 'FAN ID' : 'Без fan id'
 	const homeCity = game.homeTeamCity?.trim()
 	const awayCity = game.awayTeamCity?.trim()
 	const now = new Date()
 	const matchDateBannerText = getMatchDateBannerText(game, now)
 	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
+	const showDateTimeTentativeBadge = isGameDateTimeTentative(game)
 
 	const homeLogoNode = homeLogo ? (
 		<Image
@@ -96,17 +100,21 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 			) : null}
 
 			{showFanIdBadge ? (
-				<div className={cx(styles.fanIdBadge, 'font-mono')} role="note">
+				<div className={cx(styles.fanIdBadge, 'font-mono')} role='note'>
 					{fanIdBadgeText}
 				</div>
 			) : null}
 
 			<div className={styles.metaBlock}>
 				{game.leagueInfo ? (
-					<p className={cx(styles.leagueLine, 'font-mono')}>{game.leagueInfo}</p>
+					<p className={cx(styles.leagueLine, 'font-mono')}>
+						{game.leagueInfo}
+					</p>
 				) : null}
 				{game.seasonTour ? (
-					<p className={cx(styles.leagueLine, 'font-mono')}>{game.seasonTour}</p>
+					<p className={cx(styles.leagueLine, 'font-mono')}>
+						{game.seasonTour}
+					</p>
 				) : null}
 				{dateTimeLine ? (
 					<div className={styles.dateRow}>
@@ -118,6 +126,14 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 				) : null}
 				{timeLocal ? (
 					<p className={cx(styles.timeLocal, 'font-mono')}>{timeLocal}</p>
+				) : null}
+				{showDateTimeTentativeBadge ? (
+					<p
+						className={cx(styles.dateTimeTentativeBadge, 'font-mono')}
+						role='note'
+					>
+						{GAME_DATE_TIME_TENTATIVE_LABEL}
+					</p>
 				) : null}
 				{game.stadium ? (
 					<p className={cx(styles.stadium, 'font-mono')}>{game.stadium}</p>
@@ -134,15 +150,13 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 									<p className={styles.teamName}>{game.homeTeam}</p>
 								) : null}
 								{homeCity ? (
-									<p className={cx(styles.teamCity, 'font-mono')}>
-										{homeCity}
-									</p>
+									<p className={cx(styles.teamCity, 'font-mono')}>{homeCity}</p>
 								) : null}
 							</div>
 						</div>
 						<div
 							className={styles.scoreRow}
-							role="group"
+							role='group'
 							aria-label={`Счёт: ${formatGoalCell(game.homeGoals)} ${formatGoalCell(game.awayGoals)}`}
 						>
 							<span className={styles.scoreCell}>
@@ -162,9 +176,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 									<p className={styles.teamName}>{game.awayTeam}</p>
 								) : null}
 								{awayCity ? (
-									<p className={cx(styles.teamCity, 'font-mono')}>
-										{awayCity}
-									</p>
+									<p className={cx(styles.teamCity, 'font-mono')}>{awayCity}</p>
 								) : null}
 							</div>
 						</div>
@@ -183,8 +195,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 						<a
 							className={cx(styles.btnPrimary, 'font-mono')}
 							href={ticket}
-							target="_blank"
-							rel="noopener noreferrer"
+							target='_blank'
+							rel='noopener noreferrer'
 						>
 							Купить билеты
 						</a>
@@ -195,8 +207,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 								<a
 									className={cx(styles.btnOutline, 'font-mono')}
 									href={vip}
-									target="_blank"
-									rel="noopener noreferrer"
+									target='_blank'
+									rel='noopener noreferrer'
 								>
 									{vipLabel}
 								</a>
@@ -205,8 +217,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 								<a
 									className={cx(styles.btnOutline, 'font-mono')}
 									href={skybox}
-									target="_blank"
-									rel="noopener noreferrer"
+									target='_blank'
+									rel='noopener noreferrer'
 								>
 									ложи
 								</a>

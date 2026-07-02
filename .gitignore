@@ -55,3 +55,6 @@ next-env.d.ts
 # local / IDE
 .cursor/
 .github/
+
+# данные календаря
+akron-schedule.json

@@ -17,6 +17,8 @@ export const TEAM_CITY_BY_NAME: Record<string, string> = {
 	Краснодар: 'Краснодар',
 	'Динамо Мск': 'Москва',
 	'Динамо Мх': 'Химки',
+	Факел: 'Воронеж',
+	Родина: 'Москва',
 }
 
 export function getTeamCity(teamName: string | undefined): string | undefined {
@@ -43,6 +45,8 @@ const TEAM_LOGO_BY_NAME: Record<string, string> = {
 	Краснодар: '/images/teamslogo/Krasnodar.png',
 	'Динамо Мск': '/images/teamslogo/Dynamo-Moscow.png',
 	'Динамо Мх': '/images/teamslogo/Dynamo.png',
+	Факел: '/images/teamslogo/Fakel.png',
+	Родина: '/images/teamslogo/Rodina.png',
 }
 
 export function getTeamLogoPath(teamName: string | undefined): string | undefined {
