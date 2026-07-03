@@ -11,6 +11,10 @@ import {
 } from '@/data/calendarRu2026'
 import { getOpponentTeamName, type Game } from '@/data/games'
 import { getTeamLogoPath } from '@/data/teamLogos'
+import {
+	CALENDAR_FON_CUP_ICON_SRC,
+	isFonbetCupMatch,
+} from '@/lib/match/isFonbetCupMatch'
 
 import styles from './MatchesCalendarStrip.module.scss'
 
@@ -136,6 +140,7 @@ const CalendarDayColumn: FC<CalendarDayColumnProps> = ({
 	const isHome = game.venue === 'home'
 	const opponent = getOpponentTeamName(game)
 	const logo = getTeamLogoPath(opponent)
+	const showCupIcon = isFonbetCupMatch(game)
 
 	const dateClass = cx(
 		styles.dateNum,
@@ -165,6 +170,23 @@ const CalendarDayColumn: FC<CalendarDayColumnProps> = ({
 			>
 				{wd}
 			</p>
+			<div
+				className={cx(
+					styles.cupIconCell,
+					isSelected && styles.cupIconCellSelected,
+				)}
+				aria-hidden={!showCupIcon}
+			>
+				{showCupIcon ? (
+					<Image
+						src={CALENDAR_FON_CUP_ICON_SRC}
+						alt=''
+						width={19}
+						height={22}
+						className={styles.cupIcon}
+					/>
+				) : null}
+			</div>
 			<div
 				className={cx(
 					styles.logoCell,

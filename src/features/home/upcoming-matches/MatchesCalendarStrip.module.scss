@@ -211,12 +211,35 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	color: #fff;
 }
 
+.cupIconCell {
+	display: flex;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	height: 28px;
+	padding: 0 10px;
+}
+
+.cupIconCellSelected {
+	background: #b2061c;
+}
+
+.cupIcon {
+	display: block;
+	width: auto;
+	height: 22px;
+	max-width: 19px;
+	object-fit: contain;
+	filter: brightness(0) invert(1) contrast(1.35) brightness(1.2);
+}
+
 .logoCell {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex: 1 1 auto;
-	min-height: 44px;
+	flex-shrink: 0;
+	height: 44px;
 	padding: 10px;
 	overflow: hidden;
 }
@@ -280,8 +303,18 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 		padding: 16px;
 	}
 
+	.cupIconCell {
+		height: 32px;
+		padding-inline: 16px;
+	}
+
+	.cupIcon {
+		height: 24px;
+		max-width: 21px;
+	}
+
 	.logoCell {
-		min-height: 52px;
+		height: 52px;
 		padding: 16px;
 	}
 
@@ -344,8 +377,18 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 		font-weight: 500;
 	}
 
+	.cupIconCell {
+		height: 36px;
+		padding-inline: 20px;
+	}
+
+	.cupIcon {
+		height: 26px;
+		max-width: 23px;
+	}
+
 	.logoCell {
-		min-height: 60px;
+		height: 60px;
 		padding: 20px;
 	}
 
@@ -398,7 +441,7 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	}
 
 	.logoCell {
-		min-height: 60px;
+		height: 60px;
 		padding: 20px;
 	}
 
@@ -451,7 +494,7 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	}
 
 	.logoCell {
-		min-height: 60px;
+		height: 60px;
 		padding: 20px;
 	}
 
@@ -506,7 +549,7 @@ $cal-date-row-height-accent: $cal-date-row-height + 3px;
 	}
 
 	.logoCell {
-		min-height: 60px;
+		height: 60px;
 		padding: 20px;
 	}
 
