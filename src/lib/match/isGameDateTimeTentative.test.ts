@@ -7,8 +7,8 @@ import {
 	TENTATIVE_SCHEDULE_FROM_DATE_ISO,
 } from './isGameDateTimeTentative'
 
-const makeGame = (dateIso: string): Game => ({
-	id: '1',
+const makeGame = (dateIso: string, id = '1'): Game => ({
+	id,
 	dateIso,
 	venue: 'home',
 	fanIdStatus: 'Fan id',
@@ -25,5 +25,11 @@ describe('isGameDateTimeTentative', () => {
 			true,
 		)
 		expect(isGameDateTimeTentative(makeGame('2027-05-23'))).toBe(true)
+	})
+
+	it('returns false for confirmed schedule game ids', () => {
+		for (const id of ['23', '24', '26', '27', '29'] as const) {
+			expect(isGameDateTimeTentative(makeGame('2026-08-01', id))).toBe(false)
+		}
 	})
 })
