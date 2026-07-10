@@ -21,7 +21,6 @@ export const HOME_OFFERS_TABS: ReadonlyArray<{
 		id: 'tariffs',
 		label: 'тарифы',
 		indexLabel: '[02]',
-		menuNote: 'НЕ ДЕЙСТВУЮТ',
 	},
 	{ id: 'socialTickets', label: 'Социальные билеты', indexLabel: '[03]' },
 ]

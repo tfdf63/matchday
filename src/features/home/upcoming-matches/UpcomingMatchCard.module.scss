@@ -480,6 +480,13 @@ $fan-id-to-meta-gap: 20px;
 		flex: 1 1 0;
 	}
 
+	/* Две ссылки (билеты + VIP или ложи): поровну на всю ширину */
+	.primaryStackDuo .btnPrimary,
+	.primaryStackDuo .btnOutline {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+
 	.outlineStack .btnOutline:only-of-type {
 		order: 1;
 		flex: 1 1 0;
@@ -581,6 +588,12 @@ $fan-id-to-meta-gap: 20px;
 		flex: 1 1 0;
 	}
 
+	.primaryStackDuo .btnPrimary,
+	.primaryStackDuo .btnOutline {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+
 	.btnOutline {
 		min-height: 54px;
 		padding-top: 16px;
@@ -660,6 +673,12 @@ $fan-id-to-meta-gap: 20px;
 
 	.primaryStackSolo .btnPrimary {
 		flex: 1 1 0;
+	}
+
+	.primaryStackDuo .btnPrimary,
+	.primaryStackDuo .btnOutline {
+		flex: 1 1 0;
+		min-width: 0;
 	}
 
 	.btnOutline {

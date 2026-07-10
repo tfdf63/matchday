@@ -163,7 +163,6 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 									<UpcomingMatchCard
 										key={selectedGame.id}
 										game={selectedGame}
-										hideSecondaryActions
 									/>
 								) : null}
 							</div>

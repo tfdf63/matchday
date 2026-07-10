@@ -10,6 +10,8 @@ import {
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
+import { MainMatchFamilyNote } from './MainMatchFamilyNote'
+
 export type MainMatchCardClientProps = {
 	games: Game[]
 	initialGame: Game
@@ -56,6 +58,10 @@ export function MainMatchCardClient({
 	}, [sortedGames])
 
 	return (
-		<MatchCard game={game} title='Домашний матч' />
+		<MatchCard
+			game={game}
+			title='Домашний матч'
+			actionsFooter={<MainMatchFamilyNote />}
+		/>
 	)
 }

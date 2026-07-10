@@ -38,7 +38,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	const ticket = game.ticketLink?.trim()
 	const vip = game.ticketLinkVip?.trim()
 	const skybox = game.ticketLinkSkybox?.trim()
-	const hasExtraTicketLinks = Boolean(vip || skybox)
+	const ticketLinkCount = [ticket, vip, skybox].filter(Boolean).length
+	const hasExtraTicketLinks = ticketLinkCount > 1
 	const vipLabel = game.ticketLinkVipLabel?.trim() || 'VIP'
 	const isAway = game.venue === 'away'
 	const priceLine =
@@ -188,7 +189,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 				<div
 					className={cx(
 						styles.primaryStack,
-						ticket && !hasExtraTicketLinks && styles.primaryStackSolo,
+						ticketLinkCount === 1 && styles.primaryStackSolo,
+						ticketLinkCount === 2 && styles.primaryStackDuo,
 					)}
 				>
 					{ticket ? (

@@ -19,31 +19,18 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 
 const PromoPanel: FC = () => (
 	<div className={styles.tabPanel}>
-		<p className={cx(styles.mono, styles.muted)}>
-			Уникальный промокод на&nbsp;18&nbsp;заказов для&nbsp;матчей МИР&nbsp;РПЛ и&nbsp;FONBET
-			Кубка России.
-		</p>
-		<div className={styles.blockGap}>
-			<p className={cx(styles.mono, styles.muted)}>
-				Размер скидки зависит от&nbsp;количества посещенных матчей в&nbsp;сезоне
-				2025/2026:
-			</p>
-			<ul className={styles.list}>
-				<li className={cx(styles.mono, styles.muted)}>от&nbsp;2 до&nbsp;5 игр&nbsp;— 15%</li>
-				<li className={cx(styles.mono, styles.muted)}>от&nbsp;6 до&nbsp;9 встреч&nbsp;— 20%</li>
-				<li className={cx(styles.mono, styles.muted)}>свыше 10 матчей&nbsp;— 25%</li>
-			</ul>
-		</div>
 		<p className={styles.subTitle}>Промокоды для друзей:</p>
 		<p className={cx(styles.mono, styles.muted)}>
-			При&nbsp;покупке 2&nbsp;билетов скидка 10%&nbsp;— промокод <PromoCodeCopy code="AKRRPL10" />
+			От&nbsp;2&nbsp;билетов скидка 5%&nbsp;— <PromoCodeCopy code="AKRON2" />
 		</p>
 		<p className={cx(styles.mono, styles.muted)}>
-			При&nbsp;покупке 3&nbsp;билетов скидка 15%&nbsp;— промокод <PromoCodeCopy code="AKRRPL15" />
+			От&nbsp;3&nbsp;билетов скидка 10%&nbsp;— <PromoCodeCopy code="AKRON3" />
 		</p>
 		<p className={cx(styles.mono, styles.muted)}>
-			При&nbsp;покупке от&nbsp;4&nbsp;билетов скидка 20%&nbsp;— промокод{' '}
-			<PromoCodeCopy code="AKRRPL20" />
+			От&nbsp;4&nbsp;билетов скидка 15%&nbsp;— <PromoCodeCopy code="AKRON4" />
+		</p>
+		<p className={styles.subTitle}>
+			Более выгодные скидки в&nbsp;абонементах на&nbsp;сезон или первый круг
 		</p>
 	</div>
 )
@@ -52,9 +39,7 @@ const TariffsPanel: FC = () => (
 	<div className={styles.tabPanel}>
 		<p className={cx(styles.mono, styles.muted)}>
 			Детский тариф (для&nbsp;детей до&nbsp;14 лет) на&nbsp;матчах МИР&nbsp;РПЛ предоставляет
-			возможность взять билеты <span className={styles.strong}>со&nbsp;скидкой 25%</span>
-			{' '}
-			<span className={styles.strong}>или 50%</span> в&nbsp;зависимости от&nbsp;сектора.
+			возможность взять билеты <span className={styles.strong}>со&nbsp;скидкой 50%</span>.
 		</p>
 		<p className={cx(styles.mono, styles.muted)}>
 			Проверка возраста осуществляется автоматически на&nbsp;входе через{' '}

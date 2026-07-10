@@ -387,6 +387,10 @@ $fan-id-to-title-gap: 20px;
 	align-items: stretch;
 }
 
+.actionsFooter {
+	width: 100%;
+}
+
 @include from($bp-tablet-sm) {
 	.root {
 		width: 274px;

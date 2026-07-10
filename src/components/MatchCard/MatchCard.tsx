@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import type { ReactNode } from 'react'
 
 import {
 	MatchDateBanner,
@@ -23,12 +24,15 @@ export type MatchCardProps = {
 	title?: string
 	/** Скрыть «Промокоды» и «Как добраться» (например, карточка в блоке Main). */
 	hideSecondaryActions?: boolean
+	/** Доп. текст под блоком кнопок (например, промокод семейного сектора в Main). */
+	actionsFooter?: ReactNode
 }
 
 export function MatchCard({
 	game,
 	title = 'Следующий матч',
 	hideSecondaryActions = false,
+	actionsFooter,
 }: MatchCardProps) {
 	const homeLogo = getTeamLogoPath(game.homeTeam)
 	const awayLogo = getTeamLogoPath(game.awayTeam)
@@ -226,6 +230,10 @@ export function MatchCard({
 								iconClassName={styles.secondaryIcon}
 							/>
 						</div>
+					) : null}
+
+					{actionsFooter ? (
+						<div className={styles.actionsFooter}>{actionsFooter}</div>
 					) : null}
 				</div>
 			</div>
