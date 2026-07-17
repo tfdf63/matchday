@@ -7,7 +7,20 @@ export const GAME_DATE_TIME_TENTATIVE_LABEL =
 	'дата и время не утверждены' as const
 
 /** Матчи с утверждённым расписанием — без плашки «дата и время не утверждены». */
-export const CONFIRMED_GAME_IDS = new Set(['23', '24', '26', '27', '29'])
+export const CONFIRMED_GAME_IDS = new Set([
+	'23',
+	'24',
+	'25',
+	'26',
+	'27',
+	'28',
+	'29',
+	'30',
+	'31',
+	'32',
+	'33',
+	'34',
+])
 
 export function isGameDateTimeTentative(game: Game): boolean {
 	if (CONFIRMED_GAME_IDS.has(game.id)) return false

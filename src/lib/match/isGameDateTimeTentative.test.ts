@@ -28,7 +28,20 @@ describe('isGameDateTimeTentative', () => {
 	})
 
 	it('returns false for confirmed schedule game ids', () => {
-		for (const id of ['23', '24', '26', '27', '29'] as const) {
+		for (const id of [
+			'23',
+			'24',
+			'25',
+			'26',
+			'27',
+			'28',
+			'29',
+			'30',
+			'31',
+			'32',
+			'33',
+			'34',
+		] as const) {
 			expect(isGameDateTimeTentative(makeGame('2026-08-01', id))).toBe(false)
 		}
 	})
