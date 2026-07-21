@@ -58,3 +58,11 @@ next-env.d.ts
 
 # данные календаря
 akron-schedule.json
+buspromt.md
+
+# данные о пассажирах
+src/data/busfans/raw/*.xlsx
+!src/data/busfans/raw/.gitkeep
+
+# документация
+/docs/

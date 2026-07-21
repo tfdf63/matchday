@@ -1,0 +1,597 @@
+@use '../../styles/tokens.scss' as *;
+
+$card-text-muted: rgb(255 255 255 / 0.8);
+
+.page {
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	min-height: 100svh;
+	background-color: #020a0a;
+	color: #fff;
+}
+
+.inner {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 32px 20px 48px;
+
+	@include from($bp-tablet-sm) {
+		padding: 40px 40px 64px;
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-bottom: 28px;
+}
+
+.title {
+	margin: 0;
+	font-family: 'Akademia', sans-serif;
+	font-size: 36px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+
+	@include from($bp-tablet-sm) {
+		font-size: 48px;
+	}
+}
+
+.lead {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	color: $card-text-muted;
+}
+
+.metaLine {
+	margin: 0;
+	font-size: 12px;
+	line-height: 1.3;
+	color: $card-text-muted;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+	padding: 20px 16px;
+	border-radius: 2px;
+	overflow: hidden;
+	background: rgb(255 255 255 / 0.1);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	color: inherit;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background: rgb(255 255 255 / 0.14);
+	}
+}
+
+.cardLinkSection {
+	display: block;
+	min-width: 0;
+	color: inherit;
+	text-decoration: none;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+.cardCupUnderlay {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.cardCupIcon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	height: 420px;
+	max-width: none;
+	object-fit: contain;
+	opacity: 0.55;
+	transform: translate(-50%, -50%);
+	filter: brightness(0) invert(1);
+}
+
+.cardContent {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+}
+
+.cardTop {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 12px;
+	width: 100%;
+}
+
+.metaCol {
+	display: flex;
+	flex: 1 1 auto;
+	min-width: 0;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 4px;
+}
+
+.leagueLine {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-align: left;
+	text-transform: uppercase;
+	color: $card-text-muted;
+}
+
+.dateLine {
+	margin: 0;
+	font-size: 12px;
+	line-height: 1.3;
+	text-align: left;
+	text-transform: uppercase;
+	color: $card-text-muted;
+}
+
+.matchRow {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+
+	> .cardLinkSection:first-child {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+}
+
+.teamsRow {
+	display: flex;
+	flex: 1 1 auto;
+	min-width: 0;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.teamCol {
+	display: flex;
+	width: 100%;
+	min-width: 0;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 8px;
+}
+
+.teamLogo {
+	flex: 0 0 auto;
+	width: 28px;
+	height: 28px;
+	object-fit: contain;
+}
+
+.teamLogoPlaceholder {
+	flex: 0 0 auto;
+	width: 28px;
+	height: 28px;
+	background: rgb(255 255 255 / 0.08);
+}
+
+.teamName {
+	margin: 0;
+	min-width: 0;
+	font-family: 'Akademia', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-align: left;
+	text-transform: uppercase;
+	overflow-wrap: anywhere;
+}
+
+.kpiCol {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 8px;
+}
+
+.kpiRow {
+	display: inline-grid;
+	flex: 0 0 auto;
+	grid-template-columns: 1fr 1fr;
+	align-items: stretch;
+	gap: 8px;
+	max-width: 100%;
+}
+
+.kpi {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 100%;
+	gap: 2px;
+	padding: 8px 6px;
+	background: rgb(2 10 10 / 0.35);
+}
+
+.kpiValue {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.1;
+	color: #fff;
+}
+
+.kpiLabel {
+	margin: 0;
+	font-size: 9px;
+	line-height: 1.2;
+	text-align: center;
+	text-transform: uppercase;
+	color: $card-text-muted;
+}
+
+.registerBtn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 36px;
+	padding: 8px 12px;
+	border: 1px solid #fff;
+	background: transparent;
+	font-size: 11px;
+	line-height: 1.3;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	color: #fff;
+	transition:
+		background-color 0.15s ease,
+		color 0.15s ease;
+
+	&:hover {
+		background: #fff;
+		color: #020a0a;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+.badgeRow {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 8px;
+}
+
+.venueBadge,
+.fanIdBadge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 28px;
+	padding: 0 12px;
+	background-color: #b2061c;
+	font-size: 12px;
+	line-height: 1.3;
+	text-align: center;
+	text-transform: uppercase;
+	white-space: nowrap;
+	color: #fff;
+}
+
+.venueBadgeAway {
+	/* Как индикатор гостевых в полосе календаря */
+	background-color: rgb(255 255 255 / 0.5);
+	color: #020a0a;
+}
+
+.fanIdBadgeMuted {
+	background-color: #1b2222;
+}
+
+.toolbar {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.backBtn {
+	display: inline-flex;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	min-height: 48px;
+	padding: 12px 14px;
+	border: 1px solid #fff;
+	background: transparent;
+	font-size: 12px;
+	line-height: 1.3;
+	text-transform: uppercase;
+	color: #fff;
+	text-decoration: none;
+	white-space: nowrap;
+	transition:
+		background-color 0.15s ease,
+		color 0.15s ease;
+
+	&:hover {
+		background: #fff;
+		color: #020a0a;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+.filterInput {
+	box-sizing: border-box;
+	flex: 1 1 0;
+	min-width: 0;
+	min-height: 48px;
+	padding: 12px 14px;
+	border: 1px solid rgb(255 255 255 / 0.35);
+	border-radius: 0;
+	background: rgb(255 255 255 / 0.08);
+	font-family: var(--font-ibm-plex-mono), monospace;
+	/* ≥16px на мобилке — iOS Safari не зумит страницу при фокусе */
+	font-size: 16px;
+	line-height: 1.3;
+	color: #fff;
+
+	@include from(768px) {
+		font-size: 12px;
+	}
+
+	&::placeholder {
+		color: rgb(255 255 255 / 0.45);
+	}
+
+	&:focus {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+.eventHeading {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 16px;
+	margin-bottom: 24px;
+}
+
+.pendingNotice {
+	margin: 0;
+	padding: 32px 16px;
+	font-size: 14px;
+	line-height: 1.4;
+	text-align: center;
+	text-transform: uppercase;
+	color: $card-text-muted;
+	background: rgb(255 255 255 / 0.06);
+}
+
+.busList {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.busCard {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+	padding: 16px;
+	border-radius: 2px;
+	background: rgb(255 255 255 / 0.1);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+}
+
+.busHeader {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.busTitle {
+	margin: 0;
+	font-family: 'Akademia', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+.busMeta {
+	margin: 0;
+	font-size: 12px;
+	line-height: 1.3;
+	color: $card-text-muted;
+}
+
+.routeBlock {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.routeLabel {
+	margin: 0;
+	font-size: 11px;
+	line-height: 1.3;
+	text-transform: uppercase;
+	color: $card-text-muted;
+}
+
+.routeList {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.routeStop {
+	position: relative;
+	margin: 0;
+	padding: 8px 10px 8px 28px;
+	background: rgb(2 10 10 / 0.35);
+	font-size: 12px;
+	line-height: 1.3;
+	color: rgb(255 255 255 / 0.9);
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 14px;
+		left: 10px;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: #b2061c;
+	}
+}
+
+.tableWrap {
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 12px;
+	line-height: 1.3;
+}
+
+.table th,
+.table td {
+	padding: 10px 8px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.table th {
+	font-weight: 400;
+	text-transform: uppercase;
+	color: $card-text-muted;
+	white-space: nowrap;
+}
+
+.table td:nth-child(1),
+.table th:nth-child(1) {
+	width: 36px;
+	color: $card-text-muted;
+}
+
+.table td:nth-child(3),
+.table th:nth-child(3) {
+	width: 64px;
+	white-space: nowrap;
+}
+
+.tableRowDuplicate td {
+	background-color: rgb(255 220 100 / 0.14);
+}
+
+.tableRowMinor td {
+	background-color: rgb(140 220 160 / 0.18);
+}
+
+.tableRowSameOrder td {
+	background-color: rgb(140 190 255 / 0.18);
+}
+
+.tableRowOrderTarget {
+	cursor: pointer;
+}
+
+.empty {
+	margin: 0;
+	padding: 12px 0;
+	font-size: 12px;
+	line-height: 1.3;
+	color: $card-text-muted;
+}
+
+@include from($bp-tablet-sm) {
+	.teamLogo,
+	.teamLogoPlaceholder {
+		width: 72px;
+		height: 72px;
+	}
+
+	.teamName {
+		font-size: 22px;
+	}
+
+	.teamsSep {
+		font-size: 22px;
+	}
+
+	.kpiValue {
+		font-size: 24px;
+	}
+
+	.busTitle {
+		font-size: 24px;
+	}
+}

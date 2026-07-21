@@ -29,6 +29,11 @@ const PromoPanel: FC = () => (
 		<p className={cx(styles.mono, styles.muted)}>
 			От&nbsp;4&nbsp;билетов скидка 15%&nbsp;— <PromoCodeCopy code="AKRON4" />
 		</p>
+		<p className={styles.subTitle}>Семейный сектор</p>
+		<p className={cx(styles.mono, styles.muted)}>
+			Покупайте от&nbsp;2-х билетов в&nbsp;С4, включая 1&nbsp;детский&nbsp;— ещё
+			&nbsp;-25%:&nbsp;<PromoCodeCopy code="AKRKIDS" />
+		</p>
 		<p className={styles.subTitle}>
 			Более выгодные скидки в&nbsp;абонементах на&nbsp;сезон или первый круг
 		</p>

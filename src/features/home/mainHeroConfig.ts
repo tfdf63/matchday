@@ -15,8 +15,3 @@ export const SEASON_TICKETS_VIP_URL =
 
 export const SEASON_TICKETS_FAMILY_URL =
 	'https://widget.afisha.yandex.ru/w/venues/85002?clientKey=cbdbe66d-8aa4-40e2-a435-894fe798cf5e&regionId=51'
-
-export const MAIN_MATCH_FAMILY_PROMO_CODE = 'AKRKIDS' as const
-
-export const MAIN_MATCH_FAMILY_NOTE =
-	'Покупайте от 2-х билетов в С4, включая 1 детский - ещё -25%:' as const

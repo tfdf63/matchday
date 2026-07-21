@@ -13,6 +13,8 @@ export interface Game {
 	/** Подпись кнопки для `ticketLinkVip`; по умолчанию «VIP». */
 	ticketLinkVipLabel?: string
 	ticketLinkSkybox?: string
+	/** Ссылка на регистрацию в фан-автобус (кнопка на /busfans). */
+	busfansRegistrationUrl?: string
 	leagueInfo?: string
 	/** Сезон и тур — вторая строка под названием лиги на карточке матча. */
 	seasonTour?: string
@@ -312,6 +314,7 @@ const games: Game[] = [
 		},
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		busfansRegistrationUrl: 'http://localhost:3000/',
 		homeGoals: 1,
 		awayGoals: 2,
 	},
@@ -556,6 +559,8 @@ const games: Game[] = [
 		seasonTour: '2026/2027 1 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		busfansRegistrationUrl:
+			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-f46075872130522ece5ec7fe9923ed14',
 	},
 	{
 		id: '24',
@@ -567,13 +572,17 @@ const games: Game[] = [
 		dateCard: '01.08 (СБ)',
 		time: 'SAMT 15:00',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '',
-		ticketLinkVip: '',
-		ticketLinkSkybox: '',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@68526587?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+		ticketLinkVip:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@68526587?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+		ticketLinkSkybox:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@68526587?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
 		leagueInfo: 'Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
 		seasonTour: '2026/2027 2 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		busfansRegistrationUrl: 'http://localhost:3000/',
 	},
 	{
 		id: '25',
@@ -592,6 +601,7 @@ const games: Game[] = [
 		seasonTour: '2026/2027 1 ТУР',
 		fanIdStatus: 'Без fan id',
 		promoType: 'cup',
+		busfansRegistrationUrl: 'http://localhost:3000/',
 	},
 	{
 		id: '26',
@@ -611,6 +621,7 @@ const games: Game[] = [
 		seasonTour: '2026/2027 3 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		busfansRegistrationUrl: 'http://localhost:3000/',
 	},
 	{
 		id: '27',
@@ -660,9 +671,12 @@ const games: Game[] = [
 		dateCard: '23.08 (ВС)',
 		time: 'SAMT 14:00',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '',
-		ticketLinkVip: '',
-		ticketLinkSkybox: '',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@68528036?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+		ticketLinkVip:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@68528036?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+		ticketLinkSkybox:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@68528036?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
 		leagueInfo: 'Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
 		seasonTour: '2026/2027 5 ТУР',
 		fanIdStatus: 'Fan id',
@@ -1192,7 +1206,6 @@ const games: Game[] = [
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
 	},
-
 ]
 
 export default games

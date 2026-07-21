@@ -8,6 +8,7 @@ import {
 import type { Game } from '@/data/games'
 import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
+import { ParkingModalTrigger } from '@/features/home/parking-modal'
 import { getTeamLogoPath } from '@/data/teamLogos'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 import { formatGoalCell } from '@/lib/match/formatMatchGoals'
@@ -24,6 +25,8 @@ export type MatchCardProps = {
 	title?: string
 	/** Скрыть «Промокоды» и «Как добраться» (например, карточка в блоке Main). */
 	hideSecondaryActions?: boolean
+	/** Показать «Парковка» (карточка в блоке Main). */
+	showParkingAction?: boolean
 	/** Доп. текст под блоком кнопок (например, промокод семейного сектора в Main). */
 	actionsFooter?: ReactNode
 }
@@ -32,6 +35,7 @@ export function MatchCard({
 	game,
 	title = 'Следующий матч',
 	hideSecondaryActions = false,
+	showParkingAction = false,
 	actionsFooter,
 }: MatchCardProps) {
 	const homeLogo = getTeamLogoPath(game.homeTeam)
@@ -219,16 +223,30 @@ export function MatchCard({
 						<p className={cx(styles.priceNote, 'font-mono')}>{priceLine}</p>
 					) : null}
 
-					{!isAway && !hideSecondaryActions ? (
-						<div className={styles.secondaryStack}>
-							<PromoCodesModalTrigger
-								buttonClassName={cx(styles.btnSecondary, 'font-mono')}
-								iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
-							/>
-							<DirectionsModalTrigger
-								buttonClassName={cx(styles.btnSecondary, 'font-mono')}
-								iconClassName={styles.secondaryIcon}
-							/>
+					{showParkingAction || (!isAway && !hideSecondaryActions) ? (
+						<div className={styles.secondaryActions}>
+							{!isAway && !hideSecondaryActions ? (
+								<div className={styles.secondaryStack}>
+									<PromoCodesModalTrigger
+										buttonClassName={cx(styles.btnSecondary, 'font-mono')}
+										iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
+									/>
+									<DirectionsModalTrigger
+										buttonClassName={cx(styles.btnSecondary, 'font-mono')}
+										iconClassName={styles.secondaryIcon}
+									/>
+								</div>
+							) : null}
+							{showParkingAction ? (
+								<ParkingModalTrigger
+									buttonClassName={cx(
+										styles.btnSecondary,
+										styles.parkingButton,
+										'font-mono',
+									)}
+									iconClassName={styles.secondaryIcon}
+								/>
+							) : null}
 						</div>
 					) : null}
 
