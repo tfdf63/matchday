@@ -2,6 +2,7 @@ import type { FC } from 'react'
 
 import type { BusManifest, PassengerAssignment } from '@/data/busfans'
 import { BUS_SALE_SEAT_CAPACITY } from '@/lib/busfans/busCapacity'
+import { formatBoardingStopLabel } from '@/lib/busfans/boardingStopAliases'
 
 import styles from './BusFansPage.module.scss'
 import { PassengerTable } from './PassengerTable'
@@ -55,7 +56,7 @@ export const BusManifestCard: FC<BusManifestCardProps> = ({
 					<ol className={styles.routeList}>
 						{stops.map((stop) => (
 							<li key={stop} className={cx(styles.routeStop, 'font-mono')}>
-								{stop}
+								{formatBoardingStopLabel(stop)}
 							</li>
 						))}
 					</ol>

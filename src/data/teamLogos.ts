@@ -46,7 +46,7 @@ const TEAM_LOGO_BY_NAME: Record<string, string> = {
 	'Динамо Мск': '/images/teamslogo/Dynamo-Moscow.png',
 	'Динамо Мх': '/images/teamslogo/Dynamo.png',
 	Факел: '/images/teamslogo/Fakel.png',
-	Родина: '/images/teamslogo/Rodina.png',
+	Родина: '/images/teamslogo/Rodina2.png',
 }
 
 export function getTeamLogoPath(teamName: string | undefined): string | undefined {
