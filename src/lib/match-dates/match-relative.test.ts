@@ -34,7 +34,7 @@ describe('getMatchTicketBannerText', () => {
 		expect(b!.text).toBe('Сегодня!')
 	})
 
-	it('returns tomorrow and day-after-tomorrow labels before week label', () => {
+	it('returns tomorrow and day-after-tomorrow labels before countdown', () => {
 		const now = new Date(2025, 6, 14, 10, 0, 0)
 
 		expect(
@@ -45,14 +45,21 @@ describe('getMatchTicketBannerText', () => {
 		).toBe('Послезавтра')
 	})
 
-	it('returns current week label until nearest Sunday', () => {
+	it('returns countdown for match later same calendar week', () => {
 		const now = new Date(2025, 6, 16, 10, 0, 0)
 		const saturday = new Date(2025, 6, 19, 19, 0, 0)
 
-		expect(getMatchTicketBannerText(saturday, now)?.text).toBe('На этой неделе')
+		expect(getMatchTicketBannerText(saturday, now)?.text).toBe('Через 3 дня')
 	})
 
-	it('does not return week label on Sunday except today', () => {
+	it('returns countdown for Akron–Zenit three days out', () => {
+		const now = new Date(2026, 6, 22, 10, 0, 0)
+		const match = new Date(2026, 6, 25, 17, 15, 0)
+
+		expect(getMatchTicketBannerText(match, now)?.text).toBe('Через 3 дня')
+	})
+
+	it('returns tomorrow label from Sunday', () => {
 		const now = new Date(2025, 6, 20, 10, 0, 0)
 		const monday = new Date(2025, 6, 21, 19, 0, 0)
 

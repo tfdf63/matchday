@@ -19,22 +19,6 @@ export function isMatchWithinUpcomingWeek(matchDate: Date, now: Date = new Date(
 	return matchDate >= today && matchDate <= weekFromNow && daysUntil <= 7
 }
 
-export function isMatchOnCurrentCalendarWeek(matchDate: Date, now: Date = new Date()): boolean {
-	const today = startOfDay(now)
-
-	if (today.getDay() === 0) {
-		const todayEnd = new Date(today)
-		todayEnd.setHours(23, 59, 59, 999)
-		return matchDate >= today && matchDate <= todayEnd
-	}
-
-	const endOfWeek = new Date(today)
-	endOfWeek.setDate(today.getDate() + (7 - today.getDay()))
-	endOfWeek.setHours(23, 59, 59, 999)
-
-	return matchDate >= today && matchDate <= endOfWeek
-}
-
 export function getDaysUntilMatch(matchDate: Date, now: Date = new Date()): number {
 	const today = startOfDay(now)
 	const matchDay = startOfDay(matchDate)
@@ -89,8 +73,6 @@ export function getMatchTicketBannerText(
 		text = 'Уже завтра!'
 	} else if (isMatchDayAfterTomorrow(matchDate, now)) {
 		text = 'Послезавтра'
-	} else if (isMatchOnCurrentCalendarWeek(matchDate, now)) {
-		text = 'На этой неделе'
 	}
 
 	return { text }

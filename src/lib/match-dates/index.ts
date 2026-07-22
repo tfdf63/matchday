@@ -4,7 +4,6 @@ export { getShortWeekdayRu } from './weekday-short-ru'
 export type { MatchTicketBannerText } from './ticket-banner-text'
 export {
 	isMatchWithinUpcomingWeek,
-	isMatchOnCurrentCalendarWeek,
 	getDaysUntilMatch,
 	getDayWordRu,
 	isMatchToday,
