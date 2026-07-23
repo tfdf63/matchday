@@ -559,6 +559,10 @@ const games: Game[] = [
 		seasonTour: '2026/2027 1 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		priceIncreaseDates: {
+			first: '2026-07-23',
+			second: ' ',
+		},
 		busfansRegistrationUrl:
 			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-f46075872130522ece5ec7fe9923ed14',
 	},

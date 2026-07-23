@@ -3,6 +3,7 @@ import type { FC } from 'react'
 import type { BusManifest, PassengerAssignment } from '@/data/busfans'
 import { BUS_SALE_SEAT_CAPACITY } from '@/lib/busfans/busCapacity'
 import { formatBoardingStopLabel } from '@/lib/busfans/boardingStopAliases'
+import { getBusPlateNumbers } from '@/lib/busfans/busPlates'
 
 import styles from './BusFansPage.module.scss'
 import { PassengerTable } from './PassengerTable'
@@ -31,6 +32,7 @@ export const BusManifestCard: FC<BusManifestCardProps> = ({
 	matchDateIso,
 	duplicateFullNames,
 }) => {
+	const plateNumbers = getBusPlateNumbers(manifest.id)
 	const stops =
 		manifest.boardingStops?.filter(Boolean) ??
 		[
@@ -49,6 +51,16 @@ export const BusManifestCard: FC<BusManifestCardProps> = ({
 					{manifest.passengerCount} из {BUS_SALE_SEAT_CAPACITY} мест
 				</p>
 			</div>
+
+			{plateNumbers.length > 0 ? (
+				<div className={styles.platesBlock}>
+					{plateNumbers.map((plate) => (
+						<p key={plate} className={cx(styles.plateNumber, 'font-mono')}>
+							{plate}
+						</p>
+					))}
+				</div>
+			) : null}
 
 			{stops.length > 0 ? (
 				<div className={styles.routeBlock}>
