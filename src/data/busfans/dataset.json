@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-07-23T19:34:50+04:00",
+    "generatedAt": "2026-07-24T15:29:12+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 5,
-    "passengersCount": 246
+    "passengersCount": 247
   },
   "events": [
     {
@@ -25,8 +25,8 @@
       "seasonTour": "2026/2027 1 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 5,
-      "passengerCount": 246,
-      "seatsAssigned": 246
+      "passengerCount": 247,
+      "seatsAssigned": 247
     }
   ],
   "manifests": [
@@ -86,10 +86,11 @@
       "label": "Автобус 5. ТЦ Озон",
       "busNo": 5,
       "sourceFile": "atoms_drivers_report_25.07.2026 (18).xlsx",
-      "passengerCount": 50,
-      "seatsAssigned": 50,
+      "passengerCount": 51,
+      "seatsAssigned": 51,
       "boardingStops": [
-        "Озон, Жигулёвск ТЦ Озон (парковка)"
+        "Озон, Жигулёвск ТЦ Озон (парковка)",
+        "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа"
       ]
     }
   ],
@@ -2654,6 +2655,19 @@
       "sourceFile": "atoms_drivers_report_25.07.2026 (18).xlsx",
       "sourceRow": 51,
       "seq": 50
+    },
+    {
+      "eventId": "2026-07-25-akron-h-zenit",
+      "manifestId": "2026-07-25-akron-h-zenit-bus-5",
+      "fullName": "Якубова Ольга Владимировна",
+      "seatNo": "45",
+      "orderId": "246949",
+      "birthDateIso": "1980-04-01",
+      "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
+      "phone": "79268151403",
+      "sourceFile": "atoms_drivers_report_25.07.2026 (18).xlsx",
+      "sourceRow": 54,
+      "seq": 51
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
