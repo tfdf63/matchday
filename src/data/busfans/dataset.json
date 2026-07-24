@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-07-24T16:53:50+04:00",
+    "generatedAt": "2026-07-24T17:23:03+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 5,
-    "passengersCount": 250
+    "passengersCount": 251
   },
   "events": [
     {
@@ -25,8 +25,8 @@
       "seasonTour": "2026/2027 1 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 5,
-      "passengerCount": 250,
-      "seatsAssigned": 250
+      "passengerCount": 251,
+      "seatsAssigned": 251
     }
   ],
   "manifests": [
@@ -48,8 +48,8 @@
       "label": "Автобус 2. Парк Хаус",
       "busNo": 2,
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
-      "passengerCount": 49,
-      "seatsAssigned": 49,
+      "passengerCount": 50,
+      "seatsAssigned": 50,
       "boardingStops": [
         "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа"
       ]
@@ -748,6 +748,19 @@
     {
       "eventId": "2026-07-25-akron-h-zenit",
       "manifestId": "2026-07-25-akron-h-zenit-bus-2",
+      "fullName": "Бареев Эльдар Фяритович",
+      "seatNo": "4",
+      "orderId": null,
+      "birthDateIso": "1983-07-06",
+      "boardingPlace": null,
+      "phone": null,
+      "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
+      "sourceRow": 53,
+      "seq": 2
+    },
+    {
+      "eventId": "2026-07-25-akron-h-zenit",
+      "manifestId": "2026-07-25-akron-h-zenit-bus-2",
       "fullName": "Будник Елена Михайловна",
       "seatNo": "30",
       "orderId": "247215",
@@ -756,7 +769,7 @@
       "phone": "79277005574",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 27,
-      "seq": 2
+      "seq": 3
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -769,7 +782,7 @@
       "phone": "79879671161",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 5,
-      "seq": 3
+      "seq": 4
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -782,7 +795,7 @@
       "phone": "79397177472",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 47,
-      "seq": 4
+      "seq": 5
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -795,7 +808,7 @@
       "phone": "79278910521",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 45,
-      "seq": 5
+      "seq": 6
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -808,7 +821,7 @@
       "phone": "79613903250",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 36,
-      "seq": 6
+      "seq": 7
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -821,7 +834,7 @@
       "phone": "79277186340",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 37,
-      "seq": 7
+      "seq": 8
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -834,7 +847,7 @@
       "phone": "79093637917",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 18,
-      "seq": 8
+      "seq": 9
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -847,7 +860,7 @@
       "phone": "79276170027",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 19,
-      "seq": 9
+      "seq": 10
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -860,7 +873,7 @@
       "phone": "79276170027",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 17,
-      "seq": 10
+      "seq": 11
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -873,7 +886,7 @@
       "phone": "79297195770",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 4,
-      "seq": 11
+      "seq": 12
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -886,7 +899,7 @@
       "phone": "79674866198",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 23,
-      "seq": 12
+      "seq": 13
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -899,7 +912,7 @@
       "phone": "79674868333",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 22,
-      "seq": 13
+      "seq": 14
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -912,7 +925,7 @@
       "phone": "79178249433",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 26,
-      "seq": 14
+      "seq": 15
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -925,7 +938,7 @@
       "phone": "79093628393",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 32,
-      "seq": 15
+      "seq": 16
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -938,7 +951,7 @@
       "phone": "79178249299",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 50,
-      "seq": 16
+      "seq": 17
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -951,7 +964,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 15,
-      "seq": 17
+      "seq": 18
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -964,7 +977,7 @@
       "phone": "79270298899",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 42,
-      "seq": 18
+      "seq": 19
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -977,7 +990,7 @@
       "phone": "79277090757",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 43,
-      "seq": 19
+      "seq": 20
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -990,7 +1003,7 @@
       "phone": "79171688537",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 38,
-      "seq": 20
+      "seq": 21
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1003,7 +1016,7 @@
       "phone": "79084283464",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 46,
-      "seq": 21
+      "seq": 22
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1016,7 +1029,7 @@
       "phone": "79093628393",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 33,
-      "seq": 22
+      "seq": 23
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1029,7 +1042,7 @@
       "phone": "79178527800",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 10,
-      "seq": 23
+      "seq": 24
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1042,7 +1055,7 @@
       "phone": "79178249299",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 51,
-      "seq": 24
+      "seq": 25
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1055,7 +1068,7 @@
       "phone": "79608354438",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 35,
-      "seq": 25
+      "seq": 26
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1068,7 +1081,7 @@
       "phone": "79608354438",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 34,
-      "seq": 26
+      "seq": 27
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1081,7 +1094,7 @@
       "phone": "79649695904",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 21,
-      "seq": 27
+      "seq": 28
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1094,7 +1107,7 @@
       "phone": "79649695904",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 20,
-      "seq": 28
+      "seq": 29
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1107,7 +1120,7 @@
       "phone": "79879789536",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 48,
-      "seq": 29
+      "seq": 30
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1120,7 +1133,7 @@
       "phone": "79277772489",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 7,
-      "seq": 30
+      "seq": 31
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1133,7 +1146,7 @@
       "phone": "79277775485",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 44,
-      "seq": 31
+      "seq": 32
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1146,7 +1159,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 16,
-      "seq": 32
+      "seq": 33
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1159,7 +1172,7 @@
       "phone": "79528185828",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 9,
-      "seq": 33
+      "seq": 34
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1172,7 +1185,7 @@
       "phone": "79528185828",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 8,
-      "seq": 34
+      "seq": 35
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1185,7 +1198,7 @@
       "phone": "79297195770",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 6,
-      "seq": 35
+      "seq": 36
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1198,7 +1211,7 @@
       "phone": "79178228720",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 29,
-      "seq": 36
+      "seq": 37
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1211,7 +1224,7 @@
       "phone": "79178228720",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 30,
-      "seq": 37
+      "seq": 38
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1224,7 +1237,7 @@
       "phone": "79674841466",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 49,
-      "seq": 38
+      "seq": 39
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1237,7 +1250,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 14,
-      "seq": 39
+      "seq": 40
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1250,7 +1263,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 12,
-      "seq": 40
+      "seq": 41
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1263,7 +1276,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 13,
-      "seq": 41
+      "seq": 42
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1276,7 +1289,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 11,
-      "seq": 42
+      "seq": 43
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1289,7 +1302,7 @@
       "phone": "79608507902",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 39,
-      "seq": 43
+      "seq": 44
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1302,7 +1315,7 @@
       "phone": "79021813490",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 31,
-      "seq": 44
+      "seq": 45
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1315,7 +1328,7 @@
       "phone": "79869514909",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 40,
-      "seq": 45
+      "seq": 46
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1328,7 +1341,7 @@
       "phone": "79061298259",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 41,
-      "seq": 46
+      "seq": 47
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1341,7 +1354,7 @@
       "phone": "79879491615",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 25,
-      "seq": 47
+      "seq": 48
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1354,7 +1367,7 @@
       "phone": "79376648622",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 24,
-      "seq": 48
+      "seq": 49
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
@@ -1367,7 +1380,7 @@
       "phone": "79372124094",
       "sourceFile": "atoms_drivers_report_25.07.2026 (17).xlsx",
       "sourceRow": 52,
-      "seq": 49
+      "seq": 50
     },
     {
       "eventId": "2026-07-25-akron-h-zenit",
