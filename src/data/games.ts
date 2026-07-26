@@ -563,6 +563,8 @@ const games: Game[] = [
 			first: '2026-07-23',
 			second: ' ',
 		},
+		homeGoals: 0,
+		awayGoals: 5,
 		busfansRegistrationUrl:
 			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-f46075872130522ece5ec7fe9923ed14',
 	},
@@ -586,7 +588,12 @@ const games: Game[] = [
 		seasonTour: '2026/2027 2 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
-		busfansRegistrationUrl: 'http://localhost:3000/',
+		priceIncreaseDates: {
+			first: '2026-07-30',
+			second: ' ',
+		},
+		busfansRegistrationUrl:
+			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-ac287d25b45e9bdab1b5ff9dbe27a55c',
 	},
 	{
 		id: '25',
@@ -598,14 +605,22 @@ const games: Game[] = [
 		dateCard: '04.08 (ВТ)',
 		time: 'SAMT 17:15',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '',
-		ticketLinkVip: '',
-		ticketLinkSkybox: '',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@68997793?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+		ticketLinkVip:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@68997793?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+		ticketLinkSkybox:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@68997793?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
 		leagueInfo: 'Fonbet Кубок России по футболу',
 		seasonTour: '2026/2027 1 ТУР',
 		fanIdStatus: 'Без fan id',
 		promoType: 'cup',
-		busfansRegistrationUrl: 'http://localhost:3000/',
+		priceIncreaseDates: {
+			first: '2026-08-01',
+			second: ' ',
+		},
+		busfansRegistrationUrl:
+			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-f46075872130522ece5ec7fe9923ed14',
 	},
 	{
 		id: '26',
@@ -664,6 +679,10 @@ const games: Game[] = [
 		seasonTour: '2026/2027 2 ТУР',
 		fanIdStatus: 'Без fan id',
 		promoType: 'cup',
+		priceIncreaseDates: {
+			first: '2026-08-15',
+			second: ' ',
+		},
 	},
 	{
 		id: '29',
@@ -685,6 +704,10 @@ const games: Game[] = [
 		seasonTour: '2026/2027 5 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		priceIncreaseDates: {
+			first: '2026-08-21',
+			second: ' ',
+		},
 	},
 	{
 		id: '30',
@@ -706,6 +729,10 @@ const games: Game[] = [
 		seasonTour: '2026/2027 6 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		priceIncreaseDates: {
+			first: '2026-08-26',
+			second: ' ',
+		},
 	},
 	{
 		id: '31',
