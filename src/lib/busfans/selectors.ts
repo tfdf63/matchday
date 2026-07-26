@@ -26,6 +26,12 @@ function withListStatus(event: MatchEvent): MatchEvent {
 	}
 }
 
+function compareMatchEventsByDate(a: MatchEvent, b: MatchEvent): number {
+	const byDate = a.dateIso.localeCompare(b.dateIso)
+	if (byDate !== 0) return byDate
+	return a.title.localeCompare(b.title, 'ru')
+}
+
 function mergeImportedOntoPlaceholder(
 	placeholder: MatchEvent,
 	imported: MatchEvent,
@@ -99,11 +105,9 @@ export function getMatchEvents(dataset: BusFansDataset): MatchEvent[] {
 		return placeholder
 	})
 
-	const extras = imported
-		.filter((event) => !usedIds.has(event.id))
-		.sort((a, b) => b.dateIso.localeCompare(a.dateIso))
+	const extras = imported.filter((event) => !usedIds.has(event.id))
 
-	return [...upcoming, ...extras]
+	return [...upcoming, ...extras].sort(compareMatchEventsByDate)
 }
 
 export function getMatchEventById(

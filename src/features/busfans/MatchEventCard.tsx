@@ -53,7 +53,10 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 		dateLabel: event.dateLabel,
 		time: event.time,
 	})
-	const busLine = formatBusScheduleLine(event.time)
+	const busLine = formatBusScheduleLine({
+		matchTime: event.time,
+		eventId: event.id,
+	})
 	const hasMeta = Boolean(
 		event.leagueInfo || event.seasonTour || dateLine || busLine,
 	)

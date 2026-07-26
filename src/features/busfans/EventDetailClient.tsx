@@ -55,7 +55,10 @@ export const EventDetailClient: FC<EventDetailClientProps> = ({
 		dateLabel: event.dateLabel,
 		time: event.time,
 	})
-	const busLine = formatBusScheduleLine(event.time)
+	const busLine = formatBusScheduleLine({
+		matchTime: event.time,
+		eventId: event.id,
+	})
 
 	return (
 		<div className={styles.page}>

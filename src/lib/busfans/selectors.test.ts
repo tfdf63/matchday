@@ -15,19 +15,26 @@ import {
 } from './upcomingEvents'
 
 describe('busfans selectors', () => {
-	it('includes upcoming calendar placeholders first', () => {
+	it('sorts match events by date ascending', () => {
 		const events = getMatchEvents(busFansDataset)
 		const upcoming = getUpcomingCalendarGames()
 		expect(upcoming).toHaveLength(BUSFANS_UPCOMING_COUNT)
 		expect(events.length).toBeGreaterThanOrEqual(BUSFANS_UPCOMING_COUNT)
 
-		for (let i = 0; i < upcoming.length; i++) {
-			const game = upcoming[i]!
-			const event = events[i]!
-			expect(event.gameId).toBe(game.id)
-			expect(event.homeTeam).toBe(game.homeTeam)
-			expect(event.awayTeam).toBe(game.awayTeam)
+		for (let i = 1; i < events.length; i++) {
+			expect(
+				events[i - 1]!.dateIso.localeCompare(events[i]!.dateIso),
+			).toBeLessThanOrEqual(0)
 		}
+
+		const zenit = events.find((e) => e.gameId === '23')
+		const rubin = events.find((e) => e.gameId === '24')
+		const rostov = events.find((e) => e.gameId === '25')
+		expect(zenit).toBeTruthy()
+		expect(rubin).toBeTruthy()
+		expect(rostov).toBeTruthy()
+		expect(events.indexOf(zenit!)).toBeLessThan(events.indexOf(rubin!))
+		expect(events.indexOf(rubin!)).toBeLessThan(events.indexOf(rostov!))
 	})
 
 	it('marks calendar slot without excel as pending when unmatched', () => {
