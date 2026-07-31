@@ -45,8 +45,7 @@ export const ticketProgramCards: TicketProgramCard[] = [
 		description:
 			'Персональная зона просмотра матча для друзей, семьи или партнёров. Максимальный комфорт, уединение и лучший вид на игру.',
 		ctaLabel: 'Узнать больше',
-		ctaHref:
-			'https://widget.afisha.yandex.ru/w/venues/85005?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+		ctaHref: 'https://fcakron.ru/tickets/vip',
 	},
 ]
 
