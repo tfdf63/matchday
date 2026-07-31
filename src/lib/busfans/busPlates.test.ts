@@ -23,4 +23,19 @@ describe('getBusPlateNumbers', () => {
 		expect(all.sort()).toEqual(['М893ХМ763', 'Х212АТ763', 'Х288РК763'].sort())
 		expect(new Set(all).size).toBe(3)
 	})
+
+	it('returns plates for Rubin match buses', () => {
+		expect(getBusPlateNumbers('2026-08-01-akron-h-rubin-bus-1')).toEqual([
+			'Х212АТ763',
+		])
+		expect(getBusPlateNumbers('2026-08-01-akron-h-rubin-bus-2')).toEqual([
+			'М416АО763',
+		])
+		expect(getBusPlateNumbers('2026-08-01-akron-h-rubin-bus-4')).toEqual([
+			'В002АА763',
+		])
+		expect(getBusPlateNumbers('2026-08-01-akron-h-rubin-bus-5')).toEqual([
+			'Х039АТ763',
+		])
+	})
 })
