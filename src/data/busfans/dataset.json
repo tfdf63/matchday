@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-01T11:43:50+04:00",
+    "generatedAt": "2026-08-01T11:59:51+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 3,
     "manifestsCount": 13,
@@ -1553,7 +1553,7 @@
       "eventId": "2026-08-01-akron-h-rubin",
       "manifestId": "2026-08-01-akron-h-rubin-bus-1",
       "fullName": "Юдин Дмитрий Петрович",
-      "seatNo": "14",
+      "seatNo": "3",
       "orderId": "250960",
       "birthDateIso": "1999-03-20",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
@@ -1566,7 +1566,7 @@
       "eventId": "2026-08-01-akron-h-rubin",
       "manifestId": "2026-08-01-akron-h-rubin-bus-1",
       "fullName": "Юдин Пётр Николаевич",
-      "seatNo": "13",
+      "seatNo": "4",
       "orderId": "250960",
       "birthDateIso": "1961-08-24",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
