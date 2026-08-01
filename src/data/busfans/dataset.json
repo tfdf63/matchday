@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-01T11:21:57+04:00",
+    "generatedAt": "2026-08-01T11:43:50+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 3,
     "manifestsCount": 13,
-    "passengersCount": 551
+    "passengersCount": 549
   },
   "events": [
     {
@@ -46,8 +46,8 @@
       "seasonTour": "2026/2027 2 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 4,
-      "passengerCount": 202,
-      "seatsAssigned": 202
+      "passengerCount": 200,
+      "seatsAssigned": 200
     },
     {
       "id": "2026-07-25-akron-h-zenit",
@@ -153,8 +153,8 @@
       "label": "Автобус 2. Парк Хаус",
       "busNo": 2,
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
-      "passengerCount": 51,
-      "seatsAssigned": 51,
+      "passengerCount": 50,
+      "seatsAssigned": 50,
       "boardingStops": [
         "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа"
       ]
@@ -165,11 +165,12 @@
       "label": "Автобус 4. ДК Тольятти",
       "busNo": 4,
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
-      "passengerCount": 52,
-      "seatsAssigned": 52,
+      "passengerCount": 51,
+      "seatsAssigned": 51,
       "boardingStops": [
         "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
-        "Колхозный рынок, Остановка в сторону Самары"
+        "Колхозный рынок, Остановка в сторону Самары",
+        "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа"
       ]
     },
     {
@@ -368,19 +369,6 @@
     {
       "eventId": "2026-08-01-akron-h-rubin",
       "manifestId": "2026-08-01-akron-h-rubin-bus-4",
-      "fullName": "Вахрамеев Тимофей Дмитриевич",
-      "seatNo": "1",
-      "orderId": "251103",
-      "birthDateIso": "2011-09-27",
-      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
-      "phone": "79277901108",
-      "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
-      "sourceRow": 53,
-      "seq": 11
-    },
-    {
-      "eventId": "2026-08-01-akron-h-rubin",
-      "manifestId": "2026-08-01-akron-h-rubin-bus-4",
       "fullName": "Виноградская Марина Дмитриевна",
       "seatNo": "36",
       "orderId": "249227",
@@ -389,7 +377,7 @@
       "phone": "79879676393",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 13,
-      "seq": 12
+      "seq": 11
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -402,7 +390,7 @@
       "phone": "79093650305",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 38,
-      "seq": 13
+      "seq": 12
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -415,7 +403,7 @@
       "phone": "79588399124",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 21,
-      "seq": 14
+      "seq": 13
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -428,7 +416,7 @@
       "phone": "79613883766",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 9,
-      "seq": 15
+      "seq": 14
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -441,7 +429,7 @@
       "phone": "79170183439",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 28,
-      "seq": 16
+      "seq": 15
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -454,7 +442,7 @@
       "phone": "79022805406",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 39,
-      "seq": 17
+      "seq": 16
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -467,7 +455,7 @@
       "phone": "79879696132",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 27,
-      "seq": 18
+      "seq": 17
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -480,7 +468,7 @@
       "phone": "79372154382",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 26,
-      "seq": 19
+      "seq": 18
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -493,7 +481,7 @@
       "phone": "79084266871",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 17,
-      "seq": 20
+      "seq": 19
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -506,7 +494,7 @@
       "phone": "79278918183",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 11,
-      "seq": 21
+      "seq": 20
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -519,7 +507,7 @@
       "phone": "79276081368",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 32,
-      "seq": 22
+      "seq": 21
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -532,7 +520,7 @@
       "phone": "79297159599",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 33,
-      "seq": 23
+      "seq": 22
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -545,6 +533,19 @@
       "phone": "79966200393",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 35,
+      "seq": 23
+    },
+    {
+      "eventId": "2026-08-01-akron-h-rubin",
+      "manifestId": "2026-08-01-akron-h-rubin-bus-4",
+      "fullName": "Кодиров Шерзодбек Зокиржон угли",
+      "seatNo": "2",
+      "orderId": "251020",
+      "birthDateIso": "1994-09-02",
+      "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
+      "phone": "79171262945",
+      "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
+      "sourceRow": 54,
       "seq": 24
     },
     {
@@ -797,19 +798,6 @@
     {
       "eventId": "2026-08-01-akron-h-rubin",
       "manifestId": "2026-08-01-akron-h-rubin-bus-4",
-      "fullName": "Хижняк Данил Игоревич",
-      "seatNo": "2",
-      "orderId": "251103",
-      "birthDateIso": "2011-06-25",
-      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
-      "phone": "79171563064",
-      "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
-      "sourceRow": 54,
-      "seq": 44
-    },
-    {
-      "eventId": "2026-08-01-akron-h-rubin",
-      "manifestId": "2026-08-01-akron-h-rubin-bus-4",
       "fullName": "Храмов Степан Константинрвич",
       "seatNo": "4",
       "orderId": "251186",
@@ -817,8 +805,8 @@
       "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79397009799",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
-      "sourceRow": 55,
-      "seq": 45
+      "sourceRow": 53,
+      "seq": 44
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -831,7 +819,7 @@
       "phone": "79277180995",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 31,
-      "seq": 46
+      "seq": 45
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -844,7 +832,7 @@
       "phone": "79370696533",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 20,
-      "seq": 47
+      "seq": 46
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -857,7 +845,7 @@
       "phone": "79022897991",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 50,
-      "seq": 48
+      "seq": 47
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -870,7 +858,7 @@
       "phone": "79178216209",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 8,
-      "seq": 49
+      "seq": 48
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -883,7 +871,7 @@
       "phone": "79178216209",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 6,
-      "seq": 50
+      "seq": 49
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -896,7 +884,7 @@
       "phone": "79178216209",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 7,
-      "seq": 51
+      "seq": 50
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -909,7 +897,7 @@
       "phone": "79171153201",
       "sourceFile": "atoms_drivers_report_01.08.2026 (12).xlsx",
       "sourceRow": 42,
-      "seq": 52
+      "seq": 51
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1597,7 +1585,7 @@
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79372182737",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
-      "sourceRow": 53,
+      "sourceRow": 52,
       "seq": 1
     },
     {
@@ -1636,7 +1624,7 @@
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
-      "sourceRow": 52,
+      "sourceRow": 51,
       "seq": 4
     },
     {
@@ -1837,19 +1825,6 @@
     {
       "eventId": "2026-08-01-akron-h-rubin",
       "manifestId": "2026-08-01-akron-h-rubin-bus-2",
-      "fullName": "Кодиров Шерзодбек Зокиржон угли",
-      "seatNo": "24",
-      "orderId": "251020",
-      "birthDateIso": "1994-09-02",
-      "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
-      "phone": "79171262945",
-      "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
-      "sourceRow": 51,
-      "seq": 20
-    },
-    {
-      "eventId": "2026-08-01-akron-h-rubin",
-      "manifestId": "2026-08-01-akron-h-rubin-bus-2",
       "fullName": "Кондратьев Алексей Петрович",
       "seatNo": "29",
       "orderId": "249343",
@@ -1858,7 +1833,7 @@
       "phone": "79879789972",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 30,
-      "seq": 21
+      "seq": 20
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1871,7 +1846,7 @@
       "phone": "79879789972",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 31,
-      "seq": 22
+      "seq": 21
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1884,7 +1859,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 19,
-      "seq": 23
+      "seq": 22
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1897,7 +1872,7 @@
       "phone": "79171227077",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 48,
-      "seq": 24
+      "seq": 23
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1910,7 +1885,7 @@
       "phone": "79033300247",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 49,
-      "seq": 25
+      "seq": 24
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1923,7 +1898,7 @@
       "phone": "79272120891",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 25,
-      "seq": 26
+      "seq": 25
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1936,7 +1911,7 @@
       "phone": "79372147298",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 26,
-      "seq": 27
+      "seq": 26
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1949,7 +1924,7 @@
       "phone": "79613886411",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 12,
-      "seq": 28
+      "seq": 27
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1962,7 +1937,7 @@
       "phone": "79787282614",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 41,
-      "seq": 29
+      "seq": 28
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1975,7 +1950,7 @@
       "phone": "79019407874",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 9,
-      "seq": 30
+      "seq": 29
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -1987,8 +1962,8 @@
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79608370333",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
-      "sourceRow": 54,
-      "seq": 31
+      "sourceRow": 53,
+      "seq": 30
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2001,7 +1976,7 @@
       "phone": "79372318712",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 43,
-      "seq": 32
+      "seq": 31
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2014,7 +1989,7 @@
       "phone": "79879088615",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 45,
-      "seq": 33
+      "seq": 32
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2027,7 +2002,7 @@
       "phone": "79967458303",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 44,
-      "seq": 34
+      "seq": 33
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2040,7 +2015,7 @@
       "phone": "79372149323",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 46,
-      "seq": 35
+      "seq": 34
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2053,7 +2028,7 @@
       "phone": "79613886411",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 14,
-      "seq": 36
+      "seq": 35
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2066,7 +2041,7 @@
       "phone": "79277863547",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 24,
-      "seq": 37
+      "seq": 36
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2079,7 +2054,7 @@
       "phone": "79277863547",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 23,
-      "seq": 38
+      "seq": 37
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2092,7 +2067,7 @@
       "phone": "79956276965",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 13,
-      "seq": 39
+      "seq": 38
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2105,7 +2080,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 20,
-      "seq": 40
+      "seq": 39
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2118,7 +2093,7 @@
       "phone": "79277772489",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 6,
-      "seq": 41
+      "seq": 40
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2131,7 +2106,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 18,
-      "seq": 42
+      "seq": 41
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2144,7 +2119,7 @@
       "phone": "79528185828",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 8,
-      "seq": 43
+      "seq": 42
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2157,7 +2132,7 @@
       "phone": "79528185828",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 7,
-      "seq": 44
+      "seq": 43
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2170,7 +2145,7 @@
       "phone": "79297195770",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 5,
-      "seq": 45
+      "seq": 44
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2183,7 +2158,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 16,
-      "seq": 46
+      "seq": 45
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2196,7 +2171,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 17,
-      "seq": 47
+      "seq": 46
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2209,7 +2184,7 @@
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 15,
-      "seq": 48
+      "seq": 47
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2222,7 +2197,7 @@
       "phone": "79608507902",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 29,
-      "seq": 49
+      "seq": 48
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2235,7 +2210,7 @@
       "phone": "79033310884",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 37,
-      "seq": 50
+      "seq": 49
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
@@ -2248,7 +2223,7 @@
       "phone": "79033310884",
       "sourceFile": "atoms_drivers_report_01.08.2026 (14).xlsx",
       "sourceRow": 36,
-      "seq": 51
+      "seq": 50
     },
     {
       "eventId": "2026-08-01-akron-h-rubin",
