@@ -80,14 +80,14 @@ export function normalizeTeamKey(name: string): string {
 	return name.trim().toLowerCase().replaceAll('ё', 'е').replace(/\s+/g, ' ')
 }
 
+export function teamMatchKey(homeTeam: string, awayTeam: string): string {
+	return [normalizeTeamKey(homeTeam), normalizeTeamKey(awayTeam)].join('|')
+}
+
 export function eventMatchKey(parts: {
 	dateIso: string
 	homeTeam: string
 	awayTeam: string
 }): string {
-	return [
-		parts.dateIso,
-		normalizeTeamKey(parts.homeTeam),
-		normalizeTeamKey(parts.awayTeam),
-	].join('|')
+	return [parts.dateIso, teamMatchKey(parts.homeTeam, parts.awayTeam)].join('|')
 }

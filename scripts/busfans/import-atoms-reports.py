@@ -9,7 +9,7 @@ import unicodedata
 import zipfile
 import xml.etree.ElementTree as ET
 from collections import defaultdict
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -286,6 +286,43 @@ def load_schedule_index() -> dict[str, dict]:
 	return index
 
 
+CALENDAR_DATE_WINDOW_DAYS = 2
+
+
+def days_between(date_a: str, date_b: str) -> int:
+	a = date.fromisoformat(date_a)
+	b = date.fromisoformat(date_b)
+	return abs((a - b).days)
+
+
+def find_game_by_teams_near_date(
+	date_iso: str,
+	home: str,
+	away: str,
+	games_index: dict[str, dict],
+	max_days: int = CALENDAR_DATE_WINDOW_DAYS,
+) -> dict | None:
+	team_home = normalize_team(home)
+	team_away = normalize_team(away)
+	candidates: list[tuple[int, dict]] = []
+	for key, game in games_index.items():
+		if key.startswith("date:"):
+			continue
+		parts = key.split("|", 2)
+		if len(parts) != 3:
+			continue
+		game_date, g_home, g_away = parts
+		if g_home != team_home or g_away != team_away:
+			continue
+		diff = days_between(date_iso, game_date)
+		if diff <= max_days:
+			candidates.append((diff, game))
+	if not candidates:
+		return None
+	candidates.sort(key=lambda item: item[0])
+	return candidates[0][1]
+
+
 def resolve_calendar(
 	date_iso: str,
 	home: str,
@@ -295,7 +332,11 @@ def resolve_calendar(
 ) -> dict:
 	"""Сначала games.ts, затем akron-schedule.json."""
 	key = f"{date_iso}|{normalize_team(home)}|{normalize_team(away)}"
-	game = games_index.get(key) or games_index.get(f"date:{date_iso}")
+	game = games_index.get(key)
+	if not game:
+		game = find_game_by_teams_near_date(date_iso, home, away, games_index)
+	if not game:
+		game = games_index.get(f"date:{date_iso}")
 	sched = schedule_index.get(key) or schedule_index.get(f"date:{date_iso}")
 
 	out: dict = {

@@ -1,5 +1,9 @@
 {
   "2026-08-04-akron-h-rostov": {
     "departure": "14:45"
+  },
+  "2026-08-07-lokomotiv-h-akron": {
+    "departure": "07.08 в 21:00",
+    "returnAt": "после матча"
   }
 }

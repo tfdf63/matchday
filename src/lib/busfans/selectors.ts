@@ -1,3 +1,4 @@
+import games, { type Game } from '@/data/games'
 import type {
 	BusFansDataset,
 	BusManifest,
@@ -10,7 +11,6 @@ import { resolveRegistrationUrl } from './registrationUrl'
 import {
 	eventMatchKey,
 	gameToPendingMatchEvent,
-	getUpcomingCalendarGames,
 } from './upcomingEvents'
 
 export function resolveListStatus(event: MatchEvent): MatchListStatus {
@@ -67,47 +67,38 @@ function mergeImportedOntoPlaceholder(
 	})
 }
 
-/** Карточки: ближайшие матчи из games.ts + остальные события из Excel. */
-export function getMatchEvents(dataset: BusFansDataset): MatchEvent[] {
-	const imported = dataset.events.map(withListStatus)
-	const byGameId = new Map<string, MatchEvent>()
-	const byKey = new Map<string, MatchEvent>()
-	for (const event of imported) {
-		if (event.gameId) byGameId.set(String(event.gameId), event)
-		byKey.set(
-			eventMatchKey({
-				dateIso: event.dateIso,
-				homeTeam: event.homeTeam,
-				awayTeam: event.awayTeam,
-			}),
-			event,
-		)
+function findCalendarGameForEvent(event: MatchEvent): Game | undefined {
+	if (event.gameId) {
+		return games.find((game) => game.id === String(event.gameId))
 	}
-
-	const usedIds = new Set<string>()
-	const upcoming = getUpcomingCalendarGames().map((game) => {
-		const placeholder = gameToPendingMatchEvent(game)
-		const importedMatch =
-			(placeholder.gameId
-				? byGameId.get(String(placeholder.gameId))
-				: undefined) ||
-			byKey.get(
-				eventMatchKey({
-					dateIso: placeholder.dateIso,
-					homeTeam: placeholder.homeTeam,
-					awayTeam: placeholder.awayTeam,
-				}),
-			)
-		if (importedMatch) {
-			usedIds.add(importedMatch.id)
-			return mergeImportedOntoPlaceholder(placeholder, importedMatch)
-		}
-		return placeholder
+	const key = eventMatchKey({
+		dateIso: event.dateIso,
+		homeTeam: event.homeTeam,
+		awayTeam: event.awayTeam,
 	})
+	return games.find(
+		(game) =>
+			eventMatchKey({
+				dateIso: game.dateIso,
+				homeTeam: game.homeTeam ?? '',
+				awayTeam: game.awayTeam ?? '',
+			}) === key,
+	)
+}
 
-	const extras = imported.filter((event) => !usedIds.has(event.id))
-
-	return [...upcoming, ...extras].sort(compareMatchEventsByDate)
+/** Карточки только из Excel; поля календаря подтягиваются из games.ts при совпадении. */
+export function getMatchEvents(dataset: BusFansDataset): MatchEvent[] {
+	return dataset.events
+		.map((event) => {
+			const imported = withListStatus(event)
+			const game = findCalendarGameForEvent(imported)
+			if (!game) return imported
+			return mergeImportedOntoPlaceholder(
+				gameToPendingMatchEvent(game),
+				imported,
+			)
+		})
+		.sort(compareMatchEventsByDate)
 }
 
 export function getMatchEventById(

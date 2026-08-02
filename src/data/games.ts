@@ -592,6 +592,8 @@ const games: Game[] = [
 			first: '2026-07-30',
 			second: ' ',
 		},
+		homeGoals: 1,
+		awayGoals: 2,
 		busfansRegistrationUrl:
 			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-ac287d25b45e9bdab1b5ff9dbe27a55c',
 	},
@@ -632,7 +634,7 @@ const games: Game[] = [
 		dateCard: '08.08 (СБ)',
 		time: 'SAMT 19:00',
 		timeLocal: 'MSK 18:00',
-		stadium: '',
+		stadium: 'РЖД Арена',
 		ticketLink: '',
 		ticketLinkVip: '',
 		ticketLinkSkybox: '',
@@ -640,7 +642,8 @@ const games: Game[] = [
 		seasonTour: '2026/2027 3 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
-		busfansRegistrationUrl: 'http://localhost:3000/',
+		busfansRegistrationUrl:
+			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a/46547',
 	},
 	{
 		id: '27',

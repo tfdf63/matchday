@@ -13,6 +13,13 @@ describe('getBusScheduleOverride', () => {
 		})
 	})
 
+	it('returns schedule override for Lokomotiv away event', () => {
+		expect(getBusScheduleOverride('2026-08-07-lokomotiv-h-akron')).toEqual({
+			departure: '07.08 в 21:00',
+			returnAt: 'после матча',
+		})
+	})
+
 	it('returns null for unknown event', () => {
 		expect(getBusScheduleOverride('unknown-event')).toBeNull()
 	})
@@ -45,5 +52,23 @@ describe('getBusScheduleTimes', () => {
 				eventId: '2026-08-04-akron-h-rostov',
 			}),
 		).toBe('старт: 14:45 · обратно: 19:45')
+	})
+
+	it('formats Lokomotiv schedule with date and text return', () => {
+		expect(
+			getBusScheduleTimes({
+				matchTime: 'SAMT 19:00',
+				eventId: '2026-08-07-lokomotiv-h-akron',
+			}),
+		).toEqual({
+			departure: '07.08 в 21:00',
+			returnAt: 'после матча',
+		})
+		expect(
+			formatBusScheduleLine({
+				matchTime: 'SAMT 19:00',
+				eventId: '2026-08-07-lokomotiv-h-akron',
+			}),
+		).toBe('старт: 07.08 в 21:00 · обратно: после матча')
 	})
 })
