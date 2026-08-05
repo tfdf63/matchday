@@ -621,6 +621,8 @@ const games: Game[] = [
 			first: '2026-08-01',
 			second: ' ',
 		},
+		homeGoals: 0,
+		awayGoals: 4,
 		busfansRegistrationUrl:
 			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-f46075872130522ece5ec7fe9923ed14',
 	},
