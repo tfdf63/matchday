@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-05T14:42:47+04:00",
+    "generatedAt": "2026-08-06T16:33:56+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 1,
@@ -35,7 +35,7 @@
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "label": "Автобус",
       "busNo": null,
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "passengerCount": 50,
       "seatsAssigned": 50,
       "boardingStops": [
@@ -53,7 +53,7 @@
       "birthDateIso": "1989-02-01",
       "boardingPlace": "Тольятти,",
       "phone": "79277779536",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 21,
       "seq": 1
     },
@@ -66,7 +66,7 @@
       "birthDateIso": "2018-06-12",
       "boardingPlace": "Тольятти,",
       "phone": "79649726133",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 18,
       "seq": 2
     },
@@ -79,7 +79,7 @@
       "birthDateIso": "1985-05-22",
       "boardingPlace": "Тольятти,",
       "phone": "79649726133",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 17,
       "seq": 3
     },
@@ -92,7 +92,7 @@
       "birthDateIso": "1983-07-10",
       "boardingPlace": "Тольятти,",
       "phone": "79674908901",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 5,
       "seq": 4
     },
@@ -105,7 +105,7 @@
       "birthDateIso": "1998-06-19",
       "boardingPlace": "Тольятти,",
       "phone": "79277104046",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 50,
       "seq": 5
     },
@@ -113,12 +113,12 @@
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
       "fullName": "Башина Светлана Вячеславовна",
-      "seatNo": "5",
+      "seatNo": "2",
       "orderId": "251495",
       "birthDateIso": "1970-11-29",
       "boardingPlace": "Тольятти,",
       "phone": "79397007338",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 32,
       "seq": 6
     },
@@ -131,7 +131,7 @@
       "birthDateIso": "1991-05-28",
       "boardingPlace": "Тольятти,",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 13,
       "seq": 7
     },
@@ -144,7 +144,7 @@
       "birthDateIso": "1985-11-21",
       "boardingPlace": "Тольятти,",
       "phone": "79063404146",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 25,
       "seq": 8
     },
@@ -157,7 +157,7 @@
       "birthDateIso": "2015-08-06",
       "boardingPlace": "Тольятти,",
       "phone": "79967337930",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 27,
       "seq": 9
     },
@@ -170,7 +170,7 @@
       "birthDateIso": "1988-11-15",
       "boardingPlace": "Тольятти,",
       "phone": "79093436446",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 26,
       "seq": 10
     },
@@ -183,7 +183,7 @@
       "birthDateIso": "1980-07-14",
       "boardingPlace": "Тольятти,",
       "phone": "79179445756",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 8,
       "seq": 11
     },
@@ -196,7 +196,7 @@
       "birthDateIso": "1993-03-10",
       "boardingPlace": "Тольятти,",
       "phone": "79270001964",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 49,
       "seq": 12
     },
@@ -209,7 +209,7 @@
       "birthDateIso": "1966-06-10",
       "boardingPlace": "Тольятти,",
       "phone": "79276599313",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 51,
       "seq": 13
     },
@@ -222,7 +222,7 @@
       "birthDateIso": "1983-07-21",
       "boardingPlace": "Тольятти,",
       "phone": "79179445756",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 7,
       "seq": 14
     },
@@ -235,7 +235,7 @@
       "birthDateIso": "2009-06-15",
       "boardingPlace": "Тольятти,",
       "phone": "79033310884",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 48,
       "seq": 15
     },
@@ -248,7 +248,7 @@
       "birthDateIso": "1988-08-06",
       "boardingPlace": "Тольятти,",
       "phone": "79297058899",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 47,
       "seq": 16
     },
@@ -261,7 +261,7 @@
       "birthDateIso": "1951-01-21",
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 31,
       "seq": 17
     },
@@ -274,7 +274,7 @@
       "birthDateIso": "2011-09-02",
       "boardingPlace": "Тольятти,",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 15,
       "seq": 18
     },
@@ -282,12 +282,12 @@
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
       "fullName": "Карташов Дмитрий Георгиевич",
-      "seatNo": "3",
+      "seatNo": "23",
       "orderId": "251477",
       "birthDateIso": "2015-01-27",
       "boardingPlace": "Тольятти,",
       "phone": "79178139868",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 29,
       "seq": 19
     },
@@ -300,7 +300,7 @@
       "birthDateIso": "1975-04-03",
       "boardingPlace": "Тольятти,",
       "phone": "79278912234",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 11,
       "seq": 20
     },
@@ -313,7 +313,7 @@
       "birthDateIso": "1981-12-23",
       "boardingPlace": "Тольятти,",
       "phone": "79277726611",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 12,
       "seq": 21
     },
@@ -326,7 +326,7 @@
       "birthDateIso": "1970-01-09",
       "boardingPlace": "Тольятти,",
       "phone": "79272662576",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 19,
       "seq": 22
     },
@@ -339,7 +339,7 @@
       "birthDateIso": "1982-09-24",
       "boardingPlace": "Тольятти,",
       "phone": "79869596760",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 30,
       "seq": 23
     },
@@ -352,7 +352,7 @@
       "birthDateIso": "2002-07-16",
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 23,
       "seq": 24
     },
@@ -365,7 +365,7 @@
       "birthDateIso": "1982-01-06",
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 22,
       "seq": 25
     },
@@ -378,7 +378,7 @@
       "birthDateIso": "1991-02-24",
       "boardingPlace": "Тольятти,",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 35,
       "seq": 26
     },
@@ -391,7 +391,7 @@
       "birthDateIso": "1988-01-13",
       "boardingPlace": "Тольятти,",
       "phone": "79277724613",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 20,
       "seq": 27
     },
@@ -404,7 +404,7 @@
       "birthDateIso": "2016-04-15",
       "boardingPlace": "Тольятти,",
       "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 10,
       "seq": 28
     },
@@ -412,12 +412,12 @@
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
       "fullName": "Мищенко Дмитрий Анатольевич",
-      "seatNo": "24",
+      "seatNo": "3",
       "orderId": "251648",
       "birthDateIso": "1975-02-10",
       "boardingPlace": "Тольятти,",
       "phone": "79063381047",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 41,
       "seq": 29
     },
@@ -425,12 +425,12 @@
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
       "fullName": "Мищенко Макар Дмитриевич",
-      "seatNo": "23",
+      "seatNo": "5",
       "orderId": "251648",
       "birthDateIso": "2015-02-24",
       "boardingPlace": "Тольятти,",
       "phone": "79063381047",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 42,
       "seq": 30
     },
@@ -443,7 +443,7 @@
       "birthDateIso": "1987-10-29",
       "boardingPlace": "Тольятти,",
       "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 36,
       "seq": 31
     },
@@ -456,7 +456,7 @@
       "birthDateIso": "2013-04-04",
       "boardingPlace": "Тольятти,",
       "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 38,
       "seq": 32
     },
@@ -469,7 +469,7 @@
       "birthDateIso": "1986-06-01",
       "boardingPlace": "Тольятти,",
       "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 37,
       "seq": 33
     },
@@ -482,7 +482,7 @@
       "birthDateIso": "1954-07-30",
       "boardingPlace": "Тольятти,",
       "phone": "79277852194",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 43,
       "seq": 34
     },
@@ -490,12 +490,12 @@
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
       "fullName": "Петрова Татьяна Сергеевна",
-      "seatNo": "17",
+      "seatNo": "4",
       "orderId": "251648",
       "birthDateIso": "1980-07-23",
       "boardingPlace": "Тольятти,",
       "phone": "79063381047",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 40,
       "seq": 35
     },
@@ -508,7 +508,7 @@
       "birthDateIso": "2015-10-18",
       "boardingPlace": "Тольятти,",
       "phone": "79674888610",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 34,
       "seq": 36
     },
@@ -521,7 +521,7 @@
       "birthDateIso": "1983-03-03",
       "boardingPlace": "Тольятти,",
       "phone": "79674888610",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 33,
       "seq": 37
     },
@@ -534,7 +534,7 @@
       "birthDateIso": "1984-07-03",
       "boardingPlace": "Тольятти,",
       "phone": "79179723135",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 6,
       "seq": 38
     },
@@ -547,7 +547,7 @@
       "birthDateIso": "1990-09-22",
       "boardingPlace": "Тольятти,",
       "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 9,
       "seq": 39
     },
@@ -560,7 +560,7 @@
       "birthDateIso": "1967-11-19",
       "boardingPlace": "Тольятти,",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 14,
       "seq": 40
     },
@@ -568,12 +568,12 @@
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
       "fullName": "Сидоров Александр Олегович",
-      "seatNo": "4",
+      "seatNo": "24",
       "orderId": "251477",
       "birthDateIso": "1987-02-20",
       "boardingPlace": "Тольятти,",
       "phone": "79178139868",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 28,
       "seq": 41
     },
@@ -586,7 +586,7 @@
       "birthDateIso": "2016-07-21",
       "boardingPlace": "Тольятти,",
       "phone": "79372138546",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 53,
       "seq": 42
     },
@@ -599,7 +599,7 @@
       "birthDateIso": "1990-06-20",
       "boardingPlace": "Тольятти,",
       "phone": "79372138546",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 52,
       "seq": 43
     },
@@ -612,7 +612,7 @@
       "birthDateIso": "2008-09-11",
       "boardingPlace": "Тольятти,",
       "phone": "79027428528",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 16,
       "seq": 44
     },
@@ -625,7 +625,7 @@
       "birthDateIso": "2007-11-08",
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 24,
       "seq": 45
     },
@@ -638,7 +638,7 @@
       "birthDateIso": "1994-07-14",
       "boardingPlace": "Тольятти,",
       "phone": "79277772489",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 4,
       "seq": 46
     },
@@ -651,7 +651,7 @@
       "birthDateIso": "1986-12-29",
       "boardingPlace": "Тольятти,",
       "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 39,
       "seq": 47
     },
@@ -664,7 +664,7 @@
       "birthDateIso": "1983-10-14",
       "boardingPlace": "Тольятти,",
       "phone": "79021813490",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 44,
       "seq": 48
     },
@@ -677,7 +677,7 @@
       "birthDateIso": "2009-02-11",
       "boardingPlace": "Тольятти,",
       "phone": "79033310884",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 46,
       "seq": 49
     },
@@ -690,7 +690,7 @@
       "birthDateIso": "1985-08-30",
       "boardingPlace": "Тольятти,",
       "phone": "79033310884",
-      "sourceFile": "atoms_drivers_report_07.08.2026.xlsx",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 45,
       "seq": 50
     }
