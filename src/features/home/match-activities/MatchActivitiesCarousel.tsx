@@ -4,13 +4,13 @@ import type { FC } from 'react'
 import {
 	useCallback,
 	useEffect,
-	useLayoutEffect,
 	useRef,
 	useState,
 } from 'react'
 
 import { CarouselNavChevron } from '@/components/CarouselNavChevron'
 import type { MatchActivity } from '@/data/matchActivities'
+import { useMediaQuery } from '@/lib/hooks/useMediaQuery'
 
 import { MatchActivityCard } from './MatchActivityCard'
 import styles from './MatchActivities.module.scss'
@@ -59,15 +59,7 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 	const [canNext, setCanNext] = useState(false)
 	const [activeIndex, setActiveIndex] = useState(0)
 	/** На ≥1024 разметку chrome не рендерим (двухрядная сетка без карусели). */
-	const [showCarouselChrome, setShowCarouselChrome] = useState(true)
-
-	useLayoutEffect(() => {
-		const mq = window.matchMedia(CAROUSEL_CHROME_MQ)
-		const apply = () => setShowCarouselChrome(mq.matches)
-		apply()
-		mq.addEventListener('change', apply)
-		return () => mq.removeEventListener('change', apply)
-	}, [])
+	const showCarouselChrome = useMediaQuery(CAROUSEL_CHROME_MQ, false)
 
 	const reconcileNavIndexFromScroll = useCallback(() => {
 		const viewport = viewportRef.current

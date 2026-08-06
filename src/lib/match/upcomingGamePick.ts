@@ -1,4 +1,5 @@
 import { PROMOTED_MAIN_CALENDAR_GAME_ID, type Game } from '@/data/games'
+import { getAppDateIso } from '@/lib/datetime/appTimezone'
 
 const MATCH_END_OFFSET_MS = 2 * 60 * 60 * 1000
 
@@ -7,12 +8,9 @@ const MATCH_TIME_ZONE_OFFSETS: Record<string, string> = {
 	SAMT: '+04:00',
 }
 
-/** Локальная дата в формате YYYY-MM-DD (как `Game.dateIso`). */
+/** Календарная «сегодня» в SAMT; формат YYYY-MM-DD (как `Game.dateIso`). */
 export function getLocalDateIso(now: Date = new Date()): string {
-	const y = now.getFullYear()
-	const m = String(now.getMonth() + 1).padStart(2, '0')
-	const d = String(now.getDate()).padStart(2, '0')
-	return `${y}-${m}-${d}`
+	return getAppDateIso(now)
 }
 
 export function sortGamesByDateIso(games: Game[]): Game[] {

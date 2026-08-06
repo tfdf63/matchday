@@ -112,6 +112,7 @@ const SiteFooter: FC = () => {
 								'font-mono',
 								styles.copyright,
 							)}
+							suppressHydrationWarning
 						>
 							©{year}. Все права защищены
 						</p>

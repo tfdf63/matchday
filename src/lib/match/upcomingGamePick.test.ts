@@ -78,6 +78,17 @@ describe('pickPromotedHomeHeroGame', () => {
 		expect(pickPromotedHomeHeroGame(games, now)?.id).toBe('home-next')
 	})
 
+	it('skips nearer away match and picks next home for calendar default', () => {
+		const games = sortGamesByDateIso([
+			makeGame('past-home', '2026-08-04', 'SAMT 17:15', 'home'),
+			makeGame('away-next', '2026-08-08', 'SAMT 19:00', 'away'),
+			makeGame('home-next', '2026-08-23', 'SAMT 19:00', 'home'),
+		])
+		const now = new Date('2026-08-06T12:00:00+04:00')
+
+		expect(pickPromotedHomeHeroGame(games, now)?.id).toBe('home-next')
+	})
+
 	it('если промо-матч домашний и ещё идёт — показываем промо', () => {
 		const games = sortGamesByDateIso([
 			makeGame('19', '2026-05-11', 'SAMT 14:00'),

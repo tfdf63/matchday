@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import type { ReactNode } from 'react'
 
@@ -10,6 +12,7 @@ import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
 import { ParkingModalTrigger } from '@/features/home/parking-modal'
 import { getTeamLogoPath } from '@/data/teamLogos'
+import { useClientNow } from '@/lib/hooks/useClientNow'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 import { formatGoalCell } from '@/lib/match/formatMatchGoals'
 
@@ -57,15 +60,15 @@ export function MatchCard({
 		game.fanIdStatus === 'Fan id' || game.fanIdStatus === 'Без fan id'
 	const fanIdBadgeText =
 		game.fanIdStatus === 'Fan id' ? 'FAN ID' : 'Без fan id'
-	const now = new Date()
-	const matchDateBannerText = getMatchDateBannerText(game, now)
+	const now = useClientNow()
+	const matchDateBannerText = now ? getMatchDateBannerText(game, now) : null
 	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
 
 	return (
 		<article
 			className={cx(styles.root, showTopBadges && styles.rootWithTopBadge)}
 		>
-			{matchDateBannerText ? (
+			{matchDateBannerText && now ? (
 				<MatchDateBanner
 					game={game}
 					now={now}

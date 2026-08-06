@@ -5,8 +5,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import type { Game } from '@/data/games'
 import {
-	getPromotedHeroGameSwitchDate,
-	pickPromotedHeroGame,
+	getPromotedHomeHeroGameSwitchDate,
+	pickPromotedHomeHeroGame,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
@@ -49,29 +49,28 @@ const MatchNavChevron: FC<{ direction: 'left' | 'right' }> = ({ direction }) => 
 
 export type UpcomingMatchesClientProps = {
 	games: Game[]
+	initialSelectedId: string | null
 	withBottomMenu?: boolean
 }
 
 const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 	games,
+	initialSelectedId,
 	withBottomMenu = false,
 }) => {
 	const sortedGames = useMemo(() => sortGamesByDateIso(games), [games])
 	const timeoutRef = useRef<number | null>(null)
 
-	const [selectedId, setSelectedId] = useState<string | null>(() => {
-		const sorted = sortGamesByDateIso(games)
-		return pickPromotedHeroGame(sorted)?.id ?? null
-	})
+	const [selectedId, setSelectedId] = useState<string | null>(initialSelectedId)
 
 	useEffect(() => {
 		const refreshSelectedGame = () => {
 			timeoutRef.current = null
 
 			const now = new Date()
-			setSelectedId(pickPromotedHeroGame(sortedGames, now)?.id ?? null)
+			setSelectedId(pickPromotedHomeHeroGame(sortedGames, now)?.id ?? null)
 
-			const switchDate = getPromotedHeroGameSwitchDate(sortedGames, now)
+			const switchDate = getPromotedHomeHeroGameSwitchDate(sortedGames, now)
 			if (!switchDate) return
 
 			const delay = Math.min(
@@ -94,11 +93,11 @@ const UpcomingMatchesClient: FC<UpcomingMatchesClientProps> = ({
 
 	const selectedGame = useMemo(() => {
 		if (!sortedGames.length) return null
-		const found = selectedId
-			? sortedGames.find((g) => g.id === selectedId)
-			: undefined
-		if (found) return found
-		return pickPromotedHeroGame(sortedGames) ?? sortedGames[0] ?? null
+		if (selectedId) {
+			const found = sortedGames.find((g) => g.id === selectedId)
+			if (found) return found
+		}
+		return sortedGames[0] ?? null
 	}, [sortedGames, selectedId])
 
 	const selectedIndex = useMemo(() => {

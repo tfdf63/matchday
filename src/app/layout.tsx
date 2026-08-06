@@ -3,11 +3,12 @@ import { IBM_Plex_Mono } from 'next/font/google'
 import '../styles/globals.scss'
 import { SiteFooter } from '@/components/Footer'
 import { SeoJsonLd } from '@/components/SeoJsonLd/SeoJsonLd'
-import { AnalyticsScripts } from '@/lib/analytics/AnalyticsScripts'
 import {
 	buildOrganizationJsonLd,
 	buildRootMetadata,
 } from '@/lib/seo'
+import { AppProviders } from './AppProviders'
+import { ClientAnalytics } from './ClientAnalytics'
 import '../styles/globals.css'
 import '../styles/fonts.css'
 
@@ -33,7 +34,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang='ru'>
+		<html lang='ru' suppressHydrationWarning>
 			<head>
 				<link
 					rel='preload'
@@ -71,9 +72,9 @@ export default function RootLayout({
 				<meta name='ICBM' content='53.27804484340651, 50.23771335335012' />
 				<SeoJsonLd data={buildOrganizationJsonLd()} />
 			</head>
-			<body className={ibmPlexMono.variable}>
-				<AnalyticsScripts />
-				{children}
+			<body className={ibmPlexMono.variable} suppressHydrationWarning>
+				<ClientAnalytics />
+				<AppProviders>{children}</AppProviders>
 				<SiteFooter />
 			</body>
 		</html>

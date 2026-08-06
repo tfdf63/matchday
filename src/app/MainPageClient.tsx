@@ -2,16 +2,18 @@
 
 import {
 	Menu,
-	MenuActivitiesIcon,
 	MenuBagIcon,
 	MenuParkingIcon,
+	MenuPromoIcon,
 	MenuTicketIcon,
 	type MenuNavItem,
 } from '@/components/Menu'
-import { ParkingModalProvider, useParkingModal } from '@/features/home/parking-modal'
+import { useHomeInfoModal } from '@/features/home/home-modal'
+import { useParkingModal } from '@/features/home/parking-modal'
 
 const MainMenu: React.FC = () => {
 	const parkingModal = useParkingModal()
+	const { open: openHomeInfoModal } = useHomeInfoModal()
 
 	const menuItems: [MenuNavItem, MenuNavItem, MenuNavItem, MenuNavItem] = [
 		{
@@ -27,10 +29,10 @@ const MainMenu: React.FC = () => {
 			onClick: parkingModal.open,
 		},
 		{
-			id: 'activities',
-			label: 'Активности',
-			href: '/#match-activities',
-			icon: <MenuActivitiesIcon />,
+			id: 'promo',
+			label: 'Промокоды',
+			icon: <MenuPromoIcon />,
+			onClick: () => openHomeInfoModal('promo'),
 		},
 		{
 			id: 'merch',
@@ -44,11 +46,7 @@ const MainMenu: React.FC = () => {
 }
 
 const MainPageClient: React.FC = () => {
-	return (
-		<ParkingModalProvider>
-			<MainMenu />
-		</ParkingModalProvider>
-	)
+	return <MainMenu />
 }
 
 export default MainPageClient

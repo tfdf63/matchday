@@ -23,7 +23,9 @@ export const MainHeroCardRotator: FC<MainHeroCardRotatorProps> = ({
 	seasonTicketsCard,
 	matchCard,
 }) => {
-	const [activeSlide, setActiveSlide] = useState<MainHeroSlide>('seasonTickets')
+	const [activeSlide, setActiveSlide] = useState<MainHeroSlide>(() =>
+		showSeasonTickets ? 'seasonTickets' : 'match',
+	)
 	const [isPaused, setIsPaused] = useState(false)
 	const intervalRef = useRef<number | null>(null)
 

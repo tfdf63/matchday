@@ -10,6 +10,7 @@ import type { Game } from '@/data/games'
 import { getTeamLogoPath } from '@/data/teamLogos'
 import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
+import { useClientNow } from '@/lib/hooks/useClientNow'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 import { formatGoalCell } from '@/lib/match/formatMatchGoals'
 import {
@@ -55,8 +56,8 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	const fanIdBadgeText = game.fanIdStatus === 'Fan id' ? 'FAN ID' : 'Без fan id'
 	const homeCity = game.homeTeamCity?.trim()
 	const awayCity = game.awayTeamCity?.trim()
-	const now = new Date()
-	const matchDateBannerText = getMatchDateBannerText(game, now)
+	const now = useClientNow()
+	const matchDateBannerText = now ? getMatchDateBannerText(game, now) : null
 	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
 	const showDateTimeTentativeBadge = isGameDateTimeTentative(game)
 
@@ -92,7 +93,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 		<article
 			className={cx(styles.root, showTopBadges && styles.rootWithTopBadge)}
 		>
-			{matchDateBannerText ? (
+			{matchDateBannerText && now ? (
 				<MatchDateBanner
 					game={game}
 					now={now}

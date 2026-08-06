@@ -4,13 +4,13 @@ import type { FC } from 'react'
 import {
 	useCallback,
 	useEffect,
-	useLayoutEffect,
 	useRef,
 	useState,
 } from 'react'
 
 import { CarouselNavChevron } from '@/components/CarouselNavChevron'
 import type { TicketProgramCard as TicketProgramCardData } from '@/data/ticketProgram'
+import { useMediaQuery } from '@/lib/hooks/useMediaQuery'
 
 import { TicketProgramCard } from './TicketProgramCard'
 import styles from './TicketProgram.module.scss'
@@ -54,15 +54,7 @@ export const TicketProgramCarousel: FC<TicketProgramCarouselProps> = ({
 	const [canPrev, setCanPrev] = useState(false)
 	const [canNext, setCanNext] = useState(false)
 	const [activeIndex, setActiveIndex] = useState(0)
-	const [showCarouselChrome, setShowCarouselChrome] = useState(true)
-
-	useLayoutEffect(() => {
-		const mq = window.matchMedia(CAROUSEL_CHROME_MQ)
-		const apply = () => setShowCarouselChrome(mq.matches)
-		apply()
-		mq.addEventListener('change', apply)
-		return () => mq.removeEventListener('change', apply)
-	}, [])
+	const showCarouselChrome = useMediaQuery(CAROUSEL_CHROME_MQ, false)
 
 	const reconcileNavIndexFromScroll = useCallback(() => {
 		const viewport = viewportRef.current

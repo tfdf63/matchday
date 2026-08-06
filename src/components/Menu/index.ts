@@ -4,6 +4,7 @@ export {
 	MenuTicketIcon,
 	MenuParkingIcon,
 	MenuActivitiesIcon,
+	MenuPromoIcon,
 	MenuBagIcon,
 	MenuFcLogoIcon,
 } from './icons'
