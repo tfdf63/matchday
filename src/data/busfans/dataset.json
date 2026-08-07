@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-07T15:36:04+04:00",
+    "generatedAt": "2026-08-07T16:10:03+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 1,
@@ -425,7 +425,7 @@
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
       "fullName": "Мищенко Макар Дмитриевич",
-      "seatNo": "5",
+      "seatNo": "17",
       "orderId": "251648",
       "birthDateIso": "2015-02-24",
       "boardingPlace": "Тольятти,",
@@ -659,7 +659,7 @@
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
       "fullName": "Храмов Степан Константинрвич",
-      "seatNo": "30",
+      "seatNo": "5",
       "orderId": "251186",
       "birthDateIso": "1989-02-06",
       "boardingPlace": "Тольятти,",
