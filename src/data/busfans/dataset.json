@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-06T16:33:56+04:00",
+    "generatedAt": "2026-08-07T15:36:04+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 1,
-    "passengersCount": 50
+    "passengersCount": 51
   },
   "events": [
     {
@@ -25,8 +25,8 @@
       "seasonTour": "2026/2027 3 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 1,
-      "passengerCount": 50,
-      "seatsAssigned": 50
+      "passengerCount": 51,
+      "seatsAssigned": 51
     }
   ],
   "manifests": [
@@ -36,8 +36,8 @@
       "label": "Автобус",
       "busNo": null,
       "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
-      "passengerCount": 50,
-      "seatsAssigned": 50,
+      "passengerCount": 51,
+      "seatsAssigned": 51,
       "boardingStops": [
         "Тольятти"
       ]
@@ -658,6 +658,19 @@
     {
       "eventId": "2026-08-07-lokomotiv-h-akron",
       "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
+      "fullName": "Храмов Степан Константинрвич",
+      "seatNo": "30",
+      "orderId": "251186",
+      "birthDateIso": "1989-02-06",
+      "boardingPlace": "Тольятти,",
+      "phone": "79397009799",
+      "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
+      "sourceRow": 54,
+      "seq": 48
+    },
+    {
+      "eventId": "2026-08-07-lokomotiv-h-akron",
+      "manifestId": "2026-08-07-lokomotiv-h-akron-bus-avtobus",
       "fullName": "Черепанов Максим Петрович",
       "seatNo": "29",
       "orderId": "252135",
@@ -666,7 +679,7 @@
       "phone": "79021813490",
       "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 44,
-      "seq": 48
+      "seq": 49
     },
     {
       "eventId": "2026-08-07-lokomotiv-h-akron",
@@ -679,7 +692,7 @@
       "phone": "79033310884",
       "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 46,
-      "seq": 49
+      "seq": 50
     },
     {
       "eventId": "2026-08-07-lokomotiv-h-akron",
@@ -692,7 +705,7 @@
       "phone": "79033310884",
       "sourceFile": "atoms_drivers_report_07.08.2026 (2).xlsx",
       "sourceRow": 45,
-      "seq": 50
+      "seq": 51
     }
   ]
 }
