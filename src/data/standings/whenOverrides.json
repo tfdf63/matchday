@@ -1,0 +1,149 @@
+{
+  "10": {
+    "label": "9–12 окт",
+    "time": null,
+    "exact": false,
+    "text": "9–12 окт",
+    "range": true
+  },
+  "11": {
+    "label": "16–19 окт",
+    "time": null,
+    "exact": false,
+    "text": "16–19 окт",
+    "range": true
+  },
+  "12": {
+    "label": "23–26 окт",
+    "time": null,
+    "exact": false,
+    "text": "23–26 окт",
+    "range": true
+  },
+  "13": {
+    "label": "30 окт – 2 ноя",
+    "time": null,
+    "exact": false,
+    "text": "30 окт – 2 ноя",
+    "range": true
+  },
+  "14": {
+    "label": "6–8 ноя",
+    "time": null,
+    "exact": false,
+    "text": "6–8 ноя",
+    "range": true
+  },
+  "15": {
+    "label": "20–23 ноя",
+    "time": null,
+    "exact": false,
+    "text": "20–23 ноя",
+    "range": true
+  },
+  "16": {
+    "label": "27–30 ноя",
+    "time": null,
+    "exact": false,
+    "text": "27–30 ноя",
+    "range": true
+  },
+  "17": {
+    "label": "4–7 дек",
+    "time": null,
+    "exact": false,
+    "text": "4–7 дек",
+    "range": true
+  },
+  "18": {
+    "label": "26 фев – 1 мар",
+    "time": null,
+    "exact": false,
+    "text": "26 фев – 1 мар",
+    "range": true
+  },
+  "19": {
+    "label": "5–8 мар",
+    "time": null,
+    "exact": false,
+    "text": "5–8 мар",
+    "range": true
+  },
+  "20": {
+    "label": "12–15 мар",
+    "time": null,
+    "exact": false,
+    "text": "12–15 мар",
+    "range": true
+  },
+  "21": {
+    "label": "19–21 мар",
+    "time": null,
+    "exact": false,
+    "text": "19–21 мар",
+    "range": true
+  },
+  "22": {
+    "label": "2–5 апр",
+    "time": null,
+    "exact": false,
+    "text": "2–5 апр",
+    "range": true
+  },
+  "23": {
+    "label": "9–12 апр",
+    "time": null,
+    "exact": false,
+    "text": "9–12 апр",
+    "range": true
+  },
+  "24": {
+    "label": "16–19 апр",
+    "time": null,
+    "exact": false,
+    "text": "16–19 апр",
+    "range": true
+  },
+  "25": {
+    "label": "23–26 апр",
+    "time": null,
+    "exact": false,
+    "text": "23–26 апр",
+    "range": true
+  },
+  "26": {
+    "label": "30 апр – 3 мая",
+    "time": null,
+    "exact": false,
+    "text": "30 апр – 3 мая",
+    "range": true
+  },
+  "27": {
+    "label": "7–10 мая",
+    "time": null,
+    "exact": false,
+    "text": "7–10 мая",
+    "range": true
+  },
+  "28": {
+    "label": "14–17 мая",
+    "time": null,
+    "exact": false,
+    "text": "14–17 мая",
+    "range": true
+  },
+  "29": {
+    "label": "21–24 мая",
+    "time": null,
+    "exact": false,
+    "text": "21–24 мая",
+    "range": true
+  },
+  "30": {
+    "label": "29 мая",
+    "time": null,
+    "exact": false,
+    "text": "29 мая",
+    "range": false
+  }
+}

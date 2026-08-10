@@ -13,6 +13,8 @@ export interface Game {
 	/** Подпись кнопки для `ticketLinkVip`; по умолчанию «VIP». */
 	ticketLinkVipLabel?: string
 	ticketLinkSkybox?: string
+	/** Бизнес-клуб (отдельная ссылка на виджет/лендинг). */
+	ticketLinkBusinessClub?: string
 	/** Ссылка на регистрацию в фан-автобус (кнопка на /busfans). */
 	busfansRegistrationUrl?: string
 	leagueInfo?: string
@@ -644,6 +646,8 @@ const games: Game[] = [
 		seasonTour: '2026/2027 3 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		homeGoals: 0,
+		awayGoals: 0,
 		busfansRegistrationUrl:
 			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a/46547',
 	},
@@ -665,6 +669,8 @@ const games: Game[] = [
 		seasonTour: '2026/2027 4 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		busfansRegistrationUrl:
+			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a',
 	},
 	{
 		id: '28',
@@ -688,6 +694,8 @@ const games: Game[] = [
 			first: '2026-08-15',
 			second: ' ',
 		},
+		busfansRegistrationUrl:
+			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a',
 	},
 	{
 		id: '29',

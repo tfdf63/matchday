@@ -18,6 +18,7 @@ export const TEAM_CITY_BY_NAME: Record<string, string> = {
 	'Динамо Мск': 'Москва',
 	'Динамо Мх': 'Махачкала',
 	Факел: 'Воронеж',
+	Химки: 'Химки',
 	Родина: 'Москва',
 }
 
@@ -46,6 +47,7 @@ const TEAM_LOGO_BY_NAME: Record<string, string> = {
 	'Динамо Мск': '/images/teamslogo/Dynamo-Moscow.png',
 	'Динамо Мх': '/images/teamslogo/Dynamo.png',
 	Факел: '/images/teamslogo/Fakel.png',
+	Химки: '/images/teamslogo/Khimki.svg',
 	Родина: '/images/teamslogo/Rodina2.png',
 }
 

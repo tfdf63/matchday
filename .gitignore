@@ -64,5 +64,8 @@ buspromt.md
 src/data/busfans/raw/*.xlsx
 !src/data/busfans/raw/.gitkeep
 
+# данные о матчах
+src/data/standings/raw
+
 # документация
 /docs/

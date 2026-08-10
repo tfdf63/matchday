@@ -8,7 +8,8 @@
 		"start": "next start",
 		"lint": "next lint",
 		"test": "vitest run",
-		"busfans:import": "python3 scripts/busfans/import-atoms-reports.py"
+		"busfans:import": "python3 scripts/busfans/import-atoms-reports.py",
+		"standings:import": "python3 scripts/standings/import-season.py && python3 scripts/standings/import-season.py --season 2025/26 --season-label 25/26 --csv src/data/standings/raw/matches_2025_26.csv --overrides src/data/standings/whenOverrides_2526.json --out src/data/standings/season2526.json && python3 scripts/standings/import-season.py --season 2024/25 --season-label 24/25 --csv src/data/standings/raw/matches_2024_25.csv --overrides src/data/standings/whenOverrides_2425.json --out src/data/standings/season2425.json"
 	},
 	"dependencies": {
 		"lucide-react": "^0.548.0",

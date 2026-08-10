@@ -1,0 +1,547 @@
+{
+  "season": "2024/25",
+  "seasonLabel": "24/25",
+  "timezone": "SAMT",
+  "matches": [
+    {
+      "tour": 1,
+      "date": "2024-07-20",
+      "team": "Локомотив",
+      "venue": "away",
+      "match": {
+        "score": "2:3",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "20 июл (сб)",
+        "time": "16:00",
+        "exact": true,
+        "text": "20 июл (сб), 16:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 2,
+      "date": "2024-07-27",
+      "team": "Факел",
+      "venue": "away",
+      "match": {
+        "score": "2:0",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "27 июл (сб)",
+        "time": "21:00",
+        "exact": true,
+        "text": "27 июл (сб), 21:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 3,
+      "date": "2024-08-03",
+      "team": "Динамо Мск",
+      "venue": "home",
+      "match": {
+        "score": "0:2",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "3 авг (сб)",
+        "time": "16:00",
+        "exact": true,
+        "text": "3 авг (сб), 16:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 4,
+      "date": "2024-08-10",
+      "team": "Оренбург",
+      "venue": "away",
+      "match": {
+        "score": "2:2",
+        "pts": 1,
+        "played": true
+      },
+      "when": {
+        "label": "10 авг (сб)",
+        "time": "18:30",
+        "exact": true,
+        "text": "10 авг (сб), 18:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 5,
+      "date": "2024-08-19",
+      "team": "Рубин",
+      "venue": "home",
+      "match": {
+        "score": "1:2",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "19 авг (пн)",
+        "time": "18:30",
+        "exact": true,
+        "text": "19 авг (пн), 18:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 6,
+      "date": "2024-08-24",
+      "team": "ЦСКА",
+      "venue": "away",
+      "match": {
+        "score": "0:4",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "24 авг (сб)",
+        "time": "16:00",
+        "exact": true,
+        "text": "24 авг (сб), 16:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 7,
+      "date": "2024-08-31",
+      "team": "Ахмат",
+      "venue": "away",
+      "match": {
+        "score": "0:0",
+        "pts": 1,
+        "played": true
+      },
+      "when": {
+        "label": "31 авг (сб)",
+        "time": "21:00",
+        "exact": true,
+        "text": "31 авг (сб), 21:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 8,
+      "date": "2024-09-15",
+      "team": "Химки",
+      "venue": "home",
+      "match": {
+        "score": "3:0",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "15 сен (вс)",
+        "time": "17:30",
+        "exact": true,
+        "text": "15 сен (вс), 17:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 9,
+      "date": "2024-09-21",
+      "team": "Краснодар",
+      "venue": "home",
+      "match": {
+        "score": "2:5",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "21 сен (сб)",
+        "time": "15:00",
+        "exact": true,
+        "text": "21 сен (сб), 15:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 10,
+      "date": "2024-09-28",
+      "team": "Ростов",
+      "venue": "away",
+      "match": {
+        "score": "2:0",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "28 сен (сб)",
+        "time": "21:00",
+        "exact": true,
+        "text": "28 сен (сб), 21:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 11,
+      "date": "2024-10-05",
+      "team": "Пари НН",
+      "venue": "home",
+      "match": {
+        "score": "2:2",
+        "pts": 1,
+        "played": true
+      },
+      "when": {
+        "label": "5 окт (сб)",
+        "time": "15:00",
+        "exact": true,
+        "text": "5 окт (сб), 15:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 12,
+      "date": "2024-10-18",
+      "team": "Зенит",
+      "venue": "home",
+      "match": {
+        "score": "0:5",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "18 окт (пт)",
+        "time": "19:00",
+        "exact": true,
+        "text": "18 окт (пт), 19:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 13,
+      "date": "2024-10-26",
+      "team": "Динамо Мх",
+      "venue": "away",
+      "match": {
+        "score": "1:1",
+        "pts": 1,
+        "played": true
+      },
+      "when": {
+        "label": "26 окт (сб)",
+        "time": "15:00",
+        "exact": true,
+        "text": "26 окт (сб), 15:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 14,
+      "date": "2024-11-03",
+      "team": "Крылья Советов",
+      "venue": "home",
+      "match": {
+        "score": "2:0",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "3 ноя (вс)",
+        "time": "14:00",
+        "exact": true,
+        "text": "3 ноя (вс), 14:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 15,
+      "date": "2024-11-10",
+      "team": "Спартак",
+      "venue": "away",
+      "match": {
+        "score": "0:4",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "10 ноя (вс)",
+        "time": "16:15",
+        "exact": true,
+        "text": "10 ноя (вс), 16:15",
+        "range": false
+      }
+    },
+    {
+      "tour": 16,
+      "date": "2024-11-22",
+      "team": "Рубин",
+      "venue": "away",
+      "match": {
+        "score": "0:3",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "22 ноя (пт)",
+        "time": "20:00",
+        "exact": true,
+        "text": "22 ноя (пт), 20:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 17,
+      "date": "2024-11-30",
+      "team": "Оренбург",
+      "venue": "home",
+      "match": {
+        "score": "1:0",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "30 ноя (сб)",
+        "time": "15:00",
+        "exact": true,
+        "text": "30 ноя (сб), 15:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 18,
+      "date": "2024-12-07",
+      "team": "Зенит",
+      "venue": "away",
+      "match": {
+        "score": "2:1",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "7 дек (сб)",
+        "time": "17:30",
+        "exact": true,
+        "text": "7 дек (сб), 17:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 19,
+      "date": "2025-03-01",
+      "team": "Пари НН",
+      "venue": "away",
+      "match": {
+        "score": "1:2",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "1 мар (сб)",
+        "time": "15:00",
+        "exact": true,
+        "text": "1 мар (сб), 15:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 20,
+      "date": "2025-03-09",
+      "team": "Крылья Советов",
+      "venue": "away",
+      "match": {
+        "score": "2:0",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "9 мар (вс)",
+        "time": "17:30",
+        "exact": true,
+        "text": "9 мар (вс), 17:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 21,
+      "date": "2025-03-16",
+      "team": "ЦСКА",
+      "venue": "home",
+      "match": {
+        "score": "1:2",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "16 мар (вс)",
+        "time": "14:00",
+        "exact": true,
+        "text": "16 мар (вс), 14:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 22,
+      "date": "2025-03-31",
+      "team": "Ростов",
+      "venue": "home",
+      "match": {
+        "score": "2:3",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "31 мар (пн)",
+        "time": "19:30",
+        "exact": true,
+        "text": "31 мар (пн), 19:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 23,
+      "date": "2025-04-05",
+      "team": "Краснодар",
+      "venue": "away",
+      "match": {
+        "score": "0:1",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "5 апр (сб)",
+        "time": "20:45",
+        "exact": true,
+        "text": "5 апр (сб), 20:45",
+        "range": false
+      }
+    },
+    {
+      "tour": 24,
+      "date": "2025-04-13",
+      "team": "Факел",
+      "venue": "home",
+      "match": {
+        "score": "1:0",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "13 апр (вс)",
+        "time": "15:30",
+        "exact": true,
+        "text": "13 апр (вс), 15:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 25,
+      "date": "2025-04-19",
+      "team": "Спартак",
+      "venue": "home",
+      "match": {
+        "score": "2:3",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "19 апр (сб)",
+        "time": "15:30",
+        "exact": true,
+        "text": "19 апр (сб), 15:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 26,
+      "date": "2025-04-27",
+      "team": "Химки",
+      "venue": "away",
+      "match": {
+        "score": "2:2",
+        "pts": 1,
+        "played": true
+      },
+      "when": {
+        "label": "27 апр (вс)",
+        "time": "17:30",
+        "exact": true,
+        "text": "27 апр (вс), 17:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 27,
+      "date": "2025-05-02",
+      "team": "Динамо Мх",
+      "venue": "home",
+      "match": {
+        "score": "1:0",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "2 май (пт)",
+        "time": "19:00",
+        "exact": true,
+        "text": "2 май (пт), 19:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 28,
+      "date": "2025-05-11",
+      "team": "Ахмат",
+      "venue": "home",
+      "match": {
+        "score": "3:2",
+        "pts": 3,
+        "played": true
+      },
+      "when": {
+        "label": "11 май (вс)",
+        "time": "15:00",
+        "exact": true,
+        "text": "11 май (вс), 15:00",
+        "range": false
+      }
+    },
+    {
+      "tour": 29,
+      "date": "2025-05-18",
+      "team": "Динамо Мск",
+      "venue": "away",
+      "match": {
+        "score": "1:2",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "18 май (вс)",
+        "time": "17:30",
+        "exact": true,
+        "text": "18 май (вс), 17:30",
+        "range": false
+      }
+    },
+    {
+      "tour": 30,
+      "date": "2025-05-24",
+      "team": "Локомотив",
+      "venue": "home",
+      "match": {
+        "score": "1:4",
+        "pts": 0,
+        "played": true
+      },
+      "when": {
+        "label": "24 май (сб)",
+        "time": "17:30",
+        "exact": true,
+        "text": "24 май (сб), 17:30",
+        "range": false
+      }
+    }
+  ]
+}
