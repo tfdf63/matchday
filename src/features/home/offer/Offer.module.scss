@@ -144,6 +144,17 @@
 	}
 }
 
+.cardLink {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 4px;
+	}
+}
+
 @keyframes offerFadeIn {
 	from {
 		opacity: 0;

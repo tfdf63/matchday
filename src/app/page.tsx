@@ -7,6 +7,7 @@ import Main, {
 	MatchActivitiesSection,
 	SectorSection,
 	TicketProgramSection,
+	LoyaltyProgramSection,
 	UpcomingMatches,
 	OfferSection,
 	defaultOfferContent,
@@ -16,10 +17,7 @@ import Main, {
 	FaqSection,
 	MarqueeSection,
 } from '@/features/home'
-import {
-	buildFaqPageJsonLd,
-	buildSportsEventsJsonLd,
-} from '@/lib/seo'
+import { buildFaqPageJsonLd, buildSportsEventsJsonLd } from '@/lib/seo'
 import MainPageClient from './MainPageClient'
 
 const faqJsonLd = buildFaqPageJsonLd(faqItems)
@@ -31,6 +29,7 @@ const MatchesPage: React.FC = () => {
 			<SeoJsonLd data={faqJsonLd} />
 			<SeoJsonLd data={eventsJsonLd} />
 			<Main withBottomMenu />
+			<LoyaltyProgramSection />
 			<UpcomingMatches withBottomMenu />
 			<OfferSection {...defaultOfferContent} />
 			<MatchActivitiesSection />

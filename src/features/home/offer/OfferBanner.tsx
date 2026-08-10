@@ -26,6 +26,10 @@ export type OfferBannerProps = {
 	imageSrcDesktopXl?: string
 	className?: string
 	headingId?: string
+	href?: string
+	imageWrapClassName?: string
+	pictureClassName?: string
+	imageClassName?: string
 }
 
 export const OfferBanner: FC<OfferBannerProps> = ({
@@ -40,9 +44,24 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 	imageSrcDesktopXl = OFFER_MASCOT_DESKTOP_XL,
 	className,
 	headingId = 'offer-heading',
+	href,
+	imageWrapClassName,
+	pictureClassName,
+	imageClassName,
 }) => {
+	const RootTag = href ? 'a' : 'article'
+
 	return (
-		<article className={cx(styles.card, className)}>
+		<RootTag
+			className={cx(styles.card, href && styles.cardLink, className)}
+			{...(href
+				? {
+						href,
+						target: '_blank',
+						rel: 'noopener noreferrer',
+					}
+				: {})}
+		>
 			<div className={styles.cardMain}>
 				<h2 id={headingId} className={styles.title}>
 					{title
@@ -59,15 +78,15 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 					<p className={cx(styles.description, 'font-mono')}>{description}</p>
 				</div>
 			</div>
-			<div className={styles.imageWrap}>
-				<picture className={styles.picture}>
+			<div className={cx(styles.imageWrap, imageWrapClassName)}>
+				<picture className={cx(styles.picture, pictureClassName)}>
 					<source media="(min-width: 1920px)" srcSet={imageSrcDesktopXl} />
 					<source media="(min-width: 1600px)" srcSet={imageSrcDesktop} />
 					<source media="(min-width: 1280px)" srcSet={imageSrcLaptop} />
 					<source media="(min-width: 1024px)" srcSet={imageSrcWide} />
 					<source media="(min-width: 767px)" srcSet={imageSrcTablet} />
 					<img
-						className={styles.image}
+						className={cx(styles.image, imageClassName)}
 						src={imageSrc}
 						alt=""
 						width={2064}
@@ -77,6 +96,6 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 					/>
 				</picture>
 			</div>
-		</article>
+		</RootTag>
 	)
 }

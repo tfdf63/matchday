@@ -1,5 +1,6 @@
 export { default } from './Main'
 export { FonbetTicketBanner } from './fonbet-banner/FonbetTicketBanner'
+export { LoyaltyProgramSection } from './loyalty-program'
 export {
 	OfferSection,
 	type OfferSectionProps,

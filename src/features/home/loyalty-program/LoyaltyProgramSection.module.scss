@@ -1,0 +1,129 @@
+@use '../../../styles/tokens.scss' as *;
+
+/* Между Main и «Календарь матчей» */
+.section {
+	position: relative;
+	z-index: 1;
+	overflow: visible;
+	width: 100%;
+	background: #020a0a;
+	/* Запас сверху под выступ маскота */
+	padding: 56px 0 40px;
+
+	@include from($bp-tablet-sm) {
+		padding: 80px 0 48px;
+	}
+
+	@include from($bp-tablet) {
+		padding: 96px 0 56px;
+	}
+
+	@include from($bp-laptop) {
+		padding: 104px 0 56px;
+	}
+
+	@include from($bp-desktop) {
+		padding: 120px 0 56px;
+	}
+
+	@include from($bp-desktop-xl) {
+		padding: 132px 0 56px;
+	}
+}
+
+.loyaltyCard {
+	overflow: visible;
+
+	@include from($bp-tablet-sm) {
+		padding-right: 460px;
+	}
+
+	@include from($bp-tablet) {
+		padding-right: 520px;
+	}
+
+	@include from($bp-laptop) {
+		padding-right: 660px;
+	}
+
+	@include from($bp-desktop) {
+		padding-right: 780px;
+	}
+
+	@include from($bp-desktop-xl) {
+		padding-right: 1050px;
+	}
+}
+
+.imageWrap {
+	overflow: visible;
+	z-index: 3;
+	margin-top: -72px;
+
+	@include from($bp-tablet-sm) {
+		top: auto;
+		bottom: 0;
+		margin-top: 0;
+		/* Высота больше min-height карточки — маскот выступает вверх (как Offer) */
+		width: 460px;
+		height: 410px;
+	}
+
+	@include from($bp-tablet) {
+		width: 520px;
+		height: 480px;
+	}
+
+	@include from($bp-laptop) {
+		width: 660px;
+		height: 580px;
+	}
+
+	@include from($bp-desktop) {
+		width: 780px;
+		height: 690px;
+	}
+
+	@include from($bp-desktop-xl) {
+		width: 1100px;
+		height: 760px;
+	}
+}
+
+.picture {
+	overflow: visible;
+}
+
+.image {
+	width: 100%;
+	max-width: 360px;
+	object-position: bottom center;
+
+	@include from($bp-tablet-sm) {
+		left: -14%;
+		width: 130%;
+		max-height: none;
+		height: auto;
+		object-position: right bottom;
+	}
+
+	@include from($bp-tablet) {
+		right: 0;
+		left: auto;
+		width: 135%;
+		max-height: none;
+	}
+
+	@include from($bp-laptop) {
+		width: 135%;
+	}
+
+	@include from($bp-desktop) {
+		width: 120%;
+		max-width: none;
+	}
+
+	@include from($bp-desktop-xl) {
+		width: 110%;
+	}
+}
