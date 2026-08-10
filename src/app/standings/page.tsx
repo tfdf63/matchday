@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function StandingsRoutePage() {
 	return (
 		<main id='content'>
-			<StandingsPage season={season} />
+			<StandingsPage />
 		</main>
 	)
 }

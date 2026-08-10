@@ -23,7 +23,7 @@ $pts-loss: #f08a8a;
 	width: 100%;
 	max-width: 720px;
 	margin: 0 auto;
-	padding: 32px 12px 48px;
+	padding: 32px 20px 48px;
 
 	@include from($bp-tablet-sm) {
 		padding: 40px 40px 64px;
@@ -35,55 +35,6 @@ $pts-loss: #f08a8a;
 	flex-direction: column;
 	gap: 12px;
 	margin-bottom: 28px;
-}
-
-.seasonSwitcher {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-}
-
-.seasonTab {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	box-sizing: border-box;
-	min-height: 36px;
-	padding: 8px 16px;
-	border: 1px solid rgb(255 255 255 / 0.35);
-	background: transparent;
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 1.2;
-	text-decoration: none;
-	text-transform: uppercase;
-	color: rgb(255 255 255 / 0.85);
-	transition:
-		background-color 0.15s ease,
-		border-color 0.15s ease,
-		color 0.15s ease;
-
-	@include from($bp-tablet-sm) {
-		min-height: 40px;
-		padding: 10px 20px;
-		font-size: 13px;
-	}
-
-	&:hover {
-		border-color: rgb(255 255 255 / 0.7);
-		color: #fff;
-	}
-
-	&:focus-visible {
-		outline: 2px solid var(--button-focus-ring);
-		outline-offset: 2px;
-	}
-}
-
-.seasonTabActive {
-	border-color: #fff;
-	background: rgb(255 255 255 / 0.12);
-	color: #fff;
 }
 
 .title {
@@ -109,13 +60,9 @@ $pts-loss: #f08a8a;
 
 .metaLine {
 	margin: 0;
-	font-size: 11px;
-	line-height: 1.4;
+	font-size: 12px;
+	line-height: 1.3;
 	color: $card-text-muted;
-
-	@include from($bp-tablet-sm) {
-		font-size: 12px;
-	}
 }
 
 .seasonBlock {
@@ -127,7 +74,7 @@ $pts-loss: #f08a8a;
 .seasonTitle {
 	margin: 0;
 	font-family: 'Akademia', sans-serif;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.1;
 	text-transform: uppercase;
@@ -183,11 +130,12 @@ $pts-loss: #f08a8a;
 	min-width: 100%;
 	table-layout: fixed;
 	border-collapse: collapse;
-	font-size: 14px;
-	line-height: 1.35;
+	font-size: 11px;
+	line-height: 1.25;
 
 	@include from($bp-tablet-sm) {
 		font-size: 15px;
+		line-height: 1.35;
 	}
 
 	@include from($bp-tablet) {
@@ -195,27 +143,49 @@ $pts-loss: #f08a8a;
 	}
 }
 
-.table col.colTour {
+.tableMultiSeason {
+	min-width: 0;
+}
+
+.tableMultiSeason col.colTour {
+	width: 5%;
+}
+
+.tableMultiSeason col.colLogo {
 	width: 8%;
 }
 
-.table col.colLogo {
-	width: 14%;
+.tableMultiSeason col.colTeam {
+	width: 28%;
 }
 
-.table col.colTeam {
-	width: 46%;
+.tableMultiSeason col.colSeason {
+	width: 19.666%;
 }
 
-.table col.colNum {
-	width: 10.666%;
+@include from($bp-tablet-sm) {
+	.tableMultiSeason col.colTour {
+		width: 7%;
+	}
+
+	.tableMultiSeason col.colLogo {
+		width: 11%;
+	}
+
+	.tableMultiSeason col.colTeam {
+		width: 34%;
+	}
+
+	.tableMultiSeason col.colSeason {
+		width: 16%;
+	}
 }
 
 .table th,
 .table td {
 	box-sizing: border-box;
 	overflow: hidden;
-	padding: 8px 4px;
+	padding: 5px 2px;
 	text-align: left;
 	vertical-align: middle;
 	border-bottom: 1px solid rgb(255 255 255 / 0.12);
@@ -230,14 +200,16 @@ $pts-loss: #f08a8a;
 }
 
 .table th {
-	font-size: 12px;
+	font-size: 9px;
 	font-weight: 400;
 	text-transform: uppercase;
 	color: $card-text-muted;
 	white-space: nowrap;
+	letter-spacing: -0.02em;
 
 	@include from($bp-tablet-sm) {
 		font-size: 13px;
+		letter-spacing: normal;
 	}
 
 	@include from($bp-tablet) {
@@ -262,7 +234,7 @@ $pts-loss: #f08a8a;
 }
 
 .cupTour {
-	font-size: 11px;
+	font-size: 9px;
 	font-weight: 500;
 	color: rgb(255 255 255 / 0.9);
 	white-space: nowrap;
@@ -303,10 +275,92 @@ $pts-loss: #f08a8a;
 	white-space: nowrap;
 }
 
+.colSeason {
+	max-width: 0;
+	padding-inline: 1px;
+	text-align: center;
+	vertical-align: middle;
+
+	@include from($bp-tablet-sm) {
+		padding-inline: 2px;
+	}
+}
+
+.table th.colSeason,
+.table td.colSeason {
+	text-align: center;
+}
+
+.table tfoot td.colSeason {
+	text-align: center;
+
+	.pts {
+		font-size: 13px;
+
+		@include from($bp-tablet-sm) {
+			font-size: 16px;
+		}
+
+		@include from($bp-tablet) {
+			font-size: 17px;
+		}
+	}
+}
+
+.colSeasonActive {
+	background: rgb(255 255 255 / 0.04);
+}
+
+.resultCell {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1px;
+	min-height: 0;
+	width: 100%;
+	margin-inline: auto;
+	line-height: 1.1;
+	text-align: center;
+
+	.score {
+		font-size: 13px;
+		font-weight: 500;
+	}
+
+	.pts {
+		font-size: 11px;
+	}
+
+	@include from($bp-tablet-sm) {
+		gap: 3px;
+		min-height: 2.5em;
+		line-height: 1.15;
+
+		.score {
+			font-size: 16px;
+		}
+
+		.pts {
+			font-size: 14px;
+		}
+	}
+
+	@include from($bp-tablet) {
+		.score {
+			font-size: 17px;
+		}
+
+		.pts {
+			font-size: 15px;
+		}
+	}
+}
+
 .matchCell {
 	display: flex;
 	flex-direction: column;
-	gap: 6px;
+	gap: 3px;
 	min-width: 0;
 	max-width: 100%;
 
@@ -318,16 +372,17 @@ $pts-loss: #f08a8a;
 .matchMeta {
 	display: flex;
 	align-items: center;
-	gap: 6px;
+	gap: 4px;
 	min-width: 0;
 	max-width: 100%;
-	font-size: 12px;
-	line-height: 1.2;
+	font-size: 9px;
+	line-height: 1.15;
 	color: rgb(255 255 255 / 0.85);
 
 	@include from($bp-tablet-sm) {
 		gap: 7px;
 		font-size: 13px;
+		line-height: 1.2;
 	}
 
 	@include from($bp-tablet) {
@@ -337,8 +392,8 @@ $pts-loss: #f08a8a;
 
 .matchMetaIcon {
 	flex: 0 0 auto;
-	width: 14px;
-	height: 14px;
+	width: 11px;
+	height: 11px;
 	color: rgb(255 255 255 / 0.85);
 
 	@include from($bp-tablet-sm) {
@@ -355,9 +410,25 @@ $pts-loss: #f08a8a;
 .matchMetaWhen {
 	display: flex;
 	align-items: center;
-	flex-wrap: wrap;
-	gap: 4px;
+	flex-wrap: nowrap;
+	gap: 2px;
 	min-width: 0;
+	overflow: hidden;
+
+	> span:first-child {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
+
+.matchMetaSep,
+.matchMetaTime {
+	display: none;
+
+	@include from($bp-tablet-sm) {
+		display: inline;
+	}
 }
 
 .matchMetaSep {
@@ -442,8 +513,8 @@ $pts-loss: #f08a8a;
 .teamLogo {
 	display: block;
 	flex: 0 0 auto;
-	width: 36px;
-	height: 36px;
+	width: 26px;
+	height: 26px;
 	margin: 0 auto;
 	object-fit: contain;
 
@@ -461,8 +532,8 @@ $pts-loss: #f08a8a;
 .teamLogoPlaceholder {
 	display: block;
 	flex: 0 0 auto;
-	width: 36px;
-	height: 36px;
+	width: 26px;
+	height: 26px;
 	margin: 0 auto;
 	background: rgb(255 255 255 / 0.08);
 
@@ -482,16 +553,17 @@ $pts-loss: #f08a8a;
 	min-width: 0;
 	overflow: hidden;
 	font-family: 'Akademia', sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 400;
-	line-height: 1.15;
+	line-height: 1.12;
 	text-transform: uppercase;
 	overflow-wrap: anywhere;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
 
 	@include from($bp-tablet-sm) {
-		font-size: 18px;
+		font-size: 19px;
+		line-height: 1.15;
 	}
 
 	@include from($bp-tablet) {
@@ -571,10 +643,10 @@ $pts-loss: #f08a8a;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 32px;
-	padding: 6px 4px;
+	min-height: 36px;
+	padding: 8px 4px;
 	border-radius: 0;
-	font-size: 9px;
+	font-size: 11px;
 	font-weight: 400;
 	line-height: 1.2;
 	text-align: center;
@@ -583,15 +655,15 @@ $pts-loss: #f08a8a;
 	cursor: pointer;
 
 	@include from($bp-tablet-sm) {
-		min-height: 36px;
+		min-height: 40px;
 		padding: 8px 6px;
-		font-size: 10px;
+		font-size: 12px;
 	}
 
 	@include from($bp-tablet) {
-		min-height: 40px;
-		padding: 8px 8px;
-		font-size: 11px;
+		min-height: 44px;
+		padding: 10px 8px;
+		font-size: 13px;
 	}
 
 	&:focus-visible {

@@ -1,26 +1,25 @@
 import type { FC } from 'react'
 
-import type { SeasonCalendarData } from '@/data/standings'
 import {
-	enrichSeasonRows,
-	getSeasonStats,
-} from '@/lib/standings/seasonStats'
+	CURRENT_STANDINGS_SEASON_ID,
+	getStandingsSeason,
+} from '@/data/standings'
+import { buildMultiSeasonCalendar } from '@/lib/standings/multiSeasonRows'
+import { getSeasonStats } from '@/lib/standings/seasonStats'
 
 import { SeasonCalendarTable } from './SeasonCalendarTable'
-import { SeasonSwitcher } from './SeasonSwitcher'
 import styles from './StandingsPage.module.scss'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
 	return parts.filter(Boolean).join(' ')
 }
 
-type Props = {
-	season: SeasonCalendarData
-}
-
-export const StandingsPage: FC<Props> = ({ season }) => {
-	const rows = enrichSeasonRows(season.matches)
-	const stats = getSeasonStats(season.matches)
+export const StandingsPage: FC = () => {
+	const season = getStandingsSeason(CURRENT_STANDINGS_SEASON_ID)
+	const { rows, columns } = buildMultiSeasonCalendar(CURRENT_STANDINGS_SEASON_ID)
+	const stats = getSeasonStats(
+		season.matches.filter((m) => m.competition !== 'cup'),
+	)
 	const hasCup = season.matches.some((m) => m.competition === 'cup')
 
 	return (
@@ -28,7 +27,6 @@ export const StandingsPage: FC<Props> = ({ season }) => {
 			<div className={styles.inner}>
 				<header className={styles.header}>
 					<h1 className={styles.title}>Календарь сезона</h1>
-					<SeasonSwitcher />
 					<p className={cx(styles.lead, 'font-mono')}>
 						{hasCup
 							? `Матчи ФК «Акрон» в РПЛ и Кубке · сезон ${season.seasonLabel}`
@@ -44,7 +42,7 @@ export const StandingsPage: FC<Props> = ({ season }) => {
 					seasonLabel={season.seasonLabel}
 					timezone={season.timezone}
 					rows={rows}
-					totalPts={stats.totalPts}
+					columns={columns}
 				/>
 			</div>
 		</div>

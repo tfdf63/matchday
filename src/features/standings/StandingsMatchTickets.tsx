@@ -19,6 +19,7 @@ type Props = {
 	competition?: SeasonCompetition
 	isHomeRow: boolean
 	isCupRow?: boolean
+	colSpan?: number
 }
 
 export function StandingsMatchTickets({
@@ -28,6 +29,7 @@ export function StandingsMatchTickets({
 	competition,
 	isHomeRow,
 	isCupRow,
+	colSpan = 6,
 }: Props) {
 	const now = useClientNow()
 	if (!now) {
@@ -57,7 +59,7 @@ export function StandingsMatchTickets({
 						: styles.rowAway,
 			)}
 		>
-			<td colSpan={6}>
+			<td colSpan={colSpan}>
 				<MatchTicketButtons buttons={buttons} />
 			</td>
 		</tr>

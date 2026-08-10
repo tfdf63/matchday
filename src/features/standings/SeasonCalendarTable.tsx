@@ -2,8 +2,13 @@ import Image from 'next/image'
 import { Home, Plane } from 'lucide-react'
 import { Fragment, type FC } from 'react'
 
-import type { SeasonCalendarRow } from '@/data/standings'
+import { CURRENT_STANDINGS_SEASON_ID } from '@/data/standings'
 import { getTeamLogoPath } from '@/data/teamLogos'
+import type {
+	MultiSeasonCalendarRow,
+	MultiSeasonColumn,
+	SeasonResultCell,
+} from '@/lib/standings/multiSeasonRows'
 import {
 	formatWhenDisplay,
 	getPtsClass,
@@ -20,8 +25,8 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 type Props = {
 	seasonLabel: string
 	timezone: string
-	rows: SeasonCalendarRow[]
-	totalPts: number
+	rows: MultiSeasonCalendarRow[]
+	columns: MultiSeasonColumn[]
 }
 
 function MatchMetaLine({
@@ -30,8 +35,8 @@ function MatchMetaLine({
 	venue,
 }: {
 	dateIso: string
-	when: SeasonCalendarRow['when']
-	venue: SeasonCalendarRow['venue']
+	when: MultiSeasonCalendarRow['when']
+	venue: MultiSeasonCalendarRow['venue']
 }) {
 	const display = formatWhenDisplay(dateIso, when)
 	const VenueIcon = venue === 'home' ? Home : Plane
@@ -64,16 +69,48 @@ function MatchMetaLine({
 	)
 }
 
+function SeasonResultCell({
+	result,
+	isCupRow,
+}: {
+	result: SeasonResultCell | null
+	isCupRow: boolean
+}) {
+	if (!result?.played || !result.score) {
+		return <span className={styles.dash}>—</span>
+	}
+
+	const ptsClass = getPtsClass(result.pts)
+	const showPts = !isCupRow && result.pts !== null
+
+	return (
+		<div className={styles.resultCell}>
+			<span className={styles.score}>{result.score}</span>
+			{showPts ? (
+				<span
+					className={cx(
+						styles.pts,
+						ptsClass === 'win' && styles.ptsWin,
+						ptsClass === 'draw' && styles.ptsDraw,
+						ptsClass === 'loss' && styles.ptsLoss,
+					)}
+				>
+					{result.pts}
+				</span>
+			) : null}
+		</div>
+	)
+}
+
 export const SeasonCalendarTable: FC<Props> = ({
 	seasonLabel,
 	timezone,
 	rows,
-	totalPts,
+	columns,
 }) => {
-	const lastCumulative =
-		[...rows].reverse().find((r) => r.cumulativePts !== null)?.cumulativePts ??
-		0
 	const hasCup = rows.some((row) => row.competition === 'cup')
+	const ticketColSpan = 3 + columns.length
+	const activeSeasonId = CURRENT_STANDINGS_SEASON_ID
 
 	return (
 		<section className={styles.seasonBlock}>
@@ -99,14 +136,19 @@ export const SeasonCalendarTable: FC<Props> = ({
 			</div>
 
 			<div className={styles.tableWrap}>
-				<table className={cx(styles.table, 'font-mono')}>
+				<table
+					className={cx(styles.table, styles.tableMultiSeason, 'font-mono')}
+				>
 					<colgroup>
 						<col className={styles.colTour} />
 						<col className={styles.colLogo} />
 						<col className={styles.colTeam} />
-						<col className={styles.colNum} />
-						<col className={styles.colNum} />
-						<col className={styles.colNum} />
+						{columns.map((column) => (
+							<col
+								key={column.id}
+								className={styles.colSeason}
+							/>
+						))}
 					</colgroup>
 					<thead>
 						<tr>
@@ -119,21 +161,24 @@ export const SeasonCalendarTable: FC<Props> = ({
 							<th scope='col' className={styles.colTeam}>
 								Соперник
 							</th>
-							<th scope='col' className={styles.colNum} title='Счёт'>
-								С
-							</th>
-							<th scope='col' className={styles.colNum} title='Очки'>
-								О
-							</th>
-							<th scope='col' className={styles.colNum}>
-								Σ
-							</th>
+							{columns.map((column) => (
+								<th
+									key={column.id}
+									scope='col'
+									className={cx(
+										styles.colSeason,
+										column.id === activeSeasonId &&
+											styles.colSeasonActive,
+									)}
+								>
+									{column.label}
+								</th>
+							))}
 						</tr>
 					</thead>
 					<tbody>
 						{rows.map((row) => {
 							const logo = getTeamLogoPath(row.team)
-							const ptsClass = getPtsClass(row.match.pts)
 							const isCup = row.competition === 'cup'
 							const rowKey = `${row.competition ?? 'rpl'}-${row.date}-${row.team}-${row.venue}`
 
@@ -165,8 +210,8 @@ export const SeasonCalendarTable: FC<Props> = ({
 												<Image
 													src={logo}
 													alt=''
-													width={48}
-													height={48}
+													width={32}
+													height={32}
 													className={styles.teamLogo}
 												/>
 											) : (
@@ -188,42 +233,23 @@ export const SeasonCalendarTable: FC<Props> = ({
 												/>
 											</div>
 										</td>
-										<td className={styles.colNum}>
-											{row.match.played && row.match.score ? (
-												<span className={styles.score}>
-													{row.match.score}
-												</span>
-											) : (
-												<span className={styles.dash}>—</span>
-											)}
-										</td>
-										<td className={styles.colNum}>
-											{!isCup &&
-											row.match.played &&
-											row.match.pts !== null ? (
-												<span
-													className={cx(
-														styles.pts,
-														ptsClass === 'win' && styles.ptsWin,
-														ptsClass === 'draw' && styles.ptsDraw,
-														ptsClass === 'loss' && styles.ptsLoss,
-													)}
-												>
-													{row.match.pts}
-												</span>
-											) : (
-												<span className={styles.dash}>—</span>
-											)}
-										</td>
-										<td className={styles.colNum}>
-											{!isCup && row.cumulativePts !== null ? (
-												<span className={styles.cum}>
-													{row.cumulativePts}
-												</span>
-											) : (
-												<span className={styles.dash}>—</span>
-											)}
-										</td>
+										{columns.map((column) => (
+											<td
+												key={column.id}
+												className={cx(
+													styles.colSeason,
+													column.id === activeSeasonId &&
+														styles.colSeasonActive,
+												)}
+											>
+												<SeasonResultCell
+													result={
+														row.seasonResults[column.id]
+													}
+													isCupRow={isCup}
+												/>
+											</td>
+										))}
 									</tr>
 									<StandingsMatchTickets
 										dateIso={row.date}
@@ -232,6 +258,7 @@ export const SeasonCalendarTable: FC<Props> = ({
 										competition={row.competition}
 										isHomeRow={row.venue === 'home'}
 										isCupRow={isCup}
+										colSpan={ticketColSpan}
 									/>
 								</Fragment>
 							)
@@ -242,15 +269,20 @@ export const SeasonCalendarTable: FC<Props> = ({
 							<td colSpan={3} className={styles.sumLabel}>
 								Сумма
 							</td>
-							<td className={styles.colNum}>
-								<span className={styles.dash}>—</span>
-							</td>
-							<td className={styles.colNum}>
-								<span className={styles.pts}>{totalPts}</span>
-							</td>
-							<td className={styles.colNum}>
-								<span className={styles.cum}>{lastCumulative}</span>
-							</td>
+							{columns.map((column) => (
+								<td
+									key={column.id}
+									className={cx(
+										styles.colSeason,
+										column.id === activeSeasonId &&
+											styles.colSeasonActive,
+									)}
+								>
+									<span className={styles.pts}>
+										{column.totalPts}
+									</span>
+								</td>
+							))}
 						</tr>
 					</tfoot>
 				</table>
