@@ -2,6 +2,11 @@ import Image from 'next/image'
 import type { FC } from 'react'
 
 import { getTeamLogoPath } from '@/data/teamLogos'
+import {
+	FAN_MEETING_CLUB,
+	getFanMeetingDisplayTitle,
+	isFanMeetingEvent,
+} from '@/lib/busfans/fanMeeting'
 
 import styles from './BusFansPage.module.scss'
 
@@ -16,6 +21,34 @@ export const MatchTeamsRow: FC<MatchTeamsRowProps> = ({
 	homeTeam,
 	awayTeam,
 }) => {
+	if (isFanMeetingEvent({ awayTeam })) {
+		const logo = getTeamLogoPath(FAN_MEETING_CLUB)
+		const title = getFanMeetingDisplayTitle(homeTeam)
+
+		return (
+			<div
+				className={styles.teamsRow}
+				role='group'
+				aria-label='Событие клуба'
+			>
+				<div className={styles.teamCol}>
+					{logo ? (
+						<Image
+							src={logo}
+							alt='Логотип ФК Акрон'
+							width={LOGO_SIZE}
+							height={LOGO_SIZE}
+							className={styles.teamLogo}
+						/>
+					) : (
+						<div className={styles.teamLogoPlaceholder} aria-hidden />
+					)}
+					<p className={styles.teamName}>{title}</p>
+				</div>
+			</div>
+		)
+	}
+
 	const homeLogo = getTeamLogoPath(homeTeam)
 	const awayLogo = getTeamLogoPath(awayTeam)
 

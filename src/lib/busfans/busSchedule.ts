@@ -86,11 +86,14 @@ export function formatMatchDateLine(parts: {
 	dateCard?: string | null
 	dateLabel?: string | null
 	time?: string | null
+	kind?: 'match' | 'event'
 }): string {
 	const datePart = parts.dateCard?.trim() || parts.dateLabel?.trim() || ''
 	const timePart = parts.time?.trim() || ''
 	const base = [datePart, timePart].filter(Boolean).join(' ')
-	return base ? `МАТЧ: ${base}` : ''
+	if (!base) return ''
+	const prefix = parts.kind === 'event' ? 'СОБЫТИЕ' : 'МАТЧ'
+	return `${prefix}: ${base}`
 }
 
 export function formatBusScheduleLine(

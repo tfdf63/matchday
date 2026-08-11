@@ -20,8 +20,13 @@ describe('getBusScheduleOverride', () => {
 		})
 	})
 
-	it('returns null for unknown event', () => {
-		expect(getBusScheduleOverride('unknown-event')).toBeNull()
+	it('returns schedule override for fan meeting', () => {
+		expect(
+			getBusScheduleOverride('2026-08-13-vstrecha-s-bolelschikami-tolyatti'),
+		).toEqual({
+			departure: '17:00',
+			returnAt: '20:30',
+		})
 	})
 })
 
@@ -70,5 +75,14 @@ describe('getBusScheduleTimes', () => {
 				eventId: '2026-08-07-lokomotiv-h-akron',
 			}),
 		).toBe('старт: 07.08 в 21:00 · обратно: после матча')
+	})
+
+	it('formats fan meeting schedule with override only', () => {
+		expect(
+			formatBusScheduleLine({
+				matchTime: 'SAMT 17:00',
+				eventId: '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
+			}),
+		).toBe('старт: 17:00 · обратно: 20:30')
 	})
 })

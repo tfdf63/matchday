@@ -9,6 +9,7 @@ import {
 	formatBusScheduleLine,
 	formatMatchDateLine,
 } from '@/lib/busfans/busSchedule'
+import { isFanMeetingEvent } from '@/lib/busfans/fanMeeting'
 import {
 	countFilteredPassengers,
 	getDuplicateFullNamesForEvent,
@@ -50,10 +51,12 @@ export const EventDetailClient: FC<EventDetailClientProps> = ({
 		[dataset, event.id],
 	)
 
+	const isFanMeeting = isFanMeetingEvent(event)
 	const dateLine = formatMatchDateLine({
 		dateCard: event.dateCard,
 		dateLabel: event.dateLabel,
 		time: event.time,
+		kind: isFanMeeting ? 'event' : 'match',
 	})
 	const busLine = formatBusScheduleLine({
 		matchTime: event.time,
@@ -102,7 +105,10 @@ export const EventDetailClient: FC<EventDetailClientProps> = ({
 						<p className={cx(styles.dateLine, 'font-mono')}>{busLine}</p>
 					) : null}
 
-					<MatchTeamsRow homeTeam={event.homeTeam} awayTeam={event.awayTeam} />
+					<MatchTeamsRow
+						homeTeam={isFanMeeting ? event.title : event.homeTeam}
+						awayTeam={event.awayTeam}
+					/>
 
 					{!isPending ? (
 						<p className={cx(styles.metaLine, 'font-mono')}>

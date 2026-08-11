@@ -53,10 +53,20 @@ describe('resolveRegistrationUrl', () => {
 })
 
 describe('getMatchEvents registration', () => {
-	it('includes registration url for imported Lokomotiv match', () => {
+	it('includes registration url for imported Rodina match', () => {
 		const events = getMatchEvents(busFansDataset)
-		const lokomotiv = events.find((e) => e.id === '2026-08-07-lokomotiv-h-akron')
-		expect(lokomotiv).toBeTruthy()
-		expect(lokomotiv!.registrationUrl).toContain('preview.atom-s.com')
+		const rodina = events.find((e) => e.id === '2026-08-14-rodina-h-akron')
+		expect(rodina).toBeTruthy()
+		expect(rodina!.registrationUrl).toContain('preview.atom-s.com')
+	})
+
+	it('includes registration url for fan meeting', () => {
+		const events = getMatchEvents(busFansDataset)
+		const fanMeeting = events.find(
+			(e) => e.id === '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
+		)
+		expect(fanMeeting).toBeTruthy()
+		expect(fanMeeting!.registrationUrl).toContain('preview.atom-s.com')
+		expect(fanMeeting!.registrationUrl).toContain('ac287d25b45e9bdab1b5ff9dbe27a55c')
 	})
 })

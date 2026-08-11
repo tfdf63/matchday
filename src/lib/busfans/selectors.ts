@@ -9,6 +9,11 @@ import type {
 
 import { resolveRegistrationUrl } from './registrationUrl'
 import {
+	getFanMeetingDisplayTitle,
+	isFanMeetingEvent,
+} from './fanMeeting'
+import { getFanMeetingOverride } from './fanMeetingOverrides'
+import {
 	eventMatchKey,
 	gameToPendingMatchEvent,
 } from './upcomingEvents'
@@ -19,10 +24,21 @@ export function resolveListStatus(event: MatchEvent): MatchListStatus {
 }
 
 function withListStatus(event: MatchEvent): MatchEvent {
-	return {
+	return applyFanMeetingDisplay({
 		...event,
 		listStatus: resolveListStatus(event),
 		registrationUrl: resolveRegistrationUrl(event),
+	})
+}
+
+function applyFanMeetingDisplay(event: MatchEvent): MatchEvent {
+	if (!isFanMeetingEvent(event)) return event
+	const override = getFanMeetingOverride(event.id)
+	return {
+		...event,
+		dateCard: override?.dateCard ?? event.dateCard,
+		time: override?.time ?? event.time,
+		title: override?.displayTitle ?? getFanMeetingDisplayTitle(event.title),
 	}
 }
 

@@ -21,11 +21,11 @@ describe('busfans selectors', () => {
 			).toBeLessThanOrEqual(0)
 		}
 
-		const rostov = events.find((e) => e.gameId === '25')
-		const lokomotiv = events.find((e) => e.gameId === '26')
-		expect(rostov).toBeTruthy()
-		expect(lokomotiv).toBeTruthy()
-		expect(events.indexOf(rostov!)).toBeLessThan(events.indexOf(lokomotiv!))
+		const rodina = events.find((e) => e.gameId === '27')
+		const cska = events.find((e) => e.gameId === '28')
+		expect(rodina).toBeTruthy()
+		expect(cska).toBeTruthy()
+		expect(events.indexOf(rodina!)).toBeLessThan(events.indexOf(cska!))
 	})
 
 	it('returns empty list when there is no imported excel data', () => {
@@ -50,11 +50,11 @@ describe('busfans selectors', () => {
 
 	it('merges games.ts fields for imported event with gameId', () => {
 		const events = getMatchEvents(busFansDataset)
-		const lokomotiv = events.find((e) => e.gameId === '26')
-		expect(lokomotiv).toBeTruthy()
-		expect(resolveListStatus(lokomotiv!)).toBe('ready')
-		expect(lokomotiv!.registrationUrl).toContain('preview.atom-s.com')
-		expect(getManifestsForEvent(busFansDataset, lokomotiv!.id).length).toBeGreaterThan(0)
+		const rodina = events.find((e) => e.gameId === '27')
+		expect(rodina).toBeTruthy()
+		expect(resolveListStatus(rodina!)).toBe('ready')
+		expect(rodina!.registrationUrl).toContain('preview.atom-s.com')
+		expect(getManifestsForEvent(busFansDataset, rodina!.id).length).toBeGreaterThan(0)
 	})
 
 	it('keeps imported events with passenger lists', () => {
@@ -80,5 +80,17 @@ describe('busfans selectors', () => {
 		expect(ready).toBeTruthy()
 		const duplicates = getDuplicateFullNamesForEvent(busFansDataset, ready!.id)
 		expect(duplicates).toBeInstanceOf(Set)
+	})
+
+	it('enriches fan meeting with display time and title', () => {
+		const events = getMatchEvents(busFansDataset)
+		const fanMeeting = events.find(
+			(e) => e.id === '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
+		)
+		expect(fanMeeting).toBeTruthy()
+		expect(fanMeeting!.title).toBe('Встреча с болельщиками Тольятти')
+		expect(fanMeeting!.dateCard).toBe('13.08 (ЧТ)')
+		expect(fanMeeting!.time).toBe('SAMT 17:00')
+		expect(fanMeeting!.awayTeam).toBe('')
 	})
 })

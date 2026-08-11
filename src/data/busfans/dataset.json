@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-11T11:17:57+04:00",
+    "generatedAt": "2026-08-11T15:16:10+04:00",
     "sourceDir": "src/data/busfans/raw",
-    "eventsCount": 2,
-    "manifestsCount": 2,
-    "passengersCount": 66
+    "eventsCount": 3,
+    "manifestsCount": 4,
+    "passengersCount": 68
   },
   "events": [
     {
@@ -48,9 +48,54 @@
       "busCount": 1,
       "passengerCount": 40,
       "seatsAssigned": 40
+    },
+    {
+      "id": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "title": "Встреча с болельщиками Тольятти",
+      "homeTeam": "Встреча с болельщиками Тольятти",
+      "awayTeam": "",
+      "venue": "unknown",
+      "dateIso": "2026-08-13",
+      "dateToIso": "2026-08-13",
+      "dateLabel": "13.08.2026",
+      "dateCard": null,
+      "time": null,
+      "gameId": null,
+      "scheduleMatchId": null,
+      "tournament": "РПЛ",
+      "leagueInfo": null,
+      "seasonTour": null,
+      "fanIdStatus": "Fan id",
+      "busCount": 2,
+      "passengerCount": 2,
+      "seatsAssigned": 2
     }
   ],
   "manifests": [
+    {
+      "id": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "label": "Автобус 1. Парк Хаус",
+      "busNo": 1,
+      "sourceFile": "atoms_drivers_report_13.08.2026 (3).xlsx",
+      "passengerCount": 1,
+      "seatsAssigned": 1,
+      "boardingStops": [
+        "Парк Хаус, Парковка ТЦ справа"
+      ]
+    },
+    {
+      "id": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "label": "Автобус 2. ТЦ Озон. Жигулёвск",
+      "busNo": 2,
+      "sourceFile": "atoms_drivers_report_13.08.2026 (2).xlsx",
+      "passengerCount": 1,
+      "seatsAssigned": 1,
+      "boardingStops": [
+        "Белорусская улица, Остановка у ТГУ в сторону Зеленой зоны"
+      ]
+    },
     {
       "id": "2026-08-14-rodina-h-akron-bus-avtobus",
       "eventId": "2026-08-14-rodina-h-akron",
@@ -77,6 +122,32 @@
     }
   ],
   "passengers": [
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Иванов Иван Иванович",
+      "seatNo": "5",
+      "orderId": "254466",
+      "birthDateIso": "1989-12-22",
+      "boardingPlace": "Белорусская улица, Остановка у ТГУ в сторону Зеленой зоны",
+      "phone": "79999999999",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (2).xlsx",
+      "sourceRow": 4,
+      "seq": 1
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Иванов Иван Иванович",
+      "seatNo": "5",
+      "orderId": "254465",
+      "birthDateIso": "1989-12-22",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79999999999",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (3).xlsx",
+      "sourceRow": 4,
+      "seq": 1
+    },
     {
       "eventId": "2026-08-14-rodina-h-akron",
       "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",

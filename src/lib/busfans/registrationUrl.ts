@@ -27,6 +27,8 @@ for (const game of games) {
 /** Матчи только из Excel, без записи в games.ts (по event.id). */
 const byEventId: Record<string, string> = {
 	'2026-03-21-lokomotiv-h-akron': 'http://localhost:3000/',
+	'2026-08-13-vstrecha-s-bolelschikami-tolyatti':
+		'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-ac287d25b45e9bdab1b5ff9dbe27a55c',
 }
 
 function daysBetween(dateA: string, dateB: string): number {

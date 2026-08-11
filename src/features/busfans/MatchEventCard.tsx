@@ -9,6 +9,7 @@ import {
 	formatBusScheduleLine,
 	formatMatchDateLine,
 } from '@/lib/busfans/busSchedule'
+import { isFanMeetingEvent } from '@/lib/busfans/fanMeeting'
 import { CALENDAR_FON_CUP_ICON_SRC } from '@/lib/match/isFonbetCupMatch'
 
 import styles from './BusFansPage.module.scss'
@@ -48,10 +49,12 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 			: resolvedFanId === 'Без fan id'
 				? 'Без fan id'
 				: null
+	const isFanMeeting = isFanMeetingEvent(event)
 	const dateLine = formatMatchDateLine({
 		dateCard: event.dateCard,
 		dateLabel: event.dateLabel,
 		time: event.time,
+		kind: isFanMeeting ? 'event' : 'match',
 	})
 	const busLine = formatBusScheduleLine({
 		matchTime: event.time,
@@ -133,7 +136,12 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 
 				<div className={styles.matchRow}>
 					<Link href={eventHref} className={styles.cardLinkSection}>
-						<MatchTeamsRow homeTeam={event.homeTeam} awayTeam={event.awayTeam} />
+						<MatchTeamsRow
+							homeTeam={
+								isFanMeeting ? event.title : event.homeTeam
+							}
+							awayTeam={event.awayTeam}
+						/>
 					</Link>
 
 					<div className={styles.kpiCol}>
