@@ -3,6 +3,14 @@
     "departure": "17:00",
     "returnAt": "20:30"
   },
+  "2026-08-14-rodina-h-akron": {
+    "departure": "14.08 в 20:00",
+    "returnAt": "после матча"
+  },
+  "2026-08-17-cska-h-akron": {
+    "departure": "17.08 в 21:00",
+    "returnAt": "после матча"
+  },
   "2026-08-04-akron-h-rostov": {
     "departure": "14:45"
   },

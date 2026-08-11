@@ -28,6 +28,20 @@ describe('getBusScheduleOverride', () => {
 			returnAt: '20:30',
 		})
 	})
+
+	it('returns schedule override for Rodina away event', () => {
+		expect(getBusScheduleOverride('2026-08-14-rodina-h-akron')).toEqual({
+			departure: '14.08 в 20:00',
+			returnAt: 'после матча',
+		})
+	})
+
+	it('returns schedule override for CSKA away event', () => {
+		expect(getBusScheduleOverride('2026-08-17-cska-h-akron')).toEqual({
+			departure: '17.08 в 21:00',
+			returnAt: 'после матча',
+		})
+	})
 })
 
 describe('getBusScheduleTimes', () => {
@@ -84,5 +98,23 @@ describe('getBusScheduleTimes', () => {
 				eventId: '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
 			}),
 		).toBe('старт: 17:00 · обратно: 20:30')
+	})
+
+	it('formats Rodina schedule with date and text return', () => {
+		expect(
+			formatBusScheduleLine({
+				matchTime: 'SAMT 15:00',
+				eventId: '2026-08-14-rodina-h-akron',
+			}),
+		).toBe('старт: 14.08 в 20:00 · обратно: после матча')
+	})
+
+	it('formats CSKA schedule with date and text return', () => {
+		expect(
+			formatBusScheduleLine({
+				matchTime: 'SAMT 19:30',
+				eventId: '2026-08-17-cska-h-akron',
+			}),
+		).toBe('старт: 17.08 в 21:00 · обратно: после матча')
 	})
 })
