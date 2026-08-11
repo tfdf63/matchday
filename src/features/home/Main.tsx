@@ -21,6 +21,7 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 
 const HERO_TAGS: ReadonlyArray<{ label: string; href: string }> = [
 	{ label: 'Ближайшие матчи', href: '#upcoming-match-panel' },
+	{ label: 'Фан-автобусы', href: '/busfans' },
 	{ label: 'Активности', href: '#match-activities' },
 	{ label: 'Билетная программа', href: '#ticket-program' },
 	{ label: 'Сектора', href: '#sector' },

@@ -21,6 +21,7 @@ export type FooterNavItem = {
 /** Колонка 1 — 18875 */
 export const footerNavColumn1: FooterNavItem[] = [
 	{ label: 'ближайшие матчи', href: '/#upcoming-matches-heading' },
+	{ label: 'Фан-автобусы', href: '/busfans' },
 	{ label: 'Активности на матче', href: '/#match-activities' },
 	{ label: 'билетная программа', href: '/#ticket-program' },
 	{ label: 'Сектора', href: '/#sector' },
