@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-11T16:51:38+04:00",
+    "generatedAt": "2026-08-12T11:23:07+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 3,
     "manifestsCount": 4,
-    "passengersCount": 96
+    "passengersCount": 153
   },
   "events": [
     {
@@ -67,8 +67,8 @@
       "seasonTour": null,
       "fanIdStatus": "Fan id",
       "busCount": 2,
-      "passengerCount": 28,
-      "seatsAssigned": 28
+      "passengerCount": 85,
+      "seatsAssigned": 85
     }
   ],
   "manifests": [
@@ -77,11 +77,13 @@
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
       "label": "Автобус 1. Парк Хаус",
       "busNo": 1,
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
-      "passengerCount": 14,
-      "seatsAssigned": 14,
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "passengerCount": 49,
+      "seatsAssigned": 49,
       "boardingStops": [
-        "Парк Хаус, Парковка ТЦ справа"
+        "Парк Хаус, Парковка ТЦ справа",
+        "Спортивная улица, Остановка на ул. Спортивная сразу после пересечения ул. Юбилейная в сторону Зеленой зоны",
+        "Управление соцзащиты, Остановка на Ленинском проспекте перед ул. Юбилейная в сторону Московского шоссе"
       ]
     },
     {
@@ -89,11 +91,13 @@
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
       "label": "Автобус 2. ТЦ Озон. Жигулёвск",
       "busNo": 2,
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
-      "passengerCount": 14,
-      "seatsAssigned": 14,
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "passengerCount": 36,
+      "seatsAssigned": 36,
       "boardingStops": [
-        "Озон, Парковка ТЦ"
+        "Озон, Парковка ТЦ",
+        "Жигулёвское море, Остановка в сторону Тольятти",
+        "Колхозный рынок, Остановка в сторону Центрального района"
       ]
     },
     {
@@ -131,7 +135,7 @@
       "birthDateIso": "1989-02-01",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79277779536",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 4,
       "seq": 1
     },
@@ -144,9 +148,74 @@
       "birthDateIso": "1983-07-10",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79674908901",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 12,
       "seq": 2
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Алферьев Максим Константинович",
+      "seatNo": "9",
+      "orderId": "254584",
+      "birthDateIso": "2014-11-18",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79636237340",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 34,
+      "seq": 3
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Ананьева Наталья Владимировна",
+      "seatNo": "49",
+      "orderId": "254577",
+      "birthDateIso": "2001-03-09",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79297013674",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 31,
+      "seq": 4
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Архипова Софья Ивановна",
+      "seatNo": "30",
+      "orderId": "254571",
+      "birthDateIso": "2013-03-02",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79608400462",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 25,
+      "seq": 5
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Беспалов а Алена Константиновна",
+      "seatNo": "21",
+      "orderId": "254630",
+      "birthDateIso": "2013-02-27",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79171289302",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 45,
+      "seq": 6
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Братиков Лев Иванович",
+      "seatNo": "15",
+      "orderId": "254546",
+      "birthDateIso": "2007-10-19",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79019433802",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 18,
+      "seq": 7
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -157,9 +226,74 @@
       "birthDateIso": "1988-09-26",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79879671161",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 14,
-      "seq": 3
+      "seq": 8
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Вахрамеев Тимофрй Игоревич",
+      "seatNo": "31",
+      "orderId": "254592",
+      "birthDateIso": "2011-09-27",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79277901108",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 37,
+      "seq": 9
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Голодаев Иван Михайлович",
+      "seatNo": "41",
+      "orderId": "254578",
+      "birthDateIso": "2010-12-24",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79179572010",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 33,
+      "seq": 10
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Гриднев Матвей Алексеевич",
+      "seatNo": "42",
+      "orderId": "254578",
+      "birthDateIso": "2012-10-12",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79272921440",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 32,
+      "seq": 11
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Гринчик Михаил Дмитриевич",
+      "seatNo": "13",
+      "orderId": "254568",
+      "birthDateIso": "2014-03-12",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79879696139",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 22,
+      "seq": 12
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Гринчик Юлия Александровна",
+      "seatNo": "14",
+      "orderId": "254568",
+      "birthDateIso": "1985-10-29",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79879696132",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 21,
+      "seq": 13
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -170,9 +304,9 @@
       "birthDateIso": "1978-06-06",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79272176919",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 17,
-      "seq": 4
+      "seq": 14
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -183,9 +317,22 @@
       "birthDateIso": "1951-01-20",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 7,
-      "seq": 5
+      "seq": 15
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Жданов Кирилл Евгеньевич",
+      "seatNo": "8",
+      "orderId": "254585",
+      "birthDateIso": "2010-01-31",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79171661490",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 35,
+      "seq": 16
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -196,9 +343,22 @@
       "birthDateIso": "1989-04-05",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79297195770",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 11,
-      "seq": 6
+      "seq": 17
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Кательников Роман Александрович",
+      "seatNo": "27",
+      "orderId": "254613",
+      "birthDateIso": "1988-04-11",
+      "boardingPlace": "Спортивная улица, Остановка на ул. Спортивная сразу после пересечения ул. Юбилейная в сторону Зеленой зоны",
+      "phone": "79372137375",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 41,
+      "seq": 18
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -209,9 +369,9 @@
       "birthDateIso": "2005-12-29",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79674868333",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 16,
-      "seq": 7
+      "seq": 19
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -222,9 +382,61 @@
       "birthDateIso": "1971-04-14",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79674868333",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 15,
-      "seq": 8
+      "seq": 20
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Кирикович Софья Сергеевна",
+      "seatNo": "23",
+      "orderId": "254638",
+      "birthDateIso": "2010-08-22",
+      "boardingPlace": "Спортивная улица, Остановка на ул. Спортивная сразу после пересечения ул. Юбилейная в сторону Зеленой зоны",
+      "phone": "79631192932",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 52,
+      "seq": 21
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Кондакова Арина Александровна",
+      "seatNo": "40",
+      "orderId": "254638",
+      "birthDateIso": "2011-01-29",
+      "boardingPlace": "Спортивная улица, Остановка на ул. Спортивная сразу после пересечения ул. Юбилейная в сторону Зеленой зоны",
+      "phone": "79649666734",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 50,
+      "seq": 22
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Кузьмин Владислав Андреевич",
+      "seatNo": "34",
+      "orderId": "254575",
+      "birthDateIso": "2002-10-18",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79874392057",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 27,
+      "seq": 23
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Кузьмина Лилия Анатольевна",
+      "seatNo": "33",
+      "orderId": "254575",
+      "birthDateIso": "1972-08-30",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79170314557",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 28,
+      "seq": 24
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -235,9 +447,100 @@
       "birthDateIso": "1982-01-06",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 6,
-      "seq": 9
+      "seq": 25
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Лисицких Антон Юрьевич",
+      "seatNo": "44",
+      "orderId": "254636",
+      "birthDateIso": "1987-09-13",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79372307838",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 49,
+      "seq": 26
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Лисицких Емельян Антонович",
+      "seatNo": "52",
+      "orderId": "254636",
+      "birthDateIso": "2018-09-22",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79372307838",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 47,
+      "seq": 27
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Лисицких Есения Антоновна",
+      "seatNo": "43",
+      "orderId": "254636",
+      "birthDateIso": "2023-05-19",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79372307838",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 48,
+      "seq": 28
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Лисицких Ольга Анатольевна",
+      "seatNo": "48",
+      "orderId": "254636",
+      "birthDateIso": "1989-01-23",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79372307838",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 46,
+      "seq": 29
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Макарова Виктория Дмитриевна",
+      "seatNo": "16",
+      "orderId": "254546",
+      "birthDateIso": "2007-02-17",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79019433802",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 19,
+      "seq": 30
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Моисеева Дарья Андреевна",
+      "seatNo": "51",
+      "orderId": "254577",
+      "birthDateIso": "2001-01-03",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79272956089",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 29,
+      "seq": 31
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Оковкин Тимофей Ильич",
+      "seatNo": "47",
+      "orderId": "254621",
+      "birthDateIso": "2010-12-16",
+      "boardingPlace": "Управление соцзащиты, Остановка на Ленинском проспекте перед ул. Юбилейная в сторону Московского шоссе",
+      "phone": "79613905189",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 44,
+      "seq": 32
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -248,9 +551,22 @@
       "birthDateIso": "1988-08-06",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79372309397",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 10,
-      "seq": 10
+      "seq": 33
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Петренко Семён Юрьевич",
+      "seatNo": "18",
+      "orderId": "254549",
+      "birthDateIso": "1988-10-06",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79376679177",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 20,
+      "seq": 34
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -261,9 +577,9 @@
       "birthDateIso": "1984-07-03",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79179723135",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 13,
-      "seq": 11
+      "seq": 35
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -274,9 +590,74 @@
       "birthDateIso": "1984-10-05",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79649700888",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 5,
-      "seq": 12
+      "seq": 36
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Салата Виктория Андреевна",
+      "seatNo": "46",
+      "orderId": "254608",
+      "birthDateIso": "2011-02-01",
+      "boardingPlace": "Управление соцзащиты, Остановка на Ленинском проспекте перед ул. Юбилейная в сторону Московского шоссе",
+      "phone": "79021539395",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 39,
+      "seq": 37
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Салата Дмитрий Андреевич",
+      "seatNo": "45",
+      "orderId": "254608",
+      "birthDateIso": "2001-09-04",
+      "boardingPlace": "Управление соцзащиты, Остановка на Ленинском проспекте перед ул. Юбилейная в сторону Московского шоссе",
+      "phone": "79967425136",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 40,
+      "seq": 38
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Старина Александра Александровна",
+      "seatNo": "37",
+      "orderId": "254620",
+      "birthDateIso": "2015-02-03",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79372132572",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 42,
+      "seq": 39
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Старина Владислав Александрович",
+      "seatNo": "38",
+      "orderId": "254620",
+      "birthDateIso": "2016-08-30",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79372132572",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 43,
+      "seq": 40
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Сундеева Екатерина Васильевна",
+      "seatNo": "50",
+      "orderId": "254577",
+      "birthDateIso": "2000-11-13",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79061272173",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 30,
+      "seq": 41
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -287,9 +668,22 @@
       "birthDateIso": "1996-04-10",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79372350245",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 9,
-      "seq": 13
+      "seq": 42
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Тагадюк Макар Сергеевич",
+      "seatNo": "29",
+      "orderId": "254571",
+      "birthDateIso": "2010-07-28",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79608400462",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 26,
+      "seq": 43
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -300,9 +694,100 @@
       "birthDateIso": "1980-05-20",
       "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
       "phone": "79033329855",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
       "sourceRow": 8,
-      "seq": 14
+      "seq": 44
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Хижняк Данмл Игоревич",
+      "seatNo": "32",
+      "orderId": "254592",
+      "birthDateIso": "2011-06-25",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79171563064",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 38,
+      "seq": 45
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Цацина Диана Александровна",
+      "seatNo": "25",
+      "orderId": "254571",
+      "birthDateIso": "2011-09-08",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79608400462",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 24,
+      "seq": 46
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Цацина Наталья Раильевна",
+      "seatNo": "26",
+      "orderId": "254571",
+      "birthDateIso": "1982-03-09",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79608400462",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 23,
+      "seq": 47
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Чернов Василий Михайлович",
+      "seatNo": "5",
+      "orderId": "254587",
+      "birthDateIso": "2010-03-03",
+      "boardingPlace": "Парк Хаус, Парковка ТЦ справа",
+      "phone": "79277775520",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 36,
+      "seq": 48
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1",
+      "fullName": "Шепилова Елизавета Борисовна",
+      "seatNo": "36",
+      "orderId": "254638",
+      "birthDateIso": "2011-01-17",
+      "boardingPlace": "Спортивная улица, Остановка на ул. Спортивная сразу после пересечения ул. Юбилейная в сторону Зеленой зоны",
+      "phone": "79179446142",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (8).xlsx",
+      "sourceRow": 51,
+      "seq": 49
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Асхабов Дауд Курбанович",
+      "seatNo": "11",
+      "orderId": "254560",
+      "birthDateIso": "1963-03-25",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79608430205",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 20,
+      "seq": 1
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Асхабова Марина Владимировна",
+      "seatNo": "12",
+      "orderId": "254560",
+      "birthDateIso": "1961-02-13",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79608452728",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 21,
+      "seq": 2
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -313,9 +798,9 @@
       "birthDateIso": "1991-05-28",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 11,
-      "seq": 1
+      "seq": 3
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -326,9 +811,87 @@
       "birthDateIso": "1970-05-06",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 12,
-      "seq": 2
+      "seq": 4
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Берсенева Ольга Алексеевна",
+      "seatNo": "13",
+      "orderId": "254616",
+      "birthDateIso": "1958-11-30",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79649757982",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 29,
+      "seq": 5
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Берсенева Ольга Алексеевна",
+      "seatNo": "35",
+      "orderId": "254617",
+      "birthDateIso": "1960-07-13",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79179733510",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 31,
+      "seq": 6
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Владыкин Андрей Владимирович",
+      "seatNo": "42",
+      "orderId": "254627",
+      "birthDateIso": "2012-09-19",
+      "boardingPlace": "Жигулёвское море, Остановка в сторону Тольятти",
+      "phone": "79372171531",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 34,
+      "seq": 7
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Владыкин Владимир Александрович",
+      "seatNo": "38",
+      "orderId": "254627",
+      "birthDateIso": "1986-02-15",
+      "boardingPlace": "Жигулёвское море, Остановка в сторону Тольятти",
+      "phone": "79083453980",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 32,
+      "seq": 8
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Владыкина Вероника Владимировна",
+      "seatNo": "41",
+      "orderId": "254627",
+      "birthDateIso": "2014-10-11",
+      "boardingPlace": "Жигулёвское море, Остановка в сторону Тольятти",
+      "phone": "79372171531",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 35,
+      "seq": 9
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Владыкина Наталья Валерьевна",
+      "seatNo": "37",
+      "orderId": "254627",
+      "birthDateIso": "1992-01-20",
+      "boardingPlace": "Жигулёвское море, Остановка в сторону Тольятти",
+      "phone": "79372171531",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 33,
+      "seq": 10
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -339,9 +902,9 @@
       "birthDateIso": "2013-02-07",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79171650366",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 9,
-      "seq": 3
+      "seq": 11
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -352,9 +915,9 @@
       "birthDateIso": "1986-03-28",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79171650366",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 8,
-      "seq": 4
+      "seq": 12
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -365,9 +928,48 @@
       "birthDateIso": "2011-09-02",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79276036676",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 5,
-      "seq": 5
+      "seq": 13
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Кочитов Дмитрий Александрович",
+      "seatNo": "6",
+      "orderId": "254628",
+      "birthDateIso": "2012-08-04",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79171493741",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 36,
+      "seq": 14
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Кочитова Полина Александровна",
+      "seatNo": "10",
+      "orderId": "254628",
+      "birthDateIso": "2015-03-17",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79608480726",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 37,
+      "seq": 15
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Куликова Ольга Геннадьевна",
+      "seatNo": "36",
+      "orderId": "254617",
+      "birthDateIso": "1964-05-07",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79179733510",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 30,
+      "seq": 16
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -378,9 +980,9 @@
       "birthDateIso": "1991-02-24",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79967211662",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 14,
-      "seq": 6
+      "seq": 17
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -391,9 +993,22 @@
       "birthDateIso": "2011-04-15",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 7,
-      "seq": 7
+      "seq": 18
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Полянскова Вероника Евгеньевна",
+      "seatNo": "14",
+      "orderId": "254628",
+      "birthDateIso": "2013-04-26",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79879044529",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 38,
+      "seq": 19
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -404,9 +1019,87 @@
       "birthDateIso": "1967-11-19",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 6,
-      "seq": 8
+      "seq": 20
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Прянишникова Лидия Викторовна",
+      "seatNo": "9",
+      "orderId": "254628",
+      "birthDateIso": "1951-08-11",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79879319217",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 39,
+      "seq": 21
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Ридель Александр Викторович",
+      "seatNo": "21",
+      "orderId": "254599",
+      "birthDateIso": "1974-11-09",
+      "boardingPlace": "Жигулёвское море, Остановка в сторону Тольятти",
+      "phone": "79649884913",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 26,
+      "seq": 22
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Рыкованова Любовь Анатольевна",
+      "seatNo": "5",
+      "orderId": "254597",
+      "birthDateIso": "1957-12-03",
+      "boardingPlace": "Жигулёвское море, Остановка в сторону Тольятти",
+      "phone": "79084266871",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 25,
+      "seq": 23
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Салиев Айнур Ринатович",
+      "seatNo": "19",
+      "orderId": "254569",
+      "birthDateIso": "1981-12-25",
+      "boardingPlace": "Колхозный рынок, Остановка в сторону Центрального района",
+      "phone": "79626109292",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 24,
+      "seq": 24
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Салиев Тимур Айнурович",
+      "seatNo": "15",
+      "orderId": "254569",
+      "birthDateIso": "2017-08-14",
+      "boardingPlace": "Колхозный рынок, Остановка в сторону Центрального района",
+      "phone": "79626109292",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 23,
+      "seq": 25
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Салиева Марина Александровна",
+      "seatNo": "16",
+      "orderId": "254569",
+      "birthDateIso": "1989-04-19",
+      "boardingPlace": "Колхозный рынок, Остановка в сторону Центрального района",
+      "phone": "79626109292",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 22,
+      "seq": 26
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -417,9 +1110,9 @@
       "birthDateIso": "2016-07-21",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79372138546",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 17,
-      "seq": 9
+      "seq": 27
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -430,9 +1123,9 @@
       "birthDateIso": "1990-06-20",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79372138546",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 16,
-      "seq": 10
+      "seq": 28
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -443,9 +1136,9 @@
       "birthDateIso": "1968-08-25",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79297036307",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 4,
-      "seq": 11
+      "seq": 29
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -456,9 +1149,9 @@
       "birthDateIso": "2008-09-11",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79027428528",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 15,
-      "seq": 12
+      "seq": 30
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -469,9 +1162,35 @@
       "birthDateIso": "2011-02-15",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79869511025",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 10,
-      "seq": 13
+      "seq": 31
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Тыртышный Тихон Витальевич",
+      "seatNo": "52",
+      "orderId": "254547",
+      "birthDateIso": "2018-11-06",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79273207259",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 19,
+      "seq": 32
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Хазова Екатерина Александровна",
+      "seatNo": "53",
+      "orderId": "254547",
+      "birthDateIso": "1982-12-08",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79273207259",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 18,
+      "seq": 33
     },
     {
       "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
@@ -482,9 +1201,35 @@
       "birthDateIso": "1985-08-30",
       "boardingPlace": "Озон, Парковка ТЦ",
       "phone": "79967462074",
-      "sourceFile": "atoms_drivers_report_13.08.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
       "sourceRow": 13,
-      "seq": 14
+      "seq": 34
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Щетинин Марк Романович",
+      "seatNo": "17",
+      "orderId": "254609",
+      "birthDateIso": "2013-12-30",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79871570198",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 28,
+      "seq": 35
+    },
+    {
+      "eventId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti",
+      "manifestId": "2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2",
+      "fullName": "Щетинин Роман Александрович",
+      "seatNo": "18",
+      "orderId": "254609",
+      "birthDateIso": "1982-12-26",
+      "boardingPlace": "Озон, Парковка ТЦ",
+      "phone": "79171347917",
+      "sourceFile": "atoms_drivers_report_13.08.2026 (9).xlsx",
+      "sourceRow": 27,
+      "seq": 36
     },
     {
       "eventId": "2026-08-14-rodina-h-akron",
