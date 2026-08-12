@@ -449,8 +449,6 @@
 	display: block;
 	width: 100%;
 	height: 100%;
-
-	/* Figma 4810:18344 — маскот в фрейме 389×345 */
 	@include from($bp-tablet-sm) {
 		position: relative;
 		overflow: hidden;
@@ -512,4 +510,18 @@
 		max-height: 100%;
 		object-position: right bottom;
 	}
+}
+
+.ctaWrap {
+	position: relative;
+	z-index: 2;
+	pointer-events: auto;
+}
+
+.ctaButton {
+	box-sizing: border-box;
+	flex: none;
+	width: 100%;
+	min-width: 0;
+	white-space: nowrap;
 }

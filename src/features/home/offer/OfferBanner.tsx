@@ -30,6 +30,11 @@ export type OfferBannerProps = {
 	imageWrapClassName?: string
 	pictureClassName?: string
 	imageClassName?: string
+	/** Кнопка после текста (вместо ссылки на всю карточку). */
+	ctaLabel?: string
+	ctaHref?: string
+	ctaWrapClassName?: string
+	ctaButtonClassName?: string
 }
 
 export const OfferBanner: FC<OfferBannerProps> = ({
@@ -48,15 +53,20 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 	imageWrapClassName,
 	pictureClassName,
 	imageClassName,
+	ctaLabel,
+	ctaHref,
+	ctaWrapClassName,
+	ctaButtonClassName,
 }) => {
-	const RootTag = href ? 'a' : 'article'
+	const cardHref = ctaLabel && ctaHref ? undefined : href
+	const RootTag = cardHref ? 'a' : 'article'
 
 	return (
 		<RootTag
-			className={cx(styles.card, href && styles.cardLink, className)}
-			{...(href
+			className={cx(styles.card, cardHref && styles.cardLink, className)}
+			{...(cardHref
 				? {
-						href,
+						href: cardHref,
 						target: '_blank',
 						rel: 'noopener noreferrer',
 					}
@@ -77,6 +87,18 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 					<p className={styles.subtitle}>{subtitle}</p>
 					<p className={cx(styles.description, 'font-mono')}>{description}</p>
 				</div>
+				{ctaLabel && ctaHref ? (
+					<div className={cx(styles.ctaWrap, ctaWrapClassName)}>
+						<a
+							className={cx(styles.ctaButton, ctaButtonClassName, 'font-mono')}
+							href={ctaHref}
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							{ctaLabel}
+						</a>
+					</div>
+				) : null}
 			</div>
 			<div className={cx(styles.imageWrap, imageWrapClassName)}>
 				<picture className={cx(styles.picture, pictureClassName)}>

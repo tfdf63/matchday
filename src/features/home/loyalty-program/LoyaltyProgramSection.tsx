@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 
+import matchCardStyles from '@/components/MatchCard/MatchCard.module.scss'
 import {
 	LOYALTY_PROGRAM_HREF,
 	loyaltyProgramContent,
@@ -11,6 +12,11 @@ import { LOYALTY_MASCOT } from './loyaltyAssets'
 import styles from './LoyaltyProgramSection.module.scss'
 
 const LOYALTY_HEADING_ID = 'loyalty-program-heading'
+const LOYALTY_CTA_LABEL = 'Присоединиться'
+
+function cx(...parts: Array<string | false | null | undefined>): string {
+	return parts.filter(Boolean).join(' ')
+}
 
 export const LoyaltyProgramSection: FC = () => {
 	const { title, subtitle, description } = loyaltyProgramContent
@@ -26,7 +32,6 @@ export const LoyaltyProgramSection: FC = () => {
 					title={title}
 					subtitle={subtitle}
 					description={description}
-					href={LOYALTY_PROGRAM_HREF}
 					headingId={LOYALTY_HEADING_ID}
 					className={styles.loyaltyCard}
 					imageWrapClassName={styles.imageWrap}
@@ -38,6 +43,13 @@ export const LoyaltyProgramSection: FC = () => {
 					imageSrcLaptop={LOYALTY_MASCOT}
 					imageSrcDesktop={LOYALTY_MASCOT}
 					imageSrcDesktopXl={LOYALTY_MASCOT}
+					ctaLabel={LOYALTY_CTA_LABEL}
+					ctaHref={LOYALTY_PROGRAM_HREF}
+					ctaWrapClassName={styles.ctaWrap}
+					ctaButtonClassName={cx(
+						matchCardStyles.btnOutline,
+						styles.ctaButton,
+					)}
 				/>
 			</div>
 		</section>

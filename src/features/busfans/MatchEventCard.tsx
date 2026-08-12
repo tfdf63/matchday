@@ -173,6 +173,12 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 								Регистрация
 							</a>
 						) : null}
+						<Link
+							href={eventHref}
+							className={cx(styles.registerBtn, 'font-mono')}
+						>
+							Посмотреть
+						</Link>
 					</div>
 				</div>
 			</div>
