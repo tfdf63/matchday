@@ -597,6 +597,28 @@
 	object-fit: cover;
 }
 
+/* GIF-футболки: кроп как у PNG-товаров, текст снизу на градиенте */
+.cardImageGif {
+	object-position: center 22%;
+}
+
+.showcaseBento .card:nth-child(1) .cardGradient,
+.showcaseBento .card:nth-child(5) .cardGradient {
+	background: linear-gradient(
+		to bottom,
+		rgb(2 10 10 / 0) 45%,
+		rgb(2 10 10 / 0.88) 100%
+	);
+}
+
+.showcaseBento .card:nth-child(5) .cardGradient {
+	background: linear-gradient(
+		to bottom,
+		rgb(2 10 10 / 0) 35%,
+		rgb(2 10 10 / 0.88) 100%
+	);
+}
+
 /* 4810:18629+ — 65,5% */
 .cardGradient {
 	position: absolute;

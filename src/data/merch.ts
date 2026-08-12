@@ -106,33 +106,36 @@ export const merchSubtitleParagraph768 =
 
 export const merchStoreHref = 'https://shop.fcakron.ru/'
 
+const MERCH_GIF_HOME = '/images/merch/merch_black.gif'
+const MERCH_GIF_AWAY = '/images/merch/merch_white.gif'
+
 /**
  * 1–3: 360, 768, 1024, 1280, 1600, 1920. 4–6: 768+, 1024, 1280, 1600, 1920. 7–8: 1024, 1280, 1600, 1920.
  */
 export const merchShowcaseItems: MerchShowcaseItem[] = [
 	{
 		id: 1,
-		title: 'Худи Акрон Тольятти красное',
-		price: '5 500 руб.',
-		image360: '/images/merch/merch_1_360.png',
-		image768: '/images/merch/merch_1_768.png',
+		title: 'Домашняя игровая футболка 26/27',
+		price: '5 900 руб.',
+		image360: MERCH_GIF_HOME,
+		image768: MERCH_GIF_HOME,
 		image768W: 334,
 		image768H: 410,
-		image1024: '/images/merch/merch_1_1024.png',
+		image1024: MERCH_GIF_HOME,
 		image1024W: 301,
 		image1024H: 440,
-		image1280: '/images/merch/merch_1_1280.png',
+		image1280: MERCH_GIF_HOME,
 		image1280W: 387,
 		image1280H: 550,
-		image1600: '/images/merch/merch_1_1600.png',
+		image1600: MERCH_GIF_HOME,
 		image1600W: 493,
 		image1600H: 720,
-		image1920: '/images/merch/merch_1_1920.png',
+		image1920: MERCH_GIF_HOME,
 		image1920W: 600,
 		image1920H: 810,
 		gradient: 'tall',
 		productUrl:
-			'https://shop.fcakron.ru/catalog/odezhda/khudi-i-kofty/khudi-akron-tolyatti-krasnoe/',
+			'https://shop.fcakron.ru/catalog/sezon-26-27/domashnyaya-igrovaya-futbolka-26-27/',
 	},
 	{
 		id: 2,
@@ -205,25 +208,26 @@ export const merchShowcaseItems: MerchShowcaseItem[] = [
 	},
 	{
 		id: 5,
-		title: 'Бейсболка снэпбэк «Молодой Звонкий»',
-		price: '2 500 руб.',
-		image768: '/images/merch/merch_5_768.png',
+		title: 'Гостевая игровая футболка 26/27',
+		price: '5 900 руб.',
+		image768: MERCH_GIF_AWAY,
 		image768W: 157,
 		image768H: 240,
-		image1024: '/images/merch/merch_5_1024.png',
+		image1024: MERCH_GIF_AWAY,
 		image1024W: 221,
 		image1024H: 300,
-		image1280: '/images/merch/merch_5_1280.png',
+		image1280: MERCH_GIF_AWAY,
 		image1280W: 285,
 		image1280H: 380,
-		image1600: '/images/merch/merch_5_1600.png',
+		image1600: MERCH_GIF_AWAY,
 		image1600W: 365,
 		image1600H: 480,
-		image1920: '/images/merch/merch_5_1920.png',
+		image1920: MERCH_GIF_AWAY,
 		image1920W: 445,
 		image1920H: 540,
 		gradient: 'half',
-		productUrl: 'https://shop.fcakron.ru/',
+		productUrl:
+			'https://shop.fcakron.ru/catalog/sezon-26-27/gostevaya-igrovaya-futbolka-26-27/',
 	},
 	{
 		id: 6,

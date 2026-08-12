@@ -51,6 +51,11 @@ function MerchProductCard({
 	const w1024 = item.image1024W ?? DEFAULT_1024.w
 	const h1024 = item.image1024H ?? DEFAULT_1024.h
 	const isHalfGradient = (item.gradient ?? 'tall') === 'half'
+	const isGifCard = item.id === 1 || item.id === 5
+	const imageClassName = cx(
+		styles.cardImage,
+		isGifCard && styles.cardImageGif,
+	)
 
 	const has1920 = item.image1920 != null
 	const has1600 = item.image1600 != null
@@ -83,7 +88,7 @@ function MerchProductCard({
 						/>
 					)}
 					<img
-						className={styles.cardImage}
+						className={imageClassName}
 						src={item.image1024}
 						alt=""
 						width={w1024}
@@ -125,7 +130,7 @@ function MerchProductCard({
 					)}
 					<source media="(min-width: 767px)" srcSet={item.image768!} />
 					<img
-						className={styles.cardImage}
+						className={imageClassName}
 						src={item.image360}
 						alt=""
 						width={w360?.w}
@@ -167,7 +172,7 @@ function MerchProductCard({
 					)}
 					<source media="(min-width: 767px)" srcSet={item.image768} />
 					<img
-						className={styles.cardImage}
+						className={imageClassName}
 						src={item.image768}
 						alt=""
 						width={w768}
