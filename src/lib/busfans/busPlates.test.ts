@@ -59,4 +59,13 @@ describe('getBusPlateNumbers', () => {
 			'Х966ВН763',
 		])
 	})
+
+	it('returns plates for Rodina and CSKA away buses', () => {
+		expect(getBusPlateNumbers('2026-08-14-rodina-h-akron-bus-avtobus')).toEqual([
+			'Х954НС763',
+		])
+		expect(getBusPlateNumbers('2026-08-17-cska-h-akron-bus-avtobus')).toEqual([
+			'В294СР763',
+		])
+	})
 })
