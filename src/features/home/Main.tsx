@@ -4,15 +4,11 @@ import type { FC } from 'react'
 
 import games from '@/data/games'
 import {
-	getLocalDateIso,
 	pickPromotedHomeHeroGame,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
-import { isSeasonTicketsHeroActive } from './mainHeroConfig'
-import { MainHeroCardRotator } from './MainHeroCardRotator'
 import { MainMatchCardClient } from './MainMatchCardClient'
-import { MainSeasonTicketsCard } from './MainSeasonTicketsCard'
 import styles from './Main.module.scss'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
@@ -40,7 +36,6 @@ const sortedGamesMain = sortGamesByDateIso(games)
 const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 	const game =
 		pickPromotedHomeHeroGame(sortedGamesMain) ?? sortedGamesMain[0]
-	const showSeasonTickets = isSeasonTicketsHeroActive(getLocalDateIso())
 
 	return (
 		<div className={cx(styles.main, withBottomMenu && styles.withBottomMenu)}>
@@ -124,15 +119,9 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 				</div>
 				<div className={styles.matchStack}>
 					<div className={styles.matchAnchor}>
-						<MainHeroCardRotator
-							showSeasonTickets={showSeasonTickets}
-							seasonTicketsCard={<MainSeasonTicketsCard />}
-							matchCard={
-								<MainMatchCardClient
-									games={sortedGamesMain}
-									initialGame={game}
-								/>
-							}
+						<MainMatchCardClient
+							games={sortedGamesMain}
+							initialGame={game}
 						/>
 					</div>
 				</div>
