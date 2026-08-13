@@ -24,7 +24,7 @@ describe('getBusScheduleOverride', () => {
 		expect(
 			getBusScheduleOverride('2026-08-13-vstrecha-s-bolelschikami-tolyatti'),
 		).toEqual({
-			departure: '17:00',
+			departure: 'ТЦ Озон 16:30 · Парк Хаус 16:50',
 			returnAt: '20:30',
 		})
 	})
@@ -97,7 +97,7 @@ describe('getBusScheduleTimes', () => {
 				matchTime: 'SAMT 17:00',
 				eventId: '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
 			}),
-		).toBe('старт: 17:00 · обратно: 20:30')
+		).toBe('старт: ТЦ Озон 16:30 · Парк Хаус 16:50 · обратно: 20:30')
 	})
 
 	it('formats Rodina schedule with date and text return', () => {

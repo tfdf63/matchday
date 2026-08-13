@@ -23,7 +23,7 @@ describe('fan meeting display', () => {
 				eventId: '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
 			}),
 		).toEqual({
-			departure: '17:00',
+			departure: 'ТЦ Озон 16:30 · Парк Хаус 16:50',
 			returnAt: '20:30',
 		})
 	})
