@@ -68,4 +68,17 @@ describe('getBusPlateNumbers', () => {
 			'В294СР763',
 		])
 	})
+
+	it('returns plates for Togliatti fan meeting buses', () => {
+		expect(
+			getBusPlateNumbers(
+				'2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-1',
+			),
+		).toEqual(['К088РР763'])
+		expect(
+			getBusPlateNumbers(
+				'2026-08-13-vstrecha-s-bolelschikami-tolyatti-bus-2',
+			),
+		).toEqual(['В294СР763'])
+	})
 })
