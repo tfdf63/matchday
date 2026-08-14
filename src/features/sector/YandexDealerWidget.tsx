@@ -58,7 +58,22 @@ export function YandexDealerWidget({
 		const dealerQueue = (win[dealerName] = win[dealerName] || [])
 
 		let destroyed = false
+		let disposed = false
 		let widget: DealerWidgetInstance | null = null
+
+		const safeDispose = () => {
+			if (disposed) return
+			disposed = true
+
+			// У destroy вендорского виджета обычно уже есть internal unmount.
+			// Вызываем только один путь очистки, чтобы избежать double removeChild.
+			if (widget?.destroy) {
+				widget.destroy()
+				return
+			}
+
+			widget?.unmount?.()
+		}
 
 		dealerQueue.push(['setDefaultClientKey', clientKey])
 		dealerQueue.push(['setDefaultRegionId', regionId])
@@ -71,8 +86,7 @@ export function YandexDealerWidget({
 				widget = dealerApi.Widget(venueId, 'venue', {
 					target: targetRef.current,
 					onRequestClose: () => {
-						widget?.unmount?.()
-						widget?.destroy?.()
+						safeDispose()
 					},
 				})
 
@@ -86,8 +100,7 @@ export function YandexDealerWidget({
 
 		return () => {
 			destroyed = true
-			widget?.unmount?.()
-			widget?.destroy?.()
+			safeDispose()
 		}
 	}, [clientKey, regionId, venueId, height])
 

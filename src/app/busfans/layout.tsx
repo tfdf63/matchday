@@ -1,3 +1,5 @@
+import { FloatingHomeButton } from '@/components/FloatingHomeButton'
+
 import MainPageClient from '../MainPageClient'
 
 export default function BusFansLayout({
@@ -8,6 +10,7 @@ export default function BusFansLayout({
 	return (
 		<>
 			{children}
+			<FloatingHomeButton />
 			<MainPageClient />
 		</>
 	)

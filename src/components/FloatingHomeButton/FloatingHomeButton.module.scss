@@ -1,0 +1,38 @@
+@use '../../styles/tokens.scss' as *;
+
+.button {
+	display: none;
+
+	@include from($bp-tablet-sm) {
+		position: fixed;
+		left: 20px;
+		bottom: max(20px, env(safe-area-inset-bottom, 0px));
+		z-index: 90;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 56px;
+		height: 56px;
+		border-radius: 2px;
+		background: #b2061c;
+		color: #fff;
+		text-decoration: none;
+		box-shadow: 0 8px 24px rgb(0 0 0 / 0.28);
+		transition: background-color 0.15s ease;
+
+		&:hover {
+			background: var(--primary-red);
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--button-focus-ring);
+			outline-offset: 2px;
+		}
+	}
+}
+
+.icon {
+	display: block;
+	width: 24px;
+	height: 24px;
+}
