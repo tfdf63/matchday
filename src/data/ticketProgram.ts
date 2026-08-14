@@ -35,8 +35,7 @@ export const ticketProgramCards: TicketProgramCard[] = [
 		description:
 			'Удобные места с отличным обзором поля, отдельная зона и спокойная обстановка, чтобы сосредоточиться на игре и получать удовольствие от каждого момента матча.',
 		ctaLabel: 'Узнать больше',
-		ctaHref:
-			'https://widget.afisha.yandex.ru/w/venues/85000?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+		ctaHref: '/sector/vip/',
 	},
 	{
 		id: '3',
