@@ -15,7 +15,7 @@ interface YandexTicketsDealer {
 		options: {
 			target: HTMLElement | null
 			onRequestClose: () => void
-		}
+		},
 	) => {
 		mount: (options: { style: { height: string } }) => void
 		unmount: () => void

@@ -1,9 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import {
-	getSectorPageBySlug,
-	getSectorPageSlugs,
-} from './sectorPages'
+import { getSectorPageBySlug, getSectorPageSlugs } from './sectorPages'
 
 describe('sectorPages', () => {
 	it('includes vip slug', () => {

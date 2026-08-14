@@ -72,7 +72,7 @@ export const SectorPage: FC<SectorPageProps> = ({ page }) => {
 				</div>
 
 				<div className={styles.blocks}>
-					{page.blocks.map((block) => (
+					{page.blocks.map(block => (
 						<section key={block.title} className={styles.block}>
 							<h2 className={styles.blockTitle}>{block.title}</h2>
 							<p className={cx(styles.blockText, 'font-mono')}>{block.text}</p>

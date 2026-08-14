@@ -1,4 +1,3 @@
-/* Настройка */
 var dealerName = 'YandexTicketsDealer'
 var dealer = (window[dealerName] = window[dealerName] || [])
 
@@ -20,7 +19,6 @@ YandexTicketsDealer.push([
 	},
 ])
 
-/* Загрузка */
 ;(function () {
 	var rnd = '?' + new Date().getTime() * Math.random()
 	var script = document.createElement('script')

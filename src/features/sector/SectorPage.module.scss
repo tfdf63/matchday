@@ -128,12 +128,7 @@ $card-text-muted: rgb(255 255 255 / 0.8);
 	overflow: hidden;
 	margin-bottom: 32px;
 	aspect-ratio: var(--schema-w) / calc(var(--schema-h) / 2);
-	mask-image: linear-gradient(
-		to bottom,
-		transparent 0%,
-		#000 50%,
-		#000 100%
-	);
+	mask-image: linear-gradient(to bottom, transparent 0%, #000 50%, #000 100%);
 	-webkit-mask-image: linear-gradient(
 		to bottom,
 		transparent 0%,
