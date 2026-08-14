@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-14T16:57:24+04:00",
+    "generatedAt": "2026-08-14T16:58:56+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 2,
     "manifestsCount": 2,
-    "passengersCount": 68
+    "passengersCount": 69
   },
   "events": [
     {
@@ -46,8 +46,8 @@
       "seasonTour": "2026/2027 4 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 1,
-      "passengerCount": 42,
-      "seatsAssigned": 42
+      "passengerCount": 43,
+      "seatsAssigned": 43
     }
   ],
   "manifests": [
@@ -57,8 +57,8 @@
       "label": "Автобус",
       "busNo": null,
       "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "passengerCount": 42,
-      "seatsAssigned": 42,
+      "passengerCount": 43,
+      "seatsAssigned": 43,
       "boardingStops": [
         "Тольятти"
       ]
@@ -587,6 +587,19 @@
     {
       "eventId": "2026-08-14-rodina-h-akron",
       "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
+      "fullName": "Храмова Людмила Сергеевна",
+      "seatNo": "5",
+      "orderId": "253845",
+      "birthDateIso": "1968-05-27",
+      "boardingPlace": "Тольятти,",
+      "phone": "79270200222",
+      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
+      "sourceRow": 46,
+      "seq": 40
+    },
+    {
+      "eventId": "2026-08-14-rodina-h-akron",
+      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
       "fullName": "Черепанов Максим Петрович",
       "seatNo": "8",
       "orderId": "253911",
@@ -595,7 +608,7 @@
       "phone": "79021813490",
       "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
       "sourceRow": 26,
-      "seq": 40
+      "seq": 41
     },
     {
       "eventId": "2026-08-14-rodina-h-akron",
@@ -608,7 +621,7 @@
       "phone": "789027277145",
       "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
       "sourceRow": 23,
-      "seq": 41
+      "seq": 42
     },
     {
       "eventId": "2026-08-14-rodina-h-akron",
@@ -621,7 +634,7 @@
       "phone": "789024277145",
       "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
       "sourceRow": 24,
-      "seq": 42
+      "seq": 43
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
