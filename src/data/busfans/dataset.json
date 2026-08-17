@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-14T16:58:56+04:00",
+    "generatedAt": "2026-08-17T11:54:31+04:00",
     "sourceDir": "src/data/busfans/raw",
-    "eventsCount": 2,
-    "manifestsCount": 2,
-    "passengersCount": 69
+    "eventsCount": 1,
+    "manifestsCount": 1,
+    "passengersCount": 29
   },
   "events": [
     {
@@ -25,51 +25,18 @@
       "seasonTour": "2026/2027 2 ТУР",
       "fanIdStatus": "Без fan id",
       "busCount": 1,
-      "passengerCount": 26,
+      "passengerCount": 29,
       "seatsAssigned": 26
-    },
-    {
-      "id": "2026-08-14-rodina-h-akron",
-      "title": "Родина х Акрон",
-      "homeTeam": "Родина",
-      "awayTeam": "Акрон",
-      "venue": "away",
-      "dateIso": "2026-08-14",
-      "dateToIso": "2026-08-15",
-      "dateLabel": "14.08.2026",
-      "dateCard": "15.08 (СБ)",
-      "time": "SAMT 15:00",
-      "gameId": "27",
-      "scheduleMatchId": 4,
-      "tournament": "РПЛ",
-      "leagueInfo": "Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА",
-      "seasonTour": "2026/2027 4 ТУР",
-      "fanIdStatus": "Fan id",
-      "busCount": 1,
-      "passengerCount": 43,
-      "seatsAssigned": 43
     }
   ],
   "manifests": [
-    {
-      "id": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "eventId": "2026-08-14-rodina-h-akron",
-      "label": "Автобус",
-      "busNo": null,
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "passengerCount": 43,
-      "seatsAssigned": 43,
-      "boardingStops": [
-        "Тольятти"
-      ]
-    },
     {
       "id": "2026-08-17-cska-h-akron-bus-avtobus",
       "eventId": "2026-08-17-cska-h-akron",
       "label": "Автобус",
       "busNo": null,
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "passengerCount": 26,
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "passengerCount": 29,
       "seatsAssigned": 26,
       "boardingStops": [
         "Тольятти"
@@ -77,565 +44,6 @@
     }
   ],
   "passengers": [
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Аксенов Сергей Александрович",
-      "seatNo": "35",
-      "orderId": "255486",
-      "birthDateIso": "1989-02-01",
-      "boardingPlace": "Тольятти,",
-      "phone": "79277779536",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 45,
-      "seq": 1
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Алферьев Константин Михайлович",
-      "seatNo": "12",
-      "orderId": "253853",
-      "birthDateIso": "1983-07-10",
-      "boardingPlace": "Тольятти,",
-      "phone": "79674908901",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 7,
-      "seq": 2
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Атылина Надежда Алексеевна",
-      "seatNo": "16",
-      "orderId": "254340",
-      "birthDateIso": "1998-06-19",
-      "boardingPlace": "Тольятти,",
-      "phone": "79277104046",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 42,
-      "seq": 3
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Багров Николай Павлович",
-      "seatNo": "27",
-      "orderId": "254238",
-      "birthDateIso": "2015-09-03",
-      "boardingPlace": "Тольятти,",
-      "phone": "79967329744",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 39,
-      "seq": 4
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Багрова Наталья Александровна",
-      "seatNo": "28",
-      "orderId": "254238",
-      "birthDateIso": "1991-06-01",
-      "boardingPlace": "Тольятти,",
-      "phone": "79649675919",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 38,
-      "seq": 5
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Башина Светлана Вячеславовна",
-      "seatNo": "3",
-      "orderId": "254257",
-      "birthDateIso": "1970-11-29",
-      "boardingPlace": "Тольятти,",
-      "phone": "79397007338",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 40,
-      "seq": 6
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Бермяков Александр Алексеевич",
-      "seatNo": "24",
-      "orderId": "253858",
-      "birthDateIso": "1991-05-28",
-      "boardingPlace": "Тольятти,",
-      "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 12,
-      "seq": 7
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Булыга Максим Петрович",
-      "seatNo": "7",
-      "orderId": "253844",
-      "birthDateIso": "1988-09-26",
-      "boardingPlace": "Тольятти,",
-      "phone": "79879671161",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 4,
-      "seq": 8
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Быстров Антон Валерьевич",
-      "seatNo": "22",
-      "orderId": "254637",
-      "birthDateIso": "1985-11-21",
-      "boardingPlace": "Тольятти,",
-      "phone": "79063404146",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 44,
-      "seq": 9
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Васик Галина Юрьевна",
-      "seatNo": "21",
-      "orderId": "254232",
-      "birthDateIso": "1980-07-14",
-      "boardingPlace": "Тольятти,",
-      "phone": "79179445756",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 37,
-      "seq": 10
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Вихирев Сергей Сергеевич",
-      "seatNo": "15",
-      "orderId": "254340",
-      "birthDateIso": "1993-03-10",
-      "boardingPlace": "Тольятти,",
-      "phone": "79270001964",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 41,
-      "seq": 11
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Волков Роман Валерьевич",
-      "seatNo": "23",
-      "orderId": "253858",
-      "birthDateIso": "1983-07-21",
-      "boardingPlace": "Тольятти,",
-      "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 13,
-      "seq": 12
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Горичев Никита Николаевич",
-      "seatNo": "26",
-      "orderId": "254158",
-      "birthDateIso": "2013-02-07",
-      "boardingPlace": "Тольятти,",
-      "phone": "79171650366",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 34,
-      "seq": 13
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Горичева Виктория Владимировна",
-      "seatNo": "25",
-      "orderId": "254158",
-      "birthDateIso": "1986-03-28",
-      "boardingPlace": "Тольятти,",
-      "phone": "79171650366",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 33,
-      "seq": 14
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Долгушев Дмитрий Евгениевич",
-      "seatNo": "43",
-      "orderId": "253862",
-      "birthDateIso": "1978-03-11",
-      "boardingPlace": "Тольятти,",
-      "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 18,
-      "seq": 15
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Заикин Александр Сергеевич",
-      "seatNo": "19",
-      "orderId": "253863",
-      "birthDateIso": "2011-09-02",
-      "boardingPlace": "Тольятти,",
-      "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 21,
-      "seq": 16
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Кокорин Сергей Викторович",
-      "seatNo": "29",
-      "orderId": "253992",
-      "birthDateIso": "1975-04-03",
-      "boardingPlace": "Тольятти,",
-      "phone": "79278912234",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 30,
-      "seq": 17
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Кокорина Анастасия Сергеевна",
-      "seatNo": "30",
-      "orderId": "253992",
-      "birthDateIso": "1981-12-23",
-      "boardingPlace": "Тольятти,",
-      "phone": "79277726611",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 31,
-      "seq": 18
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Куликова Ольга Геннадьевна",
-      "seatNo": "31",
-      "orderId": "254218",
-      "birthDateIso": "1964-05-07",
-      "boardingPlace": "Тольятти,",
-      "phone": "79179733510",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 35,
-      "seq": 19
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Куренков Алексей Геннадьевич",
-      "seatNo": "33",
-      "orderId": "253855",
-      "birthDateIso": "1970-01-09",
-      "boardingPlace": "Тольятти,",
-      "phone": "79272662576",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 8,
-      "seq": 20
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Лебедева Светлана Викторовна",
-      "seatNo": "40",
-      "orderId": "253979",
-      "birthDateIso": "1982-09-24",
-      "boardingPlace": "Тольятти,",
-      "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 29,
-      "seq": 21
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Леонтьева Алла Андреевна",
-      "seatNo": "42",
-      "orderId": "253862",
-      "birthDateIso": "1982-01-06",
-      "boardingPlace": "Тольятти,",
-      "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 16,
-      "seq": 22
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Литвинов Дмитрий Валериевич",
-      "seatNo": "51",
-      "orderId": "253874",
-      "birthDateIso": "1988-01-13",
-      "boardingPlace": "Тольятти,",
-      "phone": "79277724613",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 22,
-      "seq": 23
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Матвеев Максим Николаевич",
-      "seatNo": "41",
-      "orderId": "254459",
-      "birthDateIso": "1985-05-09",
-      "boardingPlace": "Тольятти,",
-      "phone": "79967413323",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 43,
-      "seq": 24
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Москалев Александр Олегович",
-      "seatNo": "37",
-      "orderId": "253857",
-      "birthDateIso": "1987-10-29",
-      "boardingPlace": "Тольятти,",
-      "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 9,
-      "seq": 25
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Москалева Алиса Александровна",
-      "seatNo": "38",
-      "orderId": "253857",
-      "birthDateIso": "2013-04-04",
-      "boardingPlace": "Тольятти,",
-      "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 10,
-      "seq": 26
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Повольнов Александр Сергеевич",
-      "seatNo": "11",
-      "orderId": "253851",
-      "birthDateIso": "1984-07-03",
-      "boardingPlace": "Тольятти,",
-      "phone": "79179723135",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 6,
-      "seq": 27
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Пронина Наталья Викторовна",
-      "seatNo": "20",
-      "orderId": "253863",
-      "birthDateIso": "1967-11-19",
-      "boardingPlace": "Тольятти,",
-      "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 20,
-      "seq": 28
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Смирнов Артемий Сергеевич",
-      "seatNo": "14",
-      "orderId": "253859",
-      "birthDateIso": "2016-07-21",
-      "boardingPlace": "Тольятти,",
-      "phone": "79372138546",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 15,
-      "seq": 29
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Смирнова Ольга Николаевна",
-      "seatNo": "13",
-      "orderId": "253859",
-      "birthDateIso": "1990-06-20",
-      "boardingPlace": "Тольятти,",
-      "phone": "79372138546",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 14,
-      "seq": 30
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Стакин Богдан Алексеевич",
-      "seatNo": "34",
-      "orderId": "253878",
-      "birthDateIso": "2008-09-11",
-      "boardingPlace": "Тольятти,",
-      "phone": "79027428528",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 25,
-      "seq": 31
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Старина Александра Александровна",
-      "seatNo": "45",
-      "orderId": "253862",
-      "birthDateIso": "2015-02-03",
-      "boardingPlace": "Тольятти,",
-      "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 19,
-      "seq": 32
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Старина Владислав Александрович",
-      "seatNo": "44",
-      "orderId": "253862",
-      "birthDateIso": "2016-08-30",
-      "boardingPlace": "Тольятти,",
-      "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 17,
-      "seq": 33
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Трепалин Андрей Евгеньевич",
-      "seatNo": "39",
-      "orderId": "253857",
-      "birthDateIso": "1986-12-29",
-      "boardingPlace": "Тольятти,",
-      "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 11,
-      "seq": 34
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Тюленева Вера Валерьевна",
-      "seatNo": "32",
-      "orderId": "254218",
-      "birthDateIso": "2020-07-18",
-      "boardingPlace": "Тольятти,",
-      "phone": "79179733510",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 36,
-      "seq": 35
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Тюрин Павел Алексеевич",
-      "seatNo": "47",
-      "orderId": "253969",
-      "birthDateIso": "2013-09-15",
-      "boardingPlace": "Тольятти,",
-      "phone": "79879854993",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 28,
-      "seq": 36
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Тюрина Марина Сергеевна",
-      "seatNo": "48",
-      "orderId": "253969",
-      "birthDateIso": "1989-08-15",
-      "boardingPlace": "Тольятти,",
-      "phone": "79879854993",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 27,
-      "seq": 37
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Фролов Александр Тимофеевич",
-      "seatNo": "9",
-      "orderId": "254137",
-      "birthDateIso": "1952-11-07",
-      "boardingPlace": "Тольятти,",
-      "phone": "79376628985",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 32,
-      "seq": 38
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Храмов Степан Константинович",
-      "seatNo": "6",
-      "orderId": "253845",
-      "birthDateIso": "1989-02-06",
-      "boardingPlace": "Тольятти,",
-      "phone": "79397009799",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 5,
-      "seq": 39
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Храмова Людмила Сергеевна",
-      "seatNo": "5",
-      "orderId": "253845",
-      "birthDateIso": "1968-05-27",
-      "boardingPlace": "Тольятти,",
-      "phone": "79270200222",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 46,
-      "seq": 40
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Черепанов Максим Петрович",
-      "seatNo": "8",
-      "orderId": "253911",
-      "birthDateIso": "1983-10-14",
-      "boardingPlace": "Тольятти,",
-      "phone": "79021813490",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 26,
-      "seq": 41
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Шмелев Олег Александрович",
-      "seatNo": "17",
-      "orderId": "253875",
-      "birthDateIso": "1978-06-01",
-      "boardingPlace": "Тольятти,",
-      "phone": "789027277145",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 23,
-      "seq": 42
-    },
-    {
-      "eventId": "2026-08-14-rodina-h-akron",
-      "manifestId": "2026-08-14-rodina-h-akron-bus-avtobus",
-      "fullName": "Шмелева Александра Олеговна",
-      "seatNo": "18",
-      "orderId": "253875",
-      "birthDateIso": "2011-05-13",
-      "boardingPlace": "Тольятти,",
-      "phone": "789024277145",
-      "sourceFile": "atoms_drivers_report_14.08.2026 (9).xlsx",
-      "sourceRow": 24,
-      "seq": 43
-    },
     {
       "eventId": "2026-08-17-cska-h-akron",
       "manifestId": "2026-08-17-cska-h-akron-bus-avtobus",
@@ -645,8 +53,8 @@
       "birthDateIso": "1966-10-23",
       "boardingPlace": "Тольятти,",
       "phone": "79171276598",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 27,
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 30,
       "seq": 1
     },
     {
@@ -658,7 +66,7 @@
       "birthDateIso": "1983-07-10",
       "boardingPlace": "Тольятти,",
       "phone": "79674908901",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 12,
       "seq": 2
     },
@@ -671,8 +79,8 @@
       "birthDateIso": "2014-11-17",
       "boardingPlace": "Тольятти,",
       "phone": "79674908901",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 28,
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 31,
       "seq": 3
     },
     {
@@ -684,8 +92,8 @@
       "birthDateIso": "1970-11-29",
       "boardingPlace": "Тольятти,",
       "phone": "79397007338",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 26,
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 29,
       "seq": 4
     },
     {
@@ -697,7 +105,7 @@
       "birthDateIso": "1979-07-05",
       "boardingPlace": "Тольятти,",
       "phone": "79171289302",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 10,
       "seq": 5
     },
@@ -710,8 +118,8 @@
       "birthDateIso": "2013-02-07",
       "boardingPlace": "Тольятти,",
       "phone": "79171650366",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 20,
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 23,
       "seq": 6
     },
     {
@@ -723,9 +131,35 @@
       "birthDateIso": "1986-03-28",
       "boardingPlace": "Тольятти,",
       "phone": "79171650366",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 19,
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 22,
       "seq": 7
+    },
+    {
+      "eventId": "2026-08-17-cska-h-akron",
+      "manifestId": "2026-08-17-cska-h-akron-bus-avtobus",
+      "fullName": "Долгушев Дмитрий Евгениевич",
+      "seatNo": null,
+      "orderId": "253871",
+      "birthDateIso": "1978-03-11",
+      "boardingPlace": "Тольятти,",
+      "phone": "79372132572",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 14,
+      "seq": 8
+    },
+    {
+      "eventId": "2026-08-17-cska-h-akron",
+      "manifestId": "2026-08-17-cska-h-akron-bus-avtobus",
+      "fullName": "Елхов Иван Иванович",
+      "seatNo": null,
+      "orderId": "253871",
+      "birthDateIso": "1951-01-20",
+      "boardingPlace": "Тольятти,",
+      "phone": "79372132572",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 15,
+      "seq": 9
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -736,9 +170,9 @@
       "birthDateIso": "2016-06-01",
       "boardingPlace": "Тольятти,",
       "phone": "79397105043",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 24,
-      "seq": 8
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 27,
+      "seq": 10
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -749,9 +183,9 @@
       "birthDateIso": "1981-01-08",
       "boardingPlace": "Тольятти,",
       "phone": "79372393768",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 23,
-      "seq": 9
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 26,
+      "seq": 11
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -762,9 +196,9 @@
       "birthDateIso": "2011-09-02",
       "boardingPlace": "Тольятти,",
       "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 6,
-      "seq": 10
+      "seq": 12
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -775,9 +209,9 @@
       "birthDateIso": "1975-04-03",
       "boardingPlace": "Тольятти,",
       "phone": "79278912234",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 8,
-      "seq": 11
+      "seq": 13
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -788,9 +222,9 @@
       "birthDateIso": "1981-12-23",
       "boardingPlace": "Тольятти,",
       "phone": "79277726611",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 9,
-      "seq": 12
+      "seq": 14
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -801,9 +235,22 @@
       "birthDateIso": "1970-01-09",
       "boardingPlace": "Тольятти,",
       "phone": "79272662576",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 7,
-      "seq": 13
+      "seq": 15
+    },
+    {
+      "eventId": "2026-08-17-cska-h-akron",
+      "manifestId": "2026-08-17-cska-h-akron-bus-avtobus",
+      "fullName": "Леонтьева Леонтьева Алла",
+      "seatNo": null,
+      "orderId": "253871",
+      "birthDateIso": "1982-01-06",
+      "boardingPlace": "Тольятти,",
+      "phone": "79372132572",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 16,
+      "seq": 16
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -814,9 +261,9 @@
       "birthDateIso": "1984-07-03",
       "boardingPlace": "Тольятти,",
       "phone": "79179723135",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 11,
-      "seq": 14
+      "seq": 17
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -827,9 +274,9 @@
       "birthDateIso": "1967-11-19",
       "boardingPlace": "Тольятти,",
       "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 5,
-      "seq": 15
+      "seq": 18
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -840,9 +287,9 @@
       "birthDateIso": "2008-09-11",
       "boardingPlace": "Тольятти,",
       "phone": "79027428528",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 15,
-      "seq": 16
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 18,
+      "seq": 19
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -853,9 +300,9 @@
       "birthDateIso": "2015-02-03",
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 13,
-      "seq": 17
+      "seq": 20
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -866,9 +313,9 @@
       "birthDateIso": "2018-11-06",
       "boardingPlace": "Тольятти,",
       "phone": "79273207259",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 22,
-      "seq": 18
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 25,
+      "seq": 21
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -879,9 +326,9 @@
       "birthDateIso": "1972-08-11",
       "boardingPlace": "Тольятти,",
       "phone": "79178228720",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 16,
-      "seq": 19
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 19,
+      "seq": 22
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -892,9 +339,9 @@
       "birthDateIso": "2006-08-26",
       "boardingPlace": "Тольятти,",
       "phone": "79178228720",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 18,
-      "seq": 20
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 21,
+      "seq": 23
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -905,9 +352,9 @@
       "birthDateIso": "2012-06-01",
       "boardingPlace": "Тольятти,",
       "phone": "79178228720",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 17,
-      "seq": 21
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 20,
+      "seq": 24
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -918,9 +365,9 @@
       "birthDateIso": "1982-12-08",
       "boardingPlace": "Тольятти,",
       "phone": "79273207259",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 21,
-      "seq": 22
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 24,
+      "seq": 25
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -931,9 +378,9 @@
       "birthDateIso": "1989-02-06",
       "boardingPlace": "Тольятти,",
       "phone": "79397009799",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
       "sourceRow": 4,
-      "seq": 23
+      "seq": 26
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -944,9 +391,9 @@
       "birthDateIso": "1968-05-27",
       "boardingPlace": "Тольятти,",
       "phone": "79270200222",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 29,
-      "seq": 24
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 32,
+      "seq": 27
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -957,9 +404,9 @@
       "birthDateIso": "1972-07-24",
       "boardingPlace": "Тольятти,",
       "phone": "79277180995",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 14,
-      "seq": 25
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 17,
+      "seq": 28
     },
     {
       "eventId": "2026-08-17-cska-h-akron",
@@ -970,9 +417,9 @@
       "birthDateIso": "1983-10-14",
       "boardingPlace": "Тольятти,",
       "phone": "79021813490",
-      "sourceFile": "atoms_drivers_report_17.08.2026 (4).xlsx",
-      "sourceRow": 25,
-      "seq": 26
+      "sourceFile": "atoms_drivers_report_17.08.2026 (6).xlsx",
+      "sourceRow": 28,
+      "seq": 29
     }
   ]
 }
