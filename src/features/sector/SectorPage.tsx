@@ -83,7 +83,7 @@ export const SectorPage: FC<SectorPageProps> = ({ page }) => {
 				<div
 					className={cx(
 						styles.blocksRow,
-						(page.blocksAside?.length || page.blocksAsideWide) &&
+						Boolean(page.blocksAside?.length || page.blocksAsideWide) &&
 							styles.blocksRowWithAside,
 					)}
 				>
