@@ -60,25 +60,77 @@ export const SectorPage: FC<SectorPageProps> = ({ page }) => {
 					<p className={cx(styles.subtitle, 'font-mono')}>{page.subtitle}</p>
 				</header>
 
-				<div className={styles.schemaCrop} style={schemaCropStyle}>
+				<div
+					className={cx(
+						styles.schemaCrop,
+						page.schemaAnchor === 'top' && styles.schemaCropTop,
+					)}
+					style={schemaCropStyle}
+				>
 					<Image
 						src={page.schema.src}
 						alt={page.schema.alt}
 						width={page.schema.width}
 						height={page.schema.height}
-						className={styles.schemaImage}
+						className={cx(
+							styles.schemaImage,
+							page.schemaAnchor === 'top' && styles.schemaImageTop,
+						)}
 						sizes='(min-width: 1280px) 1200px, 100vw'
 					/>
 				</div>
 
-				<div className={styles.blocks}>
-					{page.blocks.map(block => (
-						<section key={block.title} className={styles.block}>
-							<h2 className={styles.blockTitle}>{block.title}</h2>
-							<p className={cx(styles.blockText, 'font-mono')}>{block.text}</p>
-						</section>
-					))}
-					<p className={cx(styles.closing, 'font-mono')}>{page.closing}</p>
+				<div
+					className={cx(
+						styles.blocksRow,
+						(page.blocksAside?.length || page.blocksAsideWide) &&
+							styles.blocksRowWithAside,
+					)}
+				>
+					<div
+						className={cx(
+							styles.blocks,
+							page.blocksLayout === 'grid' && styles.blocksGrid,
+						)}
+					>
+						{page.blocks.map(block => (
+							<section key={block.title} className={styles.block}>
+								<h2 className={styles.blockTitle}>{block.title}</h2>
+								<p className={cx(styles.blockText, 'font-mono')}>
+									{block.text}
+								</p>
+							</section>
+						))}
+						{page.closing ? (
+							<p className={cx(styles.closing, 'font-mono')}>{page.closing}</p>
+						) : null}
+					</div>
+					{page.blocksAside?.length ? (
+						<div className={styles.blocksAside}>
+							{page.blocksAside.map(image => (
+								<Image
+									key={image.src}
+									src={image.src}
+									alt={image.alt}
+									width={image.width}
+									height={image.height}
+									className={styles.blocksAsideImage}
+								/>
+							))}
+						</div>
+					) : null}
+					{page.blocksAsideWide ? (
+						<div className={styles.blocksAsideWide}>
+							<Image
+								src={page.blocksAsideWide.src}
+								alt={page.blocksAsideWide.alt}
+								width={page.blocksAsideWide.width}
+								height={page.blocksAsideWide.height}
+								className={styles.blocksAsideWideImage}
+								sizes='(min-width: 767px) 48vw, 0px'
+							/>
+						</div>
+					) : null}
 				</div>
 
 				<section

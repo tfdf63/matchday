@@ -28,6 +28,25 @@ describe('sectorPages', () => {
 		)
 	})
 
+	it('includes family sector c4', () => {
+		expect(getSectorPageSlugs()).toContain('c4')
+		const page = getSectorPageBySlug('c4')
+		expect(page).not.toBeNull()
+		expect(page?.path).toBe('/sector/c4/')
+		expect(page?.heading).toBe('Семейный')
+		expect(page?.schemaAnchor).toBe('top')
+		expect(page?.hero.src).toContain('/images/sector/c4-1.webp')
+		expect(page?.schema.src).toContain('/images/schema/schema-c4.webp')
+		expect(page?.seo.title).toBe('Семейный')
+		expect(page?.seo.description.length).toBeGreaterThan(40)
+		expect(page?.blocks).toHaveLength(5)
+		expect(page?.blocks[0]?.title).toBe('Детская зона')
+		expect(page?.blocksAside).toHaveLength(2)
+		expect(page?.blocksAside?.[0]?.src).toContain('c4-mascot.webp')
+		expect(page?.blocksAside?.[1]?.src).toContain('c4-logo.webp')
+		expect(page?.blocksAsideWide?.src).toContain('c4-activity.webp')
+	})
+
 	it('returns null for unknown slug', () => {
 		expect(getSectorPageBySlug('unknown')).toBeNull()
 	})

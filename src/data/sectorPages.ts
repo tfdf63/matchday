@@ -57,6 +57,8 @@ export type SectorPage = {
 	hero: SectorPageImage
 	hotspots?: readonly SectorPageHotspot[]
 	schema: SectorPageImage
+	/** Какой край схемы остаётся видимым: VIP — низ, семейный C4 — верх. */
+	schemaAnchor?: 'top' | 'bottom'
 	dealerWidget?: SectorDealerWidgetConfig
 	buyLabel: string
 	buyHref: string
@@ -64,7 +66,11 @@ export type SectorPage = {
 	/** URL виджета Яндекс.Афиши; пока не задан — слот пустой. */
 	widgetSrc?: string | null
 	blocks: readonly SectorPageBlock[]
-	closing: string
+	blocksLayout?: 'stack' | 'grid'
+	blocksAside?: readonly SectorPageImage[]
+	/** Фото справа от описаний, только ≥767. */
+	blocksAsideWide?: SectorPageImage
+	closing?: string
 	seo: SectorPageSeo
 }
 
@@ -172,6 +178,83 @@ export const sectorPages: readonly SectorPage[] = [
 			description:
 				'VIP-сектор на «Солидарность Самара Арена»: места у скамейки, премиальная атмосфера и лучший ракурс на игру ФК «Акрон».',
 			ogTitle: 'ФК Акрон | VIP',
+		},
+	},
+	{
+		slug: 'c4',
+		heading: 'Семейный',
+		subtitle: 'Спокойная атмосфера для зрителей всех возрастов',
+		path: '/sector/c4/',
+		hero: {
+			src: '/images/sector/c4-1.webp',
+			width: 1024,
+			height: 546,
+			alt: 'Семья болельщиков ФК Акрон на трибуне',
+		},
+		schema: {
+			src: '/images/schema/schema-c4.webp',
+			width: 687,
+			height: 688,
+			alt: 'Схема стадиона: семейный сектор C413–C417',
+		},
+		schemaAnchor: 'top',
+		dealerWidget: {
+			clientKey: '0046af24-2980-419c-bf99-c4d864c693e3',
+			regionId: 51,
+			venueId: '85000',
+			height: 600,
+		},
+		buyLabel: 'Купить',
+		buyHref: '#buy',
+		ticketsHeading: 'Купить билеты',
+		widgetSrc: null,
+		blocks: [
+			{
+				title: 'Детская зона',
+				text: 'Зона для самых маленьких болельщиков',
+			},
+			{
+				title: 'Активные игры',
+				text: 'Настольные игры, текбол, творческие зоны',
+			},
+			{
+				title: 'Удобные места',
+				text: 'Мягкие сидушки и отличный вид на поле',
+			},
+			{
+				title: 'Музыка',
+				text: 'DJ-сеты для заряда настроения перед матчем',
+			},
+			{
+				title: 'Аквагрим',
+				text: 'Яркие рисунки на выбор для преданных фанатов',
+			},
+		],
+		blocksAside: [
+			{
+				src: '/images/sector/c4-mascot.webp',
+				width: 298,
+				height: 269,
+				alt: 'Талисман семейного сектора ФК Акрон',
+			},
+			{
+				src: '/images/sector/c4-logo.webp',
+				width: 161,
+				height: 155,
+				alt: 'Логотип семейного сектора ФК Акрон',
+			},
+		],
+		blocksAsideWide: {
+			src: '/images/sector/c4-activity.webp',
+			width: 632,
+			height: 660,
+			alt: 'Творческая зона семейного сектора: болельщики рисуют плакат',
+		},
+		seo: {
+			title: 'Семейный',
+			description:
+				'Семейный сектор C4 на «Солидарность Самара Арена»: спокойная атмосфера, комфорт для зрителей всех возрастов и сектора C413–C417.',
+			ogTitle: 'ФК Акрон | Семейный',
 		},
 	},
 ]

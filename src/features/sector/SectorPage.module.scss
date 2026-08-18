@@ -78,6 +78,7 @@ $card-text-muted: rgb(255 255 255 / 0.8);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	gap: 16px;
 }
 
@@ -152,15 +153,114 @@ $card-text-muted: rgb(255 255 255 / 0.8);
 	object-position: center bottom;
 }
 
+.schemaCropTop {
+	mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%);
+	-webkit-mask-image: linear-gradient(
+		to bottom,
+		#000 0%,
+		#000 50%,
+		transparent 100%
+	);
+}
+
+.schemaImageTop {
+	top: 0;
+	bottom: auto;
+	object-position: center top;
+}
+
+.blocksRow {
+	margin-bottom: 48px;
+
+	@include from($bp-tablet-sm) {
+		margin-bottom: 64px;
+	}
+}
+
+.blocksRowWithAside {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+
+	@include from($bp-tablet-sm) {
+		gap: 48px;
+	}
+}
+
 .blocks {
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
-	margin-bottom: 48px;
 
 	@include from($bp-tablet-sm) {
 		gap: 32px;
-		margin-bottom: 64px;
+	}
+}
+
+.blocksRowWithAside .blocks {
+	flex: 1 1 auto;
+	min-width: 0;
+	gap: 16px;
+
+	@include from($bp-tablet-sm) {
+		gap: 32px;
+	}
+}
+
+.blocksAside {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	flex: 0 0 108px;
+	width: 108px;
+
+	@include from($bp-tablet-sm) {
+		display: none;
+	}
+}
+
+.blocksAsideImage {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 298px;
+}
+
+.blocksAsideImage:last-child {
+	width: 62%;
+}
+
+.blocksAsideWide {
+	display: none;
+
+	@include from($bp-tablet-sm) {
+		display: block;
+		flex: 0 1 480px;
+		max-width: 48%;
+		min-width: 240px;
+	}
+}
+
+.blocksAsideWideImage {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.blocksGrid {
+	display: grid;
+	grid-template-columns: 1fr;
+
+	@include from($bp-tablet-sm) {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto auto;
+		grid-auto-flow: column;
+		column-gap: 48px;
+		align-items: start;
 	}
 }
 
@@ -177,6 +277,7 @@ $card-text-muted: rgb(255 255 255 / 0.8);
 	font-weight: 400;
 	line-height: 1.1;
 	text-transform: uppercase;
+	text-wrap: balance;
 
 	@include from($bp-tablet-sm) {
 		font-size: 32px;
