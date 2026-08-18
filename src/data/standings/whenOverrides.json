@@ -1,59 +1,59 @@
 {
   "10": {
-    "label": "9–12 окт",
-    "time": null,
-    "exact": false,
-    "text": "9–12 окт",
-    "range": true
+    "label": "9 окт (пт)",
+    "time": "20:30",
+    "exact": true,
+    "text": "9 окт (пт), 20:30",
+    "range": false
   },
   "11": {
-    "label": "16–19 окт",
-    "time": null,
-    "exact": false,
-    "text": "16–19 окт",
-    "range": true
+    "label": "17 окт (сб)",
+    "time": "17:30",
+    "exact": true,
+    "text": "17 окт (сб), 17:30",
+    "range": false
   },
   "12": {
-    "label": "23–26 окт",
-    "time": null,
-    "exact": false,
-    "text": "23–26 окт",
-    "range": true
+    "label": "24 окт (сб)",
+    "time": "13:45",
+    "exact": true,
+    "text": "24 окт (сб), 13:45",
+    "range": false
   },
   "13": {
-    "label": "30 окт – 2 ноя",
-    "time": null,
-    "exact": false,
-    "text": "30 окт – 2 ноя",
-    "range": true
+    "label": "1 ноя (вс)",
+    "time": "18:30",
+    "exact": true,
+    "text": "1 ноя (вс), 18:30",
+    "range": false
   },
   "14": {
-    "label": "6–8 ноя",
-    "time": null,
-    "exact": false,
-    "text": "6–8 ноя",
-    "range": true
+    "label": "8 ноя (вс)",
+    "time": "17:15",
+    "exact": true,
+    "text": "8 ноя (вс), 17:15",
+    "range": false
   },
   "15": {
-    "label": "20–23 ноя",
-    "time": null,
-    "exact": false,
-    "text": "20–23 ноя",
-    "range": true
+    "label": "21 ноя (сб)",
+    "time": "16:15",
+    "exact": true,
+    "text": "21 ноя (сб), 16:15",
+    "range": false
   },
   "16": {
-    "label": "27–30 ноя",
-    "time": null,
-    "exact": false,
-    "text": "27–30 ноя",
-    "range": true
+    "label": "28 ноя (сб)",
+    "time": "15:00",
+    "exact": true,
+    "text": "28 ноя (сб), 15:00",
+    "range": false
   },
   "17": {
-    "label": "4–7 дек",
-    "time": null,
-    "exact": false,
-    "text": "4–7 дек",
-    "range": true
+    "label": "5 дек (сб)",
+    "time": "14:00",
+    "exact": true,
+    "text": "5 дек (сб), 14:00",
+    "range": false
   },
   "18": {
     "label": "26 фев – 1 мар",

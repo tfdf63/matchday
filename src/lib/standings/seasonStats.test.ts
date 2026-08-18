@@ -19,15 +19,15 @@ describe('seasonStats', () => {
 			(r) => r.match.played && r.competition !== 'cup',
 		)
 
-		expect(played).toHaveLength(3)
-		expect(played.map((r) => r.cumulativePts)).toEqual([0, 0, 1])
+		expect(played).toHaveLength(4)
+		expect(played.map((r) => r.cumulativePts)).toEqual([0, 0, 1, 2])
 
 		const stats = getSeasonStats(season2627.matches)
 		expect(stats).toEqual({
-			playedCount: 3,
+			playedCount: 4,
 			homePts: 0,
-			awayPts: 1,
-			totalPts: 1,
+			awayPts: 2,
+			totalPts: 2,
 		})
 	})
 
@@ -79,7 +79,7 @@ describe('seasonStats', () => {
 	it('не учитывает кубок в статистике РПЛ', () => {
 		const season = getStandingsSeason('2627')
 		const stats = getSeasonStats(season.matches)
-		expect(stats.playedCount).toBe(3)
+		expect(stats.playedCount).toBe(4)
 		expect(season.matches.filter((m) => m.competition === 'cup')).toHaveLength(
 			6,
 		)

@@ -65,7 +65,7 @@ describe('getBusPlateNumbers', () => {
 			'Х954НС763',
 		])
 		expect(getBusPlateNumbers('2026-08-17-cska-h-akron-bus-avtobus')).toEqual([
-			'В294СР763',
+			'К467СЕ763',
 		])
 	})
 

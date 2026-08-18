@@ -61,7 +61,7 @@ describe('multiSeasonRows', () => {
 		expect(columns.map((c) => c.label)).toEqual(['26/27', '25/26', '24/25'])
 		expect(columns.find((c) => c.id === '2425')?.totalPts).toBe(35)
 		expect(columns.find((c) => c.id === '2526')?.totalPts).toBe(27)
-		expect(columns.find((c) => c.id === '2627')?.totalPts).toBe(1)
+		expect(columns.find((c) => c.id === '2627')?.totalPts).toBe(2)
 	})
 
 	it('использует календарь выбранного сезона как основу строк', () => {

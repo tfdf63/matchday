@@ -41,6 +41,17 @@ describe('isGameDateTimeTentative', () => {
 			'32',
 			'33',
 			'34',
+			'35',
+			'36',
+			'37',
+			'38',
+			'39',
+			'40',
+			'41',
+			'42',
+			'43',
+			'44',
+			'45',
 		] as const) {
 			expect(isGameDateTimeTentative(makeGame('2026-08-01', id))).toBe(false)
 		}
