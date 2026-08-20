@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-20T22:32:10+04:00",
+    "generatedAt": "2026-08-20T22:38:10+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 5,
@@ -31,6 +31,18 @@
   ],
   "manifests": [
     {
+      "id": "2026-08-23-akron-h-krylya-sovetov-bus-1",
+      "eventId": "2026-08-23-akron-h-krylya-sovetov",
+      "label": "Автобус 1. Парк Хаус. Любой сектор",
+      "busNo": 1,
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
+      "passengerCount": 9,
+      "seatsAssigned": 9,
+      "boardingStops": [
+        "Парк Хаус, Парковка ТРК справа"
+      ]
+    },
+    {
       "id": "2026-08-23-akron-h-krylya-sovetov-bus-2",
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
       "label": "Автобус 2. Парк Хаус. D114",
@@ -52,18 +64,6 @@
       "seatsAssigned": 46,
       "boardingStops": [
         "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа"
-      ]
-    },
-    {
-      "id": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
-      "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "label": "Автобус 3. Парк Хаус. Любой сектор",
-      "busNo": 3,
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
-      "passengerCount": 9,
-      "seatsAssigned": 9,
-      "boardingStops": [
-        "Парк Хаус, Парковка ТРК справа"
       ]
     },
     {
@@ -2397,118 +2397,118 @@
     },
     {
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
       "fullName": "Бердо Антон Сергеевич",
       "seatNo": "13",
       "orderId": "257178",
       "birthDateIso": "1984-11-16",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277847848",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
       "sourceRow": 10,
       "seq": 1
     },
     {
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
       "fullName": "Бердо Иван Антонович",
       "seatNo": "15",
       "orderId": "257178",
       "birthDateIso": "2018-01-03",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277847848",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
       "sourceRow": 12,
       "seq": 2
     },
     {
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
       "fullName": "Бердо Светлана Владимировна",
       "seatNo": "14",
       "orderId": "257178",
       "birthDateIso": "1986-06-02",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277983557",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
       "sourceRow": 11,
       "seq": 3
     },
     {
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
       "fullName": "Житухин Сергей Николаевич",
       "seatNo": "34",
       "orderId": "257169",
       "birthDateIso": "1961-01-30",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79879748263",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
       "sourceRow": 9,
       "seq": 4
     },
     {
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
       "fullName": "Климович Вячеслав Михайлович",
       "seatNo": "12",
       "orderId": "257160",
       "birthDateIso": "2012-10-17",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79093628393",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
       "sourceRow": 6,
       "seq": 5
     },
     {
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
       "fullName": "Климович Инна Олеговна",
       "seatNo": "8",
       "orderId": "257160",
       "birthDateIso": "1992-11-12",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79093628393",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
       "sourceRow": 4,
       "seq": 6
     },
     {
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
       "fullName": "Мамыкин Вячеслав Александрович",
       "seatNo": "7",
       "orderId": "257160",
       "birthDateIso": "1991-03-16",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79093628393",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
       "sourceRow": 5,
       "seq": 7
     },
     {
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
       "fullName": "Этингов Анатолий Андреевич",
       "seatNo": "28",
       "orderId": "257169",
       "birthDateIso": "1996-05-07",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277088311",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
       "sourceRow": 7,
       "seq": 8
     },
     {
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
-      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-27",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
       "fullName": "Этингов Андрей Анатольевич",
       "seatNo": "27",
       "orderId": "257169",
       "birthDateIso": "1966-08-08",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79171478984",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (27).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (28).xlsx",
       "sourceRow": 8,
       "seq": 9
     }
