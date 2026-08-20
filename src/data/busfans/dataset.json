@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-20T18:48:11+04:00",
+    "generatedAt": "2026-08-20T19:37:03+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
-    "manifestsCount": 4,
-    "passengersCount": 177
+    "manifestsCount": 5,
+    "passengersCount": 180
   },
   "events": [
     {
@@ -24,9 +24,9 @@
       "leagueInfo": "Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА",
       "seasonTour": "2026/2027 5 ТУР",
       "fanIdStatus": "Fan id",
-      "busCount": 4,
-      "passengerCount": 177,
-      "seatsAssigned": 177
+      "busCount": 5,
+      "passengerCount": 180,
+      "seatsAssigned": 180
     }
   ],
   "manifests": [
@@ -52,6 +52,18 @@
       "seatsAssigned": 46,
       "boardingStops": [
         "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа"
+      ]
+    },
+    {
+      "id": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-26",
+      "eventId": "2026-08-23-akron-h-krylya-sovetov",
+      "label": "Автобус 3. Парк Хаус. Любой сектор",
+      "busNo": 3,
+      "sourceFile": "atoms_drivers_report_23.08.2026 (26).xlsx",
+      "passengerCount": 3,
+      "seatsAssigned": 3,
+      "boardingStops": [
+        "Парк Хаус, Парковка ТРК справа"
       ]
     },
     {
@@ -2382,6 +2394,45 @@
       "sourceFile": "atoms_drivers_report_23.08.2026 (25).xlsx",
       "sourceRow": 4,
       "seq": 44
+    },
+    {
+      "eventId": "2026-08-23-akron-h-krylya-sovetov",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-26",
+      "fullName": "Климович Вячеслав Михайлович",
+      "seatNo": "12",
+      "orderId": "257160",
+      "birthDateIso": "2012-10-17",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79093628393",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (26).xlsx",
+      "sourceRow": 6,
+      "seq": 1
+    },
+    {
+      "eventId": "2026-08-23-akron-h-krylya-sovetov",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-26",
+      "fullName": "Климович Инна Олеговна",
+      "seatNo": "8",
+      "orderId": "257160",
+      "birthDateIso": "1992-11-12",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79093628393",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (26).xlsx",
+      "sourceRow": 4,
+      "seq": 2
+    },
+    {
+      "eventId": "2026-08-23-akron-h-krylya-sovetov",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-3-atoms-drivers-report-23-08-2026-26",
+      "fullName": "Мамыкин Вячеслав Александрович",
+      "seatNo": "7",
+      "orderId": "257160",
+      "birthDateIso": "1991-03-16",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79093628393",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (26).xlsx",
+      "sourceRow": 5,
+      "seq": 3
     }
   ]
 }
