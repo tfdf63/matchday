@@ -69,6 +69,24 @@ describe('getBusPlateNumbers', () => {
 		])
 	})
 
+	it('returns plates for Krylia Sovetov home buses', () => {
+		expect(
+			getBusPlateNumbers('2026-08-23-akron-h-krylya-sovetov-bus-1'),
+		).toEqual(['Х954НС763'])
+		expect(
+			getBusPlateNumbers('2026-08-23-akron-h-krylya-sovetov-bus-2'),
+		).toEqual(['Х039АТ763'])
+		expect(
+			getBusPlateNumbers('2026-08-23-akron-h-krylya-sovetov-bus-3'),
+		).toEqual(['К050РТ763'])
+		expect(
+			getBusPlateNumbers('2026-08-23-akron-h-krylya-sovetov-bus-4'),
+		).toEqual(['В294СР763'])
+		expect(
+			getBusPlateNumbers('2026-08-23-akron-h-krylya-sovetov-bus-5'),
+		).toEqual(['К467СЕ763'])
+	})
+
 	it('returns plates for Togliatti fan meeting buses', () => {
 		expect(
 			getBusPlateNumbers(
