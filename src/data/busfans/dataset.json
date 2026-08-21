@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-21T14:23:57+04:00",
+    "generatedAt": "2026-08-21T15:58:33+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 5,
-    "passengersCount": 201
+    "passengersCount": 203
   },
   "events": [
     {
@@ -25,8 +25,8 @@
       "seasonTour": "2026/2027 5 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 5,
-      "passengerCount": 201,
-      "seatsAssigned": 201
+      "passengerCount": 203,
+      "seatsAssigned": 203
     }
   ],
   "manifests": [
@@ -35,9 +35,9 @@
       "eventId": "2026-08-23-akron-h-krylya-sovetov",
       "label": "Автобус 1. Парк Хаус. Любой сектор",
       "busNo": 1,
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
-      "passengerCount": 22,
-      "seatsAssigned": 22,
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
+      "passengerCount": 24,
+      "seatsAssigned": 24,
       "boardingStops": [
         "Парк Хаус, Парковка ТРК справа"
       ]
@@ -2430,7 +2430,7 @@
       "birthDateIso": "2014-10-15",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277005574",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 14,
       "seq": 1
     },
@@ -2443,7 +2443,7 @@
       "birthDateIso": "1974-03-28",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277005574",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 13,
       "seq": 2
     },
@@ -2456,7 +2456,7 @@
       "birthDateIso": "1984-11-16",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277847848",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 10,
       "seq": 3
     },
@@ -2469,7 +2469,7 @@
       "birthDateIso": "2018-01-03",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277847848",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 12,
       "seq": 4
     },
@@ -2482,7 +2482,7 @@
       "birthDateIso": "1986-06-02",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277983557",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 11,
       "seq": 5
     },
@@ -2495,7 +2495,7 @@
       "birthDateIso": "1994-08-27",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79613883529",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 15,
       "seq": 6
     },
@@ -2508,7 +2508,7 @@
       "birthDateIso": "2000-03-22",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79276160985",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 17,
       "seq": 7
     },
@@ -2521,7 +2521,7 @@
       "birthDateIso": "1961-01-30",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79879748263",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 9,
       "seq": 8
     },
@@ -2534,7 +2534,7 @@
       "birthDateIso": "2012-10-17",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79093628393",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 6,
       "seq": 9
     },
@@ -2547,7 +2547,7 @@
       "birthDateIso": "1992-11-12",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79093628393",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 4,
       "seq": 10
     },
@@ -2560,7 +2560,7 @@
       "birthDateIso": "2011-09-03",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79198096337",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 23,
       "seq": 11
     },
@@ -2573,7 +2573,7 @@
       "birthDateIso": "1991-02-21",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79093654356",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 18,
       "seq": 12
     },
@@ -2586,7 +2586,7 @@
       "birthDateIso": "1991-03-16",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79093628393",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 5,
       "seq": 13
     },
@@ -2599,7 +2599,7 @@
       "birthDateIso": "1985-05-09",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79198096337",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 25,
       "seq": 14
     },
@@ -2612,7 +2612,7 @@
       "birthDateIso": "1991-10-23",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79967264006",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 19,
       "seq": 15
     },
@@ -2625,7 +2625,7 @@
       "birthDateIso": "1970-04-12",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79198096337",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 24,
       "seq": 16
     },
@@ -2638,7 +2638,7 @@
       "birthDateIso": "1992-05-17",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79110173392",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 20,
       "seq": 17
     },
@@ -2651,7 +2651,7 @@
       "birthDateIso": "2015-08-20",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277807552",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 22,
       "seq": 18
     },
@@ -2664,7 +2664,7 @@
       "birthDateIso": "1991-03-23",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277807552",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 21,
       "seq": 19
     },
@@ -2677,7 +2677,7 @@
       "birthDateIso": "1979-10-08",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79276160985",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 16,
       "seq": 20
     },
@@ -2690,7 +2690,7 @@
       "birthDateIso": "1996-05-07",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277088311",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 7,
       "seq": 21
     },
@@ -2703,9 +2703,35 @@
       "birthDateIso": "1966-08-08",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79171478984",
-      "sourceFile": "atoms_drivers_report_23.08.2026 (40).xlsx",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
       "sourceRow": 8,
       "seq": 22
+    },
+    {
+      "eventId": "2026-08-23-akron-h-krylya-sovetov",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
+      "fullName": "Яин Алексей Ильич",
+      "seatNo": "32",
+      "orderId": "257355",
+      "birthDateIso": "2015-03-05",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79639194009",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
+      "sourceRow": 27,
+      "seq": 23
+    },
+    {
+      "eventId": "2026-08-23-akron-h-krylya-sovetov",
+      "manifestId": "2026-08-23-akron-h-krylya-sovetov-bus-1",
+      "fullName": "Яина Валерия Александровна",
+      "seatNo": "31",
+      "orderId": "257355",
+      "birthDateIso": "1985-12-21",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79639194009",
+      "sourceFile": "atoms_drivers_report_23.08.2026 (41).xlsx",
+      "sourceRow": 26,
+      "seq": 24
     }
   ]
 }
