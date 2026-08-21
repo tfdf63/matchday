@@ -17,6 +17,7 @@ import Main, {
 	FaqSection,
 	MarqueeSection,
 } from '@/features/home'
+import { HomePromoAutoOpen } from '@/features/home/home-modal'
 import { buildFaqPageJsonLd, buildSportsEventsJsonLd } from '@/lib/seo'
 import MainPageClient from './MainPageClient'
 
@@ -40,6 +41,7 @@ const MatchesPage: React.FC = () => {
 			<FanCardSection />
 			<FaqSection />
 			<MarqueeSection />
+			<HomePromoAutoOpen />
 			<MainPageClient />
 		</main>
 	)
