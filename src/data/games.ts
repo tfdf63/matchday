@@ -721,6 +721,8 @@ const games: Game[] = [
 		seasonTour: '2026/2027 5 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		homeGoals: 0,
+		awayGoals: 3,
 		priceIncreaseDates: {
 			first: '2026-08-21',
 			second: ' ',

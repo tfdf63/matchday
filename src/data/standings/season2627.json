@@ -81,9 +81,9 @@
 			"team": "Крылья Советов",
 			"venue": "home",
 			"match": {
-				"score": null,
-				"pts": null,
-				"played": false
+				"score": "0:3",
+				"pts": 0,
+				"played": true
 			},
 			"when": {
 				"label": "23 авг (вс)",
