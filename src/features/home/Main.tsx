@@ -4,7 +4,7 @@ import type { FC } from 'react'
 
 import games from '@/data/games'
 import {
-	pickPromotedHomeHeroGame,
+	pickMainHeroMatchCards,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
 
@@ -34,8 +34,7 @@ export type MainProps = {
 const sortedGamesMain = sortGamesByDateIso(games)
 
 const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
-	const game =
-		pickPromotedHomeHeroGame(sortedGamesMain) ?? sortedGamesMain[0]
+	const initialGames = pickMainHeroMatchCards(sortedGamesMain)
 
 	return (
 		<div className={cx(styles.main, withBottomMenu && styles.withBottomMenu)}>
@@ -119,10 +118,12 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 				</div>
 				<div className={styles.matchStack}>
 					<div className={styles.matchAnchor}>
-						<MainMatchCardClient
-							games={sortedGamesMain}
-							initialGame={game}
-						/>
+						{initialGames.length > 0 ? (
+							<MainMatchCardClient
+								games={sortedGamesMain}
+								initialGames={initialGames}
+							/>
+						) : null}
 					</div>
 				</div>
 				<p className={styles.clubWordmark} aria-hidden>

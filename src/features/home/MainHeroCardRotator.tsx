@@ -10,24 +10,25 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 	return parts.filter(Boolean).join(' ')
 }
 
-export type MainHeroSlide = 'seasonTickets' | 'match'
+export type MainHeroCardSlide = {
+	id: string
+	label: string
+	card: ReactNode
+}
 
 export type MainHeroCardRotatorProps = {
-	showSeasonTickets: boolean
-	seasonTicketsCard: ReactNode
-	matchCard: ReactNode
+	slides: MainHeroCardSlide[]
+	ariaLabel?: string
 }
 
 export const MainHeroCardRotator: FC<MainHeroCardRotatorProps> = ({
-	showSeasonTickets,
-	seasonTicketsCard,
-	matchCard,
+	slides,
+	ariaLabel = 'Карточки домашних матчей',
 }) => {
-	const [activeSlide, setActiveSlide] = useState<MainHeroSlide>(() =>
-		showSeasonTickets ? 'seasonTickets' : 'match',
-	)
+	const [activeIndex, setActiveIndex] = useState(0)
 	const [isPaused, setIsPaused] = useState(false)
 	const intervalRef = useRef<number | null>(null)
+	const canRotate = slides.length > 1
 
 	const clearRotation = useCallback(() => {
 		if (intervalRef.current !== null) {
@@ -37,31 +38,28 @@ export const MainHeroCardRotator: FC<MainHeroCardRotatorProps> = ({
 	}, [])
 
 	useEffect(() => {
-		if (!showSeasonTickets) {
-			setActiveSlide('match')
-			clearRotation()
-			return
-		}
-
-		setActiveSlide('seasonTickets')
-	}, [showSeasonTickets, clearRotation])
+		setActiveIndex((prev) => {
+			if (slides.length === 0) return 0
+			return Math.min(prev, slides.length - 1)
+		})
+	}, [slides.length])
 
 	useEffect(() => {
 		clearRotation()
 
-		if (!showSeasonTickets || isPaused) return
+		if (!canRotate || isPaused) return
 
 		intervalRef.current = window.setInterval(() => {
-			setActiveSlide((prev) =>
-				prev === 'seasonTickets' ? 'match' : 'seasonTickets',
-			)
+			setActiveIndex((prev) => (prev + 1) % slides.length)
 		}, MAIN_HERO_ROTATE_INTERVAL_MS)
 
 		return clearRotation
-	}, [showSeasonTickets, isPaused, clearRotation])
+	}, [canRotate, isPaused, slides.length, clearRotation])
 
-	const selectSlide = (slide: MainHeroSlide) => {
-		setActiveSlide(slide)
+	if (slides.length === 0) return null
+
+	if (!canRotate) {
+		return <>{slides[0]!.card}</>
 	}
 
 	return (
@@ -80,62 +78,38 @@ export const MainHeroCardRotator: FC<MainHeroCardRotatorProps> = ({
 				className={styles.viewport}
 				aria-live='polite'
 				aria-atomic='true'
-				aria-label='Карточки абонемента и ближайшего матча'
+				aria-label={ariaLabel}
 			>
-				{showSeasonTickets ? (
+				{slides.map((slide, index) => (
 					<div
+						key={slide.id}
 						className={cx(
 							styles.slide,
-							activeSlide !== 'seasonTickets' && styles.slideHidden,
+							index !== activeIndex && styles.slideHidden,
 						)}
-						aria-hidden={activeSlide !== 'seasonTickets'}
+						aria-hidden={index !== activeIndex}
 					>
-						{seasonTicketsCard}
+						{slide.card}
 					</div>
-				) : null}
-				<div
-					className={cx(
-						styles.slide,
-						showSeasonTickets &&
-							activeSlide !== 'match' &&
-							styles.slideHidden,
-					)}
-					aria-hidden={showSeasonTickets && activeSlide !== 'match'}
-				>
-					{matchCard}
-				</div>
+				))}
 			</div>
 
-			{showSeasonTickets ? (
-				<div
-					className={styles.dots}
-					role='tablist'
-					aria-label='Выбор карточки'
-				>
+			<div className={styles.dots} role='tablist' aria-label='Выбор матча'>
+				{slides.map((slide, index) => (
 					<button
+						key={slide.id}
 						type='button'
 						role='tab'
 						className={cx(
 							styles.dot,
-							activeSlide === 'seasonTickets' && styles.dotActive,
+							index === activeIndex && styles.dotActive,
 						)}
-						aria-selected={activeSlide === 'seasonTickets'}
-						aria-label='Абонементы'
-						onClick={() => selectSlide('seasonTickets')}
+						aria-selected={index === activeIndex}
+						aria-label={slide.label}
+						onClick={() => setActiveIndex(index)}
 					/>
-					<button
-						type='button'
-						role='tab'
-						className={cx(
-							styles.dot,
-							activeSlide === 'match' && styles.dotActive,
-						)}
-						aria-selected={activeSlide === 'match'}
-						aria-label='Ближайший домашний матч'
-						onClick={() => selectSlide('match')}
-					/>
-				</div>
-			) : null}
+				))}
+			</div>
 		</div>
 	)
 }

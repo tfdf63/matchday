@@ -196,6 +196,79 @@ export function getPromotedHomeHeroGameSwitchDate(
 	return endDate
 }
 
+function isNonEmptyUrl(value: string | undefined): boolean {
+	return Boolean(value?.trim())
+}
+
+/** Три ссылки героя Main: обычные, VIP и skybox. `ticketLinkC4` не учитывается. */
+export function hasFilledMainHeroTicketLinks(game: Game): boolean {
+	return (
+		isNonEmptyUrl(game.ticketLink) &&
+		isNonEmptyUrl(game.ticketLinkVip) &&
+		isNonEmptyUrl(game.ticketLinkSkybox)
+	)
+}
+
+function isGameStillUpcomingForHero(game: Game, now: Date): boolean {
+	const endDate = getGameEndDate(game)
+	if (endDate) return endDate.getTime() > now.getTime()
+	return game.dateIso >= getLocalDateIso(now)
+}
+
+/**
+ * Домашние матчи с заполненными `ticketLink` / `ticketLinkVip` / `ticketLinkSkybox`,
+ * ещё не закончившиеся (kickoff + 2 ч, как у `pickPromotedHomeHeroGame`).
+ */
+export function pickHomeHeroGamesWithTicketLinks(
+	sorted: Game[],
+	now: Date = new Date(),
+): Game[] {
+	return sorted.filter(
+		(game) =>
+			game.venue === 'home' &&
+			hasFilledMainHeroTicketLinks(game) &&
+			isGameStillUpcomingForHero(game, now),
+	)
+}
+
+export function getHomeHeroTicketGamesSwitchDate(
+	sorted: Game[],
+	now: Date = new Date(),
+): Date | null {
+	const ends = pickHomeHeroGamesWithTicketLinks(sorted, now)
+		.map(getGameEndDate)
+		.filter(
+			(endDate): endDate is Date =>
+				endDate != null && endDate.getTime() > now.getTime(),
+		)
+	if (!ends.length) return null
+	return new Date(Math.min(...ends.map((endDate) => endDate.getTime())))
+}
+
+/**
+ * Карточки героя Main: все домашние матчи с тройкой ссылок на билеты;
+ * если таких нет — один матч по `pickPromotedHomeHeroGame`.
+ */
+export function pickMainHeroMatchCards(
+	sorted: Game[],
+	now: Date = new Date(),
+): Game[] {
+	const withTickets = pickHomeHeroGamesWithTicketLinks(sorted, now)
+	if (withTickets.length > 0) return withTickets
+	const fallback = pickPromotedHomeHeroGame(sorted, now)
+	return fallback ? [fallback] : []
+}
+
+export function getMainHeroMatchCardsSwitchDate(
+	sorted: Game[],
+	now: Date = new Date(),
+): Date | null {
+	if (pickHomeHeroGamesWithTicketLinks(sorted, now).length > 0) {
+		return getHomeHeroTicketGamesSwitchDate(sorted, now)
+	}
+	return getPromotedHomeHeroGameSwitchDate(sorted, now)
+}
+
 /**
  * Последний сыгранный матч: с наибольшим `dateIso`, строго меньшим `todayIso`.
  * Если все матчи не раньше сегодняшнего дня — `null`.

@@ -5,24 +5,36 @@ import { PROMOTED_MAIN_CALENDAR_GAME_ID, type Game } from '@/data/games'
 import {
 	getGameEndDate,
 	getHeroGameSwitchDate,
+	getHomeHeroTicketGamesSwitchDate,
+	hasFilledMainHeroTicketLinks,
 	pickHomeHeroGameByMatchEnd,
+	pickHomeHeroGamesWithTicketLinks,
 	pickHeroGameByMatchEnd,
+	pickMainHeroMatchCards,
 	pickPromotedHeroGame,
 	pickPromotedHomeHeroGame,
 	sortGamesByDateIso,
 } from './upcomingGamePick'
+
+const TICKET_TRIO = {
+	ticketLink: 'https://tickets.example/regular',
+	ticketLinkVip: 'https://tickets.example/vip',
+	ticketLinkSkybox: 'https://tickets.example/skybox',
+} as const
 
 const makeGame = (
 	id: string,
 	dateIso: string,
 	time: string,
 	venue: Game['venue'] = 'home',
+	extra: Partial<Game> = {},
 ): Game => ({
 	id,
 	dateIso,
 	time,
 	venue,
 	fanIdStatus: 'Fan id',
+	...extra,
 })
 
 describe('pickHeroGameByMatchEnd', () => {
@@ -121,5 +133,97 @@ describe('getGameEndDate', () => {
 		expect(getGameEndDate(game)?.toISOString()).toBe(
 			'2026-05-03T16:00:00.000Z',
 		)
+	})
+})
+
+describe('pickHomeHeroGamesWithTicketLinks', () => {
+	const games = sortGamesByDateIso([
+		makeGame('finished', '2026-08-23', 'SAMT 19:00', 'home', TICKET_TRIO),
+		makeGame('away-tickets', '2026-08-26', 'SAMT 19:00', 'away', TICKET_TRIO),
+		makeGame('missing-skybox', '2026-08-27', 'SAMT 19:00', 'home', {
+			ticketLink: TICKET_TRIO.ticketLink,
+			ticketLinkVip: TICKET_TRIO.ticketLinkVip,
+			ticketLinkSkybox: '  ',
+			ticketLinkC4: 'https://tickets.example/c4',
+		}),
+		makeGame('cska', '2026-08-28', 'SAMT 19:00', 'home', TICKET_TRIO),
+		makeGame('loko', '2026-09-01', 'SAMT 17:15', 'home', TICKET_TRIO),
+	])
+
+	it('keeps unfinished home matches with all three ticket URLs', () => {
+		const now = new Date('2026-08-25T12:00:00+04:00')
+
+		expect(pickHomeHeroGamesWithTicketLinks(games, now).map((g) => g.id)).toEqual(
+			['cska', 'loko'],
+		)
+	})
+
+	it('keeps a home match until kickoff plus two hours', () => {
+		const now = new Date('2026-08-23T20:59:00+04:00')
+
+		expect(
+			pickHomeHeroGamesWithTicketLinks(games, now).map((g) => g.id),
+		).toEqual(['finished', 'cska', 'loko'])
+	})
+
+	it('drops a home match after kickoff plus two hours even if URLs remain', () => {
+		const now = new Date('2026-08-23T21:00:00+04:00')
+
+		expect(
+			pickHomeHeroGamesWithTicketLinks(games, now).map((g) => g.id),
+		).toEqual(['cska', 'loko'])
+	})
+
+	it('returns the earliest remaining match end as the switch date', () => {
+		const now = new Date('2026-08-25T12:00:00+04:00')
+
+		expect(getHomeHeroTicketGamesSwitchDate(games, now)?.toISOString()).toBe(
+			'2026-08-28T17:00:00.000Z',
+		)
+	})
+})
+
+describe('hasFilledMainHeroTicketLinks', () => {
+	it('ignores ticketLinkC4 and rejects a missing skybox URL', () => {
+		const game = makeGame('34', '2026-09-17', 'SAMT 19:30', 'home', {
+			ticketLink: TICKET_TRIO.ticketLink,
+			ticketLinkVip: TICKET_TRIO.ticketLinkVip,
+			ticketLinkSkybox: '',
+			ticketLinkC4: 'https://tickets.example/c4',
+		})
+
+		expect(hasFilledMainHeroTicketLinks(game)).toBe(false)
+	})
+})
+
+describe('pickMainHeroMatchCards', () => {
+	it('prefers ticket-trio home matches over the single promoted card', () => {
+		const games = sortGamesByDateIso([
+			makeGame('cska', '2026-08-28', 'SAMT 19:00', 'home', TICKET_TRIO),
+			makeGame('loko', '2026-09-01', 'SAMT 17:15', 'home', TICKET_TRIO),
+			makeGame('home-empty', '2026-09-17', 'SAMT 19:30', 'home'),
+		])
+		const now = new Date('2026-08-25T12:00:00+04:00')
+
+		expect(pickMainHeroMatchCards(games, now).map((g) => g.id)).toEqual([
+			'cska',
+			'loko',
+		])
+	})
+
+	it('falls back to the promoted home match when no ticket trio remains', () => {
+		const games = sortGamesByDateIso([
+			makeGame('past-home', '2026-08-04', 'SAMT 17:15', 'home'),
+			makeGame('home-next', '2026-09-17', 'SAMT 19:30', 'home', {
+				ticketLink: '',
+				ticketLinkVip: '',
+				ticketLinkSkybox: '',
+			}),
+		])
+		const now = new Date('2026-08-25T12:00:00+04:00')
+
+		expect(pickMainHeroMatchCards(games, now).map((g) => g.id)).toEqual([
+			'home-next',
+		])
 	})
 })
