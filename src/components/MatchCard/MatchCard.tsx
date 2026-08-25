@@ -15,6 +15,7 @@ import { getTeamLogoPath } from '@/data/teamLogos'
 import { useClientNow } from '@/lib/hooks/useClientNow'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 import { formatGoalCell } from '@/lib/match/formatMatchGoals'
+import { useTicketLinks } from '@/lib/personalData'
 
 import { MatchCardCalendarIcon } from './icons/MatchCardCalendarIcon'
 import styles from './MatchCard.module.scss'
@@ -41,6 +42,7 @@ export function MatchCard({
 	showParkingAction = false,
 	actionsFooter,
 }: MatchCardProps) {
+	const { personalData, getTicketUrl, handleTicketClick } = useTicketLinks()
 	const homeLogo = getTeamLogoPath(game.homeTeam)
 	const awayLogo = getTeamLogoPath(game.awayTeam)
 	const ticket = game.ticketLink?.trim()
@@ -189,9 +191,12 @@ export function MatchCard({
 						{ticket ? (
 							<a
 								className={cx(styles.btnPrimary, 'font-mono')}
-								href={ticket}
+								href={personalData ? getTicketUrl(ticket) : undefined}
 								target="_blank"
 								rel="noopener noreferrer"
+								onClick={e => {
+									if (handleTicketClick(ticket)) e.preventDefault()
+								}}
 							>
 								Купить билеты
 							</a>
@@ -201,9 +206,12 @@ export function MatchCard({
 								{vip ? (
 									<a
 										className={cx(styles.btnOutline, 'font-mono')}
-										href={vip}
+										href={personalData ? getTicketUrl(vip) : undefined}
 										target="_blank"
 										rel="noopener noreferrer"
+										onClick={e => {
+											if (handleTicketClick(vip)) e.preventDefault()
+										}}
 									>
 										{vipLabel}
 									</a>
@@ -211,9 +219,12 @@ export function MatchCard({
 								{skybox ? (
 									<a
 										className={cx(styles.btnOutline, 'font-mono')}
-										href={skybox}
+										href={personalData ? getTicketUrl(skybox) : undefined}
 										target="_blank"
 										rel="noopener noreferrer"
+										onClick={e => {
+											if (handleTicketClick(skybox)) e.preventDefault()
+										}}
 									>
 										ложи
 									</a>

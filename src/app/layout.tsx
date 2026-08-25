@@ -10,7 +10,6 @@ import {
 import { AppProviders } from './AppProviders'
 import { ClientAnalytics } from './ClientAnalytics'
 import '../styles/globals.css'
-import '../styles/fonts.css'
 
 const ibmPlexMono = IBM_Plex_Mono({
 	subsets: ['latin', 'cyrillic'],

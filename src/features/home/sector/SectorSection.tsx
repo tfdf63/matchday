@@ -11,6 +11,7 @@ import {
 	sectors,
 	type Sector,
 } from '@/data/sector'
+import { useTicketLinks } from '@/lib/personalData'
 
 import styles from './Sector.module.scss'
 
@@ -31,6 +32,7 @@ export const SectorSection: FC<SectorSectionProps> = ({
 }) => {
 	const list = sectorsProp ?? sectors
 	const [activeId, setActiveId] = useState(list[0]?.id ?? '')
+	const { personalData, getTicketUrl, handleTicketClick } = useTicketLinks()
 
 	const active = useMemo(
 		() => list.find((s) => s.id === activeId) ?? list[0],
@@ -125,12 +127,24 @@ export const SectorSection: FC<SectorSectionProps> = ({
 								{active.description}
 							</p>
 						</div>
-						<Link
-							href={active.ctaHref}
-							className={cx(styles.cardCta, 'font-mono')}
-						>
-							{active.ctaLabel}
-						</Link>
+						{personalData ? (
+							<Link
+								href={getTicketUrl(active.ctaHref)}
+								className={cx(styles.cardCta, 'font-mono')}
+							>
+								{active.ctaLabel}
+							</Link>
+						) : (
+							<a
+								href={active.ctaHref}
+								className={cx(styles.cardCta, 'font-mono')}
+								onClick={e => {
+									if (handleTicketClick(active.ctaHref)) e.preventDefault()
+								}}
+							>
+								{active.ctaLabel}
+							</a>
+						)}
 					</article>
 					<div className={styles.menuShell}>
 						<div className={styles.menuViewport}>

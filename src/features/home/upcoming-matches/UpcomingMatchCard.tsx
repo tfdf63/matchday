@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import type { FC } from 'react'
 
@@ -13,6 +15,7 @@ import { PromoCodesModalTrigger } from '@/features/home/home-modal'
 import { useClientNow } from '@/lib/hooks/useClientNow'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
 import { formatGoalCell } from '@/lib/match/formatMatchGoals'
+import { useTicketLinks } from '@/lib/personalData'
 import {
 	GAME_DATE_TIME_TENTATIVE_LABEL,
 	isGameDateTimeTentative,
@@ -34,6 +37,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	game,
 	hideSecondaryActions = false,
 }) => {
+	const { personalData, getTicketUrl, handleTicketClick } = useTicketLinks()
 	const homeLogo = getTeamLogoPath(game.homeTeam)
 	const awayLogo = getTeamLogoPath(game.awayTeam)
 	const ticket = game.ticketLink?.trim()
@@ -197,9 +201,12 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 					{ticket ? (
 						<a
 							className={cx(styles.btnPrimary, 'font-mono')}
-							href={ticket}
+							href={personalData ? getTicketUrl(ticket) : undefined}
 							target='_blank'
 							rel='noopener noreferrer'
+							onClick={e => {
+								if (handleTicketClick(ticket)) e.preventDefault()
+							}}
 						>
 							Купить билеты
 						</a>
@@ -209,9 +216,12 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 							{vip ? (
 								<a
 									className={cx(styles.btnOutline, 'font-mono')}
-									href={vip}
+									href={personalData ? getTicketUrl(vip) : undefined}
 									target='_blank'
 									rel='noopener noreferrer'
+									onClick={e => {
+										if (handleTicketClick(vip)) e.preventDefault()
+									}}
 								>
 									{vipLabel}
 								</a>
@@ -219,9 +229,12 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 							{skybox ? (
 								<a
 									className={cx(styles.btnOutline, 'font-mono')}
-									href={skybox}
+									href={personalData ? getTicketUrl(skybox) : undefined}
 									target='_blank'
 									rel='noopener noreferrer'
+									onClick={e => {
+										if (handleTicketClick(skybox)) e.preventDefault()
+									}}
 								>
 									ложи
 								</a>
