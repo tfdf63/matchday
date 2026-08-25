@@ -42,6 +42,12 @@ describe('getBusScheduleOverride', () => {
 			returnAt: 'после матча',
 		})
 	})
+
+	it('returns departure override for CSKA home event', () => {
+		expect(getBusScheduleOverride('2026-08-28-akron-h-cska')).toEqual({
+			departure: '16:30',
+		})
+	})
 })
 
 describe('getBusScheduleTimes', () => {
@@ -116,5 +122,23 @@ describe('getBusScheduleTimes', () => {
 				eventId: '2026-08-17-cska-h-akron',
 			}),
 		).toBe('старт: 17.08 в 21:00 · обратно: после матча')
+	})
+
+	it('applies departure override for CSKA home', () => {
+		expect(
+			getBusScheduleTimes({
+				matchTime: 'SAMT 19:00',
+				eventId: '2026-08-28-akron-h-cska',
+			}),
+		).toEqual({
+			departure: '16:30',
+			returnAt: '21:30',
+		})
+		expect(
+			formatBusScheduleLine({
+				matchTime: 'SAMT 19:00',
+				eventId: '2026-08-28-akron-h-cska',
+			}),
+		).toBe('старт: 16:30 · обратно: 21:30')
 	})
 })

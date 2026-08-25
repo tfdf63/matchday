@@ -17,5 +17,8 @@
   "2026-08-07-lokomotiv-h-akron": {
     "departure": "07.08 в 21:00",
     "returnAt": "после матча"
+  },
+  "2026-08-28-akron-h-cska": {
+    "departure": "16:30"
   }
 }
