@@ -9,7 +9,7 @@ import {
 	appendPersonalDataToUrl,
 } from './personalData'
 
-const API_URL = 'https://id-fcakron.internetlab.ru/api/user/get'
+const API_URL = 'https://api.fcakron.ru/api/user/get'
 
 export type TicketLinkHandler = {
 	personalData: PersonalData | null

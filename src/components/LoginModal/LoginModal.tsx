@@ -6,7 +6,7 @@ import { createPortal } from 'react-dom'
 
 import styles from './LoginModal.module.scss'
 
-const API_URL = 'https://id-fcakron.internetlab.ru/api'
+const API_URL = 'https://api.fcakron.ru/api'
 
 type Step = 'email' | 'code' | 'error'
 
@@ -93,7 +93,7 @@ export function LoginModal({ open, onClose, onSuccess }: LoginModalProps) {
 				method: 'POST',
 				credentials: 'include',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ login: email }),
+				body: JSON.stringify({ email }),
 			})
 			if (!res.ok) {
 				setStep('error')
@@ -116,7 +116,7 @@ export function LoginModal({ open, onClose, onSuccess }: LoginModalProps) {
 				method: 'POST',
 				credentials: 'include',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ login: email, code: code.split('-').join('') }),
+				body: JSON.stringify({ email, code: code.split('-').join('') }),
 			})
 			if (!res.ok) {
 				setStep('error')
