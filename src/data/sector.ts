@@ -108,7 +108,7 @@ export const sectors: Sector[] = [
 		imageSrc1600: `${SECTOR_IMAGE_PREFIX}/5-1600.png`,
 		imageSrc1920: `${SECTOR_IMAGE_PREFIX}/5-1920.png`,
 		ctaLabel: 'Узнать больше',
-		ctaHref: '#',
+		ctaHref: '/sector/fan/',
 	},
 	{
 		id: '6',

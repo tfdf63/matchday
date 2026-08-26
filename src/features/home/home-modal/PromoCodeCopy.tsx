@@ -5,6 +5,10 @@ import { useCallback, useId, useState } from 'react'
 
 import styles from './PromoCodeCopy.module.scss'
 
+function cx(...parts: Array<string | false | null | undefined>): string {
+	return parts.filter(Boolean).join(' ')
+}
+
 async function copyToClipboard(text: string): Promise<boolean> {
 	try {
 		await navigator.clipboard.writeText(text)
@@ -29,9 +33,10 @@ async function copyToClipboard(text: string): Promise<boolean> {
 
 export type PromoCodeCopyProps = {
 	code: string
+	className?: string
 }
 
-export const PromoCodeCopy: FC<PromoCodeCopyProps> = ({ code }) => {
+export const PromoCodeCopy: FC<PromoCodeCopyProps> = ({ code, className }) => {
 	const [copied, setCopied] = useState(false)
 	const statusId = useId()
 
@@ -46,7 +51,7 @@ export const PromoCodeCopy: FC<PromoCodeCopyProps> = ({ code }) => {
 		<span className={styles.wrap}>
 			<button
 				type='button'
-				className={styles.btn}
+				className={cx(styles.btn, className)}
 				onClick={onCopy}
 				aria-label={`Скопировать промокод ${code}`}
 			>
