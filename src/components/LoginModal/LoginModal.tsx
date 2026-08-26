@@ -5,8 +5,10 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import styles from './LoginModal.module.scss'
+import { getApiUrl, isTestEnv } from '@/lib/apiUrl'
 
-const API_URL = 'https://api.fcakron.ru/api'
+const API_URL = getApiUrl('/api')
+const emailField = isTestEnv() ? 'login' : 'email'
 
 type Step = 'email' | 'code' | 'error'
 
@@ -93,7 +95,7 @@ export function LoginModal({ open, onClose, onSuccess }: LoginModalProps) {
 				method: 'POST',
 				credentials: 'include',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email }),
+				body: JSON.stringify({ [emailField]: email }),
 			})
 			if (!res.ok) {
 				setStep('error')
@@ -116,7 +118,7 @@ export function LoginModal({ open, onClose, onSuccess }: LoginModalProps) {
 				method: 'POST',
 				credentials: 'include',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email, code: code.split('-').join('') }),
+				body: JSON.stringify({ [emailField]: email, code: code.split('-').join('') }),
 			})
 			if (!res.ok) {
 				setStep('error')

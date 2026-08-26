@@ -8,8 +8,9 @@ import {
 	type PersonalData,
 	appendPersonalDataToUrl,
 } from './personalData'
+import { getApiUrl } from '@/lib/apiUrl'
 
-const API_URL = 'https://api.fcakron.ru/api/user/get'
+const API_URL = getApiUrl('/api/user/get')
 
 export type TicketLinkHandler = {
 	personalData: PersonalData | null
@@ -22,6 +23,16 @@ export type TicketLinkHandler = {
 }
 
 const TicketLinksContext = createContext<TicketLinkHandler | null>(null)
+
+/** Нормализация номера: всегда с префиксом 7 (РФ и Казахстан). */
+function normalizePhone(phone: string): string {
+	const digits = phone.replace(/\D/g, '')
+	if (!digits) return ''
+	if (digits.length === 11 && digits.startsWith('8')) return '7' + digits.slice(1)
+	if (digits.length === 11 && digits.startsWith('7')) return digits
+	if (digits.length === 10) return '7' + digits
+	return digits
+}
 
 function fetchUserData(): Promise<PersonalData | null> {
 	return fetch(API_URL, {
@@ -38,7 +49,7 @@ function fetchUserData(): Promise<PersonalData | null> {
 			return {
 				fullName: [json.name, json.lastname].filter(Boolean).join(' '),
 				email: json.email || '',
-				phone: json.phone || '',
+				phone: normalizePhone(json.phone || ''),
 			} as PersonalData
 		})
 		.catch(() => null)
