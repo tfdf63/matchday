@@ -754,6 +754,8 @@ const games: Game[] = [
 			first: '2026-08-26',
 			second: ' ',
 		},
+		busfansRegistrationUrl:
+			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a',
 	},
 	{
 		id: '31',
