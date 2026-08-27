@@ -102,10 +102,10 @@ describe('getBusPlateNumbers', () => {
 
 	it('returns plates for CSKA home buses', () => {
 		expect(getBusPlateNumbers('2026-08-28-akron-h-cska-bus-1')).toEqual([
-			'В294СР763',
+			'К422РР763',
 		])
 		expect(getBusPlateNumbers('2026-08-28-akron-h-cska-bus-2')).toEqual([
-			'К422РР763',
+			'В294СР763',
 		])
 		expect(getBusPlateNumbers('2026-08-28-akron-h-cska-bus-4')).toEqual([
 			'К088РР763',
