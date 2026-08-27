@@ -114,6 +114,18 @@ $card-text-muted: rgb(255 255 255 / 0.8);
 	@include hide-scrollbar;
 }
 
+.benefitsImageFigure {
+	margin: 0 0 16px;
+	width: 100%;
+	line-height: 0;
+}
+
+.benefitsImage {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 .benefitBlock {
 	display: flex;
 	flex-direction: column;

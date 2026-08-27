@@ -24,6 +24,14 @@ function isCupMatchEvent(event: MatchEvent): boolean {
 	return /кубок/i.test(event.leagueInfo ?? '')
 }
 
+function formatLeagueLine(leagueInfo?: string | null): string | null {
+	if (!leagueInfo) return null
+	if (/российская премьер-лига/i.test(leagueInfo)) {
+		return 'Альфа-Банк РПЛ'
+	}
+	return leagueInfo
+}
+
 export type MatchEventCardProps = {
 	event: MatchEvent
 }
@@ -63,6 +71,7 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 	const hasMeta = Boolean(
 		event.leagueInfo || event.seasonTour || dateLine || busLine,
 	)
+	const leagueLine = formatLeagueLine(event.leagueInfo)
 	const hasBadges = Boolean(venueLabel || fanIdLabel)
 	const showCupUnderlay = isCupMatchEvent(event)
 
@@ -85,9 +94,9 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 					<Link href={eventHref} className={styles.cardLinkSection}>
 						<div className={styles.cardTop}>
 							<div className={styles.metaCol}>
-								{event.leagueInfo ? (
+								{leagueLine ? (
 									<p className={cx(styles.leagueLine, 'font-mono')}>
-										{event.leagueInfo}
+										{leagueLine}
 									</p>
 								) : null}
 								{event.seasonTour ? (

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import type { FC } from 'react'
 import { useState } from 'react'
 
@@ -75,6 +76,16 @@ export const BusFansPage: FC = () => {
 					titleId='busfans-benefits-title'
 					bodyClassName={styles.benefitsModalBody}
 				>
+					<figure className={styles.benefitsImageFigure}>
+						<Image
+							src='/images/busfans/busfans-modal.webp'
+							alt='Болельщики ФК Акрон на выездном матче'
+							width={1280}
+							height={853}
+							className={styles.benefitsImage}
+							sizes='(min-width: 1024px) 520px, (min-width: 767px) 440px, calc(100vw - 40px)'
+						/>
+					</figure>
 					<div className={styles.benefits}>
 						{benefits.map(item => (
 							<article key={item.title} className={styles.benefitBlock}>

@@ -755,7 +755,7 @@ const games: Game[] = [
 			second: ' ',
 		},
 		busfansRegistrationUrl:
-			'https://preview.atom-s.com/ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a',
+			'https://booking.atomstravel.com/?showcase=ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a&tour=48157',
 	},
 	{
 		id: '31',
@@ -783,6 +783,8 @@ const games: Game[] = [
 			first: '2026-08-30',
 			second: ' ',
 		},
+		busfansRegistrationUrl:
+			'https://booking.atomstravel.com/?showcase=ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a&tour=50005',
 	},
 	{
 		id: '32',

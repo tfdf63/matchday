@@ -1,12 +1,33 @@
 {
   "meta": {
-    "generatedAt": "2026-08-27T10:09:58+04:00",
+    "generatedAt": "2026-08-27T11:47:48+04:00",
     "sourceDir": "src/data/busfans/raw",
-    "eventsCount": 1,
-    "manifestsCount": 4,
-    "passengersCount": 117
+    "eventsCount": 2,
+    "manifestsCount": 5,
+    "passengersCount": 119
   },
   "events": [
+    {
+      "id": "2026-09-01-akron-h-lokomotiv",
+      "title": "Акрон х Локомотив",
+      "homeTeam": "Акрон",
+      "awayTeam": "Локомотив",
+      "venue": "home",
+      "dateIso": "2026-09-01",
+      "dateToIso": "2026-09-01",
+      "dateLabel": "01.09.2026",
+      "dateCard": "01.09 (ВТ)",
+      "time": "SAMT 17:15",
+      "gameId": "31",
+      "scheduleMatchId": 2003,
+      "tournament": "Кубок",
+      "leagueInfo": "Fonbet Кубок России по футболу",
+      "seasonTour": "2026/2027 3 ТУР",
+      "fanIdStatus": "Без fan id",
+      "busCount": 1,
+      "passengerCount": 2,
+      "seatsAssigned": 2
+    },
     {
       "id": "2026-08-28-akron-h-cska",
       "title": "Акрон х ЦСКА",
@@ -81,9 +102,47 @@
       "boardingStops": [
         "Озон, Жигулёвск ТЦ Озон (парковка)"
       ]
+    },
+    {
+      "id": "2026-09-01-akron-h-lokomotiv-bus-1",
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "label": "Автобус 1. Парк Хаус. Любой сектор",
+      "busNo": 1,
+      "sourceFile": "atoms_drivers_report_01.09.2026.xlsx",
+      "passengerCount": 2,
+      "seatsAssigned": 2,
+      "boardingStops": [
+        "Парк Хаус, Парковка ТРК справа"
+      ]
     }
   ],
   "passengers": [
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
+      "fullName": "Гайсина Арина Дмитриевна",
+      "seatNo": "29",
+      "orderId": "258385",
+      "birthDateIso": "2009-06-15",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79272157097",
+      "sourceFile": "atoms_drivers_report_01.09.2026.xlsx",
+      "sourceRow": 5,
+      "seq": 1
+    },
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
+      "fullName": "Шандор Ева Максимовна",
+      "seatNo": "30",
+      "orderId": "258385",
+      "birthDateIso": "2010-02-11",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79033310884",
+      "sourceFile": "atoms_drivers_report_01.09.2026.xlsx",
+      "sourceRow": 4,
+      "seq": 2
+    },
     {
       "eventId": "2026-08-28-akron-h-cska",
       "manifestId": "2026-08-28-akron-h-cska-bus-1",
