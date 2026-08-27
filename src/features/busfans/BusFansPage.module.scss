@@ -50,6 +50,107 @@ $card-text-muted: rgb(255 255 255 / 0.8);
 	font-weight: 400;
 	line-height: 1.3;
 	color: $card-text-muted;
+
+	@include from($bp-tablet-sm) {
+		font-size: 13px;
+	}
+
+	@include from($bp-tablet) {
+		font-size: 14px;
+	}
+
+	@include from($bp-laptop) {
+		font-size: 15px;
+	}
+
+	@include from($bp-desktop) {
+		font-size: 16px;
+	}
+}
+
+.benefitsTrigger {
+	align-self: flex-start;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 36px;
+	padding: 8px 14px;
+	border: 1px solid #fff;
+	background: transparent;
+	font-size: 12px;
+	line-height: 1.3;
+	text-transform: uppercase;
+	color: #fff;
+	cursor: pointer;
+	transition:
+		background-color 0.15s ease,
+		color 0.15s ease;
+
+	&:hover {
+		background: #fff;
+		color: #020a0a;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+
+	@include from($bp-tablet) {
+		min-height: 42px;
+		padding: 10px 18px;
+		font-size: 14px;
+	}
+}
+
+.benefits {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.benefitsModalBody {
+	@include hide-scrollbar;
+}
+
+.benefitBlock {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.benefitLabel {
+	margin: 0;
+	font-family: 'Akademia', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+	color: #fff;
+
+	@include from($bp-tablet-sm) {
+		font-size: 24px;
+	}
+}
+
+.benefitText {
+	margin: 0;
+	font-size: 12px;
+	line-height: 1.3;
+	color: $card-text-muted;
+
+	@include from($bp-tablet) {
+		font-size: 14px;
+	}
+
+	@include from($bp-laptop) {
+		font-size: 15px;
+	}
+
+	@include from($bp-desktop) {
+		font-size: 16px;
+	}
 }
 
 .metaLine {
