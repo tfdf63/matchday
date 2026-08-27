@@ -13,9 +13,14 @@ export type ContentMatch = {
 	timeLocal?: string
 	stadium?: string
 	ticketLink?: string
+	ticketLinkLabel?: string
 	ticketLinkVip?: string
 	ticketLinkVipLabel?: string
 	ticketLinkSkybox?: string
+	ticketLinkSkyboxLabel?: string
+	ticketLinkPriceFrom?: string
+	ticketLinkVipPriceFrom?: string
+	ticketLinkSkyboxPriceFrom?: string
 	leagueInfo?: string
 	seasonTour?: string
 	dateCard?: string
@@ -46,9 +51,14 @@ export function contentMatchToGame(row: ContentMatch): Game {
 		timeLocal: row.timeLocal,
 		stadium: row.stadium,
 		ticketLink: row.ticketLink,
+		ticketLinkLabel: row.ticketLinkLabel,
 		ticketLinkVip: row.ticketLinkVip,
 		ticketLinkVipLabel: row.ticketLinkVipLabel,
 		ticketLinkSkybox: row.ticketLinkSkybox,
+		ticketLinkSkyboxLabel: row.ticketLinkSkyboxLabel,
+		ticketLinkPriceFrom: row.ticketLinkPriceFrom,
+		ticketLinkVipPriceFrom: row.ticketLinkVipPriceFrom,
+		ticketLinkSkyboxPriceFrom: row.ticketLinkSkyboxPriceFrom,
 		leagueInfo: row.leagueInfo,
 		seasonTour: row.seasonTour,
 		dateCard: row.dateCard,

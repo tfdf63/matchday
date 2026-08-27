@@ -36,6 +36,22 @@ describe('gameTickets', () => {
 		expect(buttons.some((b) => b.label === 'VIP')).toBe(false)
 	})
 
+	it('добавляет цену «от» для домашнего матча с ЦСКА', () => {
+		const game = games.find((g) => g.id === '30')
+		expect(game).toBeDefined()
+
+		const buttons = getStandingsTicketButtons(game!)
+		expect(buttons.find((b) => b.label === 'Купить билеты')?.priceFrom).toBe(
+			'от 490 ₽',
+		)
+		expect(buttons.find((b) => b.label === 'VIP')?.priceFrom).toBe(
+			'от 1990 ₽',
+		)
+		expect(buttons.find((b) => b.label === 'Ложи')?.priceFrom).toBe(
+			'от 12500 ₽',
+		)
+	})
+
 	it('возвращает кнопки для строки календаря', () => {
 		const buttons = getStandingsTicketButtonsForMatch(
 			'2026-08-28',

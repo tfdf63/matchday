@@ -3,6 +3,7 @@ import type { MatchVenue, SeasonCompetition } from '@/data/standings/types'
 
 export type StandingsTicketButton = {
 	label: string
+	priceFrom?: string
 	href: string
 	variant: 'primary' | 'outline'
 }
@@ -84,15 +85,33 @@ export function getStandingsTicketButtons(game: Game): StandingsTicketButton[] {
 	const businessClub = trimUrl(game.ticketLinkBusinessClub)
 	const vipLabel = game.ticketLinkVipLabel?.trim()
 	const vipIsTicketLink = !vipLabel || vipLabel === 'VIP'
+	const ticketPriceFrom = game.ticketLinkPriceFrom?.trim() || undefined
+	const vipPriceFrom = game.ticketLinkVipPriceFrom?.trim() || undefined
+	const lodgesPriceFrom = game.ticketLinkSkyboxPriceFrom?.trim() || undefined
 
 	if (vip && vipIsTicketLink) {
-		buttons.push({ label: 'VIP', href: vip, variant: 'outline' })
+		buttons.push({
+			label: 'VIP',
+			priceFrom: vipPriceFrom,
+			href: vip,
+			variant: 'outline',
+		})
 	}
 	if (ticket) {
-		buttons.push({ label: 'Купить билеты', href: ticket, variant: 'primary' })
+		buttons.push({
+			label: 'Купить билеты',
+			priceFrom: ticketPriceFrom,
+			href: ticket,
+			variant: 'primary',
+		})
 	}
 	if (lodges) {
-		buttons.push({ label: 'Ложи', href: lodges, variant: 'outline' })
+		buttons.push({
+			label: 'Ложи',
+			priceFrom: lodgesPriceFrom,
+			href: lodges,
+			variant: 'outline',
+		})
 	}
 	if (businessClub) {
 		buttons.push({

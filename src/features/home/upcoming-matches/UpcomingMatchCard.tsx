@@ -3,11 +3,12 @@
 import Image from 'next/image'
 import type { FC } from 'react'
 
+import { MatchCardCalendarIcon } from '@/components/MatchCard/icons/MatchCardCalendarIcon'
 import {
 	MatchDateBanner,
 	getMatchDateBannerText,
 } from '@/components/MatchDateBanner'
-import { MatchCardCalendarIcon } from '@/components/MatchCard/icons/MatchCardCalendarIcon'
+import { TicketButtonContent } from '@/components/TicketButtonContent'
 import type { Game } from '@/data/games'
 import { getTeamLogoPath } from '@/data/teamLogos'
 import { DirectionsModalTrigger } from '@/features/home/directions-modal'
@@ -45,7 +46,12 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	const skybox = game.ticketLinkSkybox?.trim()
 	const ticketLinkCount = [ticket, vip, skybox].filter(Boolean).length
 	const hasExtraTicketLinks = ticketLinkCount > 1
+	const ticketLabel = game.ticketLinkLabel?.trim() || 'Купить билеты'
 	const vipLabel = game.ticketLinkVipLabel?.trim() || 'VIP'
+	const skyboxLabel = game.ticketLinkSkyboxLabel?.trim() || 'ложи'
+	const ticketPriceFrom = game.ticketLinkPriceFrom?.trim() || undefined
+	const vipPriceFrom = game.ticketLinkVipPriceFrom?.trim() || undefined
+	const skyboxPriceFrom = game.ticketLinkSkyboxPriceFrom?.trim() || undefined
 	const isAway = game.venue === 'away'
 	const priceLine =
 		!isAway &&
@@ -208,7 +214,11 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 								if (handleTicketClick(ticket)) e.preventDefault()
 							}}
 						>
-							Купить билеты
+							<TicketButtonContent
+								title={ticketLabel}
+								priceFrom={ticketPriceFrom}
+								priceClassName={styles.btnPrice}
+							/>
 						</a>
 					) : null}
 					{hasExtraTicketLinks ? (
@@ -223,7 +233,11 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 										if (handleTicketClick(vip)) e.preventDefault()
 									}}
 								>
-									{vipLabel}
+									<TicketButtonContent
+										title={vipLabel}
+										priceFrom={vipPriceFrom}
+										priceClassName={styles.btnPrice}
+									/>
 								</a>
 							) : null}
 							{skybox ? (
@@ -236,7 +250,11 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 										if (handleTicketClick(skybox)) e.preventDefault()
 									}}
 								>
-									ложи
+									<TicketButtonContent
+										title={skyboxLabel}
+										priceFrom={skyboxPriceFrom}
+										priceClassName={styles.btnPrice}
+									/>
 								</a>
 							) : null}
 						</div>

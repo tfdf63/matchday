@@ -255,8 +255,10 @@ $fan-id-to-title-gap: 20px;
 
 .btnPrimary {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 2px;
 	min-height: 48px;
 	padding: 14px 24px;
 	border: none;
@@ -286,8 +288,10 @@ $fan-id-to-title-gap: 20px;
 	flex: 1 1 0;
 	min-width: 0;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 2px;
 	min-height: 48px;
 	padding: 16px 10px;
 	border: 1px solid #fff;
@@ -314,6 +318,10 @@ $fan-id-to-title-gap: 20px;
 		outline: 2px solid var(--button-focus-ring);
 		outline-offset: 2px;
 	}
+}
+
+.btnPrice {
+	text-transform: none;
 }
 
 .btnSecondary {

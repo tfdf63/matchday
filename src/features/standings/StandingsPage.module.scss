@@ -641,8 +641,10 @@ $pts-loss: #f08a8a;
 	flex: 1 1 0;
 	min-width: 0;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 2px;
 	min-height: 36px;
 	padding: 8px 4px;
 	border-radius: 0;
@@ -699,4 +701,8 @@ $pts-loss: #f08a8a;
 
 .ticketActionsSolo .btnPrimary {
 	flex: 1 1 0;
+}
+
+.btnPrice {
+	text-transform: none;
 }

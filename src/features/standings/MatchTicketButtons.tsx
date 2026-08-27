@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 
+import { TicketButtonContent } from '@/components/TicketButtonContent'
 import type { StandingsTicketButton } from '@/lib/standings/gameTickets'
 
 import styles from './StandingsPage.module.scss'
@@ -29,7 +30,7 @@ export const MatchTicketButtons: FC<Props> = ({ buttons }) => {
 		>
 			{buttons.map((button) => (
 				<a
-					key={button.label}
+					key={button.href}
 					className={cx(
 						button.variant === 'primary'
 							? styles.btnPrimary
@@ -39,7 +40,11 @@ export const MatchTicketButtons: FC<Props> = ({ buttons }) => {
 					target='_blank'
 					rel='noopener noreferrer'
 				>
-					{button.label}
+					<TicketButtonContent
+						title={button.label}
+						priceFrom={button.priceFrom}
+						priceClassName={styles.btnPrice}
+					/>
 				</a>
 			))}
 		</div>

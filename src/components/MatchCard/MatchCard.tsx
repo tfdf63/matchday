@@ -7,6 +7,7 @@ import {
 	MatchDateBanner,
 	getMatchDateBannerText,
 } from '@/components/MatchDateBanner'
+import { TicketButtonContent } from '@/components/TicketButtonContent'
 import type { Game } from '@/data/games'
 import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
@@ -48,7 +49,12 @@ export function MatchCard({
 	const ticket = game.ticketLink?.trim()
 	const vip = game.ticketLinkVip?.trim()
 	const skybox = game.ticketLinkSkybox?.trim()
+	const ticketLabel = game.ticketLinkLabel?.trim() || 'Купить билеты'
 	const vipLabel = game.ticketLinkVipLabel?.trim() || 'VIP'
+	const skyboxLabel = game.ticketLinkSkyboxLabel?.trim() || 'ложи'
+	const ticketPriceFrom = game.ticketLinkPriceFrom?.trim() || undefined
+	const vipPriceFrom = game.ticketLinkVipPriceFrom?.trim() || undefined
+	const skyboxPriceFrom = game.ticketLinkSkyboxPriceFrom?.trim() || undefined
 	const isAway = game.venue === 'away'
 	const priceLine =
 		!isAway &&
@@ -198,7 +204,11 @@ export function MatchCard({
 									if (handleTicketClick(ticket)) e.preventDefault()
 								}}
 							>
-								Купить билеты
+								<TicketButtonContent
+									title={ticketLabel}
+									priceFrom={ticketPriceFrom}
+									priceClassName={styles.btnPrice}
+								/>
 							</a>
 						) : null}
 						{(vip || skybox) && (
@@ -213,7 +223,11 @@ export function MatchCard({
 											if (handleTicketClick(vip)) e.preventDefault()
 										}}
 									>
-										{vipLabel}
+										<TicketButtonContent
+											title={vipLabel}
+											priceFrom={vipPriceFrom}
+											priceClassName={styles.btnPrice}
+										/>
 									</a>
 								) : null}
 								{skybox ? (
@@ -226,7 +240,11 @@ export function MatchCard({
 											if (handleTicketClick(skybox)) e.preventDefault()
 										}}
 									>
-										ложи
+										<TicketButtonContent
+											title={skyboxLabel}
+											priceFrom={skyboxPriceFrom}
+											priceClassName={styles.btnPrice}
+										/>
 									</a>
 								) : null}
 							</div>
