@@ -38,6 +38,8 @@ export type MatchActivity = {
 	imageSrcLaptop?: string
 	/** Для `photo` при `≥1280px`: кадр под сетку 1280 (4810:13797 / 13767). */
 	imageSrcLaptopLg?: string
+	/** Для `photo` при `≥1600px`: кадр под сетку 1600. */
+	imageSrcDesktop?: string
 	/** Для `photo` при `≥1920px`: кадр под сетку 1920 (4810:1652 / 4924:1652–1653). */
 	imageSrcDesktopXl?: string
 	solidTone?: MatchActivitySolidTone
@@ -57,15 +59,15 @@ export const matchActivitiesAll: MatchActivity[] = [
 		id: '1',
 		variant: 'photo',
 		/* 4810:20778 */
-		titleLine1: 'Автограф-сессии',
-		titleLine2: 'с игроками',
-		subtitle:
-			'Получи уникальную карточку с автографом игрока, сделай памятное селфи и скажи слова поддержки тем, кто защищает цвета «Акрона».',
+		titleLine1: 'Автограф-сессия',
+		titleLine2: 'Юрия Железнова',
+		subtitle: '28 августа 18:00 - 18:40 в С4',
 		imageSrc: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01.png`,
 		imageSrcMobile: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-mobile.png`,
 		imageSrcTablet: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-768.png`,
 		imageSrcLaptop: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1024.png`,
 		imageSrcLaptopLg: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1280.png`,
+		imageSrcDesktop: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1600.png`,
 		imageSrcDesktopXl: `${MATCH_ACTIVITIES_IMAGE_PREFIX}/activity-01-1920.png`,
 		tags: ['#встреча с игроками', '#автографы', '#фото'],
 	},

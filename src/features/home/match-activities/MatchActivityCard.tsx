@@ -38,6 +38,7 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 		imageSrcTablet,
 		imageSrcLaptop,
 		imageSrcLaptopLg,
+		imageSrcDesktop,
 		imageSrcDesktopXl,
 		photoImageLayout,
 	} = activity
@@ -49,13 +50,17 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 		imageSrcTablet ||
 			imageSrcLaptop ||
 			imageSrcLaptopLg ||
+			imageSrcDesktop ||
 			imageSrcDesktopXl,
 	)
 	const desktopSplitImgClass = cx(
 		styles.cardFillImg,
 		styles.cardFillImgDesktop,
 		imageSrcTablet && styles.cardFillImgDesktopTablet,
-		(imageSrcLaptop || imageSrcLaptopLg || imageSrcDesktopXl) &&
+		(imageSrcLaptop ||
+			imageSrcLaptopLg ||
+			imageSrcDesktop ||
+			imageSrcDesktopXl) &&
 			!imageSrcTablet &&
 			styles.cardFillImgDesktopLaptopOnly,
 	)
@@ -72,6 +77,12 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 										<source
 											media='(min-width: 1920px)'
 											srcSet={imageSrcDesktopXl}
+										/>
+									) : null}
+									{imageSrcDesktop ? (
+										<source
+											media='(min-width: 1600px)'
+											srcSet={imageSrcDesktop}
 										/>
 									) : null}
 									{imageSrcLaptopLg ? (
@@ -135,6 +146,12 @@ export const MatchActivityCard: FC<MatchActivityCardProps> = ({ activity }) => {
 										<source
 											media='(min-width: 1920px)'
 											srcSet={imageSrcDesktopXl}
+										/>
+									) : null}
+									{imageSrcDesktop ? (
+										<source
+											media='(min-width: 1600px)'
+											srcSet={imageSrcDesktop}
 										/>
 									) : null}
 									{imageSrcLaptopLg ? (
