@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-28T13:41:30+04:00",
+    "generatedAt": "2026-08-28T13:58:57+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 2,
     "manifestsCount": 5,
-    "passengersCount": 130
+    "passengersCount": 131
   },
   "events": [
     {
@@ -46,8 +46,8 @@
       "seasonTour": "2026/2027 6 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 4,
-      "passengerCount": 128,
-      "seatsAssigned": 128
+      "passengerCount": 129,
+      "seatsAssigned": 129
     }
   ],
   "manifests": [
@@ -83,8 +83,8 @@
       "label": "Автобус 4. ДК Тольятти. D114",
       "busNo": 4,
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
-      "passengerCount": 25,
-      "seatsAssigned": 25,
+      "passengerCount": 26,
+      "seatsAssigned": 26,
       "boardingStops": [
         "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
         "Жигулёвское море, Остановка в сторону Самары",
@@ -783,6 +783,19 @@
     {
       "eventId": "2026-08-28-akron-h-cska",
       "manifestId": "2026-08-28-akron-h-cska-bus-4",
+      "fullName": "Малкина Александра Романовна",
+      "seatNo": "4",
+      "orderId": "999999",
+      "birthDateIso": null,
+      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
+      "phone": null,
+      "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
+      "sourceRow": 29,
+      "seq": 15
+    },
+    {
+      "eventId": "2026-08-28-akron-h-cska",
+      "manifestId": "2026-08-28-akron-h-cska-bus-4",
       "fullName": "Наумов Александр Александрович",
       "seatNo": "40",
       "orderId": "258297",
@@ -791,7 +804,7 @@
       "phone": "79272167661",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 23,
-      "seq": 15
+      "seq": 16
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -804,7 +817,7 @@
       "phone": "79272167661",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 22,
-      "seq": 16
+      "seq": 17
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -817,7 +830,7 @@
       "phone": "79879751167",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 19,
-      "seq": 17
+      "seq": 18
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -830,7 +843,7 @@
       "phone": "79674892685",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 28,
-      "seq": 18
+      "seq": 19
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -843,7 +856,7 @@
       "phone": "79376679177",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 27,
-      "seq": 19
+      "seq": 20
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -856,7 +869,7 @@
       "phone": "79179723135",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 6,
-      "seq": 20
+      "seq": 21
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -869,7 +882,7 @@
       "phone": "79991724470",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 25,
-      "seq": 21
+      "seq": 22
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -882,20 +895,20 @@
       "phone": "79958323238",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 10,
-      "seq": 22
+      "seq": 23
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
       "manifestId": "2026-08-28-akron-h-cska-bus-4",
       "fullName": "Храмов Степан Константинович",
-      "seatNo": "12",
+      "seatNo": "3",
       "orderId": "258244",
       "birthDateIso": "1989-02-06",
       "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79397009799",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 16,
-      "seq": 23
+      "seq": 24
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -908,7 +921,7 @@
       "phone": "789024277145",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 17,
-      "seq": 24
+      "seq": 25
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -921,7 +934,7 @@
       "phone": "789024277145",
       "sourceFile": "atoms_drivers_report_28.08.2026 (12).xlsx",
       "sourceRow": 18,
-      "seq": 25
+      "seq": 26
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
