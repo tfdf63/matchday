@@ -2,7 +2,7 @@ import type { FC } from 'react'
 
 import type { BusManifest, PassengerAssignment } from '@/data/busfans'
 import { BUS_SALE_SEAT_CAPACITY } from '@/lib/busfans/busCapacity'
-import { formatBoardingStopLabel } from '@/lib/busfans/boardingStopAliases'
+import { getBoardingStopDisplay } from '@/lib/busfans/boardingStopOverrides'
 import { getBusPlateNumbers } from '@/lib/busfans/busPlates'
 
 import styles from './BusFansPage.module.scss'
@@ -23,6 +23,7 @@ export type BusManifestCardProps = {
 	manifest: BusManifest
 	passengers: PassengerAssignment[]
 	matchDateIso: string
+	eventId: string
 	duplicateFullNames?: Set<string>
 }
 
@@ -30,6 +31,7 @@ export const BusManifestCard: FC<BusManifestCardProps> = ({
 	manifest,
 	passengers,
 	matchDateIso,
+	eventId,
 	duplicateFullNames,
 }) => {
 	const plateNumbers = getBusPlateNumbers(manifest.id)
@@ -66,11 +68,21 @@ export const BusManifestCard: FC<BusManifestCardProps> = ({
 				<div className={styles.routeBlock}>
 					<p className={cx(styles.routeLabel, 'font-mono')}>Маршрут</p>
 					<ol className={styles.routeList}>
-						{stops.map((stop) => (
-							<li key={stop} className={cx(styles.routeStop, 'font-mono')}>
-								{formatBoardingStopLabel(stop)}
-							</li>
-						))}
+						{stops.map((stop) => {
+							const display = getBoardingStopDisplay(stop, eventId)
+							return (
+								<li
+									key={stop}
+									className={cx(
+										styles.routeStop,
+										display.isReplacement && styles.routeStopReplacement,
+										'font-mono',
+									)}
+								>
+									{display.label}
+								</li>
+							)
+						})}
 					</ol>
 				</div>
 			) : null}

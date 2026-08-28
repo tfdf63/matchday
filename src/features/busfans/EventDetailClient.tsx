@@ -128,6 +128,7 @@ export const EventDetailClient: FC<EventDetailClientProps> = ({
 							<BusManifestCard
 								key={manifest.id}
 								manifest={manifest}
+								eventId={event.id}
 								matchDateIso={event.dateIso}
 								duplicateFullNames={duplicateFullNames}
 								passengers={getPassengersForManifest(

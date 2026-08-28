@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-08-28T12:25:47+04:00",
+    "generatedAt": "2026-08-28T13:41:30+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 2,
     "manifestsCount": 5,
-    "passengersCount": 129
+    "passengersCount": 130
   },
   "events": [
     {
@@ -46,8 +46,8 @@
       "seasonTour": "2026/2027 6 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 4,
-      "passengerCount": 127,
-      "seatsAssigned": 127
+      "passengerCount": 128,
+      "seatsAssigned": 128
     }
   ],
   "manifests": [
@@ -57,8 +57,8 @@
       "label": "Автобус 1. Парк Хаус. Любой сектор",
       "busNo": 1,
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "passengerCount": 26,
-      "seatsAssigned": 26,
+      "passengerCount": 27,
+      "seatsAssigned": 27,
       "boardingStops": [
         "Парк Хаус, Парковка ТРК справа",
         "Колхозный рынок, Остановка в сторону Самары",
@@ -1466,7 +1466,7 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79278998841",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 18,
+      "sourceRow": 17,
       "seq": 1
     },
     {
@@ -1479,7 +1479,7 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79297011033",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 19,
+      "sourceRow": 18,
       "seq": 2
     },
     {
@@ -1492,7 +1492,7 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79278998842",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 17,
+      "sourceRow": 16,
       "seq": 3
     },
     {
@@ -1505,7 +1505,7 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79277973444",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 11,
+      "sourceRow": 10,
       "seq": 4
     },
     {
@@ -1544,7 +1544,7 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79033332476",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 14,
+      "sourceRow": 13,
       "seq": 7
     },
     {
@@ -1557,8 +1557,34 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79613903250",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 16,
+      "sourceRow": 15,
       "seq": 8
+    },
+    {
+      "eventId": "2026-08-28-akron-h-cska",
+      "manifestId": "2026-08-28-akron-h-cska-bus-1",
+      "fullName": "Иванов Илья Дмитриевич",
+      "seatNo": "29",
+      "orderId": "258378",
+      "birthDateIso": "1992-08-05",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": null,
+      "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
+      "sourceRow": 29,
+      "seq": 9
+    },
+    {
+      "eventId": "2026-08-28-akron-h-cska",
+      "manifestId": "2026-08-28-akron-h-cska-bus-1",
+      "fullName": "Иванова Людмила Анатольевна",
+      "seatNo": "30",
+      "orderId": "258378",
+      "birthDateIso": "1961-10-29",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": null,
+      "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
+      "sourceRow": 30,
+      "seq": 10
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1570,8 +1596,8 @@
       "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
       "phone": "79277797431",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 22,
-      "seq": 9
+      "sourceRow": 21,
+      "seq": 11
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1583,8 +1609,8 @@
       "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
       "phone": "79277797431",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 23,
-      "seq": 10
+      "sourceRow": 22,
+      "seq": 12
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1596,21 +1622,8 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79278969812",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 10,
-      "seq": 11
-    },
-    {
-      "eventId": "2026-08-28-akron-h-cska",
-      "manifestId": "2026-08-28-akron-h-cska-bus-1",
-      "fullName": "Леонтьев Михаил иванович",
-      "seatNo": "19",
-      "orderId": "258384",
-      "birthDateIso": "1947-04-22",
-      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
-      "phone": "79276011824",
-      "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 8,
-      "seq": 12
+      "sourceRow": 9,
+      "seq": 13
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1622,8 +1635,8 @@
       "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
       "phone": "79276011825",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 9,
-      "seq": 13
+      "sourceRow": 8,
+      "seq": 14
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1635,8 +1648,8 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79178234724",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 27,
-      "seq": 14
+      "sourceRow": 26,
+      "seq": 15
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1648,8 +1661,8 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79674831306",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 28,
-      "seq": 15
+      "sourceRow": 27,
+      "seq": 16
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1661,8 +1674,8 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79608420873",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 24,
-      "seq": 16
+      "sourceRow": 23,
+      "seq": 17
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1674,8 +1687,8 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79608420873",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 25,
-      "seq": 17
+      "sourceRow": 24,
+      "seq": 18
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1687,8 +1700,8 @@
       "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
       "phone": "79626109292",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 13,
-      "seq": 18
+      "sourceRow": 12,
+      "seq": 19
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1700,8 +1713,8 @@
       "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
       "phone": "79626109292",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 12,
-      "seq": 19
+      "sourceRow": 11,
+      "seq": 20
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1713,8 +1726,8 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79033332476",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 15,
-      "seq": 20
+      "sourceRow": 14,
+      "seq": 21
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1726,8 +1739,8 @@
       "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
       "phone": "79376645757",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 26,
-      "seq": 21
+      "sourceRow": 25,
+      "seq": 22
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1739,8 +1752,8 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79697213579",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 29,
-      "seq": 22
+      "sourceRow": 28,
+      "seq": 23
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1753,7 +1766,7 @@
       "phone": "79033310884",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
       "sourceRow": 5,
-      "seq": 23
+      "seq": 24
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1766,7 +1779,7 @@
       "phone": "79033310884",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
       "sourceRow": 4,
-      "seq": 24
+      "seq": 25
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1778,8 +1791,8 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79171314486",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 20,
-      "seq": 25
+      "sourceRow": 19,
+      "seq": 26
     },
     {
       "eventId": "2026-08-28-akron-h-cska",
@@ -1791,8 +1804,8 @@
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79871534178",
       "sourceFile": "atoms_drivers_report_28.08.2026 (14).xlsx",
-      "sourceRow": 21,
-      "seq": 26
+      "sourceRow": 20,
+      "seq": 27
     }
   ]
 }
