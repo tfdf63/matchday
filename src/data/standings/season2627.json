@@ -99,9 +99,9 @@
 			"team": "ЦСКА",
 			"venue": "home",
 			"match": {
-				"score": null,
-				"pts": null,
-				"played": false
+				"score": "1:1",
+				"pts": 1,
+				"played": true
 			},
 			"when": {
 				"label": "28 авг (пт)",
