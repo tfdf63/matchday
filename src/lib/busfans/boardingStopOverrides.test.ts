@@ -10,7 +10,7 @@ describe('getBoardingStopDisplay', () => {
 				'2026-08-28-akron-h-cska',
 			),
 		).toEqual({
-			label: 'Кинотеатр Космос',
+			label: 'вместо ДК Тольятти > остановка Кинотеатр Космос',
 			isReplacement: true,
 		})
 	})
@@ -22,7 +22,7 @@ describe('getBoardingStopDisplay', () => {
 				'2026-08-28-akron-h-cska',
 			),
 		).toEqual({
-			label: 'Кинотеатр Космос',
+			label: 'вместо ДК Тольятти > остановка Кинотеатр Космос',
 			isReplacement: true,
 		})
 	})

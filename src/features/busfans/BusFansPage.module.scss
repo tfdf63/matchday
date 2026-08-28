@@ -637,7 +637,12 @@ $card-text-muted: rgb(255 255 255 / 0.8);
 }
 
 .routeStopReplacement {
-	color: var(--primary-red);
+	background: var(--primary-red);
+	color: #fff;
+
+	&::before {
+		background: #fff;
+	}
 }
 
 .tableWrap {
