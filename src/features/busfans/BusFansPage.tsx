@@ -45,6 +45,7 @@ const benefits = [
 export const BusFansPage: FC = () => {
 	const events = getMatchEvents(busFansDataset)
 	const [isBenefitsOpen, setIsBenefitsOpen] = useState(false)
+	const [isRouteInfoOpen, setIsRouteInfoOpen] = useState(false)
 
 	return (
 		<div className={styles.page}>
@@ -59,6 +60,13 @@ export const BusFansPage: FC = () => {
 					</p>
 					<button
 						type='button'
+						className={cx(styles.routeInfoTrigger, 'font-mono')}
+						onClick={() => setIsRouteInfoOpen(true)}
+					>
+						Условия поездки на домашние матчи
+					</button>
+					<button
+						type='button'
 						className={cx(styles.benefitsTrigger, 'font-mono')}
 						onClick={() => setIsBenefitsOpen(true)}
 					>
@@ -69,6 +77,45 @@ export const BusFansPage: FC = () => {
 						{events.reduce((sum, e) => sum + e.passengerCount, 0)}
 					</p>
 				</header>
+				<BaseModal
+					open={isRouteInfoOpen}
+					onClose={() => setIsRouteInfoOpen(false)}
+					title='Условия поездки'
+					titleId='busfans-route-modal-title'
+					bodyClassName={styles.routeInfoModalBody}
+				>
+					<div className={styles.routeInfo}>
+						<p className={cx(styles.routeInfoLabel, 'font-mono')}>
+							Автобусы на домашние матчи из Тольятти в Самару
+						</p>
+						<p className={cx(styles.routeInfoLabel, styles.routeInfoSectionTitle, 'font-mono')}>
+							Остановки для посадки:
+						</p>
+						<ul className={styles.routeInfoList}>
+							<li className={cx(styles.routeInfoItem, 'font-mono')}>
+								ТРК Парк Хаус (парковка справа)
+							</li>
+							<li className={cx(styles.routeInfoItem, 'font-mono')}>
+								ДК Тольятти (ост. на ул. Мира)
+							</li>
+							<li className={cx(styles.routeInfoItem, 'font-mono')}>
+								ост. Колхозный рынок
+							</li>
+							<li className={cx(styles.routeInfoItem, 'font-mono')}>
+								ост. Жиг. Море (в сторону Самары)
+							</li>
+							<li className={cx(styles.routeInfoItem, 'font-mono')}>
+								стадион вход №3
+							</li>
+						</ul>
+						<p className={cx(styles.routeInfoPrice, styles.routeInfoSectionTitle, 'font-mono')}>
+							Цена:
+						</p>
+						<p className={cx(styles.routeInfoPrice, 'font-mono')}>
+							490 Р (туда-обратно)
+						</p>
+					</div>
+				</BaseModal>
 				<BaseModal
 					open={isBenefitsOpen}
 					onClose={() => setIsBenefitsOpen(false)}

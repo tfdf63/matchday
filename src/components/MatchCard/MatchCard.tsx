@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import type { ReactNode } from 'react'
 
 import {
@@ -36,6 +37,27 @@ function formatMainTourLabel(value: string | undefined): string | null {
 	const match = source.match(/(\d{4})\/(\d{4})\s+(\d+)\s*тур/i)
 	if (!match) return source
 	return `${match[3]} тур`
+}
+
+function MatchCardBusFansIcon() {
+	return (
+		<svg
+			width='20'
+			height='20'
+			viewBox='0 0 20 20'
+			fill='none'
+			aria-hidden='true'
+		>
+			<path
+				d='M3 7.5C3 5.84 4.34 4.5 6 4.5H14C15.66 4.5 17 5.84 17 7.5V13.5H3V7.5Z'
+				stroke='currentColor'
+			/>
+			<path d='M3 10.5H17' stroke='currentColor' />
+			<circle cx='6.25' cy='14.75' r='1.25' stroke='currentColor' />
+			<circle cx='13.75' cy='14.75' r='1.25' stroke='currentColor' />
+			<path d='M4.5 8.25H6.5M13.5 8.25H15.5' stroke='currentColor' strokeLinecap='round' />
+		</svg>
+	)
 }
 
 export type MatchCardProps = {
@@ -441,6 +463,40 @@ export function MatchCard({
 								) : null}
 							</div>
 						)}
+						{isMainShop ? (
+							<ParkingModalTrigger
+								buttonClassName={cx(
+									styles.btnOutline,
+									styles.mainShopParkingButton,
+									'font-mono',
+								)}
+								iconClassName={styles.secondaryIcon}
+								label={
+									<>
+										<span className={styles.mainShopParkingText}>Парковка</span>
+										<span className={styles.btnPrice}>390 ₽</span>
+									</>
+								}
+							/>
+						) : null}
+						{isMainShop ? (
+							<Link
+								className={cx(
+									styles.btnOutline,
+									styles.mainShopBusFansButton,
+									styles.mainShopWithNewBadge,
+									styles.mainShopNoUppercase,
+									'font-mono',
+								)}
+								href='/busfans'
+							>
+								<span className={styles.secondaryIcon} aria-hidden>
+									<MatchCardBusFansIcon />
+								</span>
+								<span className={styles.mainShopParkingText}>Фан-автобусы</span>
+								<span className={styles.btnPrice}>490 Р</span>
+							</Link>
+						) : null}
 					</div>
 
 					{priceLine && !isMainShop ? (

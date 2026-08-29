@@ -1,6 +1,6 @@
 'use client'
 
-import type { FC } from 'react'
+import type { FC, ReactNode } from 'react'
 
 import { MenuParkingIcon } from '@/components/Menu/icons/MenuParkingIcon'
 
@@ -9,11 +9,13 @@ import { useParkingModal } from './parkingModalContext'
 export type ParkingModalTriggerProps = {
 	buttonClassName: string
 	iconClassName?: string
+	label?: ReactNode
 }
 
 export const ParkingModalTrigger: FC<ParkingModalTriggerProps> = ({
 	buttonClassName,
 	iconClassName,
+	label = 'Парковка',
 }) => {
 	const { open } = useParkingModal()
 
@@ -24,7 +26,7 @@ export const ParkingModalTrigger: FC<ParkingModalTriggerProps> = ({
 					<MenuParkingIcon />
 				</span>
 			) : null}
-			Парковка
+			{label}
 		</button>
 	)
 }
