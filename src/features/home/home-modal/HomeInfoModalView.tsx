@@ -1,8 +1,9 @@
 'use client'
 
-import type { FC } from 'react'
+import type { FC, ReactNode } from 'react'
 
 import { BaseModal } from '@/components/Modal'
+import { MenuActivitiesIcon, MenuPromoIcon, MenuTicketIcon } from '@/components/Menu'
 import {
 	HOME_OFFERS_MODAL_LEAD,
 	HOME_OFFERS_TABS,
@@ -22,6 +23,12 @@ const SECTION_ORDER: HomeInfoModalVariant[] = [
 	'tariffs',
 	'socialTickets',
 ]
+
+const TAB_ICONS: Record<HomeInfoModalVariant, ReactNode> = {
+	promo: <MenuPromoIcon />,
+	tariffs: <MenuActivitiesIcon />,
+	socialTickets: <MenuTicketIcon />,
+}
 
 /** Figma 4810:33923 / 4810:33925 — weui Expand_right; слева с scaleX(-1) */
 function NavChevron({ flipped }: { flipped: boolean }) {
@@ -92,15 +99,18 @@ export const HomeInfoModalView: FC = () => {
 									)}
 									onClick={() => open(tab.id)}
 								>
-									<span className={styles.tabLabel}>{tab.label}</span>
+									<span className={styles.tabIcon} aria-hidden>
+										{TAB_ICONS[tab.id]}
+									</span>
+									<span className={styles.tabMain}>
+										<span className={styles.tabLabel}>{tab.label}</span>
+										{tab.menuNote ? (
+											<span className={cx(styles.tabMenuNote, 'font-mono')}>
+												{tab.menuNote}
+											</span>
+										) : null}
+									</span>
 									<span className={styles.tabIndex}>{tab.indexLabel}</span>
-									{tab.menuNote ? (
-										<span
-											className={cx(styles.tabMenuNote, 'font-mono')}
-										>
-											{tab.menuNote}
-										</span>
-									) : null}
 								</button>
 							)
 						})}

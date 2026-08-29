@@ -16,13 +16,24 @@ export const HOME_OFFERS_TABS: ReadonlyArray<{
 	/** Доп. подпись в строке меню (например, статус раздела). */
 	menuNote?: string
 }> = [
-	{ id: 'promo', label: 'Промокоды', indexLabel: '[01]' },
+	{
+		id: 'promo',
+		label: 'Промокоды',
+		indexLabel: '[01]',
+		menuNote: 'Выгода для всех',
+	},
 	{
 		id: 'tariffs',
-		label: 'тарифы',
+		label: 'Тарифы',
 		indexLabel: '[02]',
+		menuNote: 'Детский и взрослый',
 	},
-	{ id: 'socialTickets', label: 'Социальные билеты', indexLabel: '[03]' },
+	{
+		id: 'socialTickets',
+		label: 'Социальные билеты',
+		indexLabel: '[03]',
+		menuNote: 'Для льготных категорий',
+	},
 ]
 
 export const GOSUSLUGI_URL = 'https://www.gosuslugi.ru/' as const

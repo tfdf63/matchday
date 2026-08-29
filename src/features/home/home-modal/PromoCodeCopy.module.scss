@@ -5,6 +5,9 @@
 	padding: 0;
 	border: none;
 	background: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
 	font-family: var(--font-ibm-plex-mono), monospace;
 	font-size: 12px;
 	font-weight: 400;
@@ -24,6 +27,20 @@
 		outline: 2px solid var(--button-focus-ring);
 		outline-offset: 2px;
 	}
+}
+
+.btnCopied {
+	color: #e30613;
+	border-color: rgb(227 6 19 / 0.9);
+	background: rgb(227 6 19 / 0.12);
+	text-shadow: 0 0 8px rgb(227 6 19 / 0.45);
+	box-shadow: 0 0 10px rgb(227 6 19 / 0.35);
+}
+
+.copyIcon {
+	width: 13px;
+	height: 13px;
+	flex: 0 0 13px;
 }
 
 .wrap {

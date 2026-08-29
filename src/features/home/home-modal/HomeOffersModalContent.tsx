@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import type { FC } from 'react'
 
+import { LocationArrowIcon, PromoBadgeIcon } from '@/components/Button'
+import { MenuActivitiesIcon, MenuPromoIcon, MenuTicketIcon } from '@/components/Menu'
 import type { HomeInfoModalVariant } from '@/data/homeInfoModals'
 import {
 	FAN_CARD_HASH,
@@ -19,85 +21,172 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 
 const PromoPanel: FC = () => (
 	<div className={styles.tabPanel}>
-		<p className={styles.subTitle}>Промокоды для друзей:</p>
+		<p className={styles.subTitle}>Промокоды для друзей</p>
 		<p className={cx(styles.mono, styles.muted)}>
-			От&nbsp;2&nbsp;билетов скидка 5%&nbsp;— <PromoCodeCopy code='AKRON2' />
+			Чем больше билетов — тем больше выгода.
 		</p>
-		<p className={cx(styles.mono, styles.muted)}>
-			От&nbsp;3&nbsp;билетов скидка 10%&nbsp;— <PromoCodeCopy code='AKRON3' />
-		</p>
-		<p className={cx(styles.mono, styles.muted)}>
-			От&nbsp;4&nbsp;билетов скидка 15%&nbsp;— <PromoCodeCopy code='AKRON4' />
-		</p>
-		<p className={styles.subTitle}>Семейный сектор</p>
-		<p className={cx(styles.mono, styles.muted)}>
-			Покупайте от&nbsp;2-х билетов в&nbsp;С4, включая 1&nbsp;детский&nbsp;— ещё
-			&nbsp;-25%:&nbsp;
-			<PromoCodeCopy code='AKRKIDS' />
-		</p>
-		<p className={styles.subTitle}>
-			Более выгодные скидки в&nbsp;абонементах на&nbsp;сезон или первый круг
-		</p>
+
+		<div className={styles.promoGrid}>
+			<article className={styles.promoMiniCard}>
+				<p className={styles.miniCond}>От 2 билетов</p>
+				<p className={styles.miniValue}>5%</p>
+				<p className={styles.miniMeta}>Скидка</p>
+				<PromoCodeCopy code='AKRON2' className={styles.codeButton} />
+			</article>
+			<article className={styles.promoMiniCard}>
+				<p className={styles.miniCond}>От 3 билетов</p>
+				<p className={styles.miniValue}>10%</p>
+				<p className={styles.miniMeta}>Скидка</p>
+				<PromoCodeCopy code='AKRON3' className={styles.codeButton} />
+			</article>
+			<article className={styles.promoMiniCard}>
+				<p className={styles.miniCond}>От 4 билетов</p>
+				<p className={styles.miniValue}>15%</p>
+				<p className={styles.miniMeta}>Скидка</p>
+				<PromoCodeCopy code='AKRON4' className={styles.codeButton} />
+			</article>
+		</div>
+
+		<article className={styles.familyCard}>
+			<div className={styles.familyMain}>
+				<span className={styles.familyIcon} aria-hidden>
+					<MenuActivitiesIcon />
+				</span>
+				<p className={styles.familyTitle}>
+					Семейный
+					<br />
+					сектор C4
+				</p>
+			</div>
+			<div className={styles.familyKpi}>
+				<p className={styles.familyValue}>−25%</p>
+				<p className={styles.familyMeta}>Доп. скидка</p>
+			</div>
+			<p className={cx(styles.mono, styles.muted, styles.familyCond)}>
+				Покупайте от 2-х билетов, включая 1 детский билет.
+			</p>
+			<div className={styles.familyAction}>
+				<span className={styles.familyCodeLabel}>Промокод</span>
+				<PromoCodeCopy code='AKRKIDS' className={styles.codeButton} />
+				<Link className={styles.familyMoreLink} href='/sector/c4'>
+					Подробнее о секторе C4
+				</Link>
+			</div>
+		</article>
+
 	</div>
 )
 
 const TariffsPanel: FC = () => (
 	<div className={styles.tabPanel}>
-		<p className={cx(styles.mono, styles.muted)}>
-			Детский тариф (для&nbsp;детей до&nbsp;14 лет включительно) на&nbsp;матчах
-			МИР&nbsp;РПЛ предоставляет возможность взять билеты{' '}
-			<span className={styles.strong}>со&nbsp;скидкой 50%</span>.
-		</p>
-		<p className={cx(styles.mono, styles.muted)}>
-			Проверка возраста осуществляется автоматически на&nbsp;входе через{' '}
-			<a
-				className={styles.inlineLink}
-				href={GOSUSLUGI_URL}
-				target='_blank'
-				rel='noopener noreferrer'
-			>
-				Госуслуги
-			</a>
-			.
-		</p>
-		<p className={cx(styles.mono, styles.muted)}>
-			При&nbsp;выборе места укажите тариф:{' '}
-			<span className={styles.strong}>«взрослый»</span> или&nbsp;
-			<span className={styles.strong}>«детский»</span>, затем введите
-			соответствующий номер{' '}
-			<Link className={styles.inlineLink} href={FAN_CARD_HASH}>
-				«Карта болельщика»
-			</Link>
-			.
-		</p>
-		<p className={cx(styles.mono, styles.muted)}>
-			Напоминаем, что&nbsp;билет на&nbsp;ребёнка до&nbsp;14 лет отображается
-			в&nbsp;приложении <span className={styles.strong}>«Госуслуги»</span>{' '}
-			родителя, который оформил ребёнка.
-		</p>
+		<article className={styles.tariffCard}>
+			<div className={styles.tariffTop}>
+				<div className={styles.tariffTitleWrap}>
+					<p className={styles.tariffTitle}>Детский тариф</p>
+					<span className={styles.tariffBadge}>До 14 лет включительно</span>
+				</div>
+				<div className={styles.tariffKpi}>
+					<p className={styles.tariffValue}>50%</p>
+					<p className={styles.tariffMeta}>Скидка</p>
+				</div>
+			</div>
+
+			<div className={styles.tariffRows}>
+				<div className={styles.tariffRow}>
+					<span className={styles.tariffRowIcon} aria-hidden>
+						<MenuTicketIcon />
+					</span>
+					<div className={styles.rowCopy}>
+						<p className={styles.rowTitle}>Как выбрать</p>
+						<p className={cx(styles.mono, styles.muted)}>
+							При покупке выберите тариф «детский».
+						</p>
+					</div>
+				</div>
+				<div className={styles.tariffRow}>
+					<span className={styles.tariffRowIcon} aria-hidden>
+						<LocationArrowIcon />
+					</span>
+					<div className={styles.rowCopy}>
+						<p className={styles.rowTitle}>Что нужно указать</p>
+						<p className={cx(styles.mono, styles.muted)}>
+							Введите номер{' '}
+							<Link className={styles.inlineLink} href={FAN_CARD_HASH}>
+								карты болельщика
+							</Link>{' '}
+							ребёнка в детский билет.
+						</p>
+					</div>
+				</div>
+				<div className={styles.tariffRow}>
+					<span className={styles.tariffRowIcon} aria-hidden>
+						<PromoBadgeIcon />
+					</span>
+					<div className={styles.rowCopy}>
+						<p className={styles.rowTitle}>Проверка возраста</p>
+						<p className={cx(styles.mono, styles.muted)}>
+							Осуществляется автоматически на входе через{' '}
+							<a
+								className={styles.inlineLink}
+								href={GOSUSLUGI_URL}
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								Госуслуги
+							</a>
+							.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<p className={styles.infoBar}>
+				Билет на ребёнка до 14 лет отображается в приложении «Госуслуги» у
+				родителя, который оформил ребёнка.
+			</p>
+		</article>
 	</div>
 )
 
 const SocialPanel: FC = () => (
 	<div className={styles.tabPanel}>
-		<p className={cx(styles.mono, styles.muted)}>
-			Пенсионеры, участники ВОВ и&nbsp;боевых действий могут получить{' '}
-			<span className={styles.strong}>
-				бесплатные билеты в&nbsp;сектор С124
-			</span>{' '}
-			в&nbsp;кассе в&nbsp;день матча при&nbsp;подтверждении статуса.
-		</p>
-		<p className={cx(styles.mono, styles.muted)}>
-			Многодетные семьи могут обратиться в&nbsp;клуб для&nbsp;получения скидки
-			на&nbsp;покупку билетов{' '}
-			<span className={styles.strong}>в&nbsp;семейный сектор С4</span>.
-		</p>
-		<p className={cx(styles.mono, styles.muted)}>
-			Для&nbsp;подачи заявки,{' '}
-			<span className={styles.strong}>
-				не&nbsp;позднее чем за&nbsp;3&nbsp;дня до&nbsp;матча
+		<article className={styles.socialCard}>
+			<span className={styles.socialIcon} aria-hidden>
+				<MenuPromoIcon />
 			</span>
-			, отправьте сообщение в&nbsp;телеграм{' '}
+			<div>
+				<p className={styles.socialTitle}>
+					Бесплатные билеты
+					<br />
+					в сектор C124
+				</p>
+				<p className={cx(styles.mono, styles.muted)}>
+					Пенсионеры, участники ВОВ и боевых действий могут получить билет в
+					кассе в день матча при подтверждении статуса.
+				</p>
+			</div>
+		</article>
+
+		<article className={styles.socialCard}>
+			<span className={styles.socialIcon} aria-hidden>
+				<MenuActivitiesIcon />
+			</span>
+			<div>
+				<p className={styles.socialTitle}>
+					Скидки
+					<br />
+					для многодетных семей
+				</p>
+				<p className={cx(styles.mono, styles.muted)}>
+					Многодетные семьи могут получить скидку на покупку билетов в семейный
+					сектор C4.
+				</p>
+			</div>
+		</article>
+
+		<p className={cx(styles.mono, styles.quote)}>
+			Для подачи заявки не позднее чем за 3 дня до матча отправьте сообщение в
+			Telegram:{' '}
 			<a
 				className={styles.inlineLink}
 				href={HOME_OFFERS_SOCIAL_TELEGRAM_HREF}
@@ -105,12 +194,9 @@ const SocialPanel: FC = () => (
 				rel='noopener noreferrer'
 			>
 				{HOME_OFFERS_SOCIAL_TELEGRAM_HREF.replace(/^https:\/\//, '')}
-			</a>{' '}
-			с&nbsp;текстом:
-		</p>
-		<p className={cx(styles.mono, styles.quote)}>
-			«Заявка на&nbsp;билеты для&nbsp;многодетных семей на&nbsp;матч [указать
-			матч]».
+			</a>
+			: «Заявка на билеты для пенсионера/ветерана/многодетных семей на матч
+			[указать матч]».
 		</p>
 	</div>
 )

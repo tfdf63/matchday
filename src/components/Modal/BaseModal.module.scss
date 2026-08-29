@@ -131,12 +131,12 @@ $z-modal: 10000;
 
 .closeFloating {
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	top: 12px;
+	right: 12px;
 	z-index: 2;
 	display: flex;
-	width: 48px;
-	height: 48px;
+	width: 40px;
+	height: 40px;
 	align-items: center;
 	justify-content: center;
 	padding: 0;
@@ -157,5 +157,14 @@ $z-modal: 10000;
 	&:focus-visible {
 		outline: 2px solid var(--button-focus-ring);
 		outline-offset: 2px;
+	}
+}
+
+@include from($bp-tablet-sm) {
+	.closeFloating {
+		top: 20px;
+		right: 20px;
+		width: 48px;
+		height: 48px;
 	}
 }

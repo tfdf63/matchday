@@ -31,6 +31,22 @@ async function copyToClipboard(text: string): Promise<boolean> {
 	}
 }
 
+function CopyGlyph() {
+	return (
+		<svg
+			className={styles.copyIcon}
+			viewBox='0 0 16 16'
+			fill='none'
+			stroke='currentColor'
+			strokeWidth='1.2'
+			aria-hidden
+		>
+			<rect x='5' y='4' width='8' height='9' rx='1.2' />
+			<path d='M3 10V3.8C3 3.36 3.36 3 3.8 3H10' />
+		</svg>
+	)
+}
+
 export type PromoCodeCopyProps = {
 	code: string
 	className?: string
@@ -51,11 +67,12 @@ export const PromoCodeCopy: FC<PromoCodeCopyProps> = ({ code, className }) => {
 		<span className={styles.wrap}>
 			<button
 				type='button'
-				className={cx(styles.btn, className)}
+				className={cx(styles.btn, copied && styles.btnCopied, className)}
 				onClick={onCopy}
 				aria-label={`Скопировать промокод ${code}`}
 			>
-				{code}
+				<span>{code}</span>
+				<CopyGlyph />
 			</button>
 			<span id={statusId} className={styles.status} aria-live='polite'>
 				{copied ? 'Скопировано' : ''}
