@@ -1,10 +1,13 @@
 import Image from 'next/image'
 import type { FC } from 'react'
+import { LocationArrowIcon } from '@/components/Button'
 
 import styles from './ParkingGuide.module.scss'
 
 const PARKING_PASS_URL =
 	'https://widget.afisha.yandex.ru/w/events/752078?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51'
+const PARKING_GATE_2GIS_URL =
+	'https://2gis.ru/samara/geo/70030076162818658/50.234026%2C53.278759?m=50.233996%2C53.27854%2F17.33'
 
 const PARKING_STEPS = [
 	{
@@ -19,6 +22,7 @@ const PARKING_STEPS = [
 	{
 		title: 'Приезжайте на транспортное КПП №4',
 		body: 'Не позднее чем за 30 минут до начала матча получите на КПП №4 бумажный автопропуск.',
+		routeHref: PARKING_GATE_2GIS_URL,
 	},
 	{
 		title: 'Припаркуйтесь на парковке Ps',
@@ -84,6 +88,17 @@ export const ParkingGuide: FC<ParkingGuideProps> = ({
 							<p className={styles.stepBody}>{step.body}</p>
 							{'accent' in step ? (
 								<strong className={styles.stepAccent}>{step.accent}</strong>
+							) : null}
+							{'routeHref' in step ? (
+								<a
+									className={styles.stepRouteLink}
+									href={step.routeHref}
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									<LocationArrowIcon className={styles.stepRouteIcon} />
+									Построить маршрут до КПП №4 в 2ГИС
+								</a>
 							) : null}
 						</div>
 					</li>

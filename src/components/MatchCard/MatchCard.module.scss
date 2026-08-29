@@ -20,6 +20,10 @@ $fan-id-to-title-gap: 20px;
 	-webkit-backdrop-filter: blur(20px);
 }
 
+.hidden {
+	display: none !important;
+}
+
 /* Место под верхние бейджи + ровно 20px до заголовка «Следующий матч» */
 .rootWithTopBadge {
 	padding-top: calc($fan-id-badge-height + $fan-id-to-title-gap);
@@ -322,6 +326,7 @@ $fan-id-to-title-gap: 20px;
 
 .btnPrice {
 	text-transform: none;
+	white-space: nowrap;
 }
 
 .btnSecondary {
@@ -410,6 +415,153 @@ $fan-id-to-title-gap: 20px;
 	width: 100%;
 }
 
+.mainShopRoot {
+	width: 336px;
+	padding: 18px 16px 20px;
+}
+
+.mainShopTopRow {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 8px;
+	width: 100%;
+}
+
+.mainShopBadge,
+.mainShopTopFanId {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 28px;
+	padding: 0 10px;
+	font-size: 11px;
+	line-height: 1.3;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.mainShopBadge {
+	background: #d4b100;
+	color: #020a0a;
+}
+
+.mainShopTopFanId {
+	background: #b2061c;
+	color: #fff;
+}
+
+.mainShopTopRowSpacer {
+	flex: 1 1 auto;
+}
+
+.mainShopLeague {
+	margin: 0;
+	font-size: 11px;
+	line-height: 1.3;
+	text-transform: uppercase;
+	text-align: left;
+	color: $card-text-muted;
+}
+
+.mainShopTeams {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 2px;
+}
+
+.mainShopTeamRow {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	min-width: 0;
+}
+
+.mainShopTeamLogo,
+.mainShopTeamLogoPlaceholder {
+	width: 36px;
+	height: 36px;
+	flex: 0 0 36px;
+}
+
+.mainShopTeamLogo {
+	display: block;
+	object-fit: contain;
+}
+
+.mainShopTeamLogoPlaceholder {
+	border-radius: 2px;
+	background: rgb(255 255 255 / 0.1);
+}
+
+.mainShopTeam {
+	margin: 0;
+	font-size: 36px;
+	line-height: 0.95;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.mainShopDateTime {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.3;
+	text-transform: uppercase;
+	color: #fff;
+	white-space: nowrap;
+}
+
+.mainShopStadium {
+	margin: 0 0 6px;
+	font-size: 12px;
+	line-height: 1.3;
+	color: $card-text-muted;
+}
+
+.mainShopOutlineStack {
+	gap: 8px;
+}
+
+.mainShopOutlineButton {
+	min-height: 46px;
+	padding: 12px 8px;
+	border-color: rgb(255 255 255 / 0.78);
+	font-size: 11px;
+	line-height: 1.2;
+}
+
+.mainShopBusinessClub {
+	position: relative;
+
+	&::before {
+		content: 'Новое';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2px 8px;
+		background: #d4b100;
+		color: #020a0a;
+		font-size: 9px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+	span:first-child {
+		white-space: nowrap;
+	}
+}
+
+.mainShopNoUppercase {
+	text-transform: none;
+}
+
 @include from($bp-tablet-sm) {
 	.root {
 		width: 274px;
@@ -451,9 +603,21 @@ $fan-id-to-title-gap: 20px;
 		flex-direction: column;
 	}
 
+	.mainShopOutlineStack {
+		flex-direction: row;
+	}
+
 	.btnOutline {
 		flex: none;
 		width: 100%;
+	}
+
+	.mainShopOutlineButton {
+		flex: 1 1 0;
+		width: auto;
+		min-height: 48px;
+		padding: 12px 8px;
+		font-size: 11px;
 	}
 
 	.secondaryStack {
@@ -467,6 +631,25 @@ $fan-id-to-title-gap: 20px;
 
 	.parkingButton {
 		display: flex;
+	}
+
+	.mainShopTeam {
+		font-size: 42px;
+	}
+
+	.mainShopRoot {
+		padding: 20px 16px 24px;
+	}
+
+	.mainShopTeamLogo,
+	.mainShopTeamLogoPlaceholder {
+		width: 40px;
+		height: 40px;
+		flex-basis: 40px;
+	}
+
+	.mainShopDateTime {
+		font-size: 15px;
 	}
 
 	/* 4810:16504 — бейдж FAN ID 40px, py 10px по макету */
@@ -515,6 +698,10 @@ $fan-id-to-title-gap: 20px;
 
 	.scoreRow {
 		font-size: 18px;
+	}
+
+	.mainShopRoot {
+		padding: 22px 16px 24px;
 	}
 }
 
@@ -603,6 +790,10 @@ $fan-id-to-title-gap: 20px;
 		gap: 10px;
 	}
 
+	.mainShopOutlineStack {
+		gap: 8px;
+	}
+
 	.secondaryStack {
 		flex-direction: row;
 		gap: 10px;
@@ -611,6 +802,30 @@ $fan-id-to-title-gap: 20px;
 	.parkingButton {
 		flex: none;
 		width: 100%;
+	}
+
+	.mainShopTeam {
+		font-size: 48px;
+	}
+
+	.mainShopTeamLogo,
+	.mainShopTeamLogoPlaceholder {
+		width: 44px;
+		height: 44px;
+		flex-basis: 44px;
+	}
+
+	.mainShopDateTime {
+		font-size: 16px;
+	}
+
+	.mainShopRoot {
+		padding: 24px 20px 28px;
+	}
+
+	.mainShopOutlineButton {
+		min-height: 48px;
+		font-size: 12px;
 	}
 }
 
@@ -631,6 +846,10 @@ $fan-id-to-title-gap: 20px;
 	.teamName {
 		font-size: 22px;
 	}
+
+	.mainShopRoot {
+		padding: 26px 20px 30px;
+	}
 }
 
 /* FCA_Fans первый экран 1920 — node 4810:1549 */
@@ -642,6 +861,10 @@ $fan-id-to-title-gap: 20px;
 
 	.rootWithTopBadge {
 		padding-top: 80px;
+	}
+
+	.mainShopRoot {
+		padding: 28px 20px 32px;
 	}
 
 	.title {

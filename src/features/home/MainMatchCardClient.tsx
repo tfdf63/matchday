@@ -70,9 +70,8 @@ export function MainMatchCardClient({
 				card: (
 					<MatchCard
 						game={game}
-						title='Домашний матч'
+						variant='mainShop'
 						hideSecondaryActions
-						showParkingAction
 					/>
 				),
 			}))}
