@@ -9,10 +9,8 @@ import {
 	type MenuNavItem,
 } from '@/components/Menu'
 import { useHomeInfoModal } from '@/features/home/home-modal'
-import { useParkingModal } from '@/features/home/parking-modal'
 
 const MainMenu: React.FC = () => {
-	const parkingModal = useParkingModal()
 	const { open: openHomeInfoModal } = useHomeInfoModal()
 
 	const menuItems: [MenuNavItem, MenuNavItem, MenuNavItem, MenuNavItem] = [
@@ -25,8 +23,8 @@ const MainMenu: React.FC = () => {
 		{
 			id: 'parking',
 			label: 'Парковка',
+			href: '/parking',
 			icon: <MenuParkingIcon />,
-			onClick: parkingModal.open,
 		},
 		{
 			id: 'promo',

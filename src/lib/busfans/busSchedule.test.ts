@@ -48,6 +48,13 @@ describe('getBusScheduleOverride', () => {
 			departure: '16:30',
 		})
 	})
+
+	it('returns schedule override for Lokomotiv home event', () => {
+		expect(getBusScheduleOverride('2026-09-01-akron-h-lokomotiv')).toEqual({
+			departure: '14:45',
+			returnAt: '19:45',
+		})
+	})
 })
 
 describe('getBusScheduleTimes', () => {
@@ -140,5 +147,23 @@ describe('getBusScheduleTimes', () => {
 				eventId: '2026-08-28-akron-h-cska',
 			}),
 		).toBe('старт: 16:30 · обратно: 21:30')
+	})
+
+	it('applies schedule override for Lokomotiv home', () => {
+		expect(
+			getBusScheduleTimes({
+				matchTime: 'SAMT 17:15',
+				eventId: '2026-09-01-akron-h-lokomotiv',
+			}),
+		).toEqual({
+			departure: '14:45',
+			returnAt: '19:45',
+		})
+		expect(
+			formatBusScheduleLine({
+				matchTime: 'SAMT 17:15',
+				eventId: '2026-09-01-akron-h-lokomotiv',
+			}),
+		).toBe('старт: 14:45 · обратно: 19:45')
 	})
 })

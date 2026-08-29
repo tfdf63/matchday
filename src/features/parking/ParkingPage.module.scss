@@ -1,0 +1,26 @@
+@use '../../styles/tokens.scss' as *;
+
+.page {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 100vh;
+	min-height: 100svh;
+	background: #020a0a;
+	color: #fff;
+}
+
+.inner {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 920px;
+	margin: 0 auto;
+	padding: 32px 20px 112px;
+
+	@include from($bp-tablet-sm) {
+		padding: 48px 40px 128px;
+	}
+
+	@include from($bp-tablet) {
+		padding: 64px 48px 144px;
+	}
+}

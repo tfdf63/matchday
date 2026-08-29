@@ -20,5 +20,9 @@
   },
   "2026-08-28-akron-h-cska": {
     "departure": "16:30"
+  },
+  "2026-09-01-akron-h-lokomotiv": {
+    "departure": "14:45",
+    "returnAt": "19:45"
   }
 }
