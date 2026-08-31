@@ -143,17 +143,8 @@ export function MatchCard({
 	const mainDateTimeLine = [mainDate, mainWeekday, mainTime ? `${mainTime} (смр)` : null]
 		.filter(Boolean)
 		.join(' · ')
-	const mainPriceRaiseLine = game.priceIncreaseDates?.first
-		? new Intl.DateTimeFormat('ru-RU', {
-				day: 'numeric',
-				month: 'long',
-			}).format(new Date(`${game.priceIncreaseDates.first}T12:00:00`))
-		: null
 	const mainTourLine = formatMainTourLabel(game.seasonTour)
-	const mainPrimaryPriceLine =
-		isMainShop && ticketPriceMain && mainPriceRaiseLine
-			? `${ticketPriceMain} до ${mainPriceRaiseLine}`
-			: ticketPriceMain
+	const mainPrimaryPriceLine = ticketPriceMain
 
 	return (
 		<article

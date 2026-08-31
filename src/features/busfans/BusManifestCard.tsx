@@ -35,15 +35,13 @@ export const BusManifestCard: FC<BusManifestCardProps> = ({
 	duplicateFullNames,
 }) => {
 	const plateNumbers = getBusPlateNumbers(manifest.id)
-	const stops =
-		manifest.boardingStops?.filter(Boolean) ??
-		[
-			...new Set(
-				passengers
-					.map((p) => p.boardingPlace?.trim().replace(/,\s*$/, ''))
-					.filter((s): s is string => Boolean(s)),
-			),
-		]
+	const stops = manifest.boardingStops?.filter(Boolean) ?? [
+		...new Set(
+			passengers
+				.map(p => p.boardingPlace?.trim().replace(/,\s*$/, ''))
+				.filter((s): s is string => Boolean(s)),
+		),
+	]
 
 	return (
 		<section className={styles.busCard} aria-label={manifest.label}>
@@ -56,7 +54,7 @@ export const BusManifestCard: FC<BusManifestCardProps> = ({
 
 			{plateNumbers.length > 0 ? (
 				<div className={styles.platesBlock}>
-					{plateNumbers.map((plate) => (
+					{plateNumbers.map(plate => (
 						<p key={plate} className={cx(styles.plateNumber, 'font-mono')}>
 							{plate}
 						</p>
@@ -68,7 +66,7 @@ export const BusManifestCard: FC<BusManifestCardProps> = ({
 				<div className={styles.routeBlock}>
 					<p className={cx(styles.routeLabel, 'font-mono')}>Маршрут</p>
 					<ol className={styles.routeList}>
-						{stops.map((stop) => {
+						{stops.map(stop => {
 							const display = getBoardingStopDisplay(stop, eventId)
 							return (
 								<li
@@ -79,6 +77,14 @@ export const BusManifestCard: FC<BusManifestCardProps> = ({
 										'font-mono',
 									)}
 								>
+									{display.oldLabel ? (
+										<>
+											<span className={styles.routeStopOldLabel}>
+												{display.oldLabel}
+											</span>{' '}
+											<span aria-hidden>→</span>{' '}
+										</>
+									) : null}
 									{display.label}
 								</li>
 							)

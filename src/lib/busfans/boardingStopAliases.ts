@@ -8,6 +8,8 @@ const BOARDING_STOP_ALIASES_RAW: Readonly<Record<string, string>> = {
 		'Колхозный рынок, остановка в сторону Самары',
 	'Жигулёвское море, Остановка в сторону Самары':
 		'Жигулёвское море, остановка в сторону Самары',
+	'Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.':
+		'Кинотеатр Космос',
 }
 
 export function normalizeBoardingStopKey(stop: string): string {

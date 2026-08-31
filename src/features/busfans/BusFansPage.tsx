@@ -53,10 +53,10 @@ export const BusFansPage: FC = () => {
 				<header className={styles.header}>
 					<h1 className={styles.title}>Фан-автобусы</h1>
 					<p className={cx(styles.lead, 'font-mono')}>
-						Хочешь прочувствовать матч на максимум? Бери билет на
-						фан-автобус и выезжай вместе с нашими в Самару и на гостевые
-						игры по всей России. Это дорога, где уже начинается матч: общий
-						настрой, новые знакомые и единый голос трибуны.
+						Хочешь прочувствовать матч на максимум? Бери билет на фан-автобус и
+						выезжай вместе с нашими в Самару и на гостевые игры по всей России.
+						Это дорога, где уже начинается матч: общий настрой, новые знакомые и
+						единый голос трибуны.
 					</p>
 					<button
 						type='button'
@@ -88,7 +88,13 @@ export const BusFansPage: FC = () => {
 						<p className={cx(styles.routeInfoLabel, 'font-mono')}>
 							Автобусы на домашние матчи из Тольятти в Самару
 						</p>
-						<p className={cx(styles.routeInfoLabel, styles.routeInfoSectionTitle, 'font-mono')}>
+						<p
+							className={cx(
+								styles.routeInfoLabel,
+								styles.routeInfoSectionTitle,
+								'font-mono',
+							)}
+						>
 							Остановки для посадки:
 						</p>
 						<ul className={styles.routeInfoList}>
@@ -108,7 +114,13 @@ export const BusFansPage: FC = () => {
 								стадион вход №3
 							</li>
 						</ul>
-						<p className={cx(styles.routeInfoPrice, styles.routeInfoSectionTitle, 'font-mono')}>
+						<p
+							className={cx(
+								styles.routeInfoPrice,
+								styles.routeInfoSectionTitle,
+								'font-mono',
+							)}
+						>
 							Цена:
 						</p>
 						<p className={cx(styles.routeInfoPrice, 'font-mono')}>
@@ -146,7 +158,7 @@ export const BusFansPage: FC = () => {
 				</BaseModal>
 
 				<div className={styles.list}>
-					{events.map((event) => (
+					{events.map(event => (
 						<MatchEventCard key={event.id} event={event} />
 					))}
 				</div>

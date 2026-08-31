@@ -8,11 +8,13 @@ import {
 export type BoardingStopOverride = {
 	label: string
 	replacement?: boolean
+	oldLabel?: string
 }
 
 export type BoardingStopDisplay = {
 	label: string
 	isReplacement: boolean
+	oldLabel?: string
 }
 
 type OverridesByEvent = Readonly<
@@ -53,6 +55,7 @@ export function getBoardingStopDisplay(
 		return {
 			label,
 			isReplacement: Boolean(override?.replacement),
+			oldLabel: override?.oldLabel?.trim() || undefined,
 		}
 	}
 	return {
