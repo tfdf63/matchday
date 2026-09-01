@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-09-01T09:11:39+04:00",
+    "generatedAt": "2026-09-01T11:53:45+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
-    "manifestsCount": 4,
-    "passengersCount": 72
+    "manifestsCount": 3,
+    "passengersCount": 71
   },
   "events": [
     {
@@ -24,37 +24,23 @@
       "leagueInfo": "Fonbet Кубок России по футболу",
       "seasonTour": "2026/2027 3 ТУР",
       "fanIdStatus": "Без fan id",
-      "busCount": 4,
-      "passengerCount": 72,
-      "seatsAssigned": 72
+      "busCount": 3,
+      "passengerCount": 71,
+      "seatsAssigned": 71
     }
   ],
   "manifests": [
-    {
-      "id": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "label": "Автобус 1. Парк Хаус. Любой сектор",
-      "busNo": 1,
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "passengerCount": 10,
-      "seatsAssigned": 10,
-      "boardingStops": [
-        "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
-        "Парк Хаус, Парковка ТРК справа",
-        "Жигулёвское море, Остановка в сторону Самары",
-        "Колхозный рынок, Остановка в сторону Самары"
-      ]
-    },
     {
       "id": "2026-09-01-akron-h-lokomotiv-bus-2",
       "eventId": "2026-09-01-akron-h-lokomotiv",
       "label": "Автобус 2. Парк Хаус. D114",
       "busNo": 2,
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
-      "passengerCount": 17,
-      "seatsAssigned": 17,
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
+      "passengerCount": 22,
+      "seatsAssigned": 22,
       "boardingStops": [
-        "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа"
+        "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
+        "Парк Хаус, Парковка ТРК справа"
       ]
     },
     {
@@ -62,11 +48,12 @@
       "eventId": "2026-09-01-akron-h-lokomotiv",
       "label": "Автобус 4. ДК Тольятти. D114",
       "busNo": 4,
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
-      "passengerCount": 21,
-      "seatsAssigned": 21,
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
+      "passengerCount": 25,
+      "seatsAssigned": 25,
       "boardingStops": [
         "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
+        "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
         "Жигулёвское море, Остановка в сторону Самары",
         "Колхозный рынок, Остановка в сторону Самары"
       ]
@@ -76,7 +63,7 @@
       "eventId": "2026-09-01-akron-h-lokomotiv",
       "label": "Автобус 5. ТЦ Озон. D114",
       "busNo": 5,
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "passengerCount": 24,
       "seatsAssigned": 24,
       "boardingStops": [
@@ -94,9 +81,22 @@
       "birthDateIso": "1983-07-10",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79674908901",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 8,
       "seq": 1
+    },
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-4",
+      "fullName": "Безруков Василий Николаевич",
+      "seatNo": "16",
+      "orderId": "259213",
+      "birthDateIso": "1958-09-25",
+      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
+      "phone": "79171329170",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
+      "sourceRow": 25,
+      "seq": 2
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -107,9 +107,9 @@
       "birthDateIso": "1979-07-05",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79171289302",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 11,
-      "seq": 2
+      "seq": 3
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -120,9 +120,9 @@
       "birthDateIso": "2013-02-27",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79171289302",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 12,
-      "seq": 3
+      "seq": 4
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -133,9 +133,9 @@
       "birthDateIso": "2007-10-19",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79019433802",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 4,
-      "seq": 4
+      "seq": 5
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -146,9 +146,9 @@
       "birthDateIso": "2013-02-07",
       "boardingPlace": "Жигулёвское море, Остановка в сторону Самары",
       "phone": "79613883766",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 5,
-      "seq": 5
+      "seq": 6
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -159,9 +159,9 @@
       "birthDateIso": "1984-11-26",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79084266871",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 22,
-      "seq": 6
+      "seq": 7
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -172,9 +172,9 @@
       "birthDateIso": "2012-02-21",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79276081368",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 9,
-      "seq": 7
+      "seq": 8
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -185,9 +185,35 @@
       "birthDateIso": "1972-09-01",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79297159599",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 6,
-      "seq": 8
+      "seq": 9
+    },
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-4",
+      "fullName": "Леонтьев Михаил Иванович",
+      "seatNo": "26",
+      "orderId": "258400",
+      "birthDateIso": "1947-04-22",
+      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
+      "phone": "79276011825",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
+      "sourceRow": 28,
+      "seq": 10
+    },
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-4",
+      "fullName": "Логинов Сергей Геннадьевич",
+      "seatNo": "8",
+      "orderId": "259273",
+      "birthDateIso": "1990-11-15",
+      "boardingPlace": "Жигулёвское море, Остановка в сторону Самары",
+      "phone": "79277812326",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
+      "sourceRow": 27,
+      "seq": 11
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -198,9 +224,9 @@
       "birthDateIso": "1972-08-25",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79297196868",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 18,
-      "seq": 9
+      "seq": 12
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -211,22 +237,22 @@
       "birthDateIso": "1981-08-14",
       "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
       "phone": "79879751167",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 15,
-      "seq": 10
+      "seq": 13
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
       "manifestId": "2026-09-01-akron-h-lokomotiv-bus-4",
       "fullName": "Оленина Таисия Тарасовеа",
-      "seatNo": "16",
+      "seatNo": "22",
       "orderId": "259269",
       "birthDateIso": "2013-07-05",
       "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
       "phone": "79879751167",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 16,
-      "seq": 11
+      "seq": 14
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -237,9 +263,9 @@
       "birthDateIso": "2011-11-23",
       "boardingPlace": "Жигулёвское море, Остановка в сторону Самары",
       "phone": "79674892685",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 17,
-      "seq": 12
+      "seq": 15
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -250,9 +276,9 @@
       "birthDateIso": "1984-07-03",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79179723135",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 7,
-      "seq": 13
+      "seq": 16
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -263,9 +289,9 @@
       "birthDateIso": "1981-08-28",
       "boardingPlace": "Жигулёвское море, Остановка в сторону Самары",
       "phone": "79178227069",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 14,
-      "seq": 14
+      "seq": 17
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -276,9 +302,9 @@
       "birthDateIso": "1957-12-03",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79084266871",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 23,
-      "seq": 15
+      "seq": 18
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -289,9 +315,9 @@
       "birthDateIso": "2017-08-14",
       "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
       "phone": "79626109292",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 20,
-      "seq": 16
+      "seq": 19
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -302,9 +328,22 @@
       "birthDateIso": "1989-04-19",
       "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
       "phone": "79626109292",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 19,
-      "seq": 17
+      "seq": 20
+    },
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-4",
+      "fullName": "Сиваков Денис Александрович",
+      "seatNo": "7",
+      "orderId": "259273",
+      "birthDateIso": "1991-08-24",
+      "boardingPlace": "Жигулёвское море, Остановка в сторону Самары",
+      "phone": "79371716955",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
+      "sourceRow": 26,
+      "seq": 21
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -315,9 +354,9 @@
       "birthDateIso": "2011-03-20",
       "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
       "phone": "79958323238",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 10,
-      "seq": 18
+      "seq": 22
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -328,22 +367,22 @@
       "birthDateIso": "1984-06-05",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79376645757",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 24,
-      "seq": 19
+      "seq": 23
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
       "manifestId": "2026-09-01-akron-h-lokomotiv-bus-4",
       "fullName": "Храмов Степан Константинович",
-      "seatNo": "8",
+      "seatNo": "3",
       "orderId": "259390",
       "birthDateIso": "1989-02-06",
       "boardingPlace": "Кинотеатр Космос, Остановка возле на ул. Мира в сторону Комсомольского района.",
       "phone": "79397009799",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 21,
-      "seq": 20
+      "seq": 24
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -354,9 +393,9 @@
       "birthDateIso": "1992-07-24",
       "boardingPlace": "Жигулёвское море, Остановка в сторону Самары",
       "phone": "79277180995",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (11).xlsx",
       "sourceRow": 13,
-      "seq": 21
+      "seq": 25
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -367,7 +406,7 @@
       "birthDateIso": "1963-03-25",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79608430205",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 12,
       "seq": 1
     },
@@ -380,7 +419,7 @@
       "birthDateIso": "1961-02-13",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79608452728",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 13,
       "seq": 2
     },
@@ -393,7 +432,7 @@
       "birthDateIso": "1991-05-28",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 5,
       "seq": 3
     },
@@ -406,7 +445,7 @@
       "birthDateIso": "1991-05-28",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 6,
       "seq": 4
     },
@@ -419,7 +458,7 @@
       "birthDateIso": "1958-11-30",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79649757982",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 17,
       "seq": 5
     },
@@ -432,7 +471,7 @@
       "birthDateIso": "1954-09-23",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79608430205",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 14,
       "seq": 6
     },
@@ -445,7 +484,7 @@
       "birthDateIso": "1960-01-01",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 7,
       "seq": 7
     },
@@ -458,7 +497,7 @@
       "birthDateIso": "2011-09-02",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79272178208",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 9,
       "seq": 8
     },
@@ -471,7 +510,7 @@
       "birthDateIso": "2012-08-04",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79879854993",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 26,
       "seq": 9
     },
@@ -484,7 +523,7 @@
       "birthDateIso": "2015-03-17",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79879854993",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 27,
       "seq": 10
     },
@@ -497,7 +536,7 @@
       "birthDateIso": "1964-05-07",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79179733510",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 18,
       "seq": 11
     },
@@ -510,7 +549,7 @@
       "birthDateIso": "1970-01-09",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79272662576",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 4,
       "seq": 12
     },
@@ -523,7 +562,7 @@
       "birthDateIso": "2016-04-15",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 24,
       "seq": 13
     },
@@ -536,7 +575,7 @@
       "birthDateIso": "1954-07-30",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79277852194",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 11,
       "seq": 14
     },
@@ -549,7 +588,7 @@
       "birthDateIso": "1964-03-27",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79608430205",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 15,
       "seq": 15
     },
@@ -562,7 +601,7 @@
       "birthDateIso": "1967-11-19",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79272178208",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 8,
       "seq": 16
     },
@@ -575,7 +614,7 @@
       "birthDateIso": "2008-09-11",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79027428528",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 10,
       "seq": 17
     },
@@ -588,7 +627,7 @@
       "birthDateIso": "2011-02-15",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79277763909",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 16,
       "seq": 18
     },
@@ -601,7 +640,7 @@
       "birthDateIso": "2018-11-06",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79273207259",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 23,
       "seq": 19
     },
@@ -614,7 +653,7 @@
       "birthDateIso": "2020-07-18",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79179733510",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 19,
       "seq": 20
     },
@@ -627,7 +666,7 @@
       "birthDateIso": "2013-09-15",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79879854993",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 25,
       "seq": 21
     },
@@ -640,7 +679,7 @@
       "birthDateIso": "1981-07-08",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79879263534",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 21,
       "seq": 22
     },
@@ -653,7 +692,7 @@
       "birthDateIso": "1982-12-08",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79273207259",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 22,
       "seq": 23
     },
@@ -666,7 +705,7 @@
       "birthDateIso": "2009-11-05",
       "boardingPlace": "Озон, Жигулёвск ТЦ Озон (парковка)",
       "phone": "79959100216",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (7).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (12).xlsx",
       "sourceRow": 20,
       "seq": 24
     },
@@ -679,9 +718,22 @@
       "birthDateIso": "1970-11-29",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79397007338",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 15,
       "seq": 1
+    },
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-2",
+      "fullName": "Борисов Яков Андреевич",
+      "seatNo": "17",
+      "orderId": "259470",
+      "birthDateIso": "1988-09-17",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79277588880",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
+      "sourceRow": 21,
+      "seq": 2
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -692,9 +744,22 @@
       "birthDateIso": "1988-09-26",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79879671161",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 4,
-      "seq": 2
+      "seq": 3
+    },
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-2",
+      "fullName": "Гайсина Арина Дмитриевна",
+      "seatNo": "29",
+      "orderId": "258385",
+      "birthDateIso": "2009-06-15",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79272157097",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
+      "sourceRow": 24,
+      "seq": 4
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -705,9 +770,9 @@
       "birthDateIso": "1990-07-27",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79021591624",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 16,
-      "seq": 3
+      "seq": 5
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -718,9 +783,9 @@
       "birthDateIso": "1978-03-11",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 6,
-      "seq": 4
+      "seq": 6
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -731,9 +796,9 @@
       "birthDateIso": "1951-01-20",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 7,
-      "seq": 5
+      "seq": 7
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -744,9 +809,9 @@
       "birthDateIso": "1989-04-05",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79297195770",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 8,
-      "seq": 6
+      "seq": 8
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -757,9 +822,9 @@
       "birthDateIso": "1975-11-26",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79871550730",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 18,
-      "seq": 7
+      "seq": 9
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -770,9 +835,9 @@
       "birthDateIso": "1982-01-06",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 5,
-      "seq": 8
+      "seq": 10
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -783,9 +848,9 @@
       "birthDateIso": "1987-10-29",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 11,
-      "seq": 9
+      "seq": 11
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -796,9 +861,9 @@
       "birthDateIso": "2013-04-04",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 12,
-      "seq": 10
+      "seq": 12
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -809,9 +874,22 @@
       "birthDateIso": "1988-08-06",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79372309397",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 19,
-      "seq": 11
+      "seq": 13
+    },
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-2",
+      "fullName": "пожидаева Софья Евгеньвна",
+      "seatNo": "18",
+      "orderId": "259109",
+      "birthDateIso": "2007-08-13",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79146499343",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
+      "sourceRow": 25,
+      "seq": 14
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -822,9 +900,9 @@
       "birthDateIso": "2008-10-26",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79879160530",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 17,
-      "seq": 12
+      "seq": 15
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -835,9 +913,9 @@
       "birthDateIso": "1964-05-02",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79297195770",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 14,
-      "seq": 13
+      "seq": 16
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -848,9 +926,22 @@
       "birthDateIso": "1986-12-29",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 13,
-      "seq": 14
+      "seq": 17
+    },
+    {
+      "eventId": "2026-09-01-akron-h-lokomotiv",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-2",
+      "fullName": "Филатова Анна Сергеевна",
+      "seatNo": "14",
+      "orderId": "259484",
+      "birthDateIso": "2007-02-14",
+      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
+      "phone": "79697213579",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
+      "sourceRow": 22,
+      "seq": 18
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -861,9 +952,9 @@
       "birthDateIso": "1952-11-07",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79376628985",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 9,
-      "seq": 15
+      "seq": 19
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -874,9 +965,9 @@
       "birthDateIso": "1984-06-08",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79025816131",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 10,
-      "seq": 16
+      "seq": 20
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
@@ -887,139 +978,22 @@
       "birthDateIso": "1983-10-14",
       "boardingPlace": "Кожвендиспансер / ТРК Парк Хаус, Парковка ТРК справа",
       "phone": "79021813490",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (8).xlsx",
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
       "sourceRow": 20,
-      "seq": 17
+      "seq": 21
     },
     {
       "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "fullName": "Безруков Василий Николаевич",
-      "seatNo": "16",
-      "orderId": "259213",
-      "birthDateIso": "1958-09-25",
-      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
-      "phone": "79171329170",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 5,
-      "seq": 1
-    },
-    {
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "fullName": "Борисов Яков Андреевич",
-      "seatNo": "17",
-      "orderId": "259470",
-      "birthDateIso": "1988-09-17",
-      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
-      "phone": "79277588880",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 8,
-      "seq": 2
-    },
-    {
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "fullName": "Гайсина Арина Дмитриевна",
-      "seatNo": "29",
-      "orderId": "258385",
-      "birthDateIso": "2009-06-15",
-      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
-      "phone": "79272157097",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 13,
-      "seq": 3
-    },
-    {
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "fullName": "Логинов Сергей Геннадьевич",
-      "seatNo": "8",
-      "orderId": "259273",
-      "birthDateIso": "1990-11-15",
-      "boardingPlace": "Жигулёвское море, Остановка в сторону Самары",
-      "phone": "79277812326",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 7,
-      "seq": 4
-    },
-    {
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "fullName": "пожидаева Софья Евгеньвна",
-      "seatNo": "6",
-      "orderId": "259109",
-      "birthDateIso": "2007-08-13",
-      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
-      "phone": "79146499343",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 4,
-      "seq": 5
-    },
-    {
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "fullName": "Салиев Тимур Айнурович",
-      "seatNo": "11",
-      "orderId": "259566",
-      "birthDateIso": "2017-08-14",
-      "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
-      "phone": "79626109292",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 11,
-      "seq": 6
-    },
-    {
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "fullName": "Салиева Марина Александровна",
-      "seatNo": "12",
-      "orderId": "259566",
-      "birthDateIso": "1989-04-19",
-      "boardingPlace": "Колхозный рынок, Остановка в сторону Самары",
-      "phone": "79626109292",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 10,
-      "seq": 7
-    },
-    {
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "fullName": "Сиваков Денис Александрович",
-      "seatNo": "7",
-      "orderId": "259273",
-      "birthDateIso": "1991-08-24",
-      "boardingPlace": "Жигулёвское море, Остановка в сторону Самары",
-      "phone": "79371716955",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 6,
-      "seq": 8
-    },
-    {
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
-      "fullName": "Филатова Анна Сергеевна",
-      "seatNo": "10",
-      "orderId": "259484",
-      "birthDateIso": "2007-02-14",
-      "boardingPlace": "Парк Хаус, Парковка ТРК справа",
-      "phone": "79697213579",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 9,
-      "seq": 9
-    },
-    {
-      "eventId": "2026-09-01-akron-h-lokomotiv",
-      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-1",
+      "manifestId": "2026-09-01-akron-h-lokomotiv-bus-2",
       "fullName": "Шандор Ева Максимовна",
-      "seatNo": "30",
+      "seatNo": "32",
       "orderId": "258385",
       "birthDateIso": "2010-02-11",
       "boardingPlace": "Парк Хаус, Парковка ТРК справа",
       "phone": "79033310884",
-      "sourceFile": "atoms_drivers_report_01.09.2026 (9).xlsx",
-      "sourceRow": 12,
-      "seq": 10
+      "sourceFile": "atoms_drivers_report_01.09.2026 (13).xlsx",
+      "sourceRow": 23,
+      "seq": 22
     }
   ]
 }
