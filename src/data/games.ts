@@ -854,10 +854,17 @@ const games: Game[] = [
 		dateCard: '17.09 (ЧТ)',
 		time: 'SAMT 19:30',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '',
-		ticketLinkVip: '',
-		ticketLinkSkybox: '',
-		ticketLinkC4: '',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@71890627?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+		ticketLinkPriceFrom: 'от 290 ₽',
+		ticketLinkVip:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@71890627?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+		ticketLinkVipPriceFrom: 'от 1490 ₽',
+		ticketLinkSkybox:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@71890627?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+		ticketLinkSkyboxPriceFrom: 'от 11500 ₽',
+		ticketLinkC4:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@71890627?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51',
 		leagueInfo: 'Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
 		seasonTour: '2026/2027 9 ТУР',
 		fanIdStatus: 'Fan id',
