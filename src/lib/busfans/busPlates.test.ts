@@ -114,4 +114,16 @@ describe('getBusPlateNumbers', () => {
 			'Х039АТ763',
 		])
 	})
+
+	it('returns plates for Lokomotiv home buses', () => {
+		expect(getBusPlateNumbers('2026-09-01-akron-h-lokomotiv-bus-2')).toEqual([
+			'Х954НС763',
+		])
+		expect(getBusPlateNumbers('2026-09-01-akron-h-lokomotiv-bus-4')).toEqual([
+			'Х966ВН763',
+		])
+		expect(getBusPlateNumbers('2026-09-01-akron-h-lokomotiv-bus-5')).toEqual([
+			'К467СЕ763',
+		])
+	})
 })
