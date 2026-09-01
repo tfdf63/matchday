@@ -117,15 +117,16 @@ export function MatchCard({
 	const isMainShop = variant === 'mainShop'
 
 	const mainBadgeText = matchDateBannerText
-		? matchDateBannerText
-				.replace('Через ', '')
-				.replace('дней', 'ДНЕЙ ДО МАТЧА')
-				.replace('дня', 'ДНЯ ДО МАТЧА')
-				.replace('день', 'ДЕНЬ ДО МАТЧА')
-				.replace('Уже завтра!', '1 ДЕНЬ ДО МАТЧА')
-				.replace('Послезавтра', '2 ДНЯ ДО МАТЧА')
-				.replace('Сегодня!', 'СЕГОДНЯ МАТЧ')
-				.toUpperCase()
+		? /сегодня/i.test(matchDateBannerText)
+			? 'СЕГОДНЯ!'
+			: matchDateBannerText
+					.replace('Через ', '')
+					.replace('дней', 'ДНЕЙ ДО МАТЧА')
+					.replace('дня', 'ДНЯ ДО МАТЧА')
+					.replace('день', 'ДЕНЬ ДО МАТЧА')
+					.replace('Уже завтра!', '1 ДЕНЬ ДО МАТЧА')
+					.replace('Послезавтра', '2 ДНЯ ДО МАТЧА')
+					.toUpperCase()
 		: null
 
 	const mainTime =
