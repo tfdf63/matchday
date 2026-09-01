@@ -55,7 +55,11 @@ function MatchCardBusFansIcon() {
 			<path d='M3 10.5H17' stroke='currentColor' />
 			<circle cx='6.25' cy='14.75' r='1.25' stroke='currentColor' />
 			<circle cx='13.75' cy='14.75' r='1.25' stroke='currentColor' />
-			<path d='M4.5 8.25H6.5M13.5 8.25H15.5' stroke='currentColor' strokeLinecap='round' />
+			<path
+				d='M4.5 8.25H6.5M13.5 8.25H15.5'
+				stroke='currentColor'
+				strokeLinecap='round'
+			/>
 		</svg>
 	)
 }
@@ -106,8 +110,7 @@ export function MatchCard({
 	const timeLocal = game.timeLocal?.trim()
 	const showFanIdBadge =
 		game.fanIdStatus === 'Fan id' || game.fanIdStatus === 'Без fan id'
-	const fanIdBadgeText =
-		game.fanIdStatus === 'Fan id' ? 'FAN ID' : 'Без fan id'
+	const fanIdBadgeText = game.fanIdStatus === 'Fan id' ? 'FAN ID' : 'Без fan id'
 	const now = useClientNow()
 	const matchDateBannerText = now ? getMatchDateBannerText(game, now) : null
 	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
@@ -125,7 +128,8 @@ export function MatchCard({
 				.toUpperCase()
 		: null
 
-	const mainTime = game.time?.trim().match(/\b(\d{1,2}:\d{2})$/)?.[1] ?? game.time
+	const mainTime =
+		game.time?.trim().match(/\b(\d{1,2}:\d{2})$/)?.[1] ?? game.time
 	const mainDate = game.dateIso
 		? new Intl.DateTimeFormat('ru-RU', {
 				day: 'numeric',
@@ -140,7 +144,11 @@ export function MatchCard({
 				.replace('.', '')
 				.toUpperCase()
 		: null
-	const mainDateTimeLine = [mainDate, mainWeekday, mainTime ? `${mainTime} (смр)` : null]
+	const mainDateTimeLine = [
+		mainDate,
+		mainWeekday,
+		mainTime ? `${mainTime} (смр)` : null,
+	]
 		.filter(Boolean)
 		.join(' · ')
 	const mainTourLine = formatMainTourLabel(game.seasonTour)
@@ -157,14 +165,17 @@ export function MatchCard({
 			{isMainShop && (mainBadgeText || showFanIdBadge) ? (
 				<div className={styles.mainShopTopRow}>
 					{mainBadgeText ? (
-						<div className={cx(styles.mainShopBadge, 'font-mono')} role="note">
+						<div className={cx(styles.mainShopBadge, 'font-mono')} role='note'>
 							{mainBadgeText}
 						</div>
 					) : (
 						<span className={styles.mainShopTopRowSpacer} aria-hidden />
 					)}
 					{showFanIdBadge ? (
-						<div className={cx(styles.mainShopTopFanId, 'font-mono')} role="note">
+						<div
+							className={cx(styles.mainShopTopFanId, 'font-mono')}
+							role='note'
+						>
 							{fanIdBadgeText.toUpperCase()}
 						</div>
 					) : null}
@@ -186,7 +197,7 @@ export function MatchCard({
 						isMainShop && styles.hidden,
 						'font-mono',
 					)}
-					role="note"
+					role='note'
 				>
 					{fanIdBadgeText}
 				</div>
@@ -197,10 +208,7 @@ export function MatchCard({
 					<>
 						{game.leagueInfo ? (
 							<p className={cx(styles.mainShopLeague, 'font-mono')}>
-								{[
-									game.leagueInfo,
-									mainTourLine && `· ${mainTourLine}`,
-								]
+								{[game.leagueInfo, mainTourLine && `· ${mainTourLine}`]
 									.filter(Boolean)
 									.join(' ')}
 							</p>
@@ -220,7 +228,10 @@ export function MatchCard({
 										className={styles.mainShopTeamLogo}
 									/>
 								) : (
-									<div className={styles.mainShopTeamLogoPlaceholder} aria-hidden />
+									<div
+										className={styles.mainShopTeamLogoPlaceholder}
+										aria-hidden
+									/>
 								)}
 								<p className={styles.mainShopTeam}>{game.homeTeam}</p>
 							</div>
@@ -238,7 +249,10 @@ export function MatchCard({
 										className={styles.mainShopTeamLogo}
 									/>
 								) : (
-									<div className={styles.mainShopTeamLogoPlaceholder} aria-hidden />
+									<div
+										className={styles.mainShopTeamLogoPlaceholder}
+										aria-hidden
+									/>
 								)}
 								<p className={styles.mainShopTeam}>{game.awayTeam}</p>
 							</div>
@@ -274,14 +288,18 @@ export function MatchCard({
 									<span className={styles.dateRowIcon} aria-hidden>
 										<MatchCardCalendarIcon />
 									</span>
-									<p className={cx(styles.dateMain, 'font-mono')}>{dateTimeLine}</p>
+									<p className={cx(styles.dateMain, 'font-mono')}>
+										{dateTimeLine}
+									</p>
 								</div>
 							) : null}
 							{timeLocal ? (
 								<p className={cx(styles.timeLocal, 'font-mono')}>{timeLocal}</p>
 							) : null}
 							{game.stadium ? (
-								<p className={cx(styles.stadium, 'font-mono')}>{game.stadium}</p>
+								<p className={cx(styles.stadium, 'font-mono')}>
+									{game.stadium}
+								</p>
 							) : null}
 						</div>
 
@@ -315,7 +333,7 @@ export function MatchCard({
 							</div>
 							<div
 								className={styles.scoreRow}
-								role="group"
+								role='group'
 								aria-label={`Счёт: ${formatGoalCell(game.homeGoals)} ${formatGoalCell(game.awayGoals)}`}
 							>
 								<span className={cx(styles.scoreCell, 'font-mono')}>
@@ -365,19 +383,19 @@ export function MatchCard({
 							<a
 								className={cx(styles.btnPrimary, 'font-mono')}
 								href={personalData ? getTicketUrl(ticket) : undefined}
-								target="_blank"
-								rel="noopener noreferrer"
+								target='_blank'
+								rel='noopener noreferrer'
 								onClick={e => {
 									if (handleTicketClick(ticket)) e.preventDefault()
 								}}
 							>
-									<TicketButtonContent
-										title={isMainShop ? 'Купить билеты' : ticketLabel}
-										priceFrom={
-											isMainShop ? mainPrimaryPriceLine : ticketPriceFrom
-										}
-										priceClassName={styles.btnPrice}
-									/>
+								<TicketButtonContent
+									title={isMainShop ? 'Купить билеты' : ticketLabel}
+									priceFrom={
+										isMainShop ? mainPrimaryPriceLine : ticketPriceFrom
+									}
+									priceClassName={styles.btnPrice}
+								/>
 							</a>
 						) : null}
 						{(vip || skybox) && (
@@ -395,8 +413,8 @@ export function MatchCard({
 											'font-mono',
 										)}
 										href={personalData ? getTicketUrl(vip) : undefined}
-										target="_blank"
-										rel="noopener noreferrer"
+										target='_blank'
+										rel='noopener noreferrer'
 										onClick={e => {
 											if (handleTicketClick(vip)) e.preventDefault()
 										}}
@@ -418,8 +436,8 @@ export function MatchCard({
 											'font-mono',
 										)}
 										href={personalData ? getTicketUrl(skybox) : undefined}
-										target="_blank"
-										rel="noopener noreferrer"
+										target='_blank'
+										rel='noopener noreferrer'
 										onClick={e => {
 											if (handleTicketClick(skybox)) e.preventDefault()
 										}}
@@ -439,8 +457,8 @@ export function MatchCard({
 											'font-mono',
 										)}
 										href={personalData ? getTicketUrl(skybox) : undefined}
-										target="_blank"
-										rel="noopener noreferrer"
+										target='_blank'
+										rel='noopener noreferrer'
 										onClick={e => {
 											if (handleTicketClick(skybox)) e.preventDefault()
 										}}
