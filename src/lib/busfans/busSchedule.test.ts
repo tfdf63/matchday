@@ -55,6 +55,13 @@ describe('getBusScheduleOverride', () => {
 			returnAt: '19:45',
 		})
 	})
+
+	it('returns multiline schedule override for Orenburg away event', () => {
+		expect(getBusScheduleOverride('2026-09-06-orenburg-h-akron-tolyatti')).toEqual({
+			departure: 'из Тольятти 06.09 00:00\nиз Самары 06.09 01:00',
+			returnAt: 'после матча',
+		})
+	})
 })
 
 describe('getBusScheduleTimes', () => {
@@ -165,5 +172,16 @@ describe('getBusScheduleTimes', () => {
 				eventId: '2026-09-01-akron-h-lokomotiv',
 			}),
 		).toBe('старт: 14:45 · обратно: 19:45')
+	})
+
+	it('formats multiline start for Orenburg away', () => {
+		expect(
+			formatBusScheduleLine({
+				matchTime: 'SAMT 15:00',
+				eventId: '2026-09-06-orenburg-h-akron-tolyatti',
+			}),
+		).toBe(
+			'старт:\nиз Тольятти 06.09 00:00\nиз Самары 06.09 01:00\nобратно: после матча',
+		)
 	})
 })

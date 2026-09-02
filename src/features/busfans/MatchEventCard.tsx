@@ -114,7 +114,7 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 									<p className={cx(styles.dateLine, 'font-mono')}>{dateLine}</p>
 								) : null}
 								{busLine ? (
-									<p className={cx(styles.dateLine, 'font-mono')}>{busLine}</p>
+									<p className={cx(styles.busLine, 'font-mono')}>{busLine}</p>
 								) : null}
 							</div>
 

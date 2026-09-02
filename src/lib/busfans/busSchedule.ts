@@ -101,5 +101,8 @@ export function formatBusScheduleLine(
 ): string | null {
 	const schedule = getBusScheduleTimes(input)
 	if (!schedule) return null
+	if (schedule.departure.includes('\n')) {
+		return `старт:\n${schedule.departure}\nобратно: ${schedule.returnAt}`
+	}
 	return `старт: ${schedule.departure} · обратно: ${schedule.returnAt}`
 }

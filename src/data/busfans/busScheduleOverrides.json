@@ -24,5 +24,13 @@
   "2026-09-01-akron-h-lokomotiv": {
     "departure": "14:45",
     "returnAt": "19:45"
+  },
+  "2026-09-06-orenburg-h-akron-tolyatti": {
+    "departure": "из Тольятти 06.09 00:00\nиз Самары 06.09 01:00",
+    "returnAt": "после матча"
+  },
+  "2026-09-06-orenburg-h-akron-samara": {
+    "departure": "из Тольятти 06.09 00:00\nиз Самары 06.09 01:00",
+    "returnAt": "после матча"
   }
 }

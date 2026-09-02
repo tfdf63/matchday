@@ -49,6 +49,56 @@ function compareMatchEventsByDate(a: MatchEvent, b: MatchEvent): number {
 	return a.title.localeCompare(b.title, 'ru')
 }
 
+function mergeMatchEventPair(base: MatchEvent, next: MatchEvent): MatchEvent {
+	const merged: MatchEvent = {
+		...base,
+		busCount: base.busCount + next.busCount,
+		passengerCount: base.passengerCount + next.passengerCount,
+		seatsAssigned: base.seatsAssigned + next.seatsAssigned,
+		dateToIso:
+			base.dateToIso.localeCompare(next.dateToIso) >= 0
+				? base.dateToIso
+				: next.dateToIso,
+		scheduleMatchId: base.scheduleMatchId ?? next.scheduleMatchId,
+		registrationUrl: base.registrationUrl ?? next.registrationUrl ?? null,
+		registrationUrls: {
+			samara:
+				base.registrationUrls?.samara ??
+				next.registrationUrls?.samara ??
+				null,
+			tolyatti:
+				base.registrationUrls?.tolyatti ??
+				next.registrationUrls?.tolyatti ??
+				base.registrationUrl ??
+				next.registrationUrl ??
+				null,
+		},
+	}
+	return withListStatus(merged)
+}
+
+function aggregateMatchEventsByGame(events: MatchEvent[]): MatchEvent[] {
+	const mergedByKey = new Map<string, MatchEvent>()
+
+	for (const event of events) {
+		const key = event.gameId
+			? `game:${String(event.gameId)}`
+			: eventMatchKey({
+					dateIso: event.dateIso,
+					homeTeam: event.homeTeam,
+					awayTeam: event.awayTeam,
+				})
+		const prev = mergedByKey.get(key)
+		if (!prev) {
+			mergedByKey.set(key, event)
+			continue
+		}
+		mergedByKey.set(key, mergeMatchEventPair(prev, event))
+	}
+
+	return [...mergedByKey.values()].sort(compareMatchEventsByDate)
+}
+
 function mergeImportedOntoPlaceholder(
 	placeholder: MatchEvent,
 	imported: MatchEvent,
@@ -110,9 +160,9 @@ function findCalendarGameForEvent(event: MatchEvent): Game | undefined {
 	)
 }
 
-/** Карточки только из Excel; поля календаря подтягиваются из games.ts при совпадении. */
+/** Карточки из Excel; записи одного матча (напр. Самара/Тольятти) агрегируются в одну. */
 export function getMatchEvents(dataset: BusFansDataset): MatchEvent[] {
-	return dataset.events
+	const prepared = dataset.events
 		.map((event) => {
 			const imported = withListStatus(event)
 			const game = findCalendarGameForEvent(imported)
@@ -123,6 +173,8 @@ export function getMatchEvents(dataset: BusFansDataset): MatchEvent[] {
 			)
 		})
 		.sort(compareMatchEventsByDate)
+
+	return aggregateMatchEventsByGame(prepared)
 }
 
 export function getMatchEventById(
