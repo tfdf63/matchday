@@ -26,6 +26,11 @@ export type MatchEvent = {
 	listStatus?: MatchListStatus
 	/** Ссылка на внешнюю регистрацию в фан-автобус. */
 	registrationUrl?: string | null
+	/** Раздельные ссылки регистрации по городу отправления. */
+	registrationUrls?: {
+		samara?: string | null
+		tolyatti?: string | null
+	} | null
 }
 
 export type BusManifest = {

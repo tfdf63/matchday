@@ -15,8 +15,8 @@ import { PromoCodesModalTrigger } from '@/features/home/home-modal'
 import { ParkingModalTrigger } from '@/features/home/parking-modal'
 import { getTeamLogoPath } from '@/data/teamLogos'
 import { useClientNow } from '@/lib/hooks/useClientNow'
+import { formatMatchScore } from '@/lib/match/formatMatchGoals'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
-import { formatGoalCell } from '@/lib/match/formatMatchGoals'
 import { useTicketLinks } from '@/lib/personalData'
 
 import { MatchCardCalendarIcon } from './icons/MatchCardCalendarIcon'
@@ -115,6 +115,7 @@ export function MatchCard({
 	const matchDateBannerText = now ? getMatchDateBannerText(game, now) : null
 	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
 	const isMainShop = variant === 'mainShop'
+	const score = formatMatchScore(game.homeGoals, game.awayGoals)
 
 	const mainBadgeText = matchDateBannerText
 		? /сегодня/i.test(matchDateBannerText)
@@ -335,17 +336,16 @@ export function MatchCard({
 							<div
 								className={styles.scoreRow}
 								role='group'
-								aria-label={`Счёт: ${formatGoalCell(game.homeGoals)} ${formatGoalCell(game.awayGoals)}`}
+								aria-label={score.ariaLabel}
 							>
-								<span className={cx(styles.scoreCell, 'font-mono')}>
-									{formatGoalCell(game.homeGoals)}
+								<span className={cx(styles.scoreMain, 'font-mono')}>
+									{score.main}
 								</span>
-								<span className={styles.scoreSep} aria-hidden>
-									:
-								</span>
-								<span className={cx(styles.scoreCell, 'font-mono')}>
-									{formatGoalCell(game.awayGoals)}
-								</span>
+								{score.penaltiesLine ? (
+									<span className={cx(styles.scorePenalty, 'font-mono')}>
+										{score.penaltiesLine}
+									</span>
+								) : null}
 							</div>
 							<div className={cx(styles.teamCol, styles.teamColAway)}>
 								{awayLogo ? (

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import type { FC } from 'react'
 
 import type { MatchEvent } from '@/data/busfans'
+import { getAppDateIso } from '@/lib/datetime/appTimezone'
 import {
 	formatBusScheduleLine,
 	formatMatchDateLine,
@@ -37,6 +38,7 @@ export type MatchEventCardProps = {
 }
 
 export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
+	const isPastMatch = event.dateIso < getAppDateIso()
 	const eventHref = `/busfans/events/${encodeURIComponent(event.id)}`
 	const venueLabel =
 		event.venue === 'home'
@@ -74,6 +76,10 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 	const leagueLine = formatLeagueLine(event.leagueInfo)
 	const hasBadges = Boolean(venueLabel || fanIdLabel)
 	const showCupUnderlay = isCupMatchEvent(event)
+	const registrationSamara = event.registrationUrls?.samara?.trim() || null
+	const registrationTolyatti =
+		event.registrationUrls?.tolyatti?.trim() || event.registrationUrl?.trim() || null
+	const showRegistration = !isPastMatch
 
 	return (
 		<div className={styles.card}>
@@ -172,14 +178,24 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 								</div>
 							</div>
 						</Link>
-						{event.registrationUrl ? (
+						{showRegistration && registrationTolyatti ? (
 							<a
-								href={event.registrationUrl}
+								href={registrationTolyatti}
 								target='_blank'
 								rel='noopener noreferrer'
 								className={cx(styles.registerBtn, 'font-mono')}
 							>
-								Регистрация
+								Выезд из Тольятти
+							</a>
+						) : null}
+						{showRegistration && registrationSamara ? (
+							<a
+								href={registrationSamara}
+								target='_blank'
+								rel='noopener noreferrer'
+								className={cx(styles.registerBtn, 'font-mono')}
+							>
+								Выезд из Самары
 							</a>
 						) : null}
 						<Link

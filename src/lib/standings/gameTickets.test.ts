@@ -95,8 +95,8 @@ describe('gameTickets', () => {
 				'Оренбург',
 				'away',
 				today,
-			).length,
-		).toBe(0)
+			).map((b) => b.label),
+		).toEqual(['Выезд из Тольятти', 'Выезд из Самары'])
 	})
 
 	it('добавляет регистрацию на выезд для кубкового матча', () => {
@@ -107,7 +107,7 @@ describe('gameTickets', () => {
 			'2026-08-01',
 			'cup',
 		)
-		expect(buttons.some((b) => b.label === 'Регистрация на выезд')).toBe(
+		expect(buttons.some((b) => b.label === 'Выезд из Тольятти')).toBe(
 			true,
 		)
 	})

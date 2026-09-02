@@ -82,10 +82,14 @@ function SeasonResultCell({
 
 	const ptsClass = getPtsClass(result.pts)
 	const showPts = !isCupRow && result.pts !== null
+	const [mainScore, penaltyScore] = result.score.split('\n')
 
 	return (
 		<div className={styles.resultCell}>
-			<span className={styles.score}>{result.score}</span>
+			<span className={styles.score}>{mainScore}</span>
+			{penaltyScore ? (
+				<span className={styles.scorePenalty}>{penaltyScore}</span>
+			) : null}
 			{showPts ? (
 				<span
 					className={cx(

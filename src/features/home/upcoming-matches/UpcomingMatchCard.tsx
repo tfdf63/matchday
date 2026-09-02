@@ -15,7 +15,7 @@ import { DirectionsModalTrigger } from '@/features/home/directions-modal'
 import { PromoCodesModalTrigger } from '@/features/home/home-modal'
 import { useClientNow } from '@/lib/hooks/useClientNow'
 import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
-import { formatGoalCell } from '@/lib/match/formatMatchGoals'
+import { formatMatchScore } from '@/lib/match/formatMatchGoals'
 import { useTicketLinks } from '@/lib/personalData'
 import {
 	GAME_DATE_TIME_TENTATIVE_LABEL,
@@ -70,6 +70,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	const matchDateBannerText = now ? getMatchDateBannerText(game, now) : null
 	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
 	const showDateTimeTentativeBadge = isGameDateTimeTentative(game)
+	const score = formatMatchScore(game.homeGoals, game.awayGoals)
 
 	const homeLogoNode = homeLogo ? (
 		<Image
@@ -169,17 +170,14 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 						<div
 							className={styles.scoreRow}
 							role='group'
-							aria-label={`Счёт: ${formatGoalCell(game.homeGoals)} ${formatGoalCell(game.awayGoals)}`}
+							aria-label={score.ariaLabel}
 						>
-							<span className={styles.scoreCell}>
-								{formatGoalCell(game.homeGoals)}
-							</span>
-							<span className={styles.scoreSep} aria-hidden>
-								:
-							</span>
-							<span className={styles.scoreCell}>
-								{formatGoalCell(game.awayGoals)}
-							</span>
+							<span className={styles.scoreMain}>{score.main}</span>
+							{score.penaltiesLine ? (
+								<span className={cx(styles.scorePenalty, 'font-mono')}>
+									{score.penaltiesLine}
+								</span>
+							) : null}
 						</div>
 						<div className={cx(styles.teamCol, styles.teamColAway)}>
 							{awayLogoNode}

@@ -6,21 +6,39 @@ import { teamMatchKey } from './upcomingEvents'
 /** Выезд раньше даты матча: допуск при привязке к games.ts. */
 export const REGISTRATION_DATE_WINDOW_DAYS = 2
 
-const byGameId = new Map<string, string>()
+type RegistrationUrls = {
+	samara: string | null
+	tolyatti: string | null
+}
+
+function emptyRegistrationUrls(): RegistrationUrls {
+	return { samara: null, tolyatti: null }
+}
+
+function getGameRegistrationUrls(game: Game): RegistrationUrls {
+	const samara = game.busfansRegistrationUrlSamara?.trim() || null
+	const tolyatti =
+		game.busfansRegistrationUrlTolyatti?.trim() ||
+		game.busfansRegistrationUrl?.trim() ||
+		null
+	return { samara, tolyatti }
+}
+
+const byGameId = new Map<string, RegistrationUrls>()
 const gamesWithRegistrationUrl: Array<
-	Pick<Game, 'id' | 'dateIso' | 'homeTeam' | 'awayTeam'> & { url: string }
+	Pick<Game, 'id' | 'dateIso' | 'homeTeam' | 'awayTeam'> & { urls: RegistrationUrls }
 > = []
 
 for (const game of games) {
-	const url = game.busfansRegistrationUrl?.trim()
-	if (!url) continue
-	byGameId.set(game.id, url)
+	const urls = getGameRegistrationUrls(game)
+	if (!urls.samara && !urls.tolyatti) continue
+	byGameId.set(game.id, urls)
 	gamesWithRegistrationUrl.push({
 		id: game.id,
 		dateIso: game.dateIso,
 		homeTeam: game.homeTeam,
 		awayTeam: game.awayTeam,
-		url,
+		urls,
 	})
 }
 
@@ -42,7 +60,7 @@ function findRegistrationUrlByTeamsAndDate(
 	homeTeam: string,
 	awayTeam: string,
 	dateIso: string,
-): string | null {
+): RegistrationUrls | null {
 	const key = teamMatchKey(homeTeam, awayTeam)
 	const candidates = gamesWithRegistrationUrl
 		.filter((game) => teamMatchKey(game.homeTeam ?? '', game.awayTeam ?? '') === key)
@@ -53,17 +71,32 @@ function findRegistrationUrlByTeamsAndDate(
 		.filter(({ diff }) => diff <= REGISTRATION_DATE_WINDOW_DAYS)
 		.sort((a, b) => a.diff - b.diff)
 
-	return candidates[0]?.game.url ?? null
+	return candidates[0]?.game.urls ?? null
 }
 
-export function resolveRegistrationUrl(
+function normalizeRegistrationUrls(
+	event: Pick<MatchEvent, 'registrationUrl' | 'registrationUrls'>,
+): RegistrationUrls {
+	const directSamara = event.registrationUrls?.samara?.trim() || null
+	const directTolyatti =
+		event.registrationUrls?.tolyatti?.trim() || event.registrationUrl?.trim() || null
+	return { samara: directSamara, tolyatti: directTolyatti }
+}
+
+export function resolveRegistrationUrls(
 	event: Pick<
 		MatchEvent,
-		'id' | 'gameId' | 'registrationUrl' | 'homeTeam' | 'awayTeam' | 'dateIso'
+		| 'id'
+		| 'gameId'
+		| 'registrationUrl'
+		| 'registrationUrls'
+		| 'homeTeam'
+		| 'awayTeam'
+		| 'dateIso'
 	>,
-): string | null {
-	const direct = event.registrationUrl?.trim()
-	if (direct) return direct
+): RegistrationUrls | null {
+	const direct = normalizeRegistrationUrls(event)
+	if (direct.samara || direct.tolyatti) return direct
 	if (event.gameId) {
 		const fromGame = byGameId.get(String(event.gameId))
 		if (fromGame) return fromGame
@@ -74,5 +107,23 @@ export function resolveRegistrationUrl(
 		event.dateIso,
 	)
 	if (fromTeams) return fromTeams
-	return byEventId[event.id] ?? null
+	const byEvent = byEventId[event.id]
+	if (byEvent) return { samara: null, tolyatti: byEvent }
+	return null
+}
+
+export function resolveRegistrationUrl(
+	event: Pick<
+		MatchEvent,
+		| 'id'
+		| 'gameId'
+		| 'registrationUrl'
+		| 'registrationUrls'
+		| 'homeTeam'
+		| 'awayTeam'
+		| 'dateIso'
+	>,
+): string | null {
+	const links = resolveRegistrationUrls(event) ?? emptyRegistrationUrls()
+	return links.tolyatti || links.samara || null
 }

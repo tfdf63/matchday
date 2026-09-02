@@ -1,4 +1,4 @@
-import type { Game, MatchVenue } from '@/data/games'
+import type { Game, MatchGoalsValue, MatchVenue } from '@/data/games'
 
 /**
  * Целевая форма матча для нового контент-слоя (JSON/TS после редизайна).
@@ -32,8 +32,8 @@ export type ContentMatch = {
 	}
 	fanIdStatus?: Game['fanIdStatus']
 	promoType?: Game['promoType']
-	homeGoals?: number
-	awayGoals?: number
+	homeGoals?: MatchGoalsValue
+	awayGoals?: MatchGoalsValue
 }
 
 function venueFromHomeTeam(homeTeam: string | undefined): MatchVenue {

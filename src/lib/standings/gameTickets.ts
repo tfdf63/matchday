@@ -53,24 +53,36 @@ export function findGameForStandingsMatch(
 	})
 }
 
-function getRegistrationButton(game: Game): StandingsTicketButton | null {
-	const url = game.busfansRegistrationUrl?.trim()
-	if (!url) {
-		return null
+function getRegistrationButtons(game: Game): StandingsTicketButton[] {
+	const samara = game.busfansRegistrationUrlSamara?.trim()
+	const tolyatti =
+		game.busfansRegistrationUrlTolyatti?.trim() ||
+		game.busfansRegistrationUrl?.trim()
+
+	const buttons: StandingsTicketButton[] = []
+	if (tolyatti) {
+		buttons.push({
+			label: 'Выезд из Тольятти',
+			href: tolyatti,
+			variant: 'outline',
+		})
 	}
-	return {
-		label: 'Регистрация на выезд',
-		href: url,
-		variant: 'outline',
+	if (samara) {
+		buttons.push({
+			label: 'Выезд из Самары',
+			href: samara,
+			variant: 'outline',
+		})
 	}
+	return buttons
 }
 
 /** Кнопки билетов и регистрации на выезд для строки календаря. */
 export function getStandingsActionButtons(game: Game): StandingsTicketButton[] {
 	const buttons = getStandingsTicketButtons(game)
-	const registration = getRegistrationButton(game)
-	if (registration) {
-		buttons.push(registration)
+	const registration = getRegistrationButtons(game)
+	if (registration.length) {
+		buttons.push(...registration)
 	}
 	return buttons
 }

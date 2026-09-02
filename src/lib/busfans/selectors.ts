@@ -7,7 +7,7 @@ import type {
 	PassengerAssignment,
 } from '@/data/busfans'
 
-import { resolveRegistrationUrl } from './registrationUrl'
+import { resolveRegistrationUrl, resolveRegistrationUrls } from './registrationUrl'
 import {
 	getFanMeetingDisplayTitle,
 	isFanMeetingEvent,
@@ -28,6 +28,7 @@ function withListStatus(event: MatchEvent): MatchEvent {
 		...event,
 		listStatus: resolveListStatus(event),
 		registrationUrl: resolveRegistrationUrl(event),
+		registrationUrls: resolveRegistrationUrls(event),
 	})
 }
 
@@ -74,6 +75,13 @@ function mergeImportedOntoPlaceholder(
 			placeholder.registrationUrl ??
 			imported.registrationUrl ??
 			resolveRegistrationUrl({ ...placeholder, gameId: placeholder.gameId ?? imported.gameId }),
+		registrationUrls:
+			placeholder.registrationUrls ??
+			imported.registrationUrls ??
+			resolveRegistrationUrls({
+				...placeholder,
+				gameId: placeholder.gameId ?? imported.gameId,
+			}),
 		// id из импорта — чтобы манифесты/пассажиры совпали
 		id: imported.id,
 		busCount: imported.busCount,

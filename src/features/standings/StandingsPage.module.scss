@@ -328,6 +328,10 @@ $pts-loss: #f08a8a;
 		font-weight: 500;
 	}
 
+	.scorePenalty {
+		font-size: 11px;
+	}
+
 	.pts {
 		font-size: 11px;
 	}
@@ -344,6 +348,10 @@ $pts-loss: #f08a8a;
 		.pts {
 			font-size: 14px;
 		}
+
+		.scorePenalty {
+			font-size: 14px;
+		}
 	}
 
 	@include from($bp-tablet) {
@@ -352,6 +360,10 @@ $pts-loss: #f08a8a;
 		}
 
 		.pts {
+			font-size: 15px;
+		}
+
+		.scorePenalty {
 			font-size: 15px;
 		}
 	}

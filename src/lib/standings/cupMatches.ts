@@ -1,4 +1,5 @@
 import games, { getOpponentTeamName, type Game } from '@/data/games'
+import { formatMatchScore } from '@/lib/match/formatMatchGoals'
 import type {
 	SeasonCalendarMatch,
 	SeasonMatchResult,
@@ -41,9 +42,12 @@ function buildMatchResult(game: Game): SeasonMatchResult {
 	const akronIsHome = game.homeTeam?.trim() === 'Акрон'
 	const akronGoals = akronIsHome ? homeGoals : awayGoals
 	const opponentGoals = akronIsHome ? awayGoals : homeGoals
+	const score = formatMatchScore(akronGoals, opponentGoals)
 
 	return {
-		score: `${akronGoals}:${opponentGoals}`,
+		score: score.penaltiesLine
+			? `${score.main}\n${score.penaltiesLine}`
+			: score.main,
 		pts: null,
 		played: true,
 	}

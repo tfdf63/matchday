@@ -13,7 +13,7 @@ import {
 	pickLastPastGame,
 	sortGamesByDateIso,
 } from '@/lib/match/upcomingGamePick'
-import { formatGoalCell } from '@/lib/match/formatMatchGoals'
+import { formatMatchScore } from '@/lib/match/formatMatchGoals'
 
 import styles from './StarPlayer.module.scss'
 
@@ -53,6 +53,9 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 
 	const [activeTab, setActiveTab] = useState<'previous' | 'next'>('next')
 	const activeMatch = activeTab === 'next' ? nextGame : previousGame
+	const activeScore = activeMatch
+		? formatMatchScore(activeMatch.homeGoals, activeMatch.awayGoals)
+		: null
 
 	const homeLogo = activeMatch
 		? getTeamLogoPath(activeMatch.homeTeam)
@@ -242,17 +245,14 @@ export const StarPlayerSection: FC<StarPlayerSectionProps> = ({
 									<div
 										className={styles.scoreGroup}
 										role="group"
-										aria-label={`Счёт ${formatGoalCell(activeMatch.homeGoals)}:${formatGoalCell(activeMatch.awayGoals)}`}
+										aria-label={activeScore?.ariaLabel}
 									>
-										<p className={styles.scoreMark}>
-											{formatGoalCell(activeMatch.homeGoals)}
-										</p>
-										<p className={styles.scoreMark} aria-hidden>
-											:
-										</p>
-										<p className={styles.scoreMark}>
-											{formatGoalCell(activeMatch.awayGoals)}
-										</p>
+										<p className={styles.scoreMark}>{activeScore?.main}</p>
+										{activeScore?.penaltiesLine ? (
+											<p className={cx(styles.scorePenalties, 'font-mono')}>
+												{activeScore.penaltiesLine}
+											</p>
+										) : null}
 									</div>
 									<div className={styles.teamCol}>
 										{awayLogo ? (

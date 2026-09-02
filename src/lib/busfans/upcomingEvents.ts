@@ -59,7 +59,17 @@ export function gameToPendingMatchEvent(game: Game): MatchEvent {
 		leagueInfo: game.leagueInfo ?? null,
 		seasonTour: game.seasonTour ?? null,
 		fanIdStatus: fanIdFromGame(game),
-		registrationUrl: game.busfansRegistrationUrl?.trim() || null,
+		registrationUrl:
+			game.busfansRegistrationUrlTolyatti?.trim() ||
+			game.busfansRegistrationUrl?.trim() ||
+			null,
+		registrationUrls: {
+			samara: game.busfansRegistrationUrlSamara?.trim() || null,
+			tolyatti:
+				game.busfansRegistrationUrlTolyatti?.trim() ||
+				game.busfansRegistrationUrl?.trim() ||
+				null,
+		},
 		busCount: 0,
 		passengerCount: 0,
 		seatsAssigned: 0,

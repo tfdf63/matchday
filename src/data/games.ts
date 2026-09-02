@@ -1,4 +1,5 @@
 export type MatchVenue = 'home' | 'away'
+export type MatchGoalsValue = number | string
 
 export interface Game {
 	id: string
@@ -27,8 +28,12 @@ export interface Game {
 	ticketLinkC4?: string
 	/** Бизнес-клуб (отдельная ссылка на виджет/лендинг). */
 	ticketLinkBusinessClub?: string
-	/** Ссылка на регистрацию в фан-автобус (кнопка на /busfans). */
+	/** Ссылка на регистрацию в фан-автобус (legacy, одна кнопка). */
 	busfansRegistrationUrl?: string
+	/** Ссылка на регистрацию в фан-автобус из Самары. */
+	busfansRegistrationUrlSamara?: string
+	/** Ссылка на регистрацию в фан-автобус из Тольятти. */
+	busfansRegistrationUrlTolyatti?: string
 	leagueInfo?: string
 	/** Сезон и тур — вторая строка под названием лиги на карточке матча. */
 	seasonTour?: string
@@ -38,10 +43,10 @@ export interface Game {
 	dateIso: string
 	/** Домашний для Акрона, если хозяин — Акрон; иначе гостевой. */
 	venue: MatchVenue
-	/** Голы хозяев матча (homeTeam); без поля — в UI «-». */
-	homeGoals?: number
-	/** Голы гостей матча (awayTeam); без поля — в UI «-». */
-	awayGoals?: number
+	/** Голы хозяев матча (homeTeam); допускается формат с пенальти: `0 (5)`. */
+	homeGoals?: MatchGoalsValue
+	/** Голы гостей матча (awayTeam); допускается формат с пенальти: `0 (4)`. */
+	awayGoals?: MatchGoalsValue
 	/** Город для подписи под названием команды на карточке (планшет). */
 	homeTeamCity?: string
 	awayTeamCity?: string
@@ -801,8 +806,12 @@ const games: Game[] = [
 			first: '2026-08-30',
 			second: ' ',
 		},
-		busfansRegistrationUrl:
+		homeGoals: '0(5)',
+		awayGoals: '0(4)',
+		busfansRegistrationUrlSamara: '',
+		busfansRegistrationUrlTolyatti:
 			'https://booking.atomstravel.com/?showcase=ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a&tour=50005',
+		busfansRegistrationUrl: '',
 	},
 	{
 		id: '32',
@@ -823,6 +832,12 @@ const games: Game[] = [
 		seasonTour: '2026/2027 7 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		busfansRegistrationUrlSamara:
+			'https://booking.atomstravel.com/?showcase=ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a&tour=50109',
+		busfansRegistrationUrlTolyatti:
+			'https://booking.atomstravel.com/?showcase=ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a&tour=50108',
+		busfansRegistrationUrl:
+			'https://booking.atomstravel.com/?showcase=ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a&tour=50108',
 	},
 	{
 		id: '33',

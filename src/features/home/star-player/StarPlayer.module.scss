@@ -275,10 +275,11 @@
 
 .scoreGroup {
 	display: flex;
+	flex-direction: column;
 	flex-shrink: 0;
 	align-items: center;
 	justify-content: center;
-	gap: 2px;
+	gap: 1px;
 }
 
 .scoreMark {
@@ -288,6 +289,14 @@
 	font-weight: 400;
 	line-height: 1;
 	text-transform: uppercase;
+}
+
+.scorePenalties {
+	margin: 0;
+	font-size: 11px;
+	line-height: 1.2;
+	text-transform: none;
+	color: rgb(255 255 255 / 0.8);
 }
 
 .matchDate {
