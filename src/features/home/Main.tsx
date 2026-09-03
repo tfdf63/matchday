@@ -9,6 +9,7 @@ import {
 } from '@/lib/match/upcomingGamePick'
 
 import { MainMatchCardClient } from './MainMatchCardClient'
+import { MainPromoVideo } from './main-promo-video'
 import styles from './Main.module.scss'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
@@ -117,7 +118,7 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 					</nav>
 				</div>
 				<div className={styles.matchStack}>
-					<div className={styles.matchAnchor}>
+					<div className={styles.matchAnchor} data-main-match-card>
 						{initialGames.length > 0 ? (
 							<MainMatchCardClient
 								games={sortedGamesMain}
@@ -130,6 +131,7 @@ const Main: FC<MainProps> = ({ withBottomMenu = false }) => {
 					ФК АКРОН
 				</p>
 			</div>
+			<MainPromoVideo />
 		</div>
 	)
 }

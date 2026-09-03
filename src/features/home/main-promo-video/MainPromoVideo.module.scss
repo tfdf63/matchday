@@ -1,0 +1,100 @@
+@use '../../../styles/tokens.scss' as *;
+
+.pip {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 5;
+	box-sizing: border-box;
+	width: 92px;
+	height: 164px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	border-radius: 2px;
+	background: #1b2222;
+	transform: translate3d(0, calc(100% + 48px), 0);
+	transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+	pointer-events: none;
+	appearance: none;
+
+	@include from($bp-tablet-sm) {
+		display: none;
+	}
+}
+
+.pipIn {
+	transform: translate3d(0, 0, 0);
+	pointer-events: auto;
+}
+
+.pipHidden {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.pipHit {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	appearance: none;
+
+	&:focus-visible {
+		outline: 2px solid var(--button-focus-ring);
+		outline-offset: 2px;
+	}
+}
+
+.pipHost,
+.modalHost {
+	width: 100%;
+	height: 100%;
+
+	:global(video) {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		background: #020a0a;
+	}
+}
+
+.modalHost :global(video) {
+	object-fit: contain;
+}
+
+.modalPanel {
+	width: min(100%, 420px);
+	max-height: min(92vh, 100dvh);
+	background: #020a0a;
+}
+
+.modalBody {
+	display: flex;
+	min-height: min(72vh, 100dvh);
+	flex-direction: column;
+	background: #020a0a;
+}
+
+.modalHost {
+	flex: 1 1 auto;
+	min-height: 0;
+	background: #020a0a;
+}
+
+.srOnly {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}

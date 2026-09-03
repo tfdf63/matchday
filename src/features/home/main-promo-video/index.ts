@@ -1,0 +1,1 @@
+export { MainPromoVideo } from './MainPromoVideo'
