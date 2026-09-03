@@ -473,6 +473,11 @@ export function MatchCard({
 								) : null}
 							</div>
 						)}
+						{isMainShop && priceLine ? (
+							<p className={cx(styles.priceNote, styles.mainShopPriceNote, 'font-mono')}>
+								{priceLine}
+							</p>
+						) : null}
 						{isMainShop ? (
 							<ParkingModalTrigger
 								buttonClassName={cx(

@@ -836,8 +836,7 @@ const games: Game[] = [
 			'https://booking.atomstravel.com/?showcase=ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a&tour=50109',
 		busfansRegistrationUrlTolyatti:
 			'https://booking.atomstravel.com/?showcase=ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a&tour=50108',
-		busfansRegistrationUrl:
-			'https://booking.atomstravel.com/?showcase=ded86cac-fdea-48f8-9e3a-8068a0efdd15-26c1feeb7d1ed127a855af7b2787b49a&tour=50108',
+		busfansRegistrationUrl: '',
 	},
 	{
 		id: '33',
@@ -884,6 +883,10 @@ const games: Game[] = [
 		seasonTour: '2026/2027 9 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		priceIncreaseDates: {
+			first: '2026-09-15',
+			second: ' ',
+		},
 	},
 	{
 		id: '35',
