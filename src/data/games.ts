@@ -28,6 +28,10 @@ export interface Game {
 	ticketLinkC4?: string
 	/** Бизнес-клуб (отдельная ссылка на виджет/лендинг). */
 	ticketLinkBusinessClub?: string
+	/** Вторая строка кнопки бизнес-клуба, например «от 7990 ₽». */
+	ticketLinkBusinessClubPriceFrom?: string
+	/** Новый фан-сектор (отдельная ссылка на виджет). */
+	ticketLinkFanNew?: string
 	/** Ссылка на регистрацию в фан-автобус (legacy, одна кнопка). */
 	busfansRegistrationUrl?: string
 	/** Ссылка на регистрацию в фан-автобус из Самары. */
@@ -958,14 +962,30 @@ const games: Game[] = [
 		dateCard: '24.10 (СБ)',
 		time: 'SAMT 13:45',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '',
-		ticketLinkVip: '',
-		ticketLinkSkybox: '',
-		ticketLinkC4: '',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@72083159?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+		ticketLinkPriceFrom: 'от 390 ₽',
+		ticketLinkVip:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@72083159?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+		ticketLinkVipPriceFrom: 'от 1990 ₽',
+		ticketLinkSkybox:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@72083159?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+		ticketLinkSkyboxPriceFrom: 'от 12500 ₽',
+		ticketLinkC4:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72083159?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51',
+		ticketLinkBusinessClub:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72083159?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51',
+		ticketLinkBusinessClubPriceFrom: 'от 7990 ₽',
+		ticketLinkFanNew:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10441@72083159?clientKey=945d2837-2499-4f21-8eaa-6ae6ae7e7136&regionId=51',
 		leagueInfo: 'Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
 		seasonTour: '2026/2027 12 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		priceIncreaseDates: {
+			first: '2026-10-22',
+			second: ' ',
+		},
 	},
 	{
 		id: '39',
@@ -1037,14 +1057,30 @@ const games: Game[] = [
 		dateCard: '21.11 (СБ)',
 		time: 'SAMT 16:15',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '',
-		ticketLinkVip: '',
-		ticketLinkSkybox: '',
-		ticketLinkC4: '',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@72103662?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+		ticketLinkPriceFrom: 'от 290 ₽',
+		ticketLinkVip:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@72103662?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+		ticketLinkVipPriceFrom: 'от 1490 ₽',
+		ticketLinkSkybox:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@72103662?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+		ticketLinkSkyboxPriceFrom: 'от 11500 ₽',
+		ticketLinkC4:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72103662?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51',
+		ticketLinkBusinessClub:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72103662?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51',
+		ticketLinkBusinessClubPriceFrom: 'от 6990 ₽',
+		ticketLinkFanNew:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10441@72103662?clientKey=945d2837-2499-4f21-8eaa-6ae6ae7e7136&regionId=51',
 		leagueInfo: 'Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
 		seasonTour: '2026/2027 15 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		priceIncreaseDates: {
+			first: '2026-11-19',
+			second: ' ',
+		},
 	},
 	{
 		id: '43',
@@ -1056,14 +1092,30 @@ const games: Game[] = [
 		dateCard: '24.11 (ВТ)',
 		time: 'SAMT 18:00',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '',
-		ticketLinkVip: '',
-		ticketLinkSkybox: '',
-		ticketLinkC4: '',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@72135472?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+		ticketLinkPriceFrom: 'от 390 ₽',
+		ticketLinkVip:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@72135472?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+		ticketLinkVipPriceFrom: 'от 1490 ₽',
+		ticketLinkSkybox:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@72135472?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+		ticketLinkSkyboxPriceFrom: 'от 11500 ₽',
+		ticketLinkC4:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72135472?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51',
+		ticketLinkBusinessClub:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72135472?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51',
+		ticketLinkBusinessClubPriceFrom: 'от 6990 ₽',
+		ticketLinkFanNew:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10441@72135472?clientKey=945d2837-2499-4f21-8eaa-6ae6ae7e7136&regionId=51',
 		leagueInfo: 'Fonbet Кубок России по футболу',
 		seasonTour: '2026/2027 6 ТУР',
 		fanIdStatus: 'Без fan id',
 		promoType: 'cup',
+		priceIncreaseDates: {
+			first: '2026-11-22',
+			second: ' ',
+		},
 	},
 	{
 		id: '44',
@@ -1095,14 +1147,30 @@ const games: Game[] = [
 		dateCard: '05.12 (СБ)',
 		time: 'SAMT 14:00',
 		stadium: 'Солидарность Самара Арена',
-		ticketLink: '',
-		ticketLinkVip: '',
-		ticketLinkSkybox: '',
-		ticketLinkC4: '',
+		ticketLink:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@72137228?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+		ticketLinkPriceFrom: 'от 290 ₽',
+		ticketLinkVip:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@72137228?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+		ticketLinkVipPriceFrom: 'от 1490 ₽',
+		ticketLinkSkybox:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@72137228?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+		ticketLinkSkyboxPriceFrom: 'от 11500 ₽',
+		ticketLinkC4:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72137228?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51',
+		ticketLinkBusinessClub:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72137228?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51',
+		ticketLinkBusinessClubPriceFrom: 'от 6990 ₽',
+		ticketLinkFanNew:
+			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10441@72137228?clientKey=945d2837-2499-4f21-8eaa-6ae6ae7e7136&regionId=51',
 		leagueInfo: 'Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА',
 		seasonTour: '2026/2027 17 ТУР',
 		fanIdStatus: 'Fan id',
 		promoType: 'rpl',
+		priceIncreaseDates: {
+			first: '2026-12-03',
+			second: ' ',
+		},
 	},
 	{
 		id: '46',

@@ -100,6 +100,8 @@ export function getStandingsTicketButtons(game: Game): StandingsTicketButton[] {
 	const ticketPriceFrom = game.ticketLinkPriceFrom?.trim() || undefined
 	const vipPriceFrom = game.ticketLinkVipPriceFrom?.trim() || undefined
 	const lodgesPriceFrom = game.ticketLinkSkyboxPriceFrom?.trim() || undefined
+	const businessClubPriceFrom =
+		game.ticketLinkBusinessClubPriceFrom?.trim() || undefined
 
 	if (vip && vipIsTicketLink) {
 		buttons.push({
@@ -128,6 +130,7 @@ export function getStandingsTicketButtons(game: Game): StandingsTicketButton[] {
 	if (businessClub) {
 		buttons.push({
 			label: 'Бизнес-клуб',
+			priceFrom: businessClubPriceFrom,
 			href: businessClub,
 			variant: 'outline',
 		})
