@@ -126,4 +126,10 @@ describe('getBusPlateNumbers', () => {
 			'К467СЕ763',
 		])
 	})
+
+	it('returns plate for Orenburg away bus', () => {
+		expect(
+			getBusPlateNumbers('2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus'),
+		).toEqual(['Х966ВН763'])
+	})
 })
