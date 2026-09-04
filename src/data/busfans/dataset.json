@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-09-04T10:28:49+04:00",
+    "generatedAt": "2026-09-04T15:02:58+04:00",
     "sourceDir": "src/data/busfans/raw",
-    "eventsCount": 2,
-    "manifestsCount": 2,
-    "passengersCount": 55
+    "eventsCount": 1,
+    "manifestsCount": 1,
+    "passengersCount": 48
   },
   "events": [
     {
@@ -25,54 +25,22 @@
       "seasonTour": "2026/2027 7 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 1,
-      "passengerCount": 47,
-      "seatsAssigned": 47
-    },
-    {
-      "id": "2026-09-06-orenburg-h-akron-samara",
-      "title": "Оренбург х Акрон. Самара",
-      "homeTeam": "Оренбург",
-      "awayTeam": "Акрон. Самара",
-      "venue": "away",
-      "dateIso": "2026-09-06",
-      "dateToIso": "2026-09-07",
-      "dateLabel": "06.09.2026",
-      "dateCard": "06.09 (ВС)",
-      "time": "SAMT 15:00",
-      "gameId": "32",
-      "scheduleMatchId": null,
-      "tournament": "РПЛ",
-      "leagueInfo": "Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА",
-      "seasonTour": "2026/2027 7 ТУР",
-      "fanIdStatus": "Fan id",
-      "busCount": 1,
-      "passengerCount": 8,
-      "seatsAssigned": 8
+      "passengerCount": 48,
+      "seatsAssigned": 48
     }
   ],
   "manifests": [
-    {
-      "id": "2026-09-06-orenburg-h-akron-samara-bus-avtobus",
-      "eventId": "2026-09-06-orenburg-h-akron-samara",
-      "label": "Автобус",
-      "busNo": null,
-      "sourceFile": "atoms_drivers_report_06.09.2026 (7).xlsx",
-      "passengerCount": 8,
-      "seatsAssigned": 8,
-      "boardingStops": [
-        "Самара, Автовокзал (остановка на стороне Автовокзала)"
-      ]
-    },
     {
       "id": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
       "label": "Автобус",
       "busNo": null,
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "passengerCount": 47,
-      "seatsAssigned": 47,
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "passengerCount": 48,
+      "seatsAssigned": 48,
       "boardingStops": [
-        "Тольятти"
+        "Тольятти",
+        "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)"
       ]
     }
   ],
@@ -86,7 +54,7 @@
       "birthDateIso": "1983-07-10",
       "boardingPlace": "Тольятти,",
       "phone": "79674908901",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 27,
       "seq": 1
     },
@@ -99,7 +67,7 @@
       "birthDateIso": "2013-03-02",
       "boardingPlace": "Тольятти,",
       "phone": "79608400462",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 42,
       "seq": 2
     },
@@ -112,8 +80,8 @@
       "birthDateIso": "1963-03-25",
       "boardingPlace": "Тольятти,",
       "phone": "79608430205",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "sourceRow": 44,
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 43,
       "seq": 3
     },
     {
@@ -125,9 +93,22 @@
       "birthDateIso": "1958-03-22",
       "boardingPlace": "Тольятти,",
       "phone": "79278983513",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 38,
       "seq": 4
+    },
+    {
+      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
+      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
+      "fullName": "Башина Светлана",
+      "seatNo": "3",
+      "orderId": "259535",
+      "birthDateIso": "1986-06-01",
+      "boardingPlace": "Тольятти,",
+      "phone": "79608469454",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 12,
+      "seq": 5
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -138,9 +119,9 @@
       "birthDateIso": "1991-05-28",
       "boardingPlace": "Тольятти,",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 5,
-      "seq": 5
+      "seq": 6
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -151,9 +132,9 @@
       "birthDateIso": "1970-05-06",
       "boardingPlace": "Тольятти,",
       "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 6,
-      "seq": 6
+      "seq": 7
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -164,9 +145,9 @@
       "birthDateIso": "1988-09-26",
       "boardingPlace": "Тольятти,",
       "phone": "79879671161",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 4,
-      "seq": 7
+      "seq": 8
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -177,9 +158,35 @@
       "birthDateIso": "1980-07-14",
       "boardingPlace": "Тольятти,",
       "phone": "79179445756",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 21,
-      "seq": 8
+      "seq": 9
+    },
+    {
+      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
+      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
+      "fullName": "Вихирев Сергей Сергеевич",
+      "seatNo": "50",
+      "orderId": "259798",
+      "birthDateIso": "1993-03-10",
+      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "phone": "79270001964",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 46,
+      "seq": 10
+    },
+    {
+      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
+      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
+      "fullName": "Вихирева Раиса Николаевна",
+      "seatNo": "49",
+      "orderId": "259798",
+      "birthDateIso": "1966-06-10",
+      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "phone": "79276599313",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 47,
+      "seq": 11
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -190,9 +197,22 @@
       "birthDateIso": "1983-07-21",
       "boardingPlace": "Тольятти,",
       "phone": "79179445756",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 20,
-      "seq": 9
+      "seq": 12
+    },
+    {
+      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
+      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
+      "fullName": "Галеев Руслан Рафаилевич",
+      "seatNo": "43",
+      "orderId": "259535",
+      "birthDateIso": "1990-07-27",
+      "boardingPlace": "Тольятти,",
+      "phone": null,
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 13,
+      "seq": 13
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -203,9 +223,9 @@
       "birthDateIso": "1971-07-24",
       "boardingPlace": "Тольятти,",
       "phone": "79171284911",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 36,
-      "seq": 10
+      "seq": 14
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -216,9 +236,9 @@
       "birthDateIso": "1978-03-11",
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 9,
-      "seq": 11
+      "seq": 15
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -229,9 +249,9 @@
       "birthDateIso": "1951-01-20",
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 8,
-      "seq": 12
+      "seq": 16
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -242,9 +262,9 @@
       "birthDateIso": "2011-09-02",
       "boardingPlace": "Тольятти,",
       "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 19,
-      "seq": 13
+      "seq": 17
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -255,9 +275,9 @@
       "birthDateIso": "1975-04-03",
       "boardingPlace": "Тольятти,",
       "phone": "79278912234",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 22,
-      "seq": 14
+      "seq": 18
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -268,9 +288,9 @@
       "birthDateIso": "2006-06-07",
       "boardingPlace": "Тольятти,",
       "phone": "79278912234",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 24,
-      "seq": 15
+      "seq": 19
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -281,22 +301,9 @@
       "birthDateIso": "1981-12-23",
       "boardingPlace": "Тольятти,",
       "phone": "79278912234",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 23,
-      "seq": 16
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Кравцова Полина Викторовна",
-      "seatNo": "48",
-      "orderId": "260221",
-      "birthDateIso": "2011-12-24",
-      "boardingPlace": "Тольятти,",
-      "phone": "79226214907",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "sourceRow": 46,
-      "seq": 17
+      "seq": 20
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -307,9 +314,9 @@
       "birthDateIso": "1970-01-09",
       "boardingPlace": "Тольятти,",
       "phone": "79272662576",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 15,
-      "seq": 18
+      "seq": 21
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -320,22 +327,9 @@
       "birthDateIso": "1982-01-06",
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 7,
-      "seq": 19
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Лролл Логор Кглор",
-      "seatNo": "6",
-      "orderId": "259884",
-      "birthDateIso": "1980-12-08",
-      "boardingPlace": "Тольятти,",
-      "phone": "79608400462",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "sourceRow": 43,
-      "seq": 20
+      "seq": 22
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -346,35 +340,22 @@
       "birthDateIso": "1986-09-29",
       "boardingPlace": "Тольятти,",
       "phone": "79178287590",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "sourceRow": 45,
-      "seq": 21
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Мордовочкин Артём Андреевич",
-      "seatNo": "50",
-      "orderId": "260228",
-      "birthDateIso": "2005-06-03",
-      "boardingPlace": "Тольятти,",
-      "phone": "79372128933",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "sourceRow": 47,
-      "seq": 22
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Мордовочкин Артём Андреевич",
-      "seatNo": "53",
-      "orderId": "260230",
-      "birthDateIso": "2005-06-03",
-      "boardingPlace": "Тольятти,",
-      "phone": "79372128933",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "sourceRow": 49,
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 44,
       "seq": 23
+    },
+    {
+      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
+      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
+      "fullName": "Мордовочкин Артём Андреевич",
+      "seatNo": "2",
+      "orderId": "260233",
+      "birthDateIso": "2005-06-03",
+      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "phone": "79372128933",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 51,
+      "seq": 24
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -385,35 +366,9 @@
       "birthDateIso": "1987-10-29",
       "boardingPlace": "Тольятти,",
       "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 11,
-      "seq": 24
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Москалева Алиса Александровна",
-      "seatNo": "43",
-      "orderId": "259535",
-      "birthDateIso": "2013-04-04",
-      "boardingPlace": "Тольятти,",
-      "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "sourceRow": 13,
       "seq": 25
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Москалева Светлана Вячеславовна",
-      "seatNo": "41",
-      "orderId": "259535",
-      "birthDateIso": "1986-06-01",
-      "boardingPlace": "Тольятти,",
-      "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "sourceRow": 12,
-      "seq": 26
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -424,8 +379,21 @@
       "birthDateIso": "1954-07-30",
       "boardingPlace": "Тольятти,",
       "phone": "79277852194",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 35,
+      "seq": 26
+    },
+    {
+      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
+      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
+      "fullName": "Пахомов Сергей Александрович",
+      "seatNo": "6",
+      "orderId": "259594",
+      "birthDateIso": "1979-07-23",
+      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "phone": "79277623849",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 45,
       "seq": 27
     },
     {
@@ -437,7 +405,7 @@
       "birthDateIso": "1984-07-03",
       "boardingPlace": "Тольятти,",
       "phone": "79179723135",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 10,
       "seq": 28
     },
@@ -450,7 +418,7 @@
       "birthDateIso": "2011-09-16",
       "boardingPlace": "Тольятти,",
       "phone": "79277750440",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 34,
       "seq": 29
     },
@@ -463,7 +431,7 @@
       "birthDateIso": "1984-04-02",
       "boardingPlace": "Тольятти,",
       "phone": "79608354438",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 33,
       "seq": 30
     },
@@ -476,7 +444,7 @@
       "birthDateIso": "1967-11-19",
       "boardingPlace": "Тольятти,",
       "phone": "79272178288",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 18,
       "seq": 31
     },
@@ -489,7 +457,7 @@
       "birthDateIso": "1981-08-28",
       "boardingPlace": "Тольятти,",
       "phone": "79178227069",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 25,
       "seq": 32
     },
@@ -502,7 +470,7 @@
       "birthDateIso": "2008-09-11",
       "boardingPlace": "Тольятти,",
       "phone": "79027428528",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 17,
       "seq": 33
     },
@@ -515,7 +483,7 @@
       "birthDateIso": "1994-07-14",
       "boardingPlace": "Тольятти,",
       "phone": "79277772489",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 16,
       "seq": 34
     },
@@ -528,7 +496,7 @@
       "birthDateIso": "1982-01-10",
       "boardingPlace": "Тольятти,",
       "phone": "79278983513",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 37,
       "seq": 35
     },
@@ -541,7 +509,7 @@
       "birthDateIso": "1984-06-05",
       "boardingPlace": "Тольятти,",
       "phone": "79376645757",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 29,
       "seq": 36
     },
@@ -554,7 +522,7 @@
       "birthDateIso": "2020-12-09",
       "boardingPlace": "Тольятти,",
       "phone": "79376645757",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 30,
       "seq": 37
     },
@@ -567,7 +535,7 @@
       "birthDateIso": "1986-12-29",
       "boardingPlace": "Тольятти,",
       "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 14,
       "seq": 38
     },
@@ -580,7 +548,7 @@
       "birthDateIso": "1972-08-11",
       "boardingPlace": "Тольятти,",
       "phone": "79178228720",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 31,
       "seq": 39
     },
@@ -593,7 +561,7 @@
       "birthDateIso": "2012-06-01",
       "boardingPlace": "Тольятти,",
       "phone": "79178228720",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 32,
       "seq": 40
     },
@@ -606,7 +574,7 @@
       "birthDateIso": "1972-07-24",
       "boardingPlace": "Тольятти,",
       "phone": "79277180995",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 26,
       "seq": 41
     },
@@ -619,7 +587,7 @@
       "birthDateIso": "1980-11-26",
       "boardingPlace": "Тольятти,",
       "phone": "79608400462",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 40,
       "seq": 42
     },
@@ -632,7 +600,7 @@
       "birthDateIso": "2011-09-08",
       "boardingPlace": "Тольятти,",
       "phone": "79608400462",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 41,
       "seq": 43
     },
@@ -645,7 +613,7 @@
       "birthDateIso": "1982-03-09",
       "boardingPlace": "Тольятти,",
       "phone": "79608400462",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 39,
       "seq": 44
     },
@@ -658,139 +626,48 @@
       "birthDateIso": "1983-10-14",
       "boardingPlace": "Тольятти,",
       "phone": "79021813490",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 28,
       "seq": 45
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
       "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Щепкина Екатерина Евгеньевна",
-      "seatNo": "49",
-      "orderId": "260228",
-      "birthDateIso": "2005-07-31",
-      "boardingPlace": "Тольятти,",
-      "phone": "79608506737",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
+      "fullName": "Чернов Алексей Романович",
+      "seatNo": "51",
+      "orderId": "260205",
+      "birthDateIso": "2000-06-06",
+      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "phone": "79198046867",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 48,
       "seq": 46
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
       "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Щепкина Екатерина Евгеньевна",
-      "seatNo": "52",
-      "orderId": "260230",
-      "birthDateIso": "2005-07-31",
-      "boardingPlace": "Тольятти,",
-      "phone": "79608506737",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (6).xlsx",
-      "sourceRow": 50,
+      "fullName": "Чернова Анна Дмитриевна",
+      "seatNo": "53",
+      "orderId": "260205",
+      "birthDateIso": "2008-08-07",
+      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "phone": "79171597566",
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 49,
       "seq": 47
     },
     {
-      "eventId": "2026-09-06-orenburg-h-akron-samara",
-      "manifestId": "2026-09-06-orenburg-h-akron-samara-bus-avtobus",
-      "fullName": "Буданов Виталий Владимирович",
-      "seatNo": "6",
-      "orderId": "260225",
-      "birthDateIso": "1993-11-21",
-      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
-      "phone": "79991587318",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (7).xlsx",
-      "sourceRow": 9,
-      "seq": 1
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-samara",
-      "manifestId": "2026-09-06-orenburg-h-akron-samara-bus-avtobus",
-      "fullName": "Вихирев Сергей Сергеевич",
-      "seatNo": "7",
-      "orderId": "259798",
-      "birthDateIso": "1993-03-10",
-      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
-      "phone": "79270001964",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (7).xlsx",
-      "sourceRow": 5,
-      "seq": 2
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-samara",
-      "manifestId": "2026-09-06-orenburg-h-akron-samara-bus-avtobus",
-      "fullName": "Вихирева Раиса Николаевна",
-      "seatNo": "8",
-      "orderId": "259798",
-      "birthDateIso": "1966-06-10",
-      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
-      "phone": "79276599313",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (7).xlsx",
-      "sourceRow": 6,
-      "seq": 3
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-samara",
-      "manifestId": "2026-09-06-orenburg-h-akron-samara-bus-avtobus",
-      "fullName": "Мордовочкин Артём Андреевич",
-      "seatNo": "14",
-      "orderId": "260233",
-      "birthDateIso": "2005-06-03",
-      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
-      "phone": "79372128933",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (7).xlsx",
-      "sourceRow": 11,
-      "seq": 4
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-samara",
-      "manifestId": "2026-09-06-orenburg-h-akron-samara-bus-avtobus",
-      "fullName": "Пахомов Сергей Александрович",
-      "seatNo": "27",
-      "orderId": "259594",
-      "birthDateIso": "1979-07-23",
-      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
-      "phone": "79277623849",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (7).xlsx",
-      "sourceRow": 4,
-      "seq": 5
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-samara",
-      "manifestId": "2026-09-06-orenburg-h-akron-samara-bus-avtobus",
-      "fullName": "Чернов Алексей Романович",
-      "seatNo": "30",
-      "orderId": "260205",
-      "birthDateIso": "2000-06-06",
-      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
-      "phone": "79198046867",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (7).xlsx",
-      "sourceRow": 7,
-      "seq": 6
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-samara",
-      "manifestId": "2026-09-06-orenburg-h-akron-samara-bus-avtobus",
-      "fullName": "Чернова Анна Дмитриевна",
-      "seatNo": "29",
-      "orderId": "260205",
-      "birthDateIso": "2008-08-07",
-      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
-      "phone": "79171597566",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (7).xlsx",
-      "sourceRow": 8,
-      "seq": 7
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-samara",
-      "manifestId": "2026-09-06-orenburg-h-akron-samara-bus-avtobus",
+      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
+      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
       "fullName": "Щепкина Екатерина Евгеньевна",
-      "seatNo": "13",
+      "seatNo": "1",
       "orderId": "260233",
       "birthDateIso": "2005-07-31",
-      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
+      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
       "phone": "79608506737",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (7).xlsx",
-      "sourceRow": 10,
-      "seq": 8
+      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
+      "sourceRow": 50,
+      "seq": 48
     }
   ]
 }
