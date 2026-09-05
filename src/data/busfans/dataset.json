@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-09-04T15:02:58+04:00",
+    "generatedAt": "2026-09-05T15:40:43+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 1,
-    "passengersCount": 48
+    "passengersCount": 44
   },
   "events": [
     {
@@ -25,8 +25,8 @@
       "seasonTour": "2026/2027 7 ТУР",
       "fanIdStatus": "Fan id",
       "busCount": 1,
-      "passengerCount": 48,
-      "seatsAssigned": 48
+      "passengerCount": 44,
+      "seatsAssigned": 44
     }
   ],
   "manifests": [
@@ -36,11 +36,11 @@
       "label": "Автобус",
       "busNo": null,
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "passengerCount": 48,
-      "seatsAssigned": 48,
+      "passengerCount": 44,
+      "seatsAssigned": 44,
       "boardingStops": [
         "Тольятти",
-        "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)"
+        "Самара, Автовокзал (остановка на стороне Автовокзала)"
       ]
     }
   ],
@@ -55,7 +55,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79674908901",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 27,
+      "sourceRow": 25,
       "seq": 1
     },
     {
@@ -68,7 +68,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 42,
+      "sourceRow": 40,
       "seq": 2
     },
     {
@@ -81,7 +81,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79608430205",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 43,
+      "sourceRow": 41,
       "seq": 3
     },
     {
@@ -94,7 +94,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79278983513",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 38,
+      "sourceRow": 36,
       "seq": 4
     },
     {
@@ -107,7 +107,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79608469454",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 12,
+      "sourceRow": 10,
       "seq": 5
     },
     {
@@ -126,19 +126,6 @@
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
       "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Бермякова Ольга Николаевна",
-      "seatNo": "24",
-      "orderId": "259530",
-      "birthDateIso": "1970-05-06",
-      "boardingPlace": "Тольятти,",
-      "phone": "79178216209",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 6,
-      "seq": 7
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
       "fullName": "Булыга Максим Петрович",
       "seatNo": "7",
       "orderId": "259529",
@@ -147,7 +134,7 @@
       "phone": "79879671161",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
       "sourceRow": 4,
-      "seq": 8
+      "seq": 7
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -159,34 +146,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79179445756",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 21,
-      "seq": 9
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Вихирев Сергей Сергеевич",
-      "seatNo": "50",
-      "orderId": "259798",
-      "birthDateIso": "1993-03-10",
-      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
-      "phone": "79270001964",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 46,
-      "seq": 10
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Вихирева Раиса Николаевна",
-      "seatNo": "49",
-      "orderId": "259798",
-      "birthDateIso": "1966-06-10",
-      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
-      "phone": "79276599313",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 47,
-      "seq": 11
+      "sourceRow": 19,
+      "seq": 8
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -198,8 +159,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79179445756",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 20,
-      "seq": 12
+      "sourceRow": 18,
+      "seq": 9
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -211,8 +172,8 @@
       "boardingPlace": "Тольятти,",
       "phone": null,
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 13,
-      "seq": 13
+      "sourceRow": 11,
+      "seq": 10
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -224,8 +185,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79171284911",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 36,
-      "seq": 14
+      "sourceRow": 34,
+      "seq": 11
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -237,8 +198,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 9,
-      "seq": 15
+      "sourceRow": 7,
+      "seq": 12
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -250,8 +211,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 8,
-      "seq": 16
+      "sourceRow": 6,
+      "seq": 13
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -263,8 +224,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79272178288",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 19,
-      "seq": 17
+      "sourceRow": 17,
+      "seq": 14
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -276,8 +237,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79278912234",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 22,
-      "seq": 18
+      "sourceRow": 20,
+      "seq": 15
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -289,8 +250,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79278912234",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 24,
-      "seq": 19
+      "sourceRow": 22,
+      "seq": 16
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -302,8 +263,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79278912234",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 23,
-      "seq": 20
+      "sourceRow": 21,
+      "seq": 17
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -315,21 +276,21 @@
       "boardingPlace": "Тольятти,",
       "phone": "79272662576",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 15,
-      "seq": 21
+      "sourceRow": 13,
+      "seq": 18
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
       "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Леонтьева Алла Андреевна",
-      "seatNo": "10",
-      "orderId": "259531",
-      "birthDateIso": "1982-01-06",
+      "fullName": "Кушкова Ольга Владимировна",
+      "seatNo": "21",
+      "orderId": "259812",
+      "birthDateIso": "1982-01-10",
       "boardingPlace": "Тольятти,",
-      "phone": "79372132572",
+      "phone": "79278983513",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 7,
-      "seq": 22
+      "sourceRow": 35,
+      "seq": 19
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -341,8 +302,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79178287590",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 44,
-      "seq": 23
+      "sourceRow": 42,
+      "seq": 20
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -351,11 +312,11 @@
       "seatNo": "2",
       "orderId": "260233",
       "birthDateIso": "2005-06-03",
-      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
       "phone": "79372128933",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 51,
-      "seq": 24
+      "sourceRow": 47,
+      "seq": 21
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -367,8 +328,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79608469454",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 11,
-      "seq": 25
+      "sourceRow": 9,
+      "seq": 22
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -380,8 +341,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79277852194",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 35,
-      "seq": 26
+      "sourceRow": 33,
+      "seq": 23
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -390,11 +351,11 @@
       "seatNo": "6",
       "orderId": "259594",
       "birthDateIso": "1979-07-23",
-      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
       "phone": "79277623849",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 45,
-      "seq": 27
+      "sourceRow": 43,
+      "seq": 24
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -406,8 +367,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79179723135",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 10,
-      "seq": 28
+      "sourceRow": 8,
+      "seq": 25
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -419,8 +380,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79277750440",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 34,
-      "seq": 29
+      "sourceRow": 32,
+      "seq": 26
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -432,8 +393,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79608354438",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 33,
-      "seq": 30
+      "sourceRow": 31,
+      "seq": 27
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -445,8 +406,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79272178288",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 18,
-      "seq": 31
+      "sourceRow": 16,
+      "seq": 28
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -458,8 +419,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79178227069",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 25,
-      "seq": 32
+      "sourceRow": 23,
+      "seq": 29
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -471,8 +432,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79027428528",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 17,
-      "seq": 33
+      "sourceRow": 15,
+      "seq": 30
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -484,21 +445,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79277772489",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 16,
-      "seq": 34
-    },
-    {
-      "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
-      "manifestId": "2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus",
-      "fullName": "Торсунова Наталья Владимировна",
-      "seatNo": "21",
-      "orderId": "259812",
-      "birthDateIso": "1982-01-10",
-      "boardingPlace": "Тольятти,",
-      "phone": "79278983513",
-      "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 37,
-      "seq": 35
+      "sourceRow": 14,
+      "seq": 31
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -510,8 +458,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79376645757",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 29,
-      "seq": 36
+      "sourceRow": 27,
+      "seq": 32
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -523,8 +471,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79376645757",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 30,
-      "seq": 37
+      "sourceRow": 28,
+      "seq": 33
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -536,8 +484,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79608469454",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 14,
-      "seq": 38
+      "sourceRow": 12,
+      "seq": 34
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -549,8 +497,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79178228720",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 31,
-      "seq": 39
+      "sourceRow": 29,
+      "seq": 35
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -562,8 +510,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79178228720",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 32,
-      "seq": 40
+      "sourceRow": 30,
+      "seq": 36
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -575,8 +523,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79277180995",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 26,
-      "seq": 41
+      "sourceRow": 24,
+      "seq": 37
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -588,8 +536,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 40,
-      "seq": 42
+      "sourceRow": 38,
+      "seq": 38
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -601,8 +549,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 41,
-      "seq": 43
+      "sourceRow": 39,
+      "seq": 39
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -614,8 +562,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79608400462",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 39,
-      "seq": 44
+      "sourceRow": 37,
+      "seq": 40
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -627,8 +575,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79021813490",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 28,
-      "seq": 45
+      "sourceRow": 26,
+      "seq": 41
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -637,11 +585,11 @@
       "seatNo": "51",
       "orderId": "260205",
       "birthDateIso": "2000-06-06",
-      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
       "phone": "79198046867",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 48,
-      "seq": 46
+      "sourceRow": 44,
+      "seq": 42
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -650,11 +598,11 @@
       "seatNo": "53",
       "orderId": "260205",
       "birthDateIso": "2008-08-07",
-      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
       "phone": "79171597566",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 49,
-      "seq": 47
+      "sourceRow": 45,
+      "seq": 43
     },
     {
       "eventId": "2026-09-06-orenburg-h-akron-tolyatti",
@@ -663,11 +611,11 @@
       "seatNo": "1",
       "orderId": "260233",
       "birthDateIso": "2005-07-31",
-      "boardingPlace": "Самара, Центральный Автовокзал (остановка на противоположной стороне от Автовокзала)",
+      "boardingPlace": "Самара, Автовокзал (остановка на стороне Автовокзала)",
       "phone": "79608506737",
       "sourceFile": "atoms_drivers_report_06.09.2026 (8).xlsx",
-      "sourceRow": 50,
-      "seq": 48
+      "sourceRow": 46,
+      "seq": 44
     }
   ]
 }
