@@ -38,7 +38,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 	game,
 	hideSecondaryActions = false,
 }) => {
-	const { personalData, getTicketUrl, handleTicketClick } = useTicketLinks()
+	const { getTicketUrl, handleTicketClick } = useTicketLinks()
 	const homeLogo = getTeamLogoPath(game.homeTeam)
 	const awayLogo = getTeamLogoPath(game.awayTeam)
 	const ticket = game.ticketLink?.trim()
@@ -205,12 +205,9 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 					{ticket ? (
 						<a
 							className={cx(styles.btnPrimary, 'font-mono')}
-							href={personalData ? getTicketUrl(ticket) : undefined}
+							href={getTicketUrl(ticket)}
 							target='_blank'
 							rel='noopener noreferrer'
-							onClick={e => {
-								if (handleTicketClick(ticket)) e.preventDefault()
-							}}
 						>
 							<TicketButtonContent
 								title={ticketLabel}
@@ -224,7 +221,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 							{vip ? (
 								<a
 									className={cx(styles.btnOutline, 'font-mono')}
-									href={personalData ? getTicketUrl(vip) : undefined}
+									href={getTicketUrl(vip)}
 									target='_blank'
 									rel='noopener noreferrer'
 									onClick={e => {
@@ -241,7 +238,7 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 							{skybox ? (
 								<a
 									className={cx(styles.btnOutline, 'font-mono')}
-									href={personalData ? getTicketUrl(skybox) : undefined}
+									href={getTicketUrl(skybox)}
 									target='_blank'
 									rel='noopener noreferrer'
 									onClick={e => {

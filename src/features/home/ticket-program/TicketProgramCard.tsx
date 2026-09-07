@@ -28,15 +28,14 @@ export const TicketProgramCard: FC<TicketProgramCardProps> = ({
 	card,
 	className,
 }) => {
-	const { personalData, getTicketUrl, handleTicketClick } = useTicketLinks()
+	const { getTicketUrl } = useTicketLinks()
 	const { titleLines, description, variant, ctaLabel, ctaHref } = card
 
 	const headingId = `ticket-program-card-${card.id}-title`
 	const titleForAria = titleLines.join(' ').trim()
 
 	const isExternal = ctaHref.startsWith('http')
-	const isTicketLink = ctaHref.includes('widget.afisha.yandex.ru')
-	const href = personalData && isTicketLink ? getTicketUrl(ctaHref) : ctaHref
+	const href = ctaHref.includes('widget.afisha.yandex.ru') ? getTicketUrl(ctaHref) : ctaHref
 
 	return (
 		<article
@@ -57,39 +56,24 @@ export const TicketProgramCard: FC<TicketProgramCardProps> = ({
 						<p className={cx(styles.cardDesc, 'font-mono')}>{description}</p>
 					</div>
 				</div>
-				{!isTicketLink || personalData ? (
-					isExternal ? (
-						<a
-							href={href}
-							className={cx(styles.cardCta, 'font-mono')}
-							aria-label={`${titleForAria}: ${ctaLabel}`}
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							{ctaLabel}
-						</a>
-					) : (
-						<Link
-							href={href}
-							className={cx(styles.cardCta, 'font-mono')}
-							aria-label={`${titleForAria}: ${ctaLabel}`}
-						>
-							{ctaLabel}
-						</Link>
-					)
-				) : (
+				{isExternal ? (
 					<a
-						href={ctaHref}
+						href={href}
 						className={cx(styles.cardCta, 'font-mono')}
 						aria-label={`${titleForAria}: ${ctaLabel}`}
 						target='_blank'
 						rel='noopener noreferrer'
-						onClick={e => {
-							if (handleTicketClick(ctaHref)) e.preventDefault()
-						}}
 					>
 						{ctaLabel}
 					</a>
+				) : (
+					<Link
+						href={href}
+						className={cx(styles.cardCta, 'font-mono')}
+						aria-label={`${titleForAria}: ${ctaLabel}`}
+					>
+						{ctaLabel}
+					</Link>
 				)}
 		</article>
 	)

@@ -17,7 +17,7 @@ function cx(...parts: Array<string | false | null | undefined>): string {
 }
 
 export function MainSeasonTicketsCard() {
-	const { personalData, getTicketUrl, handleTicketClick } = useTicketLinks()
+	const { getTicketUrl } = useTicketLinks()
 
 	return (
 		<article
@@ -43,23 +43,17 @@ export function MainSeasonTicketsCard() {
 						<div className={styles.buyRow}>
 							<a
 								className={cx(matchCardStyles.btnPrimary, 'font-mono')}
-								href={personalData ? getTicketUrl(SEASON_TICKETS_BUY_URL) : undefined}
+								href={getTicketUrl(SEASON_TICKETS_BUY_URL)}
 								target='_blank'
 								rel='noopener noreferrer'
-								onClick={e => {
-									if (handleTicketClick(SEASON_TICKETS_BUY_URL)) e.preventDefault()
-								}}
 							>
 								Купить
 							</a>
 							<a
 								className={cx(matchCardStyles.btnOutline, 'font-mono')}
-								href={personalData ? getTicketUrl(SEASON_TICKETS_VIP_URL) : undefined}
+								href={getTicketUrl(SEASON_TICKETS_VIP_URL)}
 								target='_blank'
 								rel='noopener noreferrer'
-								onClick={e => {
-									if (handleTicketClick(SEASON_TICKETS_VIP_URL)) e.preventDefault()
-								}}
 							>
 								VIP
 							</a>
@@ -67,12 +61,9 @@ export function MainSeasonTicketsCard() {
 						<div className={styles.familyBlock}>
 							<a
 								className={cx(matchCardStyles.btnSecondary, 'font-mono')}
-								href={personalData ? getTicketUrl(SEASON_TICKETS_FAMILY_URL) : undefined}
+								href={getTicketUrl(SEASON_TICKETS_FAMILY_URL)}
 								target='_blank'
 								rel='noopener noreferrer'
-								onClick={e => {
-									if (handleTicketClick(SEASON_TICKETS_FAMILY_URL)) e.preventDefault()
-								}}
 							>
 								семейный сектор С4
 							</a>

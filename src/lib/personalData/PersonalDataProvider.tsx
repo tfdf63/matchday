@@ -2,8 +2,6 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type FC, type ReactNode } from 'react'
 
-import { LoginModal } from '@/components/LoginModal'
-
 import {
 	type PersonalData,
 	appendPersonalDataToUrl,
@@ -14,9 +12,6 @@ const API_URL = getApiUrl('/api/user/get')
 
 export type TicketLinkHandler = {
 	personalData: PersonalData | null
-	loginModalOpen: boolean
-	openLoginModal: () => void
-	closeLoginModal: () => void
 	getTicketUrl: (url: string) => string
 	handleTicketClick: (url: string) => boolean
 	refreshUserData: () => Promise<void>
@@ -61,16 +56,12 @@ export type PersonalDataProviderProps = {
 
 export const PersonalDataProvider: FC<PersonalDataProviderProps> = ({ children }) => {
 	const [personalData, setPersonalData] = useState<PersonalData | null>(null)
-	const [loginModalOpen, setLoginModalOpen] = useState(false)
 
 	useEffect(() => {
 		fetchUserData().then(data => {
 			if (data) setPersonalData(data)
 		})
 	}, [])
-
-	const openLoginModal = useCallback(() => setLoginModalOpen(true), [])
-	const closeLoginModal = useCallback(() => setLoginModalOpen(false), [])
 
 	const refreshUserData = useCallback(async () => {
 		const data = await fetchUserData()
@@ -85,30 +76,17 @@ export const PersonalDataProvider: FC<PersonalDataProviderProps> = ({ children }
 		[personalData],
 	)
 
-	const handleTicketClick = useCallback(
-		(_url: string) => {
-			if (personalData) return false
-			setLoginModalOpen(true)
-			return true
-		},
-		[personalData],
-	)
+	const handleTicketClick = useCallback(() => false, [])
 
 	const value = useMemo<TicketLinkHandler>(
 		() => ({
 			personalData,
-			loginModalOpen,
-			openLoginModal,
-			closeLoginModal,
 			getTicketUrl,
 			handleTicketClick,
 			refreshUserData,
 		}),
 		[
 			personalData,
-			loginModalOpen,
-			openLoginModal,
-			closeLoginModal,
 			getTicketUrl,
 			handleTicketClick,
 			refreshUserData,
@@ -118,7 +96,6 @@ export const PersonalDataProvider: FC<PersonalDataProviderProps> = ({ children }
 	return (
 		<TicketLinksContext.Provider value={value}>
 			{children}
-			<LoginModal open={loginModalOpen} onClose={closeLoginModal} onSuccess={refreshUserData} />
 		</TicketLinksContext.Provider>
 	)
 }

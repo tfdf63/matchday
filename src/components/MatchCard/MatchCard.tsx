@@ -84,7 +84,7 @@ export function MatchCard({
 	showParkingAction = false,
 	actionsFooter,
 }: MatchCardProps) {
-	const { personalData, getTicketUrl, handleTicketClick } = useTicketLinks()
+	const { getTicketUrl, handleTicketClick } = useTicketLinks()
 	const homeLogo = getTeamLogoPath(game.homeTeam)
 	const awayLogo = getTeamLogoPath(game.awayTeam)
 	const ticket = game.ticketLink?.trim()
@@ -383,12 +383,9 @@ export function MatchCard({
 						{ticket ? (
 							<a
 								className={cx(styles.btnPrimary, 'font-mono')}
-								href={personalData ? getTicketUrl(ticket) : undefined}
+								href={getTicketUrl(ticket)}
 								target='_blank'
 								rel='noopener noreferrer'
-								onClick={e => {
-									if (handleTicketClick(ticket)) e.preventDefault()
-								}}
 							>
 								<TicketButtonContent
 									title={isMainShop ? 'Купить билеты' : ticketLabel}
@@ -413,7 +410,7 @@ export function MatchCard({
 											isMainShop && styles.mainShopOutlineButton,
 											'font-mono',
 										)}
-										href={personalData ? getTicketUrl(vip) : undefined}
+										href={getTicketUrl(vip)}
 										target='_blank'
 										rel='noopener noreferrer'
 										onClick={e => {
@@ -436,7 +433,7 @@ export function MatchCard({
 											isMainShop && styles.mainShopNoUppercase,
 											'font-mono',
 										)}
-										href={personalData ? getTicketUrl(skybox) : undefined}
+										href={getTicketUrl(skybox)}
 										target='_blank'
 										rel='noopener noreferrer'
 										onClick={e => {
@@ -457,7 +454,7 @@ export function MatchCard({
 											styles.mainShopOutlineButton,
 											'font-mono',
 										)}
-										href={personalData ? getTicketUrl(skybox) : undefined}
+										href={getTicketUrl(skybox)}
 										target='_blank'
 										rel='noopener noreferrer'
 										onClick={e => {
