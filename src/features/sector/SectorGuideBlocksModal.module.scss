@@ -1,0 +1,142 @@
+.guideSection {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.guideSectionGolden {
+	margin-top: 12px;
+}
+
+.modalGuideHeading {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.25;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.joinList {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: join-step;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	font-size: 13px;
+	line-height: 1.35;
+	color: rgb(255 255 255 / 0.78);
+}
+
+.joinItem {
+	display: flex;
+	gap: 8px;
+	counter-increment: join-step;
+
+	&::before {
+		content: counter(join-step) '.';
+		flex: none;
+		color: #fff;
+	}
+}
+
+.joinText {
+	margin: 0;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+
+	p {
+		margin: 0;
+	}
+}
+
+.joinStepTitle {
+	color: #fff;
+}
+
+.inlineLink {
+	color: #fff;
+	text-decoration: underline;
+	text-decoration-skip-ink: none;
+
+	&:hover {
+		opacity: 0.85;
+	}
+}
+
+.blocks {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.block {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.blockTitle {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.25;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.blockText {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.35;
+	color: rgb(255 255 255 / 0.78);
+}
+
+.seasons {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.seasonGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.seasonSubtitle {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.3;
+	color: #fff;
+}
+
+.seasonList {
+	margin: 0;
+	padding: 0 0 0 1.1em;
+	font-size: 13px;
+	line-height: 1.35;
+	color: rgb(255 255 255 / 0.78);
+}
+
+.contentFigure {
+	margin: 0;
+}
+
+.modalFigure {
+	border: 1px solid rgb(255 255 255 / 0.18);
+}
+
+.contentImage {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.modalFigureImage {
+	display: block;
+	width: 100%;
+	height: auto;
+}

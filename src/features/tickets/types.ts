@@ -36,6 +36,7 @@ export type TicketProduct = {
   descriptions: TicketDescriptionItem[];
   promoCode?: string;
   promoDescription?: string;
+  noteAfterList?: string;
   isNew?: boolean;
 };
 

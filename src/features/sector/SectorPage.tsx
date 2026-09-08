@@ -4,11 +4,14 @@ import type { CSSProperties, FC, ReactNode } from 'react'
 import matchCardStyles from '@/components/MatchCard/MatchCard.module.scss'
 import { OfferBanner } from '@/features/home/offer/OfferBanner'
 import type {
-	SectorInlineSpan,
-	SectorJoinStep,
 	SectorPage as SectorPageData,
-	SectorPageImage,
 } from '@/data/sectorPages'
+import {
+	JoinStepsList,
+	SectorContentImage,
+	SectorGoldenSeasonSection,
+	SectorStructuredBlocks,
+} from '@/features/sector/SectorGuideBlocks'
 
 import styles from './SectorPage.module.scss'
 import { SectorHeroHotspot } from './SectorHeroHotspot'
@@ -17,66 +20,6 @@ import { YandexDealerWidget } from './YandexDealerWidget'
 
 function cx(...parts: Array<string | false | null | undefined>): string {
 	return parts.filter(Boolean).join(' ')
-}
-
-function SectorContentImage({ image }: { image: SectorPageImage }) {
-	return (
-		<figure className={styles.contentFigure}>
-			<Image
-				src={image.src}
-				alt={image.alt}
-				width={image.width}
-				height={image.height}
-				className={styles.contentImage}
-				sizes='(min-width: 1920px) 1840px, (min-width: 1600px) 1520px, (min-width: 1280px) 1200px, (min-width: 1024px) 944px, (min-width: 767px) 704px, 320px'
-			/>
-		</figure>
-	)
-}
-
-function SectorInlineSpans({
-	spans,
-}: {
-	spans: readonly SectorInlineSpan[]
-}) {
-	return (
-		<>
-			{spans.map((span, index) =>
-				span.type === 'link' ? (
-					<a
-						key={index}
-						href={span.href}
-						target='_blank'
-						rel='noopener noreferrer'
-						className={styles.inlineLink}
-					>
-						{span.label}
-					</a>
-				) : (
-					<span key={index}>{span.text}</span>
-				),
-			)}
-		</>
-	)
-}
-
-function JoinStepsList({ steps }: { steps: readonly SectorJoinStep[] }) {
-	return (
-		<ol className={cx(styles.joinList, 'font-mono')}>
-			{steps.map((step, index) => (
-				<li key={step.title ?? index} className={styles.joinItem}>
-					<div className={styles.joinText}>
-						{step.title ? (
-							<p className={styles.joinStepTitle}>{step.title}</p>
-						) : null}
-						<p>
-							<SectorInlineSpans spans={step.spans} />
-						</p>
-					</div>
-				</li>
-			))}
-		</ol>
-	)
 }
 
 export type SectorPageProps = {
@@ -337,50 +280,16 @@ export const SectorPage: FC<SectorPageProps> = ({ page }) => {
 						</h2>
 					) : null}
 					{page.chants?.length ? (
-						<div className={styles.blocks}>
-							{page.chants.map(chant => (
-								<section key={chant.title} className={styles.block}>
-									<h3 className={styles.blockTitle}>{chant.title}</h3>
-									<p className={cx(styles.blockText, 'font-mono')}>
-										{chant.text}
-									</p>
-								</section>
-							))}
-						</div>
+						<SectorStructuredBlocks blocks={page.chants} />
 					) : null}
 				</section>
 			) : null}
 
 			{page.goldenSeason ? (
-				<section
-					className={styles.guideSection}
-					aria-labelledby={`sector-golden-heading-${page.slug}`}
-				>
-					<h2
-						id={`sector-golden-heading-${page.slug}`}
-						className={styles.schemaHeading}
-					>
-						{page.goldenSeason.heading}
-					</h2>
-					<p className={cx(styles.blockText, 'font-mono')}>
-						{page.goldenSeason.text}
-					</p>
-					<div className={styles.seasons}>
-						{page.goldenSeason.seasons.map(season => (
-							<div key={season.subtitle} className={styles.seasonGroup}>
-								<h3 className={cx(styles.seasonSubtitle, 'font-mono')}>
-									{season.subtitle}
-								</h3>
-								<ul className={cx(styles.seasonList, 'font-mono')}>
-									{season.names.map(name => (
-										<li key={name}>{name}</li>
-									))}
-								</ul>
-							</div>
-						))}
-					</div>
-					<SectorContentImage image={page.goldenSeason.image} />
-				</section>
+				<SectorGoldenSeasonSection
+					goldenSeason={page.goldenSeason}
+					headingId={`sector-golden-heading-${page.slug}`}
+				/>
 			) : null}
 
 			{communityButtons.length ? (

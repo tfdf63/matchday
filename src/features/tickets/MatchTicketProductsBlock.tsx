@@ -9,7 +9,10 @@ import { MenuParkingIcon, MenuTicketIcon } from "@/components/Menu";
 import { BaseModal } from "@/components/Modal";
 import matchCardStyles from "@/components/MatchCard/MatchCard.module.scss";
 import type { Game } from "@/data/games";
+import { HOME_OFFERS_SOCIAL_TELEGRAM_HREF } from "@/data/homeInfoModals";
+import { getSectorPageBySlug } from "@/data/sectorPages";
 import { PromoCodeCopy } from "@/features/home/home-modal/PromoCodeCopy";
+import { SectorFanGuideContent } from "@/features/sector/SectorGuideBlocks";
 import { useTicketLinks } from "@/lib/personalData";
 
 import { getMatchTicketSections } from "./getMatchTicketSections";
@@ -62,8 +65,13 @@ function hasSocialTicketContacts(product: TicketProduct): boolean {
   return (
     product.id === "social-base" ||
     product.id === "social-family" ||
-    product.id === "social-mgn"
+    product.id === "social-mgn" ||
+    product.id === "fan"
   );
+}
+
+function hasFanTelegramContact(product: TicketProduct): boolean {
+  return product.id === "fan";
 }
 
 function hasTicketModalFooter(product: TicketProduct): boolean {
@@ -114,6 +122,33 @@ function ContactPhoneIcon() {
         strokeWidth="1.2"
         strokeLinecap="round"
         strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ContactTelegramIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden>
+      <path
+        d="M4.5 9.8L15.2 5.1C15.8 4.8 16.3 5.2 16.1 6L14.7 14.2C14.5 15.3 13.9 15.5 13.1 15L10.2 12.8L8.8 14.1C8.6 14.3 8.4 14.5 8 14.5L8.2 11.5L13.8 6.4C14.1 6.1 13.7 5.9 13.3 6.2L6.7 10.5L3.8 9.6C2.8 9.2 2.8 8.5 4 8.1L4.5 9.8Z"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ContactPersonIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden>
+      <circle cx="10" cy="7" r="2.8" stroke="currentColor" strokeWidth="1.2" />
+      <path
+        d="M5.5 15.5C6.4 13.4 8 12.5 10 12.5C12 12.5 13.6 13.4 14.5 15.5"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
       />
     </svg>
   );
@@ -254,6 +289,7 @@ export function MatchTicketProductsBlock({
   const [activeProduct, setActiveProduct] = useState<TicketProduct | null>(null);
   const { getTicketUrl, handleTicketClick } = useTicketLinks();
   const sections = useMemo(() => getMatchTicketSections(game), [game]);
+  const fanSectorPage = useMemo(() => getSectorPageBySlug("fan"), []);
 
   useEffect(() => {
     setActiveProduct(null);
@@ -457,6 +493,25 @@ export function MatchTicketProductsBlock({
               ))}
             </ul>
 
+            {activeProduct.id === "fan" && fanSectorPage ? (
+              <SectorFanGuideContent
+                variant="modal"
+                slug="fan"
+                joinHeading={fanSectorPage.joinHeading}
+                joinSteps={fanSectorPage.joinSteps}
+                chantsHeading={fanSectorPage.chantsHeading}
+                chants={fanSectorPage.chants}
+                chantsImage={fanSectorPage.chantsImage}
+                goldenSeason={fanSectorPage.goldenSeason}
+              />
+            ) : null}
+
+            {activeProduct.noteAfterList ? (
+              <p className={cx(styles.modalNote, "font-mono")}>
+                {activeProduct.noteAfterList}
+              </p>
+            ) : null}
+
             {hasPremiumLoungeContacts(activeProduct) ? (
               <div className={styles.modalContacts}>
                 <p className={cx(styles.modalContactsLabel, "font-mono")}>
@@ -497,9 +552,31 @@ export function MatchTicketProductsBlock({
                   </span>
                   <span>{SOCIAL_TICKET_CONTACTS.phone}</span>
                 </a>
-                <p className={cx(styles.modalContactsName, "font-mono")}>
-                  {SOCIAL_TICKET_CONTACTS.name}
-                </p>
+                {hasFanTelegramContact(activeProduct) ? (
+                  <a
+                    className={cx(styles.modalContactsRow, "font-mono")}
+                    href={HOME_OFFERS_SOCIAL_TELEGRAM_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className={styles.modalContactsIcon} aria-hidden>
+                      <ContactTelegramIcon />
+                    </span>
+                    <span>@slava_tfdf</span>
+                  </a>
+                ) : null}
+                {hasFanTelegramContact(activeProduct) ? (
+                  <div className={cx(styles.modalContactsRow, "font-mono")}>
+                    <span className={styles.modalContactsIcon} aria-hidden>
+                      <ContactPersonIcon />
+                    </span>
+                    <span>{SOCIAL_TICKET_CONTACTS.name}</span>
+                  </div>
+                ) : (
+                  <p className={cx(styles.modalContactsName, "font-mono")}>
+                    {SOCIAL_TICKET_CONTACTS.name}
+                  </p>
+                )}
               </div>
             ) : null}
 

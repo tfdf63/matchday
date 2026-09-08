@@ -412,7 +412,7 @@ export const sectorPages: readonly SectorPage[] = [
 				spans: [
 					{
 						type: 'text',
-						text: 'Получить ссылку покупку билетов в D114 на ближайший матч.',
+						text: 'Взять билет в D114 на ближайший матч.',
 					},
 				],
 			},

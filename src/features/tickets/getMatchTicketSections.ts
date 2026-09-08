@@ -161,12 +161,16 @@ export function getMatchTicketSections(game: Game): TicketSection[] {
           schemaSrc: "/images/schema/schema-fan.png",
           schemaAlt: "Схема фанатского сектора",
           descriptions: [
-            { icon: "ticket", text: "Самые преданные болельщики команды" },
+            { icon: "match", text: "Самые активные болельщики" },
             {
               icon: "location",
-              text: "Приходим за 15 минут до начала и поддерживаем команду",
+              text: "На секторе за 15 минут до начала матча",
             },
-            { icon: "promo", text: "Ранняя регистрация на гостевые выезды" },
+            {
+              icon: "promo",
+              text: "Красный и черный верх с собой на каждый матч",
+            },
+            { icon: "season", text: "Ранняя регистрация на выезды" },
           ],
         },
         {
@@ -231,12 +235,18 @@ export function getMatchTicketSections(game: Game): TicketSection[] {
           schemaSrc: "/images/sector/mgn.webp",
           schemaAlt: "Места для маломобильных групп населения на стадионе",
           descriptions: [
-            { icon: "ticket", text: "Подбор мест с удобным доступом" },
+            {
+              icon: "ticket",
+              text: "Предоставляются бесплатные билеты для 1 и 2 категории",
+            },
             {
               icon: "location",
               text: "Сопровождение по организационным вопросам",
             },
-            { icon: "promo", text: "Индивидуальная обработка заявки" },
+            {
+              icon: "promo",
+              text: "Подать заявку на матч не позднее, чем за 3 дня до матча",
+            },
           ],
         },
       ],
