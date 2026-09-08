@@ -64,6 +64,10 @@ type TicketSection = {
   products: TicketProduct[];
 };
 
+function isRplMatch(game: Game): boolean {
+  return game.promoType === "rpl";
+}
+
 function cx(...parts: Array<string | false | null | undefined>): string {
   return parts.filter(Boolean).join(" ");
 }
@@ -232,7 +236,7 @@ function getStudentSectorModalContent(): Pick<
 > {
   const sector = getSectorPageBySlug("stud");
   const telegramHref =
-    sector?.communityCta.buttons?.find((button) => button.label === "Телеграм")
+    sector?.communityCta?.buttons?.find((button) => button.label === "Телеграм")
       ?.href ?? HOME_OFFERS_SOCIAL_TELEGRAM_HREF;
 
   if (!sector) {
@@ -830,7 +834,14 @@ export function MainMatchTicketCard({ game }: { game: Game }) {
   return (
     <article className={styles.card}>
       <div className={styles.header}>
-        <p className={cx(styles.kicker, "font-mono")}>{matchInfo.topLine}</p>
+        <div className={styles.kickerRow}>
+          <p className={cx(styles.kicker, "font-mono")}>{matchInfo.topLine}</p>
+          {isRplMatch(game) ? (
+            <a className={cx(styles.fanIdButton, "font-mono")} href="#fan-card">
+              FAN ID
+            </a>
+          ) : null}
+        </div>
         <div className={styles.teamsBlock}>
           <div className={styles.teamRow}>
             {homeLogo ? (
