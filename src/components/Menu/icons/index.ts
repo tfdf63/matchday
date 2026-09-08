@@ -1,4 +1,5 @@
 export { MenuTicketIcon } from './MenuTicketIcon'
+export { MenuBusIcon } from './MenuBusIcon'
 export { MenuParkingIcon } from './MenuParkingIcon'
 export { MenuActivitiesIcon } from './MenuActivitiesIcon'
 export { MenuPromoIcon } from './MenuPromoIcon'

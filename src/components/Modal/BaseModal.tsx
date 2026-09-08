@@ -28,6 +28,9 @@ export type BaseModalProps = {
 	chrome?: 'default' | 'fullBleed'
 	panelClassName?: string
 	bodyClassName?: string
+	/** Закреплённый блок под прокручиваемым телом (кнопка CTA и т.п.). */
+	footer?: ReactNode
+	footerClassName?: string
 }
 
 function CloseGlyph() {
@@ -55,6 +58,8 @@ export const BaseModal: FC<BaseModalProps> = ({
 	chrome = 'default',
 	panelClassName,
 	bodyClassName,
+	footer,
+	footerClassName,
 }) => {
 	const autoTitleId = useId()
 	const titleId = titleIdProp ?? autoTitleId
@@ -164,6 +169,15 @@ export const BaseModal: FC<BaseModalProps> = ({
 						<div className={[styles.body, bodyClassName].filter(Boolean).join(' ')}>
 							{children}
 						</div>
+						{footer ? (
+							<div
+								className={[styles.footer, footerClassName]
+									.filter(Boolean)
+									.join(' ')}
+							>
+								{footer}
+							</div>
+						) : null}
 					</>
 				)}
 			</div>

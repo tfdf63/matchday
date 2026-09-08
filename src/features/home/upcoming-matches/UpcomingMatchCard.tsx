@@ -1,122 +1,123 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import type { FC } from 'react'
+import Image from "next/image";
+import type { FC } from "react";
 
-import { MatchCardCalendarIcon } from '@/components/MatchCard/icons/MatchCardCalendarIcon'
+import { MatchCardCalendarIcon } from "@/components/MatchCard/icons/MatchCardCalendarIcon";
 import {
-	MatchDateBanner,
-	getMatchDateBannerText,
-} from '@/components/MatchDateBanner'
-import { TicketButtonContent } from '@/components/TicketButtonContent'
-import type { Game } from '@/data/games'
-import { getTeamLogoPath } from '@/data/teamLogos'
-import { DirectionsModalTrigger } from '@/features/home/directions-modal'
-import { PromoCodesModalTrigger } from '@/features/home/home-modal'
-import { useClientNow } from '@/lib/hooks/useClientNow'
-import { formatPriceIncreaseLabel } from '@/lib/match/formatPriceIncreaseLabel'
-import { formatMatchScore } from '@/lib/match/formatMatchGoals'
-import { useTicketLinks } from '@/lib/personalData'
+  MatchDateBanner,
+  getMatchDateBannerText,
+} from "@/components/MatchDateBanner";
+import { TicketButtonContent } from "@/components/TicketButtonContent";
+import type { Game } from "@/data/games";
+import { getTeamLogoPath } from "@/data/teamLogos";
+import { DirectionsModalTrigger } from "@/features/home/directions-modal";
+import { PromoCodesModalTrigger } from "@/features/home/home-modal";
+import { useClientNow } from "@/lib/hooks/useClientNow";
+import { formatPriceIncreaseLabel } from "@/lib/match/formatPriceIncreaseLabel";
+import { formatMatchScore } from "@/lib/match/formatMatchGoals";
+import { useTicketLinks } from "@/lib/personalData";
 import {
-	GAME_DATE_TIME_TENTATIVE_LABEL,
-	isGameDateTimeTentative,
-} from '@/lib/match/isGameDateTimeTentative'
+  GAME_DATE_TIME_TENTATIVE_LABEL,
+  isGameDateTimeTentative,
+} from "@/lib/match/isGameDateTimeTentative";
 
-import styles from './UpcomingMatchCard.module.scss'
+import styles from "./UpcomingMatchCard.module.scss";
 
 function cx(...parts: Array<string | false | null | undefined>): string {
-	return parts.filter(Boolean).join(' ')
+  return parts.filter(Boolean).join(" ");
 }
 
 export type UpcomingMatchCardProps = {
-	game: Game
-	/** Скрыть «Промокоды» и «Как добраться» в календаре матчей. */
-	hideSecondaryActions?: boolean
-}
+  game: Game;
+  /** Скрыть «Промокоды» и «Как добраться» в календаре матчей. */
+  hideSecondaryActions?: boolean;
+};
 
 export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
-	game,
-	hideSecondaryActions = false,
+  game,
+  hideSecondaryActions = false,
 }) => {
-	const { getTicketUrl, handleTicketClick } = useTicketLinks()
-	const homeLogo = getTeamLogoPath(game.homeTeam)
-	const awayLogo = getTeamLogoPath(game.awayTeam)
-	const ticket = game.ticketLink?.trim()
-	const vip = game.ticketLinkVip?.trim()
-	const skybox = game.ticketLinkSkybox?.trim()
-	const ticketLinkCount = [ticket, vip, skybox].filter(Boolean).length
-	const hasExtraTicketLinks = ticketLinkCount > 1
-	const ticketLabel = game.ticketLinkLabel?.trim() || 'Купить билеты'
-	const vipLabel = game.ticketLinkVipLabel?.trim() || 'VIP'
-	const skyboxLabel = game.ticketLinkSkyboxLabel?.trim() || 'ложи'
-	const ticketPriceFrom = game.ticketLinkPriceFrom?.trim() || undefined
-	const vipPriceFrom = game.ticketLinkVipPriceFrom?.trim() || undefined
-	const skyboxPriceFrom = game.ticketLinkSkyboxPriceFrom?.trim() || undefined
-	const isAway = game.venue === 'away'
-	const priceLine =
-		!isAway &&
-		game.priceIncreaseDates &&
-		formatPriceIncreaseLabel(game.priceIncreaseDates)
-	const dateTimeLine = [game.dateCard?.trim(), game.time?.trim()]
-		.filter(Boolean)
-		.join(' ')
-	const timeLocal = game.timeLocal?.trim()
-	const showFanIdBadge =
-		game.fanIdStatus === 'Fan id' || game.fanIdStatus === 'Без fan id'
-	const fanIdBadgeText = game.fanIdStatus === 'Fan id' ? 'FAN ID' : 'Без fan id'
-	const homeCity = game.homeTeamCity?.trim()
-	const awayCity = game.awayTeamCity?.trim()
-	const now = useClientNow()
-	const matchDateBannerText = now ? getMatchDateBannerText(game, now) : null
-	const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText)
-	const showDateTimeTentativeBadge = isGameDateTimeTentative(game)
-	const score = formatMatchScore(game.homeGoals, game.awayGoals)
+  const { getTicketUrl, handleTicketClick } = useTicketLinks();
+  const homeLogo = getTeamLogoPath(game.homeTeam);
+  const awayLogo = getTeamLogoPath(game.awayTeam);
+  const ticket = game.ticketLink?.trim();
+  const vip = game.ticketLinkVip?.trim();
+  const skybox = game.ticketLinkSkybox?.trim();
+  const ticketLinkCount = [ticket, vip, skybox].filter(Boolean).length;
+  const hasExtraTicketLinks = ticketLinkCount > 1;
+  const ticketLabel = game.ticketLinkLabel?.trim() || "Купить билеты";
+  const vipLabel = game.ticketLinkVipLabel?.trim() || "VIP";
+  const skyboxLabel = game.ticketLinkSkyboxLabel?.trim() || "ложи";
+  const ticketPriceFrom = game.ticketLinkPriceFrom?.trim() || undefined;
+  const vipPriceFrom = game.ticketLinkVipPriceFrom?.trim() || undefined;
+  const skyboxPriceFrom = game.ticketLinkSkyboxPriceFrom?.trim() || undefined;
+  const isAway = game.venue === "away";
+  const priceLine =
+    !isAway &&
+    game.priceIncreaseDates &&
+    formatPriceIncreaseLabel(game.priceIncreaseDates);
+  const dateTimeLine = [game.dateCard?.trim(), game.time?.trim()]
+    .filter(Boolean)
+    .join(" ");
+  const timeLocal = game.timeLocal?.trim();
+  const showFanIdBadge =
+    game.fanIdStatus === "Fan id" || game.fanIdStatus === "Без fan id";
+  const fanIdBadgeText =
+    game.fanIdStatus === "Fan id" ? "FAN ID" : "Без fan id";
+  const homeCity = game.homeTeamCity?.trim();
+  const awayCity = game.awayTeamCity?.trim();
+  const now = useClientNow();
+  const matchDateBannerText = now ? getMatchDateBannerText(game, now) : null;
+  const showTopBadges = showFanIdBadge || Boolean(matchDateBannerText);
+  const showDateTimeTentativeBadge = isGameDateTimeTentative(game);
+  const score = formatMatchScore(game.homeGoals, game.awayGoals);
 
-	const homeLogoNode = homeLogo ? (
-		<Image
-			src={homeLogo}
-			alt={
-				game.homeTeam ? `Логотип ${game.homeTeam}` : 'Логотип команды хозяев'
-			}
-			width={100}
-			height={100}
-			className={styles.teamLogo}
-		/>
-	) : (
-		<div className={styles.teamLogoPlaceholder} aria-hidden />
-	)
+  const homeLogoNode = homeLogo ? (
+    <Image
+      src={homeLogo}
+      alt={
+        game.homeTeam ? `Логотип ${game.homeTeam}` : "Логотип команды хозяев"
+      }
+      width={100}
+      height={100}
+      className={styles.teamLogo}
+    />
+  ) : (
+    <div className={styles.teamLogoPlaceholder} aria-hidden />
+  );
 
-	const awayLogoNode = awayLogo ? (
-		<Image
-			src={awayLogo}
-			alt={
-				game.awayTeam ? `Логотип ${game.awayTeam}` : 'Логотип команды гостей'
-			}
-			width={100}
-			height={100}
-			className={styles.teamLogo}
-		/>
-	) : (
-		<div className={styles.teamLogoPlaceholder} aria-hidden />
-	)
+  const awayLogoNode = awayLogo ? (
+    <Image
+      src={awayLogo}
+      alt={
+        game.awayTeam ? `Логотип ${game.awayTeam}` : "Логотип команды гостей"
+      }
+      width={100}
+      height={100}
+      className={styles.teamLogo}
+    />
+  ) : (
+    <div className={styles.teamLogoPlaceholder} aria-hidden />
+  );
 
-	return (
-		<article
-			className={cx(styles.root, showTopBadges && styles.rootWithTopBadge)}
-		>
-			{matchDateBannerText && now ? (
-				<MatchDateBanner
-					game={game}
-					now={now}
-					className={styles.matchDateBanner}
-				/>
-			) : null}
+  return (
+    <article
+      className={cx(styles.root, showTopBadges && styles.rootWithTopBadge)}
+    >
+      {matchDateBannerText && now ? (
+        <MatchDateBanner
+          game={game}
+          now={now}
+          className={styles.matchDateBanner}
+        />
+      ) : null}
 
-			{showFanIdBadge ? (
-				<div className={cx(styles.fanIdBadge, 'font-mono')} role='note'>
-					{fanIdBadgeText}
-				</div>
-			) : null}
+      {showFanIdBadge ? (
+        <div className={cx(styles.fanIdBadge, "font-mono")} role="note">
+          {fanIdBadgeText}
+        </div>
+      ) : null}
 
 			<div className={styles.metaBlock}>
 				{game.leagueInfo ? (
@@ -153,126 +154,126 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
 				) : null}
 			</div>
 
-			<div className={styles.teamsSection}>
-				<div className={styles.teamsBlock}>
-					<div className={styles.teamsRow}>
-						<div className={styles.teamCol}>
-							{homeLogoNode}
-							<div className={styles.teamNameBlock}>
-								{game.homeTeam ? (
-									<p className={styles.teamName}>{game.homeTeam}</p>
-								) : null}
-								{homeCity ? (
-									<p className={cx(styles.teamCity, 'font-mono')}>{homeCity}</p>
-								) : null}
-							</div>
-						</div>
-						<div
-							className={styles.scoreRow}
-							role='group'
-							aria-label={score.ariaLabel}
-						>
-							<span className={styles.scoreMain}>{score.main}</span>
-							{score.penaltiesLine ? (
-								<span className={cx(styles.scorePenalty, 'font-mono')}>
-									{score.penaltiesLine}
-								</span>
-							) : null}
-						</div>
-						<div className={cx(styles.teamCol, styles.teamColAway)}>
-							{awayLogoNode}
-							<div className={styles.teamNameBlock}>
-								{game.awayTeam ? (
-									<p className={styles.teamName}>{game.awayTeam}</p>
-								) : null}
-								{awayCity ? (
-									<p className={cx(styles.teamCity, 'font-mono')}>{awayCity}</p>
-								) : null}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+      <div className={styles.teamsSection}>
+        <div className={styles.teamsBlock}>
+          <div className={styles.teamsRow}>
+            <div className={styles.teamCol}>
+              {homeLogoNode}
+              <div className={styles.teamNameBlock}>
+                {game.homeTeam ? (
+                  <p className={styles.teamName}>{game.homeTeam}</p>
+                ) : null}
+                {homeCity ? (
+                  <p className={cx(styles.teamCity, "font-mono")}>{homeCity}</p>
+                ) : null}
+              </div>
+            </div>
+            <div
+              className={styles.scoreRow}
+              role="group"
+              aria-label={score.ariaLabel}
+            >
+              <span className={styles.scoreMain}>{score.main}</span>
+              {score.penaltiesLine ? (
+                <span className={cx(styles.scorePenalty, "font-mono")}>
+                  {score.penaltiesLine}
+                </span>
+              ) : null}
+            </div>
+            <div className={cx(styles.teamCol, styles.teamColAway)}>
+              {awayLogoNode}
+              <div className={styles.teamNameBlock}>
+                {game.awayTeam ? (
+                  <p className={styles.teamName}>{game.awayTeam}</p>
+                ) : null}
+                {awayCity ? (
+                  <p className={cx(styles.teamCity, "font-mono")}>{awayCity}</p>
+                ) : null}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-			<div className={styles.actions}>
-				<div
-					className={cx(
-						styles.primaryStack,
-						ticketLinkCount === 1 && styles.primaryStackSolo,
-						ticketLinkCount === 2 && styles.primaryStackDuo,
-					)}
-				>
-					{ticket ? (
-						<a
-							className={cx(styles.btnPrimary, 'font-mono')}
-							href={getTicketUrl(ticket)}
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<TicketButtonContent
-								title={ticketLabel}
-								priceFrom={ticketPriceFrom}
-								priceClassName={styles.btnPrice}
-							/>
-						</a>
-					) : null}
-					{hasExtraTicketLinks ? (
-						<div className={styles.outlineStack}>
-							{vip ? (
-								<a
-									className={cx(styles.btnOutline, 'font-mono')}
-									href={getTicketUrl(vip)}
-									target='_blank'
-									rel='noopener noreferrer'
-									onClick={e => {
-										if (handleTicketClick(vip)) e.preventDefault()
-									}}
-								>
-									<TicketButtonContent
-										title={vipLabel}
-										priceFrom={vipPriceFrom}
-										priceClassName={styles.btnPrice}
-									/>
-								</a>
-							) : null}
-							{skybox ? (
-								<a
-									className={cx(styles.btnOutline, 'font-mono')}
-									href={getTicketUrl(skybox)}
-									target='_blank'
-									rel='noopener noreferrer'
-									onClick={e => {
-										if (handleTicketClick(skybox)) e.preventDefault()
-									}}
-								>
-									<TicketButtonContent
-										title={skyboxLabel}
-										priceFrom={skyboxPriceFrom}
-										priceClassName={styles.btnPrice}
-									/>
-								</a>
-							) : null}
-						</div>
-					) : null}
-				</div>
+      <div className={styles.actions}>
+        <div
+          className={cx(
+            styles.primaryStack,
+            ticketLinkCount === 1 && styles.primaryStackSolo,
+            ticketLinkCount === 2 && styles.primaryStackDuo,
+          )}
+        >
+          {ticket ? (
+            <a
+              className={cx(styles.btnPrimary, "font-mono")}
+              href={getTicketUrl(ticket)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TicketButtonContent
+                title={ticketLabel}
+                priceFrom={ticketPriceFrom}
+                priceClassName={styles.btnPrice}
+              />
+            </a>
+          ) : null}
+          {hasExtraTicketLinks ? (
+            <div className={styles.outlineStack}>
+              {vip ? (
+                <a
+                  className={cx(styles.btnOutline, "font-mono")}
+                  href={getTicketUrl(vip)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    if (handleTicketClick(vip)) e.preventDefault();
+                  }}
+                >
+                  <TicketButtonContent
+                    title={vipLabel}
+                    priceFrom={vipPriceFrom}
+                    priceClassName={styles.btnPrice}
+                  />
+                </a>
+              ) : null}
+              {skybox ? (
+                <a
+                  className={cx(styles.btnOutline, "font-mono")}
+                  href={getTicketUrl(skybox)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    if (handleTicketClick(skybox)) e.preventDefault();
+                  }}
+                >
+                  <TicketButtonContent
+                    title={skyboxLabel}
+                    priceFrom={skyboxPriceFrom}
+                    priceClassName={styles.btnPrice}
+                  />
+                </a>
+              ) : null}
+            </div>
+          ) : null}
+        </div>
 
-				{priceLine ? (
-					<p className={cx(styles.priceNote, 'font-mono')}>{priceLine}</p>
-				) : null}
+        {priceLine ? (
+          <p className={cx(styles.priceNote, "font-mono")}>{priceLine}</p>
+        ) : null}
 
-				{!isAway && !hideSecondaryActions ? (
-					<div className={styles.secondaryStack}>
-						<PromoCodesModalTrigger
-							buttonClassName={cx(styles.btnSecondary, 'font-mono')}
-							iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
-						/>
-						<DirectionsModalTrigger
-							buttonClassName={cx(styles.btnSecondary, 'font-mono')}
-							iconClassName={styles.secondaryIcon}
-						/>
-					</div>
-				) : null}
-			</div>
-		</article>
-	)
-}
+        {!isAway && !hideSecondaryActions ? (
+          <div className={styles.secondaryStack}>
+            <PromoCodesModalTrigger
+              buttonClassName={cx(styles.btnSecondary, "font-mono")}
+              iconClassName={cx(styles.secondaryIcon, styles.promoIcon)}
+            />
+            <DirectionsModalTrigger
+              buttonClassName={cx(styles.btnSecondary, "font-mono")}
+              iconClassName={styles.secondaryIcon}
+            />
+          </div>
+        ) : null}
+      </div>
+    </article>
+  );
+};

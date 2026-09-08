@@ -32,6 +32,8 @@ export interface Game {
   ticketLinkBusinessClubPriceFrom?: string;
   /** Новый фан-сектор (отдельная ссылка на виджет). */
   ticketLinkFanNew?: string;
+  /** Вторая строка кнопки фан-сектора, например «от 390 ₽». */
+  ticketLinkFanNewPriceFrom?: string;
   /** Ссылка на регистрацию в фан-автобус (legacy, одна кнопка). */
   busfansRegistrationUrl?: string;
   /** Ссылка на регистрацию в фан-автобус из Самары. */
@@ -883,6 +885,8 @@ const games: Game[] = [
     ticketLinkSkybox:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@71890627?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51",
     ticketLinkSkyboxPriceFrom: "от 11500 ₽",
+    ticketLinkBusinessClub:
+      "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@71890627?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51",
     ticketLinkC4:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@71890627?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51",
     leagueInfo: "Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА",
@@ -1075,6 +1079,7 @@ const games: Game[] = [
     ticketLinkBusinessClubPriceFrom: "от 6990 ₽",
     ticketLinkFanNew:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10441@72103662?clientKey=945d2837-2499-4f21-8eaa-6ae6ae7e7136&regionId=51",
+    ticketLinkFanNewPriceFrom: "от 290 ₽",
     leagueInfo: "Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА",
     seasonTour: "2026/2027 15 ТУР",
     fanIdStatus: "Fan id",
@@ -1165,6 +1170,7 @@ const games: Game[] = [
     ticketLinkBusinessClubPriceFrom: "от 6990 ₽",
     ticketLinkFanNew:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10441@72137228?clientKey=945d2837-2499-4f21-8eaa-6ae6ae7e7136&regionId=51",
+    ticketLinkFanNewPriceFrom: "от 290 ₽",
     leagueInfo: "Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА",
     seasonTour: "2026/2027 17 ТУР",
     fanIdStatus: "Fan id",

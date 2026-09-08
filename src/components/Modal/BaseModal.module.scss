@@ -121,6 +121,11 @@ $z-modal: 10000;
 	@include hide-scrollbar;
 }
 
+.footer {
+	flex-shrink: 0;
+	margin-top: 16px;
+}
+
 .bodyFullBleed {
 	display: flex;
 	min-height: 0;

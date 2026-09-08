@@ -3,9 +3,9 @@
 import {
 	Menu,
 	MenuBagIcon,
+	MenuBusIcon,
 	MenuParkingIcon,
 	MenuPromoIcon,
-	MenuTicketIcon,
 	type MenuNavItem,
 } from '@/components/Menu'
 import { useHomeInfoModal } from '@/features/home/home-modal'
@@ -15,10 +15,10 @@ const MainMenu: React.FC = () => {
 
 	const menuItems: [MenuNavItem, MenuNavItem, MenuNavItem, MenuNavItem] = [
 		{
-			id: 'tickets',
-			label: 'Билеты',
-			href: '/#ticket-program',
-			icon: <MenuTicketIcon />,
+			id: 'busfans',
+			label: 'Автобусы',
+			href: '/busfans',
+			icon: <MenuBusIcon />,
 		},
 		{
 			id: 'parking',

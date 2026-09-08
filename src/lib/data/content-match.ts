@@ -24,6 +24,7 @@ export type ContentMatch = {
 	ticketLinkC4?: string
 	ticketLinkBusinessClub?: string
 	ticketLinkFanNew?: string
+	ticketLinkFanNewPriceFrom?: string
 	leagueInfo?: string
 	seasonTour?: string
 	dateCard?: string
@@ -65,6 +66,7 @@ export function contentMatchToGame(row: ContentMatch): Game {
 		ticketLinkC4: row.ticketLinkC4,
 		ticketLinkBusinessClub: row.ticketLinkBusinessClub,
 		ticketLinkFanNew: row.ticketLinkFanNew,
+		ticketLinkFanNewPriceFrom: row.ticketLinkFanNewPriceFrom,
 		leagueInfo: row.leagueInfo,
 		seasonTour: row.seasonTour,
 		dateCard: row.dateCard,
