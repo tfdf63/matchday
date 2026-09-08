@@ -352,8 +352,8 @@ function getMainTicketSections(game: Game): TicketSection[] {
           actionLabel: "Оставить заявку",
           subtitle: "Бесплатные билеты в сектор C124",
           lead: "Пенсионеры, участники ВОВ и боевых действий могут получить билет в кассе в день матча при подтверждении статуса.",
-          schemaSrc: "/images/schema/schema-c4.webp",
-          schemaAlt: "Схема секторов для социальных билетов",
+          schemaSrc: "/images/sector/3-1920.png",
+          schemaAlt: "Болельщики ФК Акрон на трибуне",
           descriptions: [
             {
               icon: "promo",
@@ -364,11 +364,11 @@ function getMainTicketSections(game: Game): TicketSection[] {
         {
           id: "social-family",
           title: "Многодетным",
-          price: "Скидка 75%",
+          price: "По заявке",
           href: social,
           actionLabel: "Оставить заявку",
-          subtitle: "Скидки для многодетных семей",
-          lead: "Многодетные семьи могут получить скидку на покупку билетов в семейный сектор C4.",
+          subtitle: "Секторы C413-C417 · 4 этаж",
+          lead: "Многодетные семьи могут получить скидку 75% на покупку билетов в семейный сектор C4.",
           schemaSrc: "/images/sector/c4-1.webp",
           schemaAlt: "Семья болельщиков ФК Акрон на трибуне",
           descriptions: [
@@ -412,12 +412,33 @@ function getMainTicketSections(game: Game): TicketSection[] {
           schemaSrc: "/images/schema/shema-vip.png",
           schemaAlt: "Схема VIP-секторов",
           descriptions: [
-            { icon: "ticket", text: "Комфортные места повышенной категории" },
             {
-              icon: "location",
-              text: "Удобный доступ и отдельная инфраструктура",
+              icon: "view",
+              title: "Эксклюзивная близость",
+              description:
+                "Слышите указания тренера, видите реакции игроков и всё, что скрыто от обычных зрителей.",
             },
-            { icon: "promo", text: "Сервис и атмосфера премиального матча" },
+            {
+              icon: "match",
+              title: "Главные эмоции",
+              description:
+                "Именно здесь разворачиваются горячие споры с арбитром, триумфальные выходы замен и нерв скамейки в решающие минуты.",
+            },
+            {
+              icon: "view",
+              title: "Идеальный ракурс",
+              description:
+                "Отличный обзор атакующих действий и оборонительных построений вашей команды.",
+            },
+            {
+              icon: "ticket",
+              title: "Премиальная атмосфера",
+              description: "Комфортные мягкие кресла.",
+            },
+            {
+              icon: "promo",
+              text: "Это не просто билет на матч — это пропуск за кулисы большого футбола.",
+            },
           ],
         },
         {
@@ -1042,15 +1063,14 @@ export function MainMatchTicketCard({ game }: { game: Game }) {
             {activeProduct.promoCode && activeProduct.promoDescription ? (
               <div className={styles.modalPromo}>
                 <p className={styles.modalPromoLabel}>Промокод</p>
-                <div className={styles.modalPromoRow}>
+                <p className={cx(styles.modalPromoLine, "font-mono")}>
                   <PromoCodeCopy
                     code={activeProduct.promoCode}
                     className={styles.modalCodeButton}
                   />
-                  <p className={styles.modalPromoText}>
-                    {activeProduct.promoDescription}
-                  </p>
-                </div>
+                  {" — "}
+                  {activeProduct.promoDescription}
+                </p>
               </div>
             ) : null}
           </div>
