@@ -13,6 +13,10 @@ import type { Game } from "@/data/games";
 import { getTeamLogoPath } from "@/data/teamLogos";
 import { DirectionsModalTrigger } from "@/features/home/directions-modal";
 import { PromoCodesModalTrigger } from "@/features/home/home-modal";
+import {
+  formatPriceForButton,
+  MatchTicketProductsBlock,
+} from "@/features/tickets";
 import { useClientNow } from "@/lib/hooks/useClientNow";
 import { formatPriceIncreaseLabel } from "@/lib/match/formatPriceIncreaseLabel";
 import { formatMatchScore } from "@/lib/match/formatMatchGoals";
@@ -42,16 +46,12 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
   const homeLogo = getTeamLogoPath(game.homeTeam);
   const awayLogo = getTeamLogoPath(game.awayTeam);
   const ticket = game.ticketLink?.trim();
-  const vip = game.ticketLinkVip?.trim();
-  const skybox = game.ticketLinkSkybox?.trim();
-  const ticketLinkCount = [ticket, vip, skybox].filter(Boolean).length;
-  const hasExtraTicketLinks = ticketLinkCount > 1;
   const ticketLabel = game.ticketLinkLabel?.trim() || "Купить билеты";
-  const vipLabel = game.ticketLinkVipLabel?.trim() || "VIP";
-  const skyboxLabel = game.ticketLinkSkyboxLabel?.trim() || "ложи";
   const ticketPriceFrom = game.ticketLinkPriceFrom?.trim() || undefined;
-  const vipPriceFrom = game.ticketLinkVipPriceFrom?.trim() || undefined;
-  const skyboxPriceFrom = game.ticketLinkSkyboxPriceFrom?.trim() || undefined;
+  const mainTicketPrice = formatPriceForButton(
+    game.ticketLinkPriceFrom,
+    "от 290 ₽",
+  );
   const isAway = game.venue === "away";
   const priceLine =
     !isAway &&
@@ -196,66 +196,42 @@ export const UpcomingMatchCard: FC<UpcomingMatchCardProps> = ({
       </div>
 
       <div className={styles.actions}>
-        <div
-          className={cx(
-            styles.primaryStack,
-            ticketLinkCount === 1 && styles.primaryStackSolo,
-            ticketLinkCount === 2 && styles.primaryStackDuo,
-          )}
-        >
-          {ticket ? (
+        {ticket && !isAway ? (
+          <>
             <a
               className={cx(styles.btnPrimary, "font-mono")}
               href={getTicketUrl(ticket)}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                if (handleTicketClick(ticket)) e.preventDefault();
+              }}
             >
-              <TicketButtonContent
-                title={ticketLabel}
-                priceFrom={ticketPriceFrom}
-                priceClassName={styles.btnPrice}
-              />
+              Купить билет {mainTicketPrice}
             </a>
-          ) : null}
-          {hasExtraTicketLinks ? (
-            <div className={styles.outlineStack}>
-              {vip ? (
-                <a
-                  className={cx(styles.btnOutline, "font-mono")}
-                  href={getTicketUrl(vip)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => {
-                    if (handleTicketClick(vip)) e.preventDefault();
-                  }}
-                >
-                  <TicketButtonContent
-                    title={vipLabel}
-                    priceFrom={vipPriceFrom}
-                    priceClassName={styles.btnPrice}
-                  />
-                </a>
-              ) : null}
-              {skybox ? (
-                <a
-                  className={cx(styles.btnOutline, "font-mono")}
-                  href={getTicketUrl(skybox)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => {
-                    if (handleTicketClick(skybox)) e.preventDefault();
-                  }}
-                >
-                  <TicketButtonContent
-                    title={skyboxLabel}
-                    priceFrom={skyboxPriceFrom}
-                    priceClassName={styles.btnPrice}
-                  />
-                </a>
-              ) : null}
-            </div>
-          ) : null}
-        </div>
+            <MatchTicketProductsBlock
+              game={game}
+              layout="calendar"
+              className={styles.ticketProducts}
+            />
+          </>
+        ) : ticket ? (
+          <a
+            className={cx(styles.btnPrimary, "font-mono")}
+            href={getTicketUrl(ticket)}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              if (handleTicketClick(ticket)) e.preventDefault();
+            }}
+          >
+            <TicketButtonContent
+              title={ticketLabel}
+              priceFrom={ticketPriceFrom}
+              priceClassName={styles.btnPrice}
+            />
+          </a>
+        ) : null}
 
         {priceLine ? (
           <p className={cx(styles.priceNote, "font-mono")}>{priceLine}</p>

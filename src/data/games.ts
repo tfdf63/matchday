@@ -26,6 +26,8 @@ export interface Game {
   ticketLinkSkyboxPriceFrom?: string;
   /** Ссылка на билеты семейного сектора C4. */
   ticketLinkC4?: string;
+  /** Вторая строка кнопки семейного сектора C4, например «от 590 ₽». */
+  ticketLinkC4PriceFrom?: string;
   /** Бизнес-клуб (отдельная ссылка на виджет/лендинг). */
   ticketLinkBusinessClub?: string;
   /** Вторая строка кнопки бизнес-клуба, например «от 7990 ₽». */
@@ -889,6 +891,7 @@ const games: Game[] = [
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@71890627?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51",
     ticketLinkC4:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@71890627?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51",
+    ticketLinkC4PriceFrom: "от 590 ₽",
     leagueInfo: "Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА",
     seasonTour: "2026/2027 9 ТУР",
     fanIdStatus: "Fan id",
@@ -979,6 +982,7 @@ const games: Game[] = [
     ticketLinkSkyboxPriceFrom: "от 12500 ₽",
     ticketLinkC4:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72083159?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51",
+    ticketLinkC4PriceFrom: "от 790 ₽",
     ticketLinkBusinessClub:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72083159?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51",
     ticketLinkBusinessClubPriceFrom: "от 7990 ₽",
@@ -1074,6 +1078,7 @@ const games: Game[] = [
     ticketLinkSkyboxPriceFrom: "от 11500 ₽",
     ticketLinkC4:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72103662?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51",
+    ticketLinkC4PriceFrom: "от 490 ₽",
     ticketLinkBusinessClub:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72103662?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51",
     ticketLinkBusinessClubPriceFrom: "от 6990 ₽",
@@ -1110,6 +1115,7 @@ const games: Game[] = [
     ticketLinkSkyboxPriceFrom: "от 11500 ₽",
     ticketLinkC4:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72135472?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51",
+    ticketLinkC4PriceFrom: "от 490 ₽",
     ticketLinkBusinessClub:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72135472?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51",
     ticketLinkBusinessClubPriceFrom: "от 6990 ₽",
@@ -1165,6 +1171,7 @@ const games: Game[] = [
     ticketLinkSkyboxPriceFrom: "от 11500 ₽",
     ticketLinkC4:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72137228?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51",
+    ticketLinkC4PriceFrom: "от 490 ₽",
     ticketLinkBusinessClub:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72137228?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51",
     ticketLinkBusinessClubPriceFrom: "от 6990 ₽",

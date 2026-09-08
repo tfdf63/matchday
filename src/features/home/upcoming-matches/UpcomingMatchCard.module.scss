@@ -244,20 +244,8 @@ $fan-id-to-meta-gap: 20px;
 	width: 100%;
 }
 
-.primaryStack {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+.ticketProducts {
 	width: 100%;
-}
-
-.outlineStack {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	gap: 20px;
-	width: 100%;
-	align-items: stretch;
 }
 
 .btnPrimary {
@@ -266,6 +254,7 @@ $fan-id-to-meta-gap: 20px;
 	align-items: center;
 	justify-content: center;
 	gap: 2px;
+	width: 100%;
 	min-height: 48px;
 	padding: 14px 24px;
 	border: none;
@@ -468,50 +457,6 @@ $fan-id-to-meta-gap: 20px;
 		width: 100%;
 	}
 
-	.primaryStack {
-		flex-direction: row;
-		flex-wrap: nowrap;
-		align-items: stretch;
-		gap: 20px;
-	}
-
-	.outlineStack {
-		display: contents;
-	}
-
-	.btnPrimary {
-		order: 2;
-		flex: 0 0 216px;
-		min-width: 0;
-	}
-
-	/* Только «Купить билеты» (без VIP / лож): на всю ширину .actions */
-	.primaryStackSolo .btnPrimary {
-		flex: 1 1 0;
-	}
-
-	/* Две ссылки (билеты + VIP или ложи): поровну на всю ширину */
-	.primaryStackDuo .btnPrimary,
-	.primaryStackDuo .btnOutline {
-		flex: 1 1 0;
-		min-width: 0;
-	}
-
-	.outlineStack .btnOutline:only-of-type {
-		order: 1;
-		flex: 1 1 0;
-	}
-
-	.outlineStack .btnOutline:first-of-type:not(:only-of-type) {
-		order: 1;
-		flex: 1 1 0;
-	}
-
-	.outlineStack .btnOutline:last-of-type:not(:only-of-type) {
-		order: 3;
-		flex: 1 1 0;
-	}
-
 	.secondaryStack {
 		gap: 20px;
 	}
@@ -588,26 +533,10 @@ $fan-id-to-meta-gap: 20px;
 	}
 
 	.btnPrimary {
-		flex: 0 0 302px;
+		width: 100%;
 		min-height: 54px;
 		padding-top: 14px;
 		padding-bottom: 14px;
-	}
-
-	.primaryStackSolo .btnPrimary {
-		flex: 1 1 0;
-	}
-
-	.primaryStackDuo .btnPrimary,
-	.primaryStackDuo .btnOutline {
-		flex: 1 1 0;
-		min-width: 0;
-	}
-
-	.btnOutline {
-		min-height: 54px;
-		padding-top: 16px;
-		padding-bottom: 16px;
 	}
 
 	.btnSecondary {
@@ -674,27 +603,10 @@ $fan-id-to-meta-gap: 20px;
 	}
 
 	.btnPrimary {
-		flex: 0 0 290px;
+		width: 100%;
 		min-height: 58px;
 		padding-top: 14px;
 		padding-bottom: 14px;
-		font-size: 14px;
-	}
-
-	.primaryStackSolo .btnPrimary {
-		flex: 1 1 0;
-	}
-
-	.primaryStackDuo .btnPrimary,
-	.primaryStackDuo .btnOutline {
-		flex: 1 1 0;
-		min-width: 0;
-	}
-
-	.btnOutline {
-		min-height: 58px;
-		padding-top: 16px;
-		padding-bottom: 16px;
 		font-size: 14px;
 	}
 

@@ -22,6 +22,7 @@ export type ContentMatch = {
 	ticketLinkVipPriceFrom?: string
 	ticketLinkSkyboxPriceFrom?: string
 	ticketLinkC4?: string
+	ticketLinkC4PriceFrom?: string
 	ticketLinkBusinessClub?: string
 	ticketLinkFanNew?: string
 	ticketLinkFanNewPriceFrom?: string
@@ -64,6 +65,7 @@ export function contentMatchToGame(row: ContentMatch): Game {
 		ticketLinkVipPriceFrom: row.ticketLinkVipPriceFrom,
 		ticketLinkSkyboxPriceFrom: row.ticketLinkSkyboxPriceFrom,
 		ticketLinkC4: row.ticketLinkC4,
+		ticketLinkC4PriceFrom: row.ticketLinkC4PriceFrom,
 		ticketLinkBusinessClub: row.ticketLinkBusinessClub,
 		ticketLinkFanNew: row.ticketLinkFanNew,
 		ticketLinkFanNewPriceFrom: row.ticketLinkFanNewPriceFrom,
