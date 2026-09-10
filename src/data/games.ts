@@ -891,6 +891,8 @@ const games: Game[] = [
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@71890627?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51",
     ticketLinkC4:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@71890627?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51",
+    ticketLinkFanNew:
+      "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10441@71890627?clientKey=945d2837-2499-4f21-8eaa-6ae6ae7e7136&regionId=51",
     ticketLinkC4PriceFrom: "от 590 ₽",
     leagueInfo: "Альфа-Банк РОССИЙСКАЯ ПРЕМЬЕР-ЛИГА",
     seasonTour: "2026/2027 9 ТУР",
