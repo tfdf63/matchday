@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-09-12T07:48:57+04:00",
+    "generatedAt": "2026-09-12T08:07:09+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 1,
-    "passengersCount": 38
+    "passengersCount": 36
   },
   "events": [
     {
@@ -25,8 +25,8 @@
       "seasonTour": null,
       "fanIdStatus": "Fan id",
       "busCount": 1,
-      "passengerCount": 38,
-      "seatsAssigned": 38
+      "passengerCount": 36,
+      "seatsAssigned": 36
     }
   ],
   "manifests": [
@@ -36,8 +36,8 @@
       "label": "Автобус",
       "busNo": null,
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "passengerCount": 38,
-      "seatsAssigned": 38,
+      "passengerCount": 36,
+      "seatsAssigned": 36,
       "boardingStops": [
         "Тольятти"
       ]
@@ -67,7 +67,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79272662576",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 29,
+      "sourceRow": 27,
       "seq": 2
     },
     {
@@ -106,21 +106,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79649757982",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 30,
+      "sourceRow": 28,
       "seq": 5
-    },
-    {
-      "eventId": "2026-09-12-krasnodar-h-akron",
-      "manifestId": "2026-09-12-krasnodar-h-akron-bus-avtobus",
-      "fullName": "Буровихина Елена Евгеньевна",
-      "seatNo": "49",
-      "orderId": "261246",
-      "birthDateIso": "2003-02-03",
-      "boardingPlace": "Тольятти,",
-      "phone": "79297138455",
-      "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 27,
-      "seq": 6
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -133,7 +120,7 @@
       "phone": "79179445756",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 13,
-      "seq": 7
+      "seq": 6
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -146,7 +133,7 @@
       "phone": "79270001964",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 18,
-      "seq": 8
+      "seq": 7
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -159,7 +146,7 @@
       "phone": "79276599313",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 20,
-      "seq": 9
+      "seq": 8
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -172,7 +159,7 @@
       "phone": "79179445756",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 12,
-      "seq": 10
+      "seq": 9
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -184,8 +171,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 37,
-      "seq": 11
+      "sourceRow": 35,
+      "seq": 10
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -198,7 +185,7 @@
       "phone": "79272178288",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 11,
-      "seq": 12
+      "seq": 11
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -210,8 +197,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79277570593",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 33,
-      "seq": 13
+      "sourceRow": 31,
+      "seq": 12
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -223,8 +210,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79276501395",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 34,
-      "seq": 14
+      "sourceRow": 32,
+      "seq": 13
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -236,8 +223,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79277570593",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 35,
-      "seq": 15
+      "sourceRow": 33,
+      "seq": 14
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -249,8 +236,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79179733510",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 31,
-      "seq": 16
+      "sourceRow": 29,
+      "seq": 15
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -262,8 +249,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79272662576",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 39,
-      "seq": 17
+      "sourceRow": 37,
+      "seq": 16
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -275,8 +262,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79272662576",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 28,
-      "seq": 18
+      "sourceRow": 26,
+      "seq": 17
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -288,8 +275,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 36,
-      "seq": 19
+      "sourceRow": 34,
+      "seq": 18
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -302,7 +289,7 @@
       "phone": "79272178288",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 6,
-      "seq": 20
+      "seq": 19
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -315,7 +302,7 @@
       "phone": "79608469454",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 7,
-      "seq": 21
+      "seq": 20
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -328,7 +315,7 @@
       "phone": "79608469454",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 9,
-      "seq": 22
+      "seq": 21
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -341,7 +328,7 @@
       "phone": "79608469454",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 8,
-      "seq": 23
+      "seq": 22
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -354,7 +341,7 @@
       "phone": "79776432017",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 25,
-      "seq": 24
+      "seq": 23
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -366,8 +353,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79179723135",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 41,
-      "seq": 25
+      "sourceRow": 39,
+      "seq": 24
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -380,7 +367,7 @@
       "phone": "79272178288",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 10,
-      "seq": 26
+      "seq": 25
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -393,7 +380,7 @@
       "phone": "79272178288",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 5,
-      "seq": 27
+      "seq": 26
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -406,7 +393,7 @@
       "phone": "79178227069",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 15,
-      "seq": 28
+      "seq": 27
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -419,7 +406,7 @@
       "phone": "79178227069",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 14,
-      "seq": 29
+      "seq": 28
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -431,21 +418,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79879362482",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 40,
-      "seq": 30
-    },
-    {
-      "eventId": "2026-09-12-krasnodar-h-akron",
-      "manifestId": "2026-09-12-krasnodar-h-akron-bus-avtobus",
-      "fullName": "Свечников Александр Сергеевич",
-      "seatNo": "50",
-      "orderId": "261246",
-      "birthDateIso": "1999-12-05",
-      "boardingPlace": "Тольятти,",
-      "phone": "79879605099",
-      "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 26,
-      "seq": 31
+      "sourceRow": 38,
+      "seq": 29
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -458,7 +432,7 @@
       "phone": "79027428528",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 4,
-      "seq": 32
+      "seq": 30
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -471,7 +445,7 @@
       "phone": "79178227069",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 16,
-      "seq": 33
+      "seq": 31
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -484,7 +458,7 @@
       "phone": "79021800272",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 24,
-      "seq": 34
+      "seq": 32
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -497,7 +471,7 @@
       "phone": "79273207259",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 23,
-      "seq": 35
+      "seq": 33
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -509,8 +483,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79277180995",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 38,
-      "seq": 36
+      "sourceRow": 36,
+      "seq": 34
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -523,7 +497,7 @@
       "phone": "79021813490",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 22,
-      "seq": 37
+      "seq": 35
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -535,8 +509,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79372360455",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 32,
-      "seq": 38
+      "sourceRow": 30,
+      "seq": 36
     }
   ]
 }
