@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-09-11T01:07:03+04:00",
+    "generatedAt": "2026-09-12T07:48:57+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 1,
     "manifestsCount": 1,
-    "passengersCount": 39
+    "passengersCount": 38
   },
   "events": [
     {
@@ -25,8 +25,8 @@
       "seasonTour": null,
       "fanIdStatus": "Fan id",
       "busCount": 1,
-      "passengerCount": 39,
-      "seatsAssigned": 39
+      "passengerCount": 38,
+      "seatsAssigned": 38
     }
   ],
   "manifests": [
@@ -36,8 +36,8 @@
       "label": "Автобус",
       "busNo": null,
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "passengerCount": 39,
-      "seatsAssigned": 39,
+      "passengerCount": 38,
+      "seatsAssigned": 38,
       "boardingStops": [
         "Тольятти"
       ]
@@ -106,7 +106,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79649757982",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 31,
+      "sourceRow": 30,
       "seq": 5
     },
     {
@@ -184,7 +184,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 38,
+      "sourceRow": 37,
       "seq": 11
     },
     {
@@ -204,26 +204,26 @@
       "eventId": "2026-09-12-krasnodar-h-akron",
       "manifestId": "2026-09-12-krasnodar-h-akron-bus-avtobus",
       "fullName": "Ким Александра Васильевна",
-      "seatNo": "25",
+      "seatNo": "18",
       "orderId": "261283",
       "birthDateIso": "1991-02-23",
       "boardingPlace": "Тольятти,",
       "phone": "79277570593",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 34,
+      "sourceRow": 33,
       "seq": 13
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
       "manifestId": "2026-09-12-krasnodar-h-akron-bus-avtobus",
       "fullName": "Ким Вадим Генадьевич",
-      "seatNo": "22",
+      "seatNo": "17",
       "orderId": "261283",
       "birthDateIso": "1988-03-17",
       "boardingPlace": "Тольятти,",
       "phone": "79276501395",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 35,
+      "sourceRow": 34,
       "seq": 14
     },
     {
@@ -236,7 +236,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79277570593",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 36,
+      "sourceRow": 35,
       "seq": 15
     },
     {
@@ -249,7 +249,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79179733510",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 32,
+      "sourceRow": 31,
       "seq": 16
     },
     {
@@ -262,7 +262,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79272662576",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 40,
+      "sourceRow": 39,
       "seq": 17
     },
     {
@@ -288,7 +288,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79372132572",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 37,
+      "sourceRow": 36,
       "seq": 19
     },
     {
@@ -366,7 +366,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79179723135",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 42,
+      "sourceRow": 41,
       "seq": 25
     },
     {
@@ -431,7 +431,7 @@
       "boardingPlace": "Тольятти,",
       "phone": "79879362482",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 41,
+      "sourceRow": 40,
       "seq": 30
     },
     {
@@ -476,19 +476,6 @@
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
       "manifestId": "2026-09-12-krasnodar-h-akron-bus-avtobus",
-      "fullName": "Трепалин Андрей Евгеньевич",
-      "seatNo": "40",
-      "orderId": "261260",
-      "birthDateIso": "1986-12-29",
-      "boardingPlace": "Тольятти,",
-      "phone": "79608469454",
-      "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 30,
-      "seq": 34
-    },
-    {
-      "eventId": "2026-09-12-krasnodar-h-akron",
-      "manifestId": "2026-09-12-krasnodar-h-akron-bus-avtobus",
       "fullName": "Тыртышный Тихон Витальевич",
       "seatNo": "52",
       "orderId": "261230",
@@ -497,7 +484,7 @@
       "phone": "79021800272",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 24,
-      "seq": 35
+      "seq": 34
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -510,7 +497,7 @@
       "phone": "79273207259",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 23,
-      "seq": 36
+      "seq": 35
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -522,8 +509,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79277180995",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 39,
-      "seq": 37
+      "sourceRow": 38,
+      "seq": 36
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -536,7 +523,7 @@
       "phone": "79021813490",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
       "sourceRow": 22,
-      "seq": 38
+      "seq": 37
     },
     {
       "eventId": "2026-09-12-krasnodar-h-akron",
@@ -548,8 +535,8 @@
       "boardingPlace": "Тольятти,",
       "phone": "79372360455",
       "sourceFile": "atoms_drivers_report_12.09.2026.xlsx",
-      "sourceRow": 33,
-      "seq": 39
+      "sourceRow": 32,
+      "seq": 38
     }
   ]
 }
