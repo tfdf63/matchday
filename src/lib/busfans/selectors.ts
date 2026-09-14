@@ -232,10 +232,10 @@ export function getMatchEvents(dataset: BusFansDataset): MatchEvent[] {
 
 export function getVisibleMatchEvents(
 	dataset: BusFansDataset,
-	todayIso: string,
+	now: Date = new Date(),
 ): MatchEvent[] {
 	return getMatchEvents(dataset).filter((event) =>
-		isBusfansCardVisible(event, todayIso),
+		isBusfansCardVisible(event, now),
 	)
 }
 

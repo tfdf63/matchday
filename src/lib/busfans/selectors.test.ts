@@ -40,7 +40,10 @@ describe('busfans selectors', () => {
 	})
 
 	it('filters out cards from the day after the last day of the event', () => {
-		const visible = getVisibleMatchEvents(busFansDataset, '2026-09-15')
+		const visible = getVisibleMatchEvents(
+			busFansDataset,
+			new Date('2026-09-15T12:00:00+04:00'),
+		)
 		expect(
 			visible.find((e) => e.id === '2026-09-12-krasnodar-h-akron'),
 		).toBeUndefined()

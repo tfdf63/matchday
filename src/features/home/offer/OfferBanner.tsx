@@ -35,6 +35,13 @@ export type OfferBannerProps = {
 	ctaHref?: string
 	ctaWrapClassName?: string
 	ctaButtonClassName?: string
+	ctaNote?: string
+	ctaNoteClassName?: string
+	imageAlt?: string
+}
+
+function isExternalUrl(href: string): boolean {
+	return href.startsWith('http://') || href.startsWith('https://')
 }
 
 export const OfferBanner: FC<OfferBannerProps> = ({
@@ -57,9 +64,14 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 	ctaHref,
 	ctaWrapClassName,
 	ctaButtonClassName,
+	ctaNote,
+	ctaNoteClassName,
+	imageAlt = '',
 }) => {
 	const cardHref = ctaLabel && ctaHref ? undefined : href
 	const RootTag = cardHref ? 'a' : 'article'
+	const cardExternal = cardHref ? isExternalUrl(cardHref) : false
+	const ctaExternal = ctaHref ? isExternalUrl(ctaHref) : false
 
 	return (
 		<RootTag
@@ -67,8 +79,12 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 			{...(cardHref
 				? {
 						href: cardHref,
-						target: '_blank',
-						rel: 'noopener noreferrer',
+						...(cardExternal
+							? {
+									target: '_blank',
+									rel: 'noopener noreferrer',
+								}
+							: {}),
 					}
 				: {})}
 		>
@@ -92,11 +108,18 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 						<a
 							className={cx(styles.ctaButton, ctaButtonClassName, 'font-mono')}
 							href={ctaHref}
-							target='_blank'
-							rel='noopener noreferrer'
+							{...(ctaExternal
+								? {
+										target: '_blank',
+										rel: 'noopener noreferrer',
+									}
+								: {})}
 						>
 							{ctaLabel}
 						</a>
+						{ctaNote ? (
+							<p className={ctaNoteClassName}>{ctaNote}</p>
+						) : null}
 					</div>
 				) : null}
 			</div>
@@ -110,7 +133,7 @@ export const OfferBanner: FC<OfferBannerProps> = ({
 					<img
 						className={cx(styles.image, imageClassName)}
 						src={imageSrc}
-						alt=""
+						alt={imageAlt}
 						width={2064}
 						height={1358}
 						decoding="async"

@@ -58,3 +58,4 @@ export {
 	useParkingModal,
 } from './parking-modal'
 export { MarqueeSection } from './marquee'
+export { BusFansPromoSection } from './busfans-promo'

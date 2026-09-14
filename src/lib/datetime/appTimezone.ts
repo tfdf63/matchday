@@ -10,3 +10,8 @@ export function getAppDateIso(now: Date = new Date()): string {
 		day: '2-digit',
 	}).format(now)
 }
+
+/** 00:00 календарного дня `dateIso` в SAMT (UTC+4, мс с эпохи). */
+export function getSamaraDayStartMs(dateIso: string): number {
+	return Date.parse(`${dateIso}T00:00:00+04:00`)
+}

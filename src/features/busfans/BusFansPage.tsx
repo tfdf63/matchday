@@ -6,7 +6,6 @@ import { useMemo, useState } from 'react'
 
 import { BaseModal } from '@/components/Modal'
 import { busFansDataset } from '@/data/busfans'
-import { getAppDateIso } from '@/lib/datetime/appTimezone'
 import { useClientNow } from '@/lib/hooks/useClientNow'
 import { getVisibleMatchEvents } from '@/lib/busfans/selectors'
 
@@ -48,7 +47,7 @@ export const BusFansPage: FC = () => {
 	const now = useClientNow()
 	const events = useMemo(() => {
 		if (!now) return []
-		return getVisibleMatchEvents(busFansDataset, getAppDateIso(now))
+		return getVisibleMatchEvents(busFansDataset, now)
 	}, [now])
 	const [isBenefitsOpen, setIsBenefitsOpen] = useState(false)
 	const [isRouteInfoOpen, setIsRouteInfoOpen] = useState(false)

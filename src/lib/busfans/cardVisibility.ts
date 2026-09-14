@@ -1,18 +1,23 @@
 import type { MatchEvent } from '@/data/busfans'
 
-/** Последний день, когда карточка матча видна в списке /busfans. */
-export function getEventLastDisplayDateIso(
-	event: Pick<MatchEvent, 'dateIso' | 'dateToIso'>,
-): string {
-	return event.dateToIso.localeCompare(event.dateIso) >= 0
-		? event.dateToIso
-		: event.dateIso
+import { getSamaraDayStartMs } from '@/lib/datetime/appTimezone'
+
+/** Скрываем карточку с этого момента (SAMT): полночь даты матча + 23 ч. */
+export const BUSFANS_CARD_HIDE_HOURS_AFTER_MATCH_DAY = 23
+
+export function getEventBusfansHideAtMs(
+	event: Pick<MatchEvent, 'dateIso'>,
+): number {
+	return (
+		getSamaraDayStartMs(event.dateIso) +
+		BUSFANS_CARD_HIDE_HOURS_AFTER_MATCH_DAY * 60 * 60 * 1000
+	)
 }
 
-/** Скрываем с календарного дня после последнего дня матча (SAMT, YYYY-MM-DD). */
+/** Карточка видна, пока «сейчас» (SAMT) раньше даты матча + 23 ч. */
 export function isBusfansCardVisible(
-	event: Pick<MatchEvent, 'dateIso' | 'dateToIso'>,
-	todayIso: string,
+	event: Pick<MatchEvent, 'dateIso'>,
+	now: Date = new Date(),
 ): boolean {
-	return todayIso <= getEventLastDisplayDateIso(event)
+	return now.getTime() < getEventBusfansHideAtMs(event)
 }
