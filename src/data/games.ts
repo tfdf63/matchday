@@ -867,6 +867,8 @@ const games: Game[] = [
     seasonTour: "2026/2027 8 ТУР",
     fanIdStatus: "Fan id",
     promoType: "rpl",
+    homeGoals: "1",
+    awayGoals: "1",
   },
   {
     id: "34",
@@ -889,6 +891,7 @@ const games: Game[] = [
     ticketLinkSkyboxPriceFrom: "от 11500 ₽",
     ticketLinkBusinessClub:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@71890627?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51",
+    ticketLinkBusinessClubPriceFrom: "от 6990 ₽",
     ticketLinkC4:
       "https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@71890627?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51",
     ticketLinkFanNew:

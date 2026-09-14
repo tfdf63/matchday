@@ -638,20 +638,27 @@ $pts-loss: #f08a8a;
 .ticketActions {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	gap: 6px;
 	width: 100%;
 	align-items: stretch;
 
 	@include from($bp-tablet-sm) {
+		flex-wrap: nowrap;
 		gap: 8px;
 	}
 }
 
 .btnPrimary,
 .btnOutline {
-	flex: 1 1 0;
+	flex: 1 1 calc((100% - 12px) / 3);
 	min-width: 0;
+	max-width: calc((100% - 12px) / 3);
+
+	@include from($bp-tablet-sm) {
+		flex: 1 1 0;
+		max-width: none;
+	}
 	display: flex;
 	flex-direction: column;
 	align-items: center;

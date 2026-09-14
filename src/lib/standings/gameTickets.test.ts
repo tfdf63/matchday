@@ -18,11 +18,7 @@ describe('gameTickets', () => {
 		expect(game).toBeDefined()
 
 		const buttons = getStandingsTicketButtons(game!)
-		expect(buttons.map((b) => b.label)).toEqual([
-			'VIP',
-			'Купить билеты',
-			'Ложи',
-		])
+		expect(buttons.map((b) => b.label)).toEqual(['Билеты', 'VIP', 'Ложи'])
 		expect(buttons.find((b) => b.variant === 'primary')?.href).toContain(
 			'ticketsteam-2130',
 		)
@@ -41,7 +37,7 @@ describe('gameTickets', () => {
 		expect(game).toBeDefined()
 
 		const buttons = getStandingsTicketButtons(game!)
-		expect(buttons.find((b) => b.label === 'Купить билеты')?.priceFrom).toBe(
+		expect(buttons.find((b) => b.label === 'Билеты')?.priceFrom).toBe(
 			'от 490 ₽',
 		)
 		expect(buttons.find((b) => b.label === 'VIP')?.priceFrom).toBe(
@@ -49,6 +45,39 @@ describe('gameTickets', () => {
 		)
 		expect(buttons.find((b) => b.label === 'Ложи')?.priceFrom).toBe(
 			'от 12500 ₽',
+		)
+	})
+
+	it('добавляет Фанатский и Семейный в заданном порядке', () => {
+		const game = games.find((g) => g.id === '34')
+		expect(game).toBeDefined()
+
+		const buttons = getStandingsTicketButtons(game!)
+		expect(buttons.map((b) => b.label)).toEqual([
+			'Билеты',
+			'Фанатский',
+			'Семейный',
+			'VIP',
+			'Бизнес',
+			'Ложи',
+		])
+		expect(buttons.find((b) => b.label === 'Бизнес')?.priceFrom).toBe(
+			'от 6990 ₽',
+		)
+		expect(buttons.find((b) => b.label === 'Ложи')?.priceFrom).toBe(
+			'от 11500 ₽',
+		)
+		expect(buttons.find((b) => b.label === 'Бизнес')?.href).toBe(
+			buttons.find((b) => b.label === 'Ложи')?.href,
+		)
+		expect(buttons.find((b) => b.label === 'Билеты')?.priceFrom).toBe(
+			'от 290 ₽',
+		)
+		expect(buttons.find((b) => b.label === 'Фанатский')?.priceFrom).toBe(
+			'от 390 ₽',
+		)
+		expect(buttons.find((b) => b.label === 'Семейный')?.priceFrom).toBe(
+			'от 590 ₽',
 		)
 	})
 

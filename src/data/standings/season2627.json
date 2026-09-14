@@ -135,9 +135,9 @@
 			"team": "Краснодар",
 			"venue": "away",
 			"match": {
-				"score": null,
-				"pts": null,
-				"played": false
+				"score": "1:1",
+				"pts": 1,
+				"played": true
 			},
 			"when": {
 				"label": "13 сен (вс)",

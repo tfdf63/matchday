@@ -30,7 +30,7 @@ export const MatchTicketButtons: FC<Props> = ({ buttons }) => {
 		>
 			{buttons.map((button) => (
 				<a
-					key={button.href}
+					key={`${button.label}-${button.href}`}
 					className={cx(
 						button.variant === 'primary'
 							? styles.btnPrimary

@@ -92,17 +92,47 @@ export function getStandingsTicketButtons(game: Game): StandingsTicketButton[] {
 	const buttons: StandingsTicketButton[] = []
 
 	const ticket = trimUrl(game.ticketLink)
+	const fan = trimUrl(game.ticketLinkFanNew)
 	const vip = trimUrl(game.ticketLinkVip)
-	const lodges = trimUrl(game.ticketLinkSkybox)
 	const businessClub = trimUrl(game.ticketLinkBusinessClub)
+	const lodges = trimUrl(game.ticketLinkSkybox)
+	const c4 = trimUrl(game.ticketLinkC4)
 	const vipLabel = game.ticketLinkVipLabel?.trim()
 	const vipIsTicketLink = !vipLabel || vipLabel === 'VIP'
+	const ticketLabel = game.ticketLinkLabel?.trim() || 'Билеты'
 	const ticketPriceFrom = game.ticketLinkPriceFrom?.trim() || undefined
+	const fanPriceFrom =
+		game.ticketLinkFanNewPriceFrom?.trim() || 'от 390 ₽'
 	const vipPriceFrom = game.ticketLinkVipPriceFrom?.trim() || undefined
-	const lodgesPriceFrom = game.ticketLinkSkyboxPriceFrom?.trim() || undefined
 	const businessClubPriceFrom =
 		game.ticketLinkBusinessClubPriceFrom?.trim() || undefined
+	const lodgesPriceFrom = game.ticketLinkSkyboxPriceFrom?.trim() || undefined
+	const c4PriceFrom = game.ticketLinkC4PriceFrom?.trim() || undefined
 
+	if (ticket) {
+		buttons.push({
+			label: ticketLabel,
+			priceFrom: ticketPriceFrom,
+			href: ticket,
+			variant: 'primary',
+		})
+	}
+	if (fan) {
+		buttons.push({
+			label: 'Фанатский',
+			priceFrom: fanPriceFrom,
+			href: fan,
+			variant: 'outline',
+		})
+	}
+	if (c4) {
+		buttons.push({
+			label: 'Семейный',
+			priceFrom: c4PriceFrom,
+			href: c4,
+			variant: 'outline',
+		})
+	}
 	if (vip && vipIsTicketLink) {
 		buttons.push({
 			label: 'VIP',
@@ -111,12 +141,12 @@ export function getStandingsTicketButtons(game: Game): StandingsTicketButton[] {
 			variant: 'outline',
 		})
 	}
-	if (ticket) {
+	if (businessClub) {
 		buttons.push({
-			label: 'Купить билеты',
-			priceFrom: ticketPriceFrom,
-			href: ticket,
-			variant: 'primary',
+			label: 'Бизнес',
+			priceFrom: businessClubPriceFrom,
+			href: businessClub,
+			variant: 'outline',
 		})
 	}
 	if (lodges) {
@@ -124,14 +154,6 @@ export function getStandingsTicketButtons(game: Game): StandingsTicketButton[] {
 			label: 'Ложи',
 			priceFrom: lodgesPriceFrom,
 			href: lodges,
-			variant: 'outline',
-		})
-	}
-	if (businessClub) {
-		buttons.push({
-			label: 'Бизнес-клуб',
-			priceFrom: businessClubPriceFrom,
-			href: businessClub,
 			variant: 'outline',
 		})
 	}
