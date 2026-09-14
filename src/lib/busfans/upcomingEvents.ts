@@ -1,6 +1,7 @@
 import games, { PROMOTED_MAIN_CALENDAR_GAME_ID, type Game } from '@/data/games'
 import type { MatchEvent, MatchVenue } from '@/data/busfans'
 
+import { getGameBusRegistrationLinks } from './registrationLinks'
 import { slugify } from './slugify'
 
 /** Сколько ближайших матчей из календаря всегда показывать на /busfans. */
@@ -38,6 +39,10 @@ export function eventIdFromGame(game: Game): string {
 	return `${game.dateIso}-${slugify(matchTitleFromGame(game))}`
 }
 
+export function gameHasBusRegistration(game: Game): boolean {
+	return Boolean(getGameBusRegistrationLinks(game).primaryUrl)
+}
+
 export function gameToPendingMatchEvent(game: Game): MatchEvent {
 	const homeTeam = game.homeTeam?.trim() || 'Акрон'
 	const awayTeam = game.awayTeam?.trim() || ''
@@ -59,17 +64,18 @@ export function gameToPendingMatchEvent(game: Game): MatchEvent {
 		leagueInfo: game.leagueInfo ?? null,
 		seasonTour: game.seasonTour ?? null,
 		fanIdStatus: fanIdFromGame(game),
-		registrationUrl:
-			game.busfansRegistrationUrlTolyatti?.trim() ||
-			game.busfansRegistrationUrl?.trim() ||
-			null,
-		registrationUrls: {
-			samara: game.busfansRegistrationUrlSamara?.trim() || null,
-			tolyatti:
-				game.busfansRegistrationUrlTolyatti?.trim() ||
-				game.busfansRegistrationUrl?.trim() ||
-				null,
-		},
+		...(() => {
+			const links = getGameBusRegistrationLinks(game)
+			return {
+				registrationUrl: links.primaryUrl,
+				registrationUrls: {
+					samara: links.samara,
+					tolyatti: links.tolyatti,
+					purchase: links.purchase,
+				},
+				registrationPriceFrom: links.priceFrom,
+			}
+		})(),
 		busCount: 0,
 		passengerCount: 0,
 		seatsAssigned: 0,

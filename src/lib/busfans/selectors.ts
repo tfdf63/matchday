@@ -13,8 +13,10 @@ import {
 	isFanMeetingEvent,
 } from './fanMeeting'
 import { getFanMeetingOverride } from './fanMeetingOverrides'
+import { isBusfansCardVisible } from './cardVisibility'
 import {
 	eventMatchKey,
+	gameHasBusRegistration,
 	gameToPendingMatchEvent,
 } from './upcomingEvents'
 
@@ -24,11 +26,22 @@ export function resolveListStatus(event: MatchEvent): MatchListStatus {
 }
 
 function withListStatus(event: MatchEvent): MatchEvent {
+	const resolved = resolveRegistrationUrls(event)
 	return applyFanMeetingDisplay({
 		...event,
 		listStatus: resolveListStatus(event),
 		registrationUrl: resolveRegistrationUrl(event),
-		registrationUrls: resolveRegistrationUrls(event),
+		registrationPriceFrom:
+			event.registrationPriceFrom ??
+			resolved?.priceFrom ??
+			null,
+		registrationUrls: resolved
+			? {
+					samara: resolved.samara,
+					tolyatti: resolved.tolyatti,
+					purchase: resolved.purchase,
+				}
+			: event.registrationUrls,
 	})
 }
 
@@ -69,10 +82,14 @@ function mergeMatchEventPair(base: MatchEvent, next: MatchEvent): MatchEvent {
 			tolyatti:
 				base.registrationUrls?.tolyatti ??
 				next.registrationUrls?.tolyatti ??
-				base.registrationUrl ??
-				next.registrationUrl ??
+				null,
+			purchase:
+				base.registrationUrls?.purchase ??
+				next.registrationUrls?.purchase ??
 				null,
 		},
+		registrationPriceFrom:
+			base.registrationPriceFrom ?? next.registrationPriceFrom ?? null,
 	}
 	return withListStatus(merged)
 }
@@ -160,21 +177,66 @@ function findCalendarGameForEvent(event: MatchEvent): Game | undefined {
 	)
 }
 
-/** Карточки из Excel; записи одного матча (напр. Самара/Тольятти) агрегируются в одну. */
-export function getMatchEvents(dataset: BusFansDataset): MatchEvent[] {
-	const prepared = dataset.events
-		.map((event) => {
-			const imported = withListStatus(event)
-			const game = findCalendarGameForEvent(imported)
-			if (!game) return imported
-			return mergeImportedOntoPlaceholder(
-				gameToPendingMatchEvent(game),
-				imported,
-			)
+function isSameCalendarGame(event: MatchEvent, game: Game): boolean {
+	if (event.gameId && String(event.gameId) === String(game.id)) {
+		return true
+	}
+	return (
+		eventMatchKey({
+			dateIso: event.dateIso,
+			homeTeam: event.homeTeam,
+			awayTeam: event.awayTeam,
+		}) ===
+		eventMatchKey({
+			dateIso: game.dateIso,
+			homeTeam: game.homeTeam ?? '',
+			awayTeam: game.awayTeam ?? '',
 		})
-		.sort(compareMatchEventsByDate)
+	)
+}
 
-	return aggregateMatchEventsByGame(prepared)
+function prepareImportedEvents(dataset: BusFansDataset): MatchEvent[] {
+	return dataset.events.map((event) => {
+		const imported = withListStatus(event)
+		const game = findCalendarGameForEvent(imported)
+		if (!game) return imported
+		return mergeImportedOntoPlaceholder(
+			gameToPendingMatchEvent(game),
+			imported,
+		)
+	})
+}
+
+function calendarEventsWithoutImport(
+	importedEvents: MatchEvent[],
+): MatchEvent[] {
+	return games
+		.filter(gameHasBusRegistration)
+		.filter(
+			(game) =>
+				!importedEvents.some((event) => isSameCalendarGame(event, game)),
+		)
+		.map((game) => withListStatus(gameToPendingMatchEvent(game)))
+}
+
+/** Импорт Excel + матчи из games.ts с ссылкой на регистрацию (без дубля с импортом). */
+export function getMatchEvents(dataset: BusFansDataset): MatchEvent[] {
+	const imported = prepareImportedEvents(dataset)
+	const aggregatedImported = aggregateMatchEventsByGame(imported)
+	const calendarOnly = calendarEventsWithoutImport(aggregatedImported)
+	return aggregateMatchEventsByGame([
+		...aggregatedImported,
+		...calendarOnly,
+	])
+}
+
+export function getVisibleMatchEvents(
+	dataset: BusFansDataset,
+	todayIso: string,
+): MatchEvent[] {
+	return getMatchEvents(dataset).filter((event) =>
+		isBusfansCardVisible(event, todayIso),
+	)
 }
 
 export function getMatchEventById(

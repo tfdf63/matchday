@@ -53,15 +53,36 @@ describe('resolveRegistrationUrl', () => {
 })
 
 describe('getMatchEvents registration', () => {
-	it('includes registration url for imported Rodina match', () => {
+	it('includes registration url for calendar match with bus link', () => {
 		const events = getMatchEvents(busFansDataset)
-		const rodina = events.find((e) => e.id === '2026-08-14-rodina-h-akron')
-		expect(rodina).toBeTruthy()
-		expect(rodina!.registrationUrl).toContain('preview.atom-s.com')
+		const akhmat = events.find((e) => e.gameId === '34')
+		expect(akhmat).toBeTruthy()
+		expect(akhmat!.registrationUrls?.purchase).toContain('atomstravel.com')
 	})
 
 	it('includes registration url for fan meeting', () => {
-		const events = getMatchEvents(busFansDataset)
+		const events = getMatchEvents({
+			...busFansDataset,
+			events: [
+				{
+					id: '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
+					title: 'Встреча с болельщиками Тольятти',
+					homeTeam: 'Акрон',
+					awayTeam: '',
+					venue: 'home',
+					dateIso: '2026-08-13',
+					dateToIso: '2026-08-13',
+					dateLabel: '13.08.2026',
+					dateCard: null,
+					time: null,
+					gameId: null,
+					scheduleMatchId: null,
+					busCount: 0,
+					passengerCount: 0,
+					seatsAssigned: 0,
+				},
+			],
+		})
 		const fanMeeting = events.find(
 			(e) => e.id === '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
 		)

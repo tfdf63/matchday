@@ -1,4 +1,5 @@
 import games, { type Game } from '@/data/games'
+import { getGameBusRegistrationLinks } from '@/lib/busfans/registrationLinks'
 import type { MatchVenue, SeasonCompetition } from '@/data/standings/types'
 
 export type StandingsTicketButton = {
@@ -54,23 +55,27 @@ export function findGameForStandingsMatch(
 }
 
 function getRegistrationButtons(game: Game): StandingsTicketButton[] {
-	const samara = game.busfansRegistrationUrlSamara?.trim()
-	const tolyatti =
-		game.busfansRegistrationUrlTolyatti?.trim() ||
-		game.busfansRegistrationUrl?.trim()
-
+	const links = getGameBusRegistrationLinks(game)
 	const buttons: StandingsTicketButton[] = []
-	if (tolyatti) {
+
+	if (links.purchase) {
 		buttons.push({
-			label: 'Выезд из Тольятти',
-			href: tolyatti,
+			label: `Купить ${links.priceFrom ?? 'от 490 ₽'}`,
+			href: links.purchase,
 			variant: 'outline',
 		})
 	}
-	if (samara) {
+	if (links.tolyatti) {
+		buttons.push({
+			label: 'Выезд из Тольятти',
+			href: links.tolyatti,
+			variant: 'outline',
+		})
+	}
+	if (links.samara) {
 		buttons.push({
 			label: 'Выезд из Самары',
-			href: samara,
+			href: links.samara,
 			variant: 'outline',
 		})
 	}

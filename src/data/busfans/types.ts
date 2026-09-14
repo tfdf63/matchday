@@ -30,7 +30,11 @@ export type MatchEvent = {
 	registrationUrls?: {
 		samara?: string | null
 		tolyatti?: string | null
+		/** Покупка места (общая ссылка без города). */
+		purchase?: string | null
 	} | null
+	/** Цена на кнопке покупки места в автобус. */
+	registrationPriceFrom?: string | null
 }
 
 export type BusManifest = {

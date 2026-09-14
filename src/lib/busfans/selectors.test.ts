@@ -2,59 +2,75 @@ import { describe, expect, it } from 'vitest'
 
 import { busFansDataset } from '@/data/busfans'
 
+import games from '@/data/games'
+
 import {
 	getDuplicateFullNamesForEvent,
 	getManifestsForEvent,
 	getMatchEvents,
 	getPassengersForManifest,
+	getVisibleMatchEvents,
 	resolveListStatus,
 } from './selectors'
 
 describe('busfans selectors', () => {
-	it('sorts imported match events by date ascending', () => {
+	it('sorts match events by date ascending', () => {
 		const events = getMatchEvents(busFansDataset)
-		expect(events.length).toBeGreaterThanOrEqual(2)
+		expect(events.length).toBeGreaterThanOrEqual(1)
 
 		for (let i = 1; i < events.length; i++) {
 			expect(
 				events[i - 1]!.dateIso.localeCompare(events[i]!.dateIso),
 			).toBeLessThanOrEqual(0)
 		}
-
-		const rodina = events.find((e) => e.gameId === '27')
-		const cska = events.find((e) => e.gameId === '28')
-		expect(rodina).toBeTruthy()
-		expect(cska).toBeTruthy()
-		expect(events.indexOf(rodina!)).toBeLessThan(events.indexOf(cska!))
 	})
 
-	it('returns empty list when there is no imported excel data', () => {
+	it('includes calendar games with bus registration when excel is empty', () => {
 		const events = getMatchEvents({
 			...busFansDataset,
 			events: [],
 			manifests: [],
 			passengers: [],
 		})
-		expect(events).toEqual([])
+		const akhmat = events.find((e) => e.gameId === '34')
+		expect(akhmat).toBeTruthy()
+		expect(akhmat!.registrationUrls?.purchase).toContain('atomstravel.com')
+		expect(akhmat!.registrationPriceFrom).toBe('от 490 ₽')
+		expect(resolveListStatus(akhmat!)).toBe('pending')
 	})
 
-	it('does not show calendar games without excel import', () => {
-		const events = getMatchEvents({
+	it('filters out cards from the day after the last day of the event', () => {
+		const visible = getVisibleMatchEvents(busFansDataset, '2026-09-15')
+		expect(
+			visible.find((e) => e.id === '2026-09-12-krasnodar-h-akron'),
+		).toBeUndefined()
+		expect(visible.some((e) => e.gameId === '34')).toBe(true)
+	})
+
+	it('includes only games with registration links in calendar-only list', () => {
+		const empty = getMatchEvents({
 			...busFansDataset,
 			events: [],
 			manifests: [],
 			passengers: [],
 		})
-		expect(events.find((e) => e.gameId === '23')).toBeUndefined()
+		const withReg = games.filter(
+			(g) =>
+				g.busfansRegistrationUrlSamara?.trim() ||
+				g.busfansRegistrationUrlTolyatti?.trim() ||
+				g.busfansRegistrationUrl?.trim(),
+		)
+		expect(empty.length).toBe(withReg.length)
 	})
 
-	it('merges games.ts fields for imported event with gameId', () => {
+	it('marks imported excel events as ready with manifests', () => {
 		const events = getMatchEvents(busFansDataset)
-		const rodina = events.find((e) => e.gameId === '27')
-		expect(rodina).toBeTruthy()
-		expect(resolveListStatus(rodina!)).toBe('ready')
-		expect(rodina!.registrationUrl).toContain('preview.atom-s.com')
-		expect(getManifestsForEvent(busFansDataset, rodina!.id).length).toBeGreaterThan(0)
+		const krasnodar = events.find(
+			(e) => e.id === '2026-09-12-krasnodar-h-akron',
+		)
+		expect(krasnodar).toBeTruthy()
+		expect(resolveListStatus(krasnodar!)).toBe('ready')
+		expect(getManifestsForEvent(busFansDataset, krasnodar!.id).length).toBeGreaterThan(0)
 	})
 
 	it('keeps imported events with passenger lists', () => {
@@ -83,7 +99,28 @@ describe('busfans selectors', () => {
 	})
 
 	it('enriches fan meeting with display time and title', () => {
-		const events = getMatchEvents(busFansDataset)
+		const events = getMatchEvents({
+			...busFansDataset,
+			events: [
+				{
+					id: '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
+					title: 'Встреча с болельщиками Тольятти',
+					homeTeam: 'Акрон',
+					awayTeam: '',
+					venue: 'home',
+					dateIso: '2026-08-13',
+					dateToIso: '2026-08-13',
+					dateLabel: '13.08.2026',
+					dateCard: null,
+					time: null,
+					gameId: null,
+					scheduleMatchId: null,
+					busCount: 0,
+					passengerCount: 0,
+					seatsAssigned: 0,
+				},
+			],
+		})
 		const fanMeeting = events.find(
 			(e) => e.id === '2026-08-13-vstrecha-s-bolelschikami-tolyatti',
 		)

@@ -77,8 +77,10 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 	const hasBadges = Boolean(venueLabel || fanIdLabel)
 	const showCupUnderlay = isCupMatchEvent(event)
 	const registrationSamara = event.registrationUrls?.samara?.trim() || null
-	const registrationTolyatti =
-		event.registrationUrls?.tolyatti?.trim() || event.registrationUrl?.trim() || null
+	const registrationTolyatti = event.registrationUrls?.tolyatti?.trim() || null
+	const registrationPurchase =
+		event.registrationUrls?.purchase?.trim() || null
+	const registrationPriceFrom = event.registrationPriceFrom?.trim() || null
 	const showRegistration = !isPastMatch
 
 	return (
@@ -178,6 +180,16 @@ export const MatchEventCard: FC<MatchEventCardProps> = ({ event }) => {
 								</div>
 							</div>
 						</Link>
+						{showRegistration && registrationPurchase ? (
+							<a
+								href={registrationPurchase}
+								target='_blank'
+								rel='noopener noreferrer'
+								className={cx(styles.registerBtn, 'font-mono')}
+							>
+								Купить {registrationPriceFrom ?? 'от 490 ₽'}
+							</a>
+						) : null}
 						{showRegistration && registrationTolyatti ? (
 							<a
 								href={registrationTolyatti}

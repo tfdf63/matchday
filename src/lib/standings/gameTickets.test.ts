@@ -136,9 +136,7 @@ describe('gameTickets', () => {
 			'2026-08-01',
 			'cup',
 		)
-		expect(buttons.some((b) => b.label === 'Выезд из Тольятти')).toBe(
-			true,
-		)
+		expect(buttons.some((b) => b.label.startsWith('Купить от'))).toBe(true)
 	})
 
 	it('находит кубковый матч по competition', () => {

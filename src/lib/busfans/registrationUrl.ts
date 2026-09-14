@@ -1,37 +1,46 @@
 import games, { type Game } from '@/data/games'
 import type { MatchEvent } from '@/data/busfans'
 
+import {
+	DEFAULT_BUSFANS_PURCHASE_PRICE_FROM,
+	getGameBusRegistrationLinks,
+} from './registrationLinks'
 import { teamMatchKey } from './upcomingEvents'
 
 /** Выезд раньше даты матча: допуск при привязке к games.ts. */
 export const REGISTRATION_DATE_WINDOW_DAYS = 2
 
-type RegistrationUrls = {
+export type ResolvedRegistrationUrls = {
 	samara: string | null
 	tolyatti: string | null
+	purchase: string | null
+	priceFrom: string | null
 }
 
-function emptyRegistrationUrls(): RegistrationUrls {
-	return { samara: null, tolyatti: null }
+function emptyRegistrationUrls(): ResolvedRegistrationUrls {
+	return { samara: null, tolyatti: null, purchase: null, priceFrom: null }
 }
 
-function getGameRegistrationUrls(game: Game): RegistrationUrls {
-	const samara = game.busfansRegistrationUrlSamara?.trim() || null
-	const tolyatti =
-		game.busfansRegistrationUrlTolyatti?.trim() ||
-		game.busfansRegistrationUrl?.trim() ||
-		null
-	return { samara, tolyatti }
+function linksFromGame(game: Game): ResolvedRegistrationUrls {
+	const links = getGameBusRegistrationLinks(game)
+	return {
+		samara: links.samara,
+		tolyatti: links.tolyatti,
+		purchase: links.purchase,
+		priceFrom: links.priceFrom,
+	}
 }
 
-const byGameId = new Map<string, RegistrationUrls>()
+const byGameId = new Map<string, ResolvedRegistrationUrls>()
 const gamesWithRegistrationUrl: Array<
-	Pick<Game, 'id' | 'dateIso' | 'homeTeam' | 'awayTeam'> & { urls: RegistrationUrls }
+	Pick<Game, 'id' | 'dateIso' | 'homeTeam' | 'awayTeam'> & {
+		urls: ResolvedRegistrationUrls
+	}
 > = []
 
 for (const game of games) {
-	const urls = getGameRegistrationUrls(game)
-	if (!urls.samara && !urls.tolyatti) continue
+	const urls = linksFromGame(game)
+	if (!urls.samara && !urls.tolyatti && !urls.purchase) continue
 	byGameId.set(game.id, urls)
 	gamesWithRegistrationUrl.push({
 		id: game.id,
@@ -60,10 +69,13 @@ function findRegistrationUrlByTeamsAndDate(
 	homeTeam: string,
 	awayTeam: string,
 	dateIso: string,
-): RegistrationUrls | null {
+): ResolvedRegistrationUrls | null {
 	const key = teamMatchKey(homeTeam, awayTeam)
 	const candidates = gamesWithRegistrationUrl
-		.filter((game) => teamMatchKey(game.homeTeam ?? '', game.awayTeam ?? '') === key)
+		.filter(
+			(game) =>
+				teamMatchKey(game.homeTeam ?? '', game.awayTeam ?? '') === key,
+		)
 		.map((game) => ({
 			game,
 			diff: daysBetween(game.dateIso, dateIso),
@@ -75,12 +87,19 @@ function findRegistrationUrlByTeamsAndDate(
 }
 
 function normalizeRegistrationUrls(
-	event: Pick<MatchEvent, 'registrationUrl' | 'registrationUrls'>,
-): RegistrationUrls {
-	const directSamara = event.registrationUrls?.samara?.trim() || null
-	const directTolyatti =
-		event.registrationUrls?.tolyatti?.trim() || event.registrationUrl?.trim() || null
-	return { samara: directSamara, tolyatti: directTolyatti }
+	event: Pick<
+		MatchEvent,
+		'registrationUrl' | 'registrationUrls' | 'registrationPriceFrom'
+	>,
+): ResolvedRegistrationUrls {
+	const samara = event.registrationUrls?.samara?.trim() || null
+	const tolyatti = event.registrationUrls?.tolyatti?.trim() || null
+	const purchase = event.registrationUrls?.purchase?.trim() || null
+	const priceFrom =
+		event.registrationPriceFrom?.trim() ||
+		(purchase ? DEFAULT_BUSFANS_PURCHASE_PRICE_FROM : null)
+
+	return { samara, tolyatti, purchase, priceFrom }
 }
 
 export function resolveRegistrationUrls(
@@ -90,13 +109,14 @@ export function resolveRegistrationUrls(
 		| 'gameId'
 		| 'registrationUrl'
 		| 'registrationUrls'
+		| 'registrationPriceFrom'
 		| 'homeTeam'
 		| 'awayTeam'
 		| 'dateIso'
 	>,
-): RegistrationUrls | null {
+): ResolvedRegistrationUrls | null {
 	const direct = normalizeRegistrationUrls(event)
-	if (direct.samara || direct.tolyatti) return direct
+	if (direct.samara || direct.tolyatti || direct.purchase) return direct
 	if (event.gameId) {
 		const fromGame = byGameId.get(String(event.gameId))
 		if (fromGame) return fromGame
@@ -108,7 +128,14 @@ export function resolveRegistrationUrls(
 	)
 	if (fromTeams) return fromTeams
 	const byEvent = byEventId[event.id]
-	if (byEvent) return { samara: null, tolyatti: byEvent }
+	if (byEvent) {
+		return {
+			samara: null,
+			tolyatti: byEvent,
+			purchase: null,
+			priceFrom: null,
+		}
+	}
 	return null
 }
 
@@ -119,11 +146,12 @@ export function resolveRegistrationUrl(
 		| 'gameId'
 		| 'registrationUrl'
 		| 'registrationUrls'
+		| 'registrationPriceFrom'
 		| 'homeTeam'
 		| 'awayTeam'
 		| 'dateIso'
 	>,
 ): string | null {
 	const links = resolveRegistrationUrls(event) ?? emptyRegistrationUrls()
-	return links.tolyatti || links.samara || null
+	return links.purchase || links.tolyatti || links.samara || null
 }

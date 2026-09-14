@@ -10,7 +10,8 @@ import {
 
 import styles from './BusFansPage.module.scss'
 
-const LOGO_SIZE = 28
+/** Рендер в 72px; на мобилке масштаб в SCSS. */
+const LOGO_SIZE = 72
 
 export type MatchTeamsRowProps = {
 	homeTeam: string

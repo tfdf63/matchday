@@ -2,11 +2,13 @@
 
 import Image from 'next/image'
 import type { FC } from 'react'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import { BaseModal } from '@/components/Modal'
 import { busFansDataset } from '@/data/busfans'
-import { getMatchEvents } from '@/lib/busfans/selectors'
+import { getAppDateIso } from '@/lib/datetime/appTimezone'
+import { useClientNow } from '@/lib/hooks/useClientNow'
+import { getVisibleMatchEvents } from '@/lib/busfans/selectors'
 
 import styles from './BusFansPage.module.scss'
 import { MatchEventCard } from './MatchEventCard'
@@ -43,7 +45,11 @@ const benefits = [
 ] as const
 
 export const BusFansPage: FC = () => {
-	const events = getMatchEvents(busFansDataset)
+	const now = useClientNow()
+	const events = useMemo(() => {
+		if (!now) return []
+		return getVisibleMatchEvents(busFansDataset, getAppDateIso(now))
+	}, [now])
 	const [isBenefitsOpen, setIsBenefitsOpen] = useState(false)
 	const [isRouteInfoOpen, setIsRouteInfoOpen] = useState(false)
 
