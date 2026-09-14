@@ -1104,42 +1104,42 @@ const games: Game[] = [
 			second: ' ',
 		},
 	},
-	{
-		id: '43',
-		homeTeam: 'Акрон',
-		awayTeam: 'ЦСКА',
-		date: '24 ноября',
-		dateIso: '2026-11-24',
-		venue: 'home',
-		dateCard: '24.11 (ВТ)',
-		time: 'SAMT 18:00',
-		stadium: 'Солидарность Самара Арена',
-		ticketLink:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@72135472?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
-		ticketLinkPriceFrom: 'от 390 ₽',
-		ticketLinkVip:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@72135472?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
-		ticketLinkVipPriceFrom: 'от 1490 ₽',
-		ticketLinkSkybox:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@72135472?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
-		ticketLinkSkyboxPriceFrom: 'от 11500 ₽',
-		ticketLinkC4:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72135472?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51',
-		ticketLinkC4PriceFrom: 'от 490 ₽',
-		ticketLinkBusinessClub:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72135472?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51',
-		ticketLinkBusinessClubPriceFrom: 'от 6990 ₽',
-		ticketLinkFanNew:
-			'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10441@72135472?clientKey=945d2837-2499-4f21-8eaa-6ae6ae7e7136&regionId=51',
-		leagueInfo: 'Fonbet Кубок России по футболу',
-		seasonTour: '2026/2027 6 ТУР',
-		fanIdStatus: 'Без fan id',
-		promoType: 'cup',
-		priceIncreaseDates: {
-			first: '2026-11-22',
-			second: ' ',
-		},
-	},
+	// {
+	// 	id: '43',
+	// 	homeTeam: 'Акрон',
+	// 	awayTeam: 'ЦСКА',
+	// 	date: '24 ноября',
+	// 	dateIso: '2026-11-24',
+	// 	venue: 'home',
+	// 	dateCard: '24.11 (ВТ)',
+	// 	time: 'SAMT 18:00',
+	// 	stadium: 'Солидарность Самара Арена',
+	// 	ticketLink:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-2130@72135472?clientKey=d721bb72-e7ce-4a03-8775-67aea527feb0&regionId=51',
+	// 	ticketLinkPriceFrom: 'от 390 ₽',
+	// 	ticketLinkVip:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7858@72135472?clientKey=0046af24-2980-419c-bf99-c4d864c693e3&regionId=51',
+	// 	ticketLinkVipPriceFrom: 'от 1490 ₽',
+	// 	ticketLinkSkybox:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-7859@72135472?clientKey=f524515c-ae22-419d-9b15-80eea470a53b&regionId=51',
+	// 	ticketLinkSkyboxPriceFrom: 'от 11500 ₽',
+	// 	ticketLinkC4:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10440@72135472?clientKey=413650bc-7c97-4541-bdc5-bca4f08835e0&regionId=51',
+	// 	ticketLinkC4PriceFrom: 'от 490 ₽',
+	// 	ticketLinkBusinessClub:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10442@72135472?clientKey=dbdf9d10-49b2-43a2-8783-b627e95d9876&regionId=51',
+	// 	ticketLinkBusinessClubPriceFrom: 'от 6990 ₽',
+	// 	ticketLinkFanNew:
+	// 		'https://widget.afisha.yandex.ru/w/sessions/ticketsteam-10441@72135472?clientKey=945d2837-2499-4f21-8eaa-6ae6ae7e7136&regionId=51',
+	// 	leagueInfo: 'Fonbet Кубок России по футболу',
+	// 	seasonTour: '2026/2027 6 ТУР',
+	// 	fanIdStatus: 'Без fan id',
+	// 	promoType: 'cup',
+	// 	priceIncreaseDates: {
+	// 		first: '2026-11-22',
+	// 		second: ' ',
+	// 	},
+	// },
 	{
 		id: '44',
 		homeTeam: 'Рубин',

@@ -5,7 +5,6 @@ import { faqItems } from '@/data/faq'
 import { SeoJsonLd } from '@/components/SeoJsonLd/SeoJsonLd'
 import Main, {
 	MatchActivitiesSection,
-	SectorSection,
 	TicketProgramSection,
 	LoyaltyProgramSection,
 	UpcomingMatches,
@@ -35,7 +34,6 @@ const MatchesPage: React.FC = () => {
 			<OfferSection {...defaultOfferContent} />
 			<MatchActivitiesSection />
 			<TicketProgramSection />
-			<SectorSection />
 			<RulesSection />
 			<MerchSection />
 			<FanCardSection />

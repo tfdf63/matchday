@@ -21,7 +21,6 @@ const HERO_TAGS: ReadonlyArray<{ label: string; href: string }> = [
 	{ label: 'Фан-автобусы', href: '/busfans' },
 	{ label: 'Активности', href: '#match-activities' },
 	{ label: 'Билетная программа', href: '#ticket-program' },
-	{ label: 'Сектора', href: '#sector' },
 	{ label: 'Карта болельщика', href: '#fan-card' },
 	{ label: 'Мерч', href: '#merch' },
 	{ label: 'Правила', href: '#rules' },
