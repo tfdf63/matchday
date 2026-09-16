@@ -1,12 +1,33 @@
 {
   "meta": {
-    "generatedAt": "2026-09-16T17:25:47+04:00",
+    "generatedAt": "2026-09-16T17:26:42+04:00",
     "sourceDir": "src/data/busfans/raw",
-    "eventsCount": 1,
-    "manifestsCount": 4,
-    "passengersCount": 121
+    "eventsCount": 2,
+    "manifestsCount": 5,
+    "passengersCount": 123
   },
   "events": [
+    {
+      "id": "2026-10-24-akron-h-dinamo-msk",
+      "title": "Акрон х Динамо Мск",
+      "homeTeam": "Акрон",
+      "awayTeam": "Динамо Мск",
+      "venue": "home",
+      "dateIso": "2026-10-24",
+      "dateToIso": "2026-10-24",
+      "dateLabel": "24.10.2026",
+      "dateCard": null,
+      "time": null,
+      "gameId": null,
+      "scheduleMatchId": null,
+      "tournament": "РПЛ",
+      "leagueInfo": null,
+      "seasonTour": null,
+      "fanIdStatus": "Fan id",
+      "busCount": 1,
+      "passengerCount": 2,
+      "seatsAssigned": 2
+    },
     {
       "id": "2026-09-17-akron-h-ahmat",
       "title": "Акрон х Ахмат",
@@ -80,6 +101,18 @@
       "seatsAssigned": 42,
       "boardingStops": [
         "Озон, Жигулёвск ТЦ Озон (парковка)"
+      ]
+    },
+    {
+      "id": "2026-10-24-akron-h-dinamo-msk-bus-1",
+      "eventId": "2026-10-24-akron-h-dinamo-msk",
+      "label": "Автобус 1. Любой сектор",
+      "busNo": 1,
+      "sourceFile": "atoms_drivers_report_24.10.2026.xlsx",
+      "passengerCount": 2,
+      "seatsAssigned": 2,
+      "boardingStops": [
+        "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района."
       ]
     }
   ],
@@ -1656,6 +1689,32 @@
       "sourceFile": "atoms_drivers_report_17.09.2026 (31).xlsx",
       "sourceRow": 4,
       "seq": 18
+    },
+    {
+      "eventId": "2026-10-24-akron-h-dinamo-msk",
+      "manifestId": "2026-10-24-akron-h-dinamo-msk-bus-1",
+      "fullName": "Кущ Сергей Николаевич",
+      "seatNo": "29",
+      "orderId": "262595",
+      "birthDateIso": "1977-02-27",
+      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
+      "phone": "79170137166",
+      "sourceFile": "atoms_drivers_report_24.10.2026.xlsx",
+      "sourceRow": 5,
+      "seq": 1
+    },
+    {
+      "eventId": "2026-10-24-akron-h-dinamo-msk",
+      "manifestId": "2026-10-24-akron-h-dinamo-msk-bus-1",
+      "fullName": "Попов Вячеслав Геннадьевич",
+      "seatNo": "30",
+      "orderId": "262595",
+      "birthDateIso": "1978-07-07",
+      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле ДК Тольятти на ул. Мира в сторону Комсомольского района.",
+      "phone": "79372305923",
+      "sourceFile": "atoms_drivers_report_24.10.2026.xlsx",
+      "sourceRow": 4,
+      "seq": 2
     }
   ]
 }
