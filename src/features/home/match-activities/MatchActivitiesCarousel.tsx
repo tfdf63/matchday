@@ -4,12 +4,15 @@ import type { FC } from 'react'
 import {
 	useCallback,
 	useEffect,
+	useMemo,
 	useRef,
 	useState,
 } from 'react'
 
 import { CarouselNavChevron } from '@/components/CarouselNavChevron'
 import type { MatchActivity } from '@/data/matchActivities'
+import { useClientNow } from '@/lib/hooks/useClientNow'
+import { applyMatchActivitiesDisplayRules } from '@/lib/matchActivities/resolveDisplay'
 import { useMediaQuery } from '@/lib/hooks/useMediaQuery'
 
 import { MatchActivityCard } from './MatchActivityCard'
@@ -48,6 +51,15 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 	activities,
 	ariaLabelledBy,
 }) => {
+	const now = useClientNow()
+	const displayActivities = useMemo(
+		() =>
+			applyMatchActivitiesDisplayRules(
+				[...activities],
+				now ?? new Date(),
+			),
+		[activities, now],
+	)
 	const viewportRef = useRef<HTMLDivElement>(null)
 	const listRef = useRef<HTMLUListElement>(null)
 	/**
@@ -157,7 +169,7 @@ export const MatchActivitiesCarousel: FC<MatchActivitiesCarouselProps> = ({
 		>
 			<div ref={viewportRef} className={styles.carouselViewport}>
 				<ul ref={listRef} className={styles.carouselList}>
-					{activities.map((activity) => (
+					{displayActivities.map((activity) => (
 						<li key={activity.id} className={styles.carouselSlide}>
 							<MatchActivityCard activity={activity} />
 						</li>
