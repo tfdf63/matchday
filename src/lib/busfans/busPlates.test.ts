@@ -132,4 +132,19 @@ describe('getBusPlateNumbers', () => {
 			getBusPlateNumbers('2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus'),
 		).toEqual(['Х966ВН763'])
 	})
+
+	it('returns plates for Ahmat home buses', () => {
+		expect(getBusPlateNumbers('2026-09-17-akron-h-ahmat-bus-1')).toEqual([
+			'Х364МХ163',
+		])
+		expect(getBusPlateNumbers('2026-09-17-akron-h-ahmat-bus-2')).toEqual([
+			'Х769ОМ763',
+		])
+		expect(getBusPlateNumbers('2026-09-17-akron-h-ahmat-bus-4')).toEqual([
+			'К088РР763',
+		])
+		expect(getBusPlateNumbers('2026-09-17-akron-h-ahmat-bus-5')).toEqual([
+			'К467СЕ763',
+		])
+	})
 })

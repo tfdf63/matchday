@@ -29,5 +29,9 @@
 	"2026-09-01-akron-h-lokomotiv-bus-2": ["Х954НС763"],
 	"2026-09-01-akron-h-lokomotiv-bus-4": ["Х966ВН763"],
 	"2026-09-01-akron-h-lokomotiv-bus-5": ["К467СЕ763"],
-	"2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus": ["Х966ВН763"]
+	"2026-09-06-orenburg-h-akron-tolyatti-bus-avtobus": ["Х966ВН763"],
+	"2026-09-17-akron-h-ahmat-bus-1": ["Х364МХ163"],
+	"2026-09-17-akron-h-ahmat-bus-2": ["Х769ОМ763"],
+	"2026-09-17-akron-h-ahmat-bus-4": ["К088РР763"],
+	"2026-09-17-akron-h-ahmat-bus-5": ["К467СЕ763"]
 }
