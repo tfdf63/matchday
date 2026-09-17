@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-09-17T10:18:44+04:00",
+    "generatedAt": "2026-09-17T14:41:29+04:00",
     "sourceDir": "src/data/busfans/raw",
     "eventsCount": 2,
     "manifestsCount": 5,
-    "passengersCount": 128
+    "passengersCount": 130
   },
   "events": [
     {
@@ -46,8 +46,8 @@
       "seasonTour": null,
       "fanIdStatus": "Fan id",
       "busCount": 4,
-      "passengerCount": 126,
-      "seatsAssigned": 126
+      "passengerCount": 128,
+      "seatsAssigned": 128
     }
   ],
   "manifests": [
@@ -83,8 +83,8 @@
       "label": "Автобус 4. ДК Тольятти. D114",
       "busNo": 4,
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
-      "passengerCount": 27,
-      "seatsAssigned": 27,
+      "passengerCount": 29,
+      "seatsAssigned": 29,
       "boardingStops": [
         "Колхозный рынок, Остановка в сторону Самары",
         "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
@@ -289,6 +289,32 @@
     {
       "eventId": "2026-09-17-akron-h-ahmat",
       "manifestId": "2026-09-17-akron-h-ahmat-bus-4",
+      "fullName": "Гринчик Михаил Дмитриевич",
+      "seatNo": "20",
+      "orderId": "999999",
+      "birthDateIso": null,
+      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
+      "phone": null,
+      "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
+      "sourceRow": 32,
+      "seq": 14
+    },
+    {
+      "eventId": "2026-09-17-akron-h-ahmat",
+      "manifestId": "2026-09-17-akron-h-ahmat-bus-4",
+      "fullName": "Гринчик Юлия Александровна",
+      "seatNo": "19",
+      "orderId": "999999",
+      "birthDateIso": null,
+      "boardingPlace": "Дворец культуры Тольятти имени Н.В. Абрамова, Остановка возле на ул. Мира в сторону Комсомольского района.",
+      "phone": null,
+      "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
+      "sourceRow": 31,
+      "seq": 15
+    },
+    {
+      "eventId": "2026-09-17-akron-h-ahmat",
+      "manifestId": "2026-09-17-akron-h-ahmat-bus-4",
       "fullName": "Девяткин Алексей Евгеньевич",
       "seatNo": "46",
       "orderId": "262566",
@@ -297,7 +323,7 @@
       "phone": "79178259406",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 26,
-      "seq": 14
+      "seq": 16
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -310,7 +336,7 @@
       "phone": "79278918183",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 18,
-      "seq": 15
+      "seq": 17
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -323,7 +349,7 @@
       "phone": "79276081368",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 5,
-      "seq": 16
+      "seq": 18
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -336,7 +362,7 @@
       "phone": "79297959599",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 6,
-      "seq": 17
+      "seq": 19
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -349,7 +375,7 @@
       "phone": "79033306106",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 23,
-      "seq": 18
+      "seq": 20
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -362,7 +388,7 @@
       "phone": "79674892685",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 27,
-      "seq": 19
+      "seq": 21
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -375,7 +401,7 @@
       "phone": "79376679177",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 19,
-      "seq": 20
+      "seq": 22
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -388,7 +414,7 @@
       "phone": "79272125412",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 25,
-      "seq": 21
+      "seq": 23
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -401,7 +427,7 @@
       "phone": "79179723135",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 4,
-      "seq": 22
+      "seq": 24
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -414,7 +440,7 @@
       "phone": "79626109292",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 24,
-      "seq": 23
+      "seq": 25
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -427,7 +453,7 @@
       "phone": "79958323238",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 29,
-      "seq": 24
+      "seq": 26
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -440,7 +466,7 @@
       "phone": "79376645757",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 28,
-      "seq": 25
+      "seq": 27
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -453,7 +479,7 @@
       "phone": "79024277145",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 20,
-      "seq": 26
+      "seq": 28
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
@@ -466,7 +492,7 @@
       "phone": "79024277145",
       "sourceFile": "atoms_drivers_report_17.09.2026 (10).xlsx",
       "sourceRow": 21,
-      "seq": 27
+      "seq": 29
     },
     {
       "eventId": "2026-09-17-akron-h-ahmat",
